@@ -135,13 +135,19 @@ gives Ludwig #7 in its XML while his car is painted #8.
    and open questions for each venue are in
    [docs/TRACKS.md](../../docs/TRACKS.md). The weak spots are the AVUS
    south turn and the Wunstorf perimeter road.
-4. **Artwork.** Make our own side-profile car drawings in team colours, plus
+4. **Car images: polish.** All 22 cars are done (`tools/car_art.py`).
+   Still to fix:
+   - Mercedes liveries look skewed towards the front on the side doors.
+     Re-measure the 190E texture anchors.
+   - Leftover marks from the 1993 reference liveries, such as rear-wing logos.
+   - The traced Audi body has less detail than the Pohlmann drawings.
+5. **Artwork.** Make our own side-profile car drawings in team colours, plus
    menu and dashboard art. No logos or photos.
-5. **Sponsors.** Build a period sponsor pool and starting sponsors (cloned
+6. **Sponsors.** Build a period sponsor pool and starting sponsors (cloned
    placeholders for now).
-6. **Junior series.** Add the 1991 German F3 and Formel Opel Lotus
+7. **Junior series.** Add the 1991 German F3 and Formel Opel Lotus
    (currently base-game placeholders).
-7. **Economy.** Rescale salaries, costs and prize money from F1 scale to DTM
+8. **Economy.** Rescale salaries, costs and prize money from F1 scale to DTM
    scale.
-8. **Follow-up seasons.** 1992 (Audi's twisted-crankshaft dispute and
+9. **Follow-up seasons.** 1992 (Audi's twisted-crankshaft dispute and
    withdrawal), 1993 (Class 1 regulations).
