@@ -1,0 +1,66 @@
+{
+  "$merge_base": true,
+  "$replace": ["suppliers"],
+  "suppliers": {
+    "Bridgestone": {
+      "active": true, "join_chance": 0.0, "leave_chance": 0.01,
+      "prices": {"works": 0, "partner": 0, "customer": 3},
+      "nationality": "japanese",
+      "lateral_grip": {"soft": 58.0, "medium": 56.0, "hard": 53.0, "intermediate": 48.0, "wet": 50.0},
+      "longitudinal_grip": {"soft": 58.0, "medium": 56.0, "hard": 53.0, "intermediate": 48.0, "wet": 50.0},
+      "durability": {"soft": 46.0, "medium": 54.0, "hard": 62.0, "intermediate": 55.0, "wet": 55.0},
+      "temperature_tolerance": {"soft": 50.0, "medium": 52.0, "hard": 55.0, "intermediate": 50.0, "wet": 50.0},
+      "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02},
+      "development_preference": "grip"
+    },
+    "Yokohama": {
+      "active": true, "join_chance": 0.0, "leave_chance": 0.02,
+      "prices": {"works": 0, "partner": 0, "customer": 2},
+      "nationality": "japanese",
+      "lateral_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 47.0, "wet": 48.0},
+      "longitudinal_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 47.0, "wet": 48.0},
+      "durability": {"soft": 48.0, "medium": 56.0, "hard": 63.0, "intermediate": 55.0, "wet": 54.0},
+      "temperature_tolerance": {"soft": 50.0, "medium": 50.0, "hard": 52.0, "intermediate": 50.0, "wet": 50.0},
+      "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02},
+      "development_preference": "endurance"
+    },
+    "Dunlop": {
+      "active": true, "join_chance": 0.0, "leave_chance": 0.02,
+      "prices": {"works": 0, "partner": 0, "customer": 2},
+      "nationality": "british",
+      "lateral_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 52.0, "wet": 55.0},
+      "longitudinal_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 52.0, "wet": 55.0},
+      "durability": {"soft": 47.0, "medium": 55.0, "hard": 62.0, "intermediate": 57.0, "wet": 57.0},
+      "temperature_tolerance": {"soft": 50.0, "medium": 50.0, "hard": 52.0, "intermediate": 52.0, "wet": 52.0},
+      "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02},
+      "development_preference": "wet_weather"
+    },
+    "Michelin": {
+      "active": true, "join_chance": 0.0, "leave_chance": 0.02,
+      "prices": {"works": 0, "partner": 0, "customer": 2},
+      "nationality": "french",
+      "lateral_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 49.0, "wet": 51.0},
+      "longitudinal_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 49.0, "wet": 51.0},
+      "durability": {"soft": 50.0, "medium": 58.0, "hard": 64.0, "intermediate": 56.0, "wet": 55.0},
+      "temperature_tolerance": {"soft": 52.0, "medium": 52.0, "hard": 54.0, "intermediate": 50.0, "wet": 50.0},
+      "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02},
+      "development_preference": "endurance"
+    },
+    "Pirelli": {
+      "active": true, "join_chance": 0.0, "leave_chance": 0.03,
+      "prices": {"works": 0, "partner": 0, "customer": 2},
+      "nationality": "italian",
+      "lateral_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 47.0, "wet": 48.0},
+      "longitudinal_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 47.0, "wet": 48.0},
+      "durability": {"soft": 46.0, "medium": 54.0, "hard": 61.0, "intermediate": 54.0, "wet": 54.0},
+      "temperature_tolerance": {"soft": 50.0, "medium": 50.0, "hard": 52.0, "intermediate": 50.0, "wet": 50.0},
+      "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02},
+      "development_preference": "grip"
+    }
+  }
+}

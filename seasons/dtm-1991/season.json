@@ -1,0 +1,84 @@
+{
+  "title": "DTM 1991 - Deutsche Tourenwagen-Meisterschaft",
+  "pack_folder": "dtm1991",
+  "version": "0.1",
+  "series": "formula",
+  "base_pack": "default26",
+
+  "constants": {
+    "SEASON_START_YEAR": 1991,
+    "POINTS_TOP10": [20, 15, 12, 10, 8, 6, 4, 3, 2, 1],
+    "QUALI_GRID_LIMIT": 30,
+    "QUALI_MIN_ENTRANTS": 20,
+    "PREQUALIFYING_TRIGGER_CARS": 40,
+    "PREQUALIFYING_FIELD_LIMIT": 40,
+    "DRIVER_RETIREMENT_MIN_AGE": 40,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 50
+  },
+
+  "team_clones": {
+    "SMS Schmidt Motorsport": "Red Boar",
+    "AZR Audi Zentrum Reutlingen": "Audex",
+    "BMW M Team Schnitzer": "Mercurion",
+    "BMW M Team Bigazzi": "Scuderia Rossa",
+    "AMG Mercedes": "McMean",
+    "Zakspeed Racing": "Ashton Darting",
+    "Snobeck Racing": "French Blue",
+    "MS-Jet Racing": "Alpha Bison",
+    "Linder M Team": "Willens Racing",
+    "MM Diebels Alt": "Hossden GP",
+    "Unitron Sports": "Hossden GP",
+    "BMW Team Isert": "Cadylacky Motors",
+    "Tic Tac Tauber Team": "Cadylacky Motors",
+    "Auto Maass Climair Team": "Cadylacky Motors",
+    "Valier Motorsport": "Cadylacky Motors",
+    "Marlboro BMW Dealer Team": "Cadylacky Motors",
+    "Team Vanicek": "Cadylacky Motors",
+    "BAS Reifendienst": "Cadylacky Motors",
+    "Opel Team Eggenberger": "Willens Racing",
+    "Opel Team Irmscher": "Willens Racing",
+    "Opel Team Schübel": "Cadylacky Motors",
+    "Gerd Ruch Motorsport": "Cadylacky Motors"
+  },
+
+  "staff": {
+    "seed": 1991,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "SMS Schmidt Motorsport": 14,
+      "AZR Audi Zentrum Reutlingen": 12,
+      "BMW M Team Schnitzer": 15,
+      "BMW M Team Bigazzi": 13,
+      "AMG Mercedes": 15,
+      "Zakspeed Racing": 13,
+      "Snobeck Racing": 11,
+      "MS-Jet Racing": 10,
+      "Linder M Team": 10,
+      "MM Diebels Alt": 9,
+      "Unitron Sports": 8,
+      "BMW Team Isert": 7,
+      "Tic Tac Tauber Team": 7,
+      "Auto Maass Climair Team": 6,
+      "Valier Motorsport": 6,
+      "Marlboro BMW Dealer Team": 7,
+      "Team Vanicek": 5,
+      "BAS Reifendienst": 6,
+      "Opel Team Eggenberger": 10,
+      "Opel Team Irmscher": 10,
+      "Opel Team Schübel": 6,
+      "Gerd Ruch Motorsport": 4
+    }
+  },
+
+  "track_placeholders": {
+    "zolder":        {"from": "fra",  "override": {"name": "Zolder",                  "length_km": 4.194, "nationality": "belgian", "drs_zones": []}},
+    "hockenheim":    {"from": "hoc",  "override": {"name": "Hockenheimring",          "length_km": 6.797, "nationality": "german",  "drs_zones": []}},
+    "nuerburgring":  {"from": "jap",  "override": {"name": "Nürburgring",             "length_km": 4.542, "nationality": "german",  "drs_zones": []}},
+    "avus":          {"from": "ita",  "override": {"name": "AVUS",                    "length_km": 4.880, "nationality": "german",  "drs_zones": []}},
+    "wunstorf":      {"from": "abu",  "override": {"name": "Wunstorf",                "length_km": 5.050, "nationality": "german",  "drs_zones": []}},
+    "norisring":     {"from": "mon",  "override": {"name": "Norisring",               "length_km": 2.300, "nationality": "german",  "drs_zones": []}},
+    "diepholz":      {"from": "bra",  "override": {"name": "Diepholz",                "length_km": 2.690, "nationality": "german",  "drs_zones": []}},
+    "alemannenring": {"from": "sin",  "override": {"name": "Alemannenring (Singen)",  "length_km": 2.800, "nationality": "german",  "drs_zones": []}}
+  }
+}
