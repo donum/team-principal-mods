@@ -46,6 +46,8 @@ yet, and is reported in the output.
   lets us change, what has to be approximated, and the open questions.
 - [Wish list for the game developer](docs/DEVELOPER_WISHLIST.md): what the
   game would need for full historical accuracy.
+- [DTM eras](docs/ERAS.md): the six eras from 1984 to today, and how each
+  maps to the game.
 - [DTM 1991 season dossier](seasons/dtm-1991/README.md): sourced facts behind
   the data.
 

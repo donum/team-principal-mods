@@ -1,0 +1,19 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+2,Gary Paffett,GBR,1981-03-24,Mercedes-AMG Motorsport Mercedes me,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,
+6,Robert Wickens,CAN,1989-03-13,Mercedes-AMG Motorsport Mercedes me,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,
+3,Paul di Resta,GBR,1986-04-16,Mercedes-AMG Motorsport SILBERPFEIL Energy,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,
+63,Maro Engel,GER,1985-08-27,Mercedes-AMG Motorsport SILBERPFEIL Energy,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Returned to DTM
+22,Lucas Auer,AUT,1994-09-11,Mercedes-AMG Motorsport BWT,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,
+48,Edoardo Mortara,ITA,1987-01-12,Mercedes-AMG Motorsport BWT,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Moved from Audi
+5,Mattias Ekström,SWE,1978-07-14,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+51,Nico Müller,SUI,1992-02-25,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+33,René Rast,GER,1986-10-26,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,Champion as rookie full-timer
+53,Jamie Green,GBR,1982-06-14,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+77,Loïc Duval,FRA,1982-06-12,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,DTM debut
+99,Mike Rockenfeller,GER,1983-10-31,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+7,Bruno Spengler,CAN,1983-08-23,BMW Team RBM,Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+36,Maxime Martin,BEL,1986-03-20,BMW Team RBM,Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+31,Tom Blomqvist,GBR,1993-11-30,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,Run by RBM; scored for BMW Team RMR in teams standings (en.wiki)
+11,Marco Wittmann,GER,1989-11-24,BMW Team RMG,Andernach (GER),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+15,Augusto Farfus,BRA,1983-09-03,BMW Team RMG,Andernach (GER),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+16,Timo Glock,GER,1982-03-18,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,Run by RMG; scored for BMW Team RMR in teams standings (en.wiki)

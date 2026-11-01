@@ -1,0 +1,11 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2013-05-05,Hockenheimring,Grand Prix circuit,GER,4.574,1,42,192.108,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Augusto Farfus,Pole: Scheider; FL: Farfus
+2,2013-05-19,Brands Hatch,Indy circuit,GBR,1.929,1,98,189.042,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Mike Rockenfeller,Pole: Rockenfeller; FL: Paffett
+3,2013-06-02,Spielberg,Red Bull Ring,AUT,4.326,1,47,203.322,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,Pole: Spengler; FL: Wittmann
+4,2013-06-16,Lausitzring,EuroSpeedway Lausitz DTM short circuit,GER,3.478,1,52,180.856,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Gary Paffett,Pole: Vietoris; FL: Rockenfeller
+5,2013-07-14,Norisring,Nuremberg street circuit,GER,2.300,1,83,190.900,knockout Q1-Q3 + Q4 single-lap shootout of top 4,"R: none (Ekström first on road, DSQ)","Pole: Wickens; FL: Vietoris; Ekström DSQ for parc-fermé breach, nobody promoted; 83 laps per racingyears and fan-wiki result row (fan-wiki infobox 82)"
+6,2013-08-04,Moscow Raceway,short layout (Volokolamsk),RUS,2.555,1,74,189.070,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Mike Rockenfeller,Pole: Rockenfeller; FL: Tambay; first DTM race in Russia; length 2.555 km per DTM fan wiki (racingyears 2.661)
+7,2013-08-18,Nürburgring,Sprint circuit (GP short),GER,3.629,1,45,163.305,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Robert Wickens,Pole: Farfus; FL: Wehrlein
+8,2013-09-15,Oschersleben,Motorsport Arena Oschersleben,GER,3.696,1,51,188.496,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Augusto Farfus,Pole: Jamie Green; FL: Hand
+9,2013-09-29,Zandvoort,Circuit Park Zandvoort GP,NED,4.307,1,44,189.508,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Augusto Farfus,Pole/FL: Wittmann; Rockenfeller clinched title; DRS not used at Zandvoort (safety)
+10,2013-10-20,Hockenheimring,Grand Prix circuit,GER,4.574,1,41,187.534,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Timo Glock,Pole: Spengler; FL: Vietoris; Glock first DTM win

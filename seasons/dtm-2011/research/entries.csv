@@ -1,0 +1,20 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+2,Gary Paffett,british,1981-03-24,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+3,Bruno Spengler,canadian,1983-08-23,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+4,Timo Scheider,german,1978-11-10,Audi Sport Team Abt [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Hankook,1-10,
+5,Oliver Jarvis,british,1984-01-09,Audi Sport Team Abt [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Hankook,1-10,
+6,Ralf Schumacher,german,1975-06-30,Salzgitter AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+7,Jamie Green,british,1982-06-14,Salzgitter AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+8,Mattias Ekström,swedish,1978-07-14,Audi Sport Team Abt Sportsline [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Hankook,1-10,
+9,Mike Rockenfeller,german,1983-10-31,Audi Sport Team Abt Sportsline [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Hankook,"1-3, 5-10",missed Lausitz after Le Mans crash
+9,Tom Kristensen,danish,1967-07-07,Audi Sport Team Abt Sportsline [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Hankook,4,one-off stand-in
+10,Susie Stoddart,british,1982-12-06,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,listed by de.wiki also as Susie Wolff (married 2011)
+11,Christian Vietoris,german,1989-04-01,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,rookie
+14,Martin Tomczyk,german,1981-12-07,Audi Sport Team Phoenix [Phoenix Racing],Meuspath,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Hankook,1-10,champion in a year-old car
+15,Rahel Frey,swiss,1986-02-23,Audi Sport Team Phoenix [Phoenix Racing],Meuspath,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Hankook,1-10,rookie
+16,Maro Engel,german,1985-08-27,Deutsche Post/GQ AMG-Mercedes [Mücke Motorsport],Berlin,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+17,David Coulthard,british,1971-03-27,Deutsche Post/GQ AMG-Mercedes [Mücke Motorsport],Berlin,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+18,Filipe Albuquerque,portuguese,1985-06-13,Audi Sport Team Rosberg [Team Rosberg],,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Hankook,1-10,rookie
+19,Edoardo Mortara,italian,1987-01-12,Audi Sport Team Rosberg [Team Rosberg],,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Hankook,1-10,rookie
+20,Renger van der Zande,dutch,1986-02-16,Stern AMG-Mercedes [Persson Motorsport],,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,rookie
+22,Miguel Molina,spanish,1989-02-17,Audi Sport Team Abt Junior [Abt Sportsline],Kempten,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Hankook,1-10,

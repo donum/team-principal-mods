@@ -1,0 +1,21 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Mattias Ekström,SWE,1978-07-14,Audi Sport Team Abt Sportsline,Kempten,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec current car; reigning 2004 champion
+2,Martin Tomczyk,GER,1981-12-07,Audi Sport Team Abt Sportsline,Kempten,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec
+3,Gary Paffett,GBR,1981-03-24,DaimlerChrysler Bank AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec; HWA Team
+4,Jean Alesi,FRA,1964-06-11,AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec; HWA Team
+5,Tom Kristensen,DEN,1967-07-07,Audi Sport Team Abt,Kempten,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec; second Abt-run entry
+6,Allan McNish,GBR,1969-12-29,Audi Sport Team Abt,Kempten,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec; DTM debut
+7,Bernd Schneider,GER,1964-07-20,Vodafone AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec; HWA Team
+8,Mika Häkkinen,FIN,1968-09-28,Sport Edition AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,"2005-spec; HWA Team; two-time F1 champion, DTM debut"
+9,Marcel Fässler,SUI,1976-05-27,GMAC Team OPC,,Opel Vectra GTS V8 2005,"Opel 4.0 V8 (Spiess-built, NA)",Dunlop,all,Operating team conflict: season tables (de/en) say Holzer for #9/#10; Holzer + Opel Vectra articles say Phoenix ran Fässler/Frentzen. Phoenix chosen (also matches en.wiki text that Frentzen and Aïello swapped teams)
+10,Heinz-Harald Frentzen,GER,1967-05-18,Stern Team OPC,,Opel Vectra GTS V8 2005,"Opel 4.0 V8 (Spiess-built, NA)",Dunlop,all,See #9 team conflict
+11,Laurent Aïello,FRA,1969-05-23,Team OPC,Augsburg,Opel Vectra GTS V8 2005,"Opel 4.0 V8 (Spiess-built, NA)",Dunlop,all,Holzer per Holzer + Opel Vectra articles; season tables link #11/#12 to Phoenix
+12,Manuel Reuter,GER,1961-12-06,Team OPC,Augsburg,Opel Vectra GTS V8 2005,"Opel 4.0 V8 (Spiess-built, NA)",Dunlop,all,See #11 team conflict
+14,Christian Abt,GER,1967-05-08,Audi Sport Team Joest Racing,Wald-Michelbach,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec Jahreswagen
+15,Pierre Kaffer,GER,1976-11-07,Audi Sport Team Joest Racing,Wald-Michelbach,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec Jahreswagen
+16,Stefan Mücke,GER,1981-11-22,Mücke Motorsport,,AMG-Mercedes C-Klasse 2004 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec Jahreswagen
+17,Alexandros Margaritis,GRE,1984-09-20,Mücke Motorsport,,AMG-Mercedes C-Klasse 2004 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec Jahreswagen; rookie
+18,Rinaldo Capello,ITA,1964-06-17,Audi Sport Team Joest,Wald-Michelbach,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec Jahreswagen
+19,Frank Stippler,GER,1975-04-09,Audi Sport Team Joest,Wald-Michelbach,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec Jahreswagen
+20,Bruno Spengler,CAN,1983-08-23,Junge Gebrauchte von Mercedes AMG-Mercedes,,AMG-Mercedes C-Klasse 2004 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec Jahreswagen; Persson Motorsport; rookie
+21,Jamie Green,GBR,1982-06-14,Salzgitter AMG-Mercedes,,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,"Persson Motorsport; 2005-spec per de.wiki + en.wiki entry list (fifth current car); en.wiki round-1 report lists 2004 car (conflict); rookie, 2004 F3 Euro champion"

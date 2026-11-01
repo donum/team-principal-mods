@@ -1,0 +1,16 @@
+type,pos,name,points,notes
+teams,1,D2 AMG-Mercedes (HWA #1/#2),249,
+teams,2,Warsteiner AMG-Mercedes (HWA #5/#6),177,
+teams,3,Eschmann AMG-Mercedes (Manthey),117,
+teams,4,Team Abt Sportsline (#18/#19),104,
+teams,5,Original-Teile AMG-Mercedes (Persson),62,
+teams,6,Team Abt Sportsline Junior (#22/#23),61,
+teams,7,OPC Team Phoenix,38,
+teams,8,Service 24h AMG-Mercedes (Rosberg),31,
+teams,9,OPC Team Holzer I (#3/#4),19,
+teams,10,OPC Team Holzer II (#11),8,
+teams,11,OPC Euroteam,4,
+teams,12,Mamerow Racing Team,0,
+manufacturers,1,Mercedes-Benz,636,"de.wiki Markenwertung (all cars, QR+main points); official status unclear: motorsport.com (Dec 2002) calls the manufacturers classification new for 2003"
+manufacturers,2,Audi (Abt),165,see above
+manufacturers,3,Opel,69,see above

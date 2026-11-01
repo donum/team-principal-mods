@@ -1,0 +1,25 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+7,Gilles Magnus,BEL,1999-08-30,Comtoyou Racing,,Aston Martin Vantage AMR GT3 Evo,Aston Martin AMR16A 4.0 L twin-turbo V8,Pirelli,all,Rookie; car displays #007
+8,Nicolas Baert,BEL,2001-08-08,Comtoyou Racing,,Aston Martin Vantage AMR GT3 Evo,Aston Martin AMR16A 4.0 L twin-turbo V8,Pirelli,all,Rookie; car displays #008; son of team owner
+29,Ricardo Feller,SUI,2000-06-01,Land-Motorsport,Niederdreisbach,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Pirelli,all,Last-minute programme with family-owned 2021-built Audi after Allied Racing withdrew
+11,Marco Wittmann,GER,1989-11-24,Schubert Motorsport,Oschersleben,BMW M4 GT3 Evo,BMW P58 3.0 L twin-turbo I6,Pirelli,all,
+33,René Rast,GER,1986-10-26,Schubert Motorsport,Oschersleben,BMW M4 GT3 Evo,BMW P58 3.0 L twin-turbo I6,Pirelli,all,
+10,Ben Green,GBR,1998-02-02,Emil Frey Racing,Safenwil,Ferrari 296 GT3,Ferrari F163 3.0 L twin-turbo V6,Pirelli,all,
+14,Jack Aitken,GBR,1995-09-23,Emil Frey Racing,Safenwil,Ferrari 296 GT3,Ferrari F163 3.0 L twin-turbo V6,Pirelli,all,
+69,Thierry Vermeulen,NED,2002-07-29,Emil Frey Racing,Safenwil,Ferrari 296 GT3,Ferrari F163 3.0 L twin-turbo V6,Pirelli,all,
+36,Arjun Maini,IND,1997-12-10,HRT Ford Performance,,Ford Mustang GT3,Ford Coyote 5.4 L V8,Pirelli,all,Ford DTM debut
+64,Fabio Scherer,SUI,1999-06-13,HRT Ford Performance,,Ford Mustang GT3,Ford Coyote 5.4 L V8,Pirelli,all,Rookie classification (exception)
+1,Mirko Bortolotti,ITA,1990-01-10,Abt Sportsline,Kempten,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,Defending champion; Abt switched from Audi to Lamborghini
+2,Nicki Thiim,DEN,1989-04-17,Abt Sportsline,Kempten,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,
+19,Luca Engstler,GER,2000-03-08,TGI Team Lamborghini by GRT,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,
+63,Jordan Pepper,RSA,1996-07-31,TGI Team Lamborghini by GRT,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,
+71,Maximilian Paul,GER,2000-02-14,Paul Motorsport,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,
+16,Timo Glock,GER,1982-03-18,Dörr Motorsport,,McLaren 720S GT3 Evo,McLaren M840T 4.0 L twin-turbo V8,Pirelli,all,Returns after two years
+25,Ben Dörr,GER,2005-01-25,Dörr Motorsport,,McLaren 720S GT3 Evo,McLaren M840T 4.0 L twin-turbo V8,Pirelli,all,Rookie classification (exception)
+22,Lucas Auer,AUT,1994-09-11,Mercedes-AMG Team Landgraf,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,all,Runner-up
+84,Tom Kalender,GER,2008-03-27,Mercedes-AMG Team Landgraf,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,all,Rookie; youngest DTM driver ever (17)
+24,Maro Engel,GER,1985-08-27,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,all,Winward Racing; entry names Team Winward / Team Mann-Filter (car split not documented)
+48,Jules Gounon,FRA,1994-12-31,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,all,Winward Racing; see #24
+90,Ayhancan Güven,TUR,1998-01-02,Manthey EMA,Meuspath,Porsche 911 GT3 R (992),Porsche M97/80 4.2 L flat-6,Pirelli,all,Champion
+91,Thomas Preining,AUT,1998-07-21,Manthey EMA,Meuspath,Porsche 911 GT3 R (992),Porsche M97/80 4.2 L flat-6,Pirelli,all,
+92,Morris Schuring,NED,2005-02-20,Manthey Junior Team,Meuspath,Porsche 911 GT3 R (992),Porsche M97/80 4.2 L flat-6,Pirelli,all,Rookie of the Year

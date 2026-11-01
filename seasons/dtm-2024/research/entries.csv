@@ -1,0 +1,24 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+3,Kelvin van der Linde,RSA,1996-06-20,Abt Sportsline,Kempten,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Pirelli,all,Runner-up
+7,Ricardo Feller,SUI,2000-06-01,Abt Sportsline,Kempten,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Pirelli,all,
+11,Marco Wittmann,GER,1989-11-24,Schubert Motorsport,Oschersleben,BMW M4 GT3,BMW P58 3.0 L twin-turbo I6,Pirelli,all,Moved from Project 1 (insolvent)
+31,Sheldon van der Linde,RSA,1999-05-13,Schubert Motorsport,Oschersleben,BMW M4 GT3,BMW P58 3.0 L twin-turbo I6,Pirelli,all,
+33,René Rast,GER,1986-10-26,Schubert Motorsport,Oschersleben,BMW M4 GT3,BMW P58 3.0 L twin-turbo I6,Pirelli,all,
+14,Jack Aitken,GBR,1995-09-23,Emil Frey Racing,Safenwil,Ferrari 296 GT3,Ferrari F163 3.0 L twin-turbo V6,Pirelli,all,
+69,Thierry Vermeulen,NED,2002-07-29,Emil Frey Racing,Safenwil,Ferrari 296 GT3,Ferrari F163 3.0 L twin-turbo V6,Pirelli,all,
+19,Luca Engstler,GER,2000-03-08,Lamborghini Team Liqui Moly by GRT,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,
+63,Christian Engelhart,GER,1986-12-13,Lamborghini Team TGI by GRT,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,1-3,
+63,Franck Perera,FRA,1984-03-21,Lamborghini Team TGI by GRT,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,4-5;7-8,
+63,Jordan Pepper,RSA,1996-07-31,Lamborghini Team TGI by GRT,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,6,
+71,Maximilian Paul,GER,2000-02-14,Paul Motorsport,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,Privately entered
+92,Mirko Bortolotti,ITA,1990-01-10,SSR Performance,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,Champion (first Lamborghini DTM title)
+94,Nicki Thiim,DEN,1989-04-17,SSR Performance,,Lamborghini Huracán GT3 Evo 2,Lamborghini 5.2 L V10 (DGF),Pirelli,all,
+25,Ben Dörr,GER,2005-01-25,Dörr Motorsport,,McLaren 720S GT3 Evo,McLaren M840T 4.0 L twin-turbo V8,Pirelli,all,Project planned for 3 years
+85,Clemens Schmid,AUT,1990-08-18,Dörr Motorsport,,McLaren 720S GT3 Evo,McLaren M840T 4.0 L twin-turbo V8,Pirelli,all,
+4,Luca Stolz,GER,1995-07-29,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,1-7,
+4,Jules Gounon,AND,1994-12-31,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,8,
+36,Arjun Maini,IND,1997-12-10,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,all,
+22,Lucas Auer,AUT,1994-09-11,Mercedes-AMG Team Mann-Filter,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,all,Winward Racing entry
+130,Maro Engel,GER,1985-08-27,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Pirelli,all,Winward Racing entry
+90,Ayhancan Güven,TUR,1998-01-02,Manthey EMA,Meuspath,Porsche 911 GT3 R (992),Porsche M97/80 4.2 L flat-6,Pirelli,all,
+91,Thomas Preining,AUT,1998-07-21,Manthey EMA,Meuspath,Porsche 911 GT3 R (992),Porsche M97/80 4.2 L flat-6,Pirelli,all,Defending champion

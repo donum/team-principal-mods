@@ -1,0 +1,25 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+33,René Rast,GER,1986-10-26,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+53,Jamie Green,GBR,1982-06-14,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,1-2;4-9,Missed Misano (appendicitis)
+21,Pietro Fittipaldi,BRA,1996-06-25,Audi Sport Team Rosberg / Audi Sport Team WRT,Grâce-Hollogne (BEL) / Neustadt an der Weinstraße (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,1-2;4-9 (WRT); 3 (Rosberg),Rookie; at Misano drove Green's Rosberg car
+4,Robin Frijns,NED,1991-08-07,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+51,Nico Müller,SUI,1992-02-25,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+28,Loïc Duval,FRA,1982-06-12,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+99,Mike Rockenfeller,GER,1983-10-31,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+27,Jonathan Aberdein,RSA,1998-02-14,Audi Sport Team WRT,Grâce-Hollogne (BEL),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,Rookie; customer Audi team
+34,Andrea Dovizioso,ITA,1986-03-23,Audi Sport Team WRT,Grâce-Hollogne (BEL),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,3,"MotoGP rider, one-off"
+16,Timo Glock,GER,1982-03-18,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+25,Philipp Eng,AUT,1990-02-28,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+7,Bruno Spengler,CAN,1983-08-23,BMW Team RMG,Andernach (GER),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+11,Marco Wittmann,GER,1989-11-24,BMW Team RMG,Andernach (GER),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+31,Sheldon van der Linde,RSA,1999-05-13,BMW Team RBM,Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,Rookie
+47,Joel Eriksson,SWE,1998-06-28,BMW Team RBM,Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+3,Paul di Resta,GBR,1986-04-16,R-Motorsport,"Niederwil bei Gossau, St. Gallen (SUI)",Aston Martin Vantage DTM,HWA AFR Turbo 2.0 I4,Hankook,all,Teams standings: R-Motorsport I
+76,Jake Dennis,GBR,1995-06-16,R-Motorsport,"Niederwil bei Gossau, St. Gallen (SUI)",Aston Martin Vantage DTM,HWA AFR Turbo 2.0 I4,Hankook,all,Rookie; R-Motorsport I
+23,Daniel Juncadella,ESP,1991-05-07,R-Motorsport,"Niederwil bei Gossau, St. Gallen (SUI)",Aston Martin Vantage DTM,HWA AFR Turbo 2.0 I4,Hankook,all,R-Motorsport II
+62,Ferdinand von Habsburg,AUT,1997-06-21,R-Motorsport,"Niederwil bei Gossau, St. Gallen (SUI)",Aston Martin Vantage DTM,HWA AFR Turbo 2.0 I4,Hankook,all,Rookie; R-Motorsport II
+1,Jenson Button,GBR,1980-01-19,Team Kunimitsu,,Honda NSX-GT,Honda 2.0 I4 turbo (Super GT GT500),Hankook,9,"Super GT guest, not eligible for points"
+37,Ryō Hirakawa,JPN,1994-03-07,Lexus Team KeePer TOM'S,,Lexus LC 500,Lexus/TRD 2.0 I4 turbo (Super GT GT500),Hankook,9 (race 1),Super GT guest
+37,Nick Cassidy,NZL,1994-08-19,Lexus Team KeePer TOM'S,,Lexus LC 500,Lexus/TRD 2.0 I4 turbo (Super GT GT500),Hankook,9 (race 2),Super GT guest
+35,Tsugio Matsuda,JPN,1979-06-18,Nismo,,Nissan GT-R,Nissan 2.0 I4 turbo (Super GT GT500),Hankook,9 (race 1),Super GT guest
+35,Ronnie Quintarelli,ITA,1979-08-09,Nismo,,Nissan GT-R,Nissan 2.0 I4 turbo (Super GT GT500),Hankook,9 (race 2),Super GT guest

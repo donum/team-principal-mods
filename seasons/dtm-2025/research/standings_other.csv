@@ -1,0 +1,28 @@
+type,pos,name,points,notes
+teams,1,Manthey,392,Manthey EMA + Manthey Junior Team
+teams,2,Schubert Motorsport,330,
+teams,3,Winward Racing,319,
+teams,4,Emil Frey Racing,304,
+teams,5,TGI Team Lamborghini by GRT,234,
+teams,6,Landgraf Motorsport,210,
+teams,7,Abt Sportsline,116,
+teams,8,Land-Motorsport,101,
+teams,9,HRT Ford Performance,84,
+teams,10,Dörr Motorsport,69,
+teams,11,Paul Motorsport,40,
+teams,12,Comtoyou Racing,38,
+manufacturers,1,Mercedes-AMG,418,de.wiki shows lower totals for all makes (379/370/328/323/294/111...); en.wiki = motorsport-total
+manufacturers,2,Porsche,406,
+manufacturers,3,BMW,348,
+manufacturers,4,Ferrari,329,
+manufacturers,5,Lamborghini,313,
+manufacturers,6,Ford,119,
+manufacturers,7,Audi,118,
+manufacturers,8,McLaren,105,
+manufacturers,9,Aston Martin,69,
+rookies,1,Morris Schuring,409,Separate rookie points scale (en.wiki); Rookie of the Year
+rookies,2,Ben Dörr,394,
+rookies,3,Tom Kalender,355,
+rookies,4,Gilles Magnus,346,
+rookies,5,Fabio Scherer,258,
+rookies,6,Nicolas Baert,213,

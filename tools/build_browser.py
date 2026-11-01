@@ -37,6 +37,14 @@ def series_of(folder, md):
     return "DTM"
 
 
+ERAS = [(1984, 1992, "Production & Group A"), (1993, 1996, "Class 1"), (2000, 2011, "Masters V8"),
+        (2012, 2018, "Class One"), (2019, 2020, "Class One turbo"), (2021, 2100, "GT3")]
+
+
+def era_of(year):
+    return next((name for lo, hi, name in ERAS if lo <= year <= hi), "")
+
+
 def main():
     seasons = []
     for folder in sorted((REPO / "seasons").iterdir()):
@@ -58,6 +66,7 @@ def main():
             "id": folder.name,
             "year": int(folder.name.split("-")[1]),
             "series": series_of(folder.name, md),
+            "era": era_of(int(folder.name.split("-")[1])),
             "playable": (folder / "season.json").exists(),
             "champion": champion,
             "calendar": read_csv(research / "calendar.csv"),

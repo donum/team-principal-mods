@@ -1,0 +1,16 @@
+type,pos,name,points,notes
+teams,1,gooix/Original-Teile Mercedes-AMG,225,"HWA (Vietoris, Wehrlein)"
+teams,2,BMW Team RMG,206,
+teams,3,Audi Sport Team Abt Sportsline,201,
+teams,4,BMW Team MTEK,179,
+teams,5,Audi Sport Team Rosberg,176,
+teams,6,SILBERPFEIL Energy Mercedes-AMG,151,HWA
+teams,7,Audi Sport Team Abt,146,
+teams,8,BMW Team RBM,136,
+teams,9,Audi Sport Team Phoenix,134,
+teams,10,EURONICS/BWT Mercedes-AMG,107,ART Grand Prix
+teams,11,BMW Team Schnitzer,106,
+teams,12,PETRONAS Mercedes-AMG,51,Mücke
+manufacturers,1,BMW,602,Best BMW not counted at one race after exceeding engine allocation (de.wiki)
+manufacturers,2,Audi,595,"Audi scored 0 manufacturer points in Red Bull Ring race 2 (Scheider incident, after Ullrich radio instruction)"
+manufacturers,3,Mercedes-Benz,534,

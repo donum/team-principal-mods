@@ -1,0 +1,16 @@
+type,pos,name,points,notes
+teams,1,BMW Team RMG,203,
+teams,2,Audi Sport Team Abt Sportsline,138,
+teams,3,Audi Sport Team Phoenix,116,
+teams,4,Original-Teile/AMG-Mercedes (HWA),105,
+teams,5,Audi Sport Team Abt,104,
+teams,6,BMW Team Schnitzer,91,
+teams,7,Audi Sport Team Rosberg,53,
+teams,8,BMW Team RBM,47,
+teams,9,Gooix AMG-Mercedes (HWA),46,single car
+teams,10,EURONICS/FREE MAN'S WORLD AMG-Mercedes (HWA),46,
+teams,11,BMW Team MTEK,39,
+teams,12,Petronas/AMG-Mercedes (Mücke),22,
+manufacturers,1,Audi,411,
+manufacturers,2,BMW,380,
+manufacturers,3,Mercedes-Benz,219,

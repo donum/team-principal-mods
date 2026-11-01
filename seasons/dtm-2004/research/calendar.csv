@@ -1,0 +1,12 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2004-04-18,Hockenheimring,GP circuit,GER,4.574,1,37,169.238,Timed qualifying + Superpole (top 10),Gary Paffett,Pole: Alesi. Paffett first DTM win.
+2,2004-05-02,Circuito do Estoril,GP circuit,POR,4.163,1,37,154.771,Qualifying + Superpole,Christijan Albers,Pole: Ekström. New venue.
+3,2004-05-16,Adria International Raceway,Adria,ITA,2.702,1,47,126.994,Qualifying + Superpole,Mattias Ekström,Pole: Ekström.
+4,2004-06-06,EuroSpeedway Lausitz,road course,GER,4.534,1,37,167.758,Qualifying + Superpole,Mattias Ekström,Pole: Albers. Paffett disqualified.
+5,2004-06-27,Norisring,Nuremberg street circuit,GER,2.300,1,72,165.600,Qualifying + Superpole,Gary Paffett,Pole: Alesi.
+NC,2004-07-18,Shanghai,Pudong street circuit,CHN,2.840,1,22,62.480,Qualifying + Superpole,Gary Paffett,"Non-championship invitation race. Abandoned after Mayländer hit a manhole cover lifted by other cars (en.wiki). Pole: Paffett. Opels of Aïello, Dumbreck and Reuter did not take part; Capello (Joest A4) and Terting (Abt TT-R) added."
+6,2004-08-01,Nürburgring,short circuit,GER,3.629,1,41,148.789,Qualifying + Superpole,Gary Paffett,Pole: Paffett.
+7,2004-08-08,Motorsport Arena Oschersleben,GP circuit,GER,3.667,1,42,154.014,Qualifying + Superpole,Tom Kristensen,Pole: Tomczyk. Reuter 3rd = best Vectra result (de.wiki).
+8,2004-09-05,Circuit Park Zandvoort,GP circuit,NED,4.307,1,,,Qualifying + Superpole,Mattias Ekström,"Pole: Ekström. Red-flagged after Dumbreck crash (car rolled, driver unhurt); restarted for the last 10 laps (43.070 km) after a driver-demanded tyre change. Total race laps not documented."
+9,2004-09-19,Automotodrom Brno,GP circuit,CZE,5.403,1,30,162.090,Qualifying + Superpole,Mattias Ekström,Pole: Ekström. New venue.
+10,2004-10-03,Hockenheimring,GP circuit,GER,4.574,1,37,169.238,Qualifying + Superpole,Bernd Schneider,Pole: Tomczyk.

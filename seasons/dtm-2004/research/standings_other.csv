@@ -1,0 +1,14 @@
+type,pos,name,points,notes
+teams,1,Audi Sport Team Abt (#5/#6),113,
+teams,2,Vodafone / DaimlerChrysler Bank AMG-Mercedes (HWA #1/#2),86,
+teams,3,C-Klasse AMG-Mercedes (HWA #7/#8),76,
+teams,4,Audi Sport Team Abt Sportsline (#11/#12),44,
+teams,5,OPC Team Phoenix (all 3 cars),31,"de.wiki grouping by operating team. en.wiki instead lists 2-car entries: OPC Team 2 (#4/#15) 27, OPC Team 4 (#3/#14) 19, OPC Team 3 (#9/#10) 12"
+teams,6,OPC Team Holzer (all 3 cars),27,see above
+teams,7,Audi Sport Infineon Team Joest,11,
+teams,8,Original-Teile AMG-Mercedes (Persson),2,
+teams,9,OPC Euroteam,0,
+teams,10,Sonax Dark Dog AMG-Mercedes (Rosberg),0,
+manufacturers,1,Audi,168,
+manufacturers,2,Mercedes-Benz,164,
+manufacturers,3,Opel,58,

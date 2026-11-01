@@ -1,0 +1,12 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2012-04-29,Hockenheimring,Grand Prix circuit,GER,4.574,1,40,182.960,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Gary Paffett,Pole: Ekström; FL: Green; first race of new-regulation cars
+2,2012-05-06,Lausitzring,EuroSpeedway Lausitz DTM short circuit,GER,3.478,1,52,180.856,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,Pole: Spengler; FL: Green; first BMW win since return
+3,2012-05-20,Brands Hatch,Indy circuit,GBR,1.929,1,97,187.113,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Gary Paffett,Pole: Paffett; FL: Tomczyk
+4,2012-06-03,Spielberg,Red Bull Ring,AUT,4.326,1,47,203.322,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Edoardo Mortara,Pole: Mortara; FL: Scheider
+5,2012-07-01,Norisring,Nuremberg street circuit,GER,2.300,1,78,179.400,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Jamie Green,Pole: Paffett; FL: Green
+NC,2012-07-14/15,München,Olympiastadion (temporary stadium track),GER,,0,,,,Sat: Jamie Green/Ralf Schumacher; Sun: Mattias Ekström,non-championship show event in Munich Olympic Stadium
+6,2012-08-19,Nürburgring,Sprint circuit (GP short),GER,3.629,1,49,177.821,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,Pole/FL: Spengler
+7,2012-08-26,Zandvoort,Circuit Park Zandvoort GP,NED,4.307,1,43,185.201,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Edoardo Mortara,Pole: Scheider; FL: Paffett
+8,2012-09-16,Oschersleben,Motorsport Arena Oschersleben,GER,3.696,1,51,188.496,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,Pole: Spengler; FL: Merhi
+9,2012-09-30,Valencia,Circuit Ricardo Tormo,ESP,4.005,1,46,184.230,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Augusto Farfus,Pole: Farfus; FL: Spengler
+10,2012-10-21,Hockenheimring,Grand Prix circuit,GER,4.574,1,42,192.108,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,"Pole: Farfus; FL: Paffett; 42 laps per racingyears, de.wiki gives 173.812 km (=38 laps) - unresolved; Spengler clinched title"

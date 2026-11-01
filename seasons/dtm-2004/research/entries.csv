@@ -1,0 +1,25 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Bernd Schneider,GER,1964-07-20,Vodafone AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes C-Klasse DTM (W203, 2004)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+2,Christijan Albers,NED,1979-04-16,DaimlerChrysler Bank AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes C-Klasse DTM (W203, 2004)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+3,Marcel Fässler,SUI,1976-05-27,OPC Team Phoenix,Meuspath (Nürburgring),Opel Vectra GTS V8 DTM (2004),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,
+4,Laurent Aïello,FRA,1969-05-23,OPC Team Phoenix,Meuspath (Nürburgring),Opel Vectra GTS V8 DTM (2004),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,Did not race Shanghai (NC)
+5,Mattias Ekström,SWE,1978-07-14,Audi Sport Team Abt,Kempten,"Audi A4 DTM (R11, 2004)",Audi Sport V8 4.0 90deg,Dunlop,1-10,
+6,Martin Tomczyk,GER,1981-12-07,Audi Sport Team Abt,Kempten,"Audi A4 DTM (R11, 2004)",Audi Sport V8 4.0 90deg,Dunlop,1-10,
+7,Gary Paffett,GBR,1981-03-24,C-Klasse AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes C-Klasse DTM (W203, 2004)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,Promoted from Rosberg
+8,Jean Alesi,FRA,1964-06-11,C-Klasse AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes C-Klasse DTM (W203, 2004)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+9,Heinz-Harald Frentzen,GER,1967-05-18,OPC Team Holzer,,Opel Vectra GTS V8 DTM (2004),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,"Ex-F1, DTM debut"
+10,Manuel Reuter,GER,1961-12-06,OPC Team Holzer,,Opel Vectra GTS V8 DTM (2004),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,Did not race Shanghai (NC)
+11,Christian Abt,GER,1967-05-08,Audi Sport Team Abt Sportsline,Kempten,"Audi A4 DTM (R11, 2004)",Audi Sport V8 4.0 90deg,Dunlop,1-10,
+12,Tom Kristensen,DEN,1967-07-07,Audi Sport Team Abt Sportsline,Kempten,"Audi A4 DTM (R11, 2004)",Audi Sport V8 4.0 90deg,Dunlop,1-10,"Le Mans winner, DTM debut"
+14,Peter Dumbreck,GBR,1973-10-13,OPC Team Phoenix,Meuspath (Nürburgring),Opel Vectra GTS V8 DTM (2004),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,Did not race Shanghai (NC)
+15,Timo Scheider,GER,1978-11-10,OPC Team Holzer,,Opel Vectra GTS V8 DTM (2004),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,
+16,Jeroen Bleekemolen,NED,1981-10-23,OPC Euroteam,,"Opel Astra V8 Coupé (2003-spec, year-old)","Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,"1-7,9-10,NC",
+16,Jeroen Bleekemolen,NED,1981-10-23,OPC Euroteam,,Opel Vectra GTS V8 DTM (2004),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,8,Vectra for his home race at Zandvoort
+17,Markus Winkelhock,GER,1980-06-13,Original-Teile AMG-Mercedes (Persson Motorsport),,"AMG-Mercedes CLK-DTM (2003-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,Rookie
+18,Stefan Mücke,GER,1981-11-22,Original-Teile AMG-Mercedes (Persson Motorsport),,"AMG-Mercedes CLK-DTM (2003-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+20,Jarek Janiš,CZE,1983-07-08,Sonax Dark Dog AMG-Mercedes (Team Rosberg),Neustadt an der Weinstraße,"AMG-Mercedes CLK-DTM (2003-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,Rookie
+21,Bernd Mayländer,GER,1971-05-29,Sonax Dark Dog AMG-Mercedes (Team Rosberg),Neustadt an der Weinstraße,"AMG-Mercedes CLK-DTM (2003-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+22,Rinaldo Capello,ITA,1964-06-17,Audi Sport Infineon Team Joest,Wald-Michelbach,"Audi A4 DTM (R11, 2004)",Audi Sport V8 4.0 90deg,Dunlop,NC (Shanghai),Non-championship only
+23,Peter Terting,GER,1984-02-19,Audi Sport Team Abt,Kempten,Abt-Audi TT-R (2003-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,NC (Shanghai),Non-championship only
+44,Emanuele Pirro,ITA,1962-01-12,Audi Sport Infineon Team Joest,Wald-Michelbach,"Audi A4 DTM (R11, 2004)",Audi Sport V8 4.0 90deg,Dunlop,1-10,
+45,Frank Biela,GER,1964-08-02,Audi Sport Infineon Team Joest,Wald-Michelbach,"Audi A4 DTM (R11, 2004)",Audi Sport V8 4.0 90deg,Dunlop,1-10,

@@ -1,0 +1,11 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2002-04-21,Hockenheimring,short course during rebuild (ADAC-Preis Hockenheim),GER,2.604,2,13; 39,33.852; 101.556,QR ~35 km (3-2-1 pts) sets main-race grid,QR: Martin Tomczyk; Main: Laurent Aïello,"Pole: Aïello. Laps/length from de.wiki. en.wiki says both 2002 Hockenheim rounds used the new circuit, but 2.604 km is not the new 4.574 km GP layout (conflict)."
+2,2002-05-05,Circuit Zolder,GP circuit (DTM Zolder),BEL,3.977,2,7; 21,27.839; 83.517,QR + main,QR: Laurent Aïello; Main: Laurent Aïello,Pole: Tomczyk.
+3,2002-05-19,Donington Park,GP circuit (The Donington Park German DTM),GBR,4.023,2,8; 25,32.184; 100.575,QR + main,QR: Jean Alesi; Main: Jean Alesi,"Pole: Reuter. Alzen hit stalled Winkelhock at QR start, both unhurt. First DTM race in the UK."
+4,2002-06-02,Sachsenring,(ADAC-Preis Sachsenring),GER,3.645,2,9; 28,32.805; 102.060,QR + main,QR: Laurent Aïello; Main: Laurent Aïello,Pole: Aïello.
+5,2002-06-30,Norisring,Nuremberg street circuit,GER,2.300,2,14; 44,32.200; 101.200,QR + main,QR: Mattias Ekström; Main: Laurent Aïello,Pole: Ekström.
+6,2002-07-14,EuroSpeedway Lausitz,road course (Lausitz 200),GER,4.534,2,7; 23,31.738; 104.282,QR + main,QR: Laurent Aïello; Main: Bernd Schneider,Pole: Aïello.
+7,2002-08-04,Nürburgring,short circuit (Großer Preis der Tourenwagen),GER,3.625,2,9; 28,32.625; 101.500,QR + main,QR: Uwe Alzen; Main: Uwe Alzen,Pole: Alzen. Date: en.wiki + de race section 4 Aug; de.wiki calendar table says 26 Aug (conflict).
+8,2002-09-08,A1-Ring,Spielberg GP circuit,AUT,4.326,2,8; 24,34.608; 103.824,QR + main,QR: Mattias Ekström; Main: Uwe Alzen,Pole: Aïello.
+9,2002-09-29,Circuit Park Zandvoort,GP circuit,NED,4.300,2,8; 24,34.400; 103.200,QR + main,QR: Marcel Fässler; Main: Mattias Ekström,Pole: Aïello. de.wiki uses 4.300 km here (4.307 in 2001/2004).
+10,2002-10-06,Hockenheimring,new Grand Prix circuit (DMV-Preis Hockenheim),GER,4.574,2,8; 22,36.592; 100.628,QR + main,QR: Laurent Aïello; Main: Bernd Schneider,Pole: Schneider. First DTM race on the rebuilt Hockenheim layout.

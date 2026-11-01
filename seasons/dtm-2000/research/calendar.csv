@@ -1,0 +1,10 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2000-05-28,Hockenheimring,Grand Prix circuit (Rennsport-Festival),GER,6.823,2,15; ,102.345; 83.173,,H1: Bernd Schneider; H2: Bernd Schneider,"Pole: Schneider. de.wiki gives H2 as 83.173 km, which is not a whole number of 6.823 km laps (unverified; H2 lap count unknown). Length from 102.345 km / 15 laps."
+2,2000-06-18,Motorsport Arena Oschersleben,GP circuit (ADAC-Preis von Sachsen-Anhalt),GER,3.667,2,28; 28,102.676; 102.676,,H1: Manuel Reuter; H2: Manuel Reuter,Pole: Reuter. Laps derived from distance/length.
+3,2000-07-09,Norisring,Nuremberg street circuit (Norisring Speedweekend),GER,2.300,2,44; 44,101.200; 101.200,,H1: Joachim Winkelhock; H2: Bernd Schneider,Pole: Winkelhock.
+4,2000-08-06,Sachsenring,(ADAC-Preis Sachsenring),GER,,2,,101.580; 81.264,,H1: Klaus Ludwig; H2: Klaus Ludwig,"Date: en.wiki 6 Aug (Sunday); de.wiki table says 4 Aug (a Friday, likely error). Distances imply 30/24 laps of 3.386 km (unverified). Pole: Ludwig."
+5,2000-08-20,Nürburgring,GP-Strecke (Großer Preis der Tourenwagen),GER,4.556,2,22; 22,100.232; 100.232,,H1: Bernd Schneider; H2: Bernd Schneider,Pole: Schneider. Length = 100.232/22.
+6,2000-09-03,EuroSpeedway Lausitz,(Rundstreckenrennen Lausitzring),GER,,0,,,,,Both races cancelled (torrential rain); no points. Qualifying was held (pole Schneider per de.wiki).
+7,2000-09-24,Motorsport Arena Oschersleben,GP circuit (ADAC-Preis von Niedersachsen),GER,3.667,2,25; 28,91.675; 102.676,,H1: Uwe Alzen; H2: Bernd Schneider,Pole: Schneider. H1 3 laps short of the usual 28 (reason not documented).
+8,2000-10-08,Nürburgring,(Eifelrennen),GER,,2,,100.122; 100.122,,H1: Manuel Reuter; H2: Manuel Reuter,Pole: Winkelhock. 100.122 km is not a whole number of 4.556 km laps; layout/lap count unverified.
+9,2000-10-29,Hockenheimring,Grand Prix circuit (ADAC-Preis Hockenheim),GER,6.823,2,15; 15,102.345; 102.345,,H1: Uwe Alzen; H2: Uwe Alzen,Pole: Reuter.

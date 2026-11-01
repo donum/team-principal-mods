@@ -1,0 +1,24 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+2,Bernd Schneider,GER,1964-07-20,Vodafone AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2006 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec; HWA Team
+3,Jamie Green,GBR,1982-06-14,Salzgitter AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2006 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec; HWA Team
+4,Martin Tomczyk,GER,1981-12-07,Audi Sport Team Abt Sportsline,Kempten,Audi A4 DTM 2006 (R12 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec
+5,Mattias Ekström,SWE,1978-07-14,Audi Sport Team Abt Sportsline,Kempten,Audi A4 DTM 2006 (R12 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec
+6,Heinz-Harald Frentzen,GER,1967-05-18,Audi Sport Team Abt,Kempten,Audi A4 DTM 2006 (R12 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec; moved from Opel
+7,Tom Kristensen,DEN,1967-07-07,Audi Sport Team Abt,Kempten,Audi A4 DTM 2006 (R12 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec
+8,Mika Häkkinen,FIN,1968-09-28,DaimlerChrysler Bank AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2006 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec; HWA Team
+9,Bruno Spengler,CAN,1983-08-23,DaimlerChrysler Bank AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2006 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2006-spec; promoted from Persson
+10,Jean Alesi,FRA,1964-06-11,Stern AMG-Mercedes,,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec Jahreswagen; Persson Motorsport; final DTM season
+11,Alexandros Margaritis,GRE,1984-09-20,Easy Rent AMG-Mercedes,,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec Jahreswagen; Persson Motorsport
+12,Christian Abt,GER,1967-05-08,Audi Sport Team Phoenix,,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec Jahreswagen
+14,Pierre Kaffer,GER,1976-11-07,Audi Sport Team Phoenix,,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec Jahreswagen
+15,Frank Stippler,GER,1975-04-09,Audi Sport Team Rosberg,Neustadt an der Weinstraße,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,"2005-spec Jahreswagen; Rosberg returned after one-year absence, now with Audi"
+16,Timo Scheider,GER,1978-11-10,Audi Sport Team Rosberg,Neustadt an der Weinstraße,Audi A4 DTM 2005 (R12),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec Jahreswagen
+17,Stefan Mücke,GER,1981-11-22,TV-Spielfilm AMG-Mercedes,,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec Jahreswagen; Mücke Motorsport
+18,Daniel la Rosa,GER,1985-10-04,TrekStor AMG-Mercedes,,AMG-Mercedes C-Klasse 2005 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2005-spec Jahreswagen; Mücke Motorsport; rookie
+19,Olivier Tielemans,NED,1984-06-01,Futurecom TME,Greding,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,1-3,2004-spec (two-year-old) car; Colin Kolles team
+19,Jeroen Bleekemolen,NED,1981-10-23,Futurecom TME,Greding,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,4-5,2004-spec; replaced after sponsorship troubles
+19,Nicolas Kiesa,DEN,1978-03-03,Futurecom TME,Greding,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,6-8,2004-spec; injured in motocross accident
+19,Thed Björk,SWE,1980-12-14,Futurecom TME,Greding,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,9-10,2004-spec
+20,Vanina Ickx,BEL,1975-02-16,Futurecom TME,Greding,Audi A4 DTM 2004 (R11),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec; rookie
+21,Mathias Lauda,AUT,1981-01-30,Junge Gebrauchte AMG-Mercedes,,AMG-Mercedes C-Klasse 2004 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec (two-year-old) car; Persson Motorsport; rookie
+22,Susie Stoddart,GBR,1982-12-06,AutoScout24 AMG-Mercedes,,AMG-Mercedes C-Klasse 2004 (W203),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2004-spec (two-year-old) car; Mücke Motorsport; rookie (later Susie Wolff)

@@ -1,0 +1,12 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2010-04-25,Hockenheimring,Grand Prix circuit,GER,4.574,1,39,178.386,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Gary Paffett,Pole: Paffett; FL: Spengler
+2,2010-05-23,Valencia,Circuit Ricardo Tormo,ESP,4.005,1,45,180.225,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Mattias Ekström,Pole/FL: Ekström; first DTM race at Valencia
+3,2010-06-06,Lausitzring,EuroSpeedway Lausitz DTM short circuit,GER,3.478,1,52,180.856,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,Pole: di Resta; FL: Rockenfeller
+4,2010-07-04,Norisring,Nuremberg street circuit,GER,2.300,1,82,188.600,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Jamie Green,Pole/FL: R. Schumacher; pl.wiki lists 80 laps/184 km
+5,2010-08-08,Nürburgring,Sprint circuit (GP short),GER,3.629,1,49,177.821,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,Pole: Ekström; FL: Spengler; pl.wiki lists 48 laps
+6,2010-08-22,Zandvoort,Circuit Park Zandvoort GP,NED,4.307,1,42,180.894,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Gary Paffett,Pole/FL: Scheider; pl.wiki lists 41 laps
+7,2010-09-05,Brands Hatch,Indy circuit,GBR,1.929,1,98,189.042,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Paul di Resta,Pole: di Resta; FL: Molina
+8,2010-09-19,Oschersleben,Motorsport Arena Oschersleben,GER,3.696,1,50,184.800,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Paul di Resta,Pole: di Resta; FL: Scheider; pl.wiki lists 47 laps
+9,2010-10-17,Hockenheimring,"3.736 km layout (en.wiki: ""National Circuit"")",GER,3.736,1,47,175.592,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Paul di Resta,"Pole: Scheider; FL: di Resta; 47 laps x 3.736 km per pl.wiki/racingyears, matches de.wiki 175.592 km; layout name unverified"
+10,2010-10-31,Adria,Adria International Raceway,ITA,2.702,1,38,102.676,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Timo Scheider,"Pole: Paffett; FL: Ekström; added mid-season; 38 laps per pl.wiki/racingyears, de.wiki gives 159.418 km (=59 laps) - unresolved"
+11,2010-11-28,Shanghai,Shanghai Pudong street circuit,CHN,2.465,1,49,120.785,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Gary Paffett,"Pole: di Resta; FL: Coulthard; 60 laps (147.9 km) scheduled per de.wiki; red-flagged early after ~49-50 laps, full points"

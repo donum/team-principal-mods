@@ -1,0 +1,24 @@
+type,pos,name,points,notes
+teams,1,Schubert Motorsport,226,
+teams,2,Mercedes-AMG Team Winward,152,
+teams,3,Team Abt Sportsline,152,
+teams,4,Team Abt,149,Car 33 (Rast)
+teams,5,Team Rosberg,135,
+teams,6,Mercedes-AMG Team HRT,130,
+teams,7,Red Bull AlphaTauri AF Corse,129,
+teams,8,SSR Performance,119,
+teams,9,GRT,118,
+teams,10,KÜS Team Bernhard,115,
+teams,11,Walkenhorst Motorsport,101,
+teams,12,Mercedes-AMG Team GruppeM Racing,81,
+teams,13,Mercedes-AMG Team Winward Racing,73,"Car 1 (Götz), per points match"
+teams,14,Attempto Racing,13,
+teams,15,GRT grasser-racing.com,12,
+teams,16,Mercedes-AMG Team Mücke Motorsport,1,
+teams,17,T3 Motorsport,0,
+manufacturers,1,Audi,441,
+manufacturers,2,Mercedes-AMG,413,de.wiki 405; en.wiki and motorsport-total 413
+manufacturers,3,BMW,327,
+manufacturers,4,Porsche,234,
+manufacturers,5,Lamborghini,130,
+manufacturers,6,Ferrari,129,

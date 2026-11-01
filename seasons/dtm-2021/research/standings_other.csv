@@ -1,0 +1,18 @@
+type,pos,name,points,notes
+teams,1,Red Bull AlphaTauri AF Corse,368,
+teams,2,Team Abt Sportsline,296,"Cars 3, 9, 37; motorsport-total combines Abt entries as 304"
+teams,3,Mercedes-AMG Team Winward,281,
+teams,4,Mercedes-AMG Team HRT,262,
+teams,5,Walkenhorst Motorsport,171,
+teams,6,Mercedes-AMG Team GruppeM Racing,77,
+teams,7,ROWE Racing,64,
+teams,8,Team Rosberg,55,
+teams,9,Mercedes-AMG Team GetSpeed,48,
+teams,10,T3 Motorsport,43,"de.wiki 44, motorsport-total 48 (conflict)"
+teams,11,Mercedes-AMG Team Mücke Motorsport,34,
+teams,12,Team Abt,8,Car 99 only
+manufacturers,1,Mercedes-AMG,617,Max. 3 best cars per make per race incl. qualifying (de.wiki)
+manufacturers,2,Ferrari,368,
+manufacturers,3,Audi,359,
+manufacturers,4,BMW,235,
+manufacturers,5,Lamborghini,43,

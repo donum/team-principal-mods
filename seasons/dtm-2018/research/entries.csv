@@ -1,0 +1,22 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+2,Gary Paffett,GBR,1981-03-24,Mercedes-AMG Motorsport PETRONAS,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Champion
+94,Pascal Wehrlein,GER,1994-10-18,Mercedes-AMG Motorsport PETRONAS,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Returned from F1
+3,Paul di Resta,GBR,1986-04-16,Mercedes-AMG Motorsport REMUS,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,
+23,Daniel Juncadella,ESP,1991-05-07,Mercedes-AMG Motorsport REMUS,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Returned
+17,Sébastien Ogier,FRA,1983-12-17,Mercedes-AMG Motorsport REMUS,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,9,"Guest entry, not eligible for points"
+22,Lucas Auer,AUT,1994-09-11,SILBERPFEIL Energy Mercedes-AMG Motorsport,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,
+48,Edoardo Mortara,ITA,1987-01-12,SILBERPFEIL Energy Mercedes-AMG Motorsport,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,
+4,Robin Frijns,NED,1991-08-07,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,Rookie
+51,Nico Müller,SUI,1992-02-25,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+5,Mattias Ekström,SWE,1978-07-14,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,1,"Farewell guest entry, not eligible for points"
+28,Loïc Duval,FRA,1982-06-12,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+99,Mike Rockenfeller,GER,1983-10-31,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+33,René Rast,GER,1986-10-26,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+53,Jamie Green,GBR,1982-06-14,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+7,Bruno Spengler,CAN,1983-08-23,BMW Team RBM,Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+47,Joel Eriksson,SWE,1998-06-28,BMW Team RBM,Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,Rookie
+11,Marco Wittmann,GER,1989-11-24,BMW Team RMG,Andernach (GER),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+15,Augusto Farfus,BRA,1983-09-03,BMW Team RMG,Andernach (GER),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+16,Timo Glock,GER,1982-03-18,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,
+25,Philipp Eng,AUT,1990-02-28,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,all,"Rookie (en.wiki lists him at RBM in driver changes, RMR in entry table)"
+12,Alex Zanardi,ITA,1966-10-23,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 DTM,BMW P66/1 4.0 V8 (NA),Hankook,7,"Guest entry, not eligible for points"

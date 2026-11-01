@@ -1,0 +1,31 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+3,Kelvin van der Linde,RSA,1996-06-20,Team Abt Sportsline,Kempten,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,all,
+9,Mike Rockenfeller,GER,1983-10-31,Team Abt Sportsline,Kempten,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,all,
+37,Lucas di Grassi,BRA,1984-08-11,Team Abt Sportsline,Kempten,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,7-8,Guest (not eligible for points)
+99,Sophia Flörsch,GER,2000-12-01,Team Abt,Kempten,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,1-3;5-8,Junior
+99,Markus Winkelhock,GER,1980-06-13,Team Abt,Kempten,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,4,Replaced Flörsch at Nürburgring
+12,Dev Gore,USA,1997-07-31,Team Rosberg,Neustadt an der Weinstraße,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,1-3;5-8,"de.wiki: races 1-6, 9-10, 12-16 (also missed Assen race 1)"
+12,Christopher Haase,GER,1987-09-26,Team Rosberg,Neustadt an der Weinstraße,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,4,Replaced Gore at Nürburgring
+51,Nico Müller,SUI,1992-02-25,Team Rosberg,Neustadt an der Weinstraße,Audi R8 LMS Evo,Audi 5.2 L V10 (BXA),Michelin,all,
+11,Marco Wittmann,GER,1989-11-24,Walkenhorst Motorsport,Melle,BMW M6 GT3,BMW S63 4.4 L twin-turbo V8,Michelin,all,
+16,Timo Glock,GER,1982-03-18,ROWE Racing,St. Ingbert,BMW M6 GT3,BMW S63 4.4 L twin-turbo V8,Michelin,all,
+31,Sheldon van der Linde,RSA,1999-05-13,ROWE Racing,St. Ingbert,BMW M6 GT3,BMW S63 4.4 L twin-turbo V8,Michelin,all,Junior
+23,Alex Albon,THA,1996-03-23,AlphaTauri AF Corse,Piacenza,Ferrari 488 GT3 Evo 2020,Ferrari F154 3.9 L twin-turbo V8,Michelin,1-7,Red Bull backing; teams' standings entry 'Red Bull AlphaTauri AF Corse'
+23,Nick Cassidy,NZL,1994-08-19,AlphaTauri AF Corse,Piacenza,Ferrari 488 GT3 Evo 2020,Ferrari F154 3.9 L twin-turbo V8,Michelin,8,Replaced Albon at Norisring finale
+30,Liam Lawson,NZL,2002-02-11,Red Bull AF Corse,Piacenza,Ferrari 488 GT3 Evo 2020,Ferrari F154 3.9 L twin-turbo V8,Michelin,all,Junior; runner-up
+10,Esteban Muth,BEL,2001-10-30,T3 Motorsport,Dresden,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,all,Junior
+26,Esmee Hawkey,GBR,1998-03-02,T3 Motorsport,Dresden,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,all,
+63,Mirko Bortolotti,ITA,1990-01-10,T3 Motorsport,Dresden,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,6,Guest (2nd in Assen race 1)
+71,Maximilian Paul,GER,2000-02-14,T3 Motorsport,Dresden,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,5,Guest
+15,Christian Klien,AUT,1983-02-07,JP Motorsport,,McLaren 720S GT3,McLaren M840T 4.0 L twin-turbo V8,Michelin,3-4;6,Guest; Polish team
+4,Maximilian Götz,GER,1986-02-04,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,Champion
+5,Vincent Abril,MON,1995-03-01,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+6,Hubert Haupt,GER,1969-04-30,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,4;7,Guest; team founder
+7,Luca Stolz,GER,1995-07-29,Mercedes-AMG Team Toksport WRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,4,Guest
+8,Daniel Juncadella,ESP,1991-05-07,Mercedes-AMG Team GruppeM Racing,Hong Kong,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,Hong Kong team
+18,Maximilian Buhk,GER,1992-12-09,Mercedes-AMG Team Mücke Motorsport,Berlin,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,1-6;8,"Car planned for Gary Paffett, who never raced (Formula E clashes, COVID travel rules)"
+18,Marvin Dienst,GER,1997-02-24,Mercedes-AMG Team Mücke Motorsport,Berlin,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,7,
+22,Lucas Auer,AUT,1994-09-11,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,US team (Winward/HTP)
+57,Philip Ellis,SUI,1992-10-09,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+36,Arjun Maini,IND,1997-12-10,Mercedes-AMG Team GetSpeed,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,"First Indian DTM driver; de.wiki: races 1-5, 7-16"
+92,Michael Ammermüller,GER,1986-02-14,SSR Performance,,Porsche 911 GT3 R (991.2),Porsche 4.0 L flat-6,Michelin,4,Guest

@@ -1,0 +1,13 @@
+type,pos,name,points,notes
+teams,1,Audi Sport Team Rosberg,447,
+teams,2,Audi Sport Team Abt Sportsline,407,
+teams,3,Audi Sport Team Phoenix,316,
+teams,4,BMW Team RMG,308,
+teams,5,BMW Team RMR,202,
+teams,6,BMW Team RBM,103,
+teams,7,Audi Sport Team WRT,79,
+teams,8,R-Motorsport I,38,"#3, #76"
+teams,9,R-Motorsport II,26,"#23, #62"
+manufacturers,1,Audi,1132,Best 4 cars per make per race counted
+manufacturers,2,BMW,550,
+manufacturers,3,Aston Martin,49,

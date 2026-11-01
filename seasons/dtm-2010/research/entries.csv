@@ -1,0 +1,20 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Timo Scheider,german,1978-11-10,Audi Sport Team Abt [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Dunlop,1-11,reigning champion
+2,Oliver Jarvis,british,1984-01-09,Audi Sport Team Abt [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Dunlop,1-11,
+3,Gary Paffett,british,1981-03-24,Salzgitter AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,
+4,Bruno Spengler,canadian,1983-08-23,Mercedes-Benz Bank AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,
+5,Mattias Ekström,swedish,1978-07-14,Audi Sport Team Abt Sportsline [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Dunlop,1-11,
+6,Martin Tomczyk,german,1981-12-07,Audi Sport Team Abt Sportsline [Abt Sportsline],Kempten,Audi A4 DTM (2009-spec),Audi 4.0 V8 (90°),Dunlop,1-11,
+7,Paul di Resta,british,1986-04-16,AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,champion
+8,Ralf Schumacher,german,1975-06-30,Laureus AMG-Mercedes [HWA AG],Affalterbach,"AMG-Mercedes C-Klasse (W204, 2009-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,
+9,Alexandre Prémat,french,1982-04-05,Audi Sport Team Phoenix [Phoenix Racing],Meuspath,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Dunlop,1-10,dropped before finale
+9,Darryl O'Young,hong kong,1980-03-26,Audi Sport Team Phoenix [Phoenix Racing],Meuspath,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Dunlop,11,DNS in race after qualifying crash; de.wiki flags him CHN
+10,Mike Rockenfeller,german,1983-10-31,Audi Sport Team Phoenix [Phoenix Racing],Meuspath,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Dunlop,1-11,
+11,Jamie Green,british,1982-06-14,Junge Sterne AMG-Mercedes [Persson Motorsport],,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,
+12,Susie Stoddart,british,1982-12-06,TV Spielfilm AMG-Mercedes [Persson Motorsport],,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,later Susie Wolff
+14,Markus Winkelhock,german,1980-06-13,Audi Sport Team Rosberg [Team Rosberg],,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Dunlop,1-11,
+15,Katherine Legge,british,1980-07-12,Audi Sport Team Rosberg [Team Rosberg],,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Dunlop,1-11,
+16,Maro Engel,german,1985-08-27,GQ AMG-Mercedes [Mücke Motorsport],Berlin,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,
+17,David Coulthard,british,1971-03-27,Deutsche Post AMG-Mercedes [Mücke Motorsport],Berlin,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,DTM debut
+18,Miguel Molina,spanish,1989-02-17,Audi Sport Rookie Team Abt [Abt Sportsline],Kempten,Audi A4 DTM (2008-spec),Audi 4.0 V8 (90°),Dunlop,1-11,rookie
+21,Congfu Cheng,chinese,1984-08-15,Stern AMG-Mercedes [Persson Motorsport],,"AMG-Mercedes C-Klasse (W204, 2008-spec)",Mercedes-Benz 4.0 V8 (90°),Dunlop,1-11,rookie

@@ -1,0 +1,11 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2014-05-04,Hockenheimring,Grand Prix circuit,GER,4.574,1,42,192.108,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Marco Wittmann,Pole: Tambay; FL: Tomczyk; BMW M4 wins on debut
+2,2014-05-18,Oschersleben,Motorsport Arena Oschersleben,GER,3.696,1,44,162.624,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Christian Vietoris,Pole: Wittmann; FL: Molina; 44 laps completed per DTM fan wiki (racingyears lists 51; safety-car periods)
+3,2014-06-01,Hungaroring,Hungaroring GP,HUN,4.381,1,41,179.621,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Marco Wittmann,Pole: Wittmann; FL: Nico Müller; first DTM race in Hungary
+4,2014-06-29,Norisring,Nuremberg street circuit,GER,2.300,1,82,188.600,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Robert Wickens,"Pole: Wickens; FL: Ekström; wet safety-car start, switched to timed finish; 82 laps (racingyears 83)"
+5,2014-07-13,Moscow Raceway,full layout (Volokolamsk),RUS,3.931,1,46,180.826,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Maxime Martin,Pole: Martin; FL: Molina; 46 laps per fan wiki (racingyears 48)
+6,2014-08-03,Spielberg,Red Bull Ring,AUT,4.326,1,47,203.322,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Marco Wittmann,Pole: Wickens; FL: Rockenfeller
+7,2014-08-17,Nürburgring,Sprint circuit (GP short),GER,3.629,1,49,177.821,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Marco Wittmann,Pole/FL: Wittmann
+8,2014-09-14,Lausitzring,EuroSpeedway Lausitz DTM short circuit,GER,3.478,1,52,180.856,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Pascal Wehrlein,Pole: Wehrlein; FL: Scheider; Wittmann clinched title
+9,2014-09-28,Zandvoort,Circuit Park Zandvoort GP,NED,4.307,1,43,185.201,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Mattias Ekström,Pole: Rockenfeller; FL: Wittmann; replaced cancelled Guangzhou street race
+10,2014-10-19,Hockenheimring,Grand Prix circuit,GER,4.574,1,42,192.108,F1-style knockout Q1-Q2-Q3 (single-lap shootout dropped),R: Mattias Ekström,Pole: Molina; FL: Wittmann

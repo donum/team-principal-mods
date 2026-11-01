@@ -1,0 +1,18 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+4,Robin Frijns,NED,1991-08-07,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+51,Nico Müller,SUI,1992-02-25,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+33,René Rast,GER,1986-10-26,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,Champion
+53,Jamie Green,GBR,1982-06-14,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+28,Loïc Duval,FRA,1982-06-12,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,1-7;9,Missed round 8 (Petit Le Mans clash)
+19,Benoît Tréluyer,FRA,1976-12-07,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,8,Stand-in for Duval
+99,Mike Rockenfeller,GER,1983-10-31,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,
+10,Harrison Newey,GBR,1998-07-25,Audi Sport Team WRT,Grâce-Hollogne (BEL),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,Rookie; replaced Ed Jones (withdrew pre-season)
+13,Fabio Scherer,SUI,1999-06-13,Audi Sport Team WRT,Grâce-Hollogne (BEL),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,Rookie
+62,Ferdinand von Habsburg,AUT,1997-06-21,Audi Sport Team WRT,Grâce-Hollogne (BEL),Audi RS 5 Turbo DTM,Audi RC8 2.0 TFSI I4 turbo,Hankook,all,Moved from R-Motorsport
+11,Marco Wittmann,GER,1989-11-24,BMW Team RMG,Andernach (GER),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+16,Timo Glock,GER,1982-03-18,BMW Team RMG,Andernach (GER),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+22,Lucas Auer,AUT,1994-09-11,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,Returned (ex-Mercedes)
+27,Jonathan Aberdein,RSA,1998-02-14,BMW Team RMR,Andernach (GER) / Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,Moved from Audi WRT
+25,Philipp Eng,AUT,1990-02-28,BMW Team RBM,Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+31,Sheldon van der Linde,RSA,1999-05-13,BMW Team RBM,Mechelen (BEL),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,
+8,Robert Kubica,POL,1984-12-07,Orlen Team ART,Saint-Pierre-du-Perray (FRA),BMW M4 Turbo DTM,BMW P48 Turbo 2.0 I4,Hankook,all,BMW customer car; DTM debut

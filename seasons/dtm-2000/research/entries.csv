@@ -1,0 +1,23 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Bernd Schneider,GER,1964-07-20,D2 AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,
+2,Thomas Jäger,GER,1976-10-27,D2 AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,
+3,Uwe Alzen,GER,1967-08-18,Opel Team Holzer (1),,Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+4,Joachim Winkelhock,GER,1960-10-24,Opel Team Holzer (1),,Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+5,Klaus Ludwig,GER,1949-10-05,Warsteiner AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,
+6,Marcel Fässler,SUI,1976-05-27,Warsteiner AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,
+7,Manuel Reuter,GER,1961-12-06,Opel Team Phoenix,Meuspath (Nürburgring),Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+8,Michael Bartels,GER,1968-03-08,Opel Team Phoenix,Meuspath (Nürburgring),Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+9,Laurent Aïello,FRA,1969-05-23,Abt Sportsline (1),Kempten,Abt-Audi TT-R (2000-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,"1,3-9",Number per de/en.wiki; speedsport-magazine lists Aïello as #10 and Abt as #9 (conflict)
+10,Christian Abt,GER,1967-05-08,Abt Sportsline (1),Kempten,Abt-Audi TT-R (2000-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,"1,3-9",See #9 note
+11,Éric Hélary,FRA,1966-08-10,Opel Team Holzer (2),,Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+12,Christian Menzel,GER,1971-06-22,Opel Team Irmscher,Remshalden,Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+14,Pedro Lamy,POR,1972-03-20,24h Service AMG-Mercedes (Team Rosberg),Neustadt an der Weinstraße,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,"Ran #14 at the start, #24 after sponsor Service 24h arrived (de.wiki: from rd2; en.wiki: from rd3)"
+15,Darren Turner,GBR,1974-04-13,24h Service AMG-Mercedes (Team Rosberg),Neustadt an der Weinstraße,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,#15 then #42 (see Lamy)
+16,Stefano Modena,ITA,1963-05-12,Opel Euroteam,,Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+17,Timo Scheider,GER,1978-11-10,Opel Team Holzer (2),,Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-9,
+18,Marcel Tiemann,GER,1974-03-19,Original-Teile AMG-Mercedes (Persson Motorsport),,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,
+19,Peter Dumbreck,GBR,1973-10-13,Original-Teile AMG-Mercedes (Persson Motorsport),,"AMG-Mercedes CLK-DTM (C208, 2000-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-9,
+20,Kris Nissen,DEN,1960-07-20,Abt Sportsline (2),Kempten,Abt-Audi TT-R (2000-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,1-9,
+21,James Thompson,GBR,1974-04-26,Abt Sportsline (2),Kempten,Abt-Audi TT-R (2000-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,"2,5-9",
+22,Steffen Schulz,GER,,Opel Team Holzer,,Opel Astra V8 Coupé (2000-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,,Listed by de.wiki with no rounds started (entry only)
+23,Roland Asch,GER,1950-10-12,Abt Sportsline (1),Kempten,Abt-Audi TT-R (2000-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,2,Stand-in at Oschersleben

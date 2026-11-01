@@ -1,0 +1,23 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Laurent Aïello,FRA,1969-05-23,Hasseröder Abt-Audi (Abt Sportsline),Kempten,Abt-Audi TT-R (2003-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,1-10,Reigning champion
+2,Christian Abt,GER,1967-05-08,Hasseröder Abt-Audi (Abt Sportsline),Kempten,Abt-Audi TT-R (2003-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,1-10,
+3,Bernd Schneider,GER,1964-07-20,Vodafone AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C209, 2003-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+4,Christijan Albers,NED,1979-04-16,Express-Service AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C209, 2003-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,Promoted from Rosberg after Alzen withdrew days before rd1
+5,Mattias Ekström,SWE,1978-07-14,PlayStation 2 Red Bull Abt-Audi (Abt Sportsline),Kempten,Abt-Audi TT-R (2003-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,1-10,
+6,Karl Wendlinger,AUT,1968-12-20,PlayStation 2 Red Bull Abt-Audi (Abt Sportsline),Kempten,Abt-Audi TT-R (2003-spec),Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,1-10,speedsport-magazine lists a 2002-spec car (conflict)
+7,Manuel Reuter,GER,1961-12-06,OPC Team Holzer,,Opel Astra V8 Coupé (2003-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,
+8,Alain Menu,SUI,1963-08-09,OPC Team Holzer,,Opel Astra V8 Coupé (2003-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,
+9,Marcel Fässler,SUI,1976-05-27,AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C209, 2003-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+10,Jean Alesi,FRA,1964-06-11,AMG-Mercedes (HWA),Affalterbach,"AMG-Mercedes CLK-DTM (C209, 2003-spec)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+11,Thomas Jäger,GER,1976-10-27,Original-Teile AMG-Mercedes (Persson Motorsport),,"AMG-Mercedes CLK-DTM (2002-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+12,Bernd Mayländer,GER,1971-05-29,Original-Teile AMG-Mercedes (Persson Motorsport),,"AMG-Mercedes CLK-DTM (2002-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,
+14,Martin Tomczyk,GER,1981-12-07,S line Audi Junior Team (Abt),Kempten,"Abt-Audi TT-R (2002-spec, year-old)",Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,1-10,speedsport-magazine lists a 2003-spec car (conflict); supported by First Choice Racing
+15,Peter Terting,GER,1984-02-19,S line Audi Junior Team (Abt),Kempten,"Abt-Audi TT-R (2002-spec, year-old)",Abt-Audi V8 4.0 90deg (A8-derived block per de.wiki),Dunlop,1-10,Rookie (2002 VW Lupo Cup champion)
+16,Joachim Winkelhock,GER,1960-10-24,OPC Euroteam,,"Opel Astra V8 Coupé (2002-spec, year-old)","Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,speedsport-magazine lists Euroteam as 2003-spec (conflict)
+17,Jeroen Bleekemolen,NED,1981-10-23,OPC Euroteam,,"Opel Astra V8 Coupé (2002-spec, year-old)","Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,Rookie
+18,Timo Scheider,GER,1978-11-10,OPC Team Phoenix,Meuspath (Nürburgring),Opel Astra V8 Coupé (2003-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,
+19,Peter Dumbreck,GBR,1973-10-13,OPC Team Phoenix,Meuspath (Nürburgring),Opel Astra V8 Coupé (2003-spec),"Opel V8 4.0 90deg (Spiess-built, 93x73 mm)",Dunlop,1-10,
+20,Katsutomo Kaneishi,JPN,1968-11-21,ARTA AMG-Mercedes (Persson Motorsport),,"AMG-Mercedes CLK-DTM (2002-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,"#20 per de/en.wiki, #21 per speedsport-magazine"
+24,Patrick Huisman,NED,1966-08-23,Service 24h AMG-Mercedes (Team Rosberg),Neustadt an der Weinstraße,"AMG-Mercedes CLK-DTM (2002-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-2,"Numbers per wiki; speedsport-magazine swaps (#24 Mücke, #42 Huisman/Paffett)"
+24,Gary Paffett,GBR,1981-03-24,Service 24h AMG-Mercedes (Team Rosberg),Neustadt an der Weinstraße,"AMG-Mercedes CLK-DTM (2002-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,3-10,"Reigning German F3 champion, replaced Huisman"
+42,Stefan Mücke,GER,1981-11-22,Service 24h AMG-Mercedes (Team Rosberg),Neustadt an der Weinstraße,"AMG-Mercedes CLK-DTM (2002-spec, year-old)","Mercedes-Benz/AMG (HWA) 4.0 V8 90deg, 2x28 mm restrictors",Dunlop,1-10,

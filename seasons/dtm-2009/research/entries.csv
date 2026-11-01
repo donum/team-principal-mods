@@ -1,0 +1,21 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Timo Scheider,GER,1978-11-10,Audi Sport Team Abt,Kempten,Audi A4 DTM 2009 (R14 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec; reigning champion
+2,Tom Kristensen,DEN,1967-07-07,Audi Sport Team Abt,Kempten,Audi A4 DTM 2009 (R14 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec; last full DTM season
+3,Paul di Resta,GBR,1986-04-16,AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2009 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec; HWA Team (team standings group him with #4 as Trilux AMG-Mercedes)
+4,Ralf Schumacher,GER,1975-06-30,Trilux AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2009 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec; promoted to HWA
+5,Mattias Ekström,SWE,1978-07-14,Audi Sport Team Abt Sportsline,Kempten,Audi A4 DTM 2009 (R14 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec
+6,Martin Tomczyk,GER,1981-12-07,Audi Sport Team Abt Sportsline,Kempten,Audi A4 DTM 2009 (R14 plus),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec
+7,Jamie Green,GBR,1982-06-14,Junge Sterne AMG-Mercedes,,AMG-Mercedes C-Klasse 2008 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen; Persson Motorsport
+8,Susie Stoddart,GBR,1982-12-06,TV-Spielfilm AMG-Mercedes,,AMG-Mercedes C-Klasse 2008 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen; Persson Motorsport
+9,Bruno Spengler,CAN,1983-08-23,Mercedes-Benz Bank AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2009 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec; HWA Team
+10,Gary Paffett,GBR,1981-03-24,Salzgitter AMG-Mercedes,Affalterbach,AMG-Mercedes C-Klasse 2009 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2009-spec; HWA Team
+11,Mike Rockenfeller,GER,1983-10-31,Audi Sport Team Rosberg,Neustadt an der Weinstraße,Audi A4 DTM 2008 (R14),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen
+12,Markus Winkelhock,GER,1980-06-13,Audi Sport Team Rosberg,Neustadt an der Weinstraße,Audi A4 DTM 2008 (R14),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen
+14,Alexandre Prémat,FRA,1982-04-05,Audi Sport Team Phoenix,,Audi A4 DTM 2008 (R14),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen
+15,Oliver Jarvis,GBR,1984-01-09,Audi Sport Team Phoenix,,Audi A4 DTM 2008 (R14),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen
+16,Maro Engel,GER,1985-08-27,GQ AMG-Mercedes,,AMG-Mercedes C-Klasse 2008 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen; Mücke Motorsport
+17,Mathias Lauda,AUT,1981-01-30,Stern AMG-Mercedes,,AMG-Mercedes C-Klasse 2008 (W204),"Mercedes-Benz 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen; Mücke Motorsport
+18,Christian Bakkerud,DEN,1984-11-03,Futurecom TME,Greding,Audi A4 DTM 2007 (R13),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,1-4;6-10,2007-spec (two-year-old) car; rookie from GP2
+19,Johannes Seidlitz,GER,1990-06-13,Futurecom TME,Greding,Audi A4 DTM 2007 (R13),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,1-2;5-10,2007-spec; rookie; DNS at round 2
+20,Tomáš Kostka,CZE,1984-08-27,Futurecom BRT,Greding,Audi A4 DTM 2007 (R13),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2007-spec; sister entry to TME; rookie
+21,Katherine Legge,GBR,1980-07-12,Audi Sport Team Abt Lady Power,Kempten,Audi A4 DTM 2008 (R14),"Audi 4.0 V8 (NA, air restrictor)",Dunlop,all,2008-spec Jahreswagen; one-car Abt entry

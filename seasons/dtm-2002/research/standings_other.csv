@@ -1,0 +1,15 @@
+type,pos,name,points,notes
+teams,1,Vodafone AMG-Mercedes (HWA #1/#2),88,
+teams,2,Team Abt Sportsline (#3/#10),85,
+teams,3,Warsteiner AMG-Mercedes (HWA #5/#6),54,
+teams,4,Team Abt (#4/#9),53,
+teams,5,OPC Team Holzer,11,
+teams,6,OPC Team Phoenix,10,
+teams,7,OPC Euroteam,7,
+teams,7,Team Abt Sportsline Junior (#23),7,
+teams,9,Service 24h AMG-Mercedes (Rosberg),5,
+teams,10,OASE/CEB AMG-Mercedes (Manthey),0,
+teams,10,Original-Teile AMG-Mercedes (Persson),0,
+manufacturers,1,Mercedes-Benz,147,de.wiki Markenwertung; official status unclear (see 2001 note)
+manufacturers,2,Audi (Abt),145,
+manufacturers,3,Opel,28,

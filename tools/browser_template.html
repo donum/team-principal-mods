@@ -43,6 +43,8 @@ h1 span { color: var(--accent); }
 
 /* Season strip */
 nav.years { display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 6px; }
+nav.years .era { grid-column: 1 / -1; font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); padding: 8px 0 2px; }
 nav.years button {
   font: inherit; text-align: left; cursor: pointer; border: 1px solid var(--line); background: var(--sheet);
   color: var(--ink); border-radius: 4px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; min-width: 0;
@@ -107,7 +109,7 @@ footer { color: var(--muted); font-size: 12.5px; }
 <div class="wrap">
   <header class="top">
     <h1>DTM <span>Season</span> Archive</h1>
-    <p class="lede">Research data for the Team Principal season packs: calendars, entry lists, standings and rules for every classic DTM and ITC season, from the sources noted in each dossier.</p>
+    <p class="lede">Research data for the Team Principal season packs: calendars, entry lists, standings and rules for every DPM, DTM and ITC season from 1984 to today, grouped by era, from the sources noted in each dossier.</p>
   </header>
   <nav class="years" id="years" aria-label="Seasons"></nav>
   <section class="sheet" id="sheet" aria-live="polite"></section>
@@ -129,7 +131,8 @@ let current = null, tab = "overview";
 function surname(n) { const p = (n || "").split(",")[0].trim().split(" "); return p[p.length - 1] || "—"; }
 
 function renderYears() {
-  $("#years").innerHTML = S.map(s => `
+  let lastEra = null;
+  $("#years").innerHTML = S.map(s => (s.era !== lastEra ? `<div class="era">${esc(lastEra = s.era)}</div>` : "") + `
     <button type="button" data-id="${s.id}" aria-pressed="${current && current.id === s.id}">
       <span class="yr">${s.year}<small>${esc(s.series)}</small></span>
       <span class="champ">${s.playable ? '<span class="dot" title="Playable pack"></span>' : ""}${esc(surname(s.champion))}</span>
@@ -163,6 +166,7 @@ function renderSheet() {
       <div class="season-title">
         <h2>${esc(s.series)} ${s.year}</h2>
         <div class="facts">
+          <span>Era <b>${esc(s.era)}</b></span>
           <span>Champion <b>${esc(s.champion || "—")}</b></span>
           <span>Rounds <b>${rounds(s) || "—"}</b></span>
           <span>Entries <b>${entries || "—"}</b></span>
@@ -255,7 +259,11 @@ const VENUES = [[/AVUS/i, "AVUS"], [/Alemannenring|Singen/i, "Alemannenring (Sin
   [/Zolder/i, "Zolder"], [/Diepholz/i, "Diepholz"], [/Donington/i, "Donington Park"], [/Erding/i, "Erding"], [/Estoril/i, "Estoril"],
   [/Wunstorf/i, "Wunstorf"], [/Mainz/i, "Mainz-Finthen"], [/Helsinki/i, "Helsinki"], [/Hockenheim/i, "Hockenheim"],
   [/Hungaroring/i, "Hungaroring"], [/Interlagos/i, "Interlagos"], [/Magny/i, "Magny-Cours"], [/Mugello/i, "Mugello"],
-  [/Norisring/i, "Norisring"], [/Salzburg/i, "Salzburgring"], [/Siegerland/i, "Siegerland"], [/Silverstone/i, "Silverstone"], [/Suzuka/i, "Suzuka"]];
+  [/Norisring/i, "Norisring"], [/Salzburg/i, "Salzburgring"], [/Siegerland/i, "Siegerland"], [/Silverstone/i, "Silverstone"], [/Suzuka/i, "Suzuka"],
+  [/A1-Ring|Red Bull Ring|Spielberg/i, "Red Bull Ring (A1-Ring)"], [/Lausitz/i, "Lausitzring"], [/Oschersleben/i, "Oschersleben"],
+  [/Zandvoort/i, "Zandvoort"], [/Adria/i, "Adria"], [/Monza/i, "Monza"], [/Algarve|Portim/i, "Portimão"], [/Catalunya|Barcelona/i, "Barcelona"],
+  [/Spa/i, "Spa-Francorchamps"], [/Dijon/i, "Dijon-Prenois"], [/Istanbul/i, "Istanbul Park"], [/Misano/i, "Misano"],
+  [/Moscow|Moskau/i, "Moscow Raceway"], [/Assen/i, "Assen"], [/München|Munich/i, "Munich (Olympic Stadium)"], [/Sachsenring/i, "Sachsenring"]];
 function venueKey(v, layout, len) {
   if (/N(ü|u|ue)rburgring/i.test(v)) return /Nordschleife/i.test(layout) || parseFloat(len) > 20 ? "Nürburgring Nordschleife" : "Nürburgring GP";
   const hit = VENUES.find(([re]) => re.test(v)); return hit ? hit[1] : v.split(/\s+[–(-]/)[0].trim();

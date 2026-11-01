@@ -1,0 +1,14 @@
+type,pos,name,points,notes
+teams,1,DaimlerChrysler Bank AMG-Mercedes (HWA: Paffett/Alesi),106,
+teams,2,Audi Sport Team Abt Sportsline (Ekström/Tomczyk),81,de.wiki 81; en.wiki 79 (conflict)
+teams,3,Audi Sport Team Abt (Kristensen/McNish),69,
+teams,4,Vodafone/Sport Edition AMG-Mercedes (HWA: Schneider/Häkkinen),62,
+teams,5,Salzgitter/Junge Gebrauchte von Mercedes AMG-Mercedes (Persson),34,de.wiki 34; en.wiki 35 (conflict)
+teams,6,GMAC/Stern Team OPC (Fässler/Frentzen),29,
+teams,7,Audi Sport Team Joest Racing (Abt/Kaffer),21,
+teams,8,Team OPC (Aïello/Reuter),16,
+teams,9,Audi Sport Team Joest (Capello/Stippler),8,
+teams,10,Mücke Motorsport,3,
+manufacturers,1,Mercedes-Benz,205,de.wiki and en.wiki agree
+manufacturers,2,Audi,179,
+manufacturers,3,Opel,45,

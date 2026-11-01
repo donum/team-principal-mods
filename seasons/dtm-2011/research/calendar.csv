@@ -1,0 +1,12 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2011-05-01,Hockenheimring,Grand Prix circuit,GER,4.574,1,38,173.812,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,Pole/FL: Spengler
+2,2011-05-15,Zandvoort,Circuit Park Zandvoort GP,NED,4.307,1,41,176.587,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Mike Rockenfeller,Pole: Spengler; FL: Rockenfeller
+3,2011-06-05,Spielberg,Red Bull Ring,AUT,4.326,1,38,164.388,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Martin Tomczyk,Pole: Tomczyk; FL: Spengler; DTM return to Spielberg
+4,2011-06-19,Lausitzring,EuroSpeedway Lausitz DTM short circuit,GER,3.478,1,52,180.856,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Martin Tomczyk,Pole: Spengler; FL: Scheider
+5,2011-07-03,Norisring,Nuremberg street circuit,GER,2.300,1,64,147.200,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Bruno Spengler,"Pole: Spengler; FL: Green; 82 laps scheduled, stopped early for heavy rain"
+NC,2011-07-16/17,München,Olympiastadion (temporary stadium track),GER,,0,,,,Sat: Edoardo Mortara; Sun: Bruno Spengler,non-championship Race-of-Champions-style show event in Munich Olympic Stadium
+6,2011-08-07,Nürburgring,Sprint circuit (GP short),GER,3.629,1,49,177.821,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Mattias Ekström,Pole: Ekström; FL: Coulthard
+7,2011-09-04,Brands Hatch,Indy circuit,GBR,1.929,1,88,169.752,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Martin Tomczyk,"Pole: Rockenfeller; FL: Tomczyk; 98 laps scheduled, ended on time limit"
+8,2011-09-18,Oschersleben,Motorsport Arena Oschersleben,GER,3.696,1,45,166.320,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Mattias Ekström,"Pole: Molina; FL: Ekström; 50 laps scheduled, ended on time limit"
+9,2011-10-02,Valencia,Circuit Ricardo Tormo,ESP,4.005,1,45,180.225,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Mattias Ekström,Pole: Ekström; FL: Scheider
+10,2011-10-23,Hockenheimring,Grand Prix circuit,GER,4.574,1,38,173.812,knockout Q1-Q3 + Q4 single-lap shootout of top 4,R: Jamie Green,Pole: Molina; FL: Green

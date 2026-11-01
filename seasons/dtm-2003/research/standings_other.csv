@@ -1,0 +1,15 @@
+type,pos,name,points,notes
+teams,1,Vodafone / Express-Service AMG-Mercedes (HWA #3/#4),132,"Listed by de/en.wiki; AutoBild (Apr 2003) says the teams championship was replaced by a manufacturers championship, so official status unclear"
+teams,2,AMG-Mercedes (HWA #9/#10),99,
+teams,3,PlayStation 2 Red Bull Abt-Audi (#5/#6),47,
+teams,4,Hasseröder Abt-Audi (#1/#2),44,
+teams,5,OPC Team Phoenix,43,
+teams,6,OPC Team Holzer,14,
+teams,7,Service 24h AMG-Mercedes (Rosberg),4,
+teams,8,OPC Euroteam,3,
+teams,9,Original-Teile AMG-Mercedes (Persson #11/#12),2,
+teams,10,S line Audi Junior Team,2,
+teams,11,ARTA AMG-Mercedes (Persson #20),0,
+manufacturers,1,Mercedes-Benz,237,All cars score 10-8-6-5-4-3-2-1
+manufacturers,2,Audi (Abt),93,
+manufacturers,3,Opel,60,

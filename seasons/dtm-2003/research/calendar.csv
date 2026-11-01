@@ -1,0 +1,11 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,2003-04-27,Hockenheimring,GP circuit,GER,4.574,1,37,169.238,Timed qualifying + Superpole (top 10),Bernd Schneider,Pole: Schneider. Laps derived (distance/length).
+2,2003-05-11,Adria International Raceway,Adria,ITA,2.702,1,47,126.994,Timed qualifying + Superpole,Christijan Albers,Pole: Fässler. New venue.
+3,2003-05-25,Nürburgring,short circuit,GER,3.629,1,41,148.789,Timed qualifying + Superpole,Christijan Albers,Pole: Fässler.
+4,2003-06-08,EuroSpeedway Lausitz,road course incl. oval turn 1,GER,,1,,160.125,Timed qualifying + Superpole,Bernd Schneider,"Pole: Schneider. Layout integrated turn 1 of the tri-oval (motorsport.com); 160.125 km = 35 x 4.575 km (implied, unverified)."
+5,2003-06-22,Norisring,Nuremberg street circuit,GER,2.300,1,72,165.600,Timed qualifying + Superpole,Christijan Albers,Pole: Schneider. 72 laps confirmed by AutoBild.
+6,2003-07-27,Donington Park,GP circuit,GBR,4.023,1,36,144.828,Timed qualifying + Superpole,Jean Alesi,Pole: Schneider.
+7,2003-08-17,Nürburgring,short circuit,GER,3.629,1,41,148.789,Night qualifying (en.wiki) + Superpole,Laurent Aïello,Pole: Ekström. Only Audi win of 2003.
+8,2003-09-07,A1-Ring,Spielberg GP circuit,AUT,4.326,1,40,173.040,Timed qualifying + Superpole,Marcel Fässler,Pole: Fässler.
+9,2003-09-21,Circuit Park Zandvoort,GP circuit,NED,4.300,1,36,154.800,Timed qualifying + Superpole,Christijan Albers,Pole: Scheider (only Opel pole).
+10,2003-10-05,Hockenheimring,GP circuit,GER,4.574,1,37,169.238,Timed qualifying + Superpole,Jean Alesi,Pole: Ekström.

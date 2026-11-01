@@ -1,0 +1,26 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Marco Wittmann,GER,1989-11-24,BMW Team RMG,Andernach (GER),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,Reigning champion
+36,Maxime Martin,BEL,1986-03-20,BMW Team RMG,Andernach (GER),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,
+7,Bruno Spengler,CAN,1983-08-23,BMW Team MTEK,Amsterdam (NED),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,
+16,Timo Glock,GER,1982-03-18,BMW Team MTEK,Amsterdam (NED),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,
+13,António Félix da Costa,POR,1991-08-31,BMW Team Schnitzer,Freilassing (GER),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,
+77,Martin Tomczyk,GER,1981-12-07,BMW Team Schnitzer,Freilassing (GER),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,
+18,Augusto Farfus,BRA,1983-09-03,BMW Team RBM,Mechelen (BEL),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,
+31,Tom Blomqvist,GBR,1993-11-30,BMW Team RBM,Mechelen (BEL),BMW M4 DTM,BMW P66 4.0 V8 (NA),Hankook,all,Rookie
+2,Gary Paffett,GBR,1981-03-24,EURONICS/BWT Mercedes-AMG,Saint-Pierre-du-Perray (FRA),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Run by ART Grand Prix (new team)
+22,Lucas Auer,AUT,1994-09-11,EURONICS/BWT Mercedes-AMG,Saint-Pierre-du-Perray (FRA),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Rookie; run by ART Grand Prix
+3,Paul di Resta,GBR,1986-04-16,SILBERPFEIL Energy Mercedes-AMG,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Run by HWA
+6,Robert Wickens,CAN,1989-03-13,SILBERPFEIL Energy Mercedes-AMG,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Run by HWA
+8,Christian Vietoris,GER,1989-04-01,gooix/Original-Teile Mercedes-AMG,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Run by HWA
+94,Pascal Wehrlein,GER,1994-10-18,gooix/Original-Teile Mercedes-AMG,Affalterbach (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Champion; run by HWA
+12,Daniel Juncadella,ESP,1991-05-07,PETRONAS Mercedes-AMG,Berlin (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Run by Mücke Motorsport. Esteban Ocon drove FP1 at final round (Juncadella ill)
+84,Maximilian Götz,GER,1986-02-04,PETRONAS Mercedes-AMG,Berlin (GER),Mercedes-AMG C63 DTM,"Mercedes-AMG 4.0 V8 (NA, HWA)",Hankook,all,Rookie; run by Mücke Motorsport
+5,Mattias Ekström,SWE,1978-07-14,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+17,Miguel Molina,ESP,1989-02-17,Audi Sport Team Abt Sportsline,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+27,Adrien Tambay,FRA,1991-02-25,Audi Sport Team Abt,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+48,Edoardo Mortara,ITA,1987-01-12,Audi Sport Team Abt,Kempten (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+10,Timo Scheider,GER,1978-11-10,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,1-5;7-9,Banned for round 6 after Red Bull Ring race 2 incident
+93,Antonio Giovinazzi,ITA,1993-12-14,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,6,Stand-in for Scheider
+99,Mike Rockenfeller,GER,1983-10-31,Audi Sport Team Phoenix,Meuspath (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+51,Nico Müller,SUI,1992-02-25,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,
+53,Jamie Green,GBR,1982-06-14,Audi Sport Team Rosberg,Neustadt an der Weinstraße (GER),Audi RS 5 DTM,Audi 4.0 V8 (NA),Hankook,all,

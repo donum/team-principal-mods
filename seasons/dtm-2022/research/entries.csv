@@ -1,0 +1,37 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+3,Kelvin van der Linde,RSA,1996-06-20,Team Abt Sportsline,Kempten,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Michelin,all,
+7,Ricardo Feller,SUI,2000-06-01,Team Abt Sportsline,Kempten,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Michelin,all,2021 ADAC GT Masters champion; DTM rookie
+33,René Rast,GER,1986-10-26,Team Abt,Kempten,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Michelin,all,Three-time champion returns
+12,Dev Gore,USA,1997-07-31,Team Rosberg,Neustadt an der Weinstraße,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Michelin,all,
+51,Nico Müller,SUI,1992-02-25,Team Rosberg,Neustadt an der Weinstraße,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Michelin,all,
+66,Marius Zug,GER,2003-02-06,Attempto Racing,,Audi R8 LMS Evo II,Audi 5.2 L V10 (DAR),Michelin,all,
+10,Esteban Muth,BEL,2001-10-30,Walkenhorst Motorsport,Melle,BMW M4 GT3,BMW S58 3.0 L twin-turbo I6,Michelin,1-6,
+10,Leon Köhler,GER,1999-08-07,Walkenhorst Motorsport,Melle,BMW M4 GT3,BMW S58 3.0 L twin-turbo I6,Michelin,7-8,
+11,Marco Wittmann,GER,1989-11-24,Walkenhorst Motorsport,Melle,BMW M4 GT3,BMW S58 3.0 L twin-turbo I6,Michelin,all,
+34,Theo Oeverhaus,GER,2004-12-18,Walkenhorst Motorsport,Melle,BMW M4 GT3,BMW S58 3.0 L twin-turbo I6,Michelin,5,Guest
+25,Philipp Eng,AUT,1990-02-28,Schubert Motorsport,Oschersleben,BMW M4 GT3,BMW S58 3.0 L twin-turbo I6,Michelin,all,
+31,Sheldon van der Linde,RSA,1999-05-13,Schubert Motorsport,Oschersleben,BMW M4 GT3,BMW S58 3.0 L twin-turbo I6,Michelin,all,Champion
+50,Timo Glock,GER,1982-03-18,Ceccato Motors,,BMW M4 GT3,BMW S58 3.0 L twin-turbo I6,Michelin,3,Guest (Imola)
+37,Sébastien Loeb,FRA,1974-02-26,AlphaTauri AF Corse,Piacenza,Ferrari 488 GT3 Evo 2020,Ferrari F154 3.9 L twin-turbo V8,Michelin,1,
+37,Nick Cassidy,NZL,1994-08-19,AlphaTauri AF Corse,Piacenza,Ferrari 488 GT3 Evo 2020,Ferrari F154 3.9 L twin-turbo V8,Michelin,2-3;5-8,
+37,Ayhancan Güven,TUR,1998-01-02,AlphaTauri AF Corse,Piacenza,Ferrari 488 GT3 Evo 2020,Ferrari F154 3.9 L twin-turbo V8,Michelin,4,
+74,Felipe Fraga,BRA,1995-07-03,Red Bull AF Corse,Piacenza,Ferrari 488 GT3 Evo 2020,Ferrari F154 3.9 L twin-turbo V8,Michelin,all,
+6,Alessio Deledda,ITA,1994-12-10,GRT,,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,all,Entrants 'GRT' and 'GRT grasser-racing.com' (car split not documented); Lamborghini factory-backed
+19,Rolf Ineichen,SUI,1978-05-02,GRT,,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,1-3;5-8,
+19,Franck Perera,FRA,1984-03-21,GRT,,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,4,
+63,Mirko Bortolotti,ITA,1990-01-10,GRT,,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,all,
+85,Clemens Schmid,AUT,1990-08-18,GRT,,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,all,
+26,Esmee Hawkey,GBR,1998-03-02,T3 Motorsport,Dresden,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,1-2,Team left after round 2
+95,Nicki Thiim,DEN,1989-04-17,T3 Motorsport,Dresden,Lamborghini Huracán GT3 Evo,Lamborghini 5.2 L V10,Michelin,1-2,
+1,Maximilian Götz,GER,1986-02-04,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,"Defending champion; teams' table lists a separate 'Mercedes-AMG Team Winward Racing' entry (73 pts, matches Götz)"
+22,Lucas Auer,AUT,1994-09-11,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+27,David Schumacher,GER,2001-10-23,Mercedes-AMG Team Winward,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+4,Luca Stolz,GER,1995-07-29,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+36,Arjun Maini,IND,1997-12-10,Mercedes-AMG Team HRT,,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+18,Maximilian Buhk,GER,1992-12-09,Mercedes-AMG Team Mücke Motorsport,Berlin,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+55,Mikaël Grenier,CAN,1992-10-17,Mercedes-AMG Team GruppeM Racing,Hong Kong,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+88,Maro Engel,GER,1985-08-27,Mercedes-AMG Team GruppeM Racing,Hong Kong,Mercedes-AMG GT3 Evo,Mercedes-AMG M159 6.2 L V8,Michelin,all,
+24,Thomas Preining,AUT,1998-07-21,KÜS Team Bernhard,Bruchmühlbach-Miesau,Porsche 911 GT3 R (991.2),Porsche 4.0 L flat-6,Michelin,all,Team of Timo Bernhard; first Porsche DTM win (Norisring R1)
+92,Laurens Vanthoor,BEL,1991-05-08,SSR Performance,,Porsche 911 GT3 R (991.2),Porsche 4.0 L flat-6,Michelin,1-7,
+92,Christian Engelhart,GER,1986-12-13,SSR Performance,,Porsche 911 GT3 R (991.2),Porsche 4.0 L flat-6,Michelin,8,
+94,Dennis Olsen,NOR,1996-04-14,SSR Performance,,Porsche 911 GT3 R (991.2),Porsche 4.0 L flat-6,Michelin,all,

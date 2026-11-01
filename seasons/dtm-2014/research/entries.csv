@@ -1,0 +1,24 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Mike Rockenfeller,german,1983-10-31,Audi Sport Team Phoenix [Phoenix Racing],Meuspath,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,reigning champion
+2,Timo Scheider,german,1978-11-10,Audi Sport Team Phoenix [Phoenix Racing],Meuspath,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,
+3,Augusto Farfus,brazilian,1983-09-03,BMW Team RBM [Racing Bart Mampaey],BEL,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,
+4,Joey Hand,american,1979-02-10,BMW Team RBM [Racing Bart Mampaey],BEL,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,
+5,Christian Vietoris,german,1989-04-01,Original-Teile/AMG-Mercedes [HWA AG],Affalterbach,DTM AMG Mercedes C-Coupé (2014),Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+6,Paul di Resta,british,1986-04-16,Original-Teile/AMG-Mercedes [HWA AG],Affalterbach,DTM AMG Mercedes C-Coupé (2014),Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,returned from F1
+7,Mattias Ekström,swedish,1978-07-14,Audi Sport Team Abt Sportsline [Abt Sportsline],Kempten,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,
+8,Miguel Molina,spanish,1989-02-17,Audi Sport Team Abt Sportsline [Abt Sportsline],Kempten,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,
+9,Bruno Spengler,canadian,1983-08-23,BMW Team Schnitzer [Schnitzer Motorsport],Freilassing,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,
+10,Martin Tomczyk,german,1981-12-07,BMW Team Schnitzer [Schnitzer Motorsport],Freilassing,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,
+11,Gary Paffett,british,1981-03-24,EURONICS/FREE MAN'S WORLD AMG-Mercedes [HWA AG],Affalterbach,DTM AMG Mercedes C-Coupé (2014),Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+12,Robert Wickens,canadian,1989-03-13,EURONICS/FREE MAN'S WORLD AMG-Mercedes [HWA AG],Affalterbach,DTM AMG Mercedes C-Coupé (2014),Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+15,Edoardo Mortara,italian,1987-01-12,Audi Sport Team Abt [Abt Sportsline],Kempten,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,
+16,Adrien Tambay,french,1991-02-25,Audi Sport Team Abt [Abt Sportsline],Kempten,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,
+17,Timo Glock,german,1982-03-18,BMW Team MTEK [Team MTEK],Amsterdam,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,
+18,António Félix da Costa,portuguese,1991-08-31,BMW Team MTEK [Team MTEK],Amsterdam,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,rookie
+19,Daniel Juncadella,spanish,1991-05-07,Petronas/AMG-Mercedes [Mücke Motorsport],Berlin,DTM AMG Mercedes C-Coupé (2014),Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,
+20,Vitaly Petrov,russian,1984-09-08,Petronas/AMG-Mercedes [Mücke Motorsport],Berlin,DTM AMG Mercedes C-Coupé (2014),Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,"rookie, ex-F1"
+21,Jamie Green,british,1982-06-14,Audi Sport Team Rosberg [Team Rosberg],,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,
+22,Nico Müller,swiss,1992-02-25,Audi Sport Team Rosberg [Team Rosberg],,Audi RS 5 DTM,Audi 4.0 V8 (90°),Hankook,1-10,rookie
+23,Marco Wittmann,german,1989-11-24,BMW Team RMG [Reinhold Motorsport / Team RMG],Andernach,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,champion
+24,Maxime Martin,belgian,1986-03-20,BMW Team RMG [Reinhold Motorsport / Team RMG],Andernach,BMW M4 DTM,BMW P66 4.0 V8 (90°),Hankook,1-10,rookie
+25,Pascal Wehrlein,german,1994-10-18,Gooix AMG-Mercedes [HWA AG],Affalterbach,DTM AMG Mercedes C-Coupé (2014),Mercedes-Benz 4.0 V8 (90°),Hankook,1-10,single-car entry
