@@ -41,6 +41,30 @@ ERAS = [(1984, 1992, "Production & Group A"), (1993, 1996, "Class 1"), (2000, 20
         (2012, 2018, "Class One"), (2019, 2020, "Class One turbo"), (2021, 2100, "GT3")]
 
 
+# How closely each period's sporting rules match what Team Principal can model
+# (see docs/ERAS.md). Ranked best first; score is out of 5.
+GAME_FIT = [
+    {"years": "2013", "score": 5, "fits": "One race per weekend; F1 points 25-18-15...; DRS; option tyre that must be used (compound rule); no refuelling; knockout qualifying; no ballast or performance weights; 2-car teams; single tyre supplier",
+     "gaps": "Q4 single-lap shootout; second mandatory stop; DRS off for the last 3 laps"},
+    {"years": "2014", "score": 5, "fits": "Same as 2013, plus F1-style Q1-Q3 knockout exactly as in the game, one mandatory stop and DRS to the end of the race",
+     "gaps": "Performance weights per make (up to 10 kg); soft tyre limited to half the race distance; pit window"},
+    {"years": "2012", "score": 4, "fits": "One race; F1 points; knockout qualifying; no refuelling; two mandatory stops",
+     "gaps": "Mandatory pit windows; Q4 shootout; no DRS or option tyre, so the game's modern features stay unused"},
+    {"years": "2003-2011", "score": 3, "fits": "One race per event; mandatory stops; refuelling (2003); custom points table 10-8-6-5-4-3-2-1",
+     "gaps": "Placement weights (+/-5 kg per race); weight breaks for year-old cars; Superpole qualifying; pit windows"},
+    {"years": "2015-2020", "score": 2, "fits": "DRS; mandatory stop; F1 points; push-to-pass (2019-20) via spec ERS",
+     "gaps": "Two races per weekend; time-limited races; performance weights; qualifying points"},
+    {"years": "2021-2026", "score": 2, "fits": "Mandatory stops; qualifying points as a bonus-point rule; many makes",
+     "gaps": "Two races per weekend; time-limited races; balance of performance; success ballast; pit windows; customer GT3 cars"},
+    {"years": "2000-2002", "score": 2, "fits": "Mandatory stop (2001-02); no refuelling",
+     "gaps": "Qualifying race plus main race per event; points split between both races"},
+    {"years": "1993-1996", "score": 1, "fits": "Driver aids and 4WD allowed via driver-aid rules",
+     "gaps": "Two heats per round; weight rules; no planned stops"},
+    {"years": "1984-1992", "score": 1, "fits": "Custom points table; no pit stops",
+     "gaps": "Two heats and a qualification race per round; success ballast up to 50-100 kg; displacement-based weights"},
+]
+
+
 def era_of(year):
     return next((name for lo, hi, name in ERAS if lo <= year <= hi), "")
 
@@ -75,7 +99,7 @@ def main():
             "standings_other": read_csv(research / "standings_other.csv"),
             "dossier": md,
         })
-    data = json.dumps({"seasons": seasons}, ensure_ascii=False, separators=(",", ":"))
+    data = json.dumps({"seasons": seasons, "fit": GAME_FIT}, ensure_ascii=False, separators=(",", ":"))
     data = data.replace("</", "<\\/")
     html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/null", data)
     OUT.parent.mkdir(parents=True, exist_ok=True)

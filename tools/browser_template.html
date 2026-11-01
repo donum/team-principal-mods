@@ -99,6 +99,8 @@ tr.top1 td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
 .empty { color: var(--muted); font-style: italic; }
 
 /* Venue matrix */
+.fit-score { font-family: var(--font-data); white-space: nowrap; color: var(--accent); letter-spacing: 1px; }
+.fit-years { font-family: var(--font-display); font-weight: 700; font-size: 18px; white-space: nowrap; }
 .matrix td.mark { text-align: center; font-family: var(--font-data); color: var(--accent); font-weight: 500; }
 .matrix th.yr-h { text-align: center; }
 .matrix td.vname { font-weight: 600; white-space: nowrap; }
@@ -113,6 +115,11 @@ footer { color: var(--muted); font-size: 12.5px; }
   </header>
   <nav class="years" id="years" aria-label="Seasons"></nav>
   <section class="sheet" id="sheet" aria-live="polite"></section>
+  <section class="sheet" id="fit">
+    <div class="season-title"><h2>Closest to the game's rules</h2></div>
+    <p class="lede">Periods ranked by how many of their sporting rules Team Principal can model natively. Top picks make the best showcase packs.</p>
+    <div class="tablewrap" id="fit-table"></div>
+  </section>
   <section class="sheet" id="venues">
     <div class="season-title"><h2>Venues across the seasons</h2></div>
     <p class="lede">Every circuit on a calendar, with the number of rounds held there per year. Use it to plan which tracks to generate for future packs.</p>
@@ -268,6 +275,13 @@ function venueKey(v, layout, len) {
   if (/N(ü|u|ue)rburgring/i.test(v)) return /Nordschleife/i.test(layout) || parseFloat(len) > 20 ? "Nürburgring Nordschleife" : "Nürburgring GP";
   const hit = VENUES.find(([re]) => re.test(v)); return hit ? hit[1] : v.split(/\s+[–(-]/)[0].trim();
 }
+function renderFit() {
+  $("#fit-table").innerHTML = `<table><thead><tr><th scope="col">#</th><th scope="col">Years</th><th scope="col">Fit</th><th scope="col">Supported</th><th scope="col">Missing in the game</th></tr></thead><tbody>${
+    DATA.fit.map((f, i) => `<tr class="${i === 0 ? "top1" : ""}"><td class="num">${i + 1}</td><td class="fit-years">${esc(f.years)}</td>
+      <td class="fit-score" aria-label="${f.score} of 5">${"●".repeat(f.score)}${"○".repeat(5 - f.score)}</td>
+      <td>${esc(f.fits)}</td><td class="notes">${esc(f.gaps)}</td></tr>`).join("")}</tbody></table>`;
+}
+
 function renderVenues() {
   const years = S.map(s => s.year), map = new Map();
   S.forEach(s => {
@@ -286,6 +300,7 @@ let start = location.hash.slice(1);
 if (!S.find(s => s.id === start)) { try { start = localStorage.getItem("dtm-archive-season") || ""; } catch (e) { start = ""; } }
 if (!S.find(s => s.id === start)) start = (S.find(s => s.playable) || S[S.length - 1]).id;
 select(start);
+renderFit();
 renderVenues();
 $("#foot").textContent = `${S.length} seasons · Sources: touringcarracing.net, German and English Wikipedia, Wikidata and others listed per dossier · Unofficial community research.`;
 </script>
