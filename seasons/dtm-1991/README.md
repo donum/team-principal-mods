@@ -141,8 +141,12 @@ gives Ludwig #7 in its XML while his car is painted #8.
      Re-measure the 190E texture anchors.
    - Leftover marks from the 1993 reference liveries, such as rear-wing logos.
    - The traced Audi body has less detail than the Pohlmann drawings.
-5. **Logos and menu art.** Add team logos (`assets/logos`, 1024×1024),
-   engine-maker logos, plus DTM-style menu and dashboard backgrounds.
+5. **Logos and menu art.** ✅ Team and engine logos are done
+   (`tools/logo_art.py`). Still to do:
+   - Look for real 1991 logos for the 11 teams that use plain crests: AMG,
+     Bigazzi, Linder, Isert, Climair, Valier, Vanicek, BAS, Eggenberger,
+     Schübel and Ruch.
+   - DTM-style menu and dashboard backgrounds.
 6. **Sponsors.** Build a period sponsor pool and starting sponsors (cloned
    placeholders for now).
 7. **Junior series.** Add the 1991 German F3 and Formel Opel Lotus
