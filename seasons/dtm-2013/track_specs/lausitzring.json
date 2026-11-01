@@ -10,7 +10,7 @@
   ],
   "length_km": 3.478,
   "width_m": 13.0,
-  "speed_scale": 0.786,
+  "speed_scale": 1.048,
   "race_laps": 52,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.5,
@@ -22,7 +22,7 @@
   "drs_zones": {
     "longest_straights": 1
   },
-  "notes": "DTM short circuit 2011-2013, counter-clockwise as OSM tags the course: front straight of the tri-oval, the banked Turn 1, the back straight cut short by the 2007 Kurzanbindung hairpin, the infield sections, and Turn 3 of the tri-oval back onto the front straight. Via route over OSM ways 115077605 and 766115999 (the Grand Prix course) with the Kurzanbindung (ways 470915848, 864182816) instead of the full back straight. Traced 3424 m vs 3478 m. Whether DTM 2013 took the banked Turn 1 or the infield T1-T5 is not verified; the banked variant is the one that matches the length.",
+  "notes": "DTM short course (2005-2013, about 3.44-3.48 km), counter-clockwise as OSM tags the course: the front straight of the tri-oval, then the tight left into the infield at its end (Turn 1) and the infield esses on way 766115999, not the GP course's wide sweep (way 115077605) or the banked oval Turn 1, which the DTM only used again from 2019. Sources: Audi press (DTM on the 3.442 km variant since 2005), Rheinpfalz on the banked-turn variant (cars otherwise turn left into the infield at the end of the start/finish straight). The 2013 pole (1:17.463) fits this layout: the wide sweep made the lap 14.5% too fast. The back straight is cut short by the 2007 Kurzanbindung hairpin (ways 470915848, 864182816). Start line on the pit straight. Traced 3464 m vs 3478 m.",
   "route_way_ids": [
     "115077605",
     "766115999",
@@ -35,8 +35,12 @@
       13.92222
     ],
     [
-      51.5323,
-      13.92066
+      51.53257,
+      13.92218
+    ],
+    [
+      51.53156,
+      13.92356
     ],
     [
       51.53006,
@@ -60,7 +64,7 @@
     ]
   ],
   "start": [
-    51.53382,
-    13.92341
+    51.53467,
+    13.92616
   ]
 }

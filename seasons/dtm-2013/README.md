@@ -74,7 +74,7 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 | Hockenheim | 4.574 km | Raceway loop over OSM circuit relation 284588 (today's GP circuit) | 4,517 m (−1.2%) |
 | Brands Hatch Indy | 1.929 km | Raceway loop over the Indy circuit relation 11248425 | 1,906 m (−1.2%) |
 | Red Bull Ring | 4.326 km | Raceway loop over relation 5309181, without the MotoGP additions | 4,269 m (−1.3%) |
-| Lausitzring | 3.478 km | Via: the GP course with the 2007 Kurzanbindung hairpin, counter-clockwise as OSM tags it | 3,424 m (−1.6%) |
+| Lausitzring | 3.478 km | Via: the DTM short course, with the tight left into the infield at the end of the front straight and the 2007 Kurzanbindung hairpin, counter-clockwise as OSM tags it | 3,464 m (−0.4%) |
 | Norisring | 2.300 km | Shared from 1991 | 2,207 m (−4%) |
 | Moscow Raceway | 2.555 km | Via: the full circuit's way with the link that cuts the southern section | 2,550 m (−0.2%) |
 | Nürburgring Sprint | 3.629 km | Via: the 1992 sprint route with the Mercedes Arena | 3,555 m (−2%) |
@@ -82,14 +82,14 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 | Zandvoort | 4.307 km | Raceway loop over today's (post-2020) layout | 4,205 m (−2.4%) |
 
 **Open questions:**
-- Lausitzring: did DTM 2013 take the banked Turn 1 or the infield T1–T5? The
-  banked variant is the one that fits the length.
 - Moscow: 2.555 km (fan wiki) vs 2.661 km (racingyears). The traced short
   layout fits 2.555 km.
 - Start lines at Moscow, Nürburgring, Oschersleben and Zandvoort are placed
   by hand on the pit straight (the game puts the pits at the start line).
-- Lausitzring: the real 2013 pole (1:17.5) needs a speed factor of 0.79 on
-  the traced banked layout, which points to the slower infield layout.
+- Lausitzring: the DTM used the short infield course from 2005 and the
+  banked oval Turn 1 only again from 2019. The first trace took the GP
+  course's wide Turn 1 sweep, which made the lap 14.5% too fast; the
+  infield course fits both the length and the 2013 pole.
 - Norisring: the 1991 tracing needs a speed factor of 1.26 for 2013 cars
   (`speed_mult` in its track override).
 
@@ -118,7 +118,7 @@ The real 2013 qualifying and race results are in `research/results/`
 2. The car profile was fitted to the poles and the top speed, then each
    track's remaining error went into its `speed_scale` (Norisring:
    `speed_mult`): Hockenheim 1.079, Brands Hatch 0.983, Red Bull Ring 1.059,
-   Lausitzring 0.786, Norisring 1.264, Moscow 1.147, Nürburgring 0.937,
+   Lausitzring 1.048, Norisring 1.264, Moscow 1.147, Nürburgring 0.937,
    Oschersleben 1.016, Zandvoort 1.008.
 
 Predicted poles now match 2013 to within 0.1%. The cars are rated a little
