@@ -4,6 +4,7 @@
   "version": "0.1",
   "series": "formula",
   "base_pack": "default26",
+  "no_title_sponsors": true,
 
   "constants": {
     "SEASON_START_YEAR": 1991,

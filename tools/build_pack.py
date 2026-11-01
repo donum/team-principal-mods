@@ -173,6 +173,25 @@ def clone_team_records(out, clones, season_dir):
     edit("relationships.json", lambda d: {k: {} for k in d})
 
 
+def strip_title_sponsors(out):
+    """Stop sponsors from renaming teams ("Patronix BMW M Team Schnitzer").
+
+    A title sponsor's name is prefixed to the team name. Historic seasons
+    already carry the real sponsor in the entrant name, so neither the
+    starting deals nor the sponsor pool may hand out title status.
+    """
+    starting = load_json(out / "starting_sponsors.json")
+    for team in starting.get("teams", []):
+        for deal in team.get("sponsors", []):
+            deal.pop("title", None)
+    dump_json(out / "starting_sponsors.json", starting)
+    pool = load_json(out / "sponsors.json")
+    for sponsor in pool:
+        if sponsor.get("type") == "title":
+            del sponsor["type"]
+    dump_json(out / "sponsors.json", pool)
+
+
 def generate_staff(out, base_dir, spec, teams):
     """Fill every team with one placeholder staff member per role.
 
@@ -365,6 +384,8 @@ def build(season_dir, game, install):
 
     if "team_clones" in manifest:
         clone_team_records(out, manifest["team_clones"], season_dir)
+    if manifest.get("no_title_sponsors"):
+        strip_title_sponsors(out)
     if "staff" in manifest and not (season_dir / "data" / "staff.json").exists():
         generate_staff(out, base_dir, manifest["staff"], load_json(out / "teams.json"))
 
