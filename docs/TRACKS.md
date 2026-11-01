@@ -36,6 +36,9 @@ and `width_m`), or one the reference car never reaches the cap in, is part of
 the straight. Before November 2026 short straights were capped at the speed
 reached at their end, and kinks stayed corners. Cars cruised at those caps or
 braked mid-straight, so the field bunched and stretched on the straights.
+The first sector also started before the start line whenever the line sat
+inside it, so every corner came up late (225 m at the Norisring), and cars
+braked on the straight after a hairpin. It is now split at the line.
 
 In via mode the tool joins consecutive via points by the shortest path over
 the allowed ways. It also closes small mapping gaps (`snap_gap_m`). Missing
