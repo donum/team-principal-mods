@@ -2,11 +2,11 @@
   "name": "Diepholz",
   "nationality": "german",
   "length_km": 2.69,
-  "lap_modifier": 1.041,
+  "lap_modifier": 0.74,
   "dnf_modifier": 0.95,
   "overtaking_difficulty": 0.45,
   "pit_lane_loss_s": 17.0,
-  "tyre_wear_mult": 0.85,
+  "tyre_wear_mult": 0.51,
   "fuel_consumption": 0.95,
   "wet_weather_probability_multiplier": 1.0,
   "use_raw_canvas_coordinates": true,
@@ -38,32 +38,32 @@
     {
       "type": "straight",
       "length_pct": 43.843283582089555,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 9.14179104477612,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 93.1
     },
     {
       "type": "straight",
       "length_pct": 19.58955223880597,
-      "target_speed_kmh": 360.0
+      "target_speed_kmh": 352.8
     },
     {
       "type": "high",
       "length_pct": 1.492537313432836,
-      "target_speed_kmh": 205.0
+      "target_speed_kmh": 200.9
     },
     {
       "type": "straight",
       "length_pct": 22.20149253731343,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 3.7313432835820897,
-      "target_speed_kmh": 65.0
+      "target_speed_kmh": 63.7
     }
   ],
   "points": [
@@ -1284,6 +1284,16 @@
     ],
     "geometry_length_m": 2665,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
-    "notes": "ADAC-Flugplatzrennen Diepholz, 1989-1991 layout (counter-clockwise): start/finish eastbound on runway 08/26, sweep north onto the curved northern taxiway, west past the aprons, long diagonal back to the runway's west end. Matched to the Wikimedia Commons layout diagram; the 1991 chicane positions are unverified and not modelled."
+    "notes": "ADAC-Flugplatzrennen Diepholz, 1989-1991 layout (counter-clockwise): start/finish eastbound on runway 08/26, sweep north onto the curved northern taxiway, west past the aprons, long diagonal back to the runway's west end. Matched to the Wikimedia Commons layout diagram; the 1991 chicane positions are unverified and not modelled.",
+    "speed_scale": 0.98,
+    "canvas_transform": {
+      "lat0": 52.58628223066406,
+      "lon0": 8.340780176757812,
+      "kx": 67634.24948591857,
+      "ky": 110540.0,
+      "scale": 0.728265568489084,
+      "ox": 521.3002396647539,
+      "oy": 437.8302016677649
+    }
   }
 }

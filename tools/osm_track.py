@@ -33,6 +33,7 @@ CANVAS = (1044, 1080)
 # part of the map with driver cards and the event log, so the track stays in
 # the upper area while the background map still fills the whole image.
 SAFE_BOX = (70, 60, 974, 800)
+BASE_RACE_LAPS = 50           # "laps" in the base pack's options.json
 SUPERSAMPLE = 3
 SMOOTH_PASSES = 3             # moving-average passes over the 5 m resampled line
 # Reference speed scale shared with the base tracks: v = SPEED_K * sqrt(radius_m).
@@ -535,6 +536,9 @@ def build(spec_path):
         nodes, ways, relations = {**bg_nodes, **nodes}, {**bg_ways, **ways}, bg_relations + relations
 
     sectors, raw = micro_sectors(dense)
+    # Lap-time calibration: scale every target speed (fitted by tools/calibrate.py).
+    for sector in sectors:
+        sector["target_speed_kmh"] = round(sector["target_speed_kmh"] * spec.get("speed_scale", 1.0), 1)
     geometry_m = polyline_length(dense)
     outline = resample(dense, count=spec.get("point_count", 300))
     points = [[round(c, 1) for c in to_px(*p)] for p in outline]
@@ -547,7 +551,9 @@ def build(spec_path):
         "name": spec["name"],
         "nationality": spec["nationality"],
         "length_km": spec.get("length_km", round(geometry_m / 1000, 3)),
-        "lap_modifier": spec.get("lap_modifier", 1.1),
+        # The game races (pack options.json "laps") x lap_modifier laps, so this
+        # sets the race distance, not the lap time.
+        "lap_modifier": round(spec["race_laps"] / BASE_RACE_LAPS, 4) if "race_laps" in spec else spec.get("lap_modifier", 1.0),
         "dnf_modifier": spec.get("dnf_modifier", 1.0),
         "overtaking_difficulty": spec.get("overtaking_difficulty", 0.6),
         "pit_lane_loss_s": spec.get("pit_lane_loss_s", 20.0),
@@ -570,6 +576,7 @@ def build(spec_path):
         "source": {"generator": "tools/osm_track.py", "osm_bbox": spec["bbox"],
                    "osm_ways": loop_ways, "geometry_length_m": round(geometry_m),
                    "attribution": ATTRIBUTION, "notes": spec.get("notes", ""),
+                   "speed_scale": spec.get("speed_scale", 1.0),
                    # pixel = (metres from (lat0, lon0)) * scale + offset; lets specs place
                    # map-relative features (e.g. historic_forest) from pixel positions.
                    "canvas_transform": {"lat0": proj.lat0, "lon0": proj.lon0, "kx": proj.kx, "ky": proj.ky,

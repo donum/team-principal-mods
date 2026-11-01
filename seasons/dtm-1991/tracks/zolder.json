@@ -2,11 +2,11 @@
   "name": "Zolder",
   "nationality": "belgian",
   "length_km": 4.194,
-  "lap_modifier": 0.953,
+  "lap_modifier": 0.48,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.7,
   "pit_lane_loss_s": 21.0,
-  "tyre_wear_mult": 0.9,
+  "tyre_wear_mult": 0.54,
   "fuel_consumption": 1.0,
   "wet_weather_probability_multiplier": 1.2,
   "use_raw_canvas_coordinates": true,
@@ -38,112 +38,112 @@
     {
       "type": "straight",
       "length_pct": 12.656641604010025,
-      "target_speed_kmh": 355.0
+      "target_speed_kmh": 433.1
     },
     {
       "type": "low",
       "length_pct": 3.508771929824561,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 146.4
     },
     {
       "type": "straight",
       "length_pct": 4.135338345864661,
-      "target_speed_kmh": 230.0
+      "target_speed_kmh": 280.6
     },
     {
       "type": "low",
       "length_pct": 4.010025062656641,
-      "target_speed_kmh": 125.0
+      "target_speed_kmh": 152.5
     },
     {
       "type": "straight",
       "length_pct": 1.3784461152882206,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 207.4
     },
     {
       "type": "high",
       "length_pct": 3.8847117794486214,
-      "target_speed_kmh": 190.0
+      "target_speed_kmh": 231.8
     },
     {
       "type": "straight",
       "length_pct": 4.010025062656641,
-      "target_speed_kmh": 270.0
+      "target_speed_kmh": 329.4
     },
     {
       "type": "med",
       "length_pct": 3.508771929824561,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 195.2
     },
     {
       "type": "straight",
       "length_pct": 13.157894736842104,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 451.4
     },
     {
       "type": "low",
       "length_pct": 2.255639097744361,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 115.9
     },
     {
       "type": "straight",
       "length_pct": 6.015037593984962,
-      "target_speed_kmh": 255.0
+      "target_speed_kmh": 311.1
     },
     {
       "type": "high",
       "length_pct": 3.007518796992481,
-      "target_speed_kmh": 235.0
+      "target_speed_kmh": 286.7
     },
     {
       "type": "straight",
       "length_pct": 2.6315789473684212,
-      "target_speed_kmh": 280.0
+      "target_speed_kmh": 341.6
     },
     {
       "type": "low",
       "length_pct": 4.135338345864661,
-      "target_speed_kmh": 90.0
+      "target_speed_kmh": 109.8
     },
     {
       "type": "straight",
       "length_pct": 1.2531328320802004,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 170.8
     },
     {
       "type": "med",
       "length_pct": 3.1328320802005014,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 195.2
     },
     {
       "type": "straight",
       "length_pct": 3.6340852130325816,
-      "target_speed_kmh": 245.0
+      "target_speed_kmh": 298.9
     },
     {
       "type": "high",
       "length_pct": 0.7518796992481203,
-      "target_speed_kmh": 275.0
+      "target_speed_kmh": 335.5
     },
     {
       "type": "straight",
       "length_pct": 4.887218045112782,
-      "target_speed_kmh": 350.0
+      "target_speed_kmh": 427.0
     },
     {
       "type": "low",
       "length_pct": 5.2631578947368425,
-      "target_speed_kmh": 80.0
+      "target_speed_kmh": 97.6
     },
     {
       "type": "straight",
       "length_pct": 9.398496240601503,
-      "target_speed_kmh": 305.0
+      "target_speed_kmh": 372.1
     },
     {
       "type": "low",
       "length_pct": 3.3834586466165413,
-      "target_speed_kmh": 90.0
+      "target_speed_kmh": 109.8
     }
   ],
   "points": [
@@ -1382,6 +1382,16 @@
     ],
     "geometry_length_m": 3953,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
-    "notes": "Outline traced from today's OSM layout (about 4.0 km). The 1991 lap was 4.194 km, so length_km uses the 1991 figure; the chicane details of 1991 may differ."
+    "notes": "Outline traced from today's OSM layout (about 4.0 km). The 1991 lap was 4.194 km, so length_km uses the 1991 figure; the chicane details of 1991 may differ.",
+    "speed_scale": 1.22,
+    "canvas_transform": {
+      "lat0": 50.99049614883721,
+      "lon0": 5.256903899999999,
+      "kx": 70070.29499708369,
+      "ky": 110540.0,
+      "scale": 0.5647613274821514,
+      "ox": 496.6466425012515,
+      "oy": 423.93194697234503
+    }
   }
 }

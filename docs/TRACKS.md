@@ -69,36 +69,46 @@ spec's `notes` and in the season dossier.
   hairpin), and what is the true scale of the west perimeter road?
 - **Diepholz and Wunstorf:** where were the 1991 chicanes?
 
-## Lap-time calibration
+## Race distance and lap-time calibration
 
-The goal is that in-game qualifying matches the real 1991 poles. Real results
-for every session are in `seasons/dtm-1991/research/results/`, extracted from
-touringcarracing.net (see `sources.md` there).
+**Race distance.** The game races `laps` (the pack's `options.json`, 50) ×
+the track's `lap_modifier` laps. The track spec's `race_laps` sets this to the
+real 1991 heat distance, about 100 km:
 
-**The model.** In-game lap time ≈ `F × reference_time × lap_modifier`:
-- `reference_time` comes from the track's micro-sectors (`tools/laptime.py`).
-- `F` is a factor of the season's cars and `car_profile`, measured in-game.
-- The track's `lap_modifier` acts as a near-linear lap-time multiplier, so it
-  is the per-track tuning knob.
+| Track | Laps |
+|---|---|
+| Zolder | 24 |
+| Hockenheim | 15 |
+| Nürburgring | 22 |
+| AVUS | 21 |
+| Wunstorf | 20 |
+| Norisring | 44 |
+| Diepholz | 37 |
+| Alemannenring | 36 |
 
-**The loop:**
-1. Play a qualifying session in-game.
-2. Record the game's pole:
-   `python tools/calibrate.py seasons/dtm-1991 --observe-save "<game>/saves/<save>.json"`.
-   This reads the save's `track_history`.
-3. Write new modifiers: `python tools/calibrate.py seasons/dtm-1991 --apply`.
-   A track with its own observation uses its own `F`. Other tracks use the
-   median.
-4. Rebuild and install, then restart the game.
+An earlier version misused `lap_modifier` as a lap-time knob, which gave
+races of 45–56 laps.
 
-Observations are logged in `seasons/dtm-1991/research/calibration.json`.
+**Lap time.** The spec's `speed_scale` multiplies every micro-sector target
+speed. The real 1991 results for every session are in
+`seasons/dtm-1991/research/results/` (from touringcarracing.net). After an
+in-game qualifying session:
 
-**Current status** (two observations: Zolder qualifying and Hockenheim
-practice, F = 1.079):
-- The modifiers predict each round-1 pole within 0.05 s.
-- It's still a model, so check it in-game and tighten it with the loop above.
-- **Re-observe Hockenheim:** its only data point is a practice best on the old
-  route.
+1. Run `python tools/calibrate.py seasons/dtm-1991 --observe-save "<game>/saves/<save>.json"`.
+2. Run `python tools/calibrate.py seasons/dtm-1991 --apply`. This computes
+   the new scale as old scale × game pole ÷ real pole.
+3. Regenerate the tracks, then rebuild and install the pack.
+
+**Starting values:**
+- **Zolder:** 1.22, measured. The first build's in-game pole was 1:45.4
+  against the real 1:42.7.
+- **Hockenheim:** 0.98, from a practice time.
+- **Other tracks:** estimates. They all need an in-game qualifying session.
+
+**Pit stops.** The 1991 heats were ~100 km sprints with no planned stops,
+only for damage or penalties, and no refuelling. Tyre wear is set (0.6× the
+earlier values) so a heat runs without stopping. This still needs an
+in-game check.
 
 ## Rules of thumb
 
@@ -112,5 +122,5 @@ practice, F = 1.079):
   about 12–15 m. Use `overtaking_difficulty` for how hard passing is.
 - **Don't hand-tune `lap_modifier`.** Micro-sector speeds use the base game's
   reference scale. Lap times are set only through the calibration loop above.
-- **Re-run the calibration whenever a track's geometry changes.** Changing the
-  route or the smoothing changes `reference_time`.
+- **Re-check lap times whenever a track's geometry changes.** A new route or
+  new corner speeds changes the lap.

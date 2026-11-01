@@ -2,11 +2,11 @@
   "name": "Alemannenring (Singen)",
   "nationality": "german",
   "length_km": 2.8,
-  "lap_modifier": 0.974,
+  "lap_modifier": 0.72,
   "dnf_modifier": 1.25,
   "overtaking_difficulty": 0.75,
   "pit_lane_loss_s": 18.0,
-  "tyre_wear_mult": 0.9,
+  "tyre_wear_mult": 0.54,
   "fuel_consumption": 0.95,
   "wet_weather_probability_multiplier": 1.1,
   "use_raw_canvas_coordinates": true,
@@ -38,72 +38,72 @@
     {
       "type": "straight",
       "length_pct": 23.61111111111111,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 2.0833333333333335,
-      "target_speed_kmh": 75.0
+      "target_speed_kmh": 73.5
     },
     {
       "type": "straight",
       "length_pct": 9.375,
-      "target_speed_kmh": 260.0
+      "target_speed_kmh": 254.8
     },
     {
       "type": "low",
       "length_pct": 2.0833333333333335,
-      "target_speed_kmh": 80.0
+      "target_speed_kmh": 78.4
     },
     {
       "type": "straight",
       "length_pct": 3.4722222222222223,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 166.6
     },
     {
       "type": "low",
       "length_pct": 2.0833333333333335,
-      "target_speed_kmh": 75.0
+      "target_speed_kmh": 73.5
     },
     {
       "type": "straight",
       "length_pct": 10.76388888888889,
-      "target_speed_kmh": 280.0
+      "target_speed_kmh": 274.4
     },
     {
       "type": "low",
       "length_pct": 1.9097222222222223,
-      "target_speed_kmh": 75.0
+      "target_speed_kmh": 73.5
     },
     {
       "type": "straight",
       "length_pct": 10.416666666666666,
-      "target_speed_kmh": 275.0
+      "target_speed_kmh": 269.5
     },
     {
       "type": "low",
       "length_pct": 2.2569444444444446,
-      "target_speed_kmh": 80.0
+      "target_speed_kmh": 78.4
     },
     {
       "type": "straight",
       "length_pct": 21.52777777777778,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 1.9097222222222223,
-      "target_speed_kmh": 75.0
+      "target_speed_kmh": 73.5
     },
     {
       "type": "straight",
       "length_pct": 5.902777777777778,
-      "target_speed_kmh": 215.0
+      "target_speed_kmh": 210.7
     },
     {
       "type": "low",
       "length_pct": 2.6041666666666665,
-      "target_speed_kmh": 50.0
+      "target_speed_kmh": 49.0
     }
   ],
   "points": [
@@ -1335,6 +1335,16 @@
     ],
     "geometry_length_m": 2817,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
-    "notes": "Temporary street circuit in Singen's industrial area, first used in 1991 (clockwise): start/finish westbound on the southern carriageway of Georg-Fischer-Strasse, Pegulan-Kurve onto Carl-Benz-Strasse, Grubwaldstrasse, Byk-Gulden-Strasse, Pfaffenhaeule, Robert-Gerwig-Strasse (Radio-7 chicane not modelled), then east on the northern carriageway to a hairpin across the central reservation (bridged; exact position unverified)."
+    "notes": "Temporary street circuit in Singen's industrial area, first used in 1991 (clockwise): start/finish westbound on the southern carriageway of Georg-Fischer-Strasse, Pegulan-Kurve onto Carl-Benz-Strasse, Grubwaldstrasse, Byk-Gulden-Strasse, Pfaffenhaeule, Robert-Gerwig-Strasse (Radio-7 chicane not modelled), then east on the northern carriageway to a hairpin across the central reservation (bridged; exact position unverified).",
+    "speed_scale": 0.98,
+    "canvas_transform": {
+      "lat0": 47.755098129641524,
+      "lon0": 8.87509864224184,
+      "kx": 74840.54072927956,
+      "ky": 110540.0,
+      "scale": 0.9823398254084954,
+      "ox": 520.5884425634899,
+      "oy": 493.340446799443
+    }
   }
 }

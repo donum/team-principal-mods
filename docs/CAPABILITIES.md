@@ -61,6 +61,11 @@ Status legend:
   do all our generated tracks. ✅
 - **The race screen covers the bottom of the map** with driver cards and the
   event log, so keep the racing line above y ≈ 800 on a 1080 px tall image. ✅
+- **`lap_modifier` sets race length.** A race runs `options.json` `laps` ×
+  `lap_modifier` laps. Confirmed from a save: Zolder 50 × 1.12 = 56 laps,
+  Hockenheim 50 × 0.9 = 45. ✅
+- **Lap time follows the micro-sector target speeds.** Some base tracks also
+  have an undocumented `track_time_mult` (Shanghai 1.2). 🧪
 - **Track art isn't cached in your save.** A career save only stores
   `data_pack`, so updated tracks show up after a reinstall and game restart. ✅
 

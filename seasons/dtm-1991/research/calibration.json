@@ -2,21 +2,17 @@
   "observations": [
     {
       "track": "zolder",
-      "session": "qualifying",
+      "session": "qualifying-legacy",
       "season": 1,
       "game_pole_s": 125.375,
-      "reference_s": 101.78,
-      "lap_modifier": 1.12,
-      "note": "first OSM Zolder version (commit 70135c3), car_profile group_a_touring"
+      "note": "First Zolder build (commit 70135c3, speed scale 1.0). Used to set the initial speed_scale 1.22."
     },
     {
       "track": "hockenheim",
-      "session": "practice",
+      "session": "practice-legacy",
       "season": 1,
       "game_pole_s": 132.564,
-      "reference_s": 139.15,
-      "lap_modifier": 0.9,
-      "note": "practice best, not qualifying; route before the Senna-Agip fix. Replace with a qualifying result."
+      "note": "Practice best on the pre-fix route. Used to set the initial speed_scale 0.98."
     }
   ]
 }

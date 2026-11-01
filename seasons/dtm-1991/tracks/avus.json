@@ -2,11 +2,11 @@
   "name": "AVUS",
   "nationality": "german",
   "length_km": 4.88,
-  "lap_modifier": 1.162,
+  "lap_modifier": 0.42,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.35,
   "pit_lane_loss_s": 20.0,
-  "tyre_wear_mult": 0.8,
+  "tyre_wear_mult": 0.48,
   "fuel_consumption": 1.25,
   "wet_weather_probability_multiplier": 1.0,
   "use_raw_canvas_coordinates": true,
@@ -38,42 +38,42 @@
     {
       "type": "straight",
       "length_pct": 43.30949948927477,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 1.4300306435137895,
-      "target_speed_kmh": 45.0
+      "target_speed_kmh": 44.1
     },
     {
       "type": "straight",
       "length_pct": 39.93871297242084,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "high",
       "length_pct": 1.2257405515832482,
-      "target_speed_kmh": 255.0
+      "target_speed_kmh": 249.9
     },
     {
       "type": "straight",
       "length_pct": 5.209397344228805,
-      "target_speed_kmh": 355.0
+      "target_speed_kmh": 347.9
     },
     {
       "type": "med",
       "length_pct": 6.026557711950971,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 137.2
     },
     {
       "type": "straight",
       "length_pct": 2.0429009193054135,
-      "target_speed_kmh": 205.0
+      "target_speed_kmh": 200.9
     },
     {
       "type": "med",
       "length_pct": 0.8171603677221655,
-      "target_speed_kmh": 165.0
+      "target_speed_kmh": 161.7
     }
   ],
   "points": [
@@ -1321,6 +1321,16 @@
     ],
     "geometry_length_m": 4872,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
-    "notes": "1989-1991 AVUS (anticlockwise on the A115 carriageways): start/finish southbound on the western carriageway by the AVUS-Tribuene, south turn across the central reservation, northbound on the eastern carriageway, flat Nordkurve loop. The 1991 south-turn position is undocumented: it is placed at 52.4849 N so the lap measures the official 4.880 km (bridged). A 1991 chicane is mentioned in race reports but its position is unknown, so none is modelled."
+    "notes": "1989-1991 AVUS (anticlockwise on the A115 carriageways): start/finish southbound on the western carriageway by the AVUS-Tribuene, south turn across the central reservation, northbound on the eastern carriageway, flat Nordkurve loop. The 1991 south-turn position is undocumented: it is placed at 52.4849 N so the lap measures the official 4.880 km (bridged). A 1991 chicane is mentioned in race reports but its position is unknown, so none is modelled.",
+    "speed_scale": 0.98,
+    "canvas_transform": {
+      "lat0": 52.49328017439504,
+      "lon0": 13.266078237878272,
+      "kx": 67777.67979481933,
+      "ky": 110540.0,
+      "scale": 0.41323158056724263,
+      "ox": 498.5884483605317,
+      "oy": 419.2993816802056
+    }
   }
 }

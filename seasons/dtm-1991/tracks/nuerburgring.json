@@ -2,11 +2,11 @@
   "name": "Nürburgring",
   "nationality": "german",
   "length_km": 4.542,
-  "lap_modifier": 0.926,
+  "lap_modifier": 0.44,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.55,
   "pit_lane_loss_s": 22.0,
-  "tyre_wear_mult": 0.95,
+  "tyre_wear_mult": 0.57,
   "fuel_consumption": 1.0,
   "wet_weather_probability_multiplier": 1.4,
   "use_raw_canvas_coordinates": true,
@@ -38,102 +38,102 @@
     {
       "type": "low",
       "length_pct": 3.380588876772083,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 126.2
     },
     {
       "type": "straight",
       "length_pct": 17.3391494002181,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 389.2
     },
     {
       "type": "low",
       "length_pct": 4.580152671755725,
-      "target_speed_kmh": 70.0
+      "target_speed_kmh": 73.6
     },
     {
       "type": "straight",
       "length_pct": 6.543075245365322,
-      "target_speed_kmh": 275.0
+      "target_speed_kmh": 289.3
     },
     {
       "type": "med",
       "length_pct": 2.5081788440567068,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 152.5
     },
     {
       "type": "straight",
       "length_pct": 1.1995637949836424,
-      "target_speed_kmh": 185.0
+      "target_speed_kmh": 194.6
     },
     {
       "type": "low",
       "length_pct": 2.6172300981461287,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 115.7
     },
     {
       "type": "straight",
       "length_pct": 10.032715376226827,
-      "target_speed_kmh": 345.0
+      "target_speed_kmh": 362.9
     },
     {
       "type": "low",
       "length_pct": 3.707742639040349,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 115.7
     },
     {
       "type": "straight",
       "length_pct": 5.343511450381679,
-      "target_speed_kmh": 265.0
+      "target_speed_kmh": 278.8
     },
     {
       "type": "med",
       "length_pct": 4.580152671755725,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 178.8
     },
     {
       "type": "straight",
       "length_pct": 7.851690294438386,
-      "target_speed_kmh": 335.0
+      "target_speed_kmh": 352.4
     },
     {
       "type": "low",
       "length_pct": 1.8538713195201746,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 115.7
     },
     {
       "type": "straight",
       "length_pct": 2.1810250817884405,
-      "target_speed_kmh": 190.0
+      "target_speed_kmh": 199.9
     },
     {
       "type": "med",
       "length_pct": 2.9443838604143946,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 136.8
     },
     {
       "type": "straight",
       "length_pct": 7.1973827699018535,
-      "target_speed_kmh": 305.0
+      "target_speed_kmh": 320.9
     },
     {
       "type": "high",
       "length_pct": 1.7448200654307524,
-      "target_speed_kmh": 205.0
+      "target_speed_kmh": 215.7
     },
     {
       "type": "straight",
       "length_pct": 8.724100327153762,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 389.2
     },
     {
       "type": "low",
       "length_pct": 3.053435114503817,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 126.2
     },
     {
       "type": "straight",
       "length_pct": 2.6172300981461287,
-      "target_speed_kmh": 205.0
+      "target_speed_kmh": 215.7
     }
   ],
   "points": [
@@ -1371,6 +1371,16 @@
     ],
     "geometry_length_m": 4548,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
-    "notes": "1984-2001 GP circuit (clockwise) as raced in 1991: today's GP-Strecke with the 'Variante 24h-Rennen' link in place of the 2002 Mercedes Arena. Traced 4548 m vs 4542 m in 1991."
+    "notes": "1984-2001 GP circuit (clockwise) as raced in 1991: today's GP-Strecke with the 'Variante 24h-Rennen' link in place of the 2002 Mercedes Arena. Traced 4548 m vs 4542 m in 1991.",
+    "speed_scale": 1.052,
+    "canvas_transform": {
+      "lat0": 50.331325164509806,
+      "lon0": 6.940623256568627,
+      "kx": 71060.79587238128,
+      "ky": 110540.0,
+      "scale": 0.4871085961982683,
+      "ox": 472.08668905318007,
+      "oy": 403.3608117200923
+    }
   }
 }

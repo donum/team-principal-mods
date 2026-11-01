@@ -45,8 +45,25 @@ gives Ludwig #7 in its XML while his car is painted #8.
   scored no DTM points [S1, S2, S5].
 - The Kyalami and Macau invitation races.
 
-**Two heats per round can't be modelled.** Each round is one race in the game
-(see [CAPABILITIES](../../docs/CAPABILITIES.md#4-gaps-not-natively-supported)).
+**The 1991 weekend format** (sources: touringcarracing.net round pages, de.wikipedia):
+- **Qualifying** (two sessions) set grid places 1–16. Everyone else ran a
+  roughly 50 km qualification race for places 17 and lower. Heat fields had
+  32–40 cars.
+- **Two heats of about 100 km each.** Both paid full points
+  (20-15-12-10-8-6-4-3-2-1). The heat-2 grid was the heat-1 finishing order.
+- **No planned pit stops and no refuelling.** Cars stopped only for damage
+  or penalties.
+- **Success ballast** went up to 50 kg. Drivers new to the series started on
+  the maximum. The per-position scale is unknown.
+- **No Nordschleife in 1991.** The DTM raced it in 1988–90 and 1992–93,
+  always 2 × 4 laps.
+
+**What the game can model:**
+- **One race per round** at the real heat distance (`race_laps`). Two heats
+  per weekend aren't possible.
+- **Grid limit 40,** so the whole field starts.
+- **No forced stops:** tyre wear is tuned so a heat runs without one.
+- **Not modelled:** the qualification race and success ballast.
 
 ## Rules (`patches/regulations.json`, `season.json` → constants)
 

@@ -2,11 +2,11 @@
   "name": "Hockenheimring",
   "nationality": "german",
   "length_km": 6.797,
-  "lap_modifier": 1.0,
+  "lap_modifier": 0.3,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.45,
   "pit_lane_loss_s": 22.0,
-  "tyre_wear_mult": 0.8,
+  "tyre_wear_mult": 0.48,
   "fuel_consumption": 1.2,
   "wet_weather_probability_multiplier": 1.0,
   "use_raw_canvas_coordinates": true,
@@ -38,37 +38,57 @@
     {
       "type": "straight",
       "length_pct": 6.5136935603256845,
-      "target_speed_kmh": 345.0
+      "target_speed_kmh": 338.1
     },
     {
       "type": "low",
       "length_pct": 0.8882309400444115,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 112.7
     },
     {
       "type": "straight",
       "length_pct": 24.130273871206512,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 2.146558105107328,
-      "target_speed_kmh": 85.0
+      "target_speed_kmh": 83.3
     },
     {
       "type": "straight",
       "length_pct": 0.6661732050333087,
-      "target_speed_kmh": 135.0
+      "target_speed_kmh": 132.3
     },
     {
       "type": "high",
       "length_pct": 0.3700962250185048,
-      "target_speed_kmh": 240.0
+      "target_speed_kmh": 235.2
     },
     {
       "type": "straight",
       "length_pct": 14.65581051073279,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
+    },
+    {
+      "type": "high",
+      "length_pct": 0.3700962250185048,
+      "target_speed_kmh": 240.1
+    },
+    {
+      "type": "straight",
+      "length_pct": 0.7401924500370096,
+      "target_speed_kmh": 259.7
+    },
+    {
+      "type": "low",
+      "length_pct": 4.1450777202072535,
+      "target_speed_kmh": 93.1
+    },
+    {
+      "type": "straight",
+      "length_pct": 1.0362694300518134,
+      "target_speed_kmh": 156.8
     },
     {
       "type": "high",
@@ -77,83 +97,63 @@
     },
     {
       "type": "straight",
-      "length_pct": 0.7401924500370096,
-      "target_speed_kmh": 265.0
-    },
-    {
-      "type": "low",
-      "length_pct": 4.1450777202072535,
-      "target_speed_kmh": 95.0
-    },
-    {
-      "type": "straight",
-      "length_pct": 1.0362694300518134,
-      "target_speed_kmh": 160.0
-    },
-    {
-      "type": "high",
-      "length_pct": 0.3700962250185048,
-      "target_speed_kmh": 250.0
-    },
-    {
-      "type": "straight",
       "length_pct": 14.063656550703183,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 2.9607698001480385,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 102.9
     },
     {
       "type": "straight",
       "length_pct": 12.657290895632865,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "med",
       "length_pct": 1.998519615099926,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 156.8
     },
     {
       "type": "straight",
       "length_pct": 2.8867505551443373,
-      "target_speed_kmh": 265.0
+      "target_speed_kmh": 259.7
     },
     {
       "type": "low",
       "length_pct": 2.146558105107328,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 107.8
     },
     {
       "type": "straight",
       "length_pct": 0.6661732050333087,
-      "target_speed_kmh": 150.0
+      "target_speed_kmh": 147.0
     },
     {
       "type": "med",
       "length_pct": 2.0725388601036268,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 137.2
     },
     {
       "type": "straight",
       "length_pct": 0.5921539600296077,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 166.6
     },
     {
       "type": "low",
       "length_pct": 1.3323464100666174,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 107.8
     },
     {
       "type": "straight",
       "length_pct": 0.5921539600296077,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 142.1
     },
     {
       "type": "low",
       "length_pct": 1.998519615099926,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 127.4
     }
   ],
   "points": [
@@ -1385,6 +1385,7 @@
     "geometry_length_m": 6716,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "1991 long GP circuit (clockwise): Motodrom, Nordkurve, forest straight, Ostkurve chicane, return straight, Agip/Sachs/Suedkurve. The forest section follows OSM's abandoned:highway=raceway ways (Streckenverlauf 1932-2001); the Nordkurve exit onto the forest straight is bridged (no longer in OSM). Includes all three 1991 chicanes: Jim Clark (1970), Ostkurve (1982) and the return-straight chicane (1970, named Senna-Schikane only from 1994; OSM's 1994 geometry is used). The 1991 return straight ran straight from the Senna chicane exit into today's run to the Agip-Kurve (way 15444543); the missing ~500 m in between are bridged as a straight line (today's quarter-mile drag strip runs ~50 m south of it and is not used). Excluded: today's Parabolika/Spitzkehre layout incl. its back section (117570507) and the chicane-less Ostkurve. Traced 6716 m vs 6797 m in 1991. Overview: the area east of the Motodrom that was cleared for the 2002 rebuild is drawn as forest again (historic_forest), and the old forest section gets a cleared verge.",
+    "speed_scale": 0.98,
     "canvas_transform": {
       "lat0": 49.33349993745819,
       "lon0": 8.579188590886288,

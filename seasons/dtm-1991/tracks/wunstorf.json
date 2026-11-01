@@ -2,11 +2,11 @@
   "name": "Wunstorf",
   "nationality": "german",
   "length_km": 5.05,
-  "lap_modifier": 1.025,
+  "lap_modifier": 0.4,
   "dnf_modifier": 0.95,
   "overtaking_difficulty": 0.4,
   "pit_lane_loss_s": 18.0,
-  "tyre_wear_mult": 0.85,
+  "tyre_wear_mult": 0.51,
   "fuel_consumption": 1.1,
   "wet_weather_probability_multiplier": 1.0,
   "use_raw_canvas_coordinates": true,
@@ -38,82 +38,82 @@
     {
       "type": "straight",
       "length_pct": 32.46187363834423,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 5.446623093681917,
-      "target_speed_kmh": 75.0
+      "target_speed_kmh": 73.5
     },
     {
       "type": "straight",
       "length_pct": 14.052287581699346,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "high",
       "length_pct": 0.8714596949891068,
-      "target_speed_kmh": 190.0
+      "target_speed_kmh": 186.2
     },
     {
       "type": "straight",
       "length_pct": 1.6339869281045751,
-      "target_speed_kmh": 230.0
+      "target_speed_kmh": 225.4
     },
     {
       "type": "med",
       "length_pct": 1.0893246187363834,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 156.8
     },
     {
       "type": "straight",
       "length_pct": 1.4161220043572984,
-      "target_speed_kmh": 200.0
+      "target_speed_kmh": 196.0
     },
     {
       "type": "med",
       "length_pct": 1.0893246187363834,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 137.2
     },
     {
       "type": "straight",
       "length_pct": 0.8714596949891068,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 166.6
     },
     {
       "type": "high",
       "length_pct": 0.32679738562091504,
-      "target_speed_kmh": 265.0
+      "target_speed_kmh": 259.7
     },
     {
       "type": "straight",
       "length_pct": 3.7037037037037037,
-      "target_speed_kmh": 335.0
+      "target_speed_kmh": 328.3
     },
     {
       "type": "med",
       "length_pct": 2.0697167755991286,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 142.1
     },
     {
       "type": "straight",
       "length_pct": 1.5250544662309369,
-      "target_speed_kmh": 195.0
+      "target_speed_kmh": 191.1
     },
     {
       "type": "low",
       "length_pct": 3.5947712418300655,
-      "target_speed_kmh": 85.0
+      "target_speed_kmh": 83.3
     },
     {
       "type": "straight",
       "length_pct": 28.540305010893245,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
       "length_pct": 1.3071895424836601,
-      "target_speed_kmh": 55.0
+      "target_speed_kmh": 53.9
     }
   ],
   "points": [
@@ -1332,6 +1332,16 @@
     ],
     "geometry_length_m": 4554,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
-    "notes": "ADAC-Flugplatzrennen Wunstorf, 1982-1992 layout (clockwise per the Commons diagram arrow, unverified): start/finish south-westbound on runway 03/21, hairpin at its SW end, the perimeter road north with esses to the west end of runway 08/26, east along 08/26 and a sweeping right back onto 03/21. The perimeter road is not in today's OSM: it is reconstructed as a bridge polyline by mapping the 1993 Commons diagram (which has a north arrow) onto the runway ends with an affine fit. Chicanes unverified and not modelled. Traced 4554 m vs 5050 m: the reconstructed perimeter road and the 1991 sweeper are approximations."
+    "notes": "ADAC-Flugplatzrennen Wunstorf, 1982-1992 layout (clockwise per the Commons diagram arrow, unverified): start/finish south-westbound on runway 03/21, hairpin at its SW end, the perimeter road north with esses to the west end of runway 08/26, east along 08/26 and a sweeping right back onto 03/21. The perimeter road is not in today's OSM: it is reconstructed as a bridge polyline by mapping the 1993 Commons diagram (which has a north arrow) onto the runway ends with an affine fit. Chicanes unverified and not modelled. Traced 4554 m vs 5050 m: the reconstructed perimeter road and the 1991 sweeper are approximations.",
+    "speed_scale": 0.98,
+    "canvas_transform": {
+      "lat0": 52.45446720837268,
+      "lon0": 9.43031196309378,
+      "kx": 67837.48541730027,
+      "ky": 110540.0,
+      "scale": 0.5381275760198291,
+      "ox": 615.061191015674,
+      "oy": 286.43387826384196
+    }
   }
 }
