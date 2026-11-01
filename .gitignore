@@ -16,3 +16,7 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Private reference material (period scans etc.), never published
+reference/
+private/

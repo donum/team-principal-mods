@@ -438,6 +438,15 @@ def build(season_dir, game, install):
     for extra in ("README.txt", "credits.txt"):
         if (season_dir / extra).exists():
             shutil.copy2(season_dir / extra, out / extra)
+    portraits = season_dir / "art" / "portraits.json"
+    if portraits.exists() and (out / "credits.txt").exists():
+        lines = ["", "Driver portraits (assets/portraits), free-licence photos from Wikimedia Commons:"]
+        for name, c in sorted(load_json(portraits).items()):
+            if c.get("source") == "photo":
+                lines.append(f"  {name}: {c['author'] or 'unknown author'}, {c['license']} - {c['page']}")
+        lines.append("  Drivers without a free photo have a drawn helmet card.")
+        with open(out / "credits.txt", "a", encoding="utf-8", newline="\n") as fh:
+            fh.write("\n".join(lines) + "\n")
 
     errors, warnings = validate(out)
     for track_id, source in placeholders.items():

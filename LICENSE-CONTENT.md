@@ -59,6 +59,21 @@ Because of ShareAlike, these images are licensed **CC BY-SA 4.0**
 credits are in each pack's `credits.txt`. The liveries show real sponsor
 trademarks, which belong to their owners.
 
+## Driver portraits
+
+Driver portraits (`seasons/*/assets/portraits`, made with
+`tools/portrait_art.py`) are crops of freely licensed photos from Wikimedia
+Commons. Only public-domain, CC0, CC BY and CC BY-SA files are used. Each
+photo's author, licence and source page are recorded in
+`seasons/*/art/portraits.json`, and the build lists them in the pack's
+`credits.txt`.
+
+The crops keep the licence of their photo. CC BY-SA crops are shared alike;
+NonCommercial doesn't apply to them. Drivers without a free photo get a
+drawn helmet card (CC BY-NC-SA 4.0). The people pictured keep their
+personality rights; the photos are used to depict their historical racing
+careers.
+
 ## Logos
 
 Team and engine logos (`seasons/*/assets/logos`, `seasons/*/assets/engines`,
