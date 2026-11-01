@@ -44,197 +44,197 @@
     {
       "type": "straight",
       "length_pct": 6.476399560922063,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 155.0
+      "target_speed_kmh": 167.2
     },
     {
       "type": "low",
       "length_pct": 0.6586169045005489,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 124.1
     },
     {
       "type": "straight",
       "length_pct": 11.63556531284303,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "low",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 107.9
     },
     {
       "type": "low",
       "length_pct": 0.6586169045005489,
-      "target_speed_kmh": 85.0
+      "target_speed_kmh": 91.7
     },
     {
       "type": "straight",
       "length_pct": 1.756311745334797,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 172.6
     },
     {
       "type": "med",
       "length_pct": 0.8781558726673985,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 151.1
     },
     {
       "type": "straight",
       "length_pct": 23.71020856201976,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "low",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 75.0
+      "target_speed_kmh": 80.9
     },
     {
       "type": "low",
       "length_pct": 0.5488474204171241,
-      "target_speed_kmh": 60.0
+      "target_speed_kmh": 64.7
     },
     {
       "type": "low",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 80.0
+      "target_speed_kmh": 86.3
     },
     {
       "type": "straight",
       "length_pct": 8.342480790340286,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 175.0
+      "target_speed_kmh": 188.8
     },
     {
       "type": "med",
       "length_pct": 0.9879253567508233,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 156.5
     },
     {
       "type": "straight",
       "length_pct": 5.159165751920966,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "low",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 90.0
+      "target_speed_kmh": 97.1
     },
     {
       "type": "low",
       "length_pct": 0.43907793633369924,
-      "target_speed_kmh": 85.0
+      "target_speed_kmh": 91.7
     },
     {
       "type": "straight",
       "length_pct": 2.5246981339187706,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 155.0
+      "target_speed_kmh": 167.2
     },
     {
       "type": "med",
       "length_pct": 1.0976948408342482,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 140.3
     },
     {
       "type": "med",
       "length_pct": 0.9879253567508233,
-      "target_speed_kmh": 165.0
+      "target_speed_kmh": 178.0
     },
     {
       "type": "straight",
       "length_pct": 7.4643249176728865,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 2.5246981339187706,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 172.6
     },
     {
       "type": "straight",
       "length_pct": 4.7200878155872665,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 135.0
+      "target_speed_kmh": 145.7
     },
     {
       "type": "low",
       "length_pct": 1.9758507135016465,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 118.7
     },
     {
       "type": "straight",
       "length_pct": 1.8660812294182216,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.8781558726673985,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 156.5
     },
     {
       "type": "straight",
       "length_pct": 0.9879253567508233,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.5488474204171241,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 183.4
     },
     {
       "type": "straight",
       "length_pct": 1.4270032930845225,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "low",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 140.3
     },
     {
       "type": "low",
       "length_pct": 0.8781558726673985,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 118.7
     },
     {
       "type": "straight",
       "length_pct": 1.646542261251372,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     },
     {
       "type": "med",
       "length_pct": 0.32930845225027444,
-      "target_speed_kmh": 150.0
+      "target_speed_kmh": 161.8
     },
     {
       "type": "low",
       "length_pct": 1.3172338090010978,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 140.3
     },
     {
       "type": "straight",
       "length_pct": 4.281009879253568,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 399.2
     }
   ],
   "points": [
@@ -1468,7 +1468,7 @@
     "geometry_length_m": 4517,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "Grand Prix circuit since 2002 (clockwise): Nordkurve, Parabolika, Spitzkehre, Mercedes-Tribuene, Motodrom. Raceway loop over the members of OSM relation 284588 (Hockenheimring Grand Prix Circuit); the 1932-2001 forest loop is only mapped as abandoned:highway=raceway and is not used. 42 laps at the opener, 41 at the finale; the spec uses 42. Traced 4517 m vs 4574 m.",
-    "speed_scale": 1.0,
+    "speed_scale": 1.079,
     "canvas_transform": {
       "lat0": 49.32978457565543,
       "lon0": 8.572318203745318,

@@ -10,7 +10,7 @@
   ],
   "length_km": 3.478,
   "width_m": 13.0,
-  "speed_scale": 1.0,
+  "speed_scale": 0.786,
   "race_laps": 52,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.5,

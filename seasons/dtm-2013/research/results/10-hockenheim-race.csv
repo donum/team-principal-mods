@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,22,Timo Glock,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),41,1:16:44.053,,1:48.171,classified,"grid 4; tyres Wet-Wet-Wet; 25 pts; wet race, time-limited: scheduled 42 laps, flag after 75 min (41 laps)"
+2,4,Roberto Merhi,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,41,1:16:46.840,+2.787,1:47.376,classified,grid 21; tyres Wet-Wet-Wet; 18 pts; penalty for jump start
+3,1,Bruno Spengler,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),41,1:16:54.173,+10.120,1:48.207,classified,grid 1; tyres Wet-Wet-Wet; 15 pts
+4,11,Mattias Ekström,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,41,1:16:55.418,+11.365,1:47.995,classified,grid 7; tyres Wet-Wet-Wet; 12 pts
+5,20,Miguel Molina,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,41,1:16:59.672,+15.619,1:47.918,classified,grid 5; tyres Wet-Wet-Wet; 10 pts
+6,16,Andy Priaulx,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),41,1:17:04.975,+20.922,1:47.646,classified,grid 3; tyres Wet-Wet-Wet; 8 pts
+7,9,Christian Vietoris,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,41,1:17:14.519,+30.466,1:46.908,classified,grid 20; tyres Wet-Wet-Wet; 6 pts
+8,2,Dirk Werner,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),41,1:17:15.329,+31.276,1:47.342,classified,grid 2; tyres Wet-Wet-Wet; 4 pts
+9,3,Gary Paffett,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,41,1:17:21.080,+37.027,1:47.521,classified,grid 16; tyres Wet-Wet-Wet; 2 pts
+10,17,Daniel Juncadella,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,41,1:17:21.299,+37.246,1:49.479,classified,grid 17; tyres Wet-Wet-Wet; 1 pts; drive-through penalty (collision with Ekström)
+11,7,Augusto Farfus,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),41,1:17:28.569,+44.516,1:48.781,classified,grid 10; tyres Wet-Wet-Wet
+12,12,Jamie Green,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,41,1:17:28.864,+44.811,1:48.573,classified,grid 19; tyres Wet-Wet-Wet
+13,23,Timo Scheider,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,41,1:17:29.556,+45.503,1:49.377,classified,grid 12; tyres Wet-Wet-Soft
+14,24,Adrien Tambay,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,41,1:17:33.019,+48.966,1:48.136,classified,grid 8; tyres Wet-Wet-Wet
+15,5,Edoardo Mortara,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,41,1:17:50.581,+1:06.528,1:49.807,classified,grid 18; tyres Wet-Wet-Wet
+16,19,Mike Rockenfeller,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,41,1:17:58.113,+1:14.060,1:51.029,classified,grid 9; tyres Wet-Wet-Soft
+17,18,Pascal Wehrlein,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,41,1:18:04.014,+1:19.961,1:50.157,classified,grid 15; tyres Wet-Wet-Soft
+18,10,Robert Wickens,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,41,1:18:18.531,+1:34.478,1:49.272,classified,grid 13; tyres Wet-Wet-Soft
+19,15,Martin Tomczyk,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),41,1:18:43.750,+1:59.697,1:48.630,classified,grid 11; tyres Wet-Wet-Soft-Wet
+20,8,Joey Hand,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),40,,+1 lap,1:49.897,classified,grid 22; tyres Wet-Wet-Soft
+,21,Marco Wittmann,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),37,,,1:50.471,DSQ,grid 6; tyres Wet-Wet-Soft; disqualified; reason not found (fandom wiki footnote blank; en.wiki shows DSQ without reason)
+,6,Filipe Albuquerque,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,1,,,,DNF,Collision; grid 14; tyres Wet

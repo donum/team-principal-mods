@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,7,Augusto Farfus,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),42,1:10:11.583,,1:34.504,classified,grid 2; tyres Soft-Prime; 25 pts
+2,2,Dirk Werner,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),42,1:10:15.275,+3.692,1:35.597,classified,grid 20; tyres Prime-Soft; 18 pts
+3,9,Christian Vietoris,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,42,1:10:21.258,+9.675,1:35.925,classified,grid 3; tyres Prime-Soft; 15 pts
+4,3,Gary Paffett,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,42,1:10:24.196,+12.613,1:35.420,classified,grid 6; tyres Prime-Soft; 12 pts
+5,1,Bruno Spengler,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),42,1:10:24.795,+13.212,1:35.144,classified,grid 7; tyres Soft-Prime; 10 pts
+6,23,Timo Scheider,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,42,1:10:25.336,+13.753,1:35.137,classified,grid 1; tyres Soft-Prime; 8 pts; led early; pitted one lap after the field under the lap-5 safety car
+7,8,Joey Hand,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),42,1:10:25.683,+14.100,1:34.541,classified,grid 10; tyres Soft-Prime; 6 pts
+8,19,Mike Rockenfeller,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,42,1:10:26.060,+14.477,1:35.696,classified,grid 14; tyres Prime-Soft; 4 pts
+9,21,Marco Wittmann,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),42,1:10:29.477,+17.894,1:35.647,classified,grid 22; tyres Prime-Soft; 2 pts
+10,4,Roberto Merhi,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,42,1:10:31.120,+19.537,1:35.315,classified,grid 21; tyres Prime-Soft; 1 pts
+11,18,Pascal Wehrlein,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,42,1:10:32.485,+20.902,1:35.440,classified,grid 8; tyres Soft-Prime
+12,17,Daniel Juncadella,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,42,1:10:37.752,+26.169,1:35.947,classified,grid 9; tyres Soft-Prime
+13,15,Martin Tomczyk,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),42,1:10:42.487,+30.904,1:35.903,classified,grid 11; tyres Soft-Prime; drive-through penalty (jump start)
+14,12,Jamie Green,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,42,1:10:52.749,+41.166,1:35.881,classified,grid 12; tyres Soft-Prime; drive-through penalty
+15,20,Miguel Molina,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,42,1:10:55.118,+43.535,1:36.450,classified,grid 18; tyres Soft-Prime
+16,6,Filipe Albuquerque,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,42,1:11:05.660,+54.077,1:35.701,classified,grid 16; tyres Prime-Soft; penalty for pit-lane speeding
+17,16,Andy Priaulx,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),40,,+2 laps,1:36.958,classified,grid 17; tyres Prime-Soft
+,11,Mattias Ekström,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,28,,,1:37.254,DNF,Retired; grid 4; tyres Prime-Soft
+,5,Edoardo Mortara,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,21,,,1:36.818,DNF,Damage; grid 19; tyres Prime-Soft
+,22,Timo Glock,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),17,,,1:35.510,DNF,Wheel; grid 15; tyres Soft-Prime
+,10,Robert Wickens,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,5,,,1:35.183,DNF,Engine; grid 5; tyres Prime-Soft
+,24,Adrien Tambay,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,4,,,1:37.421,DNF,"Engine; grid 13; tyres Soft-Prime; drive-through penalty (jump start); stopped on track lap 4, triggered safety car lap 5"

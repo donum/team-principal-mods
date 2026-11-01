@@ -44,157 +44,157 @@
     {
       "type": "straight",
       "length_pct": 15.877437325905293,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "low",
       "length_pct": 0.4178272980501393,
-      "target_speed_kmh": 80.0
+      "target_speed_kmh": 75.0
     },
     {
       "type": "low",
       "length_pct": 0.6963788300835655,
-      "target_speed_kmh": 70.0
+      "target_speed_kmh": 65.6
     },
     {
       "type": "low",
       "length_pct": 0.4178272980501393,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 89.0
     },
     {
       "type": "straight",
       "length_pct": 2.9247910863509747,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "med",
       "length_pct": 3.3426183844011144,
-      "target_speed_kmh": 135.0
+      "target_speed_kmh": 126.5
     },
     {
       "type": "straight",
       "length_pct": 3.7604456824512535,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "med",
       "length_pct": 0.5571030640668524,
-      "target_speed_kmh": 135.0
+      "target_speed_kmh": 126.5
     },
     {
       "type": "low",
       "length_pct": 0.8356545961002786,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 93.7
     },
     {
       "type": "low",
       "length_pct": 1.2534818941504178,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 93.7
     },
     {
       "type": "straight",
       "length_pct": 1.2534818941504178,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "low",
       "length_pct": 0.4178272980501393,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 98.4
     },
     {
       "type": "low",
       "length_pct": 0.6963788300835655,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 89.0
     },
     {
       "type": "straight",
       "length_pct": 9.610027855153204,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "low",
       "length_pct": 0.4178272980501393,
-      "target_speed_kmh": 125.0
+      "target_speed_kmh": 117.1
     },
     {
       "type": "low",
       "length_pct": 2.785515320334262,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 98.4
     },
     {
       "type": "straight",
       "length_pct": 5.43175487465181,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "low",
       "length_pct": 0.4178272980501393,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 112.4
     },
     {
       "type": "low",
       "length_pct": 0.9749303621169917,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 103.1
     },
     {
       "type": "straight",
       "length_pct": 3.7604456824512535,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "med",
       "length_pct": 0.5571030640668524,
-      "target_speed_kmh": 135.0
+      "target_speed_kmh": 126.5
     },
     {
       "type": "med",
       "length_pct": 2.367688022284123,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 121.8
     },
     {
       "type": "straight",
       "length_pct": 23.398328690807798,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "low",
       "length_pct": 0.4178272980501393,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 112.4
     },
     {
       "type": "low",
       "length_pct": 0.5571030640668524,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 112.4
     },
     {
       "type": "straight",
       "length_pct": 0.8356545961002786,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "med",
       "length_pct": 1.1142061281337048,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 131.2
     },
     {
       "type": "straight",
       "length_pct": 4.178272980501393,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     },
     {
       "type": "med",
       "length_pct": 0.4178272980501393,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 131.2
     },
     {
       "type": "low",
       "length_pct": 2.9247910863509747,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 112.4
     },
     {
       "type": "straight",
       "length_pct": 7.381615598885793,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 346.7
     }
   ],
   "points": [
@@ -1421,7 +1421,7 @@
     "geometry_length_m": 3555,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "Sprint circuit (clockwise, 3.629 km): today's GP start/finish, Castrol-S, Mercedes Arena, then the 'Anbindung zur Sprintstrecke' across to the return leg before the NGK-Schikane, and the last corner. The 1992 sprint spec (dtm-1992/nuerburgring_short) with the Mercedes Arena instead of the Variante 24h-Rennen (way 31010602 excluded). Traced 3555 m vs 3629 m.",
-    "speed_scale": 1.0,
+    "speed_scale": 0.937,
     "canvas_transform": {
       "lat0": 50.33371707363862,
       "lon0": 6.94196345680693,

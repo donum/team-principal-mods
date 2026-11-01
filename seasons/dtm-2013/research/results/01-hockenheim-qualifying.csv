@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,23,Timo Scheider,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,,1:35.918,+0.000,,qualified,"best in Q4; Q1 1:49.601 (5th); Q2 1:48.666 (8th); Q3 1:39.411 (2nd); Q4 1:35.918 (1st); grid 1; damp/drying track: Q1-Q2 ~1:48-1:50, Q3 ~1:39-1:43, Q4 dry ~1:36"
+2,7,Augusto Farfus,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,1:36.034,+0.116,,qualified,best in Q4; Q1 1:49.136 (1st); Q2 1:48.313 (2nd); Q3 1:39.570 (3rd); Q4 1:36.034 (2nd); grid 2
+3,9,Christian Vietoris,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:36.194,+0.276,,qualified,best in Q4; Q1 1:49.368 (3rd); Q2 1:48.383 (4th); Q3 1:39.376 (1st); Q4 1:36.194 (3rd); grid 3
+4,10,Robert Wickens,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:39.694,+3.776,,qualified,best in Q3; Q1 1:49.836 (11th); Q2 1:48.317 (3rd); Q3 1:39.694 (4th); Q4 no time (Not Classified); grid 5; Q4 lap deleted (left the track and gained an advantage); started 5th behind Ekström
+5,11,Mattias Ekström,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,,1:40.005,+4.087,,qualified,best in Q3; Q1 1:49.672 (7th); Q2 1:48.533 (5th); Q3 1:40.005 (5th); grid 4
+6,3,Gary Paffett,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:40.496,+4.578,,qualified,best in Q3; Q1 1:49.602 (6th); Q2 1:48.610 (7th); Q3 1:40.496 (6th); grid 6
+7,1,Bruno Spengler,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,1:41.184,+5.266,,qualified,best in Q3; Q1 1:49.971 (14th); Q2 1:48.575 (6th); Q3 1:41.184 (7th); grid 7
+8,18,Pascal Wehrlein,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,1:41.337,+5.419,,qualified,best in Q3; Q1 1:49.300 (2nd); Q2 1:47.890 (1st); Q3 1:41.337 (8th); grid 8
+9,17,Daniel Juncadella,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,1:41.637,+5.719,,qualified,best in Q3; Q1 1:50.036 (16th); Q2 1:48.682 (9th); Q3 1:41.637 (9th); grid 9
+10,8,Joey Hand,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,1:43.775,+7.857,,qualified,best in Q3; Q1 1:49.550 (4th); Q2 1:48.846 (10th); Q3 1:43.775 (10th); grid 10
+11,15,Martin Tomczyk,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,1:48.947,+13.029,,qualified,best in Q2; Q1 1:49.695 (9th); Q2 1:48.947 (11th); grid 11
+12,12,Jamie Green,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,,1:49.129,+13.211,,qualified,best in Q2; Q1 1:49.842 (12th); Q2 1:49.129 (12th); grid 12
+13,24,Adrien Tambay,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,,1:49.136,+13.218,,qualified,best in Q2; Q1 1:49.694 (8th); Q2 1:49.136 (13th); grid 13
+14,19,Mike Rockenfeller,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,,1:49.366,+13.448,,qualified,best in Q2; Q1 1:49.892 (13th); Q2 1:49.366 (14th); grid 14
+15,22,Timo Glock,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),,1:49.842,+13.924,,qualified,best in Q2; Q1 1:49.992 (15th); Q2 1:49.842 (15th); grid 15
+16,6,Filipe Albuquerque,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,,1:49.798,+13.880,,qualified,best in Q1; Q1 1:49.798 (10th); Q2 1:50.296 (16th); grid 16
+17,16,Andy Priaulx,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,1:50.190,+14.272,,qualified,best in Q1; Q1 1:50.190 (17th); grid 17
+18,20,Miguel Molina,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,,1:50.399,+14.481,,qualified,best in Q1; Q1 1:50.399 (18th); grid 18
+19,5,Edoardo Mortara,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,,1:50.416,+14.498,,qualified,best in Q1; Q1 1:50.416 (19th); grid 19
+20,4,Roberto Merhi,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:50.810,+14.892,,qualified,best in Q1; Q1 1:50.810 (20th); grid 21; 10-place grid penalty (parc-fermé breach); started 21st
+21,21,Marco Wittmann,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),,1:50.871,+14.953,,qualified,best in Q1; Q1 1:50.871 (21st); grid 22; 10-place grid penalty (parc-fermé breach); started 22nd
+22,2,Dirk Werner,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,1:50.926,+15.008,,qualified,best in Q1; Q1 1:50.926 (22nd); grid 20; started 20th after Merhi/Wittmann penalties

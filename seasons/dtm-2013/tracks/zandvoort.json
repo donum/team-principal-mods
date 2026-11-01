@@ -38,177 +38,177 @@
     {
       "type": "straight",
       "length_pct": 6.9493521790341575,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "low",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 131.0
     },
     {
       "type": "low",
       "length_pct": 2.4734982332155475,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 110.9
     },
     {
       "type": "straight",
       "length_pct": 5.6537102473498235,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "low",
       "length_pct": 0.4711425206124853,
-      "target_speed_kmh": 125.0
+      "target_speed_kmh": 126.0
     },
     {
       "type": "low",
       "length_pct": 0.7067137809187279,
-      "target_speed_kmh": 125.0
+      "target_speed_kmh": 126.0
     },
     {
       "type": "straight",
       "length_pct": 1.6489988221436984,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "low",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 115.9
     },
     {
       "type": "low",
       "length_pct": 2.0023557126030624,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 100.8
     },
     {
       "type": "straight",
       "length_pct": 7.302709069493522,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "high",
       "length_pct": 0.7067137809187279,
-      "target_speed_kmh": 230.0
+      "target_speed_kmh": 231.8
     },
     {
       "type": "high",
       "length_pct": 1.5312131919905771,
-      "target_speed_kmh": 215.0
+      "target_speed_kmh": 216.7
     },
     {
       "type": "straight",
       "length_pct": 7.067137809187279,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "med",
       "length_pct": 4.593639575971731,
-      "target_speed_kmh": 175.0
+      "target_speed_kmh": 176.4
     },
     {
       "type": "straight",
       "length_pct": 4.7114252061248525,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "med",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 155.0
+      "target_speed_kmh": 156.2
     },
     {
       "type": "low",
       "length_pct": 0.8244994110718492,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 115.9
     },
     {
       "type": "straight",
       "length_pct": 4.004711425206125,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "med",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 146.2
     },
     {
       "type": "low",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 105.8
     },
     {
       "type": "low",
       "length_pct": 0.8244994110718492,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 95.8
     },
     {
       "type": "straight",
       "length_pct": 3.8869257950530036,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "med",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 155.0
+      "target_speed_kmh": 156.2
     },
     {
       "type": "low",
       "length_pct": 2.5912838633686692,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 121.0
     },
     {
       "type": "straight",
       "length_pct": 11.66077738515901,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "low",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 121.0
     },
     {
       "type": "low",
       "length_pct": 0.7067137809187279,
-      "target_speed_kmh": 85.0
+      "target_speed_kmh": 85.7
     },
     {
       "type": "straight",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "low",
       "length_pct": 0.35335689045936397,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 121.0
     },
     {
       "type": "low",
       "length_pct": 1.8845700824499412,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 105.8
     },
     {
       "type": "straight",
       "length_pct": 5.889281507656066,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "med",
       "length_pct": 1.8845700824499412,
-      "target_speed_kmh": 130.0
+      "target_speed_kmh": 131.0
     },
     {
       "type": "straight",
       "length_pct": 2.237926972909305,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     },
     {
       "type": "high",
       "length_pct": 5.771495877502945,
-      "target_speed_kmh": 200.0
+      "target_speed_kmh": 201.6
     },
     {
       "type": "straight",
       "length_pct": 8.8339222614841,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 373.0
     }
   ],
   "points": [
@@ -1450,7 +1450,7 @@
     "geometry_length_m": 4205,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "Grand Prix circuit (clockwise). Raceway loop over today's track, which has the 2020 banked Hugenholtzbocht and Arie Luyendijkbocht; the 2013 lap was 4.307 km. Traced 4205 m. No DRS: it was not used at Zandvoort in 2013 for safety reasons. Start line on the pit straight, about 55% of the way to Tarzan (the pits sit at the start line in the game).",
-    "speed_scale": 1.0,
+    "speed_scale": 1.008,
     "canvas_transform": {
       "lat0": 52.38724370251256,
       "lon0": 4.545684026968174,

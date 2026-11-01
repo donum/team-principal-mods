@@ -6,12 +6,12 @@
         {
           "key": "dtm_2013",
           "name": "DTM 2013",
-          "corner_speed_multiplier": 0.9,
-          "acceleration_multiplier": 0.74,
-          "braking_multiplier": 0.78,
-          "drag_multiplier": 1.18,
+          "corner_speed_multiplier": 1.1,
+          "acceleration_multiplier": 0.55,
+          "braking_multiplier": 1.0,
+          "drag_multiplier": 1.5,
           "summary": "Carbon-chassis DTM silhouettes: about 480 hp, 1,110 kg and plenty of downforce.",
-          "description": "The 2013 DTM cars (Audi RS 5, BMW M3, AMG C-Coupe) corner far faster than Group A saloons but stay well below single-seaters. Calibrate against the 2013 qualifying times."
+          "description": "The 2013 DTM cars (Audi RS 5, BMW M3, AMG C-Coupe) corner far faster than Group A saloons but stay well below single-seaters. Fitted with the game's physics model to the 2013 qualifying times and a top speed of about 265-270 km/h at Hockenheim."
         }
       ],
       "default": "dtm_2013"

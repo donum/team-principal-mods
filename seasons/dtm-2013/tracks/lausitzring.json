@@ -44,142 +44,142 @@
     {
       "type": "straight",
       "length_pct": 1.8813314037626627,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "high",
       "length_pct": 5.354558610709117,
-      "target_speed_kmh": 230.0
+      "target_speed_kmh": 180.8
     },
     {
       "type": "high",
       "length_pct": 2.0260492040520983,
-      "target_speed_kmh": 230.0
+      "target_speed_kmh": 180.8
     },
     {
       "type": "straight",
       "length_pct": 2.0260492040520983,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "high",
       "length_pct": 1.7366136034732271,
-      "target_speed_kmh": 220.0
+      "target_speed_kmh": 172.9
     },
     {
       "type": "straight",
       "length_pct": 11.722141823444284,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "med",
       "length_pct": 0.4341534008683068,
-      "target_speed_kmh": 175.0
+      "target_speed_kmh": 137.6
     },
     {
       "type": "med",
       "length_pct": 0.723589001447178,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 125.8
     },
     {
       "type": "straight",
       "length_pct": 0.723589001447178,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "med",
       "length_pct": 0.4341534008683068,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 110.0
     },
     {
       "type": "low",
       "length_pct": 0.4341534008683068,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 82.5
     },
     {
       "type": "low",
       "length_pct": 1.0130246020260492,
-      "target_speed_kmh": 90.0
+      "target_speed_kmh": 70.7
     },
     {
       "type": "straight",
       "length_pct": 3.7626628075253254,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "med",
       "length_pct": 7.23589001447178,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 125.8
     },
     {
       "type": "straight",
       "length_pct": 13.892908827785817,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "med",
       "length_pct": 0.4341534008683068,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 110.0
     },
     {
       "type": "low",
       "length_pct": 2.460202604920405,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 86.5
     },
     {
       "type": "straight",
       "length_pct": 3.7626628075253254,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "med",
       "length_pct": 2.170767004341534,
-      "target_speed_kmh": 175.0
+      "target_speed_kmh": 137.6
     },
     {
       "type": "straight",
       "length_pct": 3.3285094066570187,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "low",
       "length_pct": 0.4341534008683068,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 94.3
     },
     {
       "type": "low",
       "length_pct": 1.8813314037626627,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 82.5
     },
     {
       "type": "straight",
       "length_pct": 0.8683068017366136,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "low",
       "length_pct": 2.460202604920405,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 78.6
     },
     {
       "type": "straight",
       "length_pct": 2.7496382054992763,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     },
     {
       "type": "high",
       "length_pct": 3.3285094066570187,
-      "target_speed_kmh": 215.0
+      "target_speed_kmh": 169.0
     },
     {
       "type": "high",
       "length_pct": 2.894356005788712,
-      "target_speed_kmh": 220.0
+      "target_speed_kmh": 172.9
     },
     {
       "type": "straight",
       "length_pct": 19.826338639652676,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 290.8
     }
   ],
   "points": [
@@ -1401,7 +1401,7 @@
     "geometry_length_m": 3424,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "DTM short circuit 2011-2013, counter-clockwise as OSM tags the course: front straight of the tri-oval, the banked Turn 1, the back straight cut short by the 2007 Kurzanbindung hairpin, the infield sections, and Turn 3 of the tri-oval back onto the front straight. Via route over OSM ways 115077605 and 766115999 (the Grand Prix course) with the Kurzanbindung (ways 470915848, 864182816) instead of the full back straight. Traced 3424 m vs 3478 m. Whether DTM 2013 took the banked Turn 1 or the infield T1-T5 is not verified; the banked variant is the one that matches the length.",
-    "speed_scale": 1.0,
+    "speed_scale": 0.786,
     "canvas_transform": {
       "lat0": 51.53272586938111,
       "lon0": 13.928671123615636,

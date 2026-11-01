@@ -44,102 +44,102 @@
     {
       "type": "straight",
       "length_pct": 22.65625,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 363.7
     },
     {
       "type": "med",
       "length_pct": 1.5625,
-      "target_speed_kmh": 180.0
+      "target_speed_kmh": 176.9
     },
     {
       "type": "med",
       "length_pct": 3.3854166666666665,
-      "target_speed_kmh": 150.0
+      "target_speed_kmh": 147.4
     },
     {
       "type": "straight",
       "length_pct": 13.020833333333334,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 363.7
     },
     {
       "type": "low",
       "length_pct": 0.78125,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 113.0
     },
     {
       "type": "low",
       "length_pct": 4.166666666666667,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 98.3
     },
     {
       "type": "straight",
       "length_pct": 6.25,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 363.7
     },
     {
       "type": "high",
       "length_pct": 1.3020833333333333,
-      "target_speed_kmh": 195.0
+      "target_speed_kmh": 191.7
     },
     {
       "type": "straight",
       "length_pct": 1.8229166666666667,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 363.7
     },
     {
       "type": "low",
       "length_pct": 0.78125,
-      "target_speed_kmh": 125.0
+      "target_speed_kmh": 122.9
     },
     {
       "type": "low",
       "length_pct": 1.8229166666666667,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 108.1
     },
     {
       "type": "straight",
       "length_pct": 14.84375,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 363.7
     },
     {
       "type": "med",
       "length_pct": 3.6458333333333335,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 157.3
     },
     {
       "type": "straight",
       "length_pct": 2.6041666666666665,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 363.7
     },
     {
       "type": "med",
       "length_pct": 2.34375,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 167.1
     },
     {
       "type": "med",
       "length_pct": 1.8229166666666667,
-      "target_speed_kmh": 180.0
+      "target_speed_kmh": 176.9
     },
     {
       "type": "med",
       "length_pct": 1.0416666666666667,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 137.6
     },
     {
       "type": "low",
       "length_pct": 3.3854166666666665,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 118.0
     },
     {
       "type": "med",
       "length_pct": 3.6458333333333335,
-      "target_speed_kmh": 150.0
+      "target_speed_kmh": 147.4
     },
     {
       "type": "straight",
       "length_pct": 9.114583333333334,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 363.7
     }
   ],
   "points": [
@@ -1369,7 +1369,7 @@
     "geometry_length_m": 1906,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "Indy circuit (clockwise): Brabham Straight, Paddock Hill Bend, Druids, Graham Hill Bend, Cooper Straight, Surtees, McLaren, Clearways, Clark Curve. Raceway loop over the members of OSM relation 11248425 (Brands Hatch Indy Circuit). Unchanged since 2003. DTM 2013: DRS free once per lap anywhere; modelled as one zone on the longest straight.",
-    "speed_scale": 1.0,
+    "speed_scale": 0.983,
     "canvas_transform": {
       "lat0": 51.359093265079366,
       "lon0": 0.26121106269841265,

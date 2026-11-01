@@ -1,6 +1,6 @@
 # DTM 2013: Season Pack
 
-Status: **v0.1, generated, not yet tested in-game.** The data was generated
+Status: **v0.2, one full season played in-game, lap times calibrated.** The data was generated
 with `tools/season_from_research.py` from `research/`, configured in
 `gen.json`. For the sourced facts behind it (calendar, entry list, standings,
 rules, sources and unverified points), see
@@ -17,24 +17,35 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   - Team names follow the entry list. The two HWA AG entries are
     "Euronics AMG-Mercedes" (#3, #4) and "STIHL AMG-Mercedes" (#9, #10).
 - **Ratings, skills and salaries:** estimated from the final 2013 standings.
-  Team ratings are spread over 50–60 (`rating_range`) because the three makes
-  were close. These are estimates, not history.
+  Car ratings come from each team's average points per car
+  (`team_rating_from: average`) and are spread over 53–58 (`rating_range`),
+  because the three makes were close. Driver skill is spread over 10–19
+  (`skill_range`), so the drivers make most of the difference. A first
+  version rated each car from its team's best driver over 50–60; in the
+  test season the champions' team-mates (Molina, Hand) then scored three to
+  five times their real points and the HWA Mercedes far too little. These
+  are estimates, not history.
 - **Rules** (`rules: "own"` in `gen.json`, see `patches/regulations.json`):
   - Points 25-18-15-12-10-8-6-4-2-1 (the game's `modern_top10`).
   - Knockout qualifying. The real Q4 single-lap shootout of the top 4 isn't
     in the game.
   - DRS enabled, no refuelling, no ERS, two cars per team, driver aids banned.
-  - A `dtm_2013` car profile (corner 0.9, acceleration 0.74, braking 0.78,
-    drag 1.18): a first guess, to be calibrated.
+  - Physical safety car only: there was no VSC or full-course yellow in 2013.
+  - A `dtm_2013` car profile (corner 1.1, acceleration 0.55, braking 1.0,
+    drag 1.5; the game allows 0.5–1.5). It was fitted with the game's own
+    physics model to the 2013 qualifying times and a Hockenheim top speed of
+    about 265–270 km/h (see "Lap times").
   - Minimum chassis mass 965 kg. The game adds the engine mass (145 kg) on
     top, for the real 1,110 kg. No success ballast.
 - **Engines:** Audi 4.0 V8, BMW P66 4.0 V8 and Mercedes-AMG 4.0 V8 as works
   partners with near-equal ratings. BMW is rated a little higher (it won the
   2013 manufacturers' title).
 - **Tyres:** Hankook only. `data/tyremodel.json` makes the soft the option
-  tyre (about 2% more grip, quick wear) and the hard the standard tyre. The
-  game's medium is rated like the hard, and no car starts on it.
-  `formula_compound_usage` forces both compounds in a dry race.
+  tyre (about 2% more grip, quick wear) and the hard the standard tyre, plus
+  the wet. There was no medium, so it is removed (a `null` in the merged
+  file; the game takes its compounds from this file and treats any other
+  compound name as the default, the hard). `formula_compound_usage` forces
+  both compounds in a dry race.
 - **Economy:** budgets and salaries use the game's currency at the scale of
   the other packs, so the game's development and part costs still work. They
   aren't real euros. Top driver salaries are capped at 2.5 (DTM scale), not F1
@@ -76,7 +87,11 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 - Moscow: 2.555 km (fan wiki) vs 2.661 km (racingyears). The traced short
   layout fits 2.555 km.
 - Start lines at Moscow, Nürburgring, Oschersleben and Zandvoort are placed
-  by hand on the pit straight.
+  by hand on the pit straight (the game puts the pits at the start line).
+- Lausitzring: the real 2013 pole (1:17.5) needs a speed factor of 0.79 on
+  the traced banked layout, which points to the slower infield layout.
+- Norisring: the 1991 tracing needs a speed factor of 1.26 for 2013 cars
+  (`speed_mult` in its track override).
 
 ## Simplifications
 
@@ -91,13 +106,31 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   different dry compounds.
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
 
+## Lap times
+
+The real 2013 qualifying and race results are in `research/results/`
+(sources in its README). The calibration ran in two steps:
+
+1. The game's physics model (its `RealisticPhysicsModel`, run offline on our
+   track files) gives a neutral car's lap. In the test season every pole was
+   0.927 of that model lap, within ±0.7% on all nine tracks, so the model
+   predicts the game.
+2. The car profile was fitted to the poles and the top speed, then each
+   track's remaining error went into its `speed_scale` (Norisring:
+   `speed_mult`): Hockenheim 1.079, Brands Hatch 0.983, Red Bull Ring 1.059,
+   Lausitzring 0.786, Norisring 1.264, Moscow 1.147, Nürburgring 0.937,
+   Oschersleben 1.016, Zandvoort 1.008.
+
+Predicted poles now match 2013 to within 0.1%. The cars are rated a little
+lower than in the test season, so in-game poles may come out about 1% slow.
+
 ## Still to check in-game
 
-- DRS opens, the option tyre gets used, and races have about two stops.
-- Qualifying runs as knockout.
-- Lap times: every `speed_scale` starts at 1.0. Calibrate with
-  `tools/calibrate.py` against the 2013 poles. The real pole times aren't in
-  `research/` yet: collect them first, as in `seasons/dtm-1991/research/results/`.
+- Poles within about 1% of 2013, top speed about 265–270 km/h at Hockenheim.
+- Races have two stops. Tyre wear is 20% higher at Hockenheim, the
+  Nürburgring and Zandvoort and 10% at the Red Bull Ring and the
+  Lausitzring, where cars one-stopped in the test season.
+- The points spread: more different winners than Rockenfeller's 8 of 10.
 
 ## Rebuild
 

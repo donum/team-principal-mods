@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,9,Christian Vietoris,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:17.715,+0.252,,qualified,best in Q4; Q1 1:18.106 (5th); Q2 1:18.045 (6th); Q3 1:17.841 (2nd); Q4 1:17.715 (1st); grid 1
+2,3,Gary Paffett,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:17.463,+0.000,,qualified,best in Q3; Q1 1:17.920 (2nd); Q2 1:17.618 (1st); Q3 1:17.463 (1st); Q4 1:17.940 (2nd); grid 2
+3,12,Jamie Green,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,,1:17.957,+0.494,,qualified,best in Q3; Q1 1:18.341 (11th); Q2 1:18.131 (9th); Q3 1:17.957 (4th); Q4 1:18.028 (3rd); grid 3
+4,10,Robert Wickens,STIHL/AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:17.844,+0.381,,qualified,best in Q3; Q1 1:17.991 (3rd); Q2 1:17.904 (2nd); Q3 1:17.844 (3rd); Q4 1:18.133 (4th); grid 4
+5,1,Bruno Spengler,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,1:17.901,+0.438,,qualified,best in Q1; Q1 1:17.901 (1st); Q2 1:18.052 (8th); Q3 1:17.967 (5th); grid 5
+6,19,Mike Rockenfeller,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,,1:17.914,+0.451,,qualified,best in Q2; Q1 1:18.001 (4th); Q2 1:17.914 (4th); Q3 1:18.134 (6th); grid 6
+7,24,Adrien Tambay,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,,1:18.161,+0.698,,qualified,best in Q3; Q1 1:18.197 (6th); Q2 1:18.219 (10th); Q3 1:18.161 (7th); grid 7
+8,5,Edoardo Mortara,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,,1:18.048,+0.585,,qualified,best in Q2; Q1 1:18.212 (8th); Q2 1:18.048 (7th); Q3 1:18.205 (8th); grid 8
+9,4,Roberto Merhi,EURONICS/Thomas Sabo AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:17.908,+0.445,,qualified,best in Q2; Q1 1:18.234 (10th); Q2 1:17.908 (3rd); Q3 1:18.335 (9th); grid 9
+10,7,Augusto Farfus,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,1:17.950,+0.487,,qualified,best in Q2; Q1 1:18.199 (7th); Q2 1:17.950 (5th); Q3 1:18.383 (10th); grid 15; 5-place grid penalty; started 15th
+11,18,Pascal Wehrlein,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,1:18.225,+0.762,,qualified,best in Q2; Q1 1:18.453 (14th); Q2 1:18.225 (11th); grid 10
+12,2,Dirk Werner,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,1:18.361,+0.898,,qualified,best in Q2; Q1 1:18.476 (15th); Q2 1:18.361 (12th); grid 11
+13,6,Filipe Albuquerque,Audi Sport Team Rosberg [Team Rosberg],Audi RS 5 DTM,,1:18.357,+0.894,,qualified,best in Q1; Q1 1:18.357 (13th); Q2 1:18.421 (13th); grid 12
+14,22,Timo Glock,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),,1:18.485,+1.022,,qualified,best in Q2; Q1 1:18.509 (16th); Q2 1:18.485 (14th); grid 17; 3-place grid penalty for obstructing Juncadella; started 17th
+15,17,Daniel Juncadella,stern/AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,1:18.353,+0.890,,qualified,best in Q1; Q1 1:18.353 (12th); Q2 1:18.502 (15th); grid 13
+16,20,Miguel Molina,Audi Sport Team Phoenix [Phoenix Racing],Audi RS 5 DTM,,1:18.229,+0.766,,qualified,best in Q1; Q1 1:18.229 (9th); Q2 no time (Not Classified); grid 14; no time in Q2
+17,23,Timo Scheider,Audi Sport Team Abt [Abt Sportsline],Audi RS 5 DTM,,1:18.596,+1.133,,qualified,best in Q1; Q1 1:18.596 (17th); grid 16
+18,11,Mattias Ekström,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi RS 5 DTM,,1:18.742,+1.279,,qualified,best in Q1; Q1 1:18.742 (18th); grid 18
+19,21,Marco Wittmann,BMW Team MTEK [Team MTEK],BMW M3 DTM (E92),,1:18.777,+1.314,,qualified,best in Q1; Q1 1:18.777 (19th); grid 19; 10-place grid penalty (work under parc-fermé)
+20,8,Joey Hand,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,1:18.909,+1.446,,qualified,best in Q1; Q1 1:18.909 (20th); grid 20; 10-place grid penalty (work under parc-fermé)
+21,16,Andy Priaulx,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,1:19.065,+1.602,,qualified,best in Q1; Q1 1:19.065 (21st); grid 21; 10-place grid penalty (work under parc-fermé)
+22,15,Martin Tomczyk,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,1:19.137,+1.674,,qualified,best in Q1; Q1 1:19.137 (22nd); grid 22; 10-place grid penalty (work under parc-fermé)

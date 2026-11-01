@@ -14,7 +14,7 @@
 ## Regulations (changes for 2013)
 - **DRS** (Drag Reduction System):
   - The rear-wing flap opens to 15°.
-  - Allowed if a driver is within 2.0 s of the car ahead at the control line, once per lap at any point on the track (de.wiki).
+  - Allowed if a driver is within 2.0 s of the car ahead at the control line, once per lap at any point on the track (de.wiki). touringcartimes (2013-04-09) says main straight only; the pack uses one zone on the longest straight, which fits either reading.
   - Not allowed on the first 3 and last 3 laps, or for 3 laps after a safety car.
   - Not used at Zandvoort for safety reasons (de.wiki 2014). DTM states up to about 10 km/h more top speed.
 - **Option tyre:** a softer Hankook compound, 1–1.5 s per lap faster but quicker to degrade. One set per driver for the race, and it must be used once.

@@ -44,122 +44,122 @@
     {
       "type": "straight",
       "length_pct": 13.853317811408616,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "med",
       "length_pct": 0.3492433061699651,
-      "target_speed_kmh": 135.0
+      "target_speed_kmh": 143.0
     },
     {
       "type": "low",
       "length_pct": 0.6984866123399301,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 100.6
     },
     {
       "type": "straight",
       "length_pct": 20.838183934807915,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "low",
       "length_pct": 0.3492433061699651,
-      "target_speed_kmh": 80.0
+      "target_speed_kmh": 84.7
     },
     {
       "type": "low",
       "length_pct": 0.5820721769499418,
-      "target_speed_kmh": 70.0
+      "target_speed_kmh": 74.1
     },
     {
       "type": "straight",
       "length_pct": 17.81140861466822,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "low",
       "length_pct": 0.3492433061699651,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 116.5
     },
     {
       "type": "low",
       "length_pct": 0.9313154831199069,
-      "target_speed_kmh": 90.0
+      "target_speed_kmh": 95.3
     },
     {
       "type": "straight",
       "length_pct": 0.6984866123399301,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "high",
       "length_pct": 5.122235157159488,
-      "target_speed_kmh": 235.0
+      "target_speed_kmh": 248.9
     },
     {
       "type": "straight",
       "length_pct": 3.958090803259604,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "med",
       "length_pct": 3.7252619324796274,
-      "target_speed_kmh": 150.0
+      "target_speed_kmh": 158.8
     },
     {
       "type": "straight",
       "length_pct": 3.7252619324796274,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "med",
       "length_pct": 3.2596041909196742,
-      "target_speed_kmh": 155.0
+      "target_speed_kmh": 164.1
     },
     {
       "type": "straight",
       "length_pct": 3.492433061699651,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "high",
       "length_pct": 0.8149010477299186,
-      "target_speed_kmh": 225.0
+      "target_speed_kmh": 238.3
     },
     {
       "type": "straight",
       "length_pct": 10.011641443538998,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "med",
       "length_pct": 0.3492433061699651,
-      "target_speed_kmh": 185.0
+      "target_speed_kmh": 195.9
     },
     {
       "type": "med",
       "length_pct": 1.8626309662398137,
-      "target_speed_kmh": 150.0
+      "target_speed_kmh": 158.8
     },
     {
       "type": "straight",
       "length_pct": 3.3760186263096625,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     },
     {
       "type": "low",
       "length_pct": 0.3492433061699651,
-      "target_speed_kmh": 105.0
+      "target_speed_kmh": 111.2
     },
     {
       "type": "low",
       "length_pct": 0.46565774155995343,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 105.9
     },
     {
       "type": "straight",
       "length_pct": 3.026775320139697,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 391.8
     }
   ],
   "points": [
@@ -1391,7 +1391,7 @@
     "geometry_length_m": 4269,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "Grand Prix circuit as rebuilt in 2011 (clockwise). Raceway loop over the members of OSM relation 5309181, without the later MotoGP chicane, long-lap loop and the Suedschleife link. Traced 4269 m vs 4326 m.",
-    "speed_scale": 1.0,
+    "speed_scale": 1.059,
     "canvas_transform": {
       "lat0": 47.223124287044534,
       "lon0": 14.762255452226722,

@@ -44,207 +44,207 @@
     {
       "type": "straight",
       "length_pct": 11.946050096339114,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "low",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 90.0
+      "target_speed_kmh": 103.2
     },
     {
       "type": "low",
       "length_pct": 0.9633911368015414,
-      "target_speed_kmh": 75.0
+      "target_speed_kmh": 86.0
     },
     {
       "type": "low",
       "length_pct": 0.9633911368015414,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 114.7
     },
     {
       "type": "straight",
       "length_pct": 15.606936416184972,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "med",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 150.0
+      "target_speed_kmh": 172.1
     },
     {
       "type": "low",
       "length_pct": 1.348747591522158,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 126.2
     },
     {
       "type": "straight",
       "length_pct": 5.780346820809249,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "low",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 125.0
+      "target_speed_kmh": 143.4
     },
     {
       "type": "low",
       "length_pct": 0.9633911368015414,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 131.9
     },
     {
       "type": "low",
       "length_pct": 1.348747591522158,
-      "target_speed_kmh": 125.0
+      "target_speed_kmh": 143.4
     },
     {
       "type": "low",
       "length_pct": 0.9633911368015414,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 137.6
     },
     {
       "type": "straight",
       "length_pct": 5.202312138728324,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "med",
       "length_pct": 2.3121387283236996,
-      "target_speed_kmh": 180.0
+      "target_speed_kmh": 206.5
     },
     {
       "type": "med",
       "length_pct": 4.046242774566474,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 166.3
     },
     {
       "type": "low",
       "length_pct": 0.7707129094412332,
-      "target_speed_kmh": 110.0
+      "target_speed_kmh": 126.2
     },
     {
       "type": "low",
       "length_pct": 1.7341040462427746,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 109.0
     },
     {
       "type": "straight",
       "length_pct": 3.6608863198458574,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "low",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 131.9
     },
     {
       "type": "low",
       "length_pct": 1.1560693641618498,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 114.7
     },
     {
       "type": "low",
       "length_pct": 2.1194605009633913,
-      "target_speed_kmh": 115.0
+      "target_speed_kmh": 131.9
     },
     {
       "type": "straight",
       "length_pct": 2.3121387283236996,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "med",
       "length_pct": 1.1560693641618498,
-      "target_speed_kmh": 145.0
+      "target_speed_kmh": 166.3
     },
     {
       "type": "straight",
       "length_pct": 5.5876685934489405,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "high",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 200.0
+      "target_speed_kmh": 229.4
     },
     {
       "type": "med",
       "length_pct": 2.697495183044316,
-      "target_speed_kmh": 175.0
+      "target_speed_kmh": 200.7
     },
     {
       "type": "straight",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "low",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 137.6
     },
     {
       "type": "low",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 85.0
+      "target_speed_kmh": 97.5
     },
     {
       "type": "low",
       "length_pct": 1.1560693641618498,
-      "target_speed_kmh": 80.0
+      "target_speed_kmh": 91.8
     },
     {
       "type": "low",
       "length_pct": 0.9633911368015414,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 114.7
     },
     {
       "type": "straight",
       "length_pct": 2.697495183044316,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "med",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 160.0
+      "target_speed_kmh": 183.5
     },
     {
       "type": "low",
       "length_pct": 1.1560693641618498,
-      "target_speed_kmh": 120.0
+      "target_speed_kmh": 137.6
     },
     {
       "type": "straight",
       "length_pct": 0.7707129094412332,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "low",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 100.0
+      "target_speed_kmh": 114.7
     },
     {
       "type": "low",
       "length_pct": 0.7707129094412332,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 109.0
     },
     {
       "type": "straight",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     },
     {
       "type": "low",
       "length_pct": 0.5780346820809249,
-      "target_speed_kmh": 95.0
+      "target_speed_kmh": 109.0
     },
     {
       "type": "low",
       "length_pct": 0.7707129094412332,
-      "target_speed_kmh": 85.0
+      "target_speed_kmh": 97.5
     },
     {
       "type": "straight",
       "length_pct": 12.138728323699421,
-      "target_speed_kmh": 370.0
+      "target_speed_kmh": 424.4
     }
   ],
   "points": [
@@ -1464,7 +1464,7 @@
     "geometry_length_m": 2550,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
     "notes": "Short DTM layout (clockwise): start/finish on the long pit straight, the eastern hairpin and back straight, the infield esses and the western loop. Via route over OSM way 168247376 (the full 3.9 km circuit) with the link 168247379 that cuts the full circuit's southern section. Traced 2550 m vs 2555 m (DTM fan wiki; racingyears gives 2.661 km). The start line position is approximate.",
-    "speed_scale": 1.0,
+    "speed_scale": 1.147,
     "canvas_transform": {
       "lat0": 55.99639527538168,
       "lon0": 36.2659227620229,
