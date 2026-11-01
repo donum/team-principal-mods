@@ -51,6 +51,19 @@ Status legend:
 | `assets/Cars/<TeamName>.png`, `assets/logos/`, `assets/engines/`, `assets/portraits/`, `assets/sponsors/` | Images, mapped by name with spaces removed (`Red Boar` → `RedBoar.png`) | Our own side-profile car drawings in team colours |
 | `assets/title_bg.png`, `dashboard_bg*.png`, `assets/audio/` | Menu and dashboard art, sound and music | DTM-flavoured menu art (our own) |
 
+### Track geometry (confirmed in-game)
+
+- **`points` don't have to be image pixels.** By default the game fits the
+  points' bounding box into a box about 790 px wide, centred on the overview
+  image. Cars then run on a shrunken copy of the track.
+- **`"use_raw_canvas_coordinates": true` with `"raw_canvas_size": [1044, 1080]`**
+  makes the points exact image pixels. The base `spain.json` uses this, and so
+  do all our generated tracks. ✅
+- **The race screen covers the bottom of the map** with driver cards and the
+  event log, so keep the racing line above y ≈ 800 on a 1080 px tall image. ✅
+- **Track art isn't cached in your save.** A career save only stores
+  `data_pack`, so updated tracks show up after a reinstall and game restart. ✅
+
 ## 3. Rules: what's data-driven
 
 `regulations.json` options carry their own values, so you can add new options

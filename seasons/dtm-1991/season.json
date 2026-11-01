@@ -69,16 +69,5 @@
       "Opel Team Schübel": 6,
       "Gerd Ruch Motorsport": 4
     }
-  },
-
-  "track_placeholders": {
-    "zolder":        {"from": "fra",  "override": {"name": "Zolder",                  "length_km": 4.194, "nationality": "belgian", "drs_zones": []}},
-    "hockenheim":    {"from": "hoc",  "override": {"name": "Hockenheimring",          "length_km": 6.797, "nationality": "german",  "drs_zones": []}},
-    "nuerburgring":  {"from": "jap",  "override": {"name": "Nürburgring",             "length_km": 4.542, "nationality": "german",  "drs_zones": []}},
-    "avus":          {"from": "ita",  "override": {"name": "AVUS",                    "length_km": 4.880, "nationality": "german",  "drs_zones": []}},
-    "wunstorf":      {"from": "abu",  "override": {"name": "Wunstorf",                "length_km": 5.050, "nationality": "german",  "drs_zones": []}},
-    "norisring":     {"from": "mon",  "override": {"name": "Norisring",               "length_km": 2.300, "nationality": "german",  "drs_zones": []}},
-    "diepholz":      {"from": "bra",  "override": {"name": "Diepholz",                "length_km": 2.690, "nationality": "german",  "drs_zones": []}},
-    "alemannenring": {"from": "sin",  "override": {"name": "Alemannenring (Singen)",  "length_km": 2.800, "nationality": "german",  "drs_zones": []}}
   }
 }

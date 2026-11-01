@@ -130,13 +130,11 @@ gives Ludwig #7 in its XML while his car is painted #8.
    Answer the open questions in [CAPABILITIES §6](../../docs/CAPABILITIES.md#6-open-questions-to-verify-in-game).
 2. **Calibrate lap times.** Tune `car_profile` and track `micro_sectors`
    against real 1991 pole times (e.g. Norisring ~50 s, Hockenheim ~2:15).
-3. **Real tracks.** Generate them from OpenStreetMap with `tools/osm_track.py`
-   (specs in `track_specs/`):
-   - ✅ **Zolder.** Traced from today's 4.0 km layout. Game length is set to
-     the 1991 figure of 4.194 km.
-   - Still to do: Norisring and Nürburgring GP (both in OSM), plus the old
-     Hockenheim, AVUS, Wunstorf, Diepholz and Alemannenring. These five need
-     period maps, because their 1991 layouts no longer exist in OSM.
+3. ✅ **Real tracks.** All 8 venues are generated from OpenStreetMap with
+   `tools/osm_track.py` (specs in `track_specs/`). The status, confidence
+   and open questions for each venue are in
+   [docs/TRACKS.md](../../docs/TRACKS.md). The weak spots are the AVUS
+   south turn and the Wunstorf perimeter road.
 4. **Artwork.** Make our own side-profile car drawings in team colours, plus
    menu and dashboard art. No logos or photos.
 5. **Sponsors.** Build a period sponsor pool and starting sponsors (cloned

@@ -1,0 +1,29 @@
+{
+  "id": "norisring",
+  "name": "Norisring",
+  "nationality": "german",
+  "bbox": [11.112, 49.424, 11.138, 49.438],
+  "length_km": 2.300,
+  "width_m": 12.0,
+  "lap_modifier": 1.15,
+  "dnf_modifier": 1.15,
+  "overtaking_difficulty": 0.5,
+  "pit_lane_loss_s": 18.0,
+  "tyre_wear_mult": 0.85,
+  "fuel_consumption": 0.95,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_relation": "1889538",
+  "exclude_way_ids": ["128738913"],
+  "start": [49.43113, 11.12467],
+  "via": [
+    [49.43113, 11.12467],
+    [49.42880, 11.12990],
+    [49.42800, 11.13124],
+    [49.42900, 11.13020],
+    [49.43190, 11.12550],
+    [49.43445, 11.12114],
+    [49.43330, 11.12135]
+  ],
+  "notes": "Street circuit used unchanged since 1972 (counter-clockwise): start/finish on Beuthener Strasse by the Steintribuene, Grundig-Kehre at the SE end, back on the other carriageway, Schoeller-S onto Zeppelinstrasse, Dutzendteich-Kehre at the NW end. Routed over the members of OSM circuit relation 1889538 (pit lane excluded)."
+}

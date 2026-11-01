@@ -17,6 +17,7 @@ import argparse
 import json
 import math
 import random
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -28,7 +29,12 @@ USER_AGENT = "team-principal-mods/0.1 (https://github.com/; track tracing)"
 ATTRIBUTION = "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)"
 
 CANVAS = (1044, 1080)
-MARGIN_PX = 90
+# Where the racing line may go on the canvas. The race screen covers the lower
+# part of the map with driver cards and the event log, so the track stays in
+# the upper area while the background map still fills the whole image.
+SAFE_BOX = (70, 60, 974, 800)
+SUPERSAMPLE = 3
+SMOOTH_PASSES = 3             # moving-average passes over the 5 m resampled line
 # Reference speed scale shared with the base tracks: v = SPEED_K * sqrt(radius_m).
 SPEED_K = 18.0
 V_MAX_KMH = 370.0
@@ -46,13 +52,25 @@ COLORS = {
 
 # --------------------------------------------------------------------------- OSM
 
-def fetch(bbox, name):
+def fetch(bbox, name, depth=0):
+    """Download (and cache) an OSM extract; areas over the API's node limit are split in four."""
     CACHE.mkdir(parents=True, exist_ok=True)
-    path = CACHE / f"{name}.osm"
+    key = "_".join(f"{v:.4f}" for v in bbox)
+    path = CACHE / f"{name}_{key}.osm"
     if not path.exists():
         url = OSM_API.format(w=bbox[0], s=bbox[1], e=bbox[2], n=bbox[3])
         req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        path.write_bytes(urllib.request.urlopen(req, timeout=180).read())
+        try:
+            path.write_bytes(urllib.request.urlopen(req, timeout=180).read())
+        except urllib.error.HTTPError as err:
+            if err.code != 400 or depth >= 3:
+                raise
+            w, s, e, n = bbox
+            mx, my = (w + e) / 2, (s + n) / 2
+            merged = ET.Element("osm")
+            for i, quad in enumerate(([w, s, mx, my], [mx, s, e, my], [w, my, mx, n], [mx, my, e, n])):
+                merged.extend(list(fetch(quad, f"{name}_q{i}", depth + 1)))
+            ET.ElementTree(merged).write(path, encoding="utf-8")
     return ET.parse(path).getroot()
 
 
@@ -66,7 +84,7 @@ def parse(root):
     for r in root.iter("relation"):
         tags = {t.get("k"): t.get("v") for t in r.iter("tag")}
         members = [(m.get("ref"), m.get("role")) for m in r.iter("member") if m.get("type") == "way"]
-        relations.append({"tags": tags, "members": members})
+        relations.append({"id": r.get("id"), "tags": tags, "members": members})
     return nodes, ways, relations
 
 
@@ -148,6 +166,16 @@ def resample(pts, step=None, count=None):
     return out
 
 
+def smooth(pts, passes=SMOOTH_PASSES, half_window=2):
+    """Closed-loop moving average: removes OSM node kinks without cutting corners much."""
+    n = len(pts)
+    for _ in range(passes):
+        pts = [(sum(pts[(i + k) % n][0] for k in range(-half_window, half_window + 1)) / (2 * half_window + 1),
+                sum(pts[(i + k) % n][1] for k in range(-half_window, half_window + 1)) / (2 * half_window + 1))
+               for i in range(n)]
+    return pts
+
+
 def radius(a, b, c):
     """Circumradius through three points (inf for collinear)."""
     ab, bc, ca = math.dist(a, b), math.dist(b, c), math.dist(c, a)
@@ -203,15 +231,21 @@ def micro_sectors(dense, smooth=4):
 
 # ------------------------------------------------------------------- render
 
-def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width_px, seed):
+def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width_px, seed, px_per_m):
     from PIL import Image, ImageDraw
 
-    img = Image.new("RGB", CANVAS, COLORS["grass"])
+    # Draw at SUPERSAMPLE x resolution and scale down for anti-aliased edges.
+    ss = SUPERSAMPLE
+    img = Image.new("RGB", (CANVAS[0] * ss, CANVAS[1] * ss), COLORS["grass"])
     draw = ImageDraw.Draw(img)
     rng = random.Random(seed)
+    up = lambda pts: [(x * ss, y * ss) for x, y in pts]
+    loop_px, width_px = up(loop_px), width_px * ss
+    pit_px = up(pit_px) if pit_px else None
 
     def px(nid):
-        return to_px(*proj.metres(*nodes[nid]))
+        x, y = to_px(*proj.metres(*nodes[nid]))
+        return (x * ss, y * ss)
 
     def ring(wid):
         return [px(n) for n in ways[wid]["nds"] if n in nodes] if wid in ways else []
@@ -232,13 +266,23 @@ def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width
             continue
         xs, ys = [p[0] for p in poly], [p[1] for p in poly]
         area = (max(xs) - min(xs)) * (max(ys) - min(ys))
-        for _ in range(int(area / 900)):
+        for _ in range(int(area / (900 * ss * ss))):
             x, y = rng.uniform(min(xs), max(xs)), rng.uniform(min(ys), max(ys))
             if point_in_poly(x, y, poly):
-                r = rng.uniform(5, 9)
+                r = rng.uniform(5, 9) * ss
                 draw.ellipse([x - r, y - r, x + r, y + r], fill=COLORS["tree"])
     fill_areas(lambda t: t.get("natural") == "water" or t.get("landuse") in ("reservoir", "basin"), COLORS["water"])
     fill_areas(lambda t: t.get("amenity") == "parking", COLORS["parking"])
+
+    # Runways and taxiways in metres, scaled like the track (airfield circuits use them).
+    m_px = px_per_m * ss
+    for w in ways.values():
+        kind = w["tags"].get("aeroway")
+        if kind in ("runway", "taxiway"):
+            line = [px(n) for n in w["nds"] if n in nodes]
+            if len(line) > 1:
+                width_m = float(w["tags"].get("width", 0) or 0) or (40.0 if kind == "runway" else 18.0)
+                thick_line(draw, line, COLORS["parking"], max(2 * ss, width_m * m_px))
 
     road_widths = {"motorway": 9, "trunk": 8, "primary": 7, "secondary": 6, "tertiary": 5,
                    "unclassified": 4, "residential": 4, "service": 3}
@@ -247,21 +291,29 @@ def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width
         if hw in road_widths:
             line = [px(n) for n in w["nds"] if n in nodes]
             if len(line) > 1:
-                draw.line(line, fill=COLORS["road"], width=road_widths[hw], joint="curve")
+                thick_line(draw, line, COLORS["road"], road_widths[hw] * ss)
     fill_areas(lambda t: "building" in t, COLORS["building"])
 
     if pit_px:
-        draw.line(pit_px, fill=COLORS["pit"], width=max(3, int(width_px * 0.7)), joint="curve")
+        thick_line(draw, pit_px, COLORS["pit"], max(3 * ss, width_px * 0.7))
     closed = loop_px + loop_px[:1]
-    draw.line(closed, fill=COLORS["kerb"], width=int(width_px + 4), joint="curve")
-    draw.line(closed, fill=COLORS["asphalt"], width=int(width_px), joint="curve")
+    thick_line(draw, closed, COLORS["kerb"], width_px + 4 * ss)
+    thick_line(draw, closed, COLORS["asphalt"], width_px)
     # Start/finish line across the track at points[0].
     (x0, y0), (x1, y1) = loop_px[0], loop_px[1]
     dx, dy = x1 - x0, y1 - y0
     norm = math.hypot(dx, dy) or 1.0
     nx, ny = -dy / norm * (width_px * 0.8), dx / norm * (width_px * 0.8)
-    draw.line([(x0 - nx, y0 - ny), (x0 + nx, y0 + ny)], fill=COLORS["line"], width=3)
-    img.save(path_png, optimize=True)
+    draw.line([(x0 - nx, y0 - ny), (x0 + nx, y0 + ny)], fill=COLORS["line"], width=3 * ss)
+    img.resize(CANVAS, Image.LANCZOS).save(path_png, optimize=True)
+
+
+def thick_line(draw, pts, color, width):
+    """Polyline with round caps at every vertex, so bends stay smooth at any width."""
+    draw.line(pts, fill=color, width=int(width))
+    r = width / 2
+    for x, y in pts:
+        draw.ellipse([x - r, y - r, x + r, y + r], fill=color)
 
 
 def point_in_poly(x, y, poly):
@@ -274,37 +326,199 @@ def point_in_poly(x, y, poly):
 
 # ------------------------------------------------------------------- main
 
+def way_matches(tags, rules):
+    """A rule is {key: value} (value "*" = any, list = one of); a way matches any rule."""
+    for rule in rules:
+        if all(tags.get(k) is not None and (v == "*" or tags.get(k) == v or (isinstance(v, list) and tags.get(k) in v))
+               for k, v in rule.items()):
+            return True
+    return False
+
+
+def via_route(nodes, ways, spec, relations=()):
+    """Build the lap by shortest paths between `via` points over the allowed ways.
+
+    For circuits that are not (or no longer) tagged as a closed raceway loop:
+    street circuits, airfield courses and demolished sections. `via` points
+    are [lat, lon] in driving order; each snaps to the nearest graph node.
+    Pairs with no graph connection are joined by a straight line, so missing
+    OSM sections can be bridged with extra via points.
+    """
+    import heapq
+
+    # Allowed ways: members of an OSM circuit relation and/or ways matching tag filters.
+    members = set()
+    if "route_relation" in spec:
+        rel = next((r for r in relations if r["id"] == str(spec["route_relation"])), None)
+        if rel is None:
+            raise SystemExit(f"relation {spec['route_relation']} not in the downloaded area")
+        members = {ref for ref, _ in rel["members"]}
+    allowed = {wid: w for wid, w in ways.items()
+               if (wid in members or way_matches(w["tags"], spec.get("route_ways", [])))
+               and wid not in set(spec.get("exclude_way_ids", []))}
+    graph = {}
+    for wid, w in allowed.items():
+        # Densify to <= 10 m steps so via points snap onto the right way even
+        # where OSM has few nodes (long straights, runways).
+        nds = []
+        raw = [n for n in w["nds"] if n in nodes]
+        for a, b in zip(raw, raw[1:]):
+            (y1, x1), (y2, x2) = nodes[a], nodes[b]
+            seg = math.hypot((x2 - x1) * 111320 * math.cos(math.radians(y1)), (y2 - y1) * 110540)
+            steps = max(1, int(seg // 10))
+            nds.append(a)
+            for k in range(1, steps):
+                sid = f"{wid}:{a}:{k}"
+                nodes[sid] = (y1 + (y2 - y1) * k / steps, x1 + (x2 - x1) * k / steps)
+                nds.append(sid)
+        if raw:
+            nds.append(raw[-1])
+        w = {**w, "nds": nds}
+        allowed[wid] = w
+        for a, b in zip(nds, nds[1:]):
+            (y1, x1), (y2, x2) = nodes[a], nodes[b]
+            d = math.hypot((x2 - x1) * 111320 * math.cos(math.radians(y1)), (y2 - y1) * 110540)
+            graph.setdefault(a, []).append((b, d, wid))
+            graph.setdefault(b, []).append((a, d, wid))
+    if not graph:
+        raise SystemExit("route_ways matched no OSM ways")
+    # Abandoned or partly mapped sections often stop a few metres short of the
+    # next way: join every way end to the closest node of another way nearby.
+    snap = spec.get("snap_gap_m", 40.0)
+    node_way = {}
+    for wid, w in allowed.items():
+        for n in w["nds"]:
+            node_way.setdefault(n, set()).add(wid)
+    for wid, w in allowed.items():
+        for end in (w["nds"][0], w["nds"][-1]):
+            if end not in nodes or len(graph.get(end, [])) > 1:
+                continue
+            (y1, x1), k = nodes[end], math.cos(math.radians(nodes[end][0]))
+            best = min(((math.hypot((nodes[n][1] - x1) * 111320 * k, (nodes[n][0] - y1) * 110540), n)
+                        for n in graph if wid not in node_way.get(n, ())), default=(math.inf, None))
+            if best[0] <= snap:
+                graph[end].append((best[1], best[0], "gap"))
+                graph[best[1]].append((end, best[0], "gap"))
+
+    def nearest(lat, lon):
+        k = math.cos(math.radians(lat))
+        return min(graph, key=lambda n: ((nodes[n][0] - lat) ** 2 + ((nodes[n][1] - lon) * k) ** 2))
+
+    # Explicit links for sections that no longer exist in OSM at all
+    # (e.g. demolished track between two surviving pieces).
+    # A bridge with more than two points is a hand-placed polyline: its first
+    # and last points snap to the graph, the inner points become new nodes.
+    for k, bridge in enumerate(spec.get("bridges", [])):
+        chain = [nearest(*bridge[0])]
+        for i, p in enumerate(bridge[1:-1]):
+            sid = f"bridge{k}:{i}"
+            nodes[sid] = tuple(p)
+            graph[sid] = []
+            chain.append(sid)
+        chain.append(nearest(*bridge[-1]))
+        for a, b in zip(chain, chain[1:]):
+            d = math.hypot((nodes[b][1] - nodes[a][1]) * 111320 * math.cos(math.radians(nodes[a][0])),
+                           (nodes[b][0] - nodes[a][0]) * 110540)
+            graph[a].append((b, d, "gap"))
+            graph[b].append((a, d, "gap"))
+
+    def shortest(a, b):
+        dist, prev, heap = {a: 0.0}, {}, [(0.0, a)]
+        while heap:
+            d, n = heapq.heappop(heap)
+            if n == b:
+                break
+            if d > dist.get(n, math.inf):
+                continue
+            for m, w, _ in graph[n]:
+                nd = d + w
+                if nd < dist.get(m, math.inf):
+                    dist[m], prev[m] = nd, n
+                    heapq.heappush(heap, (nd, m))
+        if b not in dist:
+            return None
+        path = [b]
+        while path[-1] != a:
+            path.append(prev[path[-1]])
+        return path[::-1]
+
+    snapped = [nearest(*v) for v in spec["via"]]
+    coords, used, gaps = [], set(), 0
+    for a, b in zip(snapped, snapped[1:] + snapped[:1]):
+        path = shortest(a, b)
+        if path is None:
+            path, gaps = [a, b], gaps + 1
+        for x, y in zip(path, path[1:]):
+            used.update(wid for m, _, wid in graph.get(x, []) if m == y and wid != "gap")
+        seg = [nodes[n] for n in path]
+        if spec.get("debug"):
+            leg = sum(math.hypot((q[1] - p[1]) * 111320 * math.cos(math.radians(p[0])), (q[0] - p[0]) * 110540)
+                      for p, q in zip(seg, seg[1:]))
+            print(f"  leg {len(coords) and '...' or 'start'} {nodes[a]} -> {nodes[b]}: {leg:.0f} m")
+        coords.extend(seg if not coords else seg[1:])
+    if coords[0] == coords[-1]:
+        coords.pop()
+    if gaps:
+        print(f"note: {gaps} via leg(s) had no OSM connection and were bridged with straight lines")
+    return coords, sorted(used)
+
+
 def build(spec_path):
     spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
     season_dir = Path(spec_path).resolve().parent.parent
-    root = fetch(spec["bbox"], spec["id"])
-    nodes, ways, relations = parse(root)
-    loop_nds, loop_ways, race = racing_loop(ways, spec)
+    # Dense cities exceed the OSM API's node limit, so a spec may split its
+    # area into "bbox_tiles" that are fetched separately and merged.
+    nodes, ways, relations = parse(fetch(spec["bbox"], spec["id"]))
+    for i, tile in enumerate(spec.get("bbox_tiles", [])):
+        t_nodes, t_ways, t_relations = parse(fetch(tile, f"{spec['id']}_{i}"))
+        nodes.update(t_nodes)
+        ways.update(t_ways)
+        relations += t_relations
+    if "via" in spec:
+        loop_ll, loop_ways = via_route(nodes, ways, spec, relations)
+    else:
+        loop_nds, loop_ways, _ = racing_loop(ways, spec)
+        loop_ll = [nodes[n] for n in loop_nds]
 
-    lat0 = sum(nodes[n][0] for n in loop_nds) / len(loop_nds)
-    lon0 = sum(nodes[n][1] for n in loop_nds) / len(loop_nds)
+    lat0 = sum(p[0] for p in loop_ll) / len(loop_ll)
+    lon0 = sum(p[1] for p in loop_ll) / len(loop_ll)
     proj = Projection(lat0, lon0)
-    loop_m = [proj.metres(*nodes[n]) for n in loop_nds]
+    loop_m = [proj.metres(*p) for p in loop_ll]
 
     pit = next((w for w in ways.values() if w["tags"].get("highway") == "raceway"
                 and w["tags"].get("name") in spec.get("pit_way_names", ["Pitlane"])), None)
-    pit_m = [proj.metres(*nodes[n]) for n in pit["nds"]] if pit else None
-    # Start/finish: point of the racing line nearest the middle of the pit lane.
-    anchor = pit_m[len(pit_m) // 2] if pit_m else loop_m[0]
+    pit_m = [proj.metres(*nodes[n]) for n in pit["nds"] if n in nodes] if pit else None
+    # Start/finish: an explicit position, else the racing line nearest the middle of the pit lane.
+    if "start" in spec:
+        anchor = proj.metres(*spec["start"])
+    else:
+        anchor = pit_m[len(pit_m) // 2] if pit_m else loop_m[0]
     dense = resample(loop_m, step=STEP_M)
     start = min(range(len(dense)), key=lambda i: math.dist(dense[i], anchor))
-    dense = dense[start:] + dense[:start]
+    dense = smooth(dense[start:] + dense[:start])
 
     xs, ys = [p[0] for p in dense], [p[1] for p in dense]
-    scale = min((CANVAS[0] - 2 * MARGIN_PX) / (max(xs) - min(xs)), (CANVAS[1] - 2 * MARGIN_PX) / (max(ys) - min(ys)))
-    ox = (CANVAS[0] - (max(xs) - min(xs)) * scale) / 2 - min(xs) * scale
-    oy = (CANVAS[1] - (max(ys) - min(ys)) * scale) / 2 - min(ys) * scale
+    box_w, box_h = SAFE_BOX[2] - SAFE_BOX[0], SAFE_BOX[3] - SAFE_BOX[1]
+    scale = min(box_w / (max(xs) - min(xs)), box_h / (max(ys) - min(ys)))
+    ox = SAFE_BOX[0] + (box_w - (max(xs) - min(xs)) * scale) / 2 - min(xs) * scale
+    oy = SAFE_BOX[1] + (box_h - (max(ys) - min(ys)) * scale) / 2 - min(ys) * scale
     to_px = lambda x, y: (x * scale + ox, y * scale + oy)
+
+    # The overview shows more than the circuit; make sure map data covers the whole canvas.
+    inv = lambda px_, py_: ((px_ - ox) / scale, (py_ - oy) / scale)
+    corners = [inv(0, 0), inv(CANVAS[0], CANVAS[1])]
+    lons = [proj.lon0 + x / proj.kx for x, _ in corners]
+    lats = [proj.lat0 - y / proj.ky for _, y in corners]
+    canvas_bbox = [round(min(lons), 4), round(min(lats), 4), round(max(lons), 4), round(max(lats), 4)]
+    if (canvas_bbox[0] < spec["bbox"][0] or canvas_bbox[1] < spec["bbox"][1]
+            or canvas_bbox[2] > spec["bbox"][2] or canvas_bbox[3] > spec["bbox"][3]):
+        bg_nodes, bg_ways, bg_relations = parse(fetch(canvas_bbox, spec["id"] + "_canvas"))
+        nodes, ways, relations = {**bg_nodes, **nodes}, {**bg_ways, **ways}, bg_relations + relations
 
     sectors, raw = micro_sectors(dense)
     geometry_m = polyline_length(dense)
-    outline = resample(dense, count=spec.get("point_count", 150))
-    points = [[round(c) for c in to_px(*p)] for p in outline]
+    outline = resample(dense, count=spec.get("point_count", 300))
+    points = [[round(c, 1) for c in to_px(*p)] for p in outline]
 
     # Sector splits snap to the start of the straight nearest to each third.
     starts = [s["start_index"] / len(dense) for s in raw if s["type"] == "straight" and s["start_index"] > 0]
@@ -321,6 +535,10 @@ def build(spec_path):
         "tyre_wear_mult": spec.get("tyre_wear_mult", 0.9),
         "fuel_consumption": spec.get("fuel_consumption", 1.0),
         "wet_weather_probability_multiplier": spec.get("wet_weather_probability_multiplier", 1.0),
+        # Points are image pixels. Without this flag the game re-fits the
+        # points' bounding box into its own frame and cars leave the drawn track.
+        "use_raw_canvas_coordinates": True,
+        "raw_canvas_size": list(CANVAS),
         "hide_polyline_visual": True,
         "racing_surface": {"enabled": True, "mode": "road_course", "width_m": spec.get("width_m", 11.0),
                            "edge_margin_m": 0.6, "corridor_count": 3, "visual_lateral_scale": 1.5},
@@ -342,7 +560,7 @@ def build(spec_path):
 
     width_px = spec.get("width_m", 11.0) * scale * 1.4
     pit_px = [to_px(*p) for p in pit_m] if pit_m else None
-    render(out_png, proj, to_px, nodes, ways, relations, [to_px(*p) for p in dense[::2]], pit_px, width_px, spec["id"])
+    render(out_png, proj, to_px, nodes, ways, relations, [to_px(*p) for p in dense[::2]], pit_px, width_px, spec["id"], scale)
 
     print(f"{spec['id']}: {len(loop_ways)} ways, {geometry_m:.0f} m traced (game length {track['length_km']} km), "
           f"{len(points)} points, {len(sectors)} micro-sectors (from the start line)")

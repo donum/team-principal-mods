@@ -1,0 +1,121 @@
+{
+  "id": "wunstorf",
+  "name": "Wunstorf",
+  "nationality": "german",
+  "bbox": [
+    9.4,
+    52.44,
+    9.46,
+    52.47
+  ],
+  "length_km": 5.05,
+  "width_m": 15.0,
+  "lap_modifier": 0.95,
+  "dnf_modifier": 0.95,
+  "overtaking_difficulty": 0.4,
+  "pit_lane_loss_s": 18.0,
+  "tyre_wear_mult": 0.85,
+  "fuel_consumption": 1.1,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_ways": [
+    {
+      "aeroway": "runway",
+      "ref": [
+        "03/21",
+        "08/26"
+      ]
+    }
+  ],
+  "bridges": [
+    [
+      [
+        52.4458,
+        9.4277
+      ],
+      [
+        52.44602,
+        9.42684
+      ],
+      [
+        52.44662,
+        9.42673
+      ],
+      [
+        52.44723,
+        9.42706
+      ],
+      [
+        52.4534,
+        9.4259
+      ],
+      [
+        52.45436,
+        9.42513
+      ],
+      [
+        52.45499,
+        9.42374
+      ],
+      [
+        52.45502,
+        9.42272
+      ],
+      [
+        52.45479,
+        9.41976
+      ],
+      [
+        52.45499,
+        9.41906
+      ],
+      [
+        52.45568,
+        9.4178
+      ],
+      [
+        52.45633,
+        9.41756
+      ],
+      [
+        52.45661,
+        9.41814
+      ]
+    ]
+  ],
+  "start": [
+    52.4499,
+    9.431079269911505
+  ],
+  "via": [
+    [
+      52.4499,
+      9.43108
+    ],
+    [
+      52.447,
+      9.42869
+    ],
+    [
+      52.44723,
+      9.42706
+    ],
+    [
+      52.45502,
+      9.42272
+    ],
+    [
+      52.45712,
+      9.425
+    ],
+    [
+      52.4582,
+      9.437
+    ],
+    [
+      52.456,
+      9.4361
+    ]
+  ],
+  "notes": "ADAC-Flugplatzrennen Wunstorf, 1982-1992 layout (clockwise per the Commons diagram arrow, unverified): start/finish south-westbound on runway 03/21, hairpin at its SW end, the perimeter road north with esses to the west end of runway 08/26, east along 08/26 and a sweeping right back onto 03/21. The perimeter road is not in today's OSM: it is reconstructed as a bridge polyline by mapping the 1993 Commons diagram (which has a north arrow) onto the runway ends with an affine fit. Chicanes unverified and not modelled. Traced 4554 m vs 5050 m: the reconstructed perimeter road and the 1991 sweeper are approximations."
+}

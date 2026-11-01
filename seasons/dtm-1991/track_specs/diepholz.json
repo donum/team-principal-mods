@@ -1,0 +1,29 @@
+{
+  "id": "diepholz",
+  "name": "Diepholz",
+  "nationality": "german",
+  "bbox": [8.325, 52.575, 8.365, 52.595],
+  "length_km": 2.690,
+  "width_m": 15.0,
+  "lap_modifier": 1.0,
+  "dnf_modifier": 0.95,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 17.0,
+  "tyre_wear_mult": 0.85,
+  "fuel_consumption": 0.95,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_ways": [
+    {"aeroway": ["runway", "taxiway"]}
+  ],
+  "exclude_way_ids": ["1382667316"],
+  "start": [52.58574, 8.34560],
+  "via": [
+    [52.58574, 8.34560],
+    [52.58645, 8.34990],
+    [52.58775, 8.34347],
+    [52.58686, 8.33628],
+    [52.58548, 8.34056]
+  ],
+  "notes": "ADAC-Flugplatzrennen Diepholz, 1989-1991 layout (counter-clockwise): start/finish eastbound on runway 08/26, sweep north onto the curved northern taxiway, west past the aprons, long diagonal back to the runway's west end. Matched to the Wikimedia Commons layout diagram; the 1991 chicane positions are unverified and not modelled."
+}

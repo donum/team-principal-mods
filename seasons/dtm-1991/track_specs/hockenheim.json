@@ -1,0 +1,45 @@
+{
+  "id": "hockenheim",
+  "name": "Hockenheimring",
+  "nationality": "german",
+  "bbox": [8.555, 49.318, 8.625, 49.345],
+  "length_km": 6.797,
+  "width_m": 12.0,
+  "lap_modifier": 0.9,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 22.0,
+  "tyre_wear_mult": 0.8,
+  "fuel_consumption": 1.2,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "pit_way_names": ["Boxengasse"],
+  "route_ways": [
+    {"highway": "raceway"},
+    {"abandoned:highway": "raceway"},
+    {"historic": "raceway"}
+  ],
+  "exclude_way_ids": [
+    "22940941", "31318810", "15446020", "117570506", "446193573", "117570502", "117570503",
+    "256789036", "339948104", "117570493", "1416119746",
+    "446193574", "446193575", "446193576", "446193577",
+    "34401655", "38223715", "38223729"
+  ],
+  "bridges": [
+    [[49.33344, 8.56842], [49.33484, 8.57041]]
+  ],
+  "via": [
+    [49.32761, 8.56595],
+    [49.33200, 8.56629],
+    [49.33484, 8.57041],
+    [49.33969, 8.59136],
+    [49.33532, 8.59619],
+    [49.33434, 8.59236],
+    [49.33193, 8.58347],
+    [49.33060, 8.57566],
+    [49.32685, 8.57090],
+    [49.32870, 8.56752],
+    [49.32561, 8.56783]
+  ],
+  "notes": "1991 long GP circuit (clockwise): Motodrom, Nordkurve, forest straight, Ostkurve chicane, return straight, Agip/Sachs/Suedkurve. The forest section follows OSM's abandoned:highway=raceway ways (Streckenverlauf 1932-2001); the Nordkurve exit onto the forest straight is bridged (no longer in OSM). Includes all three 1991 chicanes: Jim Clark (1970), Ostkurve (1982) and the return-straight chicane (1970, named Senna-Schikane only from 1994; OSM's 1994 geometry is used). Excluded: today's Parabolika/Spitzkehre layout and the chicane-less Ostkurve. Traced 6895 m vs 6797 m in 1991."
+}

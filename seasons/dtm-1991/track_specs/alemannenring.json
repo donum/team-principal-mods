@@ -1,0 +1,38 @@
+{
+  "id": "alemannenring",
+  "name": "Alemannenring (Singen)",
+  "nationality": "german",
+  "bbox": [8.862, 47.749, 8.886, 47.763],
+  "length_km": 2.800,
+  "width_m": 11.0,
+  "lap_modifier": 1.2,
+  "dnf_modifier": 1.25,
+  "overtaking_difficulty": 0.75,
+  "pit_lane_loss_s": 18.0,
+  "tyre_wear_mult": 0.9,
+  "fuel_consumption": 0.95,
+  "wet_weather_probability_multiplier": 1.1,
+  "pole_side": "left",
+  "route_ways": [
+    {"name": ["Georg-Fischer-Straße", "Carl-Benz-Straße", "Grubwaldstraße", "Byk-Gulden-Straße", "Pfaffenhäule", "Robert-Gerwig-Straße"]}
+  ],
+  "bridges": [
+    [[47.75863, 8.87810], [47.75876, 8.87807]],
+    [[47.75248, 8.87699], [47.75261, 8.87699]],
+    [[47.75239, 8.88000], [47.75226, 8.88000]]
+  ],
+  "start": [47.75281, 8.87250],
+  "via": [
+    [47.75281, 8.87250],
+    [47.75450, 8.87045],
+    [47.75588, 8.87170],
+    [47.75750, 8.87310],
+    [47.75895, 8.87550],
+    [47.75550, 8.87745],
+    [47.75246, 8.87900],
+    [47.75239, 8.88000],
+    [47.75226, 8.88000],
+    [47.75255, 8.87600]
+  ],
+  "notes": "Temporary street circuit in Singen's industrial area, first used in 1991 (clockwise): start/finish westbound on the southern carriageway of Georg-Fischer-Strasse, Pegulan-Kurve onto Carl-Benz-Strasse, Grubwaldstrasse, Byk-Gulden-Strasse, Pfaffenhaeule, Robert-Gerwig-Strasse (Radio-7 chicane not modelled), then east on the northern carriageway to a hairpin across the central reservation (bridged; exact position unverified)."
+}

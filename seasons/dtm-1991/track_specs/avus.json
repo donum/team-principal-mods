@@ -1,0 +1,93 @@
+{
+  "id": "avus",
+  "name": "AVUS",
+  "nationality": "german",
+  "bbox": [
+    13.245,
+    52.47,
+    13.275,
+    52.5
+  ],
+  "bbox_tiles": [
+    [
+      13.262,
+      52.494,
+      13.282,
+      52.505
+    ]
+  ],
+  "length_km": 4.88,
+  "width_m": 14.0,
+  "lap_modifier": 0.85,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.35,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 0.8,
+  "fuel_consumption": 1.25,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_ways": [
+    {
+      "name": [
+        "AVUS",
+        "AVUS Nordkurve"
+      ]
+    }
+  ],
+  "exclude_way_ids": [
+    "35357724",
+    "1216705596",
+    "4388956",
+    "8788062",
+    "24756982",
+    "1370509801",
+    "1370509807"
+  ],
+  "bridges": [
+    [
+      [
+        52.4849,
+        13.25509
+      ],
+      [
+        52.4849,
+        13.25532
+      ]
+    ]
+  ],
+  "start": [
+    52.4994,
+    13.2735
+  ],
+  "via": [
+    [
+      52.4994,
+      13.2735
+    ],
+    [
+      52.4921,
+      13.26419
+    ],
+    [
+      52.4849,
+      13.25509
+    ],
+    [
+      52.4849,
+      13.25532
+    ],
+    [
+      52.4921,
+      13.26443
+    ],
+    [
+      52.4988,
+      13.2733
+    ],
+    [
+      52.5004,
+      13.2752
+    ]
+  ],
+  "notes": "1989-1991 AVUS (anticlockwise on the A115 carriageways): start/finish southbound on the western carriageway by the AVUS-Tribuene, south turn across the central reservation, northbound on the eastern carriageway, flat Nordkurve loop. The 1991 south-turn position is undocumented: it is placed at 52.4849 N so the lap measures the official 4.880 km (bridged). A 1991 chicane is mentioned in race reports but its position is unknown, so none is modelled."
+}
