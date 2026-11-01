@@ -154,8 +154,6 @@ gives Ludwig #7 in its XML while his car is painted #8.
    south turn and the Wunstorf perimeter road.
 4. **Car images: polish.** All 22 cars are done (`tools/car_art.py`).
    Still to fix:
-   - Mercedes liveries look skewed towards the front on the side doors.
-     Re-measure the 190E texture anchors.
    - Leftover marks from the 1993 reference liveries, such as rear-wing logos.
    - The traced Audi body has less detail than the Pohlmann drawings.
 5. **Logos and menu art.** ✅ Team and engine logos are done
