@@ -48,11 +48,15 @@ def dump_json(path, data):
 
 
 def deep_merge(base, override):
-    """Return base with override applied; dicts merge, everything else replaces."""
+    """Return base with override applied; dicts merge, everything else replaces.
+    A null value in an override dict removes that key."""
     if isinstance(base, dict) and isinstance(override, dict):
         out = copy.deepcopy(base)
         for key, value in override.items():
-            out[key] = deep_merge(out[key], value) if key in out else copy.deepcopy(value)
+            if value is None:
+                out.pop(key, None)
+            else:
+                out[key] = deep_merge(out[key], value) if key in out else copy.deepcopy(value)
         return out
     return copy.deepcopy(override)
 
@@ -100,7 +104,8 @@ def expand_templates(name, data, base_dir):
     """Resolve {"$template": {...}, "records": [...]} list files.
 
     Dict files may instead set "$merge_base": true to deep-merge onto the
-    base file; keys listed in "$replace" are swapped wholesale.
+    base file; keys listed in "$replace" are swapped wholesale, and a null
+    value removes a key.
     """
     if isinstance(data, dict) and data.get("$merge_base"):
         base = load_json(base_dir / name)
@@ -190,6 +195,28 @@ def strip_title_sponsors(out):
         if sponsor.get("type") == "title":
             del sponsor["type"]
     dump_json(out / "sponsors.json", pool)
+
+
+def contrast_ratio(a, b):
+    """WCAG 2 contrast ratio between two RGB colours."""
+    def luminance(rgb):
+        c = [v / 255 for v in rgb]
+        c = [v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4 for v in c]
+        return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+    hi, lo = sorted((luminance(a), luminance(b)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def readable_team_text(out):
+    """The game writes team names in the secondary colour on the primary one.
+    Where that pair is below WCAG AA (4.5:1), use white or black instead."""
+    path = out / "teams.json"
+    teams = load_json(path)
+    for team in teams:
+        bg, fg = team.get("color_rgb"), team.get("secondary_color_rgb")
+        if bg and fg and contrast_ratio(bg, fg) < 4.5:
+            team["secondary_color_rgb"] = max(([255, 255, 255], [20, 20, 20]), key=lambda c: contrast_ratio(bg, c))
+    dump_json(path, teams)
 
 
 def generate_staff(out, base_dir, spec, teams):
@@ -404,6 +431,7 @@ def build(season_dir, game, install):
         clone_team_records(out, manifest["team_clones"], season_dir)
     if manifest.get("no_title_sponsors"):
         strip_title_sponsors(out)
+    readable_team_text(out)
     if "staff" in manifest and not (season_dir / "data" / "staff.json").exists():
         generate_staff(out, base_dir, manifest["staff"], load_json(out / "teams.json"))
 
