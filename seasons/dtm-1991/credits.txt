@@ -22,6 +22,15 @@ Car images (assets/Cars):
   livery author's permission.
   The adapted car images are licensed CC BY-SA 4.0.
 
+Logos (assets/logos, assets/engines):
+  Period team decals (SMS, AZR, Zakspeed, Snobeck, MS-Jet, Diebels, Unitron,
+  Tic Tac Tauber) taken from the Automobilista 2 "DTM 1991" mod liveries, used
+  with the livery author's permission.
+  Public-domain period logos from Wikimedia Commons: Schnitzer Motorsport,
+  Irmscher, Marlboro, Audi (1978-1995), BMW (1963-1997), Mercedes-Benz (1991),
+  Opel (1987), Ford (1976). All trademarks belong to their owners.
+  Other teams use plain text crests made for this pack.
+
 Real team, driver, manufacturer and sponsor names are used for historical
 description only. Not affiliated with or endorsed by the DTM, ITR, the game's
 publisher or any manufacturer.

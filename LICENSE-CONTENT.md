@@ -59,6 +59,20 @@ Because of ShareAlike, these images are licensed **CC BY-SA 4.0**
 credits are in each pack's `credits.txt`. The liveries show real sponsor
 trademarks, which belong to their owners.
 
+## Logos
+
+Team and engine logos (`seasons/*/assets/logos`, `seasons/*/assets/engines`,
+made with `tools/logo_art.py` from `seasons/*/art/logos.json`) come from three
+places:
+- **1991 team decals** from the AMS2 liveries, used with the livery author's
+  permission.
+- **Public-domain period logos** from Wikimedia Commons. The file for each
+  logo is listed in `logos.json`.
+- **Plain text crests** made for this pack (CC BY-NC-SA 4.0).
+
+The logos are trademarks of their owners and are used here only to depict the
+1991 season.
+
 ## What this license does NOT cover
 
 - **The game's own files.** `constants.py`, default audio, dashboard
@@ -69,7 +83,7 @@ trademarks, which belong to their owners.
   teams, sponsors and drivers (for example BMW, Mercedes-Benz, Audi, Opel,
   Warsteiner, Jägermeister, DTM) belong to their owners. This license does not
   grant any right to them, and their use here is descriptive and historical.
-  Real sponsor logos appear only inside the car images described above.
+  Real team and sponsor logos appear only in the car images and logos described above.
 - **Third-party mods.** Other Workshop packs are not used. The Automobilista 2
   "DTM 1991" mod's livery artwork is used only with its author's permission,
   only inside the car images, and the mod's files are not in this

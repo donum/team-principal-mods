@@ -1,0 +1,410 @@
+{
+  "$comment": "Period (1991) logos. ams2 = decal from the 1991 AMS2 liveries (used with permission); commons = period logo file on Wikimedia Commons (licence recorded); crest = plain period-style text crest where no free period logo exists.",
+  "teams": {
+    "SMS Schmidt Motorsport": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/audi_v8_dtm/DTM1991/DTM1991_Stuck.dds",
+      "box": [
+        1200,
+        5650,
+        1700,
+        5820
+      ]
+    },
+    "AZR Audi Zentrum Reutlingen": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/audi_v8_dtm/DTM1991/DTM1991_Biela.dds",
+      "box": [
+        1180,
+        5700,
+        1480,
+        5790
+      ]
+    },
+    "Zakspeed Racing": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/mercedes_evo2_dtm/DTM1991/DTM1991_Asch.dds",
+      "box": [
+        2110,
+        4025,
+        2580,
+        4120
+      ]
+    },
+    "Snobeck Racing": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/mercedes_evo2_dtm/DTM1991/DTM1991_Cudini.dds",
+      "box": [
+        1720,
+        2275,
+        2370,
+        2365
+      ],
+      "rotate": 180
+    },
+    "MS-Jet Racing": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/mercedes_evo2_dtm/DTM1991/DTM1991_vanOmmen.dds",
+      "box": [
+        2000,
+        3985,
+        2630,
+        4125
+      ]
+    },
+    "MM Diebels Alt": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/bmw_m3_e30_a/DTM1991/DTM1991_Danner.dds",
+      "box": [
+        1740,
+        1000,
+        2360,
+        1575
+      ],
+      "rotate": 180
+    },
+    "Unitron Sports": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/bmw_m3_e30_a/DTM1991/DTM1991_Zakowski.dds",
+      "box": [
+        1380,
+        4140,
+        2700,
+        4310
+      ]
+    },
+    "Tic Tac Tauber Team": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/bmw_m3_e30_a/DTM1991/DTM1991_Berg.dds",
+      "box": [
+        1530,
+        4160,
+        2560,
+        4265
+      ]
+    },
+    "BMW M Team Schnitzer": {
+      "source": "commons",
+      "file": "File:Schnitzer Motorsport Logo.png",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "BMW M Team Bigazzi": {
+      "source": "crest",
+      "text": "BIGAZZI",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        20,
+        40,
+        110
+      ],
+      "accent": [
+        0,
+        140,
+        210
+      ]
+    },
+    "AMG Mercedes": {
+      "source": "crest",
+      "text": "AMG",
+      "fg": [
+        220,
+        220,
+        224
+      ],
+      "bg": [
+        20,
+        20,
+        22
+      ],
+      "accent": [
+        200,
+        200,
+        205
+      ],
+      "note": "Plain AMG wordmark: the ////AMG stripe logo probably arrived with the 1992 models (low confidence); no free period crest exists."
+    },
+    "Linder M Team": {
+      "source": "crest",
+      "text": "LINDER\nRENNSPORT",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        0,
+        90,
+        160
+      ],
+      "accent": [
+        0,
+        160,
+        220
+      ]
+    },
+    "BMW Team Isert": {
+      "source": "crest",
+      "text": "ISERT",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        70,
+        70,
+        80
+      ],
+      "accent": [
+        0,
+        120,
+        200
+      ]
+    },
+    "Auto Maass Climair Team": {
+      "source": "crest",
+      "text": "CLIMAIR\nAUTO MAASS",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        30,
+        90,
+        170
+      ],
+      "accent": [
+        230,
+        230,
+        230
+      ]
+    },
+    "Valier Motorsport": {
+      "source": "crest",
+      "text": "VALIER",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        170,
+        30,
+        30
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    },
+    "Marlboro BMW Dealer Team": {
+      "source": "commons",
+      "file": "File:Marlboro Logo.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "note": "Sponsor in the entrant name; red roof design in use until 1991+"
+    },
+    "Team Vanicek": {
+      "source": "crest",
+      "text": "VANICEK",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        0,
+        90,
+        60
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    },
+    "BAS Reifendienst": {
+      "source": "crest",
+      "text": "BAS\nREIFENDIENST",
+      "fg": [
+        30,
+        30,
+        30
+      ],
+      "bg": [
+        235,
+        125,
+        0
+      ],
+      "accent": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Opel Team Eggenberger": {
+      "source": "crest",
+      "text": "EGGENBERGER",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        30,
+        30,
+        30
+      ],
+      "accent": [
+        240,
+        200,
+        0
+      ]
+    },
+    "Opel Team Irmscher": {
+      "source": "commons",
+      "file": "File:Irmscher logo.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Opel Team Schübel": {
+      "source": "crest",
+      "text": "SCHÜBEL",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        235,
+        90,
+        20
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    },
+    "Gerd Ruch Motorsport": {
+      "source": "crest",
+      "text": "RUCH\nMOTORSPORT",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        20,
+        60,
+        140
+      ],
+      "accent": [
+        230,
+        230,
+        230
+      ]
+    }
+  },
+  "engines": {
+    "Audi": {
+      "source": "commons",
+      "file": "File:Audi Firmenlogo 1978 bis 1995.svg",
+      "license": "Public domain",
+      "period": "1978-1995",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Audi 3.6 V8 32V"
+      ]
+    },
+    "BMW": {
+      "source": "commons",
+      "file": "File:BMW 1963-1997 Logo.svg",
+      "license": "Public domain",
+      "period": "1963-1997",
+      "also_as": [
+        "BMW S14 2.5 16V"
+      ]
+    },
+    "Mercedes-Benz": {
+      "source": "commons",
+      "file": "File:Mercedes-Benz 1991.svg",
+      "license": "Public domain",
+      "period": "1991-1998",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Mercedes-Benz 2.5-16 (AMG)"
+      ]
+    },
+    "Opel": {
+      "source": "commons",
+      "file": "File:Logo Opel-1987.svg",
+      "license": "Public domain",
+      "period": "1987",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Opel 3.0 24V"
+      ]
+    },
+    "Ford": {
+      "source": "commons",
+      "file": "File:Ford Logo 1976 Print Ver.svg",
+      "license": "Public domain",
+      "period": "1976-2003",
+      "also_as": [
+        "Ford 5.0 V8"
+      ],
+      "plate": [
+        255,
+        255,
+        255
+      ]
+    }
+  }
+}
