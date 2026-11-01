@@ -1,0 +1,342 @@
+{
+  "$comment": "Period (1991) logos. ams2 = decal from the 1991 AMS2 liveries (used with permission); commons = period logo file on Wikimedia Commons (licence recorded); crest = plain period-style text crest where no free period logo exists.",
+  "teams": {
+    "SMS Schmidt Motorsport": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/audi_v8_dtm/DTM1991/DTM1991_Stuck.dds",
+      "box": [
+        1200,
+        5650,
+        1700,
+        5820
+      ]
+    },
+    "BMW M Team Schnitzer": {
+      "source": "commons",
+      "file": "File:Schnitzer Motorsport Logo.png",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "AMG Mercedes": {
+      "source": "crest",
+      "text": "AMG MERCEDES",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        25,
+        25,
+        25
+      ],
+      "accent": [
+        190,
+        190,
+        195
+      ]
+    },
+    "BMW M Team Bigazzi": {
+      "source": "crest",
+      "text": "BIGAZZI",
+      "fg": [
+        30,
+        30,
+        30
+      ],
+      "bg": [
+        250,
+        250,
+        250
+      ],
+      "accent": [
+        20,
+        40,
+        110
+      ]
+    },
+    "BMW M Team Linder": {
+      "source": "crest",
+      "text": "LINDER",
+      "fg": [
+        30,
+        30,
+        30
+      ],
+      "bg": [
+        240,
+        240,
+        240
+      ],
+      "accent": [
+        0,
+        160,
+        220
+      ]
+    },
+    "MS-Jet Racing": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/mercedes_evo2_dtm/DTM1991/DTM1991_vanOmmen.dds",
+      "box": [
+        2000,
+        3985,
+        2630,
+        4125
+      ]
+    },
+    "BMW M Team Zakspeed": {
+      "source": "crest",
+      "text": "ZAKSPEED",
+      "fg": [
+        30,
+        30,
+        30
+      ],
+      "bg": [
+        255,
+        255,
+        255
+      ],
+      "accent": [
+        0,
+        140,
+        150
+      ]
+    },
+    "Snobeck Racing": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/mercedes_evo2_dtm/DTM1991/DTM1991_Cudini.dds",
+      "box": [
+        1720,
+        2275,
+        2370,
+        2365
+      ],
+      "rotate": 180
+    },
+    "MM Diebels Alt": {
+      "source": "ams2",
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/bmw_m3_e30_a/DTM1991/DTM1991_Danner.dds",
+      "box": [
+        1740,
+        1000,
+        2360,
+        1575
+      ],
+      "rotate": 180
+    },
+    "Opel Team Irmscher": {
+      "source": "commons",
+      "file": "File:Irmscher logo.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Valier Motorsport": {
+      "source": "crest",
+      "text": "VALIER",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        180,
+        30,
+        30
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    },
+    "BMW Team Isert": {
+      "source": "crest",
+      "text": "BMW ISERT",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        90,
+        90,
+        100
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    },
+    "BAS Reifendienst": {
+      "source": "crest",
+      "text": "BAS\nREIFENDIENST",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        230,
+        120,
+        0
+      ],
+      "accent": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Tauber Motorsport": {
+      "source": "crest",
+      "text": "TAUBER",
+      "fg": [
+        30,
+        30,
+        30
+      ],
+      "bg": [
+        245,
+        245,
+        245
+      ],
+      "accent": [
+        0,
+        150,
+        70
+      ]
+    },
+    "Opel Team Schübel": {
+      "source": "crest",
+      "text": "SCHÜBEL",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        240,
+        110,
+        0
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    },
+    "Bemani Motorenbau": {
+      "source": "crest",
+      "text": "BEMANI\nMOTORENBAU",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        220,
+        30,
+        40
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    }
+  },
+  "engines": {
+    "Audi": {
+      "source": "commons",
+      "file": "File:Audi Firmenlogo 1978 bis 1995.svg",
+      "license": "Public domain",
+      "period": "1978-1995",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Audi 3.6 V8 32V"
+      ]
+    },
+    "BMW": {
+      "source": "commons",
+      "file": "File:BMW 1963-1997 Logo.svg",
+      "license": "Public domain",
+      "period": "1963-1997",
+      "also_as": [
+        "BMW S14 2.5 16V"
+      ]
+    },
+    "Mercedes-Benz": {
+      "source": "commons",
+      "file": "File:Mercedes-Benz 1991.svg",
+      "license": "Public domain",
+      "period": "1991-1998",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Mercedes-Benz 2.5-16 (AMG)"
+      ]
+    },
+    "Opel": {
+      "source": "commons",
+      "file": "File:Logo Opel-1987.svg",
+      "license": "Public domain",
+      "period": "1987",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Opel 3.0 24V"
+      ]
+    },
+    "Toyota": {
+      "source": "crest",
+      "text": "TOYOTA",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        200,
+        20,
+        30
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Toyota 7M-GTE 3.0"
+      ]
+    }
+  }
+}

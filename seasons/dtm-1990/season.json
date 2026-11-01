@@ -1,0 +1,92 @@
+{
+  "title": "DTM 1990 - Deutsche Tourenwagen-Meisterschaft",
+  "pack_folder": "dtm1990",
+  "version": "0.1",
+  "series": "formula",
+  "base_pack": "default26",
+  "no_title_sponsors": true,
+  "constants": {
+    "SEASON_START_YEAR": 1990,
+    "POINTS_TOP10": [
+      20,
+      15,
+      12,
+      10,
+      8,
+      6,
+      4,
+      3,
+      2,
+      1
+    ],
+    "QUALI_GRID_LIMIT": 40,
+    "QUALI_MIN_ENTRANTS": 20,
+    "PREQUALIFYING_TRIGGER_CARS": 45,
+    "PREQUALIFYING_FIELD_LIMIT": 45,
+    "DRIVER_RETIREMENT_MIN_AGE": 40,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 50
+  },
+  "team_clones": {
+    "SMS Schmidt Motorsport": "Red Boar",
+    "BMW M Team Schnitzer": "Red Boar",
+    "AMG Mercedes": "Mercurion",
+    "BMW M Team Bigazzi": "McMean",
+    "BMW M Team Linder": "McMean",
+    "MS-Jet Racing": "Audex",
+    "BMW M Team Zakspeed": "Scuderia Rossa",
+    "Snobeck Racing": "Scuderia Rossa",
+    "MM Diebels Alt": "Ashton Darting",
+    "Opel Team Irmscher": "French Blue",
+    "Valier Motorsport": "French Blue",
+    "BMW Team Isert": "Alpha Bison",
+    "BAS Reifendienst": "Willens Racing",
+    "Tauber Motorsport": "Willens Racing",
+    "Opel Team Schübel": "Hossden GP",
+    "Bemani Motorenbau": "Cadylacky Motors"
+  },
+  "staff": {
+    "seed": 1990,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "SMS Schmidt Motorsport": 16,
+      "BMW M Team Schnitzer": 15,
+      "AMG Mercedes": 14,
+      "BMW M Team Bigazzi": 14,
+      "BMW M Team Linder": 10,
+      "MS-Jet Racing": 9,
+      "BMW M Team Zakspeed": 8,
+      "Snobeck Racing": 6,
+      "MM Diebels Alt": 5,
+      "Opel Team Irmscher": 5,
+      "Valier Motorsport": 4,
+      "BMW Team Isert": 4,
+      "BAS Reifendienst": 4,
+      "Tauber Motorsport": 4,
+      "Opel Team Schübel": 4,
+      "Bemani Motorenbau": 4
+    }
+  },
+  "shared_tracks": {
+    "zolder": "dtm-1991",
+    "hockenheim": "dtm-1991",
+    "nuerburgring": "dtm-1991",
+    "avus": "dtm-1991",
+    "wunstorf": "dtm-1991",
+    "norisring": "dtm-1991",
+    "diepholz": "dtm-1991"
+  },
+  "track_overrides": {
+    "zolder": {
+      "length_km": 4.284,
+      "race_laps": 24
+    },
+    "hockenheim": {
+      "length_km": 6.801,
+      "race_laps": 15
+    },
+    "diepholz": {
+      "race_laps": 38
+    }
+  }
+}

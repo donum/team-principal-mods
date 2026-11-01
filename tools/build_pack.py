@@ -288,6 +288,24 @@ def place_tracks(season_dir, out, manifest):
     for track in sorted((season_dir / "tracks").glob("*.json")):
         shutil.copy2(track, tracks_dir / track.name)
         keep.add(track.stem)
+    # Tracks reused from another season ("shared_tracks": {"zolder": "dtm-1991"}),
+    # with per-season overrides (length_km, race_laps -> lap_modifier, speed).
+    for track_id, src_season in manifest.get("shared_tracks", {}).items():
+        if track_id in keep:
+            continue
+        src = REPO / "seasons" / src_season
+        shutil.copy2(src / "tracks" / f"{track_id}.json", tracks_dir / f"{track_id}.json")
+        shutil.copy2(src / "assets" / "tracks" / f"{track_id}.png", art_dir / f"{track_id}.png")
+        keep.add(track_id)
+    for track_id, over in manifest.get("track_overrides", {}).items():
+        path = tracks_dir / f"{track_id}.json"
+        if not path.exists():
+            continue
+        data = load_json(path)
+        if "race_laps" in over:
+            data["lap_modifier"] = round(over["race_laps"] / 50, 4)
+        data.update({k: v for k, v in over.items() if k != "race_laps"})
+        dump_json(path, data)
     placeholders = {}
     for track_id, spec in manifest.get("track_placeholders", {}).items():
         if track_id in keep:

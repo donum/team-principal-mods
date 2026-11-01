@@ -1,0 +1,91 @@
+{
+  "id": "nuerburgring_short",
+  "name": "Nürburgring (Sprint)",
+  "nationality": "german",
+  "bbox": [
+    6.918,
+    50.322,
+    6.952,
+    50.345
+  ],
+  "length_km": 3.029,
+  "width_m": 13.0,
+  "speed_scale": 1.052,
+  "race_laps": 34,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.55,
+  "pit_lane_loss_s": 22.0,
+  "tyre_wear_mult": 0.57,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.4,
+  "pole_side": "left",
+  "pit_way_names": [
+    "Boxengasse"
+  ],
+  "route_ways": [
+    {
+      "highway": "raceway"
+    }
+  ],
+  "exclude_way_ids": [
+    "1113008496",
+    "1113008498",
+    "1113008501",
+    "1113008502",
+    "1113009320",
+    "1113009321",
+    "1113009324",
+    "1113009325",
+    "1113009326",
+    "1113009622",
+    "30815119",
+    "46194345",
+    "769107218",
+    "26543901",
+    "799394496",
+    "799394497",
+    "41395681",
+    "41395684",
+    "1009142894",
+    "1009142895",
+    "41395670",
+    "41395668",
+    "41395673",
+    "799394495",
+    "27852583",
+    "31009257",
+    "32894824",
+    "32894825",
+    "32894842",
+    "199642469",
+    "199642470",
+    "710354617"
+  ],
+  "via": [
+    [
+      50.33456,
+      6.94412
+    ],
+    [
+      50.33214,
+      6.94049
+    ],
+    [
+      50.32959,
+      6.93912
+    ],
+    [
+      50.32969,
+      6.93801
+    ],
+    [
+      50.33261,
+      6.93635
+    ],
+    [
+      50.33708,
+      6.94664
+    ]
+  ],
+  "notes": "1984 GP circuit 'Sprintstrecke'/Kurzanbindung variant (3.029 km) used on 20 Sep 1992: GP start/finish, Castrol-S, down to the short link, across to the return leg before the Ford-Kurve, then Veedol section and the last corner. The exact 1992 link position is unverified; traced over today's 'Anbindung zur Sprintstrecke'. Traced 3045 m vs 3029 m."
+}

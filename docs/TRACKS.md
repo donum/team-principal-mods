@@ -61,6 +61,20 @@ spec's `notes` and in the season dossier.
 | Diepholz | 2.690 km | Via over runway 08/26 and the northern taxiway, counter-clockwise | 2,665 m (−0.9%) | Medium. The chicanes aren't modelled. |
 | Wunstorf | 5.050 km | Via over runways 03/21 and 08/26. The west perimeter road is a multi-point bridge, mapped from the 1993 Commons diagram (which has a north arrow) by an affine fit to the runway ends. | 4,554 m (−10%) | **Low to medium.** Direction comes from one diagram arrow. The perimeter road and the 1991 sweeper are approximate. |
 
+### Added for 1990 and 1992
+
+| Venue | Season | Length | How it's built | Traced |
+|---|---|---|---|---|
+| Nordschleife + GP | 1990, 1992 | 25.3 km | Via over the GP circuit and the Nordschleife, left at Hatzenbach, Hohenrain link back | 25,905 m (+2.4%) |
+| Mainz-Finthen | 1990 | 2.250 km | Runway 07/25 and taxiways A and C, clockwise. The 1980s chicane step isn't modelled. | 2,135 m (−5%) |
+| Brno | 1992 | 5.394 km | The "Masarykův okruh" ways, clockwise | 5,362 m (−0.6%) |
+| AVUS (short) | 1992 | 2.640 km | The 1991 AVUS with the south turn moved north (position undocumented) | 2,620 m (−0.8%) |
+| Hockenheim Motodrom | 1992 | 2.634 km | The short circuit over today's "Kleiner Kurs" link | 2,574 m (−2.3%) |
+| Nürburgring Sprint | 1992 | 3.029 km | The 1984 GP circuit with the Kurzanbindung | 3,045 m (+0.5%) |
+
+Each season reuses the 1991 tracks through `shared_tracks`, and sets its own
+lap lengths and race laps through `track_overrides`.
+
 ### Open questions
 
 - **AVUS:** where was the 1991 south turn, and where was the chicane? A

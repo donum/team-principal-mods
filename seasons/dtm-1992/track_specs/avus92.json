@@ -1,0 +1,90 @@
+{
+  "id": "avus92",
+  "name": "AVUS",
+  "nationality": "german",
+  "bbox": [
+    13.245,
+    52.47,
+    13.275,
+    52.5
+  ],
+  "bbox_tiles": [
+    [
+      13.262,
+      52.494,
+      13.282,
+      52.505
+    ]
+  ],
+  "length_km": 2.64,
+  "width_m": 14.0,
+  "speed_scale": 0.98,
+  "race_laps": 38,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.35,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 0.48,
+  "fuel_consumption": 1.25,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_ways": [
+    {
+      "name": [
+        "AVUS",
+        "AVUS Nordkurve"
+      ]
+    }
+  ],
+  "exclude_way_ids": [
+    "35357724",
+    "1216705596",
+    "4388956",
+    "8788062",
+    "24756982",
+    "1370509801",
+    "1370509807"
+  ],
+  "bridges": [
+    [
+      [
+        52.493,
+        13.26531
+      ],
+      [
+        52.493,
+        13.26558
+      ]
+    ]
+  ],
+  "start": [
+    52.4994,
+    13.2735
+  ],
+  "via": [
+    [
+      52.4994,
+      13.2735
+    ],
+    [
+      52.49615,
+      13.26927
+    ],
+    [
+      52.493,
+      13.26531
+    ],
+    [
+      52.493,
+      13.26558
+    ],
+    [
+      52.4988,
+      13.2733
+    ],
+    [
+      52.5004,
+      13.2752
+    ]
+  ],
+  "notes": "1992 shortened AVUS (2.640 km, anticlockwise): same carriageways and Nordkurve as 1989-91, with the south turn moved north. Its exact position is undocumented; placed where the lap measures 2.640 km (bridged)."
+}

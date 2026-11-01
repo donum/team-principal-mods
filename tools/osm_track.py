@@ -588,7 +588,8 @@ def build(spec_path):
     out_png.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps(track, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    width_px = spec.get("width_m", 11.0) * scale * 1.4
+    # Long circuits shrink to a thin line at map scale; keep the drawn track readable.
+    width_px = max(spec.get("width_m", 11.0) * scale * 1.4, spec.get("min_track_px", 9))
     pit_px = [to_px(*p) for p in pit_m] if pit_m else None
     render(out_png, proj, to_px, nodes, ways, relations, [to_px(*p) for p in dense[::2]], pit_px, width_px, spec["id"], scale, spec)
 

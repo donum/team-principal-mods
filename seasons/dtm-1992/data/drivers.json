@@ -1,0 +1,1015 @@
+{
+  "$comment": "DTM 1992 drivers, generated from research/entries.csv and standings.csv. Skills and talent are estimates from championship points; part-timers are reserves.",
+  "$template": {
+    "index": 0,
+    "override": {
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      }
+    },
+    "drop": [
+      "contract"
+    ],
+    "drop_if_absent": [
+      "team",
+      "number"
+    ]
+  },
+  "records": [
+    {
+      "name": "Klaus Ludwig",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "AMG Mercedes",
+        "length_weeks": 52,
+        "salary_m": 5.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 42,
+      "talent": 84,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_veteran",
+      "nationality": "german",
+      "team": "AMG Mercedes",
+      "number": 3
+    },
+    {
+      "name": "Bernd Schneider",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 17,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "AMG Mercedes",
+        "length_weeks": 52,
+        "salary_m": 4.22,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 89,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "german",
+      "team": "AMG Mercedes",
+      "number": 4
+    },
+    {
+      "name": "Keke Rosberg",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "AMG Mercedes",
+        "length_weeks": 52,
+        "salary_m": 3.29,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 43,
+      "talent": 76,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_veteran",
+      "nationality": "finnish",
+      "team": "AMG Mercedes",
+      "number": 6
+    },
+    {
+      "name": "Ellen Lohr",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "AMG Mercedes",
+        "length_weeks": 52,
+        "salary_m": 2.41,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 26,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "reserve_number": 5
+    },
+    {
+      "name": "Kurt Thiim",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 17,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Diebels Zakspeed Team",
+        "length_weeks": 52,
+        "salary_m": 4.24,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 33,
+      "talent": 89,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "danish",
+      "team": "Diebels Zakspeed Team",
+      "number": 18
+    },
+    {
+      "name": "Roland Asch",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Diebels Zakspeed Team",
+        "length_weeks": 52,
+        "salary_m": 3.21,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 41,
+      "talent": 77,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_veteran",
+      "nationality": "german",
+      "team": "Diebels Zakspeed Team",
+      "number": 17
+    },
+    {
+      "name": "Louis Krages",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Diebels Zakspeed Team",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 42,
+      "talent": 55,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "reserve_number": 28
+    },
+    {
+      "name": "Johnny Cecotto",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 17,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "FINA Motorsport Team",
+        "length_weeks": 52,
+        "salary_m": 4.09,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 36,
+      "talent": 86,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_veteran",
+      "nationality": "venezuelan",
+      "team": "FINA Motorsport Team",
+      "number": 7
+    },
+    {
+      "name": "Roberto Ravaglia",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW M Team Schnitzer",
+        "length_weeks": 52,
+        "salary_m": 3.02,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 34,
+      "talent": 83,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "italian",
+      "team": "BMW M Team Schnitzer",
+      "number": 15
+    },
+    {
+      "name": "Joachim Winkelhock",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW M Team Schnitzer",
+        "length_weeks": 52,
+        "salary_m": 2.52,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 81,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "BMW M Team Schnitzer",
+      "number": 14
+    },
+    {
+      "name": "Altfrid Heger",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW M Team Schnitzer",
+        "length_weeks": 52,
+        "salary_m": 1.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 34,
+      "talent": 71,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "BMW M Team Schnitzer",
+      "number": 16
+    },
+    {
+      "name": "Emanuele Pirro",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW M Team Bigazzi",
+        "length_weeks": 52,
+        "salary_m": 1.99,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 30,
+      "talent": 78,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "italian",
+      "team": "BMW M Team Bigazzi",
+      "number": 9
+    },
+    {
+      "name": "Steve Soper",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW M Team Bigazzi",
+        "length_weeks": 52,
+        "salary_m": 2.49,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 40,
+      "talent": 75,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "british",
+      "team": "BMW M Team Bigazzi",
+      "number": 10
+    },
+    {
+      "name": "Olivier Grouillard",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW M Team Bigazzi",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 33,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "reserve_number": 22
+    },
+    {
+      "name": "Jörg van Ommen",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "MS Racing",
+        "length_weeks": 52,
+        "salary_m": 2.43,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 29,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "MS Racing",
+      "number": 12
+    },
+    {
+      "name": "Jacques Laffite",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "MS Racing",
+        "length_weeks": 52,
+        "salary_m": 1.11,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 48,
+      "talent": 58,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "french",
+      "team": "MS Racing",
+      "number": 11
+    },
+    {
+      "name": "Frank Biela",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "AZR Audi Zentrum Reutlingen",
+        "length_weeks": 52,
+        "salary_m": 0.94,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 70,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "AZR Audi Zentrum Reutlingen",
+      "number": 1
+    },
+    {
+      "name": "Frank Jelinski",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "AZR Audi Zentrum Reutlingen",
+        "length_weeks": 52,
+        "salary_m": 0.45,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 33,
+      "talent": 65,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "AZR Audi Zentrum Reutlingen",
+      "number": 2
+    },
+    {
+      "name": "Franz Engstler",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Valier Motorsport",
+        "length_weeks": 52,
+        "salary_m": 0.75,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 30,
+      "talent": 69,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "Valier Motorsport",
+      "number": 36
+    },
+    {
+      "name": "Alexander Burgstaller",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Valier Motorsport",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 22,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "reserve_number": 35
+    },
+    {
+      "name": "Kris Nissen",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Unitron Sports",
+        "length_weeks": 52,
+        "salary_m": 0.71,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 68,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "danish",
+      "team": "Unitron Sports",
+      "number": 21
+    },
+    {
+      "name": "Hans-Joachim Stuck",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "SMS Schmidt Motorsport",
+        "length_weeks": 52,
+        "salary_m": 0.64,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 41,
+      "talent": 61,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "team": "SMS Schmidt Motorsport",
+      "number": 44
+    },
+    {
+      "name": "Hubert Haupt",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "SMS Schmidt Motorsport",
+        "length_weeks": 52,
+        "salary_m": 0.22,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 22,
+      "talent": 61,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "SMS Schmidt Motorsport",
+      "number": 45
+    },
+    {
+      "name": "Harald Becker",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Auto Maass",
+        "length_weeks": 52,
+        "salary_m": 0.26,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 38,
+      "talent": 58,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "team": "Auto Maass",
+      "number": 42
+    },
+    {
+      "name": "Armin Hahne",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Jägermeister Linder Team",
+        "length_weeks": 52,
+        "salary_m": 0.24,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 36,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "Jägermeister Linder Team",
+      "number": 19
+    },
+    {
+      "name": "Wayne Gardner",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Jägermeister Linder Team",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 32,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "australian",
+      "reserve_number": 20
+    },
+    {
+      "name": "Armin Bernhard",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BAS Reifendienst",
+        "length_weeks": 52,
+        "salary_m": 0.24,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 38,
+      "talent": 58,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "team": "BAS Reifendienst",
+      "number": 27
+    },
+    {
+      "name": "Gerd Ruch",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Gerd Ruch Motorsport",
+        "length_weeks": 52,
+        "salary_m": 0.22,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 38,
+      "talent": 57,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "team": "Gerd Ruch Motorsport",
+      "number": 33
+    },
+    {
+      "name": "Fred Räker",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Gerd Ruch Motorsport",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 30,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "Gerd Ruch Motorsport",
+      "number": 34
+    },
+    {
+      "name": "Jürgen Ruch",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Gerd Ruch Motorsport",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 32,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "reserve_number": 66
+    },
+    {
+      "name": "Leopold Prinz von Bayern",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team Isert",
+        "length_weeks": 52,
+        "salary_m": 0.22,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 48,
+      "talent": 55,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "team": "BMW Team Isert",
+      "number": 30
+    },
+    {
+      "name": "Fritz Kreutzpointner",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "MM Team",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 24,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "MM Team",
+      "number": 38
+    },
+    {
+      "name": "Thomas von Löwis of Menar",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "MM Team",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 44,
+      "talent": 55,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "reserve_number": 37
+    },
+    {
+      "name": "Thomas Winkelhock",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "MM Team",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 23,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "reserve_number": 57
+    },
+    {
+      "name": "Jürgen Feucht",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 9,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Buffalo Boots Racing",
+        "length_weeks": 52,
+        "salary_m": 0.2,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 39,
+      "talent": 55,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "team": "Buffalo Boots Racing",
+      "number": 51
+    }
+  ]
+}

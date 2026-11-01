@@ -1,0 +1,70 @@
+{
+  "id": "hockenheim_short",
+  "name": "Hockenheimring (Motodrom)",
+  "nationality": "german",
+  "bbox": [
+    8.555,
+    49.318,
+    8.625,
+    49.345
+  ],
+  "length_km": 2.634,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 38,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 0.51,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "pit_way_names": [
+    "Boxengasse"
+  ],
+  "route_ways": [
+    {
+      "highway": "raceway"
+    }
+  ],
+  "exclude_way_ids": [
+    "15446020",
+    "1416119746",
+    "446193574",
+    "446193575",
+    "446193576",
+    "446193577",
+    "31318810"
+  ],
+  "start": [
+    49.32761,
+    8.56595
+  ],
+  "via": [
+    [
+      49.32761,
+      8.56595
+    ],
+    [
+      49.332,
+      8.56629
+    ],
+    [
+      49.32878,
+      8.57008
+    ],
+    [
+      49.32685,
+      8.5709
+    ],
+    [
+      49.3287,
+      8.56752
+    ],
+    [
+      49.32561,
+      8.56783
+    ]
+  ],
+  "notes": "Short Motodrom circuit (2.634 km in 1992), clockwise: start/finish straight, Nordkurve, short link back to the Motodrom, Sachs-Kurve, Suedkurve. Traced over today's 'Kleiner Kurs Kurzanbindung', which may differ in detail from the 1992 link. Traced 2574 m vs 2634 m in 1992."
+}

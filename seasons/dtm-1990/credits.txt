@@ -1,0 +1,36 @@
+DTM 1990 - Deutsche Tourenwagen-Meisterschaft
+Unofficial community season pack for Team Principal: A Racing Manager.
+
+Created by Daniel Raude - Team Principal Mods
+Content licensed CC BY-NC-SA 4.0. Tooling MIT.
+
+Season research sources: touringcarracing.net, de/en Wikipedia, Wikidata.
+See seasons/dtm-1991/README.md in the project repository for details.
+
+Track maps and track geometry:
+  Map data (c) OpenStreetMap contributors, available under the
+  Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
+  Track outlines are today's layouts and may differ from 1991 in detail.
+
+Car images (assets/Cars):
+  Car outlines adapted from the DTM side-view illustrations by Oliver Pohlmann
+  (Wikimedia Commons, CC BY-SA 3.0 DE): "DTM 1993 Kurt König", "DTM 1993
+  Armin Bernhard", "DTM 1993 Marco Werner Opel Omega", "DTM 1993 Gerd Ruch".
+  Audi V8 quattro DTM outline traced from a photo by Matthew Lamb
+  (Wikimedia Commons, CC BY-SA 2.0).
+  1991 liveries from the Automobilista 2 "DTM 1990" mod, used with the
+  livery author's permission.
+  The adapted car images are licensed CC BY-SA 4.0.
+
+Logos (assets/logos, assets/engines):
+  Period team decals (SMS, AZR, Zakspeed, Snobeck, MS-Jet, Diebels, Unitron,
+  Tic Tac Tauber) taken from the Automobilista 2 "DTM 1990" mod liveries, used
+  with the livery author's permission.
+  Public-domain period logos from Wikimedia Commons: Schnitzer Motorsport,
+  Irmscher, Marlboro, Audi (1978-1995), BMW (1963-1997), Mercedes-Benz (1991),
+  Opel (1987), Ford (1976). All trademarks belong to their owners.
+  Other teams use plain text crests made for this pack.
+
+Real team, driver, manufacturer and sponsor names are used for historical
+description only. Not affiliated with or endorsed by the DTM, ITR, the game's
+publisher or any manufacturer.

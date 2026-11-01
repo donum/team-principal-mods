@@ -1,0 +1,55 @@
+{
+  "categories": {
+    "points_system": {
+      "add_options": [
+        {
+          "key": "dtm_1990",
+          "name": "DTM 1990",
+          "points": [20, 15, 12, 10, 8, 6, 4, 3, 2, 1],
+          "summary": "DTM scoring per heat (20-15-12-10-8-6-4-3-2-1).",
+          "description": "Each heat pays points to the top ten, as in the 1990 Deutsche Tourenwagen-Meisterschaft."
+        }
+      ],
+      "default": "dtm_1990"
+    },
+    "car_profile": {
+      "add_options": [
+        {
+          "key": "group_a_touring",
+          "name": "Group A Touring Cars",
+          "corner_speed_multiplier": 0.78,
+          "acceleration_multiplier": 0.62,
+          "braking_multiplier": 0.6,
+          "drag_multiplier": 1.35,
+          "summary": "Heavy, low-downforce production-based saloons with roughly 330-370 hp.",
+          "description": "Group A touring cars corner, accelerate and brake far below single-seater levels. Calibrate against 1990 DTM qualifying times."
+        }
+      ],
+      "default": "group_a_touring"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "group_a_1990",
+          "name": "Group A 1990",
+          "min_car_mass_kg": 980.0,
+          "summary": "Displacement-based Group A minimum weights; lightest legal 2.5-litre car is about 980 kg.",
+          "description": "Team car masses carry the per-model weight (BMW/Mercedes 2.5 l about 980-1040 kg, Audi V8 and Opel 3.0 heavier)."
+        }
+      ],
+      "default": "group_a_1990"
+    },
+    "drs_policy": { "default": "disabled" },
+    "ers_policy": { "default": "disabled" },
+    "formula_refueling": { "default": "banned" },
+    "formula_compound_usage": { "default": "disabled" },
+    "formula_team_entry_cap": { "default": "three" },
+    "formula_team_entry_requirement": { "default": "variable" },
+    "pole_point": { "default": "disabled" },
+    "fastest_lap_point": { "default": "disabled" },
+    "qualifying_format": { "default": "session_60" },
+    "driver_aid_restrictions": { "default": "full_prohibition" },
+    "weekend_tyre_allocation": { "default": "unlimited" },
+    "reliability_profile": { "default": "meddling_reliability" }
+  }
+}

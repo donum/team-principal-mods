@@ -288,8 +288,17 @@ def render_car(model, livery, zip_path, season=None):
                 ImageDraw.Draw(m).rectangle([0, stripe["y0"], ref.size[0], stripe["y1"]], fill=255)
                 out.paste(layer, (0, 0), ImageChops.multiply(m, paint))
             if livery.get("lettering"):
-                f = font(livery.get("lettering_size", 150))
-                x, y = livery.get("lettering_at", [(model["livery_zone"][0] + model["livery_zone"][1]) // 2,
+                # Rear half of the body side, shrunk to fit beside the number board.
+                lz0, lz1 = model["livery_zone"]
+                rear = model["wheels"][0]
+                left = rear[0] + rear[2] * 1.25
+                box_w = (model["number_at"][0] - 200) - left
+                size = livery.get("lettering_size", 150)
+                f = font(size)
+                while draw.textlength(livery["lettering"], font=f) > box_w and size > 50:
+                    size -= 6
+                    f = font(size)
+                x, y = livery.get("lettering_at", [left + box_w / 2,
                                                    (model["belt_y"] + model["sill_y"]) // 2])
                 draw.text((x, y), livery["lettering"], font=f, anchor="mm",
                           fill=tuple(livery.get("lettering_color", [20, 20, 22])) + (255,))

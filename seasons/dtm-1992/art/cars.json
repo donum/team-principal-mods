@@ -1,0 +1,1067 @@
+{
+  "$comment": "1992 cars: plain liveries in team colours (no 1992 AMS2 liveries exist). Toyota Supra and Opel Kadett use the Omega silhouette as a stand-in.",
+  "models": {
+    "bmw_m3_e30": {
+      "name": "BMW M3 Sport Evolution (E30)",
+      "reference": {
+        "file": "File:DTM 1993 Kurt König.svg",
+        "author": "Oliver Pohlmann",
+        "license": "CC BY-SA 3.0 DE",
+        "url": "https://commons.wikimedia.org/wiki/File:DTM_1993_Kurt_K%C3%B6nig.svg"
+      },
+      "wheels": [
+        [
+          893,
+          883,
+          268,
+          225
+        ],
+        [
+          3178,
+          883,
+          268,
+          225
+        ]
+      ],
+      "belt_y": 430,
+      "sill_y": 1020,
+      "glass_polygons": [
+        [
+          [
+            910,
+            372
+          ],
+          [
+            1200,
+            78
+          ],
+          [
+            1560,
+            76
+          ],
+          [
+            1560,
+            398
+          ],
+          [
+            910,
+            398
+          ]
+        ],
+        [
+          [
+            1668,
+            74
+          ],
+          [
+            2200,
+            86
+          ],
+          [
+            2672,
+            382
+          ],
+          [
+            2672,
+            410
+          ],
+          [
+            1742,
+            412
+          ]
+        ]
+      ],
+      "erase_outline": [
+        [
+          2362,
+          516,
+          2802,
+          928
+        ]
+      ],
+      "number_at": [
+        2580,
+        720
+      ],
+      "uv": {
+        "anchors": [
+          [
+            175,
+            5070,
+            3150,
+            4060
+          ],
+          [
+            893,
+            4400,
+            3150,
+            4060
+          ],
+          [
+            2669,
+            1650,
+            3150,
+            4060
+          ]
+        ]
+      },
+      "livery_zone": [
+        60,
+        3700
+      ],
+      "light_boxes": [
+        [
+          60,
+          525,
+          170,
+          668
+        ],
+        [
+          3710,
+          550,
+          3785,
+          725
+        ]
+      ]
+    },
+    "mercedes_190e_evo2": {
+      "name": "Mercedes-Benz 190 E 2.5-16 Evolution II",
+      "reference": {
+        "file": "File:DTM 1993 Armin Bernhard.svg",
+        "author": "Oliver Pohlmann",
+        "license": "CC BY-SA 3.0 DE",
+        "url": "https://commons.wikimedia.org/wiki/File:DTM_1993_Armin_Bernhard.svg"
+      },
+      "wheels": [
+        [
+          902,
+          893,
+          269,
+          205
+        ],
+        [
+          3168,
+          893,
+          269,
+          205
+        ]
+      ],
+      "belt_y": 380,
+      "sill_y": 960,
+      "glass_polygons": [
+        [
+          [
+            1020,
+            370
+          ],
+          [
+            1280,
+            90
+          ],
+          [
+            1700,
+            90
+          ],
+          [
+            1700,
+            380
+          ]
+        ],
+        [
+          [
+            1770,
+            80
+          ],
+          [
+            2180,
+            90
+          ],
+          [
+            2560,
+            400
+          ],
+          [
+            1850,
+            400
+          ]
+        ]
+      ],
+      "number_at": [
+        2215,
+        680
+      ],
+      "uv": {
+        "anchors": [
+          [
+            19,
+            5150,
+            3080,
+            4044
+          ],
+          [
+            902,
+            4100,
+            3080,
+            4044
+          ],
+          [
+            3168,
+            1180,
+            3080,
+            4044
+          ],
+          [
+            3480,
+            850,
+            3080,
+            4044
+          ]
+        ]
+      },
+      "livery_zone": [
+        40,
+        3560
+      ],
+      "light_boxes": [
+        [
+          80,
+          515,
+          245,
+          640
+        ],
+        [
+          3490,
+          520,
+          3705,
+          680
+        ]
+      ],
+      "erase_outline": [
+        [
+          880,
+          410,
+          1740,
+          560
+        ],
+        [
+          1220,
+          590,
+          2000,
+          750
+        ],
+        [
+          2000,
+          480,
+          2430,
+          880
+        ],
+        [
+          2450,
+          420,
+          2890,
+          720
+        ],
+        [
+          1310,
+          970,
+          1660,
+          1030
+        ],
+        [
+          370,
+          890,
+          600,
+          995
+        ]
+      ]
+    },
+    "opel_omega_evo500": {
+      "name": "Opel Omega 3000 Evolution 500",
+      "reference": {
+        "file": "File:DTM 1993 Marco Werner Opel Omega.svg",
+        "author": "Oliver Pohlmann",
+        "license": "CC BY-SA 3.0 DE",
+        "url": "https://commons.wikimedia.org/wiki/File:DTM_1993_Marco_Werner_Opel_Omega.svg"
+      },
+      "wheels": [
+        [
+          874,
+          864,
+          284,
+          211
+        ],
+        [
+          3126,
+          858,
+          284,
+          211
+        ]
+      ],
+      "belt_y": 403,
+      "sill_y": 950,
+      "livery_zone": [
+        160,
+        3600
+      ],
+      "light_boxes": [
+        [
+          58,
+          413,
+          154,
+          662
+        ],
+        [
+          3600,
+          557,
+          3763,
+          691
+        ]
+      ],
+      "glass_polygons": [
+        [
+          [
+            1248,
+            58
+          ],
+          [
+            1655,
+            58
+          ],
+          [
+            1655,
+            394
+          ],
+          [
+            1248,
+            394
+          ]
+        ]
+      ],
+      "erase_outline": [
+        [
+          1306,
+          461,
+          1757,
+          883
+        ],
+        [
+          2054,
+          480,
+          2496,
+          902
+        ],
+        [
+          96,
+          682,
+          538,
+          960
+        ],
+        [
+          1325,
+          950,
+          2707,
+          1037
+        ],
+        [
+          3427,
+          700,
+          3811,
+          826
+        ]
+      ],
+      "number_at": [
+        1530,
+        670
+      ],
+      "uv": {
+        "anchors": [
+          [
+            60,
+            4400,
+            3120,
+            3980
+          ],
+          [
+            874,
+            3900,
+            3120,
+            3980
+          ],
+          [
+            2630,
+            1950,
+            3120,
+            3980
+          ],
+          [
+            3126,
+            1400,
+            3120,
+            3980
+          ]
+        ]
+      },
+      "panel_clip": [
+        [
+          2560,
+          560,
+          2880,
+          960
+        ]
+      ]
+    },
+    "ford_mustang_gt": {
+      "name": "Ford Mustang 5.0 GT",
+      "reference": {
+        "file": "File:DTM 1993 Gerd Ruch.svg",
+        "author": "Oliver Pohlmann",
+        "license": "CC BY-SA 3.0 DE",
+        "url": "https://commons.wikimedia.org/wiki/File:DTM_1993_Gerd_Ruch.svg"
+      },
+      "wheels": [
+        [
+          854,
+          822,
+          278,
+          202
+        ],
+        [
+          2986,
+          822,
+          278,
+          202
+        ]
+      ],
+      "belt_y": 413,
+      "sill_y": 941,
+      "livery_zone": [
+        255,
+        3500
+      ],
+      "light_boxes": [
+        [
+          115,
+          461,
+          250,
+          595
+        ],
+        [
+          3514,
+          547,
+          3734,
+          672
+        ]
+      ],
+      "glass_polygons": [
+        [
+          [
+            730,
+            403
+          ],
+          [
+            1229,
+            67
+          ],
+          [
+            1440,
+            67
+          ],
+          [
+            1402,
+            394
+          ]
+        ]
+      ],
+      "erase_outline": [
+        [
+          307,
+          432,
+          883,
+          528
+        ],
+        [
+          1354,
+          547,
+          2141,
+          797
+        ],
+        [
+          2170,
+          480,
+          2588,
+          874
+        ],
+        [
+          2477,
+          394,
+          2746,
+          451
+        ],
+        [
+          1152,
+          902,
+          2640,
+          989
+        ]
+      ],
+      "number_at": [
+        2377,
+        676
+      ]
+    },
+    "audi_v8_quattro": {
+      "name": "Audi V8 quattro DTM",
+      "reference": {
+        "trace": "../dtm-1991/art/audi_v8_trace.json",
+        "author": "traced from a photo by Matthew Lamb",
+        "license": "CC BY-SA 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:FoS20162016_0624_174522AA_(27851603876).jpg"
+      },
+      "wheels": [
+        [
+          806,
+          838,
+          240,
+          176
+        ],
+        [
+          2880,
+          851,
+          246,
+          182
+        ]
+      ],
+      "belt_y": 390,
+      "sill_y": 944,
+      "livery_zone": [
+        16,
+        3850
+      ],
+      "light_boxes": [
+        [
+          60,
+          422,
+          154,
+          576
+        ],
+        [
+          3392,
+          595,
+          3670,
+          707
+        ],
+        [
+          3424,
+          803,
+          3658,
+          864
+        ]
+      ],
+      "uv": {
+        "anchors": [
+          [
+            16,
+            5204,
+            2980,
+            4020
+          ],
+          [
+            806,
+            4104,
+            2980,
+            4020
+          ],
+          [
+            1866,
+            2744,
+            2980,
+            4020
+          ],
+          [
+            2474,
+            2024,
+            2980,
+            4020
+          ],
+          [
+            2880,
+            1424,
+            2980,
+            4020
+          ],
+          [
+            3850,
+            684,
+            2980,
+            4020
+          ]
+        ]
+      },
+      "number_at": [
+        2000,
+        640
+      ]
+    }
+  },
+  "liveries": {
+    "AMG Mercedes": {
+      "model": "mercedes_190e_evo2",
+      "base_color": [
+        25,
+        25,
+        25
+      ],
+      "number": 3,
+      "lettering": "AMG Mercedes",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            190,
+            190,
+            195
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "Diebels Zakspeed Team": {
+      "model": "mercedes_190e_evo2",
+      "base_color": [
+        20,
+        20,
+        20
+      ],
+      "number": 17,
+      "lettering": "Diebels Zakspe",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            200,
+            160,
+            60
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "FINA Motorsport Team": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        255,
+        255,
+        255
+      ],
+      "number": 7,
+      "lettering": "FINA",
+      "lettering_color": [
+        200,
+        20,
+        40
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            200,
+            20,
+            40
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "BMW M Team Schnitzer": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        255,
+        255,
+        255
+      ],
+      "number": 14,
+      "lettering": "Schnitzer",
+      "lettering_color": [
+        0,
+        60,
+        130
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            0,
+            60,
+            130
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "BMW M Team Bigazzi": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        250,
+        250,
+        250
+      ],
+      "number": 9,
+      "lettering": "Bigazzi",
+      "lettering_color": [
+        20,
+        40,
+        110
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            20,
+            40,
+            110
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "MS Racing": {
+      "model": "mercedes_190e_evo2",
+      "base_color": [
+        245,
+        245,
+        245
+      ],
+      "number": 11,
+      "lettering": "MS",
+      "lettering_color": [
+        250,
+        205,
+        0
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            250,
+            205,
+            0
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "AZR Audi Zentrum Reutlingen": {
+      "model": "audi_v8_quattro",
+      "base_color": [
+        245,
+        245,
+        245
+      ],
+      "number": 1,
+      "lettering": "AZR Audi Zentr",
+      "lettering_color": [
+        60,
+        60,
+        60
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            60,
+            60,
+            60
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "Valier Motorsport": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        180,
+        30,
+        30
+      ],
+      "number": 36,
+      "lettering": "Valier",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            255,
+            255,
+            255
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "Unitron Sports": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        245,
+        245,
+        245
+      ],
+      "number": 21,
+      "lettering": "Unitron Sports",
+      "lettering_color": [
+        220,
+        40,
+        40
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            220,
+            40,
+            40
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "SMS Schmidt Motorsport": {
+      "model": "audi_v8_quattro",
+      "base_color": [
+        245,
+        245,
+        245
+      ],
+      "number": 44,
+      "lettering": "SMS Schmidt",
+      "lettering_color": [
+        200,
+        16,
+        46
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            200,
+            16,
+            46
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "Auto Maass": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        30,
+        90,
+        170
+      ],
+      "number": 42,
+      "lettering": "Auto Maass",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            255,
+            255,
+            255
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "Jägermeister Linder Team": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        240,
+        110,
+        0
+      ],
+      "number": 19,
+      "lettering": "Jägermeister L",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            255,
+            255,
+            255
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "BAS Reifendienst": {
+      "model": "mercedes_190e_evo2",
+      "base_color": [
+        230,
+        120,
+        0
+      ],
+      "number": 27,
+      "lettering": "BAS Reifendien",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            30,
+            30,
+            30
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "Gerd Ruch Motorsport": {
+      "model": "ford_mustang_gt",
+      "base_color": [
+        20,
+        60,
+        140
+      ],
+      "number": 33,
+      "lettering": "Gerd Ruch",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            255,
+            255,
+            255
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "BMW Team Isert": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        90,
+        90,
+        100
+      ],
+      "number": 30,
+      "lettering": "BMW Isert",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            255,
+            255,
+            255
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "MM Team": {
+      "model": "bmw_m3_e30",
+      "base_color": [
+        30,
+        30,
+        30
+      ],
+      "number": 38,
+      "lettering": "MM",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            230,
+            230,
+            230
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    },
+    "Buffalo Boots Racing": {
+      "model": "ford_mustang_gt",
+      "base_color": [
+        20,
+        20,
+        20
+      ],
+      "number": 51,
+      "lettering": "Buffalo Boots",
+      "lettering_color": [
+        255,
+        255,
+        255
+      ],
+      "plain": true,
+      "stripes": [
+        {
+          "color": [
+            230,
+            180,
+            40
+          ],
+          "y0": 0,
+          "y1": 0
+        }
+      ]
+    }
+  }
+}

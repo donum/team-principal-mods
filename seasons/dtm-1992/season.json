@@ -1,0 +1,92 @@
+{
+  "title": "DTM 1992 - Deutsche Tourenwagen-Meisterschaft",
+  "pack_folder": "dtm1992",
+  "version": "0.1",
+  "series": "formula",
+  "base_pack": "default26",
+  "no_title_sponsors": true,
+  "constants": {
+    "SEASON_START_YEAR": 1992,
+    "POINTS_TOP10": [
+      20,
+      15,
+      12,
+      10,
+      8,
+      6,
+      4,
+      3,
+      2,
+      1
+    ],
+    "QUALI_GRID_LIMIT": 40,
+    "QUALI_MIN_ENTRANTS": 20,
+    "PREQUALIFYING_TRIGGER_CARS": 45,
+    "PREQUALIFYING_FIELD_LIMIT": 45,
+    "DRIVER_RETIREMENT_MIN_AGE": 40,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 50
+  },
+  "team_clones": {
+    "AMG Mercedes": "Red Boar",
+    "Diebels Zakspeed Team": "Red Boar",
+    "FINA Motorsport Team": "Mercurion",
+    "BMW M Team Schnitzer": "Mercurion",
+    "BMW M Team Bigazzi": "McMean",
+    "MS Racing": "Audex",
+    "AZR Audi Zentrum Reutlingen": "Audex",
+    "Valier Motorsport": "Scuderia Rossa",
+    "Unitron Sports": "Ashton Darting",
+    "SMS Schmidt Motorsport": "Ashton Darting",
+    "Auto Maass": "French Blue",
+    "Jägermeister Linder Team": "Alpha Bison",
+    "BAS Reifendienst": "Alpha Bison",
+    "Gerd Ruch Motorsport": "Willens Racing",
+    "BMW Team Isert": "Hossden GP",
+    "MM Team": "Hossden GP",
+    "Buffalo Boots Racing": "Cadylacky Motors"
+  },
+  "staff": {
+    "seed": 1992,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "AMG Mercedes": 16,
+      "Diebels Zakspeed Team": 14,
+      "FINA Motorsport Team": 14,
+      "BMW M Team Schnitzer": 11,
+      "BMW M Team Bigazzi": 10,
+      "MS Racing": 10,
+      "AZR Audi Zentrum Reutlingen": 6,
+      "Valier Motorsport": 5,
+      "Unitron Sports": 5,
+      "SMS Schmidt Motorsport": 5,
+      "Auto Maass": 4,
+      "Jägermeister Linder Team": 4,
+      "BAS Reifendienst": 4,
+      "Gerd Ruch Motorsport": 4,
+      "BMW Team Isert": 4,
+      "MM Team": 4,
+      "Buffalo Boots Racing": 4
+    }
+  },
+  "shared_tracks": {
+    "zolder": "dtm-1991",
+    "nuerburgring": "dtm-1991",
+    "wunstorf": "dtm-1991",
+    "nordschleife": "dtm-1990",
+    "norisring": "dtm-1991",
+    "diepholz": "dtm-1991",
+    "alemannenring": "dtm-1991",
+    "hockenheim": "dtm-1991"
+  },
+  "track_overrides": {
+    "diepholz": {
+      "length_km": 2.72,
+      "race_laps": 37
+    },
+    "hockenheim": {
+      "length_km": 6.838,
+      "race_laps": 15
+    }
+  }
+}

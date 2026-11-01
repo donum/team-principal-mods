@@ -1,0 +1,70 @@
+{
+  "id": "brno",
+  "name": "Brno",
+  "nationality": "czech",
+  "bbox": [
+    16.425,
+    49.195,
+    16.47,
+    49.215
+  ],
+  "length_km": 5.394,
+  "width_m": 14.0,
+  "speed_scale": 1.0,
+  "race_laps": 19,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.5,
+  "pit_lane_loss_s": 22.0,
+  "tyre_wear_mult": 0.54,
+  "fuel_consumption": 1.05,
+  "wet_weather_probability_multiplier": 1.1,
+  "pole_side": "left",
+  "notes": "Masaryk circuit (Automotodrom Brno, opened 1987), clockwise, routed over OSM ways 'Masarykův okruh' (8585805, 8585804). DTM round 8 in 1992 (ITR Cup round in 1991). Start/finish on the pit straight by the paddock.",
+  "route_ways": [
+    {
+      "name": "Masarykův okruh"
+    }
+  ],
+  "start": [
+    49.20281,
+    16.44651
+  ],
+  "via": [
+    [
+      49.20883,
+      16.45384
+    ],
+    [
+      49.2075,
+      16.45687
+    ],
+    [
+      49.20572,
+      16.45844
+    ],
+    [
+      49.20251,
+      16.46456
+    ],
+    [
+      49.20278,
+      16.4594
+    ],
+    [
+      49.20325,
+      16.45035
+    ],
+    [
+      49.20498,
+      16.43925
+    ],
+    [
+      49.2058,
+      16.44342
+    ],
+    [
+      49.20825,
+      16.45034
+    ]
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "mainzfinthen",
+  "name": "Mainz-Finthen",
+  "nationality": "german",
+  "bbox": [
+    8.13,
+    49.96,
+    8.165,
+    49.975
+  ],
+  "length_km": 2.25,
+  "width_m": 14.0,
+  "speed_scale": 0.98,
+  "race_laps": 45,
+  "dnf_modifier": 0.95,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 16.0,
+  "tyre_wear_mult": 0.51,
+  "fuel_consumption": 0.95,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_ways": [
+    {
+      "aeroway": [
+        "runway",
+        "taxiway"
+      ],
+      "ref": [
+        "07/25",
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "start": [
+    49.9688,
+    8.14593
+  ],
+  "via": [
+    [
+      49.9688,
+      8.14593
+    ],
+    [
+      49.96807,
+      8.1418
+    ],
+    [
+      49.96881,
+      8.14084
+    ],
+    [
+      49.97027,
+      8.14589
+    ],
+    [
+      49.9712,
+      8.15114
+    ],
+    [
+      49.971,
+      8.153
+    ],
+    [
+      49.97008,
+      8.15312
+    ]
+  ],
+  "notes": "ADAC-Flugplatzrennen Mainz-Finthen (2.250 km from 1986): clockwise per Oliver Pohlmann's Commons diagram (File:Mainz-Finthen.svg, no north arrow; orientation matched to OSM): start/finish heading west on the paved runway 07/25, up the west end onto taxiway A, east along A, down taxiway C to the runway's east end. The step/chicane on the north side in the diagram is not on today's taxiway and is not modelled. Traced 2135 m vs 2250 m."
+}
