@@ -1,0 +1,62 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Per Stureson,SWE,1948-03-22,IPS Motorsport,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),Goodyear,1-9,tyres: TCR 1986 Zolder report (Swedish Volvos on Goodyear)
+2,Olaf Manthey,GER,1955-04-21,Vogelsang Automobile GmbH,,BMW 325i,BMW M20 L6 2.5 (2494 cc),,"1-5,8",
+3,Harald Grohs,GER,1944-01-28,Ford Rennsport HWRT Tuning,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),,"1,3,4,6,8",
+4,Klaus Niedzwiedz,GER,1951-02-24,Ford Rennsport HWRT Tuning,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),,1-9,
+5,Heinz-Friedrich Peil,GER,,Kissling Motorsport,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,"1-6,8",
+6,Volker Strycek,GER,1957-10-13,Gubin Sport Star Team,,BMW 325i,BMW M20 L6 2.5 (2494 cc),,1-9,
+7,Karl-Heinz Schäfer,GER,,Gubin Sport Star Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-5,
+8,Peter Oberndorfer,GER,1956-07-05,Marko RSM,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),Pirelli,"1,2",tyres: TCR 1986 Grenzland report (Weidler on Pirelli) | also: #64 Mercedes-Benz 190E 2.3-16 rds 7-9
+8,Volker Weidler,GER,1962-03-18,Marko RSM,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),Pirelli,3-9,tyres: TCR 1986 Grenzland report (Weidler on Pirelli)
+9,Franz Klammer,AUT,1953-12-03,Marko RSM,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),Pirelli,1-9,tyres: TCR 1986 Grenzland report (Weidler on Pirelli)
+11,Per-Gunnar Andersson,SWE,1957-08-15,Team Beckers,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),Goodyear,"1-7,9",tyres: TCR 1986 Zolder report (Swedish Volvos on Goodyear)
+13,Kurt König,GER,1954-01-13,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-9,
+14,Walter Mertes,GER,1955-01-26,Ford Ringshausen,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),Dunlop,1-9,tyres: TCR 1986 Super Sprint report (Reuter on Dunlop); assumed team-wide
+15,Manuel Reuter,GER,1961-12-06,Ford Ringshausen,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),Dunlop,"1-6,8,9",tyres: TCR 1986 Super Sprint report (Reuter on Dunlop); assumed team-wide
+16,Peter Kröber,GER,,Nigrin Autopflege,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,"2,3,5-7",
+18,Fritz Müller,GER,1941-04-02,Müller-Bräu Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1-7,9",
+19,Rolf Göring,GER,1940-02-27,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,3",
+20,Klaus Ludwig,GER,1949-10-05,Ford-Grab Motorsport GmbH,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),,"1,2,7",
+20,Bernd Schneider,GER,1964-07-20,Ford-Grab Motorsport GmbH,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),,"8,9",
+21,Beate Nodes,GER,1964-05-23,Ford-Grab Motorsport GmbH,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),,1-9,
+22,Kurt Thiim,DEN,1958-08-03,ATN Autotechnik Nickel,,Rover Vitesse,Rover V8 3.5 (3532 cc),Dunlop,1-9,tyres: TCR 1986 Zolder/Grenzland reports
+26,Roland Asch,GER,1950-10-12,Ford Ringshausen,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),Dunlop,"1,2,4",tyres: TCR 1986 Super Sprint report (Reuter on Dunlop); assumed team-wide | also: #26 Ford Sierra XR4Ti rds 7
+26,Roland Asch,GER,1950-10-12,Ford Ringshausen,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),Dunlop,7,"tyres: TCR 1986 Super Sprint report (Reuter on Dunlop); assumed team-wide | also: #26 Ford Mustang 5.0 GT rds 1,2,4"
+28,Anton Goeser,GER,1950-12-14,AC München,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-9,
+29,Reinhold Gröpper,GER,,private,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),,"2,4-7,9",
+30,Jochen Dauer,GER,1952-01-10,BMW Isert,,BMW 325i,BMW M20 L6 2.5 (2494 cc),,1,
+30,Joachim Winkelhock,GER,1960-10-24,BMW Isert,,BMW 325i,BMW M20 L6 2.5 (2494 cc),,2-9,
+31,Heinz-Otto Fritzsche,GER,,Mantzel Opel Tuning,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,3,
+33,Johannes Breuer,GER,1951-12-23,Scuderia Kassel,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,1-6,
+33,Jörg van Ommen,GER,1962-09-27,Scuderia Kassel,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,"8,9",
+36,Walter Prüser,GER,,Rheydter Club für Motorsport,,BMW 325i,BMW M20 L6 2.5 (2494 cc),,1-9,
+37,Hermann Behrens,GER,,Nissan Motor Deutschland GmbH,,Nissan Silvia RS US12,Nissan L4 2.0 (1991 cc),,"1-3,5-9",
+40,Leopold Gallina,GER,,private,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,"2,8,9",
+41,Cyril Raes,BEL,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1,
+43,Peter Faubel,GER,,Pontus Racing,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1,
+44,Bert Moritz,NED,1946-05-21,private,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,"1,2",
+48,Michael Kopf,AUT,1948-12-20,private,,Alfa Romeo 75 V6,Alfa Romeo V6 2.5 (2491 cc),,9,
+49,Antoine Seyler,LUX,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,9,
+51,Lothar Wagner,GER,,private,,BMW 325i,BMW M20 L6 2.5 (2494 cc),,3,
+54,Werner Felder,GER,,private,,BMW 528i,BMW L6 2.8 (2799 cc),,3,
+59,Wolfgang Offermann,GER,,Kissling Motorsport,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,"3,7",
+60,Fritz Möller,GER,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,3,
+62,Manfred Burkhard,GER,,private,,Ford Escort RS Turbo,Ford L4 1.6 turbo (1598 cc),,7,
+63,Peter John,GER,,American Car Service,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,"8,9",
+64,Kris Nissen,DEN,1960-07-20,Scuderia Kassel,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,5,
+64,Sepp Haider,AUT,,Scuderia Kassel,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,6,
+64,Peter Oberndorfer,GER,1956-07-05,Scuderia Kassel,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,7-9,"also: #8 Mercedes-Benz 190E 2.3-16 rds 1,2"
+65,Arthur van Dedem,NED,,Pinguin Sports,,BMW 325i,BMW M20 L6 2.5 (2494 cc),,8,
+67,Freddy Kottulinsky,SWE,1932-07-20,private,,Audi 200 quattro,Audi I5 turbo,,"4,5,7",
+,Dieter Schäfer,GER,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,3,car number unknown
+,Christoph Esser,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,3,car number unknown
+,Karl-Heinz Dalemans,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,3,car number unknown
+,Michael Wollgarten,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,3,car number unknown
+,Norbert Bormann,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,3,car number unknown
+,N. Mahlberg,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,3,car number unknown
+,Rudolf Sazma,GER,,private,,Toyota Corolla GT AE86,Toyota 4A-GE L4 1.6 (1587 cc),,3,car number unknown
+,Heinz Vöhringer,GER,,private,,Fiat Ritmo 130 TC Abarth,Fiat L4 2.0 (1995 cc),,3,car number unknown
+,Jürgen Fritzsche,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,5,car number unknown
+,Werner Busch,GER,,private,,Alfa Romeo 75 V6,Alfa Romeo V6 2.5 (2491 cc),,9,car number unknown
+,Traudl Klink,GER,1955-10-31,private,,Ford Escort RS Turbo,Ford L4 1.6 turbo (1598 cc),,9,car number unknown
+,Volker Schneider,GER,,private,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),,9,car number unknown

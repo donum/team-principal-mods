@@ -1,0 +1,73 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Volker Strycek,GER,1957-10-13,BMW Gubin Sport,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-9,
+2,Olaf Manthey,GER,1955-04-21,Massa-Real Racing Team,,Rover Vitesse,Rover V8 3.5 (3532 cc),Goodyear,1-9,"tyres: TCR 1985 car sheet (Rover Vitesse Nickel, DPM)"
+3,Harald Grohs,GER,1944-01-28,Obermaier,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-9,
+4,Winfried Vogt,GER,1945-03-13,Linder Rennsport,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,"1-7,9",
+5,Kurt König,GER,1954-01-13,Franken Autotechnik,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-9,
+6,Peter Oberndorfer,GER,1956-07-05,Marko RSM,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,1-9,
+7,Volker Weidler,GER,1962-03-18,Marko RSM,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,1,
+7,Franz Klammer,AUT,1953-12-03,Marko RSM,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,2-9,
+8,Manuel Reuter,GER,1961-12-06,Ford Rennsport HWRT Tuning,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),Goodyear,7-9,"tyres: TCR 1985 car sheet (Sierra HWRT/works, DPM) | also: #9 Ford Sierra XR4Ti rds 4"
+9,Robert Walterscheid-Müller,GER,1962-03-08,FHS-Motorsport,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-3,
+9,Manuel Reuter,GER,1961-12-06,Ford Rennsport HWRT Tuning,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),Goodyear,4,"tyres: TCR 1985 car sheet (Sierra HWRT/works, DPM) | also: #8 Ford Sierra XR4Ti rds 7-9"
+9,Heinz-Otto Fritzsche,GER,,Mantzel Opel Tuning,,Opel Monza 3.0E,Opel L6 3.0 (2998 cc per TCR),,6-9,"also: #13 Opel Monza 3.0E rds 1,2,4"
+10,Roberto Ravaglia,ITA,1957-05-26,Team Schnitzer,Freilassing (GER),BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,2",
+10,Peter Kröber,GER,,ISA Racing GmbH,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,"2,4,8,9",
+11,Gerhard Berger,AUT,1959-08-27,Team Schnitzer,Freilassing (GER),BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1,
+12,Markus Oestreich,GER,1963-07-03,Team Schnitzer,Freilassing (GER),BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,2,
+13,Heinz-Otto Fritzsche,GER,,Mantzel Opel Tuning,,Opel Monza 3.0E,Opel L6 3.0 (2998 cc per TCR),,"1,2,4",also: #9 Opel Monza 3.0E rds 6-9
+14,Roland Asch,GER,1950-10-12,ABR Ringhausen Rennsport,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),,1-9,
+15,Helmut Döring,GER,,ABR Ringhausen Rennsport,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),,1-5,
+15,Klaus Ludwig,GER,1949-10-05,ABR Ringhausen Rennsport,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),,6-9,
+16,Peter John,GER,,American Car Service,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,1-9,
+17,Fritz Müller,GER,1941-04-02,Müller-Bräu Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,7,9",
+19,Hermann Behrens,GER,,Nissan Motor Deutschland GmbH,,Nissan Silvia RS US12,Nissan L4 2.0 (1991 cc),,"1,2,4-7,9",
+20,Heinz-Friedrich Peil,GER,,Kissling Motorsport,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,1-9,
+21,Per Stureson,SWE,1948-03-22,IPS Motorsport,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,1-9,
+22,Walter Nussbaumer,SUI,,Kamei Crew,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-9,
+23,Axel Felder,GER,1949-08-16,Auto Budde Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1,
+23,Walter Mertes,GER,1955-01-26,private,,Rover Vitesse,Rover V8 3.5 (3532 cc),Goodyear,4-7,"tyres: TCR 1985 car sheet (Rover Vitesse Nickel, DPM)"
+24,Jochen Felder,GER,,Pontus Racing,,BMW 528i,BMW L6 2.8 (2799 cc),,1,
+24,Per-Gunnar Andersson,SWE,1957-08-15,M & L Racing Sweden,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),Bridgestone,4-9,"tyres: TCR race reports Mainz/Zolder 1985 | also: #47 Volvo 240 Turbo rds 1,2"
+25,Werner Felder,GER,,Renngemeinschaft Bergisch Gladbach,,BMW 528i,BMW L6 2.8 (2799 cc),,1,
+26,Alfons Hohenester,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,1,
+26,Ralf-Werner Müller,GER,,Scuderia Avus Berlin,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,9,
+27,Rolf Göring,GER,1940-02-27,Bäuerle Farben Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,9",
+27,Johannes Wollstadt,GER,,Autohaus Wollstadt GmbH,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,"3,4",
+28,Wolfgang Offermann,GER,,Kissling Motorsport,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,"2,3",
+28,Heinz Vöhringer,GER,,private,,Fiat Ritmo 130 TC Abarth,Fiat L4 2.0 (1995 cc),,4-9,
+30,Peter Mamerow,GER,1958-09-20,Ulrich Mönninghoff RT,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,"2,8,9","also: #45 VW Golf GTI rds 1,7"
+31,Reinhold Gröpper,GER,,private,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),,"2,4,8,9","also: #33 VW Scirocco GTI rds 1,5"
+32,Fritz Möller,GER,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,9,also: #44 BMW 635 CSi rds 1
+33,Reinhold Gröpper,GER,,private,,VW Scirocco GTI,VW L4 1.6 (1588 cc),,"1,5","also: #31 Ford Mustang 5.0 GT rds 2,4,8,9"
+34,Volker Anhalt,GER,,private,,MG Metro Turbo,BL A-series L4 1.3 turbo (1275 cc),,"2,4,5",
+35,Leopold Gallina,GER,,private,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,"5,6",also: #61 Mercedes-Benz 190E 2.3-16 rds 9
+35,Manfred Burkhard,GER,,HWRT Auto Tuning,,Ford Escort RS Turbo,Ford L4 1.6 turbo (1598 cc),Goodyear,"8,9","tyres: TCR 1985 car sheet (Sierra HWRT/works, DPM)"
+36,Werner Busch,GER,,Alfa + Co Tuning Busch,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,"1,2,7,8",
+37,Richard Friedrich Jr.,GER,,MC & A Telekommunikationssysteme,,Mitsubishi Starion Turbo A183,Mitsubishi L4 2.0 turbo (1998 cc),,"1,3",
+38,Axel Kaczmarek,GER,,Gerhard Harmel,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1,
+39,Harald Kühn,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,"7,8",
+41,Klaus-Emil Röckel,GER,,private,,Opel Monza 3.0E,Opel L6 3.0 (2998 cc per TCR),,"1,2,6,7",
+42,Herbert Schürg,GER,,König Motorsport AG,,Fiat Ritmo 130 TC Abarth,Fiat L4 2.0 (1995 cc),,2-9,
+44,Fritz Möller,GER,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1,also: #32 BMW 635 CSi rds 9
+45,Peter Mamerow,GER,1958-09-20,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"1,7","also: #30 Chevrolet Camaro Z28 rds 2,8,9"
+47,Per-Gunnar Andersson,SWE,1957-08-15,M & L Racing Sweden,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),Bridgestone,"1,2",tyres: TCR race reports Mainz/Zolder 1985 | also: #24 Volvo 240 Turbo rds 4-9
+50,Peter Elgaard,DEN,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-9,
+52,Josef Gerold,GER,,Linder Rennsport,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,2-9,
+54,Jochen Dauer,GER,1952-01-10,Team Isert,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,"8,9",
+59,Beate Nodes,GER,1964-05-23,Team Ford Grab,,Ford Escort RS Turbo,Ford L4 1.6 turbo (1598 cc),,7-9,
+60,Michael Kopf,AUT,1948-12-20,private,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,"5,9",
+61,Leopold Gallina,GER,,private,,Mercedes-Benz 190E 2.3-16,Mercedes M102 L4 2.3 16V (2299 cc; TCR race sheets list 2323),,9,"also: #35 Mercedes-Benz 190E 2.3-16 rds 5,6"
+62,Bert Moritz,NED,1946-05-21,SRP Moritz Tuning,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,9,
+63,Henny Hemmes,NED,,Dutch National Racing Team,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,9,
+65,Klaus Niedzwiedz,GER,1951-02-24,HWRT Ford Tuning,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),Goodyear,3-5,"tyres: TCR 1985 car sheet (Sierra HWRT/works, DPM)"
+65,Walter Prüser,GER,,Rheydter Club für Motorsport,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,7,
+,Gottfried Eckle,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"2,5,8",car number unknown
+,Albert Unkmeier,GER,,private,,Fiat Ritmo 130 TC Abarth,Fiat L4 2.0 (1995 cc),,4,car number unknown
+,Richard Hamann,GER,,private,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,5,car number unknown
+32,A. Kaufmann,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,5,
+,Jörg van Ommen,GER,1962-09-27,private,,Ford Sierra XR4Ti,Ford L4 2.3 turbo (2320 cc),,6,car number unknown
+,Holger Bohne,GER,1950-11-11,private,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,6,car number unknown
+,Nils-Carl Nielsen,DEN,,private,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,6,car number unknown
+,Horst Hahne,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,6,car number unknown
+,Klaus-Peter Frieske,GER,,private,,VW Scirocco,VW L4 1.6 (1588 cc),,6,car number unknown

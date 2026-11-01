@@ -1,0 +1,13 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1991-03-31,Zolder,Circuit Zolder,BEL,4.194,2,24; 24,100.656; 100.656,"yes, 12 laps",H1: Johnny Cecotto; H2: Johnny Cecotto,Pole: Cecotto
+2,1991-04-14,Hockenheim,Hockenheimring GP circuit,GER,6.797,2,15; 15,102.03; 102.03,"yes, 8 laps",H1: Steve Soper; H2: Steve Soper,Pole: Hahne
+3,1991-04-21,Nürburgring,GP-Strecke (Eifelrennen),GER,4.542,2,22; 22,99.924; 99.924,"yes, 12 laps",H1: Klaus Ludwig; H2: Klaus Ludwig,Pole: Thiim
+4,1991-05-05,AVUS,AVUS Berlin (4.88 km layout),GER,4.88,2,21; 21,102.48; 102.48,"yes, 11 laps",H1: Hans-Joachim Stuck; H2: Frank Biela,Pole: Stuck
+5,1991-06-09,Wunstorf,Flugplatz Wunstorf,GER,5.05,2,20; 19,101.0; 95.95,"yes, 10 laps",H1: Joachim Winkelhock; H2: Johnny Cecotto,H2 shortened. Pole: Cecotto
+6,1991-06-30,Norisring,Norisring Nürnberg,GER,2.3,2,44; 44,101.2; 101.2,"yes, 21 laps",H1: Kurt Thiim; H2: Hans-Joachim Stuck,Pole: Asch
+7,1991-08-04,Diepholz,Flugplatz Diepholz,GER,2.69,2,37; 38,99.53; 102.22,"yes, 19 laps",H1: Hans-Joachim Stuck; H2: Steve Soper,H1 laps 37 vs 38 conflict. Pole: Laffite
+8,1991-09-08,Nürburgring,GP-Strecke (Großer Preis der Tourenwagen),GER,4.542,2,22; 22,99.924; 99.924,yes,H1: Klaus Ludwig; H2: Klaus Ludwig,Pole: van Ommen (TCR) / Asch (Wikipedia)
+9,1991-09-15,Alemannenring,Singen street circuit,GER,2.8,2,36; 36,100.8; 100.8,yes,H1: Frank Biela; H2: Hans-Joachim Stuck,First event at Singen. Pole: Biela
+10,1991-09-29,Hockenheim,Hockenheimring GP circuit,GER,6.802,2,12; 15,81.624; 102.03,yes,H1: Frank Biela; H2: Frank Biela,H1 red-flagged (rain). Pole: Biela
+NC,1991-10-06,Brno,Automotodrom Brno,CSFR,5.394,2,19; 19,102.486; 102.486,no,H1: Klaus Ludwig; H2: Steve Soper,"ITR Cup only, no DTM points"
+NC,1991-10-20,Donington,Donington Park GP,GBR,4.023,2,25; 25,100.575; 100.575,"yes, 13 laps",H1: Frank Biela; H2: Frank Biela,"ITR Cup only, no DTM points"

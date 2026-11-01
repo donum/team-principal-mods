@@ -1,0 +1,10 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1986-03-30,Zolder – Bergischer Löwe,Circuit Zolder,BEL,4.184,1,24,100.42,no,H1: Kurt Thiim (Rover Vitesse),"Red-flagged after 11 laps (rain, Raes crash), restarted; result on aggregate. Length 4.184 km per TCR; de.wikipedia gives 102.288 km (4.262 km x 24). Pole Grohs."
+2,1986-04-13,Hockenheim – Tourenwagen-Festival,Hockenheimring GP circuit,GER,6.797,1,15,101.96,no,H1: Per-Gunnar Andersson (Volvo 240 Turbo),Pole Thiim. Volvos at 1400 kg.
+3,1986-04-27,Nürburgring – Eifelrennen,Nürburgring GP circuit,GER,4.542,1,25,113.55,no,H1: Volker Weidler (Mercedes-Benz 190E 2.3-16),First DTM win for Mercedes 190E. Pole Reuter.
+4,1986-05-11,AVUS – AVUS-Rennen (Berlin),AVUS,GER,8.110,1,13,105.43,no,H1: Volker Weidler (Mercedes-Benz 190E 2.3-16),Andersson 2nd on road but excluded (14 kg underweight). Beate Nodes 3rd. Pole Niedzwiedz.
+5,1986-06-01,Mainz-Finthen – Flugplatzrennen,Flugplatz Mainz-Finthen (airfield),GER,2.250,1,45,101.25,no,H1: Klaus Niedzwiedz (Ford Sierra XR4Ti),First Ford win of 1986. Pole Klammer. TCR length 2.250 km (1984-85: 2.300).
+6,1986-06-08,Wunstorf – Flugplatzrennen,Fliegerhorst Wunstorf (airbase),GER,5.050,1,20,101.00,no,H1: Kurt Thiim (Rover Vitesse),Weidler lost 2nd gear on last lap. Pole Niedzwiedz.
+7,1986-07-13,Nürburgring – Großer Preis der Tourenwagen,Nürburgring GP circuit,GER,4.542,1,23,104.47,no,H1: Kurt Thiim (Rover Vitesse),Pole Niedzwiedz.
+8,1986-08-17,Zolder – Grenzland-Preis,Circuit Zolder (resurfaced),BEL,4.184,1,24,100.42,no,H1: Kurt König (BMW 635 CSi),"Oberndorfer (Scuderia Kassel Mercedes) won on the road but was disqualified (exhaust manifold 0.3 mm over limit). de.wikipedia distance 100.608 km. Pole van Ommen (did not start after practice crash)."
+9,1986-09-21,Nürburgring – Super-Sprint,Nürburgring GP circuit,GER,4.542,1,23,104.47,no,H1: Manuel Reuter (Ford Sierra XR4Ti),Thiim 4th clinches title. Pole Niedzwiedz.

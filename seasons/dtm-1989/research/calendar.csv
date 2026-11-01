@@ -1,0 +1,13 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1989-04-09,Circuit Zolder,Grand Prix circuit,Belgium,4.184,2,24/24,100.416,yes (12 laps),QR: Klaus Ludwig; H1: Roberto Ravaglia; H2: Roberto Ravaglia,TCR date 8 April (Sat); de.wikipedia distance 102.816 km; top-20 shootout at this round
+2,1989-04-16,Hockenheimring,Grand Prix circuit,West Germany,6.797,2,15/15,101.955,yes (8 laps),QR: Harald Grohs; H1: Klaus Ludwig; H2: Johnny Cecotto,Rennsport-Festival; TCR date 15 April; Ford restrictor raised 36 -> 40 mm afterwards
+3,1989-04-30,Nürburgring,GP-Strecke,West Germany,4.542,2,22/19,99.924/86.298,yes (11 laps),QR: Jean-Michel Martin; H1: Steve Soper; H2: Steve Soper,51. Eifelrennen; TCR date 29 April; race 2 shortened after Ludwig/Hahne crash
+4,1989-05-14,Flugplatz Mainz-Finthen,airfield circuit,West Germany,2.250,2,45/44,101.250/99.000,yes (22 laps),QR: Fabien Giroix; H1: Roland Asch; H2: Kurt Thiim,TCR date 13 May; Mercedes 190E 2.5-16 Evo debut; Ford weight cut to 1100 kg
+5,1989-05-28,AVUS,Berlin short circuit (new Südkehre),West Germany,4.880,2,20/20,97.600,yes (10 laps),QR: Kurt Thiim; H1: Roberto Ravaglia; H2: Klaus Niedzwiedz,TCR date 27 May; no top-qualifying held
+6,1989-06-17,Nürburgring,Nordschleife + GP-Strecke combined,West Germany,25.300,2,4/4,101.200,no,H1: Alain Ferté; H2: Alain Ferté,24-hour race support; de.wikipedia distance 101.4 km
+7,1989-06-25,Norisring,street circuit,West Germany,2.300,2,43/43,98.900,yes (20 laps),QR: Steve Soper; H1: Kurt Thiim; H2: Alain Ferté,TCR date 24 June (Sat); de.wikipedia 26 June (a Monday) - race-day date unverified
+8,1989-07-02,Hockenheimring,Grand Prix circuit,West Germany,6.797,2,15/12,101.955/81.564,yes (8 laps),QR: Manuel Reuter; H1: Johnny Cecotto; H2: Klaus Niedzwiedz,ADAC-Preis Hockenheim; TCR date 1 July; race 2 restarted over 12 laps
+9,1989-08-06,Fliegerhorst Diepholz,airfield circuit,West Germany,2.690,2,38/38,102.220,yes (18 laps),QR: Harald Grohs; H1: Klaus Ludwig; H2: Klaus Ludwig,TCR date 5 Aug; Sierra +80 kg
+10,1989-09-03,Nürburgring,GP-Strecke,West Germany,4.542,2,22/17,99.924/77.214,yes (11 laps),QR: Jean-Michel Martin; H1: Klaus Ludwig; H2: Klaus Ludwig,Großer Preis der Tourenwagen; race 2 stopped by rain
+11,1989-10-15,Hockenheimring,Grand Prix circuit,West Germany,6.797,2,15/15,101.955,yes (8 laps),QR: Kris Nissen; H1: Klaus Niedzwiedz; H2: Klaus Niedzwiedz,ADAC-Preis der Stadt Esslingen; TCR date 14 Oct; title decider; Ford's last DTM round
+NC,1989-12-07/08,Bologna Motor Show,fairground arena,Italy,1.299,,2-lap knockout heats,,no,Johnny Cecotto,non-championship Touring Car World Trophy (knockout format)

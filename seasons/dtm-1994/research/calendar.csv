@@ -1,0 +1,13 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1994-04-10,Zolder (Bergischer Löwe),Circuit Zolder,BEL,,2,24/24,101/101,no,Nannini/Nannini,"Pole Larini. Distances rounded as given by autosportworld.info."
+2,1994-04-24,Hockenheim (Rennsport-Festival),Hockenheimring (layout unconfirmed; 38 laps = 100 km implies short circuit),GER,,2,38/38,100/100,no,Thiim/Nannini,"Pole Thiim. First win for the Mercedes C-Class."
+3,1994-05-08,Nürburgring (Eifelrennen),Nürburgring GP circuit (implied by 23 laps = 104 km),GER,,2,23/23,104/104,no,Ludwig/Larini,"Pole Schneider. Ludwig won heat 1 in the rain (netzwerkeins)."
+NC1,1994-05-22,Mugello (AvD-Mugello-Gold-Cup),Autodromo del Mugello,ITA,,2,19/19,100/100,no,Thiim/van Ommen,"Non-championship (ITR Gold Cup). Pole Thiim."
+4,1994-06-02,Nürburgring (ADAC-Preis Nürburgring),unconfirmed,GER,,2,19/32,58/97,no,Nannini/Ludwig,"Thursday. autosportworld gives 19 laps (58 km) and 32 laps (97 km), implying a ~3.0 km layout; not verified. Pole Thiim."
+5,1994-06-26,Norisring (200 Meilen von Nürnberg),Norisring street circuit,GER,,2,44/43,101/99,no,Larini/Nissen,"Pole Schneider. Nissen's first DTM win."
+NC2,1994-07-17,Donington Park (Donington-Gold-Cup),Donington GP circuit,GBR,,2,25/24,100/96,no,Nannini/Reuter,"Non-championship (ITR Gold Cup). Pole Thiim. Heat 2: Nannini disqualified after the fuel sample, so Reuter won, first Calibra win (de.wikipedia Calibra)."
+6,1994-07-24,Diepholz (Flugplatzrennen),Diepholz airfield circuit,GER,,2,37/37,101/101,no,Ludwig/Schneider,"Pole Schneider."
+7,1994-08-21,Nürburgring (Großer Preis der Tourenwagen),Nürburgring GP circuit (implied by 23 laps = 104 km),GER,,2,23/23,104/104,no,van Ommen/van Ommen,"Pole van Ommen."
+8,1994-09-04,AVUS Berlin (AVUS-Rennen),AVUS,GER,,2,33/38,87/100,no,Modena/Modena,"Pole Thiim. Heat 1 only 33 laps per autosportworld (reason not verified). John Winter's Calibra crashed and caught fire (de.wikipedia Calibra)."
+9,1994-09-18,Singen (ADAC-Preis Singen),Alemannenring street circuit,GER,,2,34/34,95/95,no,Larini/Larini,"Pole Modena. Ludwig clinched the title (netzwerkeins)."
+10,1994-10-09,Hockenheim (DMV-Preis Hockenheim),Hockenheimring GP circuit (implied by 15 laps = 102 km),GER,,2,15/15,102/102,no,Thiim/Schneider,"Pole Thiim. de.wikipedia intro says 4 Oct; its table, en.wikipedia and autosportworld say 9 Oct."

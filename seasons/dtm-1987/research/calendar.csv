@@ -1,0 +1,12 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1987-03-29,Hockenheimring,Motodrom short circuit,West Germany,2.634,1,40,105.360,no,H1: Harald Grohs,AvD Sportwagen-Festival; pole Reuter
+2,1987-04-12,Circuit Zolder,Grand Prix circuit,Belgium,4.184,1,24,100.416,no,H1: Marc Hessel,"Bergischer Löwe; date per TCR (de.wikipedia: 14 April, a Tuesday); de.wikipedia distance 100.608 km; wet/dry race"
+3,1987-04-26,Nürburgring,GP-Strecke,West Germany,4.542,1,25,113.550,no,H1: Manuel Reuter,49. ADAC-Eifelrennen
+4,1987-05-10,AVUS,Berlin long circuit with north banking,West Germany,8.110,1,13,105.430,no,H1: Frank Biela,ADAC Avus-Rennen
+5,1987-05-31,Flugplatz Mainz-Finthen,airfield circuit,West Germany,2.250,1,45,101.250,no,H1: Manuel Reuter,Flugplatzrennen Mainz-Finthen
+6,1987-06-28,Norisring,street circuit,West Germany,2.300,1,44,101.200,no,H1: Olaf Manthey,200 Meilen von Nürnberg
+7,1987-07-12,Nürburgring,GP-Strecke,West Germany,4.542,1,23,104.466,no,H1: Klaus Ludwig,Großer Preis der Tourenwagen (WTCC support); TCR date 11 July; Ludwig guest without points - Giroix (2nd) best points scorer
+8,1987-08-02,Fliegerhorst Wunstorf,airfield circuit,West Germany,5.050,1,20,101.000,no,H1: Harald Grohs,Flugplatzrennen Wunstorf
+9,1987-08-09,Fliegerhorst Diepholz,airfield circuit,West Germany,2.600,1,40,104.000,no,H1: Fabien Giroix,Flugplatzrennen Diepholz
+10,1987-08-23,Salzburgring,,Austria,4.225,1,25,105.625,no,H1: Armin Hahne,Alpentrophäe; title decider
+NC,1987-10-18,Hockenheimring,Grand Prix circuit,West Germany,6.798,2,12,81.576,no,H1: Marc Hessel; H2: Armin Hahne; aggregate: Eric van de Poele,non-championship 'Preis der Stadt Esslingen' trial of 1988 two-heat format (TCR)

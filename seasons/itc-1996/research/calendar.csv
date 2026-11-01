@@ -1,0 +1,14 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,championship,winners,notes
+1,1996-04-14,Hockenheimring,Motodrom short course,GER,2.638,2,38/38,100.244/100.244,,ITC,Manuel Reuter / Jan Magnussen,Rennsport-Festival
+2,1996-05-12,Nürburgring,GP circuit (short),GER,4.556,2,22/22,100.232/100.232,,ITC,Jörg van Ommen / Manuel Reuter,Eifelrennen
+3,1996-05-26,Estoril,,POR,4.182,2,20/20,83.640/83.640,,ITC,Alessandro Nannini / Alessandro Nannini,"Length 4.182 km per en.wiki round article (1995 used 4.360 km); de.wiki gives 82.640 km - unverified"
+4,1996-06-09,Helsinki Thunder (street circuit),,FIN,3.180,2,32/32,101.760/101.760,,ITC,Hans-Joachim Stuck / Hans-Joachim Stuck,"en.wiki 3.180 km x 32 laps; de.wiki distance 96.992 km - conflict"
+5,1996-06-23,Norisring (Nuremberg),,GER,2.300,2,44/44,101.200/101.200,,ITC,Klaus Ludwig / Klaus Ludwig,200 Meilen von Nürnberg
+6,1996-07-07,Diepholz airfield,,GER,2.720,2,28/37,76.160/100.640,,ITC,Bernd Schneider / Bernd Schneider,Heat 1 only 28 laps (reason not documented)
+7,1996-08-18,Silverstone,Grand Prix circuit,GBR,5.072,2,20/20,101.440/101.440,,ITC,Klaus Ludwig / Gabriele Tarquini,"en.wiki 5.072 km x 20 laps; de.wiki distance 114.4 km - conflict"
+8,1996-09-01,Nürburgring,GP circuit (short),GER,4.556,2,22/22,100.232/100.232,,ITC,Alessandro Nannini / Alessandro Nannini,Großer Preis der Tourenwagen
+9,1996-09-15,Magny-Cours,,FRA,4.250,2,24/24,102.000/102.000,,ITC,Alessandro Nannini / Alessandro Nannini,
+10,1996-09-29,Mugello,Grand Prix circuit,ITA,5.245,2,20/20,104.900/104.900,,ITC,Nicola Larini / Bernd Schneider,
+11,1996-10-13,Hockenheimring,Grand Prix circuit,GER,6.823,2,15/15,102.345/102.345,,ITC,Klaus Ludwig / Manuel Reuter,ADAC-Preis Hockenheim
+12,1996-10-27,Interlagos (São Paulo),Autódromo José Carlos Pace,BRA,4.293,2,24/24,103.032/103.032,,ITC,Alessandro Nannini / Nicola Larini,Overseas round; Reuter clinched title here. Wet/drying conditions
+13,1996-11-10,Suzuka,Grand Prix circuit,JPN,5.864,2,18/18,105.552/105.552,,ITC,Dario Franchitti / Bernd Schneider,Overseas finale. Length 5.864 per de.wiki distance; en.wiki round says 5.860

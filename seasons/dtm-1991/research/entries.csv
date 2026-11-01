@@ -1,0 +1,48 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Hans-Joachim Stuck,german,,SMS Schmidt Motorsport,,Audi V8 quattro DTM Evo,Audi 3.6 V8 32V,Dunlop,,
+2,Hubert Haupt,german,,SMS Schmidt Motorsport,,Audi V8 quattro DTM Evo,Audi 3.6 V8 32V,Dunlop,,
+46,Walter Röhrl,german,,SMS Schmidt Motorsport,,Audi V8 quattro DTM Evo,Audi 3.6 V8 32V,Dunlop,,part-time/guest
+44,Frank Jelinski,german,,AZR Audi Zentrum Reutlingen,,Audi V8 quattro DTM Evo,Audi 3.6 V8 32V,Dunlop,,
+45,Frank Biela,german,,AZR Audi Zentrum Reutlingen,,Audi V8 quattro DTM Evo,Audi 3.6 V8 32V,Dunlop,,
+3,Johnny Cecotto,venezuelan,,BMW M Team Schnitzer,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+4,Joachim Winkelhock,german,,BMW M Team Schnitzer,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+5,Kris Nissen,danish,,BMW M Team Schnitzer,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+11,Steve Soper,british,,BMW M Team Bigazzi,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Pirelli,,
+12,Armin Hahne,german,,BMW M Team Bigazzi,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Pirelli,,
+13,Peter Zakowski,german,,Unitron Sports,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+14,Ralf Kelleners,german,,Unitron Sports,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+15,Dieter Quester,austrian,,Linder M Team,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+16,Altfrid Heger,german,,Linder M Team,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+17,Annette Meeuvissen,german,,Linder M Team,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+65,Alain Menu,swiss,,Linder M Team,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,part-time/guest
+31,Christian Danner,german,,MM Diebels Alt,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Michelin,,
+32,Otto Rensing,german,,MM Diebels Alt,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Michelin,,
+33,Günther Murmann,german,,MM Diebels Alt,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Michelin,,part-time/guest
+30,Leopold Prinz von Bayern,german,,BMW Team Isert,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+29,Markus Oestreich,german,,BMW Team Isert,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,part-time/guest
+43,Allen Berg,canadian,,Tic Tac Tauber Team,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+28,Kurt König,german,,Auto Maass Climair Team,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+34,Luca Maggiorelli,italian,,Valier Motorsport,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Pirelli,,
+42,Cor Euser,dutch,,Marlboro BMW Dealer Team,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+55,Harald Becker,german,,Team Vanicek,,BMW M3 Sport Evolution,BMW S14 2.5 16V,Yokohama,,
+7,Kurt Thiim,danish,,AMG Mercedes,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Bridgestone,,
+8,Klaus Ludwig,german,,AMG Mercedes,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Bridgestone,,
+78,Ellen Lohr,german,,AMG Mercedes,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Bridgestone,,
+87,Fritz Kreutzpointner,german,,AMG Mercedes,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Bridgestone,,part-time/guest
+9,Alain Cudini,french,,Snobeck Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Michelin,,
+10,Jacques Laffite,french,,Snobeck Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Michelin,,
+18,Fabien Giroix,french,,Zakspeed Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,
+19,Roland Asch,german,,Zakspeed Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,
+88,Bernd Schneider,german,,Zakspeed Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,part-time/guest
+20,Michael Schumacher,german,,Zakspeed Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,part-time/guest
+22,Frank Schmickler,german,,MS-Jet Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,
+23,Jörg van Ommen,german,,MS-Jet Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,
+24,Jochen Mass,german,,MS-Jet Racing,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,part-time/guest
+50,Armin Bernhard,german,,BAS Reifendienst,,Mercedes 190E 2.5-16 Evo II,Mercedes-Benz 2.5-16 (AMG),Pirelli,,
+25,Klaus Niedzwiedz,german,,Opel Team Eggenberger,,Opel Omega 3000 Evo 500,Opel 3.0 24V,Michelin,,
+26,Alain Ferté,french,,Opel Team Eggenberger,,Opel Omega 3000 Evo 500,Opel 3.0 24V,Michelin,,
+36,Franz Engstler,german,,Opel Team Irmscher,,Opel Omega 3000 Evo 500,Opel 3.0 24V,Michelin,,
+37,Volker Strycek,german,,Opel Team Irmscher,,Opel Omega 3000 Evo 500,Opel 3.0 24V,Michelin,,
+66,Peter Oberndorfer,german,,Opel Team Schübel,,Opel Omega 3000 Evo 500,Opel 3.0 24V,Pirelli,,
+99,Manuel Reuter,german,,Opel Team Schübel,,Opel Omega 3000 Evo 500,Opel 3.0 24V,Pirelli,,part-time/guest
+40,Gerd Ruch,german,,Gerd Ruch Motorsport,,Ford Mustang 5.0 GT,Ford 5.0 V8,Dunlop,,

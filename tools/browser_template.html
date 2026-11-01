@@ -1,0 +1,283 @@
+<title>DTM Season Archive</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a timing-sheet archive. Season strip on top, one season at a time below, tabs for its sheets. */
+:root {
+  --paper: #f2f3f1;
+  --sheet: #ffffff;
+  --ink: #15181c;
+  --muted: #5b626b;
+  --line: #d5d9d6;
+  --accent: #c4122f;      /* race-number red */
+  --board: #15181c;       /* DEKRA start-number board */
+  --board-ink: #ffffff;
+  --chip: #e6e8e5;
+  --font-display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111316; --sheet: #191c20; --ink: #e9ebed; --muted: #9aa1a9; --line: #2c3036;
+    --accent: #ff5468; --board: #f2f3f1; --board-ink: #15181c; --chip: #23272c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111316; --sheet: #191c20; --ink: #e9ebed; --muted: #9aa1a9; --line: #2c3036;
+  --accent: #ff5468; --board: #f2f3f1; --board-ink: #15181c; --chip: #23272c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 5vw, 44px); letter-spacing: .02em;
+     text-transform: uppercase; margin: 0; line-height: 1; text-wrap: balance; }
+h1 span { color: var(--accent); }
+.lede { color: var(--muted); margin: 0; max-width: 62ch; }
+
+/* Season strip */
+nav.years { display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 6px; }
+nav.years button {
+  font: inherit; text-align: left; cursor: pointer; border: 1px solid var(--line); background: var(--sheet);
+  color: var(--ink); border-radius: 4px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; min-width: 0;
+}
+nav.years button:hover { border-color: var(--muted); }
+nav.years button:focus-visible, .tabs button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+nav.years button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
+.yr { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1; font-variant-numeric: tabular-nums; }
+.yr small { font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--muted); margin-left: 4px; }
+.champ { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: 5px; vertical-align: 1px; }
+
+/* Season sheet */
+.sheet { background: var(--sheet); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.season-head { display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; }
+.board { background: var(--board); color: var(--board-ink); border-radius: 6px; padding: 6px 12px 8px; text-align: center; min-width: 96px; }
+.board .lbl { font-family: var(--font-display); font-weight: 700; letter-spacing: .12em; font-size: 13px; border-bottom: 2px solid var(--board-ink); padding-bottom: 2px; }
+.board .num { font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.season-title h2 { font-family: var(--font-display); font-size: 30px; margin: 0; text-transform: uppercase; letter-spacing: .02em; line-height: 1.1; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 14px; }
+.facts b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.pill { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; background: var(--chip); color: var(--muted); }
+.pill.live { background: var(--accent); color: #fff; }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); }
+.tabs button { font: inherit; font-weight: 600; font-size: 14px; background: none; border: 0; border-bottom: 3px solid transparent;
+  color: var(--muted); padding: 8px 12px; cursor: pointer; margin-bottom: -1px; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs button:disabled { opacity: .4; cursor: default; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.toolbar input { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); width: min(320px, 100%); }
+.count { color: var(--muted); font-size: 13px; }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 4px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-display); font-weight: 600; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+     background: var(--paper); position: sticky; top: 0; cursor: pointer; white-space: nowrap; }
+td.num, td.data { font-family: var(--font-data); font-size: 12.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.notes { color: var(--muted); min-width: 220px; }
+tbody tr:hover td { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+tr.top1 td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+
+.dossier { max-width: 78ch; display: flex; flex-direction: column; gap: 10px; }
+.dossier h1, .dossier h2, .dossier h3 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .03em; margin: 10px 0 0; line-height: 1.15; text-wrap: balance; }
+.dossier h1 { font-size: 28px; } .dossier h2 { font-size: 22px; } .dossier h3 { font-size: 18px; color: var(--muted); }
+.dossier p, .dossier ul, .dossier ol { margin: 0; }
+.dossier ul, .dossier ol { padding-left: 20px; display: flex; flex-direction: column; gap: 3px; }
+.dossier code { font-family: var(--font-data); font-size: 12.5px; background: var(--chip); padding: 1px 5px; border-radius: 3px; }
+.dossier a { color: var(--accent); word-break: break-word; }
+.dossier .tablewrap { margin: 4px 0; }
+.empty { color: var(--muted); font-style: italic; }
+
+/* Venue matrix */
+.matrix td.mark { text-align: center; font-family: var(--font-data); color: var(--accent); font-weight: 500; }
+.matrix th.yr-h { text-align: center; }
+.matrix td.vname { font-weight: 600; white-space: nowrap; }
+footer { color: var(--muted); font-size: 12.5px; }
+@media (prefers-reduced-motion: no-preference) { nav.years button, .tabs button { transition: border-color .15s, color .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>DTM <span>Season</span> Archive</h1>
+    <p class="lede">Research data for the Team Principal season packs: calendars, entry lists, standings and rules for every classic DTM and ITC season, from the sources noted in each dossier.</p>
+  </header>
+  <nav class="years" id="years" aria-label="Seasons"></nav>
+  <section class="sheet" id="sheet" aria-live="polite"></section>
+  <section class="sheet" id="venues">
+    <div class="season-title"><h2>Venues across the seasons</h2></div>
+    <p class="lede">Every circuit on a calendar, with the number of rounds held there per year. Use it to plan which tracks to generate for future packs.</p>
+    <div class="tablewrap" id="venue-table"></div>
+  </section>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const S = DATA.seasons;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let current = null, tab = "overview";
+
+function surname(n) { const p = (n || "").split(",")[0].trim().split(" "); return p[p.length - 1] || "—"; }
+
+function renderYears() {
+  $("#years").innerHTML = S.map(s => `
+    <button type="button" data-id="${s.id}" aria-pressed="${current && current.id === s.id}">
+      <span class="yr">${s.year}<small>${esc(s.series)}</small></span>
+      <span class="champ">${s.playable ? '<span class="dot" title="Playable pack"></span>' : ""}${esc(surname(s.champion))}</span>
+    </button>`).join("");
+  $("#years").querySelectorAll("button").forEach(b => b.onclick = () => select(b.dataset.id));
+}
+
+function rounds(s) {
+  if (!s.calendar) return 0;
+  const i = s.calendar.header.indexOf("round");
+  return s.calendar.rows.filter(r => /^\d+$/.test((r[i] || "").trim())).length;
+}
+
+function select(id, keepTab) {
+  current = S.find(s => s.id === id) || S[S.length - 1];
+  if (!keepTab) tab = "overview";
+  try { localStorage.setItem("dtm-archive-season", current.id); } catch (e) {}
+  if (location.hash !== "#" + current.id) history.replaceState(null, "", "#" + current.id);
+  renderYears(); renderSheet();
+}
+
+function renderSheet() {
+  const s = current;
+  const entries = s.entries ? s.entries.rows.length : 0;
+  const tabs = [["overview", "Dossier", !!s.dossier], ["calendar", "Calendar", !!s.calendar], ["entries", "Entries", !!s.entries],
+                ["standings", "Standings", !!s.standings]];
+  if (!tabs.find(t => t[0] === tab && t[2])) tab = (tabs.find(t => t[2]) || tabs[0])[0];
+  $("#sheet").innerHTML = `
+    <div class="season-head">
+      <div class="board" aria-hidden="true"><div class="lbl">${esc(s.series.split(" ")[0])}</div><div class="num">${String(s.year).slice(2)}</div></div>
+      <div class="season-title">
+        <h2>${esc(s.series)} ${s.year}</h2>
+        <div class="facts">
+          <span>Champion <b>${esc(s.champion || "—")}</b></span>
+          <span>Rounds <b>${rounds(s) || "—"}</b></span>
+          <span>Entries <b>${entries || "—"}</b></span>
+          <span class="pill ${s.playable ? "live" : ""}">${s.playable ? "Playable pack" : "Research only"}</span>
+        </div>
+      </div>
+    </div>
+    <div class="tabs" role="tablist">${tabs.map(([k, l, ok]) =>
+      `<button type="button" role="tab" data-tab="${k}" aria-selected="${tab === k}" ${ok ? "" : "disabled"}>${l}</button>`).join("")}</div>
+    <div id="panel"></div>`;
+  $("#sheet").querySelectorAll(".tabs button").forEach(b => b.onclick = () => { tab = b.dataset.tab; renderSheet(); });
+  const panel = $("#panel");
+  if (tab === "overview") panel.innerHTML = `<div class="dossier">${md(s.dossier) || '<p class="empty">No dossier yet.</p>'}</div>`;
+  if (tab === "calendar") panel.appendChild(table(s.calendar));
+  if (tab === "entries") panel.appendChild(table(s.entries, true));
+  if (tab === "standings") {
+    const box = document.createElement("div"); box.style.cssText = "display:flex;flex-direction:column;gap:16px";
+    box.appendChild(table(s.standings));
+    if (s.standings_other) { const h = document.createElement("h3"); h.textContent = "Teams and manufacturers";
+      h.style.cssText = "font-family:var(--font-display);text-transform:uppercase;margin:0"; box.appendChild(h); box.appendChild(table(s.standings_other)); }
+    panel.appendChild(box);
+  }
+}
+
+const NUMERIC = /^(pos|number|points|round|length_km|heats|laps_per_heat|distance_km_per_heat|birth_date|date)$/;
+function table(t, searchable) {
+  const box = document.createElement("div"); box.style.cssText = "display:flex;flex-direction:column;gap:10px";
+  if (!t) { box.innerHTML = '<p class="empty">No data yet.</p>'; return box; }
+  let rows = t.rows.slice(), sortCol = -1, dir = 1, q = "";
+  const bar = document.createElement("div"); bar.className = "toolbar";
+  if (searchable) bar.innerHTML = `<input id="filter-${current.id}" type="search" placeholder="Filter by driver, team, car…" aria-label="Filter entries"><span class="count"></span>`;
+  const wrap = document.createElement("div"); wrap.className = "tablewrap";
+  box.append(bar, wrap);
+  const draw = () => {
+    let view = rows.filter(r => !q || r.join(" ").toLowerCase().includes(q));
+    if (sortCol >= 0) view.sort((a, b) => {
+      const x = a[sortCol] ?? "", y = b[sortCol] ?? "", nx = parseFloat(x), ny = parseFloat(y);
+      return (!isNaN(nx) && !isNaN(ny) ? nx - ny : x.localeCompare(y)) * dir; });
+    wrap.innerHTML = `<table><thead><tr>${t.header.map((h, i) => `<th data-i="${i}" scope="col">${esc(h.replace(/_/g, " "))}${sortCol === i ? (dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead>
+      <tbody>${view.map(r => `<tr class="${r[0] === "1" ? "top1" : ""}">${t.header.map((h, i) =>
+        `<td class="${h === "notes" ? "notes" : NUMERIC.test(h) ? "num" : ""}">${esc(r[i])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+    wrap.querySelectorAll("th").forEach(th => th.onclick = () => { const i = +th.dataset.i; dir = sortCol === i ? -dir : 1; sortCol = i; draw(); });
+    const c = bar.querySelector(".count"); if (c) c.textContent = `${view.length} of ${rows.length}`;
+  };
+  const inp = bar.querySelector("input"); if (inp) inp.oninput = () => { q = inp.value.trim().toLowerCase(); draw(); };
+  draw(); return box;
+}
+
+/* Small markdown renderer for the dossiers: headings, lists, tables, emphasis, code, links. */
+function inline(s) {
+  return esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+    .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<i>$2</i>")
+    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+}
+function md(src) {
+  if (!src) return "";
+  const lines = src.replace(/\r/g, "").split("\n"); let out = "", i = 0;
+  while (i < lines.length) {
+    const l = lines[i];
+    if (!l.trim()) { i++; continue; }
+    let m;
+    if ((m = l.match(/^(#{1,4})\s+(.*)/))) { const n = Math.min(m[1].length, 3); out += `<h${n}>${inline(m[2])}</h${n}>`; i++; continue; }
+    if (/^\s*\|/.test(l)) {
+      const rows = []; while (i < lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
+      const cells = r => r.trim().replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+      const body = rows.filter(r => !/^\s*\|[\s:|-]+\|\s*$/.test(r)).map(cells);
+      out += `<div class="tablewrap"><table><thead><tr>${body[0].map(c => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${
+        body.slice(1).map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+      continue;
+    }
+    if (/^\s*([-*]|\d+\.)\s+/.test(l)) {
+      const ordered = /^\s*\d+\./.test(l); const items = [];
+      while (i < lines.length && (/^\s*([-*]|\d+\.)\s+/.test(lines[i]) || (/^\s{2,}\S/.test(lines[i]) && items.length))) {
+        const t = lines[i++];
+        if (/^\s*([-*]|\d+\.)\s+/.test(t)) items.push(t.replace(/^\s*([-*]|\d+\.)\s+/, "")); else items[items.length - 1] += " " + t.trim();
+      }
+      out += `<${ordered ? "ol" : "ul"}>${items.map(t => `<li>${inline(t)}</li>`).join("")}</${ordered ? "ol" : "ul"}>`; continue;
+    }
+    if (/^>\s?/.test(l)) { const q = []; while (i < lines.length && /^>\s?/.test(lines[i])) q.push(lines[i++].replace(/^>\s?/, ""));
+      out += `<p style="border-left:3px solid var(--line);padding-left:10px;color:var(--muted)">${inline(q.join(" "))}</p>`; continue; }
+    const p = []; while (i < lines.length && lines[i].trim() && !/^(#{1,4}\s|\s*\||\s*([-*]|\d+\.)\s|>)/.test(lines[i])) p.push(lines[i++]);
+    out += `<p>${inline(p.join(" "))}</p>`;
+  }
+  return out;
+}
+
+const VENUES = [[/AVUS/i, "AVUS"], [/Alemannenring|Singen/i, "Alemannenring (Singen)"], [/Brno/i, "Brno"], [/Bologna/i, "Bologna"],
+  [/Zolder/i, "Zolder"], [/Diepholz/i, "Diepholz"], [/Donington/i, "Donington Park"], [/Erding/i, "Erding"], [/Estoril/i, "Estoril"],
+  [/Wunstorf/i, "Wunstorf"], [/Mainz/i, "Mainz-Finthen"], [/Helsinki/i, "Helsinki"], [/Hockenheim/i, "Hockenheim"],
+  [/Hungaroring/i, "Hungaroring"], [/Interlagos/i, "Interlagos"], [/Magny/i, "Magny-Cours"], [/Mugello/i, "Mugello"],
+  [/Norisring/i, "Norisring"], [/Salzburg/i, "Salzburgring"], [/Siegerland/i, "Siegerland"], [/Silverstone/i, "Silverstone"], [/Suzuka/i, "Suzuka"]];
+function venueKey(v, layout, len) {
+  if (/N(ü|u|ue)rburgring/i.test(v)) return /Nordschleife/i.test(layout) || parseFloat(len) > 20 ? "Nürburgring Nordschleife" : "Nürburgring GP";
+  const hit = VENUES.find(([re]) => re.test(v)); return hit ? hit[1] : v.split(/\s+[–(-]/)[0].trim();
+}
+function renderVenues() {
+  const years = S.map(s => s.year), map = new Map();
+  S.forEach(s => {
+    if (!s.calendar) return;
+    const h = s.calendar.header, vi = h.indexOf("venue"), li = h.indexOf("circuit_layout"), ki = h.indexOf("length_km");
+    s.calendar.rows.forEach(r => { const v = (r[vi] || "").trim(); if (!v) return;
+      const key = venueKey(v, r[li] || "", r[ki] || ""); if (!map.has(key)) map.set(key, {});
+      map.get(key)[s.year] = (map.get(key)[s.year] || 0) + 1; });
+  });
+  const venues = [...map.entries()].sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length || a[0].localeCompare(b[0]));
+  $("#venue-table").innerHTML = `<table class="matrix"><thead><tr><th scope="col">Venue</th>${years.map(y => `<th class="yr-h" scope="col">'${String(y).slice(2)}</th>`).join("")}<th scope="col">Years</th></tr></thead>
+    <tbody>${venues.map(([v, ys]) => `<tr><td class="vname">${esc(v)}</td>${years.map(y => `<td class="mark">${ys[y] ? (ys[y] > 1 ? ys[y] + "×" : "●") : ""}</td>`).join("")}<td class="num">${Object.keys(ys).length}</td></tr>`).join("")}</tbody></table>`;
+}
+
+let start = location.hash.slice(1);
+if (!S.find(s => s.id === start)) { try { start = localStorage.getItem("dtm-archive-season") || ""; } catch (e) { start = ""; } }
+if (!S.find(s => s.id === start)) start = (S.find(s => s.playable) || S[S.length - 1]).id;
+select(start);
+renderVenues();
+$("#foot").textContent = `${S.length} seasons · Sources: touringcarracing.net, German and English Wikipedia, Wikidata and others listed per dossier · Unofficial community research.`;
+</script>

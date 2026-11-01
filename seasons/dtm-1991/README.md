@@ -1,7 +1,8 @@
 # DTM 1991: Season Dossier
 
-Status: **v0.1, first playable data build.** Tracks are placeholders and there's
-no artwork yet. See [Roadmap](#roadmap).
+Status: **v0.2, playable.** All 8 tracks are generated from OpenStreetMap, all 22
+cars and logos are done, and race distances are the real 1991 heat lengths.
+Lap times are still waiting for in-game calibration. See [Roadmap](#roadmap).
 
 This file records **what we know, where it comes from, and what's a game-design
 estimate**. Corrections with a source are very welcome.
@@ -19,9 +20,8 @@ estimate**. Corrections with a source are very welcome.
 | S7 | de.wikipedia "Audi V8 quattro DTM" |
 | S8 | Wikidata (dates of birth) |
 
-The Automobilista 2 "DTM 1991" mod (v1.41) was looked at for **visual
-inspiration only**. It has no license or credits, so none of its files are
-used. Its numbers, drivers and colours matched our sources, except that it
+The Automobilista 2 "DTM 1991" mod (v1.41): its 1991 livery artwork is used
+in the car images and team decals, with the livery author's permission. Its numbers, drivers and colours matched our sources, except that it
 gives Ludwig #7 in its XML while his car is painted #8.
 
 ## Calendar: 10 DTM rounds (`data/schedule.json`)

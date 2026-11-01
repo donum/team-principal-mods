@@ -1,0 +1,10 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1985-03-24,Zolder – Bergischer Löwe,Circuit Zolder,BEL,4.262,1,24,102.29,no,H1: Harald Grohs (BMW 635 CSi),"Pole and fastest lap Ravaglia (Schnitzer BMW). Wet track drying; slicks won. TCR length 4.261 km."
+2,1985-05-05,Wunstorf – Flugplatzrennen,Fliegerhorst Wunstorf (airbase),GER,5.050,1,20,101.00,no,H1: Per Stureson (Volvo 240 Turbo),
+3,1985-05-12,AVUS – AVUS-Rennen (Berlin),AVUS,GER,8.110,1,13,105.43,no,H1: Klaus Niedzwiedz (Ford Sierra XR4Ti),First German win for the Sierra XR4Ti. Pole Peil (Volvo).
+4,1985-06-02,Mainz-Finthen – Flugplatzrennen,Flugplatz Mainz-Finthen (airfield),GER,2.300,1,45,103.50,no,H1: Winfried Vogt (BMW 323i),Very hot.
+5,1985-06-09,Erding – Flugplatzrennen,Fliegerhorst Erding (airfield),GER,2.540,2,20,50.80,no,H1: Per-Gunnar Andersson (Volvo 240 Turbo); H2: Heinz-Friedrich Peil (Volvo 240 Turbo),Two heats; half points per heat. Pole König.
+6,1985-07-21,Diepholz – Flugplatzrennen,Fliegerhorst Diepholz (airfield),GER,2.600,2,19/20,49.40/52.00,no,H1: Heinz-Friedrich Peil (Volvo 240 Turbo); H2: Klaus Ludwig (Ford Sierra XR4Ti),"Heat 1 19 laps, heat 2 20 laps; half points per heat. Ludwig first on the road in H1 but 1-min jump-start penalty. ONS weight changes announced here (BMW/Rover -50 kg); protests and appeals over this race continued to the finale (Manthey DSQ in both heats per de.wikipedia)."
+7,1985-08-18,Zolder – Westfalen-Pokal,Circuit Zolder,BEL,4.262,1,24,102.29,no,H1: Klaus Ludwig (Ford Sierra XR4Ti),Pole Andersson (Bridgestone qualifiers).
+8,1985-09-08,Siegerland – Flughafenrennen,Flughafen Siegerland (airport),GER,3.340,1,30,100.20,no,H1: Klaus Ludwig (Ford Sierra XR4Ti),Heavy rain. Reuter led 21 laps before electrical failure.
+9,1985-09-22,Nürburgring – Super-Sprint,Nürburgring short GP layout (per TCR),GER,3.029,1,35,106.02,no,H1: Klaus Ludwig (Ford Sierra XR4Ti),"Length 3.029 km per TCR (implies a short configuration; layout name unverified). Stureson clinches title."

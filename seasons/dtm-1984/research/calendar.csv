@@ -1,0 +1,13 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1984-03-11,Zolder – Bergischer Löwe,Circuit Zolder,BEL,4.262,1,24,102.29,no,H1: Harald Grohs (BMW 635 CSi),"Pole van Ommen (Rover). Wet/drizzle, snow on Saturday. 24 starters. TCR length 4.261 km."
+2,1984-04-08,Hockenheim – Jim-Clark-Rennen,Hockenheimring GP circuit,GER,6.797,1,15,101.96,no,H1: no winner,"Grohs finished first but was disqualified (valve lift); ONS did not promote the others, so the race has no winner (Strycek 2nd, Oberndorfer 3rd). Pole van Ommen."
+3,1984-05-13,AVUS – AVUS-Rennen (Berlin),AVUS,GER,8.110,2,7,56.77,no,H1: Manfred Trint (Ford Mustang 5.0 GT); H2: Olaf Manthey (Rover Vitesse),Two heats; half points per heat. Pole van Ommen.
+4,1984-05-27,Mainz-Finthen – Flugplatzrennen,Flugplatz Mainz-Finthen (airfield),GER,2.300,1,45,103.50,no,H1: Per Stureson (Volvo 240 Turbo),"Date per TCR (Sunday 27 May); de.wikipedia gives 26 May. Stureson was a non-scoring guest; points went to Grohs as best eligible finisher."
+5,1984-06-11,Wunstorf – Flugplatzrennen,Fliegerhorst Wunstorf (airbase),GER,5.050,1,20,101.00,no,H1: Manfred Trint (Ford Mustang 5.0 GT),"Date per TCR (Whit Monday 11 June); de.wikipedia gives 10 June."
+6,1984-06-17,Nürburgring – 300-km-Rennen,Nürburgring new GP circuit (with chicane),GER,4.542,2,12,54.50,no,H1: Manfred Trint (Ford Mustang 5.0 GT); H2: Winfried Vogt (BMW 323i),Two heats; half points per heat. First DPM race on the new Nürburgring.
+7,1984-07-01,Norisring – 200 Meilen von Nürnberg,Norisring street circuit,GER,2.300,1,44,101.20,no,H1: Winfried Vogt (BMW 323i),Support race to Group C. Pole Stureson.
+8,1984-07-08,Nürburgring – Großer Preis der Tourenwagen,Nürburgring GP circuit,GER,4.542,1,23,104.47,no,H1: Harald Grohs (BMW 635 CSi),Rain.
+9,1984-07-22,Diepholz – Flugplatzrennen,Fliegerhorst Diepholz (airfield),GER,2.600,1,40,104.00,no,H1: Harald Grohs (BMW 635 CSi),TCR header says 23 laps but its result sheet shows 40 laps (= 104 km as on de.wikipedia).
+10,1984-08-04,Hockenheim – Großer Preis von Deutschland (F1 support),Hockenheimring GP circuit,GER,6.797,2,11,74.77,no,H1: Peter Oberndorfer (Alfa Romeo Alfetta GTV/6); H2: Manfred Trint (Ford Mustang 5.0 GT),"Two heats; half points per heat. Date per TCR (Saturday 4 Aug); de.wikipedia gives 5 Aug (F1 race day)."
+11,1984-08-19,Zolder – Westfalen-Pokal,Circuit Zolder,BEL,4.262,1,24,102.29,no,H1: Harald Grohs (BMW 635 CSi),Pole Vogt.
+12,1984-09-23,Nürburgring – Super-Sprint,Nürburgring GP circuit,GER,4.542,1,25,113.55,no,H1: Peter John (Chevrolet Camaro Z28),Rain. TCR header says 23 laps; result sheet shows 25 laps (= 113.55 km as on de.wikipedia). Strycek champion with 5th.

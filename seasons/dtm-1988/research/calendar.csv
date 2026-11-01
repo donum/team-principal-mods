@@ -1,0 +1,13 @@
+round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
+1,1988-04-03,Circuit Zolder,Grand Prix circuit,Belgium,4.184,2,24/24,100.416,no,H1: Klaus Ludwig; H2: Klaus Ludwig,Bergischer Löwe; Sierra restrictor cut 43.5 -> 38 mm after this round
+2,1988-04-24,Hockenheimring,Motodrom short circuit,West Germany,2.634,2,38/38,100.092,no,H1: Christian Danner; H2: Christian Danner,AvD Sportwagen-Festival
+3,1988-05-01,Nürburgring,GP-Strecke,West Germany,4.542,2,22/22,99.924,no,H1: Kurt Thiim; H2: Dany Snobeck,50. ADAC-Eifelrennen
+4,1988-05-22,Automotodrom Brno,Masaryk circuit,Czechoslovakia,5.394,2,19/19,102.486,no,H1: Armin Hahne; H2: Dany Snobeck,100 Meilen von Brünn; first DTM round in Eastern Bloc
+5,1988-05-29,AVUS,Berlin long circuit with north banking,West Germany,8.110,2,12/12,97.320,no,H1: Johnny Cecotto; H2: Johnny Cecotto,ADAC Avus-Rennen
+6,1988-06-05,Flugplatz Mainz-Finthen,airfield circuit,West Germany,2.250,2,45/45,101.250,no,H1: Altfrid Heger; H2: Altfrid Heger,
+7,1988-06-18,Nürburgring,Nordschleife + GP-Strecke combined,West Germany,25.300,2,4/4,101.200,no,H1: Armin Hahne; H2: Armin Hahne,24-hour race support; Niedzwiedz big crash at Tiergarten
+8,1988-06-25/26,Norisring,street circuit,West Germany,2.300,2,44/41,101.200/94.300,no,H1: Armin Hahne; H2: Klaus Ludwig,"race 1 Saturday, race 2 Sunday (TCR); de.wikipedia gives 26 June and 101.2 km for both"
+9,1988-07-17,Fliegerhorst Wunstorf,airfield circuit,West Germany,5.050,2,20/20,101.000,no,H1: Klaus Ludwig; H2: Klaus Ludwig,team boss Ringshausen injured in practice accident
+10,1988-08-28,Salzburgring,,Austria,4.240,2,24/24 (planned),,no,cancelled (no result),both races abandoned after repeated start crashes; no points; Sierra restrictor 36 mm from here (TCR)
+11,1988-09-18,Hungaroring,,Hungary,4.013,2,24/25,96.312/100.325,no,H1: Johnny Cecotto; H2: Johnny Cecotto,race 1 flagged after 24 of 25 laps
+12,1988-10-16,Hockenheimring,Grand Prix circuit,West Germany,6.798,2,15/15,101.970,no,H1: Armin Hahne; H2: Armin Hahne,ADAC-Preis der Stadt Esslingen; title decider

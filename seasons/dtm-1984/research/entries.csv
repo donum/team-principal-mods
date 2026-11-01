@@ -1,0 +1,119 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Harald Grohs,GER,1944-01-28,Vogelsang Automobile GmbH,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-12,
+2,Olaf Manthey,GER,1955-04-21,Austin Rover Deutschland,,Rover Vitesse,Rover V8 3.5 (3532 cc),Goodyear,1-12,"tyres: TCR 1984 car sheet (Rover Vitesse TWR/Nickel, DPM)"
+3,Jörg van Ommen,GER,1962-09-27,Austin Rover Deutschland,,Rover Vitesse,Rover V8 3.5 (3532 cc),Goodyear,1-6,"tyres: TCR 1984 car sheet (Rover Vitesse TWR/Nickel, DPM) | also: #4 BMW 635 CSi rds 11,12"
+3,Dieter Selzer,GER,,Austin Rover Deutschland,,Rover Vitesse,Rover V8 3.5 (3532 cc),Goodyear,"7,9-11","tyres: TCR 1984 car sheet (Rover Vitesse TWR/Nickel, DPM) | also: #91 Rover Vitesse rds 8"
+4,Hans-Joachim Stuck,GER,1951-01-01,Vogelsang Automobile GmbH,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,11,"also: #6 BMW 635 CSi rds 1,4,5,10"
+4,Jörg van Ommen,GER,1962-09-27,Vogelsang Automobile GmbH,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"11,12",also: #3 Rover Vitesse rds 1-6
+5,Frank Jelinski,GER,1958-05-23,Fischhaber-Racing,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,1,also: #6 BMW 635 CSi rds 12
+6,Hans-Joachim Stuck,GER,1951-01-01,Vogelsang Automobile GmbH,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,4,5,10",also: #4 BMW 635 CSi rds 11
+6,Manfred Winkelhock,GER,1951-10-06,Liqui Moly Equipe,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"3,12",
+6,Frank Jelinski,GER,1958-05-23,Liqui Moly Equipe,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,12,also: #5 Alfa Romeo Alfetta GTV/6 rds 1
+7,Leopold Prinz von Bayern,GER,1943-06-21,Team Warsteiner,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1-5,8,10,11",
+8,Walter Brun,SUI,1942-10-20,Jägermeister Brun Motorsport,Stans (SUI),BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"2,4,7,9,12",
+9,Ralf-Dieter Schreiber,GER,,Ulrich Mönninghoff RT,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,"3,6,12",
+9,Peter John,GER,,private,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,8,"also: #77 Chevrolet Camaro Z28 rds 1-3,6,11,12; #77 Chevrolet Camaro Z28 rds 9; #? BMW 528i rds 4"
+10,Franz Prangemeier,GER,,Ulrich Mönninghoff RT,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,11,
+12,Udo Schneider,GER,,Auto Budde Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,4-9",also: #? Chevrolet Camaro Z28 rds 2; #? BMW 528i rds 3
+12,Robert Walterscheid-Müller,GER,1962-03-08,Auto Budde Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"11,12",also: #46 Opel Manta GT/E rds 2-10
+13,Kurt König,GER,1954-01-13,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,2-12,
+15,Peter Oberndorfer,GER,1956-07-05,Marko RSM,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,"1-10,12",
+17,Fritz Müller,GER,1941-04-02,Müller-Bräu Team,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,2,12",
+19,Horst Jacobs,GER,,Kamei Crew,,BMW 528i,BMW L6 2.8 (2799 cc),,12,
+22,Jörg Leininger,GER,,Jörg Leininger,,Mercedes 380 SLC,Mercedes V8 3.8 (3839 cc),,10,
+22,Robert Manner,GER,,Jörg Leininger,,Mercedes 380 SLC,Mercedes V8 3.8 (3839 cc),,12,
+23,Volker Strycek,GER,1957-10-13,Gubin-Sport,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,1-12,
+25,Manfred Trint,GER,,ABR Ringhausen Rennsport,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),Pirelli,1-12,tyres: TCR 1984 car sheet (Mustang ABR/Roush)
+29,Werner Felder,GER,,Renngemeinschaft Bergisch Gladbach,,BMW 528i,BMW L6 2.8 (2799 cc),,"1,2,4,5,8,12",
+34,Peter Schem,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,"5,8,11",
+35,Bernd Netzebrand,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,"6,7,12",
+36,Udo Lohmann,GER,,Müller-Bräu Team,,Fiat Ritmo 130 TC Abarth,Fiat L4 2.0 (1995 cc),,"2,4,8,11",
+37,Richard Friedrich Jr.,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,1,"also: #37 Mitsubishi Starion Turbo A183 rds 5-7,10-12"
+37,Richard Friedrich Jr.,GER,,private,,Mitsubishi Starion Turbo A183,Mitsubishi L4 2.0 turbo (1998 cc),,"5-7,10-12",also: #37 Ford Capri III 3.0 S rds 1
+42,Franz Schneider,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,7,also: #42 Audi 80 GTE rds 12
+42,Franz Schneider,GER,,Hemmerle Automobiltechnik,,Audi 80 GTE,Audi L4 1.6 (1588-1596 cc),,12,also: #42 VW Golf GTI rds 7
+43,Gottfried Eckle,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"2,5,12",
+46,Robert Walterscheid-Müller,GER,1962-03-08,RWM Automobile,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,2-10,"also: #12 BMW 635 CSi rds 11,12"
+47,Karl-Heinz Schäfer,GER,,Mich Opel Tuning,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,"1-9,11,12",
+49,Jürgen Fritzsche,GER,,Mantzel Opel Tuning,,Opel Kadett GT/E,Opel L4 2.0 (1979 cc),,"1,2,4-9,11,12",also: #49 Opel Manta GT/E rds 3; #49 BMW 635 CSi rds 10
+49,Jürgen Fritzsche,GER,,Mantzel Opel Tuning,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,3,"also: #49 Opel Kadett GT/E rds 1,2,4-9,11,12; #49 BMW 635 CSi rds 10"
+49,Jürgen Fritzsche,GER,,Hartge Motorsport,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,10,"also: #49 Opel Kadett GT/E rds 1,2,4-9,11,12; #49 Opel Manta GT/E rds 3"
+50,Josef Michl,TCH,1949-12-10,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"7,10",
+57,Klaus-Emil Röckel,GER,,private,,Opel Monza 3.0E,Opel L6 3.0 (2998 cc per TCR),,"2,3,10",
+65,Christoph Esser,GER,,Törkel Automobil Technik,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,"5,6,8,10",
+67,Winfried Vogt,GER,1945-03-13,Linder Rennsport,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,1-12,
+68,Johannes Wollstadt,GER,,Autohaus Wollstadt Racing Team,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,"1-4,7,8,10,12",
+70,Manfred Haase,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"2,4-6,10-12",
+73,Horst Hahne,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"5,9,10,12",also: #93 VW Golf GTI rds 8
+77,Peter John,GER,,American Car Service,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,"1-3,6,11,12",also: #9 Chevrolet Camaro Z28 rds 8; #77 Chevrolet Camaro Z28 rds 9; #? BMW 528i rds 4
+77,Peter John,GER,,Ulrich Mönninghoff RT,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,9,"also: #9 Chevrolet Camaro Z28 rds 8; #77 Chevrolet Camaro Z28 rds 1-3,6,11,12; #? BMW 528i rds 4"
+77,Dieter Hegels,GER,,American Car Service,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,8,"also: #? Chevrolet Camaro Z28 rds 3; #? Chevrolet Camaro Z28 rds 4-7,9,10"
+78,Walter Prüser,GER,,Rheydter Club für Motorsport,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,"10,12",also: #93 BMW 323i rds 11
+79,Per Stureson,SWE,1948-03-22,IPS Racing,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,"4,7,10,12",
+80,Siegbert Niemeyer,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,12,
+81,Jürg Bächi,SUI,,Labbet AB,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,12,
+82,Rudolf Huttner,GER,,private,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,7,
+82,Heinz-Otto Fritzsche,GER,,Mantzel Opel Tuning,,Opel Kadett GT/E,Opel L4 2.0 (1979 cc),,12,
+83,Peter Mamerow,GER,1958-09-20,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"4,9,11",
+84,Per-Gunnar Andersson,SWE,1957-08-15,ML Racing Sybilla,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,"10,12",
+85,Willi Weber,GER,1942-03-11,Kilian Tuning,,VW Scirocco,VW L4 1.6 (1588 cc),,12,
+90,Bert Moritz,NED,1946-05-21,private,,Chevrolet Camaro,Chevrolet V8 5.7 (5736 cc),,6,
+91,Dieter Selzer,GER,,Austin Rover Deutschland,,Rover Vitesse,Rover V8 3.5 (3532 cc),Goodyear,8,"tyres: TCR 1984 car sheet (Rover Vitesse TWR/Nickel, DPM) | also: #3 Rover Vitesse rds 7,9-11"
+92,Fritz Möller,GER,,Fritz Möller,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"6,9,12",also: #124 BMW 635 CSi rds 8
+92,Dieter Miltz,GER,,Fritz Möller,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"10,11",
+92,Axel Felder,GER,1949-08-16,Auto Budde Team,,BMW 528i,BMW L6 2.8 (2799 cc),,8,also: #? BMW 635 CSi rds 10
+93,Horst Hahne,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,8,"also: #73 VW Golf GTI rds 5,9,10,12"
+93,Walter Prüser,GER,,Rheydter Club für Motorsport,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,11,"also: #78 BMW 323i rds 10,12"
+94,Armin Hahne,GER,1955-09-10,Massa-Real-Racing-Team,,MG Metro Turbo,BL A-series L4 1.3 turbo (1275 cc),,"10,11",
+124,Fritz Möller,GER,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,8,"also: #92 BMW 635 CSi rds 6,9,12"
+,Hagen Arlt,GER,,private,,Audi 80 GLE,Audi L4 1.6 (1588-1596 cc),,"1,2,6",car number unknown
+,Peter Uhlenhaut,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"1,2",car number unknown
+,Fred Räker,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,"1-3,5-7,10",car number unknown
+,Karl-Heinz Brinkmann,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,"1-3,9,10",car number unknown
+,Peter Elgaard,DEN,,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"1,4",car number unknown
+,Martin Wagenstetter,GER,,private,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,"1,2,4,12",car number unknown
+,Jörg Chmiela,GER,,private,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,"1,6",car number unknown
+,Karl-Heinz Barthelmess,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,"1,2,4,6,7",car number unknown
+,Toni Fischhaber,GER,1940-10-12,Fischhaber-Racing,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,"1,10",car number unknown
+,Heinrich Haag,GER,,private,,Opel Ascona,Opel L4 2.0 (1979 cc),,"2,10",car number unknown
+,Roland Asch,GER,1950-10-12,private,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,2,car number unknown
+,Wolfgang Kaupp,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,"2,10",car number unknown
+,Franz-Josef Bröhling,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,"2-4,6",car number unknown
+,Mario Ketterer,GER,1950,Brun Motorsport,Stans (SUI),BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,"2,7,10",car number unknown
+,Udo Moldenhauer,GER,,private,,Ford Capri III 3.0 S,Ford V6 3.0 (2993 cc),,"2,3",car number unknown
+,Manfred Wolf,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,2,car number unknown
+,Udo Schneider,GER,,private,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,2,"also: #12 BMW 635 CSi rds 1,4-9; #? BMW 528i rds 3 | car number unknown"
+,Udo Schneider,GER,,private,,BMW 528i,BMW L6 2.8 (2799 cc),,3,"also: #12 BMW 635 CSi rds 1,4-9; #? Chevrolet Camaro Z28 rds 2 | car number unknown"
+,Wolfgang Offermann,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,"3,6",car number unknown
+,Ludwig Hölzl,GER,,private,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,3,car number unknown
+,Bodo Jähn,GER,,Auto-Veri Berlin,,Ford Mustang 5.0 GT,Ford V8 5.0 (4999 cc),,3,car number unknown
+,Dieter Hegels,GER,,American Car Service,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,3,"also: #77 Chevrolet Camaro Z28 rds 8; #? Chevrolet Camaro Z28 rds 4-7,9,10 | car number unknown"
+,Dieter Hegels,GER,,private,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,"4-7,9,10",also: #77 Chevrolet Camaro Z28 rds 8; #? Chevrolet Camaro Z28 rds 3 | car number unknown
+,Klaus Bielenberg,GER,,private,,BMW 320i,BMW M20 L6 2.0,,"3,4,6",car number unknown
+,Peter John,GER,,private,,BMW 528i,BMW L6 2.8 (2799 cc),,4,"also: #9 Chevrolet Camaro Z28 rds 8; #77 Chevrolet Camaro Z28 rds 1-3,6,11,12; #77 Chevrolet Camaro Z28 rds 9 | car number unknown"
+,Harald Kühn,GER,,private,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,4,car number unknown
+,A. Golderer,GER,,private,,Opel Ascona,Opel L4 2.0 (1979 cc),,4,car number unknown
+,„Doc Holiday“,GER,,private,,Opel Ascona,Opel L4 2.0 (1979 cc),,5,car number unknown
+,Dieter Wilkening,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,"5,9",car number unknown
+,Arthur Deutgen,GER,,private,,Opel Kadett GT/E,Opel L4 2.0 (1979 cc),,"5,6",car number unknown
+,Wolfgang Quaschning,GER,,private,,Opel Manta GT/E,Opel L4 2.0 (1979 cc),,6,car number unknown
+,Peter Pesch,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,6,car number unknown
+,Dieter Gartmann,GER,,private,,Ford Capri III 2.8i,Ford V6 2.8 (2790 cc),,7,car number unknown
+,Klaus Assmuth,GER,,private,,BMW 525i,BMW L6 2.5,,7,car number unknown
+,H.-H. Kiesewetter,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,7,car number unknown
+,Josef Bussinger,GER,,private,,Audi 80 GLE,Audi L4 1.6 (1588-1596 cc),,7,car number unknown
+,Heinz-Friedrich Peil,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,9,car number unknown
+,Preben Kristoffersen,DEN,,private,,Mazda RX-7,Mazda 2-rotor Wankel,,9,car number unknown
+,Hardy Kristoffersen,DEN,,private,,Opel Kadett GT/E,Opel L4 2.0 (1979 cc),,9,car number unknown
+,Holger Knudsen,DEN,,Kjellerup Autolager APS,,Opel Ascona i2000,Opel L4 2.0 (1979 cc),,9,car number unknown
+,Nils-Carl Nielsen,DEN,,private,,BMW 323i,BMW M20 L6 2.3 (2330 cc),,9,car number unknown
+,Henrik Johannesen,DEN,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,9,car number unknown
+,R. Günther,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,9,car number unknown
+,Lella Lombardi,ITA,1941-03-26,private,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,10,car number unknown
+,Giorgio Francia,ITA,1947-11-08,private,,Alfa Romeo Alfetta GTV/6,Alfa Romeo V6 2.5 (2491 cc),,10,car number unknown
+,Axel Felder,GER,1949-08-16,private,,BMW 635 CSi,BMW M30 L6 3.5 (3475 cc),,10,also: #92 BMW 528i rds 8 | car number unknown
+,Balz Kamm,SUI,,private,,VW Scirocco,VW L4 1.6 (1588 cc),,10,car number unknown
+,Edi Kamm,SUI,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,10,car number unknown
+,Karl Ashölter,GER,,private,,VW Golf GTI,VW L4 1.6/1.8 (1596-1781 cc),,10,car number unknown
+,Greger Petersson,SWE,,private,,Volvo 240 Turbo,Volvo B21ET L4 2.1 turbo (2141 cc),,10,car number unknown
+,Henny Hemmes,NED,,private,,Chevrolet Camaro Z28,Chevrolet V8 5.7 (5736 cc),,11,car number unknown

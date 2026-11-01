@@ -1,0 +1,33 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Klaus Ludwig,GER,1949-10-05,Opel Team Rosberg,Neustadt an der Weinstraße,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,Reigning 1994 champion; switched from AMG-Mercedes to Opel
+2,Keke Rosberg,FIN,1948-12-06,Opel Team Rosberg,Neustadt an der Weinstraße,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,Team owner-driver; retired after DTM finale
+3,Jörg van Ommen,GER,1962-09-27,UPS-Tabac Original-Sonax-Team AMG Mercedes,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+4,Jan Magnussen,DEN,1973-07-04,UPS-Tabac Original-Sonax-Team AMG Mercedes,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,1-5;7-12,
+5,Alexander Grau,GER,1973-02-17,Promarkt AMG Mercedes Team Zakspeed,Niederzissen,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,"Known as ""Sandy"" Grau"
+6,Kurt Thiim,DEN,1958-08-03,Promarkt AMG Mercedes Team Zakspeed,Niederzissen,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+7,Alessandro Nannini,ITA,1959-07-07,Martini Racing - Alfa Corse,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,Works team; new-spec car without testing at season start
+8,Nicola Larini,ITA,1964-03-19,Martini Racing - Alfa Corse,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+9,Manuel Reuter,GER,1961-12-06,Opel Team Joest,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,
+10,Yannick Dalmas,FRA,1961-07-28,Opel Team Joest,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,1-6;8-12,
+11,Christian Danner,GER,1958-04-04,Schübel Engineering,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+12,Michele Alboreto,ITA,1956-12-23,Schübel Engineering,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+13,Gianni Giudici,ITA,1946-03-10,Alfa Corse 2,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+14,Bernd Schneider,GER,1964-07-20,D2 Privat-Team AMG Mercedes,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,Double champion (DTM + ITC)
+15,Dario Franchitti,GBR,1973-05-19,D2 Privat-Team AMG Mercedes,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+16,Louis Krages,GER,1949-08-12,Daim AMG Mercedes Team Zakspeed,Niederzissen,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+17,Ellen Lohr,GER,1965-04-12,Mercedes-Benz Original-Teile AMG Team Zakspeed,Niederzissen,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+18,Stefano Modena,ITA,1963-05-12,Euroteam,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+19,Michael Bartels,GER,1968-03-08,Euroteam,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+20,JJ Lehto,FIN,1966-01-31,Opel Team Joest,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,
+21,Ni Amorim,POR,1962-03-01,Opel Team Joest,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,1-3;5;7-11,
+22,Uwe Alzen,GER,1967-08-18,AMG Mercedes Team Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+23,Bernd Mayländer,GER,1971-05-29,AMG Mercedes Team Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+24,Gerd Ruch,GER,1953-11-21,AMG Mercedes Team Ruch-Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,Owner-driver
+25,Stig Amthor,GER,1970-03-01,Alfa Corse 2,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,1-4;6,
+26,Giancarlo Fisichella,ITA,1973-01-14,Alfa Corse 2,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+27,Markku Alén,FIN,1951-02-15,Alfa Corse 2,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,1;4,"Entry lists say rounds 1,4; de.wiki ITC table places his results at Donington (round 6) - conflict"
+28,Fabrizio Giovanardi,ITA,1966-12-14,Alfa Corse 2,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,5,"en.wiki: round 5; de.wiki: rounds 5,12 (only Norisring results shown)"
+29,Giampiero Simoni,ITA,1969-09-12,Alfa Corse 2,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,7,
+30,Gabriele Tarquini,ITA,1962-03-02,Schübel Engineering,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,9-11,en.wiki lists under Alfa Corse 2; de.wiki under Schübel
+31,Pedro Couceiro,POR,1970-03-23,Schübel Engineering,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,8,en.wiki lists under Alfa Corse 2; de.wiki under Schübel
+32,Philippe Gache,FRA,1962-05-31,Alfa Corse 2,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,11,

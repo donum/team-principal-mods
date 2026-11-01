@@ -1,0 +1,42 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Bernd Schneider,GER,1964-07-20,D2 Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,Reigning champion
+2,Dario Franchitti,GBR,1973-05-19,D2 Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+3,Jan Magnussen,DEN,1973-07-04,Warsteiner Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,1-6;9-13,Missed rounds 7-8 for CART commitments
+3,Juan Pablo Montoya,COL,1970-09-20,Warsteiner Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,7,Stand-in
+3,Ricardo Zonta,BRA,1976-03-23,Warsteiner Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,8,Stand-in
+4,Alexander Grau,GER,1973-02-17,Warsteiner Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,1-6,Then Persson #22 (7-8) and #21 (9-13)
+4,Bernd Mayländer,GER,1971-05-29,Warsteiner Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,7-13,Previously Persson #22 (1-6)
+5,Nicola Larini,ITA,1964-03-19,Martini Alfa Corse,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+6,Alessandro Nannini,ITA,1959-07-07,Martini Alfa Corse,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,7 wins
+7,Manuel Reuter,GER,1961-12-06,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,Champion
+8,Oliver Gavin,GBR,1972-09-29,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,1-10;12-13,
+8,Masanori Sekiya,JPN,1949-11-27,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,11,"en.wiki: #8 at round 11; de.wiki: car #27 at round 11 - conflict"
+9,Stefano Modena,ITA,1963-05-12,JAS Motorsport Alfa Romeo,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+10,Michael Bartels,GER,1968-03-08,Jägermeister JAS Motorsport Alfa Romeo,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+11,Jörg van Ommen,GER,1962-09-27,UPS Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,all,
+12,Kurt Thiim,DEN,1958-08-03,UPS Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,1-11,
+12,Christian Fittipaldi,BRA,1971-01-18,UPS Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,12,Local driver at Interlagos
+12,Aguri Suzuki,JPN,1960-09-08,UPS Mercedes-AMG,Affalterbach,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,13,Local driver at Suzuka
+13,Gianni Giudici,ITA,1946-03-10,Giudici Motorsport,,Alfa Romeo 155 V6 TI (1-5) / Opel Calibra V6 4x4 (6-8;10-11),Alfa Romeo 2.5 V6 / Opel/Cosworth 2.5 V6,,1-8;10-11,Private entry; switched make mid-season
+14,Giancarlo Fisichella,ITA,1973-01-14,TV Spielfilm Alfa Corse,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+15,Christian Danner,GER,1958-04-04,TV Spielfilm Alfa Corse,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+16,Uwe Alzen,GER,1967-08-18,Zakspeed Team Opel,Niederzissen,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,Zakspeed switched from Mercedes to Opel
+17,Klaus Ludwig,GER,1949-10-05,Zakspeed Team Opel,Niederzissen,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,1-9;11-13,
+17,Volker Strycek,GER,1957-10-13,Zakspeed Team Opel,Niederzissen,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,10,Also Joest #23 at round 8
+18,Gabriele Tarquini,ITA,1962-03-02,JAS Motorsport Alfa Romeo,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,all,
+19,Jason Watt,DEN,1970-02-24,Bosch JAS Motorsport Alfa Romeo,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,1-11,
+19,Max Wilson,BRA,1972-08-22,Bosch JAS Motorsport Alfa Romeo,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,12,2nd in Interlagos heat 2
+19,Naoki Hattori,JPN,1966-06-13,Bosch JAS Motorsport Alfa Romeo,,Alfa Romeo 155 V6 TI,Alfa Romeo 2.5 V6,,13,
+21,Ellen Lohr,GER,1965-04-12,Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,1-8,Then #22 (9-13)
+21,Alexander Grau,GER,1973-02-17,Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,9-13,
+22,Bernd Mayländer,GER,1971-05-29,Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,1-6,
+22,Alexander Grau,GER,1973-02-17,Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,7-8,
+22,Ellen Lohr,GER,1965-04-12,Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,9-13,
+23,Volker Strycek,GER,1957-10-13,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,8,
+24,Yannick Dalmas,FRA,1961-07-28,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,
+25,Alexander Wurz,AUT,1974-02-15,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,1-11,
+25,Tony Kanaan,BRA,1974-12-31,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,12,
+25,Masanori Sekiya,JPN,1949-11-27,Joest Racing Opel,Wald-Michelbach,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,13,
+37,Ratanakul Prutirat,THA,1957-07-19,Persson Motorsport,,AMG-Mercedes C-Klasse,Mercedes-Benz/AMG 2.5 V6,,6,One-off (Diepholz)
+43,JJ Lehto,FIN,1966-01-31,Team Rosberg Opel,Neustadt an der Weinstraße,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,
+44,Hans-Joachim Stuck,GER,1951-01-01,Team Rosberg Opel,Neustadt an der Weinstraße,Opel Calibra V6 4x4,Opel/Cosworth 2.5 V6,,all,

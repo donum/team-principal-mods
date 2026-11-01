@@ -1,0 +1,76 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Klaus Ludwig,GER,1949-10-05,AMG Motorenbau GmbH,Affalterbach (GER),Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,1-3,
+1,Klaus Ludwig,GER,1949-10-05,AMG Motorenbau GmbH,Affalterbach (GER),Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,"4-6,8-11",pole at R6 but hospitalised before race day (kidney operation); missed R7; R6: DNS
+2,Kurt Thiim,DEN,1958-08-03,AMG Motorenbau GmbH,Affalterbach (GER),Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,1-5,
+2,Kurt Thiim,DEN,1958-08-03,AMG Motorenbau GmbH,Affalterbach (GER),Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,6-11,
+3,Joachim Winkelhock,GER,1960-10-24,AMG Motorenbau GmbH,Affalterbach (GER),Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,7-8,replaced Ludwig (kidney operation) at R7
+4,Roland Asch,GER,1950-10-12,MS-Jet Racing,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,1-3,
+4,Roland Asch,GER,1950-10-12,MS-Jet Racing,,Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,4-11,
+5,Manuel Reuter,GER,1961-12-06,MS-Jet Racing,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,1-4,
+5,Manuel Reuter,GER,1961-12-06,MS-Jet Racing,,Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,5-11,
+7,Armin Hahne,GER,1955-09-10,Würth Wolf Racing Team,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,"1-3,10",broke arm and leg in R3 race-2 crash; returned R10
+8,Alain Ferté,FRA,1955-10-08,Würth Wolf Racing Team,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,"5-9,11",replaced injured Hahne
+8,Jeff Allam,GBR,1954-12-19,Würth Wolf Racing Team,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,4,replaced injured Hahne; R4: DNS
+9,Markus Oestreich,GER,1963-07-03,Opel Team Irmscher,Remshalden (GER),Opel Kadett GSi 16V,Opel 2.0 L4 (1998 cc),,1-11,
+10,Peter Oberndorfer,GER,1956-07-05,Opel Team Irmscher,Remshalden (GER),Opel Kadett GSi 16V,Opel 2.0 L4 (1998 cc),,1-11,
+11,Dany Snobeck,FRA,1946-05-02,Snobeck Racing Service,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,1-3,
+11,Dany Snobeck,FRA,1946-05-02,Snobeck Racing Service,,Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,4-11,
+12,Alain Cudini,FRA,1946-04-19,Snobeck Racing Service,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,1-4,
+12,Alain Cudini,FRA,1946-04-19,Snobeck Racing Service,,Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,5-11,
+13,Anton Goeser,GER,1950-12-14,AC München,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"1,7-8",
+14,Johnny Cecotto,VEN,1956-01-25,BMW M Team Schnitzer,Freilassing (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),Yokohama,"2,4-9,11",
+15,Roberto Ravaglia,ITA,1957-05-26,BMW M Team Schnitzer,Freilassing (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),Yokohama,1-11,
+16,Fabien Giroix,FRA,1960-09-17,BMW M Team Schnitzer,Freilassing (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),Yokohama,1-11,
+17,Emanuele Pirro,ITA,1962-01-12,BMW M Team Schnitzer,Freilassing (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),Yokohama,6,"entered at R6, did not start; R6: DNS"
+18,Altfrid Heger,GER,1958-01-24,BMW M Team Linder,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,1-10,
+19,Christian Danner,GER,1958-04-04,BMW M Team Linder,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"1,7,11",
+20,Siegfried Müller Jr.,GER,1956-01-10,Schwaben Motorsport,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,2-10,
+20,Siegfried Müller Jr.,GER,1956-01-10,Schwaben Motorsport,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,11,TCR shows a BMW M3 Evo at R11; de.wikipedia lists Mercedes for all rounds
+21,Harald Becker,GER,1953-11-07,Schwaben Motorsport,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,1-10,
+21,Harald Becker,GER,1953-11-07,Schwaben Motorsport,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,11,TCR shows a BMW M3 Evo at R11; de.wikipedia lists Mercedes for all rounds
+22,Harald Grohs,GER,1944-01-28,BMW Faltz Essen,Essen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"2,4-11",
+23,Jean-Michel Martin,BEL,1953-06-19,BMW Faltz Essen,Essen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"1,3,5-6,8-11",
+24,Arnold Mattschull,GER,1951-09-15,BMW Faltz Essen,Essen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,1-3,
+24,Otto Altenbach,GER,1948-05-31,BMW Faltz Essen,Essen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,6,entrant/number from de.wikipedia; R6: DNS
+25,Frank Biela,GER,1964-08-02,Ford-Grab Motorsport GmbH,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,1-11,
+26,Franz Engstler,GER,1961-07-25,BMW M Team Linder,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,11,TCR entrant Linder; de.wikipedia: Tauber Motorsport #26
+27,Rüdiger Schmitt,GER,1967-10-27,Ford-Grab Motorsport GmbH,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,1-11,R11: DNS
+28,Jörg van Ommen,GER,1962-09-27,Star-Marko RSM,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,"1-5,8-11",
+28,Jörg van Ommen,GER,1962-09-27,Star-Marko RSM,,Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,6-7,privately built 2.5 Evo; per TCR used at R6 then back to 2.3 (TCR also shows it at R7)
+29,Karl Wendlinger,AUT,1968-12-20,Star-Marko RSM,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,"1-5,7-10",TCR spells name 'Karl Wendlinger III'
+30,Klaus Niedzwiedz,GER,1951-02-24,Ford Motorsport Eggenberger,Grenchen (SUI),Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,1-11,
+31,Gianfranco Brancatelli,ITA,1950-01-18,Ford Motorsport Eggenberger,Grenchen (SUI),Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,1-11,
+32,Bernd Schneider,GER,1964-07-20,Ford Motorsport Eggenberger,Grenchen (SUI),Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,7,"third Eggenberger car, one-off"
+33,Kurt König,GER,1954-01-13,Auto Maass,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,1-11,
+34,Olaf Manthey,GER,1955-04-21,BMW Isert,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,1-11,
+35,Ralf-Werner Müller,GER,,BMK-Motorsport,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,2-11,
+36,Steve Soper,GBR,1951-09-27,BMW M Team Zakspeed,Niederzissen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,1-11,
+37,Kris Nissen,DEN,1960-07-20,BMW M Team Zakspeed,Niederzissen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,7-11,
+39,Dieter Quester,AUT,1939-05-30,BMW M Team Zakspeed,Niederzissen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,1-8,
+40,Volker Strycek,GER,1957-10-13,Kissling Motorsport,,Opel Kadett GSi 16V,Opel 2.0 L4 (1998 cc),,1-11,
+41,Leopold Prinz von Bayern,GER,1943-06-21,GS Team,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"4-5,7,9-11",
+43,Sepp Haider,AUT,1953-09-26,Opel Team Irmscher,Remshalden (GER),Opel Kadett GSi 16V,Opel 2.0 L4 (1998 cc),,11,
+44,Volker Weidler,GER,1962-03-18,Ford Ringshausen Motorsport,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,"1-4,7-11",
+45,Günther Murmann,GER,1954-02-13,Ford Ringshausen Motorsport,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,"1-4,7-8",
+46,Pierre Dieudonné,BEL,1947-03-24,Ford Ringshausen Motorsport,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,5-6,stand-in
+47,Gerd Ruch,GER,1953-11-21,Ruch Motorsport,,Ford Mustang 5.0 GT,Ford 5.0 V8 (4999 cc),,"1-3,5,7-11",
+48,Oldřich Vaníček,TCH,,privat,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"2-5,7-8,11",de.wikipedia omits R11
+49,Hans Kalaschek,GER,,Vereinigung Süddeutscher Automobilsportler,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"2,6-8",
+50,Philipp Müller,SUI,1952-09-05,Bemani Motorenbau,,Toyota Supra 3.0i MA70,Toyota 3.0 L6 (2954 cc),,"2-5,7-10",de.wikipedia also lists R6
+52,Reinhard Schall,GER,,Bloemer Motorsport,,Toyota Supra 3.0i MA70,Toyota 3.0 L6 (2954 cc),,"1-2,6,10-11",
+53,Fritz Müller,GER,1941-04-02,Müller-Bräu Team,,BMW 635 CSi,BMW 3.5 L6 (3475 cc),,"5,7,9-11",
+54,Bernhard Holz,GER,1964-12-14,privat,,BMW 325i,BMW 2.5 L6 (2494 cc),,"8,11",
+55,Stefan Neuberger,GER,1959-11-30,Tauber Motorsport,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,1-8,
+56,Örnulf Wirdheim,SWE,,Tauber Motorsport,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"1-6,8-11",
+57,Bruno Eichmann,SUI,1952-05-13,Tauber Motorsport,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,10-11,
+58,Stefan Oberndorfer,GER,1959-08-03,GS Team,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,8,
+59,Roland Ratzenberger,AUT,1960-07-04,Star-Marko RSM,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,6,replaced Wendlinger at R6
+60,Armin Bernhard,GER,1954-02-05,BB Motorsport,,Mercedes 190 E 2.3-16,Mercedes-Benz 2.3 L4 16V (2323 cc),,"1-8,10-11",R6: DNS
+61,Eric van de Poele,BEL,1961-09-30,BMW Faltz Essen,Essen (GER),BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,7,replaced Martin at R7
+64,Gerhard Müller,GER,,privat,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,6,
+64,Gerhard Müller,GER,,Bloemer Motorsport,,Toyota Supra 3.0i MA70,Toyota 3.0 L6 (2954 cc),,8,
+65,Annette Meeuvissen,GER,1962-04-12,BMW M Team Linder,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,"2,8",
+67,Klaus-Peter Thaler,GER,1949-05-14,Opel Team Irmscher,Remshalden (GER),Opel Kadett GSi 16V,Opel 2.0 L4 (1998 cc),,10,
+,Arnold Mattschull,GER,1951-09-15,Ford Ringshausen Motorsport,,Ford Sierra RS 500 Cosworth,Ford Cosworth 2.0 L4 turbo (1993 cc),Pirelli,11,TCR: R11 in Ringshausen Sierra (no number); de.wikipedia lists R11 in BMW Faltz M3 #24
+,Karl Wendlinger,AUT,1968-12-20,AMG Motorenbau GmbH,Affalterbach (GER),Mercedes 190 E 2.5-16 Evo,Mercedes-Benz 2.5 L4 16V (2488 cc),,11,TCR lists him in an AMG 2.5 Evo at R11 (number '?'); de.wikipedia keeps him at Star-Marko RSM for R11
+,Peter Elgaard,DEN,,privat,,BMW M3 Evo,BMW S14 2.3 L4 16V (2332 cc),,7,number unknown

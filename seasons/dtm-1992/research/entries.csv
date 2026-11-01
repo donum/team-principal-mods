@@ -1,0 +1,43 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Frank Biela,GER,1964-08-02,AZR Audi Zentrum Reutlingen,,Audi V8 quattro DTM Evo,Audi V8 3562 cc,Dunlop,1-6,Audi withdrew after rd6
+2,Frank Jelinski,GER,1958-05-23,AZR Audi Zentrum Reutlingen,,Audi V8 quattro DTM Evo,Audi V8 3562 cc,Dunlop,1-6,Audi withdrew after rd6
+3,Klaus Ludwig,GER,1949-10-05,AMG Motorenbau GmbH,Affalterbach,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,Bridgestone,1-12,
+4,Bernd Schneider,GER,1964-07-20,AMG Motorenbau GmbH,Affalterbach,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,Bridgestone,1-12,
+5,Ellen Lohr,GER,1965-04-12,AMG Motorenbau GmbH,Affalterbach,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,Bridgestone,1-12,
+6,Keke Rosberg,FIN,1948-12-06,AMG Motorenbau GmbH,Affalterbach,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,Bridgestone,1-12,
+7,Johnny Cecotto,VEN,1956-01-25,FINA Motorsport Team,Nürburgring (per TCR),BMW M3 Sport Evo,BMW S14 L4 2492 cc,,1-12,new semi-works team managed by Günther Warthofer
+9,Emanuele Pirro,ITA,1962-01-12,BMW M Team Bigazzi,Italy,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,1-12,
+10,Steve Soper,GBR,1951-09-27,BMW M Team Bigazzi,Italy,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,"1-10,12",missed rd11 (Grouillard drove #22)
+11,Jacques Laffite,FRA,1943-11-21,MS Racing,,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,,1-12,
+12,Jörg van Ommen,GER,1962-09-27,MS Racing,,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,,1-12,
+14,Joachim Winkelhock,GER,1960-10-24,BMW M Team Schnitzer,Freilassing,BMW M3 Sport Evo,BMW S14 L4 2492 cc,Yokohama,1-12,
+15,Roberto Ravaglia,ITA,1957-05-26,BMW M Team Schnitzer,Freilassing,BMW M3 Sport Evo,BMW S14 L4 2492 cc,Yokohama,1-12,
+16,Altfrid Heger,GER,1958-01-24,BMW M Team Schnitzer,Freilassing,BMW M3 Sport Evo,BMW S14 L4 2492 cc,Yokohama,1-12,
+17,Roland Asch,GER,1950-10-12,Diebels Zakspeed Team,Niederzissen,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,Michelin,1-12,
+18,Kurt Thiim,DEN,1958-08-03,Diebels Zakspeed Team,Niederzissen,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,Michelin,1-12,
+19,Armin Hahne,GER,1955-09-10,Jägermeister Linder Team,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,1-12,
+20,Wayne Gardner,AUS,1959-10-11,Jägermeister Linder Team,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,11-12,"TCR names ""Frank Gardner"" at rd12 (typo); de.wiki: Wayne Gardner rds 11-12"
+21,Kris Nissen,DEN,1960-07-20,Unitron Sports / BMW Team Isert,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,"1-8,10,12","Unitron Sports rds 1-8 (team folded, sponsor bankrupt); BMW Team Isert rds 10,12"
+22,Olivier Grouillard,FRA,1958-09-02,BMW M Team Bigazzi,Italy,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,11,
+26,Volker Strycek,GER,1957-10-13,Irmscher Motorsport,,Opel Omega 3000 24v Evolution 500,Opel L6 24V 2998 cc,,6,one-off Opel entry; Opel works team absent in 1992
+27,Armin Bernhard,GER,1954-02-05,BAS Reifen Autotechnik,,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,,"1-7,9-12",
+28,Louis Krages,GER,1949-08-12,Diebels Zakspeed Team,Niederzissen,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,Michelin,9-12,"raced as ""John Winter"""
+30,Leopold Prinz von Bayern,GER,1943-06-21,BMW Team Isert,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,1-12,
+33,Gerd Ruch,GER,1953-11-21,Gerd Ruch Motorsport,,Ford Mustang 5.0 GT,Ford V8 4999 cc,,1-12,
+34,Fred Räker,GER,,Gerd Ruch Motorsport,,Ford Mustang 5.0 GT,Ford V8 4999 cc,,"1-4,6-7",
+35,Alexander Burgstaller,GER,1969-08-26,Valier Motorsport,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,9,
+36,Franz Engstler,GER,1961-07-25,Valier Motorsport,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,1-12,
+37,Thomas von Löwis of Menar,GER,1947-12-03,MM Team,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,1-4,
+38,Fritz Kreutzpointner,GER,1967-09-14,MM Team,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,1-12,
+40,Josef Venc,TCH,1966-05-06,VAC,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,8,
+42,Harald Becker,GER,1953-11-07,Auto Maass,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,2-12,
+44,Hans-Joachim Stuck,GER,1951-01-01,SMS Schmidt Motorsport,,Audi V8 quattro DTM Evo,Audi V8 3562 cc,Dunlop,1-6,Audi withdrew after rd6
+45,Hubert Haupt,GER,1969-04-30,SMS Schmidt Motorsport,,Audi V8 quattro DTM Evo,Audi V8 3562 cc,Dunlop,1-6,Audi withdrew after rd6
+46,Franz Dufter,GER,1962-04-15,Tauber Motorsport,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,"7,9",
+48,Siegfried Maier,GER,,Tauber Motorsport,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,4-5,
+49,Václav Bervid,TCH,1973-01-05,Bervid,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,8-12,
+50,Per-Gunnar Andersson,SWE,1957-08-15,BMW Sweden,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,"7,9",
+51,Jürgen Feucht,GER,1952-10-14,Buffalo Boots Racing,,Ford Mustang 5.0 GT,Ford V8 4999 cc,,"1-2,4,9-10,12",
+55,Olaf Manthey,GER,1955-04-21,Manthey Racing,,Mercedes-Benz 190E 2.5-16 Evo II,Mercedes-Benz/Cosworth L4 2488 cc,,"6,9-10",owner-driver
+57,Thomas Winkelhock,GER,1968-05-22,MM Team,,BMW M3 Sport Evo,BMW S14 L4 2492 cc,,5,
+66,Jürgen Ruch,GER,1959-03-11,Gerd Ruch Motorsport,,Ford Mustang 5.0 GT,Ford V8 4999 cc,,"8,12",
