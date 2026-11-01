@@ -15,7 +15,7 @@
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.5,
   "pit_lane_loss_s": 20.0,
-  "tyre_wear_mult": 1.11,
+  "tyre_wear_mult": 1.22,
   "fuel_consumption": 1.0,
   "wet_weather_probability_multiplier": 1.0,
   "pole_side": "left",
