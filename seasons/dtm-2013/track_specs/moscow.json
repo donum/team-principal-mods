@@ -1,0 +1,60 @@
+{
+  "id": "moscow",
+  "name": "Moscow Raceway",
+  "nationality": "russian",
+  "bbox": [
+    36.245,
+    55.988,
+    36.28,
+    56.003
+  ],
+  "length_km": 2.555,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 74,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.55,
+  "pit_lane_loss_s": 19.0,
+  "tyre_wear_mult": 0.78,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Short DTM layout (clockwise): start/finish on the long pit straight, the eastern hairpin and back straight, the infield esses and the western loop. Via route over OSM way 168247376 (the full 3.9 km circuit) with the link 168247379 that cuts the full circuit's southern section. Traced 2550 m vs 2555 m (DTM fan wiki; racingyears gives 2.661 km). The start line position is approximate.",
+  "route_way_ids": [
+    "168247376",
+    "168247379"
+  ],
+  "via": [
+    [
+      55.99353,
+      36.26995
+    ],
+    [
+      55.99834,
+      36.26726
+    ],
+    [
+      55.99613,
+      36.26515
+    ],
+    [
+      55.99729,
+      36.26403
+    ],
+    [
+      55.99752,
+      36.26016
+    ],
+    [
+      55.9963,
+      36.26034
+    ]
+  ],
+  "start": [
+    55.99503,
+    36.2654
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "brandshatch",
+  "name": "Brands Hatch Indy",
+  "nationality": "british",
+  "bbox": [0.250, 51.351, 0.272, 51.364],
+  "length_km": 1.929,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 98,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.7,
+  "pit_lane_loss_s": 17.0,
+  "tyre_wear_mult": 0.59,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "right",
+  "pit_way_names": ["Pit Lane"],
+  "loop_relation": "11248425",
+  "drs_zones": {"longest_straights": 1},
+  "notes": "Indy circuit (clockwise): Brabham Straight, Paddock Hill Bend, Druids, Graham Hill Bend, Cooper Straight, Surtees, McLaren, Clearways, Clark Curve. Raceway loop over the members of OSM relation 11248425 (Brands Hatch Indy Circuit). Unchanged since 2003. DTM 2013: DRS free once per lap anywhere; modelled as one zone on the longest straight."
+}

@@ -15,6 +15,16 @@ Ratings are estimates, not history:
 Edit gen.json (team names, colours, tyres, overrides) and re-run; the
 generated data files are then the source for build_pack.py.
 
+Seasons outside the Group A era override the template's rules in gen.json:
+* "rules": "own" keeps the season's hand-written patches/regulations.json
+  instead of copying the template's;
+* "constants" are merged into season.json's constants.py overrides;
+* "profiles" (car-character deltas), "make_profiles" and "mass_kg" per make;
+* "engines" replace or add engine suppliers, "tyre_suppliers" replace the
+  template's tyre suppliers;
+* "rating_range" [low, high] spreads team ratings (default [36, 60]);
+* "economy": "budget_per_rating", "salary_min_m", "salary_max_m".
+
 Usage:
     python tools/season_from_research.py seasons/dtm-1990
 """
@@ -98,7 +108,7 @@ def main():
     rename = gen.get("teams", {})
     teams, drivers = {}, {}
     for e in read_csv(research / "entries.csv"):
-        entrant = e["entrant"].split(" / ")[0].strip()
+        entrant = re.split(r" / (?![^\[]*\])", e["entrant"])[0].strip()  # not inside [operator] brackets
         cfg_key = next((k for k, v in rename.items() if entrant in v.get("entrants", [k])), entrant)
         if rename.get(cfg_key, {}).get("skip"):
             continue
@@ -108,12 +118,18 @@ def main():
         if e.get("tyres"):
             team["tyres"].append(e["tyres"])
         dname = clean_name(e["driver"])
+        nat = e["nationality"].strip()
         d = drivers.setdefault(dname, {"name": dname, "team": name, "number": e["number"].strip(),
-                                       "nationality": NATIONALITY.get(e["nationality"].strip(), "german"),
+                                       "nationality": NATIONALITY.get(nat, nat if nat.islower() else "german"),
                                        "birth": e.get("birth_date", ""), "rounds": set()})
         d["rounds"] |= rounds_of(e["rounds"], total_rounds)
 
     # ---- per team: seats, points, rating
+    profile_of = {**PROFILE, **gen.get("make_profiles", {})}
+    mass_of = {**MASS, **gen.get("mass_kg", {})}
+    rating_lo, rating_hi = gen.get("rating_range", [36, 60])
+    econ = gen.get("economy", {})
+    salary_lo, salary_hi = econ.get("salary_min_m", 0.2), econ.get("salary_max_m", 5.0)
     team_records, driver_records, staff_levels, clones = [], [], {}, {}
     ranked = []
     for name, t in teams.items():
@@ -129,7 +145,7 @@ def main():
         members = sorted([d for d in drivers.values() if d["team"] == name],
                          key=lambda d: (-len(d["rounds"]), -standings.get(d["name"], 0)))
         seated = [d for d in members if len(d["rounds"]) >= total_rounds / 2][:3] or members[:1]
-        base = round(36 + 24 * (best / top_points) ** 0.7, 1)
+        base = round(rating_lo + (rating_hi - rating_lo) * (best / top_points) ** 0.7, 1)
         base = cfg.get("rating", base)
         tyre = cfg.get("tyres") or (max(set(t["tyres"]), key=t["tyres"].count) if t["tyres"] else DEFAULT_TYRE[make])
         works = cfg.get("works", best / top_points > 0.45)
@@ -141,9 +157,9 @@ def main():
             "color_rgb": cfg.get("color", [240, 240, 240]), "secondary_color_rgb": cfg.get("secondary", [30, 30, 30]),
             "engine": None, "engine_supplier": make, "engine_contract_type": "partner" if works else "customer",
             "tyre_contract": {"supplier": tyre, "type": "partner" if works else "customer"},
-            "car_mass_kg": MASS[make], "$rating": {"base": base, "profile": PROFILE[make]},
+            "car_mass_kg": mass_of[make], "$rating": {"base": base, "profile": profile_of[make]},
             "heritage_prestige": cfg.get("heritage", round(base + 12)), "form_prestige": round(base + 10),
-            "prestige_base": round(base + 11), "budget_m": round(base * 1.6), "starting_balance_m": round(base / 2, 1),
+            "prestige_base": round(base + 11), "budget_m": round(base * econ.get("budget_per_rating", 1.6)), "starting_balance_m": round(base / 2, 1),
             "difficulty": "easy" if base >= 55 else "medium" if base >= 48 else "hard",
             "previous_constructor_position": pos,
             "headquarters": {"hospitality_pr_center": 2 + works, "wind_tunnel": 1 + works, "engine_plant": 0,
@@ -167,7 +183,7 @@ def main():
                 used_numbers.add(num)
             r = {"name": d["name"], "cornering": skill, "braking": skill, "consistency": max(8, skill - 1),
                  "smoothness": skill, "control": skill, "balance_preference": 55, "traction_preference": 50,
-                 "contract": {"team": name, "length_weeks": 52, "salary_m": round(0.2 + 4.8 * share, 2), "start_week": 1,
+                 "contract": {"team": name, "length_weeks": 52, "salary_m": round(salary_lo + (salary_hi - salary_lo) * share, 2), "start_week": 1,
                               "role": "main" if main else "reserve"},
                  "age": age, "talent": max(55, min(95, round(60 + 32 * share ** 0.6) - max(0, age - 34))),
                  "traits": [], "personalities": ["loyal"],
@@ -198,14 +214,18 @@ def main():
     dump_json(out_data / "teams.json", {
         "$comment": f"DTM {year} entrants, generated by tools/season_from_research.py from research/entries.csv "
                     f"and gen.json. Ratings are estimates from the {year} standings.",
-        "$template": teams_file["$template"], "$profiles": teams_file["$profiles"], "records": team_records})
+        "$template": teams_file["$template"], "$profiles": {**teams_file["$profiles"], **gen.get("profiles", {})},
+        "records": team_records})
     drivers_file = load_json(tmpl / "data" / "drivers.json")
     dump_json(out_data / "drivers.json", {
         "$comment": f"DTM {year} drivers, generated from research/entries.csv and standings.csv. Skills and talent are "
                     f"estimates from championship points; part-timers are reserves.",
         "$template": drivers_file["$template"], "records": driver_records})
     dump_json(out_data / "engines.json", engines)
-    dump_json(out_data / "tyre_suppliers.json", load_json(tmpl / "data" / "tyre_suppliers.json"))
+    tyres = load_json(tmpl / "data" / "tyre_suppliers.json")
+    if "tyre_suppliers" in gen:
+        tyres["suppliers"] = gen["tyre_suppliers"]
+    dump_json(out_data / "tyre_suppliers.json", tyres)
     dump_json(out_data / "team_histories.json", {t["name"]: gen.get("teams", {}).get(t["name"], {}).get("history", "")
                                                  for t in team_records})
 
@@ -223,17 +243,22 @@ def main():
 
     # ---- season.json
     manifest = copy.deepcopy(load_json(tmpl / "season.json"))
-    manifest.update({"title": f"DTM {year} - Deutsche Tourenwagen-Meisterschaft", "pack_folder": f"dtm{year}",
-                     "version": "0.1", "team_clones": clones})
+    manifest.update({"title": gen.get("title", f"DTM {year} - Deutsche Tourenwagen-Meisterschaft"),
+                     "pack_folder": f"dtm{year}", "version": "0.1", "team_clones": clones})
     manifest["constants"]["SEASON_START_YEAR"] = year
+    manifest["constants"].update(gen.get("constants", {}))
     manifest["staff"] = {"seed": year, "salary_per_level_m": 0.1, "named": [], "levels": staff_levels}
     manifest["shared_tracks"] = gen.get("shared_tracks", {})
     manifest["track_overrides"] = gen.get("track_overrides", {})
     dump_json(season / "season.json", manifest)
-    (season / "patches").mkdir(exist_ok=True)
-    (season / "patches" / "regulations.json").write_text(
-        (tmpl / "patches" / "regulations.json").read_text(encoding="utf-8").replace("1991", str(year)),
-        encoding="utf-8", newline="\n")
+    regulations = season / "patches" / "regulations.json"
+    if gen.get("rules") == "own":
+        if not regulations.exists():
+            raise SystemExit(f'gen.json says "rules": "own" but {regulations} is missing')
+    else:
+        regulations.parent.mkdir(exist_ok=True)
+        regulations.write_text((tmpl / "patches" / "regulations.json").read_text(encoding="utf-8")
+                               .replace("1991", str(year)), encoding="utf-8", newline="\n")
     print(f"{season.name}: {len(team_records)} teams, {sum(t['entry_count'] for t in team_records)} seats, "
           f"{len(driver_records)} drivers, {total_rounds} rounds")
 

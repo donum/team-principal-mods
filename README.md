@@ -12,6 +12,7 @@ starting with **1991**.
 | DTM 1990 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-1990`](seasons/dtm-1990) |
 | DTM 1991 | ✅ playable; lap times need calibrating | [`seasons/dtm-1991`](seasons/dtm-1991) |
 | DTM 1992 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-1992`](seasons/dtm-1992) |
+| DTM 2013 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-2013`](seasons/dtm-2013) |
 | DTM 1984–2026 | 📚 research data ([season archive](tools/build_browser.py)) | `seasons/*/research` |
 
 ## How it works

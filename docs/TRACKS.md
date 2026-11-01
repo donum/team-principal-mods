@@ -19,7 +19,14 @@ Map data © OpenStreetMap contributors, ODbL 1.0. See
 | Mode | When | Spec keys |
 |---|---|---|
 | **Raceway loop** | The circuit exists today and is tagged as one-way `highway=raceway` | (none) The tool finds the loop. Optional `exclude_way_names`/`exclude_way_ids`. |
-| **Via route** | Street circuits, airfields, old or changed layouts | `route_ways` (tag filters) and/or `route_relation` (an OSM `type=circuit` relation), `via` (points in driving order), `exclude_way_ids`, `bridges` (missing links; more than 2 points = a hand-placed polyline), `start`, `bbox_tiles` (extra download boxes for dense cities) |
+| **Raceway loop in a relation** | A layout that shares corners with a longer one (Brands Hatch Indy) | `loop_relation`: the loop is searched only among the members of that OSM `type=circuit` relation |
+| **Via route** | Street circuits, airfields, old or changed layouts | `route_ways` (tag filters), `route_relation` (an OSM `type=circuit` relation) and/or `route_way_ids`, `via` (points in driving order), `exclude_way_ids`, `bridges` (missing links; more than 2 points = a hand-placed polyline), `start`, `bbox_tiles` (extra download boxes for dense cities) |
+
+**DRS zones** (`drs_zones`): a list of explicit zones (`detection_progress`,
+`start_progress`, `end_progress` as lap fractions), or
+`{"longest_straights": k}` for one zone on each of the k longest straights.
+The default is none, as in the 1991 tracks. Shared tracks can get zones
+through `track_overrides`.
 
 In via mode the tool joins consecutive via points by the shortest path over
 the allowed ways. It also closes small mapping gaps (`snap_gap_m`). Missing
@@ -71,6 +78,12 @@ spec's `notes` and in the season dossier.
 | AVUS (short) | 1992 | 2.640 km | The 1991 AVUS with the south turn moved north (position undocumented) | 2,620 m (−0.8%) |
 | Hockenheim Motodrom | 1992 | 2.634 km | The short circuit over today's "Kleiner Kurs" link | 2,574 m (−2.3%) |
 | Nürburgring Sprint | 1992 | 3.029 km | The 1984 GP circuit with the Kurzanbindung | 3,045 m (+0.5%) |
+
+### Added for 2013
+
+Eight modern venues, each with one DRS zone except Zandvoort. See
+[the 2013 pack README](../seasons/dtm-2013/README.md#tracks) for how each one
+is built and how its traced length compares.
 
 Each season reuses the 1991 tracks through `shared_tracks`, and sets its own
 lap lengths and race laps through `track_overrides`.

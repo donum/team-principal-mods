@@ -1,0 +1,28 @@
+{
+  "id": "zandvoort",
+  "name": "Circuit Park Zandvoort",
+  "nationality": "dutch",
+  "bbox": [
+    4.533,
+    52.381,
+    4.557,
+    52.394
+  ],
+  "length_km": 4.307,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 44,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.65,
+  "pit_lane_loss_s": 19.0,
+  "tyre_wear_mult": 1.31,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "right",
+  "drs_zones": [],
+  "notes": "Grand Prix circuit (clockwise). Raceway loop over today's track, which has the 2020 banked Hugenholtzbocht and Arie Luyendijkbocht; the 2013 lap was 4.307 km. Traced 4205 m. No DRS: it was not used at Zandvoort in 2013 for safety reasons.",
+  "start": [
+    52.38823,
+    4.5414
+  ]
+}

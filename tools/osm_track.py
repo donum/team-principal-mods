@@ -230,6 +230,26 @@ def micro_sectors(dense, smooth=4):
              "target_speed_kmh": float(s["target_speed_kmh"])} for s in sectors], sectors
 
 
+def drs_zones(cfg, raw, n):
+    """DRS zones as lap fractions from the start line.
+
+    cfg is a list of explicit zones ({detection_progress, start_progress,
+    end_progress}) or {"longest_straights": k}: one zone on each of the k
+    longest straights, opening 10% into the straight, with detection 4% of a
+    lap before the zone.
+    """
+    if isinstance(cfg, list):
+        return cfg
+    straights = sorted((s for s in raw if s["type"] == "straight"), key=lambda s: -s["length_m"])
+    zones = []
+    for s in sorted(straights[:cfg["longest_straights"]], key=lambda s: s["start_index"]):
+        start = (s["start_index"] + 0.1 * s["length_m"] / STEP_M) / n
+        end = (s["start_index"] + s["length_m"] / STEP_M) / n
+        zones.append({"detection_progress": round((start - 0.04) % 1.0, 4), "start_progress": round(start % 1.0, 4),
+                      "end_progress": round(end % 1.0, 4)})
+    return zones
+
+
 # ------------------------------------------------------------------- render
 
 def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width_px, seed, px_per_m, spec=None):
@@ -373,6 +393,7 @@ def via_route(nodes, ways, spec, relations=()):
         if rel is None:
             raise SystemExit(f"relation {spec['route_relation']} not in the downloaded area")
         members = {ref for ref, _ in rel["members"]}
+    members |= set(spec.get("route_way_ids", []))
     allowed = {wid: w for wid, w in ways.items()
                if (wid in members or way_matches(w["tags"], spec.get("route_ways", [])))
                and wid not in set(spec.get("exclude_way_ids", []))}
@@ -496,6 +517,15 @@ def build(spec_path):
         relations += t_relations
     if "via" in spec:
         loop_ll, loop_ways = via_route(nodes, ways, spec, relations)
+    elif "loop_relation" in spec:
+        # Raceway loop restricted to one circuit relation's members (e.g. a
+        # short layout that shares its corners with the GP loop).
+        rel = next((r for r in relations if r["id"] == str(spec["loop_relation"])), None)
+        if rel is None:
+            raise SystemExit(f"relation {spec['loop_relation']} not in the downloaded area")
+        members = {m for m, _ in rel["members"]}
+        loop_nds, loop_ways, _ = racing_loop({k: w for k, w in ways.items() if k in members}, spec)
+        loop_ll = [nodes[n] for n in loop_nds]
     else:
         loop_nds, loop_ways, _ = racing_loop(ways, spec)
         loop_ll = [nodes[n] for n in loop_nds]
@@ -569,7 +599,7 @@ def build(spec_path):
                            "edge_margin_m": 0.6, "corridor_count": 3, "visual_lateral_scale": 1.5},
         "starting_grid": {"pole_side": spec.get("pole_side", "left"), "row_spacing_m": 10.0,
                           "column_spacing_m": 3.0, "stagger_m": 4.0},
-        "drs_zones": [],
+        "drs_zones": drs_zones(spec.get("drs_zones", []), raw, len(dense)),
         "sector_splits": splits,
         "micro_sectors": sectors,
         "points": points,
@@ -597,6 +627,8 @@ def build(spec_path):
           f"{len(points)} points, {len(sectors)} micro-sectors (from the start line)")
     for s in sectors:
         print(f"  {s['type']:8s} {s['length_pct']:5.1f}%  {s['target_speed_kmh']:.0f} km/h")
+    for z in track["drs_zones"]:
+        print(f"  DRS {z['start_progress']:.3f} -> {z['end_progress']:.3f} (detection {z['detection_progress']:.3f})")
     print(f"wrote {out_json.relative_to(REPO)} and {out_png.relative_to(REPO)}")
 
 

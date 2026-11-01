@@ -1,0 +1,77 @@
+{
+  "title": "DTM 2013 - Deutsche Tourenwagen Masters",
+  "pack_folder": "dtm2013",
+  "version": "0.1",
+  "series": "formula",
+  "base_pack": "default26",
+  "no_title_sponsors": true,
+  "constants": {
+    "SEASON_START_YEAR": 2013,
+    "POINTS_TOP10": [
+      25,
+      18,
+      15,
+      12,
+      10,
+      8,
+      6,
+      4,
+      2,
+      1
+    ],
+    "QUALI_GRID_LIMIT": 22,
+    "QUALI_MIN_ENTRANTS": 18,
+    "PREQUALIFYING_TRIGGER_CARS": 30,
+    "PREQUALIFYING_FIELD_LIMIT": 30,
+    "DRIVER_RETIREMENT_MIN_AGE": 36,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 44
+  },
+  "team_clones": {
+    "Audi Sport Team Phoenix": "Red Boar",
+    "BMW Team RBM": "Mercurion",
+    "BMW Team Schnitzer": "McMean",
+    "STIHL AMG-Mercedes": "Audex",
+    "Euronics AMG-Mercedes": "Scuderia Rossa",
+    "Audi Sport Team Abt Sportsline": "Ashton Darting",
+    "BMW Team MTEK": "French Blue",
+    "Audi Sport Team Abt": "Alpha Bison",
+    "stern AMG-Mercedes": "Willens Racing",
+    "Audi Sport Team Rosberg": "Hossden GP",
+    "BMW Team RMG": "Cadylacky Motors"
+  },
+  "staff": {
+    "seed": 2013,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "Audi Sport Team Phoenix": 16,
+      "BMW Team RBM": 14,
+      "BMW Team Schnitzer": 11,
+      "STIHL AMG-Mercedes": 11,
+      "Euronics AMG-Mercedes": 10,
+      "Audi Sport Team Abt Sportsline": 10,
+      "BMW Team MTEK": 8,
+      "Audi Sport Team Abt": 7,
+      "stern AMG-Mercedes": 6,
+      "Audi Sport Team Rosberg": 5,
+      "BMW Team RMG": 5
+    }
+  },
+  "shared_tracks": {
+    "norisring": "dtm-1991"
+  },
+  "track_overrides": {
+    "norisring": {
+      "race_laps": 83,
+      "tyre_wear_mult": 0.7,
+      "pit_lane_loss_s": 18.0,
+      "drs_zones": [
+        {
+          "detection_progress": 0.9803,
+          "start_progress": 0.0203,
+          "end_progress": 0.2027
+        }
+      ]
+    }
+  }
+}

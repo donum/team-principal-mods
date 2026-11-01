@@ -1,0 +1,30 @@
+{
+  "id": "oschersleben",
+  "name": "Motorsport Arena Oschersleben",
+  "nationality": "german",
+  "bbox": [
+    11.266,
+    52.022,
+    11.292,
+    52.033
+  ],
+  "length_km": 3.696,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 51,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.55,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.13,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Motorsport Arena Oschersleben (clockwise). Raceway loop over today's track. Start line placed on the pit straight. Traced 3626 m vs 3696 m.",
+  "start": [
+    52.02768,
+    11.27741
+  ]
+}

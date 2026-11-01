@@ -1,0 +1,39 @@
+{
+  "id": "redbullring",
+  "name": "Red Bull Ring",
+  "nationality": "austrian",
+  "bbox": [
+    14.75,
+    47.214,
+    14.775,
+    47.231
+  ],
+  "length_km": 4.326,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 47,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 19.0,
+  "tyre_wear_mult": 1.23,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Grand Prix circuit as rebuilt in 2011 (clockwise). Raceway loop over the members of OSM relation 5309181, without the later MotoGP chicane, long-lap loop and the Suedschleife link. Traced 4269 m vs 4326 m.",
+  "loop_relation": "5309181",
+  "pit_way_names": [
+    "Boxenstraße"
+  ],
+  "exclude_way_names": [
+    "Boxenstraße",
+    "Pitlane"
+  ],
+  "exclude_way_ids": [
+    "1077423714",
+    "823820476",
+    "84416610"
+  ]
+}

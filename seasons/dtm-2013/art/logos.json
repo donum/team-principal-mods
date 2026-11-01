@@ -1,0 +1,233 @@
+{
+  "$comment": "2013 logos. commons = logo file on Wikimedia Commons (public domain, licence recorded); crest = plain text crest made for this pack where no free logo exists. Maker logos are the versions in use in 2013.",
+  "teams": {
+    "Audi Sport Team Phoenix": {
+      "source": "crest",
+      "text": "PHOENIX\nRACING",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        20,
+        20,
+        22
+      ],
+      "accent": [
+        240,
+        120,
+        0
+      ]
+    },
+    "BMW Team RBM": {
+      "source": "crest",
+      "text": "RBM",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        20,
+        40,
+        100
+      ],
+      "accent": [
+        0,
+        160,
+        225
+      ]
+    },
+    "STIHL AMG-Mercedes": {
+      "source": "commons",
+      "file": "File:HWA AG logo.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "BMW Team Schnitzer": {
+      "source": "commons",
+      "file": "File:Schnitzer Motorsport Logo.png",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Audi Sport Team Abt Sportsline": {
+      "source": "commons",
+      "file": "File:Abt-logo 2010.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Euronics AMG-Mercedes": {
+      "source": "commons",
+      "file": "File:HWA AG logo.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "BMW Team MTEK": {
+      "source": "crest",
+      "text": "MTEK",
+      "fg": [
+        20,
+        20,
+        20
+      ],
+      "bg": [
+        255,
+        204,
+        0
+      ],
+      "accent": [
+        20,
+        20,
+        20
+      ]
+    },
+    "Audi Sport Team Abt": {
+      "source": "commons",
+      "file": "File:Abt-logo 2010.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "stern AMG-Mercedes": {
+      "source": "crest",
+      "text": "MÜCKE\nMOTORSPORT",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        200,
+        20,
+        30
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    },
+    "BMW Team RMG": {
+      "source": "crest",
+      "text": "RMG",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        40,
+        40,
+        45
+      ],
+      "accent": [
+        0,
+        120,
+        200
+      ]
+    },
+    "Audi Sport Team Rosberg": {
+      "source": "crest",
+      "text": "TEAM\nROSBERG",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        0,
+        70,
+        150
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ]
+    }
+  },
+  "engines": {
+    "Audi": {
+      "source": "commons",
+      "file": "File:Audi logo detail.svg",
+      "license": "Public domain",
+      "period": "2009-2016",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Audi 4.0 V8"
+      ]
+    },
+    "BMW": {
+      "source": "commons",
+      "file": "File:BMW.svg",
+      "license": "Public domain",
+      "period": "1997-2020",
+      "also_as": [
+        "BMW P66 4.0 V8"
+      ]
+    },
+    "Mercedes-Benz": {
+      "source": "commons",
+      "file": "File:Mercedes-Benz Logo 2010.svg",
+      "license": "Public domain",
+      "period": "2009-",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "also_as": [
+        "Mercedes-AMG 4.0 V8"
+      ]
+    }
+  }
+}

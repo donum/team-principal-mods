@@ -1,0 +1,66 @@
+{
+  "id": "lausitzring",
+  "name": "Lausitzring",
+  "nationality": "german",
+  "bbox": [
+    13.905,
+    51.524,
+    13.945,
+    51.546
+  ],
+  "length_km": 3.478,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 52,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.5,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.11,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "DTM short circuit 2011-2013, counter-clockwise as OSM tags the course: front straight of the tri-oval, the banked Turn 1, the back straight cut short by the 2007 Kurzanbindung hairpin, the infield sections, and Turn 3 of the tri-oval back onto the front straight. Via route over OSM ways 115077605 and 766115999 (the Grand Prix course) with the Kurzanbindung (ways 470915848, 864182816) instead of the full back straight. Traced 3424 m vs 3478 m. Whether DTM 2013 took the banked Turn 1 or the infield T1-T5 is not verified; the banked variant is the one that matches the length.",
+  "route_way_ids": [
+    "115077605",
+    "766115999",
+    "470915848",
+    "864182816"
+  ],
+  "via": [
+    [
+      51.53393,
+      13.92222
+    ],
+    [
+      51.5323,
+      13.92066
+    ],
+    [
+      51.53006,
+      13.92786
+    ],
+    [
+      51.53163,
+      13.92619
+    ],
+    [
+      51.53128,
+      13.93499
+    ],
+    [
+      51.53434,
+      13.93456
+    ],
+    [
+      51.53552,
+      13.93475
+    ]
+  ],
+  "start": [
+    51.53382,
+    13.92341
+  ]
+}

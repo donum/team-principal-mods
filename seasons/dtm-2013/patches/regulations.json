@@ -1,0 +1,44 @@
+{
+  "categories": {
+    "points_system": { "default": "modern_top10" },
+    "car_profile": {
+      "add_options": [
+        {
+          "key": "dtm_2013",
+          "name": "DTM 2013",
+          "corner_speed_multiplier": 0.9,
+          "acceleration_multiplier": 0.74,
+          "braking_multiplier": 0.78,
+          "drag_multiplier": 1.18,
+          "summary": "Carbon-chassis DTM silhouettes: about 480 hp, 1,110 kg and plenty of downforce.",
+          "description": "The 2013 DTM cars (Audi RS 5, BMW M3, AMG C-Coupe) corner far faster than Group A saloons but stay well below single-seaters. Calibrate against the 2013 qualifying times."
+        }
+      ],
+      "default": "dtm_2013"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "dtm_2013",
+          "name": "DTM 2013",
+          "min_car_mass_kg": 965.0,
+          "summary": "1,110 kg including the driver for every make.",
+          "description": "One minimum weight for all three makes and no success ballast. The chassis figure here excludes the engine mass the game adds on top."
+        }
+      ],
+      "default": "dtm_2013"
+    },
+    "drs_policy": { "default": "enabled" },
+    "ers_policy": { "default": "disabled" },
+    "formula_refueling": { "default": "banned" },
+    "formula_compound_usage": { "default": "enabled" },
+    "formula_team_entry_cap": { "default": "two" },
+    "formula_team_entry_requirement": { "default": "fixed" },
+    "pole_point": { "default": "disabled" },
+    "fastest_lap_point": { "default": "disabled" },
+    "qualifying_format": { "default": "knockout" },
+    "driver_aid_restrictions": { "default": "full_prohibition" },
+    "weekend_tyre_allocation": { "default": "light" },
+    "reliability_profile": { "default": "high_reliability" }
+  }
+}

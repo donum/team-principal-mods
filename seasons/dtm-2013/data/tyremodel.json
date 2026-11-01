@@ -1,0 +1,12 @@
+{
+  "$comment": "DTM 2013 Hankook tyres: the option (soft) is 1-1.5 s a lap faster but wears quickly; the standard tyre is the hard. The game also has a medium; Hankook's medium is rated like the hard and no car starts on it. The option must be used once (formula_compound_usage).",
+  "$merge_base": true,
+  "default_compound": "hard",
+  "mandatory_compound_count": 2,
+  "start_probabilities": {"soft": 0.45, "medium": 0.0, "hard": 0.5, "intermediate": 0.04, "wet": 0.01},
+  "compounds": {
+    "soft": {"lat_grip_base": 1.022, "long_grip_base": 1.021, "wear_rate_base": 0.045, "wear_cliff_onset_pct": 30},
+    "medium": {"lat_grip_base": 1.002, "long_grip_base": 1.002, "wear_rate_base": 0.018, "wear_cliff_onset_pct": 65},
+    "hard": {"lat_grip_base": 1.002, "long_grip_base": 1.002, "wear_rate_base": 0.018, "wear_cliff_onset_pct": 65}
+  }
+}

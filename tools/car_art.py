@@ -15,6 +15,14 @@ front door edge, front axle). Outlines go back on top so the car keeps its
 panel lines. Teams without an AMS2 livery get the base colour plus
 lettering, or keep the reference's own livery ("keep_reference_livery").
 
+Seasons without AMS2 textures use layered liveries instead ("cars" in
+cars.json): a hand-traced outline (model reference "layered_trace") is
+filled with the base colour, then colour zones, bands, text decals and the
+number board are drawn on the body side, and glass, panel lines, wing and
+wheels go on top. Layer coordinates are in the trace's own frame. Every car
+is rendered to build/art/<season>/; the first car of each team becomes the
+team image (the game shows one car per team).
+
 Licensing: the reference drawings are CC BY-SA (see the model's credit), so
 the generated car images are CC BY-SA 4.0. The AMS2 livery artwork is used
 with its author's permission. See LICENSE-CONTENT.md.
@@ -254,7 +262,168 @@ def traced_reference(trace_path):
     return img, t
 
 
+FONTS = {"bold": "arialbd.ttf", "black": "ariblk.ttf", "italic": "arialbi.ttf", "impact": "impact.ttf",
+         "script": "segoescb.ttf", "serif": "georgiab.ttf", "condensed": "bahnschrift.ttf"}
+
+
+def named_font(name, size):
+    try:
+        return ImageFont.truetype(FONTS.get(name, name), max(8, int(size)))
+    except OSError:
+        return font(int(size))
+
+
+def chaikin(poly, passes=2):
+    """Round a closed polygon's corners (Chaikin corner cutting) so traced outlines read as curves."""
+    for _ in range(passes):
+        out = []
+        for a, b in zip(poly, poly[1:] + poly[:1]):
+            out += [[0.75 * a[0] + 0.25 * b[0], 0.75 * a[1] + 0.25 * b[1]], [0.25 * a[0] + 0.75 * b[0], 0.25 * a[1] + 0.75 * b[1]]]
+        poly = out
+    return poly
+
+
+def layered_car(trace_path, livery):
+    """Draw a car from a traced outline with a layered livery (see module docstring).
+
+    Trace keys: frame.scale, body, spoiler, glass, pillars, lines, mirror,
+    lights, wheels [{c, tyre, rim}] (rear first). The photo's perspective is
+    levelled by shearing so both wheel centres sit on one line.
+    Livery keys: base_color, layers, number, mirror_color, wing_color,
+    rim_color, spoke_color.
+    Layers: {"poly": [[x, y], ...], "color"}; {"band": [y0, y1], "x": [x0, x1],
+    "color"} (a stripe following the body); {"text", "at", "size", "color",
+    "font", "rotate", "stroke", "stroke_color", "box": [w, h] (fit inside)}.
+    """
+    t = load_json(trace_path)
+    passes = t.get("smooth", 2)
+    t["body"], t["spoiler"] = chaikin(t["body"], passes), chaikin(t["spoiler"], passes)
+    t["glass"] = [chaikin(g, passes) for g in t["glass"]]
+    k = t["frame"]["scale"]
+    rear, front = t["wheels"]
+    (xr, yr), (xf, yf) = rear["c"], front["c"]
+    slope = (yf - yr) / (xf - xr)
+    margin = 30
+    pts = t["body"] + t["spoiler"]
+    xs = [p[0] for p in pts]
+    min_x, max_x = min(xs) - 10, max(xs) + 10
+    lvl = lambda p: (p[0], p[1] - slope * (p[0] - xr))
+    lys = [lvl(p)[1] for p in pts] + [yr + w["tyre"] for w in t["wheels"]]
+    min_y, max_y = min(lys) - 10, max(lys) + 10
+    P = lambda p: ((lvl(p)[0] - min_x) * k + margin, (lvl(p)[1] - min_y) * k + margin)
+    size = (int((max_x - min_x) * k) + 2 * margin, int((max_y - min_y) * k) + 2 * margin)
+    lw = max(3, int(t.get("line_px", 3) * k))
+    black = (14, 14, 16, 255)
+    rgba = lambda c: tuple(c) + (255,) if len(c) == 3 else tuple(c)
+    tyre_r = (rear["tyre"] + front["tyre"]) / 2
+    rim_r = (rear["rim"] + front["rim"]) / 2
+    wheels = [P((w["c"][0], yr + slope * (w["c"][0] - xr))) for w in t["wheels"]]
+
+    # Body side paint: base colour, then the livery layers, clipped to the body.
+    paint = Image.new("RGBA", size, rgba(livery.get("base_color", [245, 245, 245])))
+    d = ImageDraw.Draw(paint)
+    for layer in livery.get("layers", []):
+        if "poly" in layer:
+            d.polygon([P(p) for p in layer["poly"]], fill=rgba(layer["color"]))
+        elif "band" in layer:
+            (y0, y1), (x0, x1) = layer["band"], layer.get("x", [min_x, max_x])
+            d.polygon([P((x0, y0)), P((x1, y0)), P((x1, y1)), P((x0, y1))], fill=rgba(layer["color"]))
+        elif "text" in layer:
+            paste_text(paint, layer, P, k)
+    if livery.get("number") is not None:
+        number_board(paint, livery, P, k)
+    body = Image.new("L", size, 0)
+    ImageDraw.Draw(body).polygon([P(p) for p in t["body"]], fill=255)
+    out = Image.new("RGBA", size, (0, 0, 0, 0))
+    out.paste(paint, (0, 0), body)
+
+    d = ImageDraw.Draw(out)
+    d.polygon([P(p) for p in t["body"]], outline=black, width=lw)
+    for cx, cy in wheels:
+        r = tyre_r * k * 1.1
+        d.pieslice([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=(20, 20, 22, 255))
+        d.arc([cx - r - lw, cy - r - lw, cx + r + lw, cy + r + lw], 180, 360, fill=black, width=lw)
+    for poly in t["glass"]:
+        d.polygon([P(p) for p in poly], fill=GLASS_RGB + (255,), outline=black, width=lw)
+    for poly in t.get("pillars", []):
+        d.polygon([P(p) for p in poly], fill=black)
+    for line in t.get("lines", []):
+        d.line([P(p) for p in line], fill=black, width=max(2, lw // 2), joint="curve")
+    d.polygon([P(p) for p in t["mirror"]], fill=rgba(livery.get("mirror_color", livery.get("base_color", [245, 245, 245]))),
+              outline=black, width=lw)
+    for light in t.get("lights", []):
+        d.polygon([P(p) for p in light["poly"]], fill=rgba(light["color"]), outline=black, width=max(2, lw // 2))
+    d.polygon([P(p) for p in t["spoiler"]], fill=rgba(livery.get("wing_color", t.get("wing_color", [28, 28, 30]))),
+              outline=black, width=lw)
+    rim = rgba(livery.get("rim_color", t.get("rim_color", [40, 40, 44])))
+    spoke = rgba(livery.get("spoke_color", t.get("spoke_color", [70, 70, 76])))
+    for cx, cy in wheels:
+        R, r = tyre_r * k, rim_r * k
+        d.ellipse([cx - R, cy - R, cx + R, cy + R], fill=(16, 16, 18, 255))
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=rim, outline=(10, 10, 10, 255), width=max(2, lw // 2))
+        n = t.get("spokes", 10)
+        for i in range(n):
+            a = 2 * math.pi * i / n
+            d.line([(cx + math.cos(a) * r * 0.2, cy + math.sin(a) * r * 0.2),
+                    (cx + math.cos(a) * r * 0.93, cy + math.sin(a) * r * 0.93)], fill=spoke, width=max(3, int(r * 0.09)))
+        d.ellipse([cx - r * 0.18, cy - r * 0.18, cx + r * 0.18, cy + r * 0.18], fill=(30, 30, 30, 255))
+        d.ellipse([cx - r * 0.06, cy - r * 0.06, cx + r * 0.06, cy + r * 0.06], fill=(200, 30, 30, 255))
+    return out
+
+
+def paste_text(img, layer, P, k):
+    """Draw a text decal centred at layer["at"], optionally rotated and fitted into a box."""
+    size = layer.get("size", 40) * k
+    f = named_font(layer.get("font", "bold"), size)
+    stroke = int(layer.get("stroke", 0) * k)
+    probe = ImageDraw.Draw(img)
+    if "box" in layer:
+        bw, bh = layer["box"][0] * k, layer["box"][1] * k
+        while size > 8:
+            x0, y0, x1, y1 = probe.textbbox((0, 0), layer["text"], font=f, stroke_width=stroke)
+            if x1 - x0 <= bw and y1 - y0 <= bh:
+                break
+            size *= 0.94
+            f = named_font(layer.get("font", "bold"), size)
+    x0, y0, x1, y1 = probe.textbbox((0, 0), layer["text"], font=f, stroke_width=stroke)
+    tile = Image.new("RGBA", (x1 - x0 + 8, y1 - y0 + 8), (0, 0, 0, 0))
+    ImageDraw.Draw(tile).text((4 - x0, 4 - y0), layer["text"], font=f, fill=tuple(layer.get("color", [255, 255, 255])),
+                              stroke_width=stroke, stroke_fill=tuple(layer.get("stroke_color", [0, 0, 0])))
+    if layer.get("rotate"):
+        tile = tile.rotate(layer["rotate"], expand=True, resample=Image.BICUBIC)
+    cx, cy = P(layer["at"])
+    img.alpha_composite(tile, (int(cx - tile.width / 2), int(cy - tile.height / 2)))
+
+
+def number_board(img, livery, P, k):
+    """DTM-style number board: white panel, sponsor line on top, number, yellow strip below."""
+    cx, cy = P(livery.get("number_at", [0, 0]))
+    w, h = livery.get("number_size", [120, 115])
+    w, h = w * k, h * k
+    d = ImageDraw.Draw(img)
+    d.rectangle([cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2], fill=(255, 255, 255, 255), outline=(20, 20, 22, 255),
+                width=max(2, int(k)))
+    d.text((cx, cy - h * 0.33), "DEKRA", font=named_font("black", h * 0.2), anchor="mm", fill=(0, 125, 80, 255))
+    d.text((cx, cy + h * 0.03), str(livery["number"]), font=named_font("black", h * 0.42), anchor="mm",
+           fill=(20, 20, 22, 255))
+    d.rectangle([cx - w / 2, cy + h * 0.27, cx + w / 2, cy + h / 2], fill=(255, 205, 0, 255))
+    d.text((cx, cy + h * 0.385), "ADAC", font=named_font("black", h * 0.17), anchor="mm", fill=(20, 20, 22, 255))
+
+
+def fit_canvas(out):
+    """Fit a car image onto the game canvas: bumper to bumper CAR_SPAN_PX wide, tyres on GROUND_Y."""
+    car = out.crop(out.getbbox())
+    scale = CAR_SPAN_PX / car.size[0]
+    car = car.resize((CAR_SPAN_PX, round(car.size[1] * scale)), Image.LANCZOS)
+    canvas = Image.new("RGBA", CANVAS, (0, 0, 0, 0))
+    canvas.paste(car, ((CANVAS[0] - CAR_SPAN_PX) // 2, GROUND_Y - car.size[1]), car)
+    return canvas
+
+
 def render_car(model, livery, zip_path, season=None):
+    if "layered_trace" in model["reference"]:
+        # Model defaults (number board position and size) apply unless the car overrides them.
+        return fit_canvas(layered_car(season / model["reference"]["layered_trace"], {**model.get("defaults", {}), **livery}))
     if "trace" in model["reference"]:
         ref, _ = traced_reference(season / model["reference"]["trace"])
     else:
@@ -311,13 +480,7 @@ def render_car(model, livery, zip_path, season=None):
                 draw.text((bx, by + s * 0.12), str(livery["number"]), font=font(190), anchor="mm",
                           fill=(20, 20, 22, 255))
         out.paste(ref, (0, 0), outline)
-    # Fit onto the game canvas: bumper to bumper CAR_SPAN_PX wide, tyres on GROUND_Y.
-    car = out.crop(out.getbbox())
-    scale = CAR_SPAN_PX / car.size[0]
-    car = car.resize((CAR_SPAN_PX, round(car.size[1] * scale)), Image.LANCZOS)
-    canvas = Image.new("RGBA", CANVAS, (0, 0, 0, 0))
-    canvas.paste(car, ((CANVAS[0] - CAR_SPAN_PX) // 2, GROUND_Y - car.size[1]), car)
-    return canvas
+    return fit_canvas(out)
 
 
 def main():
@@ -333,7 +496,23 @@ def main():
     out_dir = season / "assets" / "Cars"
     out_dir.mkdir(parents=True, exist_ok=True)
     rendered = []
-    for team, livery in cfg["liveries"].items():
+    if "cars" in cfg:
+        # Layered liveries: every car, first car of each team as the team image.
+        all_dir = CACHE / season.name
+        all_dir.mkdir(parents=True, exist_ok=True)
+        done = set()
+        for car in cfg["cars"]:
+            if args.only and car["team"] != args.only:
+                continue
+            img = render_car(cfg["models"][car["model"]], car, zip_path, season)
+            img.save(all_dir / f"{car['number']:02d}.png", optimize=True)
+            rendered.append((f"#{car['number']} {car.get('driver', '')} - {car['team']}", img))
+            if car["team"] not in done:
+                done.add(car["team"])
+                path = out_dir / f"{car['team'].replace(' ', '')}.png"
+                img.save(path, optimize=True)
+                print(f"wrote {path.relative_to(REPO)}")
+    for team, livery in cfg.get("liveries", {}).items():
         if args.only and team != args.only:
             continue
         if livery.get("texture") and not zip_path:
