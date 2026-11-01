@@ -48,13 +48,13 @@ def get(url, binary=False):
     for attempt in range(8):
         try:
             data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=90).read()
-            time.sleep(0.6)
+            time.sleep(1.5)
             return data if binary else json.loads(data)
         except urllib.error.HTTPError as err:
             if err.code not in (429, 503):
                 raise
-            time.sleep(15 * (attempt + 1))
-    raise SystemExit(f"rate limited: {url}")
+            time.sleep(20 * (attempt + 1))
+    raise RuntimeError(f"rate limited: {url}")
 
 
 def wikidata_driver(name):
@@ -173,33 +173,40 @@ def main():
         number = d.get("number", d.get("reserve_number"))
         fname = name.replace(" ", "") + ".png"
         meta_path = CACHE / (fname + ".json")
-        if meta_path.exists() and not args.refresh:
-            files = load_json(meta_path)
-        else:
-            qid = wikidata_driver(name)
-            files = commons_files(*claims(qid)) if qid else []
-            meta_path.write_text(json.dumps(files, ensure_ascii=False), encoding="utf-8")
-        # Closest to the season first; undated main images after dated ones.
-        files.sort(key=lambda f: (abs((f["year"] or 2050) - year), not f["main"]))
-        done = None
-        for f in files[:8]:
-            raw = CACHE / re.sub(r"[^\w.-]", "_", f["title"])
-            if not raw.exists():
-                raw.write_bytes(get(f["thumb"], binary=True))
-            try:
-                img = ImageOps.exif_transpose(Image.open(raw)).convert("RGB")
-            except Exception:
-                continue
-            crop = face_crop(img)
-            if crop:
-                crop.save(out_dir / fname, optimize=True)
-                done = {"source": "photo", "file": f["title"], "page": f["page"], "author": f["author"],
-                        "license": f["license"], "year": f["year"]}
-                break
-        if not done:
-            helmet_card(name, number, [team.get("color_rgb", [200, 200, 200]), team.get("secondary_color_rgb", [30, 30, 30])]).save(out_dir / fname, optimize=True)
-            done = {"source": "helmet"}
+        if name in credits and not args.refresh and (out_dir / fname).exists():
+            continue
+        try:
+            if meta_path.exists() and not args.refresh:
+                files = load_json(meta_path)
+            else:
+                qid = wikidata_driver(name)
+                files = commons_files(*claims(qid)) if qid else []
+                meta_path.write_text(json.dumps(files, ensure_ascii=False), encoding="utf-8")
+            # Closest to the season first; undated main images after dated ones.
+            files.sort(key=lambda f: (abs((f["year"] or 2050) - year), not f["main"]))
+            done = None
+            for f in files[:8]:
+                raw = CACHE / re.sub(r"[^\w.-]", "_", f["title"])
+                if not raw.exists():
+                    raw.write_bytes(get(f["thumb"], binary=True))
+                try:
+                    img = ImageOps.exif_transpose(Image.open(raw)).convert("RGB")
+                except Exception:
+                    continue
+                crop = face_crop(img)
+                if crop:
+                    crop.save(out_dir / fname, optimize=True)
+                    done = {"source": "photo", "file": f["title"], "page": f["page"], "author": f["author"],
+                            "license": f["license"], "year": f["year"]}
+                    break
+            if not done:
+                helmet_card(name, number, [team.get("color_rgb", [200, 200, 200]), team.get("secondary_color_rgb", [30, 30, 30])]).save(out_dir / fname, optimize=True)
+                done = {"source": "helmet"}
+        except RuntimeError as err:
+            print(f"{name:28s} skipped ({err}); re-run to retry")
+            continue
         credits[name] = done
+        credits_path.write_text(json.dumps(credits, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
         print(f"{name:28s} {done['source']:6s} {done.get('year') or '':>5} {done.get('license', '')}")
     credits_path.write_text(json.dumps(credits, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     photos = sum(1 for v in credits.values() if v["source"] == "photo")
