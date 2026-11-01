@@ -2,7 +2,7 @@
   "name": "Norisring",
   "nationality": "german",
   "length_km": 2.3,
-  "lap_modifier": 1.15,
+  "lap_modifier": 0.892,
   "dnf_modifier": 1.15,
   "overtaking_difficulty": 0.5,
   "pit_lane_loss_s": 18.0,

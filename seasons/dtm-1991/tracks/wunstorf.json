@@ -2,7 +2,7 @@
   "name": "Wunstorf",
   "nationality": "german",
   "length_km": 5.05,
-  "lap_modifier": 0.95,
+  "lap_modifier": 1.025,
   "dnf_modifier": 0.95,
   "overtaking_difficulty": 0.4,
   "pit_lane_loss_s": 18.0,

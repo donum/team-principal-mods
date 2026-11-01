@@ -5,7 +5,7 @@
   "bbox": [8.862, 47.749, 8.886, 47.763],
   "length_km": 2.800,
   "width_m": 11.0,
-  "lap_modifier": 1.2,
+  "lap_modifier": 0.974,
   "dnf_modifier": 1.25,
   "overtaking_difficulty": 0.75,
   "pit_lane_loss_s": 18.0,

@@ -1,0 +1,35 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,8,"Klaus Ludwig, D",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,22,38:25.87,,,classified,
+2,9,"Alain Cudini, F",Snobeck S.A.,Mercedes 190 E 2.5-16 Evo II,22,38:26.14,+0.27,,classified,
+3,10,"Jacques Laffite, F",Snobeck S.A.,Mercedes 190 E 2.5-16 Evo II,22,38:25.43,+-0.44,,classified,
+4,3,"Johnny Cecotto, YV",BMW M Team Schnitzer,BMW M3 Sport Evo,22,38:30.15,+4.28,,classified,
+5,19,"Roland Asch, D",Zakspeed Racing,Mercedes 190 E 2.5-16 Evo II,22,38:32.14,+6.27,,classified,
+6,88,"Bernd Schneider, D",Zakspeed Racing,Mercedes 190 E 2.5-16 Evo II,22,38:32.74,+6.87,,classified,
+7,7,"Kurt Thiim, DK",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,22,38:36.98,+11.11,,classified,
+8,16,"Altfrid Heger, D",BMW M Team Linder,BMW M3 Sport Evo,22,38:41.96,+16.09,,classified,
+9,87,"Fritz Kreutzpointner, D",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,22,38:44.11,+18.24,,classified,
+10,78,"Ellen Lohr, D",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,22,38:47.42,+21.55,,classified,
+11,45,"Frank Biela, D",AZR Audi Zentrum Reutlingen,Audi V8 Quattro Evo,22,38:52.71,+26.84,,classified,
+12,31,"Christian Danner, D",MM Diebels Alt,BMW M3 Sport Evo,22,39:08.60,+42.73,,classified,
+13,34,"Luca Maggiorelli, I",Valier Motorsport,BMW M3 Sport Evo,22,39:13.83,+47.96,,classified,
+14,11,"Steve Soper, GB",BMW M Team Bigazzi,BMW M3 Sport Evo,22,39:14.09,+48.22,,classified,
+15,26,"Alain Ferté, F",Opel Team Eggenberger,Opel Omega 3000 24v Evolution 500,22,39:16.04,+50.17,,classified,
+16,1,"Hans-Joachim Stuck, D",SMS Schmidt Motorsport,Audi V8 Quattro,22,39:22.84,+56.97,,classified,
+17,99,"Manuel Reuter, D",Opel Team Schübel,BMW M3 Sport Evo,22,39:29.31,+63.44,,classified,
+18,28,"Kurt König, D",Auto Maass Climair Auto Magazin Team,BMW M3 Sport Evo,22,39:30.71,+64.84,,classified,
+19,32,"Otto Rensing, D",MM Diebels Alt,BMW M3 Sport Evo,22,39:30.90,+65.03,,classified,
+20,42,"Cor Euser, NL",Marlboro BMW Dealer Team,BMW M3 Sport Evo,22,39:33.06,+67.19,,classified,
+21,43,"Allen Berg, CDN",Tic Tac Tauber Team,BMW M3 Sport Evo,22,39:34.68,+68.81,,classified,
+22,22,"Frank Schmickler, D",Opel Team Irmscher,Opel Omega 3000 24v Evolution 500,22,39:35.01,+69.14,,classified,
+23,55,"Harald Becker, D",Team Vanicek,BMW M3 Sport Evo,21,,+1 lap,,classified,
+,15,"Dieter Quester, A",Linder M Team,BMW M3 Sport Evo,17,,,,DNF,Fuel pump
+,44,"Frank Jelinski, D",AZR Audi Zentrum Reutlingen,Audi V8 Quattro Evo,13,,,,DNF,Accident
+,23,"Jörg van Ommen, D",MS-Jet Racing,Mercedes 190 E 2.5-16 Evo II,11,,,,DNF,Accident
+,5,"Kris Nissen, DK",BMW M Team Schnitzer,BMW M3 Sport Evo,10,,,,DNF,Vibrations
+,4,"Joachim Winkelhock, D",BMW M Team Schnitzer,BMW M3 Sport Evo,6,,,,DNF,Engine
+,13,"Peter Zakowski, D",Unitron Sports,BMW M3 Sport Evo,5,,,,DNF,Tires
+,12,"Armin Hahne, D",BMW M Team Bigazzi,BMW M3 Sport Evo,4,,,,DNF,Engine
+,36,"Franz Engstler, D",Opel Team Irmscher,Opel Omega 3000 24v Evolution 500,4,,,,DNF,Power steering
+,17,"Anette Meeuvissen, D",Linder M Team,BMW M3 Sport Evo,2,,,,DNF,Engine
+,30,"Leopold von Bayern, D",BMW Team Isert,BMW M3 Sport Evo,,,,,DNF,Accident
+,41,"Fred Räker, D",Gerd Ruch Motorsport,Ford Mustang 5.0 GT,,,,,DNF,Engine

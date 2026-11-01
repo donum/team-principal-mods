@@ -413,9 +413,21 @@ def build(season_dir, game, install):
 
     if install:
         target = game / "data" / manifest["pack_folder"]
-        if target.exists():
-            shutil.rmtree(target)
-        shutil.copytree(out, target)
+        # Copy over in place instead of deleting first: the running game keeps
+        # some pack files (music) open, and a failed delete must never leave a
+        # half-removed pack behind. Stale files are removed only where possible.
+        try:
+            shutil.copytree(out, target, dirs_exist_ok=True)
+        except shutil.Error as err:
+            for src, dst, why in err.args[0]:
+                print(f"warning: not updated (in use by the game? restart it and reinstall): {dst} ({why})")
+        fresh = {p.relative_to(out) for p in out.rglob("*")}
+        for path in sorted(target.rglob("*"), reverse=True):
+            if path.relative_to(target) not in fresh:
+                try:
+                    path.rmdir() if path.is_dir() else path.unlink()
+                except OSError as err:
+                    print(f"warning: could not remove stale {path.relative_to(target)}: {err}")
         print(f"installed to {target} (select it in-game or via active_pack.json)")
 
 

@@ -5,7 +5,7 @@
   "bbox": [8.555, 49.318, 8.625, 49.345],
   "length_km": 6.797,
   "width_m": 12.0,
-  "lap_modifier": 0.9,
+  "lap_modifier": 1.0,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.45,
   "pit_lane_loss_s": 22.0,
@@ -21,12 +21,13 @@
   ],
   "exclude_way_ids": [
     "22940941", "31318810", "15446020", "117570506", "446193573", "117570502", "117570503",
-    "256789036", "339948104", "117570493", "1416119746",
+    "256789036", "339948104", "117570493", "117570507", "1416119746",
     "446193574", "446193575", "446193576", "446193577",
     "34401655", "38223715", "38223729"
   ],
   "bridges": [
-    [[49.33344, 8.56842], [49.33484, 8.57041]]
+    [[49.33344, 8.56842], [49.33484, 8.57041]],
+    [[49.33117, 8.58150], [49.32862, 8.57560]]
   ],
   "via": [
     [49.32761, 8.56595],
@@ -36,10 +37,14 @@
     [49.33532, 8.59619],
     [49.33434, 8.59236],
     [49.33193, 8.58347],
-    [49.33060, 8.57566],
     [49.32685, 8.57090],
     [49.32870, 8.56752],
     [49.32561, 8.56783]
   ],
-  "notes": "1991 long GP circuit (clockwise): Motodrom, Nordkurve, forest straight, Ostkurve chicane, return straight, Agip/Sachs/Suedkurve. The forest section follows OSM's abandoned:highway=raceway ways (Streckenverlauf 1932-2001); the Nordkurve exit onto the forest straight is bridged (no longer in OSM). Includes all three 1991 chicanes: Jim Clark (1970), Ostkurve (1982) and the return-straight chicane (1970, named Senna-Schikane only from 1994; OSM's 1994 geometry is used). Excluded: today's Parabolika/Spitzkehre layout and the chicane-less Ostkurve. Traced 6895 m vs 6797 m in 1991."
+  "verge_m": 25,
+  "historic_forest": [
+    [[49.33192, 8.56612], [49.33315, 8.56724], [49.3345, 8.5693], [49.33364, 8.57136], [49.33192, 8.57305], [49.33045, 8.57398], [49.32934, 8.57286], [49.32971, 8.57061], [49.33008, 8.56874], [49.3302, 8.56687]],
+    [[49.3345, 8.56968], [49.33499, 8.57099], [49.33339, 8.57398], [49.33229, 8.57847], [49.33327, 8.58334], [49.33339, 8.58614], [49.33253, 8.58633], [49.33118, 8.58371], [49.32946, 8.58034], [49.32824, 8.5781], [49.32701, 8.5751], [49.32627, 8.57305], [49.32873, 8.57286], [49.33069, 8.57248], [49.33167, 8.57099], [49.33192, 8.56912]]
+  ],
+  "notes": "1991 long GP circuit (clockwise): Motodrom, Nordkurve, forest straight, Ostkurve chicane, return straight, Agip/Sachs/Suedkurve. The forest section follows OSM's abandoned:highway=raceway ways (Streckenverlauf 1932-2001); the Nordkurve exit onto the forest straight is bridged (no longer in OSM). Includes all three 1991 chicanes: Jim Clark (1970), Ostkurve (1982) and the return-straight chicane (1970, named Senna-Schikane only from 1994; OSM's 1994 geometry is used). The 1991 return straight ran straight from the Senna chicane exit into today's run to the Agip-Kurve (way 15444543); the missing ~500 m in between are bridged as a straight line (today's quarter-mile drag strip runs ~50 m south of it and is not used). Excluded: today's Parabolika/Spitzkehre layout incl. its back section (117570507) and the chicane-less Ostkurve. Traced 6716 m vs 6797 m in 1991. Overview: the area east of the Motodrom that was cleared for the 2002 rebuild is drawn as forest again (historic_forest), and the old forest section gets a cleared verge."
 }

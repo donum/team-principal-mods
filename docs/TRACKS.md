@@ -53,7 +53,7 @@ spec's `notes` and in the season dossier.
 | Venue | 1991 length | How it's built | Traced | Confidence |
 |---|---|---|---|---|
 | Zolder | 4.194 km | Raceway loop. Today's layout. | 3,953 m (−5.7%) | High. The 1991 chicane details may differ. |
-| Hockenheim | 6.797 km | Via over today's raceway plus the 1932–2001 `abandoned:highway=raceway` forest loop, and 1 bridge (Nordkurve exit). Has all three 1991 chicanes. | 6,895 m (+1.4%) | High |
+| Hockenheim | 6.797 km | Via over today's Motodrom plus the 1932–2001 `abandoned:highway=raceway` forest loop. 2 bridges: the Nordkurve exit, and the Senna chicane exit to the Agip approach. Has all three 1991 chicanes. Today's Parabolika/Spitzkehre section is excluded. The overview draws the post-2002 clearings as forest (`historic_forest`), with a verge along the old track. | 6,716 m (−1.2%) | High |
 | Nürburgring GP | 4.542 km | Via. Today's GP with the "Variante 24h-Rennen" in place of the 2002 Mercedes Arena. | 4,548 m (+0.1%) | High |
 | Norisring | 2.300 km | Via over OSM circuit relation 1889538, counter-clockwise. Unchanged since 1972. | 2,207 m (−4%) | High |
 | Alemannenring (Singen) | 2.800 km | Via over 6 named streets, clockwise. 3 bridges (an underpass junction and the hairpin across the central reservation). | 2,817 m (+0.6%) | High for the streets. The hairpin position is unverified. |
@@ -69,6 +69,37 @@ spec's `notes` and in the season dossier.
   hairpin), and what is the true scale of the west perimeter road?
 - **Diepholz and Wunstorf:** where were the 1991 chicanes?
 
+## Lap-time calibration
+
+The goal is that in-game qualifying matches the real 1991 poles. Real results
+for every session are in `seasons/dtm-1991/research/results/`, extracted from
+touringcarracing.net (see `sources.md` there).
+
+**The model.** In-game lap time ≈ `F × reference_time × lap_modifier`:
+- `reference_time` comes from the track's micro-sectors (`tools/laptime.py`).
+- `F` is a factor of the season's cars and `car_profile`, measured in-game.
+- The track's `lap_modifier` acts as a near-linear lap-time multiplier, so it
+  is the per-track tuning knob.
+
+**The loop:**
+1. Play a qualifying session in-game.
+2. Record the game's pole:
+   `python tools/calibrate.py seasons/dtm-1991 --observe-save "<game>/saves/<save>.json"`.
+   This reads the save's `track_history`.
+3. Write new modifiers: `python tools/calibrate.py seasons/dtm-1991 --apply`.
+   A track with its own observation uses its own `F`. Other tracks use the
+   median.
+4. Rebuild and install, then restart the game.
+
+Observations are logged in `seasons/dtm-1991/research/calibration.json`.
+
+**Current status** (two observations: Zolder qualifying and Hockenheim
+practice, F = 1.079):
+- The modifiers predict each round-1 pole within 0.05 s.
+- It's still a model, so check it in-game and tighten it with the loop above.
+- **Re-observe Hockenheim:** its only data point is a practice best on the old
+  route.
+
 ## Rules of thumb
 
 - **Use the 1991 length** for `length_km`. Record the difference from the
@@ -79,6 +110,7 @@ spec's `notes` and in the season dossier.
   short and document them.
 - **Airfields and street circuits** need `width_m` matching the real course,
   about 12–15 m. Use `overtaking_difficulty` for how hard passing is.
-- **Lap-time calibration happens later and for all tracks at once.** The
-  micro-sector speeds use the base game's reference scale, and the
-  `car_profile` regulation scales them.
+- **Don't hand-tune `lap_modifier`.** Micro-sector speeds use the base game's
+  reference scale. Lap times are set only through the calibration loop above.
+- **Re-run the calibration whenever a track's geometry changes.** Changing the
+  route or the smoothing changes `reference_time`.

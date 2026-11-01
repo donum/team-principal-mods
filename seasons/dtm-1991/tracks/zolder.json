@@ -2,7 +2,7 @@
   "name": "Zolder",
   "nationality": "belgian",
   "length_km": 4.194,
-  "lap_modifier": 1.12,
+  "lap_modifier": 0.953,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.7,
   "pit_lane_loss_s": 21.0,

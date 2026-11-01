@@ -231,7 +231,7 @@ def micro_sectors(dense, smooth=4):
 
 # ------------------------------------------------------------------- render
 
-def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width_px, seed, px_per_m):
+def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width_px, seed, px_per_m, spec=None):
     from PIL import Image, ImageDraw
 
     # Draw at SUPERSAMPLE x resolution and scale down for anti-aliased edges.
@@ -250,8 +250,22 @@ def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width
     def ring(wid):
         return [px(n) for n in ways[wid]["nds"] if n in nodes] if wid in ways else []
 
+    spec = spec or {}
+    # Historic look: areas that were forest in the season's year (e.g. land
+    # cleared for a later rebuild). Modern features inside them are not drawn.
+    historic = [[(lambda q: (q[0] * ss, q[1] * ss))(to_px(*proj.metres(lat, lon))) for lat, lon in poly]
+                for poly in spec.get("historic_forest", [])]
+
+    def modern(wid):
+        pts = ring(wid)
+        if not pts or not historic:
+            return False
+        cx, cy = sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts)
+        return any(point_in_poly(cx, cy, poly) for poly in historic)
+
     def fill_areas(match, color):
-        polys = [ring(wid) for wid, w in ways.items() if match(w["tags"]) and w["nds"][0] == w["nds"][-1]]
+        polys = [ring(wid) for wid, w in ways.items()
+                 if match(w["tags"]) and w["nds"][0] == w["nds"][-1] and not modern(wid)]
         for rel in relations:
             if match(rel["tags"]):
                 polys += [ring(ref) for ref, role in rel["members"] if role == "outer"]
@@ -261,7 +275,9 @@ def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width
         return polys
 
     woods = fill_areas(lambda t: t.get("natural") == "wood" or t.get("landuse") == "forest", COLORS["wood"])
-    for poly in woods:
+    for poly in historic:
+        draw.polygon(poly, fill=COLORS["wood"])
+    for poly in woods + historic:
         if len(poly) < 3:
             continue
         xs, ys = [p[0] for p in poly], [p[1] for p in poly]
@@ -271,14 +287,17 @@ def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width
             if point_in_poly(x, y, poly):
                 r = rng.uniform(5, 9) * ss
                 draw.ellipse([x - r, y - r, x + r, y + r], fill=COLORS["tree"])
+    # Cleared verge along the circuit (grass run-off), so a forest track reads as a circuit.
+    m_px = px_per_m * ss
+    if spec.get("verge_m"):
+        thick_line(draw, loop_px + loop_px[:1], COLORS["grass"], spec["verge_m"] * 2 * m_px + width_px)
     fill_areas(lambda t: t.get("natural") == "water" or t.get("landuse") in ("reservoir", "basin"), COLORS["water"])
     fill_areas(lambda t: t.get("amenity") == "parking", COLORS["parking"])
 
     # Runways and taxiways in metres, scaled like the track (airfield circuits use them).
-    m_px = px_per_m * ss
-    for w in ways.values():
+    for wid, w in ways.items():
         kind = w["tags"].get("aeroway")
-        if kind in ("runway", "taxiway"):
+        if kind in ("runway", "taxiway") and not modern(wid):
             line = [px(n) for n in w["nds"] if n in nodes]
             if len(line) > 1:
                 width_m = float(w["tags"].get("width", 0) or 0) or (40.0 if kind == "runway" else 18.0)
@@ -286,9 +305,9 @@ def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width
 
     road_widths = {"motorway": 9, "trunk": 8, "primary": 7, "secondary": 6, "tertiary": 5,
                    "unclassified": 4, "residential": 4, "service": 3}
-    for w in ways.values():
+    for wid, w in ways.items():
         hw = w["tags"].get("highway")
-        if hw in road_widths:
+        if hw in road_widths and not modern(wid):
             line = [px(n) for n in w["nds"] if n in nodes]
             if len(line) > 1:
                 thick_line(draw, line, COLORS["road"], road_widths[hw] * ss)
@@ -550,7 +569,11 @@ def build(spec_path):
         "points": points,
         "source": {"generator": "tools/osm_track.py", "osm_bbox": spec["bbox"],
                    "osm_ways": loop_ways, "geometry_length_m": round(geometry_m),
-                   "attribution": ATTRIBUTION, "notes": spec.get("notes", "")},
+                   "attribution": ATTRIBUTION, "notes": spec.get("notes", ""),
+                   # pixel = (metres from (lat0, lon0)) * scale + offset; lets specs place
+                   # map-relative features (e.g. historic_forest) from pixel positions.
+                   "canvas_transform": {"lat0": proj.lat0, "lon0": proj.lon0, "kx": proj.kx, "ky": proj.ky,
+                                        "scale": scale, "ox": ox, "oy": oy}},
     }
     out_json = season_dir / "tracks" / f"{spec['id']}.json"
     out_png = season_dir / "assets" / "tracks" / f"{spec['id']}.png"
@@ -560,7 +583,7 @@ def build(spec_path):
 
     width_px = spec.get("width_m", 11.0) * scale * 1.4
     pit_px = [to_px(*p) for p in pit_m] if pit_m else None
-    render(out_png, proj, to_px, nodes, ways, relations, [to_px(*p) for p in dense[::2]], pit_px, width_px, spec["id"], scale)
+    render(out_png, proj, to_px, nodes, ways, relations, [to_px(*p) for p in dense[::2]], pit_px, width_px, spec["id"], scale, spec)
 
     print(f"{spec['id']}: {len(loop_ways)} ways, {geometry_m:.0f} m traced (game length {track['length_km']} km), "
           f"{len(points)} points, {len(sectors)} micro-sectors (from the start line)")

@@ -1,0 +1,32 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,11,"Steve Soper, GB",BMW M Team Bigazzi,BMW M3 Sport Evo,38,37:27.10,,,classified,
+2,3,"Johnny Cecotto, YV",BMW M Team Schnitzer,BMW M3 Sport Evo,38,37:29.42,+2.32,,classified,
+3,8,"Klaus Ludwig, D",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,38,37:31.33,+4.23,,classified,
+4,1,"Hans-Joachim Stuck, D",SMS Schmidt Motorsport,Audi V8 Quattro Evo,38,37:33.30,+6.20,,classified,
+5,4,"Joachim Winkelhock, D",BMW M Team Schnitzer,BMW M3 Sport Evo,38,37:58.30,+31.20,,classified,
+6,45,"Frank Biela, D",AZR Audi Zentrum Reutlingen,Audi V8 Quattro Evo,38,38:08.96,+41.86,,classified,
+7,19,"Roland Asch, D",Zakspeed Racing,Mercedes 190 E 2.5-16 Evo II,38,38:09.32,+42.22,,classified,
+8,9,"Alain Cudini, F",Snobeck S.A.,Mercedes 190 E 2.5-16 Evo II,38,38:10.43,+43.33,,classified,
+9,37,"Volker Strycek, D",Opel Team Irmscher,Opel Omega 3000 24v Evolution 500,38,38:18.20,+51.10,,classified,
+10,30,"Leopold von Bayern, D",BMW Team Isert,BMW M3 Sport Evo,38,38:25.63,+58.53,,classified,
+11,23,"Jörg van Ommen, D",MS-Jet Racing,Mercedes 190 E 2.5-16 Evo II,38,38:28.42,+61.32,,classified,
+12,34,"Luca Maggiorelli, I",Valier Motorsport,BMW M3 Sport Evo,38,38:46.18,+79.08,,classified,
+13,5,"Kris Nissen, DK",BMW M Team Schnitzer,BMW M3 Sport Evo,37,,+1 lap,,classified,
+14,20,"Michael Schumacher, D",Zakspeed Racing,Mercedes 190 E 2.5-16 Evo II,37,,+1 lap,,classified,
+15,17,"Anette Meeuvissen, D",Linder M Team,BMW M3 Sport Evo,36,,+2 laps,,classified,
+16,2,"Hubert Haupt, D",SMS Schmidt Motorsport,Audi V8 Quattro Evo,35,,+3 laps,,classified,
+17,43,"Allen Berg, CDN",Tic Tac Tauber Team,BMW M3 Sport Evo,35,,+3 laps,,classified,
+18,26,"Alain Ferté, F",Opel Team Eggenberger,Opel Omega 3000 24v Evolution 500,33,,+5 laps,,classified,
+19,74,"Sepp Haider, A",Opel Team Irmscher,Opel Omega 3000 24v Evolution 500,33,,+5 laps,,classified,
+20,25,"Klaus Niedzwiedz, D",Opel Team Eggenberger,Opel Omega 3000 24v Evolution 500,30,,+8 laps,,classified,
+21,78,"Ellen Lohr, D",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,28,,+10 laps,,classified,
+,42,"Cor Euser, NL",Marlboro BMW Dealer Team,BMW M3 Sport Evo,26,,,,DNF,Engine
+,87,"Fritz Kreutzpointner, D",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,21,,,,DNF,Engine
+,22,"Frank Schmickler, D",MS-Jet Racing,Mercedes 190 E 2.5-16 Evo II,21,,,,DNF,Tires
+,14,"Ralf Kelleners, D",Unitron Sports,BMW M3 Sport Evo,18,,,,DNF,Engine
+,7,"Kurt Thiim, DK",AMG Motorenbau GmbH,Mercedes 190 E 2.5-16 Evo II,13,,,,DNF,Tires
+,50,"Armin Bernhard, D",BAS Reifendienst,Mercedes 190 E 2.5-16 Evo II,13,,,,DNF,Differential
+,24,"Jochen Mass, D",MS-Jet Racing,Mercedes 190 E 2.5-16 Evo II,4,,,,DNF,Exhaust
+,12,"Armin Hahne, D",BMW M Team Bigazzi,BMW M3 Sport Evo,,,,,DNF,Accident
+,10,"Jacques Laffite, F",Snobeck S.A.,Mercedes 190 E 2.5-16 Evo II,,,,,DNF,Accident
+,16,"Altfrid Heger, D",Linder M Team,BMW M3 Sport Evo,,,,,DNF,Accident
