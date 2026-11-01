@@ -44,6 +44,8 @@ yet, and is reported in the output.
 
 - [Modding capabilities and limits](docs/CAPABILITIES.md): what the game
   lets us change, what has to be approximated, and the open questions.
+- [Wish list for the game developer](docs/DEVELOPER_WISHLIST.md): what the
+  game would need for full historical accuracy.
 - [DTM 1991 season dossier](seasons/dtm-1991/README.md): sourced facts behind
   the data.
 
