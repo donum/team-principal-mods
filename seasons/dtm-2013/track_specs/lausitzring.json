@@ -22,7 +22,7 @@
   "drs_zones": {
     "longest_straights": 1
   },
-  "notes": "DTM short course (2005-2013, about 3.44-3.48 km), counter-clockwise as OSM tags the course: the front straight of the tri-oval, then the tight left into the infield at its end (Turn 1) and the infield esses on way 766115999, not the GP course's wide sweep (way 115077605) or the banked oval Turn 1, which the DTM only used again from 2019. Sources: Audi press (DTM on the 3.442 km variant since 2005), Rheinpfalz on the banked-turn variant (cars otherwise turn left into the infield at the end of the start/finish straight). The 2013 pole (1:17.463) fits this layout: the wide sweep made the lap 14.5% too fast. The back straight is cut short by the 2007 Kurzanbindung hairpin (ways 470915848, 864182816). Start line on the pit straight. Traced 3464 m vs 3478 m.",
+  "notes": "DTM short course (2005-2013, about 3.44-3.48 km), counter-clockwise as OSM tags the course: the front straight of the tri-oval, then the tight left into the infield at its end (Turn 1) and the infield esses on way 766115999, not the GP course's wide sweep (way 115077605) or the banked oval Turn 1, which the DTM only used again from 2019. Sources: Audi press (DTM on the 3.442 km variant since 2005), Rheinpfalz on the banked-turn variant (cars otherwise turn left into the infield at the end of the start/finish straight). The 2013 pole (1:17.463) fits this layout: the wide sweep made the lap 14.5% too fast. The back straight is cut short by the 2007 Kurzanbindung hairpin (ways 470915848, 864182816). OSM maps the Turn 1 hairpin only as a junction, so it is a hand-placed bridge (a tight left curling back, then the right into the infield), shaped from the 2013 circuit map on the DTM wiki. Start line on the pit straight. Traced 3388 m vs 3478 m.",
   "route_way_ids": [
     "115077605",
     "766115999",
@@ -31,8 +31,8 @@
   ],
   "via": [
     [
-      51.53393,
-      13.92222
+      51.53388,
+      13.922377
     ],
     [
       51.53257,
@@ -66,5 +66,53 @@
   "start": [
     51.53467,
     13.92616
+  ],
+  "bridges": [
+    [
+      [
+        51.53401,
+        13.9225
+      ],
+      [
+        51.53399,
+        13.922443
+      ],
+      [
+        51.533959,
+        13.9224
+      ],
+      [
+        51.53392,
+        13.922378
+      ],
+      [
+        51.53388,
+        13.922377
+      ],
+      [
+        51.533841,
+        13.922399
+      ],
+      [
+        51.53381,
+        13.922441
+      ],
+      [
+        51.533789,
+        13.922497
+      ],
+      [
+        51.533782,
+        13.922561
+      ],
+      [
+        51.53374,
+        13.922931
+      ],
+      [
+        51.53361,
+        13.92313
+      ]
+    ]
   ]
 }

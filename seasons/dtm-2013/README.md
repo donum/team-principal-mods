@@ -74,7 +74,7 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 | Hockenheim | 4.574 km | Raceway loop over OSM circuit relation 284588 (today's GP circuit) | 4,517 m (−1.2%) |
 | Brands Hatch Indy | 1.929 km | Raceway loop over the Indy circuit relation 11248425 | 1,906 m (−1.2%) |
 | Red Bull Ring | 4.326 km | Raceway loop over relation 5309181, without the MotoGP additions | 4,269 m (−1.3%) |
-| Lausitzring | 3.478 km | Via: the DTM short course, with the tight left into the infield at the end of the front straight and the 2007 Kurzanbindung hairpin, counter-clockwise as OSM tags it | 3,464 m (−0.4%) |
+| Lausitzring | 3.478 km | Via: the DTM short course, with the Turn 1 hairpin at the end of the front straight (a hand-placed bridge: OSM maps it only as a junction) and the 2007 Kurzanbindung hairpin, counter-clockwise as OSM tags it | 3,388 m (−2.6%) |
 | Norisring | 2.300 km | Shared from 1991 | 2,207 m (−4%) |
 | Moscow Raceway | 2.555 km | Via: the full circuit's way with the link that cuts the southern section | 2,550 m (−0.2%) |
 | Nürburgring Sprint | 3.629 km | Via: the 1992 sprint route with the Mercedes Arena | 3,555 m (−2%) |
