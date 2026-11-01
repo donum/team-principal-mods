@@ -141,8 +141,8 @@ gives Ludwig #7 in its XML while his car is painted #8.
      Re-measure the 190E texture anchors.
    - Leftover marks from the 1993 reference liveries, such as rear-wing logos.
    - The traced Audi body has less detail than the Pohlmann drawings.
-5. **Artwork.** Make our own side-profile car drawings in team colours, plus
-   menu and dashboard art. No logos or photos.
+5. **Logos and menu art.** Add team logos (`assets/logos`, 1024×1024),
+   engine-maker logos, plus DTM-style menu and dashboard backgrounds.
 6. **Sponsors.** Build a period sponsor pool and starting sponsors (cloned
    placeholders for now).
 7. **Junior series.** Add the 1991 German F3 and Formel Opel Lotus
