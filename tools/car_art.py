@@ -1,0 +1,300 @@
+"""Draw the team car images (2048x1024 side views) from reference drawings.
+
+Each car model has a side-view reference drawing (a PNG render of an SVG
+illustration from Wikimedia Commons, see the model's "reference"). Its
+pixels are classified by colour:
+
+* thin dark lines (panel lines, outlines), glass, rims and lights are kept;
+* thick dark areas on the body side are old livery and are repainted;
+* every other body pixel is repainted with the team's base colour.
+
+A team livery then comes from an Automobilista 2 livery texture: the
+texture's side panel is mesh-warped onto the body band (window line to
+sill), piecewise between anchors measured once per model (tail, rear axle,
+front door edge, front axle). Outlines go back on top so the car keeps its
+panel lines. Teams without an AMS2 livery get the base colour plus
+lettering, or keep the reference's own livery ("keep_reference_livery").
+
+Licensing: the reference drawings are CC BY-SA (see the model's credit), so
+the generated car images are CC BY-SA 4.0. The AMS2 livery artwork is used
+with its author's permission. See LICENSE-CONTENT.md.
+
+Config: <season>/art/cars.json. local.json provides "ams2_mod_zip".
+Downloads and decoded textures are cached under build/art/.
+
+Usage:
+    python tools/car_art.py seasons/dtm-1991 [--only "Team"] [--preview]
+"""
+
+import argparse
+import io
+import json
+import math
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+import zipfile
+from pathlib import Path
+
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
+
+REPO = Path(__file__).resolve().parent.parent
+CACHE = REPO / "build" / "art"
+CANVAS = (2048, 1024)
+CAR_SPAN_PX = 1840
+GROUND_Y = 720
+USER_AGENT = "team-principal-mods/0.1 (car art; reference drawings from Wikimedia Commons)"
+GLASS_RGB = (51, 51, 51)
+
+
+def load_json(path):
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+# ------------------------------------------------------------ sources
+
+def commons_png(title, width=3840):
+    """Download (cached) a PNG render of a Wikimedia Commons file."""
+    CACHE.mkdir(parents=True, exist_ok=True)
+    path = CACHE / ("ref_" + title.replace("File:", "").replace(" ", "_").rsplit(".", 1)[0] + ".png")
+    if path.exists():
+        return Image.open(path).convert("RGBA")
+    api = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(
+        {"action": "query", "titles": title, "prop": "imageinfo", "iiprop": "url",
+         "iiurlwidth": width, "format": "json"})
+    info = json.loads(fetch(api))
+    url = next(iter(info["query"]["pages"].values()))["imageinfo"][0]["thumburl"]
+    path.write_bytes(fetch(url))
+    return Image.open(path).convert("RGBA")
+
+
+def fetch(url):
+    for attempt in range(8):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            return urllib.request.urlopen(req, timeout=90).read()
+        except urllib.error.HTTPError as err:
+            if err.code != 429:
+                raise
+            time.sleep(15 * (attempt + 1))
+    raise SystemExit(f"rate limited: {url}")
+
+
+def ams2_texture(zip_path, member):
+    CACHE.mkdir(parents=True, exist_ok=True)
+    cached = CACHE / (Path(member).stem + ".png")
+    if cached.exists():
+        return Image.open(cached).convert("RGBA")
+    with zipfile.ZipFile(zip_path) as zf:
+        im = Image.open(io.BytesIO(zf.read(member)))
+        im.load()
+    im = im.convert("RGBA")
+    im.save(cached)
+    return im
+
+
+# ------------------------------------------------------- classification
+
+def classify(ref, model):
+    """Masks (mode L) for outline, glass, kept pixels (rims, lights) and paint."""
+    w, h = ref.size
+    px = ref.load()
+    dark = Image.new("L", ref.size, 0)
+    glass = Image.new("L", ref.size, 0)
+    d, g = dark.load(), glass.load()
+    belt = model["belt_y"]
+    lz0, lz1 = model["livery_zone"]
+    for y in range(h):
+        for x in range(w):
+            r, gg, b, a = px[x, y]
+            if a < 40:
+                continue
+            lum = 0.3 * r + 0.59 * gg + 0.11 * b
+            spread = max(r, gg, b) - min(r, gg, b)
+            if lum < 30 and spread < 30:
+                d[x, y] = 255
+            elif y < belt and spread < 14 and 35 < lum < 75:
+                g[x, y] = 255
+
+    # Lamps are explicit boxes: anything colourful elsewhere is old livery.
+    ref_lights = Image.new("L", ref.size, 0)
+    for x0, y0, x1, y1 in model.get("light_boxes", []):
+        ImageDraw.Draw(ref_lights).rectangle([x0, y0, x1, y1], fill=255)
+    colourful = Image.new("L", ref.size, 0)
+    cpx = colourful.load()
+    for x0, y0, x1, y1 in model.get("light_boxes", []):
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                r, gg, b, a = px[x, y]
+                if a > 40 and 0.3 * r + 0.59 * gg + 0.11 * b > 120 and (max(r, gg, b) - min(r, gg, b) > 40 or min(r, gg, b) > 200):
+                    cpx[x, y] = 255
+    lights = ImageChops.multiply(ImageChops.subtract(ref_lights, dark), colourful)
+    gd = ImageDraw.Draw(glass)
+    for poly in model.get("glass_polygons", []):
+        gd.polygon([tuple(p) for p in poly], fill=255)
+
+    rim_circles = Image.new("L", ref.size, 0)
+    tyre_circles = Image.new("L", ref.size, 0)
+    for cx, cy, tyre_r, rim_r in model["wheels"]:
+        ImageDraw.Draw(rim_circles).ellipse([cx - rim_r, cy - rim_r, cx + rim_r, cy + rim_r], fill=255)
+        # Include the wheel-arch liner around the tyre: it is dark bodywork, not livery.
+        arch_r = tyre_r * model.get("arch_factor", 1.22)
+        ImageDraw.Draw(tyre_circles).ellipse([cx - arch_r, cy - arch_r, cx + arch_r, cy + arch_r], fill=255)
+    # Everything inside the rim circle is wheel (any rim colour, e.g. gold BBS).
+    rims = ImageChops.multiply(rim_circles, ref.split()[3].point(lambda v: 255 if v >= 40 else 0))
+
+    # Thick dark areas on the body side are livery (number boards, black
+    # lettering), not panel lines: find them by morphological opening.
+    k = model.get("thick_px", 15)
+    thick = dark.filter(ImageFilter.MinFilter(k)).filter(ImageFilter.MaxFilter(k))
+    zone = Image.new("L", ref.size, 0)
+    ImageDraw.Draw(zone).rectangle([lz0, belt + 8, lz1, model["sill_y"]], fill=255)
+    zone = ImageChops.subtract(zone, tyre_circles)
+    livery_dark = ImageChops.multiply(thick, zone)
+    erase = Image.new("L", ref.size, 0)
+    for x0, y0, x1, y1 in model.get("erase_outline", []):
+        ImageDraw.Draw(erase).rectangle([x0, y0, x1, y1], fill=255)
+    livery_dark = ImageChops.lighter(livery_dark, ImageChops.multiply(erase, dark))
+    outline = ImageChops.subtract(ImageChops.subtract(dark, livery_dark), glass)
+
+    alpha = ref.split()[3].point(lambda v: 255 if v >= 40 else 0)
+    keep = ImageChops.lighter(ImageChops.lighter(glass, lights), rims)
+    paint = ImageChops.subtract(ImageChops.subtract(alpha, keep), outline)
+    return outline, glass, keep, paint
+
+
+# --------------------------------------------------------------- livery
+
+def interp(anchors, x, idx):
+    for a1, a2 in zip(anchors, anchors[1:]):
+        if a1[0] <= x <= a2[0]:
+            f = (x - a1[0]) / (a2[0] - a1[0])
+            return a1[idx] + (a2[idx] - a1[idx]) * f
+    return anchors[0][idx] if x < anchors[0][0] else anchors[-1][idx]
+
+
+def warp_panel(tex, model, size):
+    """Mesh-warp the texture side panel onto the body band.
+
+    uv.anchors: [ref_x, texture_y, texture_x_at_window_line, texture_x_at_sill]
+    """
+    anchors = sorted(model["uv"]["anchors"])
+    top, bot = model["belt_y"], model["sill_y"]
+    mesh = []
+    steps = 120
+    x0, x1 = anchors[0][0], anchors[-1][0]
+    for i in range(steps):
+        xa = x0 + (x1 - x0) * i / steps
+        xb = x0 + (x1 - x0) * (i + 1) / steps
+        ta, tb = interp(anchors, xa, 1), interp(anchors, xb, 1)
+        ua_t, ua_b = interp(anchors, xa, 2), interp(anchors, xa, 3)
+        ub_t, ub_b = interp(anchors, xb, 2), interp(anchors, xb, 3)
+        mesh.append(((int(xa), top, int(math.ceil(xb)), bot),
+                     (ua_t, ta, ua_b, ta, ub_b, tb, ub_t, tb)))
+    return tex.transform(size, Image.MESH, mesh, resample=Image.BICUBIC)
+
+
+def font(size):
+    for name in ("arialbd.ttf", "DejaVuSans-Bold.ttf"):
+        try:
+            return ImageFont.truetype(name, size)
+        except OSError:
+            continue
+    return ImageFont.load_default()
+
+
+def render_car(model, livery, zip_path):
+    ref = commons_png(model["reference"]["file"])
+    if livery.get("keep_reference_livery"):
+        out = ref.copy()
+    else:
+        outline, glass, keep, paint = classify(ref, model)
+        out = Image.new("RGBA", ref.size, (0, 0, 0, 0))
+        out.paste(ref, (0, 0), keep)
+        out.paste(Image.new("RGBA", ref.size, GLASS_RGB + (255,)), (0, 0), glass)
+        out.paste(Image.new("RGBA", ref.size, tuple(livery.get("base_color", [245, 245, 245])) + (255,)), (0, 0), paint)
+        band = Image.new("L", ref.size, 0)
+        ImageDraw.Draw(band).rectangle([0, model["belt_y"], ref.size[0], model["sill_y"]], fill=255)
+        if livery.get("texture"):
+            panel = warp_panel(ams2_texture(zip_path, livery["texture"]), model, ref.size)
+            # Pure white in an AMS2 texture is empty UV space (e.g. wheel-arch cut-outs),
+            # not paint: let the base colour show through there.
+            r, g, b, a = panel.split()
+            empty = ImageChops.darker(ImageChops.darker(r, g), b).point(lambda v: 255 if v >= 250 else 0)
+            alpha = ImageChops.subtract(a, empty) if livery.get("white_is_empty", True) else a
+            for x0, y0, x1, y1 in model.get("panel_clip", []):
+                ImageDraw.Draw(alpha).rectangle([x0, y0, x1, y1], fill=0)
+            mask = ImageChops.multiply(ImageChops.multiply(paint, band), alpha)
+            out.paste(panel, (0, 0), mask)
+        else:
+            draw = ImageDraw.Draw(out)
+            for stripe in livery.get("stripes", []):
+                layer = Image.new("RGBA", ref.size, tuple(stripe["color"]) + (255,))
+                m = Image.new("L", ref.size, 0)
+                ImageDraw.Draw(m).rectangle([0, stripe["y0"], ref.size[0], stripe["y1"]], fill=255)
+                out.paste(layer, (0, 0), ImageChops.multiply(m, paint))
+            if livery.get("lettering"):
+                f = font(livery.get("lettering_size", 150))
+                x, y = livery.get("lettering_at", [(model["livery_zone"][0] + model["livery_zone"][1]) // 2,
+                                                   (model["belt_y"] + model["sill_y"]) // 2])
+                draw.text((x, y), livery["lettering"], font=f, anchor="mm",
+                          fill=tuple(livery.get("lettering_color", [20, 20, 22])) + (255,))
+            if livery.get("number"):
+                bx, by = model["number_at"]
+                s = 300
+                draw.rounded_rectangle([bx - s / 2, by - s * 0.6, bx + s / 2, by + s * 0.6], radius=24,
+                                       fill=(255, 255, 255, 255), outline=(20, 20, 22, 255), width=12)
+                draw.text((bx, by - s * 0.33), "DEKRA", font=font(70), anchor="mm", fill=(20, 20, 22, 255))
+                draw.text((bx, by + s * 0.12), str(livery["number"]), font=font(190), anchor="mm",
+                          fill=(20, 20, 22, 255))
+        out.paste(ref, (0, 0), outline)
+    # Fit onto the game canvas: bumper to bumper CAR_SPAN_PX wide, tyres on GROUND_Y.
+    car = out.crop(out.getbbox())
+    scale = CAR_SPAN_PX / car.size[0]
+    car = car.resize((CAR_SPAN_PX, round(car.size[1] * scale)), Image.LANCZOS)
+    canvas = Image.new("RGBA", CANVAS, (0, 0, 0, 0))
+    canvas.paste(car, ((CANVAS[0] - CAR_SPAN_PX) // 2, GROUND_Y - car.size[1]), car)
+    return canvas
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("season", type=Path)
+    parser.add_argument("--only", help="render just this team")
+    parser.add_argument("--preview", action="store_true", help="also write build/art/preview.png")
+    args = parser.parse_args()
+    season = args.season.resolve()
+    cfg = load_json(season / "art" / "cars.json")
+    local = load_json(REPO / "local.json") if (REPO / "local.json").exists() else {}
+    zip_path = local.get("ams2_mod_zip")
+    out_dir = season / "assets" / "Cars"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    rendered = []
+    for team, livery in cfg["liveries"].items():
+        if args.only and team != args.only:
+            continue
+        if livery.get("texture") and not zip_path:
+            raise SystemExit("set ams2_mod_zip in local.json to render AMS2 liveries")
+        img = render_car(cfg["models"][livery["model"]], livery, zip_path)
+        path = out_dir / f"{team.replace(' ', '')}.png"
+        img.save(path, optimize=True)
+        rendered.append((team, img))
+        print(f"wrote {path.relative_to(REPO)}")
+    if args.preview and rendered:
+        cols, w, h = 2, 1024, 512
+        sheet = Image.new("RGB", (cols * w, math.ceil(len(rendered) / cols) * (h + 34)), (70, 70, 74))
+        d = ImageDraw.Draw(sheet)
+        for i, (team, img) in enumerate(rendered):
+            x, y = (i % cols) * w, (i // cols) * (h + 34)
+            small = img.resize((w, h), Image.LANCZOS)
+            sheet.paste(small, (x, y + 34), small)
+            d.text((x + 10, y + 8), team, fill=(255, 255, 255), font=font(22))
+        CACHE.mkdir(parents=True, exist_ok=True)
+        sheet.save(CACHE / "preview.png")
+        print(f"preview: {(CACHE / 'preview.png').relative_to(REPO)}")
+
+
+if __name__ == "__main__":
+    main()

@@ -42,6 +42,22 @@ track JSON carries it in its `source` field. The rendered maps are Produced
 Works under ODbL. Any track geometry that counts as extracted data stays under
 the ODbL as well.
 
+## Car images: CC BY-SA 4.0
+
+The team car images (`seasons/*/assets/Cars/*.png`, made with
+`tools/car_art.py`) build on two sources:
+
+- **Outlines:** adapted from Oliver Pohlmann's DTM side-view illustrations
+  on Wikimedia Commons (CC BY-SA 3.0 DE). The reference file for each car
+  model is listed in `seasons/*/art/cars.json`.
+- **1991 liveries:** taken from the Automobilista 2 "DTM 1991" mod, used with
+  the livery author's permission.
+
+Because of ShareAlike, these images are licensed **CC BY-SA 4.0**
+(<https://creativecommons.org/licenses/by-sa/4.0/>), not CC BY-NC-SA. The
+credits are in each pack's `credits.txt`. The liveries show real sponsor
+trademarks, which belong to their owners.
+
 ## What this license does NOT cover
 
 - **The game's own files.** `constants.py`, default audio, dashboard
@@ -52,10 +68,11 @@ the ODbL as well.
   teams, sponsors and drivers (for example BMW, Mercedes-Benz, Audi, Opel,
   Warsteiner, Jägermeister, DTM) belong to their owners. This license does not
   grant any right to them, and their use here is descriptive and historical.
-  Real sponsor or manufacturer logos are never committed to this repository.
-- **Third-party mods.** Other Workshop packs or sim-racing mods (for example
-  the Automobilista 2 "DTM 1991" mod) are used for **reference and inspiration
-  only**. None of their files are copied here.
+  Real sponsor logos appear only inside the car images described above.
+- **Third-party mods.** Other Workshop packs are not used. The Automobilista 2
+  "DTM 1991" mod's livery artwork is used only with its author's permission,
+  only inside the car images, and the mod's files are not in this
+  repository: the tool reads them from a local install.
 
 This project is unofficial community content. It is not affiliated with or
 endorsed by the Team Principal publisher, ITR e.V./DTM, or any manufacturer.

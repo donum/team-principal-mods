@@ -12,6 +12,14 @@ Track maps and track geometry:
   Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
   Track outlines are today's layouts and may differ from 1991 in detail.
 
+Car images (assets/Cars):
+  Car outlines adapted from the DTM side-view illustrations by Oliver Pohlmann
+  (Wikimedia Commons, CC BY-SA 3.0 DE): "DTM 1993 Kurt König", "DTM 1993
+  Armin Bernhard", "DTM 1993 Marco Werner Opel Omega", "DTM 1993 Gerd Ruch".
+  1991 liveries from the Automobilista 2 "DTM 1991" mod, used with the
+  livery author's permission.
+  The adapted car images are licensed CC BY-SA 4.0.
+
 Real team, driver, manufacturer and sponsor names are used for historical
 description only. Not affiliated with or endorsed by the DTM, ITR, the game's
 publisher or any manufacturer.
