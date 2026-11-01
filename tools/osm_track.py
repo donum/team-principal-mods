@@ -44,6 +44,8 @@ SMOOTH_PASSES = 3             # moving-average passes over the 5 m resampled lin
 SPEED_K = 18.0
 V_MAX_KMH = 370.0
 CAR_WIDTH_M = 2.0
+CORNER_BAND = 1.25            # speeds within one corner piece stay within this ratio
+MIN_PIECE_M = 15.0            # shorter corner pieces join their neighbour
 FLAT_MARGIN_KMH = 5.0         # a corner the reference car stays this far below is taken flat out
 CORNER_RADIUS_M = 250.0       # tighter than this counts as a corner
 STEP_M = 5.0                  # resampling step for curvature analysis
@@ -242,6 +244,35 @@ def micro_sectors(dense, width_m=11.0, smooth=4):
         if run["corner"] and SPEED_K * math.sqrt(racing_line_radius(dense, run["idx"], centre_r, width_m)) >= V_MAX_KMH:
             run["corner"] = False
         run["cap"] = corner_speed_kmh(centre_r) if run["corner"] else V_MAX_KMH
+    # A corner run can hold several corners (a hairpin opening into a sweeper).
+    # One cap at the slowest point would hold the car at that speed through the
+    # whole complex, so the run is split into pieces whose curvature speeds stay
+    # within CORNER_BAND of each other, each capped at its own slowest point.
+    pieces = []
+    for run in merged:
+        if not run["corner"]:
+            pieces.append(run)
+            continue
+        cur = None
+        for i in run["idx"]:
+            v = corner_speed_kmh(radii[i])
+            if cur and max(cur["vmax"], v) <= CORNER_BAND * min(cur["cap"], v):
+                cur["idx"].append(i)
+                cur["cap"], cur["vmax"] = min(cur["cap"], v), max(cur["vmax"], v)
+            elif cur and len(cur["idx"]) * STEP_M < MIN_PIECE_M:
+                cur["idx"].append(i)  # too short to stand alone: joins the next piece
+                cur["cap"], cur["vmax"] = min(cur["cap"], v), max(cur["vmax"], v)
+            else:
+                cur = {"corner": True, "idx": [i], "cap": v, "vmax": v}
+                pieces.append(cur)
+        if len(cur["idx"]) * STEP_M < MIN_PIECE_M and len(pieces) > 1 and pieces[-2]["corner"]:
+            pieces.pop()
+            pieces[-1]["idx"] += cur["idx"]
+            pieces[-1]["cap"] = min(pieces[-1]["cap"], cur["cap"])
+    for p in pieces:
+        if p["corner"] and p["cap"] >= V_MAX_KMH:
+            p["corner"] = False
+    merged = pieces
     while True:
         joined = []
         for run in merged:

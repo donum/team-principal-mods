@@ -32,7 +32,7 @@
   "drs_zones": [],
   "sector_splits": [
     0.3616557734204793,
-    0.7810457516339869
+    0.7777777777777778
   ],
   "micro_sectors": [
     {
@@ -42,17 +42,47 @@
     },
     {
       "type": "low",
-      "length_pct": 5.446623093681917,
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 112.7
+    },
+    {
+      "type": "low",
+      "length_pct": 0.5446623093681917,
       "target_speed_kmh": 73.5
     },
     {
       "type": "straight",
-      "length_pct": 19.06318082788671,
+      "length_pct": 0.6535947712418301,
+      "target_speed_kmh": 362.6
+    },
+    {
+      "type": "low",
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 112.7
+    },
+    {
+      "type": "low",
+      "length_pct": 0.4357298474945534,
+      "target_speed_kmh": 98.0
+    },
+    {
+      "type": "straight",
+      "length_pct": 2.505446623093682,
       "target_speed_kmh": 362.6
     },
     {
       "type": "med",
-      "length_pct": 1.0893246187363834,
+      "length_pct": 0.6535947712418301,
+      "target_speed_kmh": 166.6
+    },
+    {
+      "type": "straight",
+      "length_pct": 19.389978213507625,
+      "target_speed_kmh": 362.6
+    },
+    {
+      "type": "med",
+      "length_pct": 0.7625272331154684,
       "target_speed_kmh": 137.2
     },
     {
@@ -62,32 +92,72 @@
     },
     {
       "type": "med",
-      "length_pct": 2.0697167755991286,
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 161.7
+    },
+    {
+      "type": "med",
+      "length_pct": 0.5446623093681917,
       "target_speed_kmh": 142.1
     },
     {
       "type": "straight",
-      "length_pct": 1.5250544662309369,
+      "length_pct": 2.7233115468409586,
       "target_speed_kmh": 362.6
     },
     {
-      "type": "low",
-      "length_pct": 3.5947712418300655,
-      "target_speed_kmh": 83.3
+      "type": "med",
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 161.7
+    },
+    {
+      "type": "med",
+      "length_pct": 0.5446623093681917,
+      "target_speed_kmh": 137.2
     },
     {
       "type": "straight",
-      "length_pct": 28.540305010893245,
+      "length_pct": 0.6535947712418301,
       "target_speed_kmh": 362.6
     },
     {
       "type": "low",
-      "length_pct": 1.3071895424836601,
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 122.5
+    },
+    {
+      "type": "low",
+      "length_pct": 0.5446623093681917,
+      "target_speed_kmh": 83.3
+    },
+    {
+      "type": "low",
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 102.9
+    },
+    {
+      "type": "straight",
+      "length_pct": 29.41176470588235,
+      "target_speed_kmh": 362.6
+    },
+    {
+      "type": "low",
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 107.8
+    },
+    {
+      "type": "low",
+      "length_pct": 0.32679738562091504,
+      "target_speed_kmh": 53.9
+    },
+    {
+      "type": "low",
+      "length_pct": 0.32679738562091504,
       "target_speed_kmh": 53.9
     },
     {
       "type": "straight",
-      "length_pct": 21.895424836601308,
+      "length_pct": 22.22222222222222,
       "target_speed_kmh": 362.6
     }
   ],

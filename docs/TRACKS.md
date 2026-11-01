@@ -38,7 +38,11 @@ reached at their end, and kinks stayed corners. Cars cruised at those caps or
 braked mid-straight, so the field bunched and stretched on the straights.
 The first sector also started before the start line whenever the line sat
 inside it, so every corner came up late (225 m at the Norisring), and cars
-braked on the straight after a hairpin. It is now split at the line.
+braked on the straight after a hairpin. It is now split at the line. And a
+run of corners (a hairpin opening into a sweeper) is split into pieces with
+their own caps (speeds within `CORNER_BAND`), instead of one cap at the
+slowest point for the whole complex. These changes made reference laps
+6–19% quicker, so the `speed_scale` values below need re-measuring.
 
 In via mode the tool joins consecutive via points by the shortest path over
 the allowed ways. It also closes small mapping gaps (`snap_gap_m`). Missing
