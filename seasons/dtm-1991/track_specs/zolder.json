@@ -1,0 +1,17 @@
+{
+  "id": "zolder",
+  "name": "Zolder",
+  "nationality": "belgian",
+  "bbox": [5.2400, 50.9800, 5.2750, 51.0000],
+  "length_km": 4.194,
+  "width_m": 11.0,
+  "lap_modifier": 1.12,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.7,
+  "pit_lane_loss_s": 21.0,
+  "tyre_wear_mult": 0.9,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.2,
+  "pole_side": "left",
+  "notes": "Outline traced from today's OSM layout (about 4.0 km). The 1991 lap was 4.194 km, so length_km uses the 1991 figure; the chicane details of 1991 may differ."
+}

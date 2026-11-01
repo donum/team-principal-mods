@@ -27,6 +27,21 @@ Tooling (`tools/`) is MIT licensed. See `LICENSE`.
 - Attribution keeps the research credit attached when packs get reused or
   split up on the Workshop.
 
+## OpenStreetMap-derived tracks
+
+Track geometry (`seasons/*/tracks/*.json`) and track overview maps
+(`seasons/*/assets/tracks/*.png`) produced by `tools/osm_track.py` are derived
+from OpenStreetMap data:
+
+> Map data © OpenStreetMap contributors, available under the Open Database
+> License (ODbL) 1.0. <https://www.openstreetmap.org/copyright>
+
+That attribution must be kept wherever these files are redistributed,
+including Workshop uploads. Each pack ships it in `credits.txt`, and each
+track JSON carries it in its `source` field. The rendered maps are Produced
+Works under ODbL. Any track geometry that counts as extracted data stays under
+the ODbL as well.
+
 ## What this license does NOT cover
 
 - **The game's own files.** `constants.py`, default audio, dashboard
