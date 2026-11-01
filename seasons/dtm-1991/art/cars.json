@@ -513,9 +513,116 @@
         2377,
         676
       ]
+    },
+    "audi_v8_quattro": {
+      "name": "Audi V8 quattro DTM",
+      "reference": {
+        "trace": "art/audi_v8_trace.json",
+        "author": "traced from a photo by Matthew Lamb",
+        "license": "CC BY-SA 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:FoS20162016_0624_174522AA_(27851603876).jpg"
+      },
+      "wheels": [
+        [
+          806,
+          838,
+          240,
+          176
+        ],
+        [
+          2880,
+          851,
+          246,
+          182
+        ]
+      ],
+      "belt_y": 390,
+      "sill_y": 944,
+      "livery_zone": [
+        16,
+        3850
+      ],
+      "light_boxes": [
+        [
+          60,
+          422,
+          154,
+          576
+        ],
+        [
+          3392,
+          595,
+          3670,
+          707
+        ],
+        [
+          3424,
+          803,
+          3658,
+          864
+        ]
+      ],
+      "uv": {
+        "anchors": [
+          [
+            16,
+            5204,
+            2980,
+            4020
+          ],
+          [
+            806,
+            4104,
+            2980,
+            4020
+          ],
+          [
+            1866,
+            2744,
+            2980,
+            4020
+          ],
+          [
+            2474,
+            2024,
+            2980,
+            4020
+          ],
+          [
+            2880,
+            1424,
+            2980,
+            4020
+          ],
+          [
+            3850,
+            684,
+            2980,
+            4020
+          ]
+        ]
+      }
     }
   },
   "liveries": {
+    "SMS Schmidt Motorsport": {
+      "model": "audi_v8_quattro",
+      "base_color": [
+        248,
+        248,
+        248
+      ],
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/audi_v8_dtm/DTM1991/DTM1991_Stuck.dds"
+    },
+    "AZR Audi Zentrum Reutlingen": {
+      "model": "audi_v8_quattro",
+      "base_color": [
+        248,
+        248,
+        248
+      ],
+      "texture": "DTM 1991 1.41/Automobilista 2/Vehicles/Textures/CustomLiveries/Overrides/audi_v8_dtm/DTM1991/DTM1991_Biela.dds"
+    },
     "BMW M Team Schnitzer": {
       "model": "bmw_m3_e30",
       "base_color": [

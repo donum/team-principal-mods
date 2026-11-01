@@ -205,8 +205,60 @@ def font(size):
     return ImageFont.load_default()
 
 
-def render_car(model, livery, zip_path):
-    ref = commons_png(model["reference"]["file"])
+def traced_reference(trace_path):
+    """Render a hand-traced side view (outline data) in the reference drawing style."""
+    t = load_json(trace_path)
+    fr = t["frame"]
+    k = fr["scale"]
+    P = lambda pt: ((pt[0] - fr["x0"]) * k, (pt[1] - fr["y0"]) * k)
+    xs = [p[0] for p in t["body"]] + [w["c"][0] + w["tyre"] for w in t["wheels"]]
+    ys = [p[1] for p in t["body"]] + [w["c"][1] + w["tyre"] for w in t["wheels"]]
+    size = (int((max(xs) - fr["x0"]) * k) + 20, int((max(ys) - fr["y0"]) * k) + 20)
+    img = Image.new("RGBA", size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    lw = t.get("line_px", 9)
+    black = (12, 12, 12, 255)
+    body = tuple(t["body_color"]) + (255,)
+    d.polygon([P(p) for p in t["body"]], fill=body, outline=black, width=lw)
+    d.polygon([P(p) for p in t["spoiler"]], fill=body, outline=black, width=lw)
+    # Wheel arches cut into the body, with a flared lip outline (DTM arch flares).
+    for w in t["wheels"]:
+        cx, cy = P(w["c"])
+        r = w["tyre"] * k * 1.16
+        d.pieslice([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=(22, 22, 22, 255))
+        d.arc([cx - r - lw, cy - r - lw, cx + r + lw, cy + r + lw], 182, 358, fill=black, width=lw)
+        d.arc([cx - r - 5 * lw, cy - r - 5 * lw, cx + r + 5 * lw, cy + r + 5 * lw], 190, 350, fill=black, width=lw // 2)
+    for poly in t["glass"]:
+        d.polygon([P(p) for p in poly], fill=GLASS_RGB + (255,), outline=black, width=lw)
+    for poly in t.get("pillars", []):
+        d.polygon([P(p) for p in poly], fill=black)
+    for line in t["lines"]:
+        d.line([P(p) for p in line], fill=black, width=max(3, lw // 2), joint="curve")
+    d.polygon([P(p) for p in t["mirror"]], fill=body, outline=black, width=lw)
+    for light in t["lights"]:
+        d.polygon([P(p) for p in light["poly"]], fill=tuple(light["color"]) + (255,), outline=black, width=lw // 2)
+    rim = tuple(t["rim_color"]) + (255,)
+    for w in t["wheels"]:
+        cx, cy = P(w["c"])
+        R, r = w["tyre"] * k, w["rim"] * k
+        d.ellipse([cx - R, cy - R, cx + R, cy + R], fill=(18, 18, 18, 255))
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=rim, outline=black, width=lw // 2)
+        # BBS cross-spoke mesh.
+        for i in range(10):
+            a = 2 * math.pi * i / 10
+            for off in (0.35, -0.35):
+                x1, y1 = cx + math.cos(a) * r * 0.25, cy + math.sin(a) * r * 0.25
+                x2, y2 = cx + math.cos(a + off) * r * 0.92, cy + math.sin(a + off) * r * 0.92
+                d.line([(x1, y1), (x2, y2)], fill=(120, 95, 35, 255), width=lw // 2)
+        d.ellipse([cx - r * 0.2, cy - r * 0.2, cx + r * 0.2, cy + r * 0.2], fill=(60, 50, 25, 255))
+    return img, t
+
+
+def render_car(model, livery, zip_path, season=None):
+    if "trace" in model["reference"]:
+        ref, _ = traced_reference(season / model["reference"]["trace"])
+    else:
+        ref = commons_png(model["reference"]["file"])
     if livery.get("keep_reference_livery"):
         out = ref.copy()
     else:
@@ -277,7 +329,7 @@ def main():
             continue
         if livery.get("texture") and not zip_path:
             raise SystemExit("set ams2_mod_zip in local.json to render AMS2 liveries")
-        img = render_car(cfg["models"][livery["model"]], livery, zip_path)
+        img = render_car(cfg["models"][livery["model"]], livery, zip_path, season)
         path = out_dir / f"{team.replace(' ', '')}.png"
         img.save(path, optimize=True)
         rendered.append((team, img))

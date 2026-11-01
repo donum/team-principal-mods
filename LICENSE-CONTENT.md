@@ -48,8 +48,9 @@ The team car images (`seasons/*/assets/Cars/*.png`, made with
 `tools/car_art.py`) build on two sources:
 
 - **Outlines:** adapted from Oliver Pohlmann's DTM side-view illustrations
-  on Wikimedia Commons (CC BY-SA 3.0 DE). The reference file for each car
-  model is listed in `seasons/*/art/cars.json`.
+  on Wikimedia Commons (CC BY-SA 3.0 DE). The Audi V8 outline is traced from
+  a photo by Matthew Lamb (Wikimedia Commons, CC BY-SA 2.0). The reference
+  for each car model is listed in `seasons/*/art/cars.json`.
 - **1991 liveries:** taken from the Automobilista 2 "DTM 1991" mod, used with
   the livery author's permission.
 
