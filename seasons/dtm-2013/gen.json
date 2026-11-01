@@ -78,6 +78,6 @@
              "6": "moscow", "7": "nuerburgring13", "8": "oschersleben", "9": "zandvoort", "10": "hockenheim13"},
   "shared_tracks": {"norisring": "dtm-1991"},
   "track_overrides": {
-    "norisring": {"race_laps": 83, "tyre_wear_mult": 0.7, "pit_lane_loss_s": 18.0, "drs_zones": [{"detection_progress": 0.9954, "start_progress": 0.0354, "end_progress": 0.3541}]}
+    "norisring": {"race_laps": 83, "tyre_wear_mult": 0.7, "pit_lane_loss_s": 18.0, "drs_zones": [{"detection_progress": 0.8954, "start_progress": 0.9354, "end_progress": 0.254}]}
   }
 }

@@ -37,7 +37,7 @@
   "micro_sectors": [
     {
       "type": "straight",
-      "length_pct": 12.656641604010025,
+      "length_pct": 6.641604010025063,
       "target_speed_kmh": 451.4
     },
     {
@@ -134,6 +134,11 @@
       "type": "low",
       "length_pct": 3.3834586466165413,
       "target_speed_kmh": 109.8
+    },
+    {
+      "type": "straight",
+      "length_pct": 6.015037593984962,
+      "target_speed_kmh": 451.4
     }
   ],
   "points": [

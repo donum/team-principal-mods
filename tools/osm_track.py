@@ -274,9 +274,17 @@ def micro_sectors(dense, width_m=11.0, smooth=4):
             kind = "straight"
         sectors.append({"type": kind, "length_m": length_m, "target_speed_kmh": round(v / 5) * 5,
                         "start_index": run["idx"][0]})
-    total = sum(s["length_m"] for s in sectors)
+    # The game starts the first micro-sector at the start line. A sector that
+    # wraps across the line is split there, or every sector lands late by the
+    # length of the piece before the line.
+    out = [dict(s) for s in sectors]
+    if sectors[0]["start_index"] != 0:
+        before_line = (n - sectors[0]["start_index"]) * STEP_M
+        out[0]["length_m"] -= before_line
+        out.append({**sectors[0], "length_m": before_line})
+    total = sum(s["length_m"] for s in out)
     return [{"type": s["type"], "length_pct": 100.0 * s["length_m"] / total,
-             "target_speed_kmh": float(s["target_speed_kmh"])} for s in sectors], sectors
+             "target_speed_kmh": float(s["target_speed_kmh"])} for s in out], sectors
 
 
 def drs_zones(cfg, raw, n):
