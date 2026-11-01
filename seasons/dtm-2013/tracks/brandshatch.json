@@ -31,24 +31,19 @@
   },
   "drs_zones": [
     {
-      "detection_progress": 0.9837,
-      "start_progress": 0.0237,
+      "detection_progress": 0.9439,
+      "start_progress": 0.9839,
       "end_progress": 0.2135
     }
   ],
   "sector_splits": [
     0.3046875,
-    0.6458333333333334
+    0.5859375
   ],
   "micro_sectors": [
     {
-      "type": "high",
-      "length_pct": 4.427083333333333,
-      "target_speed_kmh": 240.0
-    },
-    {
       "type": "straight",
-      "length_pct": 21.09375,
+      "length_pct": 25.520833333333332,
       "target_speed_kmh": 370.0
     },
     {
@@ -59,7 +54,7 @@
     {
       "type": "straight",
       "length_pct": 9.375,
-      "target_speed_kmh": 255.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "low",
@@ -69,7 +64,7 @@
     {
       "type": "straight",
       "length_pct": 4.166666666666667,
-      "target_speed_kmh": 170.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "low",
@@ -78,18 +73,8 @@
     },
     {
       "type": "straight",
-      "length_pct": 5.208333333333333,
-      "target_speed_kmh": 185.0
-    },
-    {
-      "type": "high",
-      "length_pct": 0.78125,
-      "target_speed_kmh": 275.0
-    },
-    {
-      "type": "straight",
-      "length_pct": 7.03125,
-      "target_speed_kmh": 325.0
+      "length_pct": 13.020833333333334,
+      "target_speed_kmh": 370.0
     },
     {
       "type": "low",

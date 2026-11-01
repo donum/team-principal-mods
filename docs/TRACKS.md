@@ -28,6 +28,15 @@ Map data © OpenStreetMap contributors, ODbL 1.0. See
 The default is none, as in the 1991 tracks. Shared tracks can get zones
 through `track_overrides`.
 
+**Micro-sectors.** The game caps each sector's speed and does its own
+acceleration and braking between the caps. So straights are uncapped
+(370 km/h on the reference scale), and a bend counts as a corner only if it
+slows the car: a kink the racing line can straighten (from its turning angle
+and `width_m`), or one the reference car never reaches the cap in, is part of
+the straight. Before November 2026 short straights were capped at the speed
+reached at their end, and kinks stayed corners. Cars cruised at those caps or
+braked mid-straight, so the field bunched and stretched on the straights.
+
 In via mode the tool joins consecutive via points by the shortest path over
 the allowed ways. It also closes small mapping gaps (`snap_gap_m`). Missing
 sections, such as demolished track, become explicit `bridges`.

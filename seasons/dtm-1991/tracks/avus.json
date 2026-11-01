@@ -32,12 +32,12 @@
   "drs_zones": [],
   "sector_splits": [
     0.42390194075587334,
-    0.8355464759959143
+    0.42390194075587334
   ],
   "micro_sectors": [
     {
       "type": "straight",
-      "length_pct": 43.30949948927477,
+      "length_pct": 46.16956077630235,
       "target_speed_kmh": 362.6
     },
     {
@@ -47,33 +47,13 @@
     },
     {
       "type": "straight",
-      "length_pct": 39.93871297242084,
+      "length_pct": 46.37385086823289,
       "target_speed_kmh": 362.6
-    },
-    {
-      "type": "high",
-      "length_pct": 1.2257405515832482,
-      "target_speed_kmh": 249.9
-    },
-    {
-      "type": "straight",
-      "length_pct": 5.209397344228805,
-      "target_speed_kmh": 347.9
     },
     {
       "type": "med",
       "length_pct": 6.026557711950971,
       "target_speed_kmh": 137.2
-    },
-    {
-      "type": "straight",
-      "length_pct": 2.0429009193054135,
-      "target_speed_kmh": 200.9
-    },
-    {
-      "type": "med",
-      "length_pct": 0.8171603677221655,
-      "target_speed_kmh": 161.7
     }
   ],
   "points": [

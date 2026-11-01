@@ -28,11 +28,8 @@ def profile(track):
             for s in track["micro_sectors"]]
 
 
-def reference_time(track):
-    segs = profile(track)
-    caps = []
-    for length, cap, corner in segs:
-        caps += [cap] * max(1, int(length / STEP_M))
+def speed_profile(caps, step=STEP_M):
+    """Reference speed (m/s) at each sample of a closed lap, given per-sample caps."""
     n = len(caps)
     v = caps[:]
     # Two passes around the loop so the start/finish wrap is consistent.
@@ -40,11 +37,19 @@ def reference_time(track):
         for i in range(1, 2 * n):
             j, k = i % n, (i - 1) % n
             a = ACCEL_MS2 * max(0.0, 1 - (v[k] / V_REF_MAX) ** 2)
-            v[j] = min(caps[j], (v[k] ** 2 + 2 * a * STEP_M) ** 0.5)
+            v[j] = min(caps[j], (v[k] ** 2 + 2 * a * step) ** 0.5)
         for i in range(2 * n - 2, -1, -1):
             j, k = i % n, (i + 1) % n
-            v[j] = min(v[j], (v[k] ** 2 + 2 * BRAKE_MS2 * STEP_M) ** 0.5)
-    step = track["length_km"] * 1000.0 / n
+            v[j] = min(v[j], (v[k] ** 2 + 2 * BRAKE_MS2 * step) ** 0.5)
+    return v
+
+
+def reference_time(track):
+    caps = []
+    for length, cap, corner in profile(track):
+        caps += [cap] * max(1, int(length / STEP_M))
+    v = speed_profile(caps)
+    step = track["length_km"] * 1000.0 / len(caps)
     return sum(step / max(x, 1.0) for x in v)
 
 

@@ -74,7 +74,7 @@
     {
       "type": "straight",
       "length_pct": 3.608847497089639,
-      "target_speed_kmh": 210.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "med",
@@ -84,7 +84,7 @@
     {
       "type": "straight",
       "length_pct": 3.026775320139697,
-      "target_speed_kmh": 230.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "med",
@@ -94,7 +94,7 @@
     {
       "type": "straight",
       "length_pct": 10.011641443538998,
-      "target_speed_kmh": 355.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "med",
@@ -104,7 +104,7 @@
     {
       "type": "straight",
       "length_pct": 2.6775320139697323,
-      "target_speed_kmh": 220.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "low",

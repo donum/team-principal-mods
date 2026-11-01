@@ -54,7 +54,7 @@
     {
       "type": "straight",
       "length_pct": 10.274963820549928,
-      "target_speed_kmh": 365.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "low",
@@ -64,7 +64,7 @@
     {
       "type": "straight",
       "length_pct": 13.024602026049203,
-      "target_speed_kmh": 335.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "low",
@@ -74,7 +74,7 @@
     {
       "type": "straight",
       "length_pct": 2.7496382054992763,
-      "target_speed_kmh": 185.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "med",
@@ -84,7 +84,7 @@
     {
       "type": "straight",
       "length_pct": 2.894356005788712,
-      "target_speed_kmh": 230.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "low",
@@ -94,7 +94,7 @@
     {
       "type": "straight",
       "length_pct": 1.1577424023154848,
-      "target_speed_kmh": 140.0
+      "target_speed_kmh": 370.0
     },
     {
       "type": "high",
@@ -1320,7 +1320,7 @@
     ],
     "geometry_length_m": 3424,
     "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.org/copyright)",
-    "notes": "DTM short circuit 2011-2013 (clockwise): front straight of the tri-oval, infield T1-T5, back straight cut short by the 2007 Kurzanbindung hairpin, Apcoa-Kurve, second infield, Turn 3 of the tri-oval. Via route over OSM ways 115077605 and 766115999 (the Grand Prix course) with the Kurzanbindung (ways 470915848, 864182816) instead of the full back straight.",
+    "notes": "DTM short circuit 2011-2013, counter-clockwise as OSM tags the course: front straight of the tri-oval, the banked Turn 1, the back straight cut short by the 2007 Kurzanbindung hairpin, the infield sections, and Turn 3 of the tri-oval back onto the front straight. Via route over OSM ways 115077605 and 766115999 (the Grand Prix course) with the Kurzanbindung (ways 470915848, 864182816) instead of the full back straight. Traced 3424 m vs 3478 m. Whether DTM 2013 took the banked Turn 1 or the infield T1-T5 is not verified; the banked variant is the one that matches the length.",
     "speed_scale": 1.0,
     "canvas_transform": {
       "lat0": 51.53272586938111,

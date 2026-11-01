@@ -31,14 +31,14 @@
   },
   "drs_zones": [],
   "sector_splits": [
-    0.3249444855662472,
+    0.3145817912657291,
     0.7083641746854182
   ],
   "micro_sectors": [
     {
       "type": "straight",
       "length_pct": 6.5136935603256845,
-      "target_speed_kmh": 338.1
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
@@ -57,28 +57,8 @@
     },
     {
       "type": "straight",
-      "length_pct": 0.6661732050333087,
-      "target_speed_kmh": 132.3
-    },
-    {
-      "type": "high",
-      "length_pct": 0.3700962250185048,
-      "target_speed_kmh": 235.2
-    },
-    {
-      "type": "straight",
-      "length_pct": 14.65581051073279,
+      "length_pct": 16.80236861584012,
       "target_speed_kmh": 362.6
-    },
-    {
-      "type": "high",
-      "length_pct": 0.3700962250185048,
-      "target_speed_kmh": 240.1
-    },
-    {
-      "type": "straight",
-      "length_pct": 0.7401924500370096,
-      "target_speed_kmh": 259.7
     },
     {
       "type": "low",
@@ -87,17 +67,7 @@
     },
     {
       "type": "straight",
-      "length_pct": 1.0362694300518134,
-      "target_speed_kmh": 156.8
-    },
-    {
-      "type": "high",
-      "length_pct": 0.3700962250185048,
-      "target_speed_kmh": 245.0
-    },
-    {
-      "type": "straight",
-      "length_pct": 14.063656550703183,
+      "length_pct": 15.470022205773502,
       "target_speed_kmh": 362.6
     },
     {
@@ -118,7 +88,7 @@
     {
       "type": "straight",
       "length_pct": 2.8867505551443373,
-      "target_speed_kmh": 259.7
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
@@ -128,7 +98,7 @@
     {
       "type": "straight",
       "length_pct": 0.6661732050333087,
-      "target_speed_kmh": 147.0
+      "target_speed_kmh": 362.6
     },
     {
       "type": "med",
@@ -138,7 +108,7 @@
     {
       "type": "straight",
       "length_pct": 0.5921539600296077,
-      "target_speed_kmh": 166.6
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",
@@ -148,7 +118,7 @@
     {
       "type": "straight",
       "length_pct": 0.5921539600296077,
-      "target_speed_kmh": 142.1
+      "target_speed_kmh": 362.6
     },
     {
       "type": "low",

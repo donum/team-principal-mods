@@ -31,7 +31,7 @@
   },
   "drs_zones": [],
   "sector_splits": [
-    0.39925373134328357,
+    0.1884328358208955,
     0.6585820895522388
   ],
   "micro_sectors": [
@@ -47,17 +47,7 @@
     },
     {
       "type": "straight",
-      "length_pct": 19.58955223880597,
-      "target_speed_kmh": 352.8
-    },
-    {
-      "type": "high",
-      "length_pct": 1.492537313432836,
-      "target_speed_kmh": 200.9
-    },
-    {
-      "type": "straight",
-      "length_pct": 22.20149253731343,
+      "length_pct": 43.28358208955224,
       "target_speed_kmh": 362.6
     },
     {

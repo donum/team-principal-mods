@@ -17,10 +17,14 @@ import argparse
 import json
 import math
 import random
+import sys
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from laptime import speed_profile  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 CACHE = REPO / "build" / "osm"
@@ -39,7 +43,8 @@ SMOOTH_PASSES = 3             # moving-average passes over the 5 m resampled lin
 # Reference speed scale shared with the base tracks: v = SPEED_K * sqrt(radius_m).
 SPEED_K = 18.0
 V_MAX_KMH = 370.0
-STRAIGHT_ACCEL = 9.0          # m/s^2, average reference acceleration on straights
+CAR_WIDTH_M = 2.0
+FLAT_MARGIN_KMH = 5.0         # a corner the reference car stays this far below is taken flat out
 CORNER_RADIUS_M = 250.0       # tighter than this counts as a corner
 STEP_M = 5.0                  # resampling step for curvature analysis
 MIN_STRAIGHT_M = 40.0         # shorter straights are absorbed into the corner before them
@@ -188,7 +193,21 @@ def corner_speed_kmh(r):
     return min(V_MAX_KMH, SPEED_K * math.sqrt(r))
 
 
-def micro_sectors(dense, smooth=4):
+def racing_line_radius(dense, idx, centre_r, width_m):
+    """Radius a car can use through a corner run: outside-inside-outside over the
+    usable width, from the run's total turning angle. A bend of a few degrees
+    has a huge racing-line radius even when its centreline radius is small."""
+    n = len(dense)
+    turn = 0.0
+    for i in range(idx[0] - 1, idx[0] + len(idx) + 1):
+        a, b, c = dense[(i - 1) % n], dense[i % n], dense[(i + 1) % n]
+        d = math.atan2(c[1] - b[1], c[0] - b[0]) - math.atan2(b[1] - a[1], b[0] - a[0])
+        turn += abs((d + math.pi) % (2 * math.pi) - math.pi)
+    usable = max(1.0, width_m - CAR_WIDTH_M)
+    return centre_r + usable / max(1e-9, 1 - math.cos(min(turn, math.pi) / 2))
+
+
+def micro_sectors(dense, width_m=11.0, smooth=4):
     """Split a dense closed line into straight/low/med/high sectors."""
     n = len(dense)
     radii = [radius(dense[(i - smooth) % n], dense[i], dense[(i + smooth) % n]) for i in range(n)]
@@ -212,16 +231,46 @@ def micro_sectors(dense, smooth=4):
             merged[-1]["idx"] += run["idx"]
         else:
             merged.append(run)
+    # The game caps each sector's speed and runs its own acceleration and braking
+    # between the caps. Straights are therefore uncapped (V_MAX_KMH), and a
+    # corner the reference car never reaches its speed in (a kink on a straight)
+    # joins the straight, and so does a bend shallow enough for the racing line
+    # to straighten: a cap there makes the cars brake and re-accelerate
+    # mid-straight, which bunches and stretches the field.
+    for run in merged:
+        centre_r = min(radii[i] for i in run["idx"]) if run["corner"] else 0.0
+        if run["corner"] and SPEED_K * math.sqrt(racing_line_radius(dense, run["idx"], centre_r, width_m)) >= V_MAX_KMH:
+            run["corner"] = False
+        run["cap"] = corner_speed_kmh(centre_r) if run["corner"] else V_MAX_KMH
+    while True:
+        joined = []
+        for run in merged:
+            if joined and joined[-1]["corner"] == run["corner"] and not run["corner"]:
+                joined[-1]["idx"] += run["idx"]
+            else:
+                joined.append(run)
+        if len(joined) > 1 and not joined[0]["corner"] and not joined[-1]["corner"]:
+            joined[0]["idx"] = joined[-1]["idx"] + joined[0]["idx"]
+            joined.pop()
+        merged = joined
+        caps = [0.0] * n
+        for run in merged:
+            for i in run["idx"]:
+                caps[i] = run["cap"] / 3.6
+        v = speed_profile(caps, STEP_M)
+        flat = [run for run in merged
+                if run["corner"] and max(v[i] for i in run["idx"]) * 3.6 < run["cap"] - FLAT_MARGIN_KMH]
+        if not flat:
+            break
+        for run in flat:
+            run["corner"], run["cap"] = False, V_MAX_KMH
     sectors = []
-    for k, run in enumerate(merged):
+    for run in merged:
         length_m = len(run["idx"]) * STEP_M
+        v = run["cap"]
         if run["corner"]:
-            v = corner_speed_kmh(min(radii[i] for i in run["idx"]))
             kind = "low" if v <= 130 else "med" if v <= 185 else "high"
         else:
-            prev = merged[k - 1]
-            v_in = corner_speed_kmh(min(radii[i] for i in prev["idx"])) if prev["corner"] else V_MAX_KMH
-            v = min(V_MAX_KMH, math.sqrt((v_in / 3.6) ** 2 + 2 * STRAIGHT_ACCEL * length_m) * 3.6)
             kind = "straight"
         sectors.append({"type": kind, "length_m": length_m, "target_speed_kmh": round(v / 5) * 5,
                         "start_index": run["idx"][0]})
@@ -565,7 +614,7 @@ def build(spec_path):
         bg_nodes, bg_ways, bg_relations = parse(fetch(canvas_bbox, spec["id"] + "_canvas"))
         nodes, ways, relations = {**bg_nodes, **nodes}, {**bg_ways, **ways}, bg_relations + relations
 
-    sectors, raw = micro_sectors(dense)
+    sectors, raw = micro_sectors(dense, spec.get("width_m", 11.0))
     # Lap-time calibration: scale every target speed (fitted by tools/calibrate.py).
     for sector in sectors:
         sector["target_speed_kmh"] = round(sector["target_speed_kmh"] * spec.get("speed_scale", 1.0), 1)
