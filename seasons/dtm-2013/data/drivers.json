@@ -22,11 +22,11 @@
   "records": [
     {
       "name": "Mike Rockenfeller",
-      "cornering": 18,
-      "braking": 18,
-      "consistency": 17,
-      "smoothness": 18,
-      "control": 18,
+      "cornering": 19,
+      "braking": 19,
+      "consistency": 18,
+      "smoothness": 19,
+      "control": 19,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -51,11 +51,11 @@
     },
     {
       "name": "Miguel Molina",
-      "cornering": 12,
-      "braking": 12,
-      "consistency": 11,
-      "smoothness": 12,
-      "control": 12,
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -80,11 +80,11 @@
     },
     {
       "name": "Augusto Farfus",
-      "cornering": 17,
-      "braking": 17,
-      "consistency": 16,
-      "smoothness": 17,
-      "control": 17,
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -109,11 +109,11 @@
     },
     {
       "name": "Joey Hand",
-      "cornering": 13,
-      "braking": 13,
-      "consistency": 12,
-      "smoothness": 13,
-      "control": 13,
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -135,64 +135,6 @@
       "nationality": "american",
       "team": "BMW Team RBM",
       "number": 8
-    },
-    {
-      "name": "Bruno Spengler",
-      "cornering": 16,
-      "braking": 16,
-      "consistency": 15,
-      "smoothness": 16,
-      "control": 16,
-      "balance_preference": 55,
-      "traction_preference": 50,
-      "contract": {
-        "team": "BMW Team Schnitzer",
-        "length_weeks": 52,
-        "salary_m": 1.57,
-        "start_week": 1,
-        "role": "main",
-        "status": "equal",
-        "priority": "equal"
-      },
-      "age": 29,
-      "talent": 83,
-      "traits": [],
-      "personalities": [
-        "loyal"
-      ],
-      "career_stage": "racer",
-      "nationality": "canadian",
-      "team": "BMW Team Schnitzer",
-      "number": 1
-    },
-    {
-      "name": "Dirk Werner",
-      "cornering": 13,
-      "braking": 13,
-      "consistency": 12,
-      "smoothness": 13,
-      "control": 13,
-      "balance_preference": 55,
-      "traction_preference": 50,
-      "contract": {
-        "team": "BMW Team Schnitzer",
-        "length_weeks": 52,
-        "salary_m": 0.76,
-        "start_week": 1,
-        "role": "main",
-        "status": "equal",
-        "priority": "equal"
-      },
-      "age": 31,
-      "talent": 73,
-      "traits": [],
-      "personalities": [
-        "loyal"
-      ],
-      "career_stage": "racer",
-      "nationality": "german",
-      "team": "BMW Team Schnitzer",
-      "number": 2
     },
     {
       "name": "Christian Vietoris",
@@ -225,11 +167,11 @@
     },
     {
       "name": "Robert Wickens",
-      "cornering": 15,
-      "braking": 15,
-      "consistency": 14,
-      "smoothness": 15,
-      "control": 15,
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -253,12 +195,128 @@
       "number": 10
     },
     {
+      "name": "Bruno Spengler",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team Schnitzer",
+        "length_weeks": 52,
+        "salary_m": 1.57,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 29,
+      "talent": 83,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "canadian",
+      "team": "BMW Team Schnitzer",
+      "number": 1
+    },
+    {
+      "name": "Dirk Werner",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team Schnitzer",
+        "length_weeks": 52,
+        "salary_m": 0.76,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 73,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "team": "BMW Team Schnitzer",
+      "number": 2
+    },
+    {
+      "name": "Mattias Ekström",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 1.35,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 34,
+      "talent": 81,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "swedish",
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 11
+    },
+    {
+      "name": "Jamie Green",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 0.84,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 30,
+      "talent": 74,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 12
+    },
+    {
       "name": "Gary Paffett",
-      "cornering": 15,
-      "braking": 15,
-      "consistency": 14,
-      "smoothness": 15,
-      "control": 15,
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -311,70 +369,12 @@
       "number": 4
     },
     {
-      "name": "Mattias Ekström",
+      "name": "Marco Wittmann",
       "cornering": 15,
       "braking": 15,
       "consistency": 14,
       "smoothness": 15,
       "control": 15,
-      "balance_preference": 55,
-      "traction_preference": 50,
-      "contract": {
-        "team": "Audi Sport Team Abt Sportsline",
-        "length_weeks": 52,
-        "salary_m": 1.35,
-        "start_week": 1,
-        "role": "main",
-        "status": "equal",
-        "priority": "equal"
-      },
-      "age": 34,
-      "talent": 81,
-      "traits": [],
-      "personalities": [
-        "loyal"
-      ],
-      "career_stage": "racer",
-      "nationality": "swedish",
-      "team": "Audi Sport Team Abt Sportsline",
-      "number": 11
-    },
-    {
-      "name": "Jamie Green",
-      "cornering": 13,
-      "braking": 13,
-      "consistency": 12,
-      "smoothness": 13,
-      "control": 13,
-      "balance_preference": 55,
-      "traction_preference": 50,
-      "contract": {
-        "team": "Audi Sport Team Abt Sportsline",
-        "length_weeks": 52,
-        "salary_m": 0.84,
-        "start_week": 1,
-        "role": "main",
-        "status": "equal",
-        "priority": "equal"
-      },
-      "age": 30,
-      "talent": 74,
-      "traits": [],
-      "personalities": [
-        "loyal"
-      ],
-      "career_stage": "racer",
-      "nationality": "british",
-      "team": "Audi Sport Team Abt Sportsline",
-      "number": 12
-    },
-    {
-      "name": "Marco Wittmann",
-      "cornering": 14,
-      "braking": 14,
-      "consistency": 13,
-      "smoothness": 14,
-      "control": 14,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -457,11 +457,11 @@
     },
     {
       "name": "Adrien Tambay",
-      "cornering": 13,
-      "braking": 13,
-      "consistency": 12,
-      "smoothness": 13,
-      "control": 13,
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
@@ -543,64 +543,6 @@
       "number": 18
     },
     {
-      "name": "Filipe Albuquerque",
-      "cornering": 12,
-      "braking": 12,
-      "consistency": 11,
-      "smoothness": 12,
-      "control": 12,
-      "balance_preference": 55,
-      "traction_preference": 50,
-      "contract": {
-        "team": "Audi Sport Team Rosberg",
-        "length_weeks": 52,
-        "salary_m": 0.55,
-        "start_week": 1,
-        "role": "main",
-        "status": "equal",
-        "priority": "equal"
-      },
-      "age": 27,
-      "talent": 69,
-      "traits": [],
-      "personalities": [
-        "loyal"
-      ],
-      "career_stage": "racer",
-      "nationality": "portuguese",
-      "team": "Audi Sport Team Rosberg",
-      "number": 6
-    },
-    {
-      "name": "Edoardo Mortara",
-      "cornering": 11,
-      "braking": 11,
-      "consistency": 10,
-      "smoothness": 11,
-      "control": 11,
-      "balance_preference": 55,
-      "traction_preference": 50,
-      "contract": {
-        "team": "Audi Sport Team Rosberg",
-        "length_weeks": 52,
-        "salary_m": 0.35,
-        "start_week": 1,
-        "role": "main",
-        "status": "equal",
-        "priority": "equal"
-      },
-      "age": 26,
-      "talent": 63,
-      "traits": [],
-      "personalities": [
-        "loyal"
-      ],
-      "career_stage": "racer",
-      "nationality": "italian",
-      "team": "Audi Sport Team Rosberg",
-      "number": 5
-    },
-    {
       "name": "Martin Tomczyk",
       "cornering": 12,
       "braking": 12,
@@ -657,6 +599,64 @@
       "nationality": "british",
       "team": "BMW Team RMG",
       "number": 16
+    },
+    {
+      "name": "Filipe Albuquerque",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 0.55,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 69,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "portuguese",
+      "team": "Audi Sport Team Rosberg",
+      "number": 6
+    },
+    {
+      "name": "Edoardo Mortara",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 0.35,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 63,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "italian",
+      "team": "Audi Sport Team Rosberg",
+      "number": 5
     }
   ]
 }

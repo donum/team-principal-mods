@@ -21,8 +21,12 @@ Seasons outside the Group A era override the template's rules in gen.json:
 * "constants" are merged into season.json's constants.py overrides;
 * "profiles" (car-character deltas), "make_profiles" and "mass_kg" per make;
 * "engines" replace or add engine suppliers, "tyre_suppliers" replace the
-  template's tyre suppliers;
-* "rating_range" [low, high] spreads team ratings (default [36, 60]);
+  template's tyre suppliers, "tyre_development" is merged onto the base
+  game's tyre development rules (null removes a key);
+* "rating_range" [low, high] spreads team ratings (default [36, 60]), from
+  each team's best driver, or from its average points per car with
+  "team_rating_from": "average";
+* "skill_range" [low, high] spreads driver skills (default [10, 18]);
 * "economy": "budget_per_rating", "salary_min_m", "salary_max_m".
 
 Usage:
@@ -135,8 +139,13 @@ def main():
     for name, t in teams.items():
         members = [d for d in drivers.values() if d["team"] == name]
         best = max((standings.get(d["name"], 0) for d in members), default=0)
+        if gen.get("team_rating_from") == "average":
+            seated = [d for d in members if len(d["rounds"]) >= total_rounds / 2] or members[:1]
+            best = sum(standings.get(d["name"], 0) for d in seated) / len(seated)
         ranked.append((best, name))
     ranked.sort(reverse=True)
+    top_team = ranked[0][0] or 1.0
+    skill_lo, skill_hi = gen.get("skill_range", [10, 18])
     used_numbers = set()
     for pos, (best, name) in enumerate(ranked, 1):
         t = teams[name]
@@ -145,13 +154,13 @@ def main():
         members = sorted([d for d in drivers.values() if d["team"] == name],
                          key=lambda d: (-len(d["rounds"]), -standings.get(d["name"], 0)))
         seated = [d for d in members if len(d["rounds"]) >= total_rounds / 2][:3] or members[:1]
-        base = round(rating_lo + (rating_hi - rating_lo) * (best / top_points) ** 0.7, 1)
+        base = round(rating_lo + (rating_hi - rating_lo) * (best / top_team) ** 0.7, 1)
         base = cfg.get("rating", base)
         tyre = cfg.get("tyres") or (max(set(t["tyres"]), key=t["tyres"].count) if t["tyres"] else DEFAULT_TYRE[make])
-        works = cfg.get("works", best / top_points > 0.45)
+        works = cfg.get("works", best / top_team > 0.45)
         tier = min(len(CLONE_TIERS) - 1, (pos - 1) * len(CLONE_TIERS) // max(1, len(ranked)))
         clones[name] = CLONE_TIERS[tier]
-        staff_levels[name] = max(4, min(16, round(4 + 12 * best / top_points)))
+        staff_levels[name] = max(4, min(16, round(4 + 12 * best / top_team)))
         rec = {
             "name": name, "nationality": cfg.get("nationality", "german"), "entry_count": len(seated),
             "color_rgb": cfg.get("color", [240, 240, 240]), "secondary_color_rgb": cfg.get("secondary", [30, 30, 30]),
@@ -170,7 +179,7 @@ def main():
         for d in members:
             pts = standings.get(d["name"], 0)
             share = pts / top_points
-            skill = max(9, min(18, round(10 + 8 * share ** 0.6)))
+            skill = max(9, min(skill_hi, round(skill_lo + (skill_hi - skill_lo) * share ** 0.6)))
             age = 30
             if d["birth"][:4].isdigit():
                 b = datetime.date.fromisoformat(d["birth"]) if len(d["birth"]) == 10 else datetime.date(int(d["birth"][:4]), 7, 1)
@@ -225,6 +234,8 @@ def main():
     tyres = load_json(tmpl / "data" / "tyre_suppliers.json")
     if "tyre_suppliers" in gen:
         tyres["suppliers"] = gen["tyre_suppliers"]
+    if "tyre_development" in gen:
+        tyres["development"] = gen["tyre_development"]
     dump_json(out_data / "tyre_suppliers.json", tyres)
     dump_json(out_data / "team_histories.json", {t["name"]: gen.get("teams", {}).get(t["name"], {}).get("history", "")
                                                  for t in team_records})

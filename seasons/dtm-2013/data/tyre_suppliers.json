@@ -16,28 +16,24 @@
       "nationality": "south_korean",
       "lateral_grip": {
         "soft": 58.0,
-        "medium": 54.0,
         "hard": 54.0,
         "intermediate": 50.0,
         "wet": 52.0
       },
       "longitudinal_grip": {
         "soft": 58.0,
-        "medium": 54.0,
         "hard": 54.0,
         "intermediate": 50.0,
         "wet": 52.0
       },
       "durability": {
         "soft": 40.0,
-        "medium": 60.0,
         "hard": 60.0,
         "intermediate": 55.0,
         "wet": 55.0
       },
       "temperature_tolerance": {
         "soft": 50.0,
-        "medium": 54.0,
         "hard": 54.0,
         "intermediate": 50.0,
         "wet": 50.0
@@ -55,6 +51,71 @@
         "temperature_tolerance": 0.0
       },
       "development_preference": "endurance"
+    }
+  },
+  "development": {
+    "$comment": "DTM 2013 had no medium: it is dropped from the development programmes too.",
+    "programs": {
+      "cornering_grip": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      },
+      "traction_braking": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      },
+      "durability": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      },
+      "thermal_stability": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      }
     }
   }
 }

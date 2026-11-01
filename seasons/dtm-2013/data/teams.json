@@ -100,24 +100,24 @@
     },
     "bmw_m3_dtm_e92": {
       "acceleration": 1,
-      "straight": 1,
+      "straight": 0,
       "slow": 0,
       "med": 0,
       "high": 1,
-      "braking": 1,
+      "braking": 0,
       "tyre_management": 0,
-      "chassis_reliability": 2,
-      "aero_efficiency_rating": 1,
-      "dirty_air_sensitivity": -1
+      "chassis_reliability": 1,
+      "aero_efficiency_rating": 0,
+      "dirty_air_sensitivity": 0
     },
     "amg_c_coupe_dtm": {
       "acceleration": 0,
       "straight": 1,
-      "slow": -1,
+      "slow": 0,
       "med": 0,
-      "high": 0,
+      "high": 1,
       "braking": 0,
-      "tyre_management": -1,
+      "tyre_management": 0,
       "chassis_reliability": 1,
       "aero_efficiency_rating": 0,
       "dirty_air_sensitivity": 0
@@ -147,14 +147,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 60.0,
+        "base": 58.0,
         "profile": "audi_rs5_dtm"
       },
-      "heritage_prestige": 72,
-      "form_prestige": 70,
-      "prestige_base": 71,
-      "budget_m": 96,
-      "starting_balance_m": 30.0,
+      "heritage_prestige": 70,
+      "form_prestige": 68,
+      "prestige_base": 69,
+      "budget_m": 93,
+      "starting_balance_m": 29.0,
       "difficulty": "easy",
       "previous_constructor_position": 1,
       "headquarters": {
@@ -191,60 +191,16 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 58.7,
+        "base": 57.7,
         "profile": "bmw_m3_dtm_e92"
       },
-      "heritage_prestige": 71,
-      "form_prestige": 69,
-      "prestige_base": 70,
-      "budget_m": 94,
-      "starting_balance_m": 29.4,
+      "heritage_prestige": 70,
+      "form_prestige": 68,
+      "prestige_base": 69,
+      "budget_m": 92,
+      "starting_balance_m": 28.9,
       "difficulty": "easy",
       "previous_constructor_position": 2,
-      "headquarters": {
-        "hospitality_pr_center": 3,
-        "wind_tunnel": 2,
-        "engine_plant": 0,
-        "test_track": 1,
-        "factory": 4,
-        "cfd_center": 1,
-        "recon_centre": 2,
-        "driver_centre": 2
-      }
-    },
-    {
-      "name": "BMW Team Schnitzer",
-      "nationality": "german",
-      "entry_count": 2,
-      "color_rgb": [
-        25,
-        25,
-        28
-      ],
-      "secondary_color_rgb": [
-        0,
-        102,
-        177
-      ],
-      "engine": "BMW P66 4.0 V8",
-      "engine_supplier": "BMW",
-      "engine_contract_type": "partner",
-      "tyre_contract": {
-        "supplier": "Hankook",
-        "type": "partner"
-      },
-      "car_mass_kg": 965.0,
-      "$rating": {
-        "base": 56.8,
-        "profile": "bmw_m3_dtm_e92"
-      },
-      "heritage_prestige": 69,
-      "form_prestige": 67,
-      "prestige_base": 68,
-      "budget_m": 91,
-      "starting_balance_m": 28.4,
-      "difficulty": "easy",
-      "previous_constructor_position": 3,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -279,16 +235,16 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 56.5,
+        "base": 57.7,
         "profile": "amg_c_coupe_dtm"
       },
-      "heritage_prestige": 68,
-      "form_prestige": 66,
-      "prestige_base": 68,
-      "budget_m": 90,
-      "starting_balance_m": 28.2,
+      "heritage_prestige": 70,
+      "form_prestige": 68,
+      "prestige_base": 69,
+      "budget_m": 92,
+      "starting_balance_m": 28.9,
       "difficulty": "easy",
-      "previous_constructor_position": 4,
+      "previous_constructor_position": 3,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -301,21 +257,21 @@
       }
     },
     {
-      "name": "Euronics AMG-Mercedes",
+      "name": "BMW Team Schnitzer",
       "nationality": "german",
       "entry_count": 2,
       "color_rgb": [
-        0,
-        65,
-        150
+        25,
+        25,
+        28
       ],
       "secondary_color_rgb": [
-        255,
-        210,
-        0
+        0,
+        102,
+        177
       ],
-      "engine": "Mercedes-AMG 4.0 V8",
-      "engine_supplier": "Mercedes-Benz",
+      "engine": "BMW P66 4.0 V8",
+      "engine_supplier": "BMW",
       "engine_contract_type": "partner",
       "tyre_contract": {
         "supplier": "Hankook",
@@ -323,16 +279,16 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 56.0,
-        "profile": "amg_c_coupe_dtm"
+        "base": 56.9,
+        "profile": "bmw_m3_dtm_e92"
       },
-      "heritage_prestige": 68,
-      "form_prestige": 66,
-      "prestige_base": 67,
-      "budget_m": 90,
-      "starting_balance_m": 28.0,
+      "heritage_prestige": 69,
+      "form_prestige": 67,
+      "prestige_base": 68,
+      "budget_m": 91,
+      "starting_balance_m": 28.4,
       "difficulty": "easy",
-      "previous_constructor_position": 5,
+      "previous_constructor_position": 4,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -367,14 +323,58 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 56.0,
+        "base": 56.7,
         "profile": "audi_rs5_dtm"
+      },
+      "heritage_prestige": 69,
+      "form_prestige": 67,
+      "prestige_base": 68,
+      "budget_m": 91,
+      "starting_balance_m": 28.4,
+      "difficulty": "easy",
+      "previous_constructor_position": 5,
+      "headquarters": {
+        "hospitality_pr_center": 3,
+        "wind_tunnel": 2,
+        "engine_plant": 0,
+        "test_track": 1,
+        "factory": 4,
+        "cfd_center": 1,
+        "recon_centre": 2,
+        "driver_centre": 2
+      }
+    },
+    {
+      "name": "Euronics AMG-Mercedes",
+      "nationality": "german",
+      "entry_count": 2,
+      "color_rgb": [
+        0,
+        65,
+        150
+      ],
+      "secondary_color_rgb": [
+        255,
+        210,
+        0
+      ],
+      "engine": "Mercedes-AMG 4.0 V8",
+      "engine_supplier": "Mercedes-Benz",
+      "engine_contract_type": "partner",
+      "tyre_contract": {
+        "supplier": "Hankook",
+        "type": "partner"
+      },
+      "car_mass_kg": 965.0,
+      "$rating": {
+        "base": 56.5,
+        "profile": "amg_c_coupe_dtm"
       },
       "heritage_prestige": 68,
       "form_prestige": 66,
-      "prestige_base": 67,
+      "prestige_base": 68,
       "budget_m": 90,
-      "starting_balance_m": 28.0,
+      "starting_balance_m": 28.2,
       "difficulty": "easy",
       "previous_constructor_position": 6,
       "headquarters": {
@@ -411,15 +411,15 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 54.7,
+        "base": 56.3,
         "profile": "bmw_m3_dtm_e92"
       },
-      "heritage_prestige": 67,
-      "form_prestige": 65,
-      "prestige_base": 66,
-      "budget_m": 88,
-      "starting_balance_m": 27.4,
-      "difficulty": "medium",
+      "heritage_prestige": 68,
+      "form_prestige": 66,
+      "prestige_base": 67,
+      "budget_m": 90,
+      "starting_balance_m": 28.1,
+      "difficulty": "easy",
       "previous_constructor_position": 7,
       "headquarters": {
         "hospitality_pr_center": 3,
@@ -455,15 +455,15 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 53.9,
+        "base": 55.7,
         "profile": "audi_rs5_dtm"
       },
-      "heritage_prestige": 66,
-      "form_prestige": 64,
-      "prestige_base": 65,
-      "budget_m": 86,
-      "starting_balance_m": 26.9,
-      "difficulty": "medium",
+      "heritage_prestige": 68,
+      "form_prestige": 66,
+      "prestige_base": 67,
+      "budget_m": 89,
+      "starting_balance_m": 27.9,
+      "difficulty": "easy",
       "previous_constructor_position": 8,
       "headquarters": {
         "hospitality_pr_center": 3,
@@ -499,60 +499,16 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 52.6,
+        "base": 54.3,
         "profile": "amg_c_coupe_dtm"
       },
-      "heritage_prestige": 65,
-      "form_prestige": 63,
-      "prestige_base": 64,
-      "budget_m": 84,
-      "starting_balance_m": 26.3,
+      "heritage_prestige": 66,
+      "form_prestige": 64,
+      "prestige_base": 65,
+      "budget_m": 87,
+      "starting_balance_m": 27.1,
       "difficulty": "medium",
       "previous_constructor_position": 9,
-      "headquarters": {
-        "hospitality_pr_center": 3,
-        "wind_tunnel": 2,
-        "engine_plant": 0,
-        "test_track": 1,
-        "factory": 4,
-        "cfd_center": 1,
-        "recon_centre": 2,
-        "driver_centre": 2
-      }
-    },
-    {
-      "name": "Audi Sport Team Rosberg",
-      "nationality": "german",
-      "entry_count": 2,
-      "color_rgb": [
-        125,
-        12,
-        25
-      ],
-      "secondary_color_rgb": [
-        195,
-        195,
-        200
-      ],
-      "engine": "Audi 4.0 V8",
-      "engine_supplier": "Audi",
-      "engine_contract_type": "partner",
-      "tyre_contract": {
-        "supplier": "Hankook",
-        "type": "partner"
-      },
-      "car_mass_kg": 965.0,
-      "$rating": {
-        "base": 52.2,
-        "profile": "audi_rs5_dtm"
-      },
-      "heritage_prestige": 64,
-      "form_prestige": 62,
-      "prestige_base": 63,
-      "budget_m": 84,
-      "starting_balance_m": 26.1,
-      "difficulty": "medium",
-      "previous_constructor_position": 10,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -587,14 +543,58 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 51.6,
+        "base": 54.2,
         "profile": "bmw_m3_dtm_e92"
       },
-      "heritage_prestige": 64,
-      "form_prestige": 62,
-      "prestige_base": 63,
-      "budget_m": 83,
-      "starting_balance_m": 25.8,
+      "heritage_prestige": 66,
+      "form_prestige": 64,
+      "prestige_base": 65,
+      "budget_m": 87,
+      "starting_balance_m": 27.1,
+      "difficulty": "medium",
+      "previous_constructor_position": 10,
+      "headquarters": {
+        "hospitality_pr_center": 3,
+        "wind_tunnel": 2,
+        "engine_plant": 0,
+        "test_track": 1,
+        "factory": 4,
+        "cfd_center": 1,
+        "recon_centre": 2,
+        "driver_centre": 2
+      }
+    },
+    {
+      "name": "Audi Sport Team Rosberg",
+      "nationality": "german",
+      "entry_count": 2,
+      "color_rgb": [
+        125,
+        12,
+        25
+      ],
+      "secondary_color_rgb": [
+        195,
+        195,
+        200
+      ],
+      "engine": "Audi 4.0 V8",
+      "engine_supplier": "Audi",
+      "engine_contract_type": "partner",
+      "tyre_contract": {
+        "supplier": "Hankook",
+        "type": "partner"
+      },
+      "car_mass_kg": 965.0,
+      "$rating": {
+        "base": 54.1,
+        "profile": "audi_rs5_dtm"
+      },
+      "heritage_prestige": 66,
+      "form_prestige": 64,
+      "prestige_base": 65,
+      "budget_m": 87,
+      "starting_balance_m": 27.1,
       "difficulty": "medium",
       "previous_constructor_position": 11,
       "headquarters": {

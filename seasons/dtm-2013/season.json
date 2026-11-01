@@ -29,15 +29,15 @@
   "team_clones": {
     "Audi Sport Team Phoenix": "Red Boar",
     "BMW Team RBM": "Mercurion",
-    "BMW Team Schnitzer": "McMean",
-    "STIHL AMG-Mercedes": "Audex",
-    "Euronics AMG-Mercedes": "Scuderia Rossa",
-    "Audi Sport Team Abt Sportsline": "Ashton Darting",
+    "STIHL AMG-Mercedes": "McMean",
+    "BMW Team Schnitzer": "Audex",
+    "Audi Sport Team Abt Sportsline": "Scuderia Rossa",
+    "Euronics AMG-Mercedes": "Ashton Darting",
     "BMW Team MTEK": "French Blue",
     "Audi Sport Team Abt": "Alpha Bison",
     "stern AMG-Mercedes": "Willens Racing",
-    "Audi Sport Team Rosberg": "Hossden GP",
-    "BMW Team RMG": "Cadylacky Motors"
+    "BMW Team RMG": "Hossden GP",
+    "Audi Sport Team Rosberg": "Cadylacky Motors"
   },
   "staff": {
     "seed": 2013,
@@ -45,16 +45,16 @@
     "named": [],
     "levels": {
       "Audi Sport Team Phoenix": 16,
-      "BMW Team RBM": 14,
-      "BMW Team Schnitzer": 11,
-      "STIHL AMG-Mercedes": 11,
-      "Euronics AMG-Mercedes": 10,
-      "Audi Sport Team Abt Sportsline": 10,
-      "BMW Team MTEK": 8,
-      "Audi Sport Team Abt": 7,
+      "BMW Team RBM": 15,
+      "STIHL AMG-Mercedes": 15,
+      "BMW Team Schnitzer": 12,
+      "Audi Sport Team Abt Sportsline": 12,
+      "Euronics AMG-Mercedes": 11,
+      "BMW Team MTEK": 11,
+      "Audi Sport Team Abt": 9,
       "stern AMG-Mercedes": 6,
-      "Audi Sport Team Rosberg": 5,
-      "BMW Team RMG": 5
+      "BMW Team RMG": 5,
+      "Audi Sport Team Rosberg": 5
     }
   },
   "shared_tracks": {
