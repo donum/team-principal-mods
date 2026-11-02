@@ -96,15 +96,28 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 
 ## Simplifications
 
-- **Two mandatory pit stops** can't be forced. Tyre wear (`tyre_wear_mult`,
-  scaled by race laps) is set so that about two stops should be the fastest
-  strategy. This needs an in-game check.
-- **DRS** was free once per lap anywhere on the track in 2013. The game uses
-  zones, so each track has one zone on its longest straight. The game opens
-  DRS from lap 3. The real ban on the last 3 laps isn't modelled.
-- **Qualifying:** the game's Q1/Q2/Q3 knockout. There's no Q4 shootout.
+The game features these would need are in the
+[developer wish list](../../docs/DEVELOPER_WISHLIST.md) (item numbers in
+brackets).
+
+- **Two mandatory pit stops** can't be forced (B5). Tyre wear
+  (`tyre_wear_mult`, scaled by race laps) is set so that two stops is the
+  fastest strategy: in season 5, 160 of 220 cars stopped twice.
+- **DRS** was free once per lap anywhere on the track in 2013, in the race
+  only (B6). The game uses zones, so each track has one zone on its longest
+  straight. It opens DRS from lap 3 and in qualifying too. The real ban on
+  the last 3 laps isn't modelled.
+- **Qualifying:** the game's Q1/Q2/Q3 knockout. There's no Q4 shootout (A5).
 - **Option tyre:** the rule was one set per race. The game asks for two
-  different dry compounds.
+  different dry compounds (B7).
+- **Top speeds** come out about 10 km/h high: the car profile is at the
+  game's limits for drag and acceleration (D5).
+- **Development:** chassis and aero were homologated, but in the game teams
+  still develop at different rates during the season (C4).
+- **Time-limited races** (the wet Nürburgring and final Hockenheim, 75
+  minutes) run their full lap count (A3).
+- **Pits** are at the start line, so four start lines sit on the pit
+  straight (E5).
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
 
 ## Lap times
