@@ -2,7 +2,7 @@
   "name": "Nürburgring",
   "nationality": "german",
   "length_km": 3.629,
-  "lap_modifier": 0.9,
+  "lap_modifier": 0.98,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.5,
   "pit_lane_loss_s": 21.0,

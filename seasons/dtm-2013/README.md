@@ -52,9 +52,10 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   aren't real euros. Top driver salaries are capped at 2.5 (DTM scale), not F1
   levels.
 - **Tracks:** 8 new venues traced from OpenStreetMap (`track_specs/`), plus
-  the 1991 Norisring (`shared_tracks`). Each new spec sets `race_laps` from
-  `research/calendar.csv` and one DRS zone (`drs_zones`) on the longest
-  straight. Zandvoort has none: DRS wasn't used there in 2013.
+  the 1991 Norisring (`shared_tracks`). Each new spec sets `race_laps` to
+  the scheduled 2013 distance (`research/calendar.csv`, all about 190 km or
+  70 minutes; the Nürburgring 49 laps, of which the wet race ran 45) and one
+  DRS zone (`drs_zones`) on the longest straight. Zandvoort has none: DRS wasn't used there in 2013.
 - **Art:**
   - Cars: layered liveries drawn on our own outlines of the three cars, traced
     from Commons photos (`art/*_trace.json`, `art/cars.json`, see
@@ -114,8 +115,10 @@ brackets).
   game's limits for drag and acceleration (D5).
 - **Development:** chassis and aero were homologated, but in the game teams
   still develop at different rates during the season (C4).
-- **Time-limited races** (the wet Nürburgring and final Hockenheim, 75
-  minutes) run their full lap count (A3).
+- **Time-limited races:** the wet Nürburgring and final Hockenheim races
+  were stopped at 75 minutes, after 45 of 49 and 41 of 42 laps. The game
+  always runs the full lap count (A3). In season 6 the dry races took 66–77
+  minutes, against 69–75 for the real dry races.
 - **Pits** are at the start line, so four start lines sit on the pit
   straight (E5).
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
