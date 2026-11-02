@@ -147,14 +147,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 58.0,
+        "base": 57.5,
         "profile": "audi_rs5_dtm"
       },
       "heritage_prestige": 70,
       "form_prestige": 68,
-      "prestige_base": 69,
-      "budget_m": 93,
-      "starting_balance_m": 29.0,
+      "prestige_base": 68,
+      "budget_m": 92,
+      "starting_balance_m": 28.8,
       "difficulty": "easy",
       "previous_constructor_position": 1,
       "headquarters": {
@@ -191,14 +191,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 57.7,
+        "base": 57.4,
         "profile": "bmw_m3_dtm_e92"
       },
-      "heritage_prestige": 70,
-      "form_prestige": 68,
-      "prestige_base": 69,
+      "heritage_prestige": 69,
+      "form_prestige": 67,
+      "prestige_base": 68,
       "budget_m": 92,
-      "starting_balance_m": 28.9,
+      "starting_balance_m": 28.7,
       "difficulty": "easy",
       "previous_constructor_position": 2,
       "headquarters": {
@@ -235,14 +235,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 57.7,
+        "base": 57.3,
         "profile": "amg_c_coupe_dtm"
       },
-      "heritage_prestige": 70,
-      "form_prestige": 68,
-      "prestige_base": 69,
+      "heritage_prestige": 69,
+      "form_prestige": 67,
+      "prestige_base": 68,
       "budget_m": 92,
-      "starting_balance_m": 28.9,
+      "starting_balance_m": 28.6,
       "difficulty": "easy",
       "previous_constructor_position": 3,
       "headquarters": {
@@ -323,7 +323,7 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 56.7,
+        "base": 56.8,
         "profile": "audi_rs5_dtm"
       },
       "heritage_prestige": 69,
@@ -367,14 +367,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 56.5,
+        "base": 56.7,
         "profile": "amg_c_coupe_dtm"
       },
-      "heritage_prestige": 68,
-      "form_prestige": 66,
+      "heritage_prestige": 69,
+      "form_prestige": 67,
       "prestige_base": 68,
-      "budget_m": 90,
-      "starting_balance_m": 28.2,
+      "budget_m": 91,
+      "starting_balance_m": 28.4,
       "difficulty": "easy",
       "previous_constructor_position": 6,
       "headquarters": {
@@ -411,14 +411,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 56.3,
+        "base": 56.7,
         "profile": "bmw_m3_dtm_e92"
       },
-      "heritage_prestige": 68,
-      "form_prestige": 66,
-      "prestige_base": 67,
-      "budget_m": 90,
-      "starting_balance_m": 28.1,
+      "heritage_prestige": 69,
+      "form_prestige": 67,
+      "prestige_base": 68,
+      "budget_m": 91,
+      "starting_balance_m": 28.4,
       "difficulty": "easy",
       "previous_constructor_position": 7,
       "headquarters": {
@@ -455,14 +455,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 55.7,
+        "base": 56.4,
         "profile": "audi_rs5_dtm"
       },
       "heritage_prestige": 68,
       "form_prestige": 66,
       "prestige_base": 67,
-      "budget_m": 89,
-      "starting_balance_m": 27.9,
+      "budget_m": 90,
+      "starting_balance_m": 28.2,
       "difficulty": "easy",
       "previous_constructor_position": 8,
       "headquarters": {
@@ -499,15 +499,15 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 54.3,
+        "base": 55.7,
         "profile": "amg_c_coupe_dtm"
       },
-      "heritage_prestige": 66,
-      "form_prestige": 64,
-      "prestige_base": 65,
-      "budget_m": 87,
-      "starting_balance_m": 27.1,
-      "difficulty": "medium",
+      "heritage_prestige": 68,
+      "form_prestige": 66,
+      "prestige_base": 67,
+      "budget_m": 89,
+      "starting_balance_m": 27.9,
+      "difficulty": "easy",
       "previous_constructor_position": 9,
       "headquarters": {
         "hospitality_pr_center": 3,
@@ -543,15 +543,15 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 54.2,
+        "base": 55.6,
         "profile": "bmw_m3_dtm_e92"
       },
-      "heritage_prestige": 66,
-      "form_prestige": 64,
-      "prestige_base": 65,
-      "budget_m": 87,
-      "starting_balance_m": 27.1,
-      "difficulty": "medium",
+      "heritage_prestige": 68,
+      "form_prestige": 66,
+      "prestige_base": 67,
+      "budget_m": 89,
+      "starting_balance_m": 27.8,
+      "difficulty": "easy",
       "previous_constructor_position": 10,
       "headquarters": {
         "hospitality_pr_center": 3,
@@ -587,15 +587,15 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 54.1,
+        "base": 55.6,
         "profile": "audi_rs5_dtm"
       },
-      "heritage_prestige": 66,
-      "form_prestige": 64,
-      "prestige_base": 65,
-      "budget_m": 87,
-      "starting_balance_m": 27.1,
-      "difficulty": "medium",
+      "heritage_prestige": 68,
+      "form_prestige": 66,
+      "prestige_base": 67,
+      "budget_m": 89,
+      "starting_balance_m": 27.8,
+      "difficulty": "easy",
       "previous_constructor_position": 11,
       "headquarters": {
         "hospitality_pr_center": 3,

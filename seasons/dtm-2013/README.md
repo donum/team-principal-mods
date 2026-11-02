@@ -18,23 +18,24 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
     "Euronics AMG-Mercedes" (#3, #4) and "STIHL AMG-Mercedes" (#9, #10).
 - **Ratings, skills and salaries:** estimated from the final 2013 standings.
   Car ratings come from each team's average points per car
-  (`team_rating_from: average`) and are spread over 53–58 (`rating_range`),
-  because the three makes were close. Driver skill is spread over 10–19
-  (`skill_range`), so the drivers make most of the difference. A first
-  version rated each car from its team's best driver over 50–60; in the
-  test season the champions' team-mates (Molina, Hand) then scored three to
-  five times their real points and the HWA Mercedes far too little. These
-  are estimates, not history.
+  (`team_rating_from: average`) and are spread over 55–57.5 (`rating_range`),
+  because the three makes were close. Driver skill is spread over 11–18
+  (`skill_range`). A first version rated each car from its team's best
+  driver over 50–60; in the test season the champions' team-mates (Molina,
+  Hand) then scored three to five times their real points. With 53–58 and
+  10–19 (season 5) the four top teams still took 80% of the points
+  (real: 58%) and Rockenfeller won 6 of 10, so both ranges were narrowed.
+  These are estimates, not history.
 - **Rules** (`rules: "own"` in `gen.json`, see `patches/regulations.json`):
   - Points 25-18-15-12-10-8-6-4-2-1 (the game's `modern_top10`).
   - Knockout qualifying. The real Q4 single-lap shootout of the top 4 isn't
     in the game.
   - DRS enabled, no refuelling, no ERS, two cars per team, driver aids banned.
   - Physical safety car only: there was no VSC or full-course yellow in 2013.
-  - A `dtm_2013` car profile (corner 1.1, acceleration 0.55, braking 1.0,
+  - A `dtm_2013` car profile (corner 1.13, acceleration 0.5, braking 1.0,
     drag 1.5; the game allows 0.5–1.5). It was fitted with the game's own
-    physics model to the 2013 qualifying times and a Hockenheim top speed of
-    about 265–270 km/h (see "Lap times").
+    physics model to the 2013 qualifying times. Acceleration and drag sit at
+    the game's limits to keep top speeds down (see "Lap times").
   - Minimum chassis mass 965 kg. The game adds the engine mass (145 kg) on
     top, for the real 1,110 kg. No success ballast.
 - **Engines:** Audi 4.0 V8, BMW P66 4.0 V8 and Mercedes-AMG 4.0 V8 as works
@@ -77,7 +78,7 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 | Lausitzring | 3.478 km | Via: the DTM short course, with the Turn 1 hairpin at the end of the front straight (a hand-placed bridge: OSM maps it only as a junction) and the 2007 Kurzanbindung hairpin, counter-clockwise as OSM tags it | 3,388 m (−2.6%) |
 | Norisring | 2.300 km | Shared from 1991 | 2,207 m (−4%) |
 | Moscow Raceway | 2.555 km | Via: the full circuit's way with the link that cuts the southern section | 2,550 m (−0.2%) |
-| Nürburgring Sprint | 3.629 km | Via: the 1992 sprint route with the Mercedes Arena | 3,555 m (−2%) |
+| Nürburgring Sprint | 3.629 km | Via: the 1992 sprint route with the Mercedes Arena, the Kurzanbindung and the NGK-Schikane (OSM way 820679450, about 40 m wide, so small on the map) | 3,555 m (−2%) |
 | Oschersleben | 3.696 km | Raceway loop | 3,626 m (−1.9%) |
 | Zandvoort | 4.307 km | Raceway loop over today's (post-2020) layout | 4,205 m (−2.4%) |
 
@@ -115,22 +116,27 @@ The real 2013 qualifying and race results are in `research/results/`
    track files) gives a neutral car's lap. In the test season every pole was
    0.927 of that model lap, within ±0.7% on all nine tracks, so the model
    predicts the game.
-2. The car profile was fitted to the poles and the top speed, then each
-   track's remaining error went into its `speed_scale` (Norisring:
-   `speed_mult`): Hockenheim 1.079, Brands Hatch 0.983, Red Bull Ring 1.059,
-   Lausitzring 1.048, Norisring 1.264, Moscow 1.147, Nürburgring 0.937,
-   Oschersleben 1.016, Zandvoort 1.008.
+2. The car profile was fitted to the poles, then each track's remaining
+   error went into its `speed_scale` (Norisring: `speed_mult`).
+3. Season 5 poles were all within 0.8% of 2013 (0.927–0.935 of the model
+   lap). The profile was refitted at acceleration 0.5 and each track's scale
+   set from its own season-5 ratio: Hockenheim 1.091, Brands Hatch 0.987,
+   Red Bull Ring 1.088, Lausitzring 1.046, Norisring 1.29, Moscow 1.132,
+   Nürburgring 0.94, Oschersleben 1.014, Zandvoort 1.014.
 
-Predicted poles now match 2013 to within 0.1%. The cars are rated a little
-lower than in the test season, so in-game poles may come out about 1% slow.
+Predicted poles match 2013 to within 0.1%. The narrower team ratings make
+the top car a little slower, so in-game poles may come out a few tenths slow.
+
+**Top speeds** come out high. Season-5 qualifying traps were 285 km/h at
+Hockenheim, 280 at the Lausitzring and the Norisring and 267 at Zandvoort.
+The game opens DRS in qualifying too (8 km/h), and drag can't go above 1.5.
+Acceleration 0.5 takes about 2.5% off (an estimated 278 at Hockenheim).
 
 ## Still to check in-game
 
-- Poles within about 1% of 2013, top speed about 265–270 km/h at Hockenheim.
-- Races have two stops. Tyre wear is 20% higher at Hockenheim, the
-  Nürburgring and Zandvoort and 10% at the Red Bull Ring and the
-  Lausitzring, where cars one-stopped in the test season.
-- The points spread: more different winners than Rockenfeller's 8 of 10.
+- Poles within about 1% of 2013, top speeds about 2.5% lower than season 5.
+- Races have two stops: in season 5 160 of 220 cars stopped twice.
+- The points spread: 2013 had seven different winners, season 5 three.
 
 ## Rebuild
 

@@ -35,8 +35,10 @@ ATTRIBUTION = "Map data (c) OpenStreetMap contributors, ODbL 1.0 (openstreetmap.
 CANVAS = (1044, 1080)
 # Where the racing line may go on the canvas. The race screen covers the lower
 # part of the map with driver cards and the event log, so the track stays in
-# the upper area while the background map still fills the whole image.
-SAFE_BOX = (70, 60, 974, 800)
+# the upper area while the background map still fills the whole image. The
+# session header at the top wraps to two lines (about 82 px) for long track
+# names, so the box starts below it.
+SAFE_BOX = (70, 100, 974, 800)
 BASE_RACE_LAPS = 50           # "laps" in the base pack's options.json
 SUPERSAMPLE = 3
 SMOOTH_PASSES = 3             # moving-average passes over the 5 m resampled line

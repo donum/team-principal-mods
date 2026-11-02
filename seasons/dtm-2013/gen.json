@@ -13,9 +13,9 @@
     "DRIVER_RETIREMENT_MIN_AGE": 36,
     "DRIVER_RETIREMENT_ESCALATION_AGE": 44
   },
-  "rating_range": [53, 58],
+  "rating_range": [55, 57.5],
   "team_rating_from": "average",
-  "skill_range": [10, 19],
+  "skill_range": [11, 18],
   "economy": {"budget_per_rating": 1.6, "salary_min_m": 0.3, "salary_max_m": 2.5},
   "mass_kg": {"Audi": 965.0, "BMW": 965.0, "Mercedes-Benz": 965.0},
   "make_profiles": {"Audi": "audi_rs5_dtm", "BMW": "bmw_m3_dtm_e92", "Mercedes-Benz": "amg_c_coupe_dtm"},
@@ -89,6 +89,6 @@
              "6": "moscow", "7": "nuerburgring13", "8": "oschersleben", "9": "zandvoort", "10": "hockenheim13"},
   "shared_tracks": {"norisring": "dtm-1991"},
   "track_overrides": {
-    "norisring": {"race_laps": 83, "speed_mult": 1.264, "tyre_wear_mult": 0.7, "pit_lane_loss_s": 18.0, "drs_zones": [{"detection_progress": 0.8954, "start_progress": 0.9354, "end_progress": 0.254}]}
+    "norisring": {"race_laps": 83, "speed_mult": 1.29, "tyre_wear_mult": 0.7, "pit_lane_loss_s": 18.0, "drs_zones": [{"detection_progress": 0.8954, "start_progress": 0.9354, "end_progress": 0.254}]}
   }
 }
