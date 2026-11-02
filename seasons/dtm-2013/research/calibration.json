@@ -71,6 +71,78 @@
       "game_pole_s": 91.697,
       "speed_scale": 1.008,
       "save": "season5.json"
+    },
+    {
+      "track": "hockenheim13",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 93.145,
+      "speed_scale": 1.091,
+      "save": "season6.json"
+    },
+    {
+      "track": "brandshatch",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 41.025,
+      "speed_scale": 0.987,
+      "save": "season6.json"
+    },
+    {
+      "track": "redbullring",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 84.751,
+      "speed_scale": 1.088,
+      "save": "season6.json"
+    },
+    {
+      "track": "lausitzring",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 77.264,
+      "speed_scale": 1.046,
+      "save": "season6.json"
+    },
+    {
+      "track": "norisring",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 48.037,
+      "speed_scale": 0.98,
+      "save": "season6.json"
+    },
+    {
+      "track": "moscow",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 58.62,
+      "speed_scale": 1.132,
+      "save": "season6.json"
+    },
+    {
+      "track": "nuerburgring13",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 83.116,
+      "speed_scale": 0.94,
+      "save": "season6.json"
+    },
+    {
+      "track": "oschersleben",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 79.828,
+      "speed_scale": 1.014,
+      "save": "season6.json"
+    },
+    {
+      "track": "zandvoort",
+      "session": "qualifying",
+      "season": 1,
+      "game_pole_s": 90.677,
+      "speed_scale": 1.014,
+      "save": "season6.json"
     }
   ]
 }

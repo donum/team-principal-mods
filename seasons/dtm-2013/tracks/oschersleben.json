@@ -6,7 +6,7 @@
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.55,
   "pit_lane_loss_s": 20.0,
-  "tyre_wear_mult": 1.13,
+  "tyre_wear_mult": 1.25,
   "fuel_consumption": 1.0,
   "wet_weather_probability_multiplier": 1.0,
   "use_raw_canvas_coordinates": true,

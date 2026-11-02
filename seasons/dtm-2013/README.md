@@ -147,9 +147,16 @@ Acceleration 0.5 takes about 2.5% off (an estimated 278 at Hockenheim).
 
 ## Still to check in-game
 
-- Poles within about 1% of 2013, top speeds about 2.5% lower than season 5.
-- Races have two stops: in season 5 160 of 220 cars stopped twice.
-- The points spread: 2013 had seven different winners, season 5 three.
+Season 6 (after the refit) had every pole within 0.4% of 2013, five
+different winners (2013: seven) and team point shares within a few points
+of 2013, except STIHL AMG (20% vs 15%) and Schnitzer (6% vs 11%).
+
+- Top speeds: about 2.5% lower than season 5 (not measured in season 6).
+- Two stops at the long races. In seasons 5 and 6 most finishers stopped
+  three times or more at Brands Hatch (98 laps), Moscow (74) and the
+  Norisring (83), so their tyre wear went down to 0.4, 0.55 and 0.58. In
+  season 6, 15 cars one-stopped at Oschersleben after a safety car, so its
+  wear went up to 1.25.
 
 ## Rebuild
 
