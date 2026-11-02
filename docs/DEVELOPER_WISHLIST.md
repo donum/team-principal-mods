@@ -219,10 +219,9 @@ under "Simplifications".
     track and car profile.
 
 ### D4. Weather realism · P3
-- **Needed by:** dtm-1991, dtm-2013 (the Nürburgring and the final
-  Hockenheim were rain races; the game's base chance of a wet race is 5%,
-  and a track has one `wet_weather_probability_multiplier` for every visit,
-  so the October finale needs its own copy of the Hockenheim track).
+- **Needed by:** dtm-1991, dtm-2013 (a track has one
+  `wet_weather_probability_multiplier` for every visit, so the May and
+  October Hockenheim rounds can't have different rain chances).
 - **Request:** weather probability per date and region (e.g. April in the
   Eifel), or at least per schedule round, red-flag or restart for heavy rain, and tyre changes to wets as
   real strategy.

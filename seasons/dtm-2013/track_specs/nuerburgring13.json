@@ -17,7 +17,7 @@
   "pit_lane_loss_s": 21.0,
   "tyre_wear_mult": 1.54,
   "fuel_consumption": 1.0,
-  "wet_weather_probability_multiplier": 8.0,
+  "wet_weather_probability_multiplier": 1.4,
   "pole_side": "left",
   "pit_way_names": [
     "Boxengasse"

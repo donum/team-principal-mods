@@ -74,13 +74,5 @@
         }
       ]
     }
-  },
-  "track_placeholders": {
-    "hockenheim13_finale": {
-      "from": "hockenheim13",
-      "override": {
-        "wet_weather_probability_multiplier": 6.0
-      }
-    }
   }
 }

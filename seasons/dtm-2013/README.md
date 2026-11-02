@@ -129,12 +129,10 @@ brackets).
 - **Pits** are at the start line, so four start lines sit on the pit
   straight (E5).
 - **Wet races:** the Nürburgring and the final Hockenheim were rain races
-  in 2013 (qualifying was dry at both). The game can't set the weather for a
-  round, only a rain chance per track, and its base chance of a wet race is
-  5% (D4). Seasons 5 to 7 had no wet race at all. The Nürburgring's
-  multiplier is now 8 (about 40%) and the finale runs on its own copy of the
-  Hockenheim track (`hockenheim13_finale`, a `track_placeholders` entry)
-  with 6 (about 30%). The May opener keeps 1: that race was dry and hot.
+  in 2013, which is why their race times are slow; qualifying was dry, so
+  the poles still calibrate the dry pace. The game rolls the weather per
+  track (base chance of a wet race 5%, the Nürburgring 1.4×), so these
+  rounds are usually dry in the game.
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
 
 ## Lap times
@@ -177,8 +175,7 @@ ratings were swapped by hand (`rating` in `gen.json`: STIHL 56.9, Schnitzer
 after a safety car, so their wear went back up a little (0.65, 0.45).
 
 - Top speeds: about 2.5% lower than season 5 (not measured since).
-- The Nürburgring lap with the F1 chicane, and how often the Nürburgring and
-  the finale now run wet.
+- The Nürburgring lap with the F1 chicane.
 - Two stops at the long races. In seasons 5 and 6 most finishers stopped
   three times or more at Brands Hatch (98 laps), Moscow (74) and the
   Norisring (83), so their tyre wear went down to 0.4, 0.55 and 0.58. In
