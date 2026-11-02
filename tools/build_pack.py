@@ -456,6 +456,11 @@ def build(season_dir, game, install):
 
     if (season_dir / "assets").is_dir():
         shutil.copytree(season_dir / "assets", art_root, dirs_exist_ok=True)
+    # A placeholder of one of our own tracks only finds its image now.
+    for track_id, source in placeholders.items():
+        art = art_root / "tracks" / f"{source}.png"
+        if art.exists() and not (art_root / "tracks" / f"{track_id}.png").exists():
+            shutil.copy2(art, art_root / "tracks" / f"{track_id}.png")
 
     dump_json(out / "workshop.json", {
         "schema_version": 1,

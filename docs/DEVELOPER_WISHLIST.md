@@ -19,7 +19,7 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D5, E1, E2, E5 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5 |
 
 ---
 
@@ -219,9 +219,12 @@ under "Simplifications".
     track and car profile.
 
 ### D4. Weather realism · P3
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, dtm-2013 (the Nürburgring and the final
+  Hockenheim were rain races; the game's base chance of a wet race is 5%,
+  and a track has one `wet_weather_probability_multiplier` for every visit,
+  so the October finale needs its own copy of the Hockenheim track).
 - **Request:** weather probability per date and region (e.g. April in the
-  Eifel), red-flag or restart for heavy rain, and tyre changes to wets as
+  Eifel), or at least per schedule round, red-flag or restart for heavy rain, and tyre changes to wets as
   real strategy.
 
 ### D5. Wider car-profile range · P2

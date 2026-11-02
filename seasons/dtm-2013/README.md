@@ -79,7 +79,7 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 | Lausitzring | 3.478 km | Via: the DTM short course, with the Turn 1 hairpin at the end of the front straight (a hand-placed bridge: OSM maps it only as a junction) and the 2007 Kurzanbindung hairpin, counter-clockwise as OSM tags it | 3,388 m (−2.6%) |
 | Norisring | 2.300 km | Shared from 1991 | 2,207 m (−4%) |
 | Moscow Raceway | 2.555 km | Via: the full circuit's way with the link that cuts the southern section | 2,550 m (−0.2%) |
-| Nürburgring Sprint | 3.629 km | Via: the 1992 sprint route with the Mercedes Arena, the Kurzanbindung and the NGK-Schikane (OSM way 820679450, about 40 m wide, so small on the map) | 3,555 m (−2%) |
+| Nürburgring Sprint | 3.629 km | Via: the 1992 sprint route with the Mercedes Arena, the Kurzanbindung and the Formula 1 version of the NGK/Veedol-Schikane (sharp left, then a long right; way 1149161211) | 3,560 m (−1.9%) |
 | Oschersleben | 3.696 km | Raceway loop | 3,626 m (−1.9%) |
 | Zandvoort | 4.307 km | Raceway loop over today's (post-2020) layout | 4,205 m (−2.4%) |
 
@@ -94,6 +94,13 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   infield course fits both the length and the 2013 pole.
 - Norisring: the 1991 tracing needs a speed factor of 1.26 for 2013 cars
   (`speed_mult` in its track override).
+- Nürburgring: OSM has two ways through the NGK/Veedol-Schikane. The one it
+  names "NGK-Schikane" (way 820679450) is an even S, which looks like the
+  motorcycle and 24-hour variant built in 1997. The other is a sharp left
+  and a long right, like the V on the 2013 circuit map, so the trace uses
+  that one as the Formula 1 chicane. Until season 7 the trace took the S;
+  the F1 chicane adds about 2 s to the model lap, so `speed_scale` went
+  from 0.94 to 0.978.
 
 ## Simplifications
 
@@ -121,6 +128,13 @@ brackets).
   minutes, against 69–75 for the real dry races.
 - **Pits** are at the start line, so four start lines sit on the pit
   straight (E5).
+- **Wet races:** the Nürburgring and the final Hockenheim were rain races
+  in 2013 (qualifying was dry at both). The game can't set the weather for a
+  round, only a rain chance per track, and its base chance of a wet race is
+  5% (D4). Seasons 5 to 7 had no wet race at all. The Nürburgring's
+  multiplier is now 8 (about 40%) and the finale runs on its own copy of the
+  Hockenheim track (`hockenheim13_finale`, a `track_placeholders` entry)
+  with 6 (about 30%). The May opener keeps 1: that race was dry and hot.
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
 
 ## Lap times
@@ -138,7 +152,8 @@ The real 2013 qualifying and race results are in `research/results/`
    lap). The profile was refitted at acceleration 0.5 and each track's scale
    set from its own season-5 ratio: Hockenheim 1.091, Brands Hatch 0.987,
    Red Bull Ring 1.088, Lausitzring 1.046, Norisring 1.29, Moscow 1.132,
-   Nürburgring 0.94, Oschersleben 1.014, Zandvoort 1.014.
+   Nürburgring 0.94 (0.978 with the F1 chicane), Oschersleben 1.014,
+   Zandvoort 1.014.
 
 Predicted poles match 2013 to within 0.1%. The narrower team ratings make
 the top car a little slower, so in-game poles may come out a few tenths slow.
@@ -154,7 +169,16 @@ Season 6 (after the refit) had every pole within 0.4% of 2013, five
 different winners (2013: seven) and team point shares within a few points
 of 2013, except STIHL AMG (20% vs 15%) and Schnitzer (6% vs 11%).
 
-- Top speeds: about 2.5% lower than season 5 (not measured in season 6).
+Season 7 had seven different winners like 2013, poles within 0.8% and
+races of 68–77 minutes. Farfus took 8 of 10 poles (in 2013 nobody took more
+than two). STIHL AMG (23%) and Schnitzer (5%) were off again, so their car
+ratings were swapped by hand (`rating` in `gen.json`: STIHL 56.9, Schnitzer
+57.3). Nine cars one-stopped at the Norisring and five at Brands Hatch, both
+after a safety car, so their wear went back up a little (0.65, 0.45).
+
+- Top speeds: about 2.5% lower than season 5 (not measured since).
+- The Nürburgring lap with the F1 chicane, and how often the Nürburgring and
+  the finale now run wet.
 - Two stops at the long races. In seasons 5 and 6 most finishers stopped
   three times or more at Brands Hatch (98 laps), Moscow (74) and the
   Norisring (83), so their tyre wear went down to 0.4, 0.55 and 0.58. In

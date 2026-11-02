@@ -64,7 +64,7 @@
     "norisring": {
       "race_laps": 83,
       "speed_mult": 1.29,
-      "tyre_wear_mult": 0.58,
+      "tyre_wear_mult": 0.65,
       "pit_lane_loss_s": 18.0,
       "drs_zones": [
         {
@@ -73,6 +73,14 @@
           "end_progress": 0.254
         }
       ]
+    }
+  },
+  "track_placeholders": {
+    "hockenheim13_finale": {
+      "from": "hockenheim13",
+      "override": {
+        "wet_weather_probability_multiplier": 6.0
+      }
     }
   }
 }

@@ -66,9 +66,9 @@
                                 "history": "Ernst Moser's team from Meuspath next to the Nürburgring. Audi works team in the DTM since 2006."},
     "BMW Team RBM": {"entrants": ["BMW Team RBM [Racing Bart Mampaey]"], "nationality": "belgian", "color": [0, 125, 65], "secondary": [215, 30, 40], "tyres": "Hankook", "works": true,
                      "history": "Bart Mampaey's Belgian team, a BMW works entrant since the marque's DTM return in 2012."},
-    "STIHL AMG-Mercedes": {"entrants": ["STIHL/AMG-Mercedes [HWA AG]"], "color": [243, 112, 33], "secondary": [60, 60, 66], "tyres": "Hankook", "works": true,
+    "STIHL AMG-Mercedes": {"entrants": ["STIHL/AMG-Mercedes [HWA AG]"], "color": [243, 112, 33], "secondary": [60, 60, 66], "tyres": "Hankook", "works": true, "rating": 56.9,
                            "history": "One of the two HWA AG entries from Affalterbach. HWA builds and runs the AMG-Mercedes DTM cars."},
-    "BMW Team Schnitzer": {"entrants": ["BMW Team Schnitzer [Schnitzer Motorsport]"], "color": [25, 25, 28], "secondary": [0, 102, 177], "tyres": "Hankook", "works": true,
+    "BMW Team Schnitzer": {"entrants": ["BMW Team Schnitzer [Schnitzer Motorsport]"], "color": [25, 25, 28], "secondary": [0, 102, 177], "tyres": "Hankook", "works": true, "rating": 57.3,
                            "history": "Schnitzer Motorsport of Freilassing, BMW's partner since the 1960s. Bruno Spengler won the 2012 title on BMW's return."},
     "Audi Sport Team Abt Sportsline": {"entrants": ["Audi Sport Team Abt Sportsline [Abt Sportsline]"], "color": [25, 40, 95], "secondary": [215, 25, 50], "tyres": "Hankook", "works": true,
                                        "history": "Hans-Jürgen Abt's team from Kempten, Audi's lead DTM squad since 2000."},
@@ -86,9 +86,10 @@
                                 "history": "Keke Rosberg's team, in the DTM since 1995 and with Audi since 2006."}
   },
   "tracks": {"1": "hockenheim13", "2": "brandshatch", "3": "redbullring", "4": "lausitzring", "5": "norisring",
-             "6": "moscow", "7": "nuerburgring13", "8": "oschersleben", "9": "zandvoort", "10": "hockenheim13"},
+             "6": "moscow", "7": "nuerburgring13", "8": "oschersleben", "9": "zandvoort", "10": "hockenheim13_finale"},
   "shared_tracks": {"norisring": "dtm-1991"},
+  "track_placeholders": {"hockenheim13_finale": {"from": "hockenheim13", "override": {"wet_weather_probability_multiplier": 6.0}}},
   "track_overrides": {
-    "norisring": {"race_laps": 83, "speed_mult": 1.29, "tyre_wear_mult": 0.58, "pit_lane_loss_s": 18.0, "drs_zones": [{"detection_progress": 0.8954, "start_progress": 0.9354, "end_progress": 0.254}]}
+    "norisring": {"race_laps": 83, "speed_mult": 1.29, "tyre_wear_mult": 0.65, "pit_lane_loss_s": 18.0, "drs_zones": [{"detection_progress": 0.8954, "start_progress": 0.9354, "end_progress": 0.254}]}
   }
 }

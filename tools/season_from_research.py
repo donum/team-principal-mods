@@ -27,6 +27,8 @@ Seasons outside the Group A era override the template's rules in gen.json:
   each team's best driver, or from its average points per car with
   "team_rating_from": "average";
 * "skill_range" [low, high] spreads driver skills (default [10, 18]);
+* "track_placeholders" {id: {"from": track, "override": {...}}} copy a track
+  under a new id, e.g. a second visit to a venue with its own rain chance;
 * "economy": "budget_per_rating", "salary_min_m", "salary_max_m".
 
 Usage:
@@ -261,6 +263,8 @@ def main():
     manifest["staff"] = {"seed": year, "salary_per_level_m": 0.1, "named": [], "levels": staff_levels}
     manifest["shared_tracks"] = gen.get("shared_tracks", {})
     manifest["track_overrides"] = gen.get("track_overrides", {})
+    if gen.get("track_placeholders"):
+        manifest["track_placeholders"] = gen["track_placeholders"]
     dump_json(season / "season.json", manifest)
     regulations = season / "patches" / "regulations.json"
     if gen.get("rules") == "own":

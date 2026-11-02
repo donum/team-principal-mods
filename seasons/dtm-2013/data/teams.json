@@ -235,14 +235,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 57.3,
+        "base": 56.9,
         "profile": "amg_c_coupe_dtm"
       },
       "heritage_prestige": 69,
       "form_prestige": 67,
       "prestige_base": 68,
-      "budget_m": 92,
-      "starting_balance_m": 28.6,
+      "budget_m": 91,
+      "starting_balance_m": 28.4,
       "difficulty": "easy",
       "previous_constructor_position": 3,
       "headquarters": {
@@ -279,14 +279,14 @@
       },
       "car_mass_kg": 965.0,
       "$rating": {
-        "base": 56.9,
+        "base": 57.3,
         "profile": "bmw_m3_dtm_e92"
       },
       "heritage_prestige": 69,
       "form_prestige": 67,
       "prestige_base": 68,
-      "budget_m": 91,
-      "starting_balance_m": 28.4,
+      "budget_m": 92,
+      "starting_balance_m": 28.6,
       "difficulty": "easy",
       "previous_constructor_position": 4,
       "headquarters": {

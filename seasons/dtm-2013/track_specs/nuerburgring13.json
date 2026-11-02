@@ -10,14 +10,14 @@
   ],
   "length_km": 3.629,
   "width_m": 13.0,
-  "speed_scale": 0.94,
+  "speed_scale": 0.978,
   "race_laps": 49,
   "dnf_modifier": 1.0,
   "overtaking_difficulty": 0.5,
   "pit_lane_loss_s": 21.0,
   "tyre_wear_mult": 1.54,
   "fuel_consumption": 1.0,
-  "wet_weather_probability_multiplier": 1.4,
+  "wet_weather_probability_multiplier": 8.0,
   "pole_side": "left",
   "pit_way_names": [
     "Boxengasse"
@@ -25,7 +25,7 @@
   "drs_zones": {
     "longest_straights": 1
   },
-  "notes": "Sprint circuit (clockwise, 3.629 km): today's GP start/finish, Castrol-S, Mercedes Arena, then the 'Anbindung zur Sprintstrecke' across to the return leg before the NGK-Schikane, and the last corner. The 1992 sprint spec (dtm-1992/nuerburgring_short) with the Mercedes Arena instead of the Variante 24h-Rennen (way 31010602 excluded). Traced 3555 m vs 3629 m.",
+  "notes": "Sprint circuit (clockwise, 3.629 km): today's GP start/finish, Castrol-S, Mercedes Arena, then the 'Anbindung zur Sprintstrecke' across to the return leg before the NGK-Schikane, and the last corner. The 1992 sprint spec (dtm-1992/nuerburgring_short) with the Mercedes Arena instead of the Variante 24h-Rennen (way 31010602 excluded). At the NGK/Veedol-Schikane it takes the Formula 1 chicane (sharp left, then the long right; way 1149161211), not the smoother S that OSM names 'NGK-Schikane' (way 820679450, excluded), which looks like the motorcycle/24h variant built in 1997. Traced 3560 m vs 3629 m.",
   "route_ways": [
     {
       "highway": "raceway"
@@ -64,7 +64,8 @@
     "199642469",
     "199642470",
     "710354617",
-    "31010602"
+    "31010602",
+    "820679450"
   ],
   "via": [
     [
