@@ -61,6 +61,14 @@ Status legend:
   do all our generated tracks. ✅
 - **The race screen covers the bottom of the map** with driver cards and the
   event log, so keep the racing line above y ≈ 800 on a 1080 px tall image. ✅
+- **The overview image is stretched to fill the map panel, not fitted.** The
+  panel is about 55% of the window width (1044/1920) and the full height
+  under the title bar. Width and height scale separately, so the track
+  changes shape with the window. Measured in qualifying at 1776×423 px:
+  ×0.935 across, ×0.392 down. The whole image always shows. Only the
+  session header (top) and the status bar (bottom) cover it, and they have
+  fixed screen heights, so they hide more of the image in a short window:
+  about 33 image px at the top and everything below y ≈ 954 in that window. ✅
 - **`lap_modifier` sets race length.** A race runs `options.json` `laps` ×
   `lap_modifier` laps. Confirmed from a save: Zolder 50 × 1.12 = 56 laps,
   Hockenheim 50 × 0.9 = 45. ✅

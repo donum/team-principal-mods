@@ -282,6 +282,11 @@ under "Simplifications".
     two lines (about 82 px) for long track names: in dtm-2013 it hid the top
     of Moscow, the Nürburgring and Zandvoort until we kept tracks below
     y=100.
+  - Keep the map's aspect ratio. The overview image is stretched on each
+    axis separately to fill the map panel, so a wide, short window squashes
+    the track (Hockenheim 2013 at 976×423 px: ×0.94 across, ×0.39 down).
+    Letterboxing, or fitting the track like the non-raw mode does, would
+    keep corners the right shape.
   - Several layouts per venue, e.g. Hockenheim 1991 vs 1992.
   - Import a track from GPS/GPX coordinates.
   - A per-track pit-lane path and pit position. Today the pits are at the
