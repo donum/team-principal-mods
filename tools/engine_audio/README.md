@@ -40,7 +40,9 @@ python tools/engine_audio/package.py --install
 | `segment.py` | extracted audio | `features/<id>.npz`, tables `analysis` and `segments` |
 | `library.py` | segments | `library/index.html` (playable), `library/coverage.md`, ranked WAV clips |
 | `events.py` | broadcast features (race and qualifying re-lives) | table `events`: race-start, pit-stop, pass-by and track-bed candidates |
-| `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (used by `package.py`; run alone for previews) |
+| `starts.py` | fan recordings of race starts (hand-listed) | real grid idle loops and launches (used by `package.py`) |
+| `ambience.py` | spectator montages | 393 s `cars_on_track` loop of real trackside shots, cut at camera cuts |
+| `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (only with `package.py --synth-starts`) |
 | `package.py` | segments, base pack audio levels | `pack/dtm2013/` (files + `overlay.json`); `--install` applies it |
 | `overlay.py` | `pack/dtm2013/` | `apply`, `remove`, `status` on the installed pack |
 
@@ -88,9 +90,10 @@ From the game's `assets/audio/README_AUDIO.txt`:
   - made by simulating a pass-by at 220 km/h and 12 m (Doppler, distance, pan) from clean onboard full-throttle audio;
   - commentary-free TV pass-bys, if any, join the random bank as `dtm13_tv_NN`. With all three suppliers tagged, that bank is never used, so they are not heard today.
 - **Grid and pit** (`race/race_engines.json`):
-  - `grid_idle_NN` / `grid_launch_NN` pairs are simulated by `start_synth.py` (below), and `pit_exit_NN` would come from onboard pit exits (none so far);
+  - `grid_idle_NN` / `grid_launch_NN` pairs are cut from fan recordings of real starts by `starts.py` (simulated ones only with `--synth-starts`), and `pit_exit_NN` would come from onboard pit exits (none so far);
   - they replace the stock clips with the same key; fire-ups and wheelguns stay stock;
   - these banks are shared by all cars (wishlist E8).
+- **Track bed** (`ambience/session_layers.json`): `cars.file` points to the `ambience.py` loop.
 - **Levels** match the stock clips.
 
 To target another game, add a builder next to `build()` in `package.py`. The
@@ -124,9 +127,27 @@ Each of the four game pairs uses its own seed (grid order, listener spot).
 Previews: `python tools/engine_audio/start_synth.py` writes
 `private/engine_audio/pilot/synth_start/start_NN_idle_then_launch.wav`.
 
-Spectator recordings (a `spectator_recordings` queue folder; catalog type
-`spectator`, no commentary) are the source for a real crowd and, if one
-shows a start, a real launch.
+Simulated starts were set aside in favour of real recordings (see below);
+the code stays for reference.
+
+## Real starts and track bed (spectator recordings)
+
+Fans filming from the grandstands (queue folder `spectator_recordings`,
+catalog type `spectator`, no commentary) give what the broadcasts can't:
+
+- **Starts (`starts.py`):** four fan recordings, listed by hand from level
+  timelines and spectrograms: 2014 Nürburgring and Brands Hatch have 10+ s
+  of grid revving before lights out; 2012 Hockenheim and 2015 Zandvoort only
+  about 4 s. "Go" is refined to where the level steps up for good (median
+  of the next 1.5 s against the previous 1.5 s), so a rev blip doesn't win.
+  Phone cameras flatten the launch to +3–4 dB; the game's separate idle and
+  launch gains restore the jump.
+- **Track bed (`ambience.py`):** the montages are cut into shots at camera
+  cuts (a sudden spectral change between the 0.3 s before and after),
+  keeping shots of 8+ s with engines, almost no speech and 9+ dB of level
+  swing (cars coming and going; uploads whose level was flattened sound
+  like a wall). V8 era only: from 2019 the DTM ran turbo four-cylinders.
+  Start and grid clips stay out of the bed.
 
 ## Findings so far (2026-11-04, all downloads in)
 

@@ -9,12 +9,14 @@ assets/audio/README_AUDIO.txt:
             distance gain and air absorption, and a pan sweep for a car
             passing 12 m away at 220 km/h. Real TV pass-bys, if any are free
             of commentary, join the random bank as dtm13_tv_NN.
-  race/     grid_idle_NN / grid_launch_NN pairs simulated from the clean
-            onboards (start_synth.py: a 22-car grid heard from the
-            grandstand), and pit_exit_NN (13 s, peak_s) from onboard pit
-            exits. They replace the stock clips with the same key; fire-ups
+  race/     grid_idle_NN / grid_launch_NN pairs cut from fan recordings of
+            real race starts (starts.py; simulated ones from start_synth.py
+            only with --synth-starts), and pit_exit_NN (13 s, peak_s) from
+            onboard pit exits. They replace the stock clips with the same key; fire-ups
             and wheelguns stay stock. These banks are shared by all cars
             (wishlist E8).
+  ambience/ cars_on_track: a loop of real trackside recordings (ambience.py),
+            set through session_layers.json "cars.file".
 Levels follow the stock clips (whole-clip RMS x gain).
 
 Output: private/engine_audio/pack/<pack_folder>/ (files/ + overlay.json).
@@ -34,7 +36,8 @@ from scipy.signal import butter, sosfilt
 
 import overlay
 import start_synth
-from common import MAKES, PACK_DIR, REPO, connect, decode, dump_json, game_path, load_json, slug, write_wav
+import starts
+from common import LIBRARY_DIR, MAKES, PACK_DIR, REPO, connect, decode, dump_json, game_path, load_json, slug, write_wav
 
 SR = 44100
 C = 343.0
@@ -152,7 +155,8 @@ def ref(r) -> str:
 
 # --------------------------------------------------------------------- main
 
-def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int) -> Path:
+def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
+          synth_starts: bool = False) -> Path:
     manifest = load_json(season / "season.json")
     pack, base = manifest["pack_folder"], manifest["base_pack"]
     base_audio = game_path() / "data" / base / "assets" / "audio"
@@ -164,8 +168,8 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int) -> Pat
     race = "assets/audio/race/race_engines.json"
     db = connect()
 
-    def save(rel: str, audio: np.ndarray) -> None:
-        write_wav(out / "files" / rel, fades(audio), SR)
+    def save(rel: str, audio: np.ndarray, loop: bool = False) -> None:
+        write_wav(out / "files" / rel, audio if loop else fades(audio), SR)
         files.append(rel)
 
     # pass-bys, one per make, tagged on the supplier
@@ -211,30 +215,32 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int) -> Pat
              "crossing_s": cross, "gain": gain, "source": ref(r)}])
     report.append(f"TV pass-bys: {min(len(tv), n_tv)} clean (of {len(tv)})")
 
-    # grid idle + launch pairs: simulated from clean onboards (start_synth.py).
-    # Broadcast starts are unusable (commentary peaks there), and the onboards
-    # are flying laps, so each pair is a 22-car grid rendered from a different
-    # seed (grid order, listener spot in the grandstand).
+    # grid idle + launch pairs: real fan recordings of race starts (starts.py).
+    # The broadcast starts are unusable (commentary peaks there). Simulated
+    # pairs (start_synth.py) only with --synth-starts; otherwise the stock
+    # pairs stay for any slot without a real recording.
     lvl_idle = stock_level(base_audio, "race/race_engines.json", "grid_idle")
     lvl_launch = stock_level(base_audio, "race/race_engines.json", "grid_launch")
-    sources = start_synth.find_sources(db)
-    used = 0
-    if len(sources) >= 12:
-        for i in range(1, n_grid + 1):
-            idle, launch, info = start_synth.render_start(sources, seed=i)
-            g = 10 ** (-1 / 20) / (max(np.abs(idle).max(), np.abs(launch).max()) + 1e-9)
-            idle, launch = idle * g, launch * g
-            save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle)
-            save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
-            src = f"private: simulated 22-car start, seed {i}, listener {info['listener']}"
-            clips.setdefault(race, []).extend([
-                {"key": f"grid_idle_{i:02d}", "file": f"dtm13_grid_idle_{i:02d}.ogg",
-                 "gain": gain_for(idle, lvl_idle), "source": src},
-                {"key": f"grid_launch_{i:02d}", "file": f"dtm13_grid_launch_{i:02d}.wav",
-                 "gain": gain_for(launch, lvl_launch), "source": src}])
-            used += 1
-    report.append(f"grid idle/launch pairs: {used} simulated from {len(sources)} clean onboards"
-                  + ("" if used else " (too few sources, stock kept)"))
+    pairs = []
+    for s in starts.real_starts(db)[:n_grid]:
+        pairs.append((s["idle"], s["launch"], f"private: {s['video_id']} go @ {s['go_s']:.2f}s ({s['note']})"))
+    if synth_starts:
+        sources = start_synth.find_sources(db)
+        for seed in range(1, n_grid - len(pairs) + 1):
+            idle, launch, info = start_synth.render_start(sources, seed=seed)
+            pairs.append((idle, launch, f"private: simulated 22-car start, seed {seed}, listener {info['listener']}"))
+    for i, (idle, launch, src) in enumerate(pairs, 1):
+        g = 10 ** (-1 / 20) / (max(np.abs(idle).max(), np.abs(launch).max()) + 1e-9)
+        idle, launch = idle * g, launch * g
+        save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle, loop=True)
+        save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
+        clips.setdefault(race, []).extend([
+            {"key": f"grid_idle_{i:02d}", "file": f"dtm13_grid_idle_{i:02d}.ogg",
+             "gain": gain_for(idle, lvl_idle), "source": src},
+            {"key": f"grid_launch_{i:02d}", "file": f"dtm13_grid_launch_{i:02d}.wav",
+             "gain": gain_for(launch, lvl_launch), "source": src}])
+    report.append(f"grid idle/launch pairs: {len(pairs)} ({sum('simulated' not in p[2] for p in pairs)} real fan recordings)"
+                  + ("" if pairs else ", stock kept"))
 
     # pit exits
     lvl_pit = stock_level(base_audio, "race/race_engines.json", "pit_exit")
@@ -246,6 +252,24 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int) -> Pat
             {"key": f"pit_exit_{i:02d}", "file": f"dtm13_pit_exit_{i:02d}.wav",
              "gain": gain_for(x, lvl_pit), "peak_s": loudest_80ms(x), "source": ref(r)})
     report.append(f"pit exits: {len(exits)} (stock kept for the rest; fire-ups and wheelguns stay stock)")
+
+    # cars-on-track bed: real trackside recordings (ambience.py), a seamless loop,
+    # so written without the clip fades. Its gain keeps the stock layer's level.
+    bed_src = LIBRARY_DIR / "ambience" / "cars_on_track.ogg"
+    layers = "assets/audio/ambience/session_layers.json"
+    if bed_src.exists():
+        rel = "assets/audio/ambience/dtm13_cars_on_track.ogg"
+        bed = decode(bed_src, 0, None, SR, 2)
+        stock = decode(base_audio / "ambience" / "cars_on_track.ogg", 0, None, SR, 2)
+        stock_gain = load_json(base_audio / "ambience" / "session_layers.json", {}).get("cars", {}).get("gain", 1.0)
+        gain = round(float(np.clip(stock_gain * 10 ** ((rms_db(stock) - rms_db(bed)) / 20), 0.005, 1.0)), 6)
+        (out / "files" / rel).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(bed_src, out / "files" / rel)
+        files.append(rel)
+        sets.setdefault(layers, {}).update({"cars.file": Path(rel).name, "cars.gain": gain})
+        report.append(f"cars on track: real trackside bed ({len(bed) / SR:.0f} s), gain {gain}")
+    else:
+        report.append("cars on track: stock (run ambience.py)")
 
     if files:
         dump_json(out / "overlay.json", {"pack": pack, "files": files, "clips": clips, "set": sets})
@@ -261,11 +285,14 @@ def main() -> int:
     ap.add_argument("--target", default="team_principal", choices=["team_principal"])
     ap.add_argument("--min-quality", type=float, default=0.3)
     ap.add_argument("--grid-pairs", type=int, default=4)
+    ap.add_argument("--synth-starts", action="store_true",
+                    help="use simulated grid/launch pairs (off: only real recordings, else stock)")
     ap.add_argument("--pit-exits", type=int, default=4)
     ap.add_argument("--tv-passbys", type=int, default=5)
     ap.add_argument("--install", action="store_true", help="apply to <game>/data/<pack_folder>")
     args = ap.parse_args()
-    build(args.season, args.min_quality, args.grid_pairs, args.pit_exits, args.tv_passbys)
+    build(args.season, args.min_quality, args.grid_pairs, args.pit_exits, args.tv_passbys,
+          args.synth_starts)
     if args.install:
         pack = load_json(args.season / "season.json")["pack_folder"]
         target = game_path() / "data" / pack
