@@ -1,26 +1,25 @@
 """Stage 4c: real grid idle / launch pairs from fan recordings of race starts.
 
 The broadcast starts are buried under commentary, so the starts come from
-spectators filming in the grandstands (catalog type `spectator`). Short
-phone clips have no reliable structure to detect automatically, so the
-starts are listed by hand below (picked from level timelines and
-spectrograms, see README): the stretch of grid revving before lights out,
-and roughly when the field launches. This stage
+spectators filming in the grandstands (catalog type `spectator`). Most of
+those are poor at the one moment that matters: as the field launches the
+crowd cheers and the phone mic overloads, so the launch turns into noise.
+The starts are therefore picked by ear and by measurement (see README),
+and listed by hand below. This stage
 
   1. refines "go": the largest lasting level step within +-1.5 s of the
      listed time (see refine_go);
-  2. cuts the launch so that go lands GO_AT_S into it: the game starts
+  2. cuts the launch so that go lands GO_AT_S into it. The game starts
      grid_launch when the 3rd of five lights comes on (0.5 s apart), so the
-     clip opens with 1.5 s of the grid's last revving and lights out falls
-     at 1.5 s (the cars move at 2.0 s). After go it is levelled onto
-     LAUNCH_CURVE: a burst about 10 dB over the grid, then the field fading
-     towards turn 1. Phone audio is compressed, so without this the launch
-     is flat, barely louder than the grid, and stops abruptly;
+     clip opens with the grid's last revving and lights out falls 1.5 s in
+     (the cars move at 2.0 s). The launch runs to the end of the recording,
+     or on into a `tail` from another recording (equal-power crossfade,
+     levels matched), then fades out;
   3. loops the grid revving: up to IDLE_MAX_S of it, the tail crossfaded
      into the head so it repeats without a click.
 
-Nothing is synthesised: both clips are the recording itself, only its
-level is automated.
+Nothing is synthesised or levelled: both clips are the recordings as they
+are (an earlier level automation made the phone audio sound squashed).
 
     python tools/engine_audio/starts.py        # previews in private/.../library/starts
 """
@@ -30,32 +29,36 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from scipy.ndimage import uniform_filter1d
 
 from common import LIBRARY_DIR, connect, decode, dump_json, write_wav
 
 SR = 44100
-LAUNCH_S = 10.9          # stock grid_launch length
-IDLE_MAX_S = 12.0
+IDLE_MAX_S = 15.0
 LOOP_XF_S = 1.0
+TAIL_XF_S = 2.0
+END_FADE_S = 2.5
 # When the game plays the pair (ui/live_audio.py, ui/screens/race_screen.py):
 # grid_idle loops on the grid; when the 3rd start light comes on (1.5 s into
 # the sequence) the idle fades out in 0.2 s and grid_launch starts once;
 # lights out is 1.5 s later and the cars move 0.5 s after that.
 GO_AT_S = 1.6
-# Level after go, dB over the recording's grid revving (seconds after go),
-# modelled on the stock launches: a burst within half a second, a held roar,
-# then the field fading towards turn 1. Before go the recording stays as is.
-LAUNCH_CURVE = [(0.0, 2), (0.5, 10), (3.0, 9), (5.0, 5), (7.5, -6), (LAUNCH_S - GO_AT_S, -30)]
 OUT_DIR = LIBRARY_DIR / "starts"
 
-# (video id, grid revving from, grid revving to, go estimate, note); seconds in the video
+# video id, grid revving from/to, go estimate (refine=False: exact), launch end
+# (None: end of the video), optional tail (video id, from, to), note; seconds
+# in the video
 STARTS = [
-    ("x_JJhPIFjdY", 48.0, 61.0, 61.4, "Nurburgring 2014, main grandstand: revving with blips, then the launch"),
-    ("4pue6jM-VQY", 40.0, 53.0, 53.3, "Brands Hatch: pulsing revs on the grid, then the launch"),
-    ("kf4kpYMJ3vc", 0.0, 4.6, 4.9, "Hockenheim 2012: short grid stretch, strong launch"),
-    ("8sTzEebHYSo", 0.5, 5.2, 5.5, "Zandvoort 2015 race 2: short grid stretch, field launches past"),
+    # go set by hand: the 1-4 kHz roar steps up 6 dB at 54.6 s and stays; the
+    # phone's gain control smears the broadband level, so refine_go is off
+    dict(vid="fk9f2Qt5x20", idle=(37.0, 52.0), go=54.5, refine=False, end=None,
+         tail=("IBuEsBSh9_I", 16.0, 22.5),
+         note="Hockenheim finale, grid and start: clean revving, the field swelling past; "
+              "the video stops 17 s after go, so the field fading towards turn 1 comes "
+              "from the 2017 Hockenheim start"),
 ]
+# Set aside after listening in game (2026-11-04): noise and mic overload at the
+# launch (Nurburgring 2014 x_JJhPIFjdY, Hockenheim 2012 kf4kpYMJ3vc, Zandvoort
+# 2015 8sTzEebHYSo), Brands Hatch 4pue6jM-VQY dropped with them.
 
 
 def refine_go(x: np.ndarray, t0: float, guess: float) -> float:
@@ -81,54 +84,58 @@ def make_loop(x: np.ndarray) -> np.ndarray:
     return body
 
 
-def shape_launch(launch: np.ndarray, idle: np.ndarray) -> np.ndarray:
-    """Level automation after go onto LAUNCH_CURVE, relative to this
-    recording's grid revving. The recording's own short-term level (0.75 s)
-    is replaced by the curve; detail shorter than that (gear changes, blips)
-    stays as recorded. The revving before go is left untouched, so it runs
-    on from the idle loop."""
-    hop = int(0.01 * SR)
-    m = launch.mean(axis=1)
-    n = len(m) // hop
-    p = np.square(m[:n * hop]).reshape(n, hop).mean(1)
-    own = 10 * np.log10(uniform_filter1d(p, 75, mode="nearest") + 1e-12)
-    t = np.arange(n) * 0.01 - GO_AT_S
-    ct, cdb = zip(*LAUNCH_CURVE)
-    idle_db = 10 * np.log10(np.square(idle.mean(axis=1)).mean() + 1e-12)
-    g_db = np.where(t < 0, 0.0, np.clip(idle_db + np.interp(t, ct, cdb) - own, -60, 14))
-    g_db = uniform_filter1d(g_db, 30, mode="nearest")
-    g = np.interp(np.arange(len(launch)) / SR, np.arange(n) * 0.01, 10 ** (g_db / 20))
-    return launch * g[:, None]
+def rms(x: np.ndarray) -> float:
+    return float(np.sqrt(np.mean(np.square(x, dtype=np.float64))) + 1e-12)
 
 
-def render(path: Path, idle_a: float, idle_b: float, go_guess: float):
-    t0 = idle_a
-    x = decode(path, t0, (go_guess - t0) + LAUNCH_S + 2.0, SR, 2)
-    go = refine_go(x, t0, go_guess)
-    k = int((go - GO_AT_S - t0) * SR)
-    launch = x[k:k + int(LAUNCH_S * SR)].copy()
-    idle_end = min(idle_b, go - 0.25)
-    idle_start = max(idle_a, idle_end - IDLE_MAX_S)
+def join_tail(launch: np.ndarray, tail: np.ndarray) -> np.ndarray:
+    """Equal-power crossfade, the tail scaled to the launch's level where they meet."""
+    xf = int(TAIL_XF_S * SR)
+    tail = tail * (rms(launch[-xf:]) / rms(tail[:xf]))
+    th = np.linspace(0, np.pi / 2, xf)[:, None]
+    mid = launch[-xf:] * np.cos(th) + tail[:xf] * np.sin(th)
+    return np.concatenate([launch[:-xf], mid, tail[xf:]])
+
+
+def path_of(db, vid: str) -> tuple[str, Path] | None:
+    row = db.execute("SELECT v.title, a.path FROM videos v JOIN audio a ON a.id = v.id WHERE v.id=?",
+                     (vid,)).fetchone()
+    return (row["title"], Path(row["path"])) if row and Path(row["path"]).exists() else None
+
+
+def render(db, s: dict):
+    title, path = path_of(db, s["vid"])
+    t0 = s["idle"][0]
+    x = decode(path, t0, None if s["end"] is None else s["end"] - t0, SR, 2)
+    go = refine_go(x, t0, s["go"]) if s.get("refine", True) else s["go"]
+    launch = x[int((go - GO_AT_S - t0) * SR):].copy()
+    if s.get("tail"):
+        _, tpath = path_of(db, s["tail"][0])
+        launch = join_tail(launch, decode(tpath, s["tail"][1], s["tail"][2] - s["tail"][1], SR, 2))
+    fo = int(END_FADE_S * SR)
+    launch[-fo:] *= np.cos(np.linspace(0, np.pi / 2, fo))[:, None]
+    idle_end = min(s["idle"][1], go - 0.25)
+    idle_start = max(s["idle"][0], idle_end - IDLE_MAX_S)
     idle = make_loop(x[int((idle_start - t0) * SR):int((idle_end - t0) * SR)])
-    return idle, shape_launch(launch, idle), go
+    return title, idle, launch, go
 
 
 def real_starts(db) -> list[dict]:
     out = []
-    for vid, a, b, guess, note in STARTS:
-        row = db.execute("SELECT v.title, a.path FROM videos v JOIN audio a ON a.id = v.id WHERE v.id=?",
-                         (vid,)).fetchone()
-        if not row or not Path(row["path"]).exists():
+    for s in STARTS:
+        if not path_of(db, s["vid"]) or (s.get("tail") and not path_of(db, s["tail"][0])):
             continue
-        idle, launch, go = render(Path(row["path"]), a, b, guess)
-        out.append(dict(video_id=vid, title=row["title"], note=note, go_s=round(go, 2),
-                        idle=idle, launch=launch))
+        title, idle, launch, go = render(db, s)
+        out.append(dict(video_id=s["vid"], title=title, note=s["note"], go_s=round(go, 2),
+                        tail=s.get("tail"), idle=idle, launch=launch))
     return out
 
 
 def main() -> int:
     starts = real_starts(connect())
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for old in OUT_DIR.glob("start_*.wav"):
+        old.unlink()
     meta = []
     for i, s in enumerate(starts, 1):
         peak = max(np.abs(s["idle"]).max(), np.abs(s["launch"]).max()) + 1e-9
@@ -136,10 +143,11 @@ def main() -> int:
         write_wav(OUT_DIR / f"start_{i:02d}_grid_idle.wav", s["idle"] * g, SR)
         write_wav(OUT_DIR / f"start_{i:02d}_grid_launch.wav", s["launch"] * g, SR)
         write_wav(OUT_DIR / f"start_{i:02d}_idle_then_launch.wav",
-                  np.concatenate([s["idle"], s["idle"], s["launch"]]) * g, SR)
+                  np.concatenate([s["idle"], s["launch"]]) * g, SR)
         meta.append({k: v for k, v in s.items() if k not in ("idle", "launch")}
-                    | dict(idle_s=round(len(s["idle"]) / SR, 2)))
-        print(f"start {i}: {s['video_id']} go {s['go_s']:.2f}s, grid loop {len(s['idle']) / SR:.1f}s  {s['note']}")
+                    | dict(idle_s=round(len(s["idle"]) / SR, 2), launch_s=round(len(s["launch"]) / SR, 2)))
+        print(f"start {i}: {s['video_id']} go {s['go_s']:.2f}s, grid loop {len(s['idle']) / SR:.1f}s, "
+              f"launch {len(s['launch']) / SR:.1f}s")
     dump_json(OUT_DIR / "starts.json", meta)
     return 0
 

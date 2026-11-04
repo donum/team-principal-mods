@@ -15,8 +15,8 @@ nothing points to them any more.
 | Pass-by, Audi | random bank (`engine_passby_01`–`05`) | `dtm13_audi` + `_lr` | Rockenfeller onboard, Hockenheim, simulated pass-by at 220 km/h |
 | Pass-by, BMW | random bank | `dtm13_bmw` + `_lr` | Spengler onboard, Nürburgring |
 | Pass-by, Mercedes | random bank | `dtm13_mercedes` + `_lr` | Juncadella onboard, Norisring |
-| `grid_idle_01`, `grid_idle_02` | stock grid loops | real grid revving: Nürburgring 2014 main grandstand, Brands Hatch | fan recordings, `starts.py` |
-| `grid_launch_01`, `grid_launch_02` | stock launches | the real launches that follow: 1.6 s of grid revving (the game starts the clip on the 3rd light), the getaway on lights out, then a burst matched to the stock one and a fade towards turn 1 | same |
+| `grid_idle_01`, `grid_idle_02` | stock grid loops | real grid revving, 14 s loop: Hockenheim finale, grid and start (both slots) | fan recording, `starts.py` |
+| `grid_launch_01`, `grid_launch_02` | stock launches | the real launch that follows, 22.5 s: 1.6 s of grid revving (the game starts the clip on the 3rd light), the getaway on lights out, the field swelling past, then fading towards turn 1 (the last 6 s from the 2017 Hockenheim start) | same |
 | `cars_on_track` | stock 393 s bed | 393 s loop of real trackside DTM V8 recordings (Hockenheim 2013–2016) | `ambience.py`, 11 shots of fan videos |
 | `crowd` | stock 35 s murmur | 18 s loop of a real grandstand before the 2015 Nürburgring start | `ambience.py` (`CROWD`), picked from six candidates |
 
@@ -30,7 +30,6 @@ Simulated starts (`start_synth.py`) are off by default.
 
 | Slot | What | Heard? |
 |---|---|---|
-| `grid_idle_03`, `_04` + `grid_launch_03`, `_04` | two more real starts: Hockenheim 2012, Zandvoort 2015 (grid loops only 3.5 s) | yes: the bank picks one of four pairs at random |
 | `dtm13_tv_01`–`03` + `_lr` | commentary-free pass-bys cut from the TV broadcasts | **no:** they sit in the random bank, which only untagged suppliers use, and all three suppliers are tagged |
 
 ## Still vanilla

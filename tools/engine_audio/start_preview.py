@@ -46,6 +46,8 @@ def main() -> int:
     light, out = decode(race / "start_light.wav", sr=SR, channels=2), decode(race / "lights_out.wav", sr=SR, channels=2)
     dst = LIBRARY_DIR / "starts"
     dst.mkdir(parents=True, exist_ok=True)
+    for old in dst.glob("ingame_start_*.wav"):
+        old.unlink()
     i = 1
     while f"grid_idle_{i:02d}" in clips and f"grid_launch_{i:02d}" in clips:
         ic, lc = clips[f"grid_idle_{i:02d}"], clips[f"grid_launch_{i:02d}"]

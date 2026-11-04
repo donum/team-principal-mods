@@ -140,11 +140,24 @@ the code stays for reference.
 Fans filming from the grandstands (queue folder `spectator_recordings`,
 catalog type `spectator`, no commentary) give what the broadcasts can't:
 
-- **Starts (`starts.py`):** four fan recordings, listed by hand from level
-  timelines and spectrograms: 2014 Nürburgring and Brands Hatch have 10+ s
-  of grid revving before lights out; 2012 Hockenheim and 2015 Zandvoort only
-  about 4 s. "Go" is refined to where the level steps up for good (median
-  of the next 1.5 s against the previous 1.5 s), so a rev blip doesn't win.
+- **Starts (`starts.py`):** one start, picked by ear: the Hockenheim
+  finale "Grid and Start" video (`fk9f2Qt5x20`), 15 s of clean grid
+  revving and the field swelling past. The video stops 17 s after go, so
+  the field fading towards turn 1 is crossfaded in (2 s, equal power,
+  level matched) from the 2017 Hockenheim start (`IBuEsBSh9_I`, 16–22.5 s).
+  Both stock slots (`grid_*_01`, `_02`) point at it, so the random pick
+  never falls back to stock.
+  **Why so few:** in most fan videos the crowd cheers and the phone mic
+  overloads exactly as the field launches. Scored over the 8 s after go,
+  the dropped Nürburgring 2014 start had 14.5 % of its energy above 5 kHz
+  and a spectral flatness (150 Hz–4 kHz) of 0.20; the Hockenheim 2015 clip
+  the user loved has 0.2 % and 0.06. In game the dropped starts sounded
+  "broken": noise rather than cars. Hockenheim 2012, Zandvoort 2015 and
+  Brands Hatch went with it. Other clean candidates (Hockenheim 2017 and
+  2011, Norisring 2018 Schöller) are cut in `pilot/start_candidates/`.
+  **Go** is set by hand where the 1–4 kHz roar steps up for good (54.6 s
+  here); the phone's gain control smears the broadband level, which
+  `refine_go` relies on.
   **Game timing** (read from the game's `ui/live_audio.py` and
   `ui/screens/race_screen.py`): five lights come on 0.5 s apart; on the
   3rd light the idle fades out in 0.2 s and `grid_launch` starts once;
@@ -153,13 +166,10 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
   recording's own last grid revving (`GO_AT_S`), and the real getaway
   lands on lights out. The first cut started at the getaway, so in game
   the field roared off on the 3rd light.
-  **Level:** phone cameras flatten the launch to +3–4 dB over the grid,
-  and a raw cut stays loud until it stops dead. After go the launch is
-  levelled onto `LAUNCH_CURVE` (modelled on the stock launches): a burst
-  10 dB over the grid within half a second, then the field fading towards
-  turn 1. Only the level is automated (0.75 s window), so gear changes and
-  blips stay as recorded. `package.py` sets the launch gain so its loudest
-  0.5 s matches the stock bursts (whole-clip RMS left it 2–4 dB under).
+  **Level:** the recording stays as it is. A level automation onto the
+  stock launch shape was tried and dropped: raising squashed phone audio
+  made it sound broken. `package.py` matches the launch's loudest 0.5 s
+  to the stock bursts and the grid loop's RMS to the stock idles.
   **Check:** `start_preview.py` (run by `package.py --install`) mixes
   each installed pair the way the game does, lights included, into
   `library/starts/ingame_start_NN.wav`; the mod browser lists them first.

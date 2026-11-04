@@ -240,17 +240,25 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
         for seed in range(1, n_grid - len(pairs) + 1):
             idle, launch, info = start_synth.render_start(sources, seed=seed)
             pairs.append((idle, launch, f"private: simulated 22-car start, seed {seed}, listener {info['listener']}"))
+    entries = []
     for i, (idle, launch, src) in enumerate(pairs, 1):
         g = 10 ** (-1 / 20) / (max(np.abs(idle).max(), np.abs(launch).max()) + 1e-9)
         idle, launch = idle * g, launch * g
         save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle, loop=True)
         save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
+        entries.append((f"dtm13_grid_idle_{i:02d}.ogg", gain_for(idle, lvl_idle),
+                        f"dtm13_grid_launch_{i:02d}.wav", gain_for(launch, lvl_launch, loudest_db), src))
+    # fewer pairs than the stock bank: the stock slots left over would still be
+    # picked at random, so they point at our files too
+    stock_pairs = sum(1 for c in load_json(base_audio / "race/race_engines.json", {"clips": []})["clips"]
+                      if c.get("key", "").startswith("grid_launch_"))
+    for i in range(max(len(entries), stock_pairs if entries else 0)):
+        idle_f, idle_g, launch_f, launch_g, src = entries[i % len(entries)]
         clips.setdefault(race, []).extend([
-            {"key": f"grid_idle_{i:02d}", "file": f"dtm13_grid_idle_{i:02d}.ogg",
-             "gain": gain_for(idle, lvl_idle), "source": src},
-            {"key": f"grid_launch_{i:02d}", "file": f"dtm13_grid_launch_{i:02d}.wav",
-             "gain": gain_for(launch, lvl_launch, loudest_db), "source": src}])
+            {"key": f"grid_idle_{i + 1:02d}", "file": idle_f, "gain": idle_g, "source": src},
+            {"key": f"grid_launch_{i + 1:02d}", "file": launch_f, "gain": launch_g, "source": src}])
     report.append(f"grid idle/launch pairs: {len(pairs)} ({sum('simulated' not in p[2] for p in pairs)} real fan recordings)"
+                  + (f", filling {stock_pairs} stock slots" if pairs and len(pairs) < stock_pairs else "")
                   + ("" if pairs else ", stock kept"))
 
     # pit exits
