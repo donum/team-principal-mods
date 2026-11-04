@@ -170,6 +170,10 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
   stock launch shape was tried and dropped: raising squashed phone audio
   made it sound broken. `package.py` matches the launch's loudest 0.5 s
   to the stock bursts and the grid loop's RMS to the stock idles.
+  **Test:** `package.py --install --test-start` swaps the start for loud
+  non-car tones (a beep a second on the grid; three beeps, then a rising
+  siren from lights out), to check in game that the start slots play at
+  all. Install again without the flag to put the real start back.
   **Check:** `start_preview.py` (run by `package.py --install`) mixes
   each installed pair the way the game does, lights included, into
   `library/starts/ingame_start_NN.wav`; the mod browser lists them first.

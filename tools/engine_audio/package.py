@@ -164,7 +164,7 @@ def ref(r) -> str:
 # --------------------------------------------------------------------- main
 
 def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
-          synth_starts: bool = False) -> Path:
+          synth_starts: bool = False, test_start: bool = False) -> Path:
     manifest = load_json(season / "season.json")
     pack, base = manifest["pack_folder"], manifest["base_pack"]
     base_audio = game_path() / "data" / base / "assets" / "audio"
@@ -233,9 +233,12 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
     # 2-4 dB under the stock one
     lvl_launch = stock_level(base_audio, "race/race_engines.json", "grid_launch", loudest_db)
     pairs = []
-    for s in starts.real_starts(db)[:n_grid]:
+    if test_start:
+        idle, launch = starts.test_pair()
+        pairs.append((idle, launch, "TEST TONES (package.py --test-start): not a car"))
+    for s in ([] if test_start else starts.real_starts(db)[:n_grid]):
         pairs.append((s["idle"], s["launch"], f"private: {s['video_id']} go @ {s['go_s']:.2f}s ({s['note']})"))
-    if synth_starts:
+    if synth_starts and not test_start:
         sources = start_synth.find_sources(db)
         for seed in range(1, n_grid - len(pairs) + 1):
             idle, launch, info = start_synth.render_start(sources, seed=seed)
@@ -246,8 +249,9 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
         idle, launch = idle * g, launch * g
         save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle, loop=True)
         save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
-        entries.append((f"dtm13_grid_idle_{i:02d}.ogg", gain_for(idle, lvl_idle),
-                        f"dtm13_grid_launch_{i:02d}.wav", gain_for(launch, lvl_launch, loudest_db), src))
+        entries.append((f"dtm13_grid_idle_{i:02d}.ogg", 0.5 if test_start else gain_for(idle, lvl_idle),
+                        f"dtm13_grid_launch_{i:02d}.wav", 0.8 if test_start else gain_for(launch, lvl_launch, loudest_db),
+                        src))
     # fewer pairs than the stock bank: the stock slots left over would still be
     # picked at random, so they point at our files too
     stock_pairs = sum(1 for c in load_json(base_audio / "race/race_engines.json", {"clips": []})["clips"]
@@ -257,7 +261,7 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
         clips.setdefault(race, []).extend([
             {"key": f"grid_idle_{i + 1:02d}", "file": idle_f, "gain": idle_g, "source": src},
             {"key": f"grid_launch_{i + 1:02d}", "file": launch_f, "gain": launch_g, "source": src}])
-    report.append(f"grid idle/launch pairs: {len(pairs)} ({sum('simulated' not in p[2] for p in pairs)} real fan recordings)"
+    report.append(f"grid idle/launch pairs: {len(pairs)} " + ("(TEST TONES)" if test_start else f"({sum('simulated' not in p[2] for p in pairs)} real fan recordings)")
                   + (f", filling {stock_pairs} stock slots" if pairs and len(pairs) < stock_pairs else "")
                   + ("" if pairs else ", stock kept"))
 
@@ -308,12 +312,14 @@ def main() -> int:
     ap.add_argument("--grid-pairs", type=int, default=4)
     ap.add_argument("--synth-starts", action="store_true",
                     help="use simulated grid/launch pairs (off: only real recordings, else stock)")
+    ap.add_argument("--test-start", action="store_true",
+                    help="replace the start with loud test tones (checks the game plays the start slots)")
     ap.add_argument("--pit-exits", type=int, default=4)
     ap.add_argument("--tv-passbys", type=int, default=5)
     ap.add_argument("--install", action="store_true", help="apply to <game>/data/<pack_folder>")
     args = ap.parse_args()
     build(args.season, args.min_quality, args.grid_pairs, args.pit_exits, args.tv_passbys,
-          args.synth_starts)
+          args.synth_starts, args.test_start)
     if args.install:
         pack = load_json(args.season / "season.json")["pack_folder"]
         target = game_path() / "data" / pack

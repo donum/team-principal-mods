@@ -120,6 +120,30 @@ def render(db, s: dict):
     return title, idle, launch, go
 
 
+def test_pair() -> tuple[np.ndarray, np.ndarray]:
+    """Unmistakable non-car tones for checking that the game plays the start
+    slots at all (package.py --test-start). Grid: a 660 Hz beep every second.
+    Launch: three 880 Hz beeps from the 3rd light, a siren rising 300->900 Hz
+    from lights out (GO_AT_S), then a 440 Hz tone fading over 6 s."""
+    def tone(f, dur, amp=0.5):
+        t = np.arange(int(dur * SR)) / SR
+        f = np.broadcast_to(f, t.shape) if np.ndim(f) else np.full(t.shape, f)
+        ph = 2 * np.pi * np.cumsum(f) / SR
+        env = np.minimum(1, np.minimum(t, t[-1] - t) / 0.01)
+        return (amp * env * np.sin(ph)).astype(np.float32)
+    idle = np.zeros(int(4 * SR), np.float32)
+    for k in range(4):
+        b = tone(660, 0.15); idle[k * SR:k * SR + len(b)] += b
+    launch = np.zeros(int(12 * SR), np.float32)
+    for k in range(3):
+        b = tone(880, 0.1); i = int(k * 0.5 * SR); launch[i:i + len(b)] += b
+    sweep = tone(np.linspace(300, 900, int(3 * SR)), 3.0, 0.6)
+    i = int(GO_AT_S * SR); launch[i:i + len(sweep)] += sweep
+    tail = tone(440, 12 - GO_AT_S - 3.0) * np.linspace(1, 0, int((12 - GO_AT_S - 3.0) * SR), dtype=np.float32)
+    launch[i + len(sweep):i + len(sweep) + len(tail)] += tail[:len(launch) - i - len(sweep)]
+    return np.stack([idle, idle], 1), np.stack([launch, launch], 1)
+
+
 def real_starts(db) -> list[dict]:
     out = []
     for s in STARTS:
