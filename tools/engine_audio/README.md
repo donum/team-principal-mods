@@ -86,7 +86,7 @@ From the game's `assets/audio/README_AUDIO.txt`:
   - one per make, keys `dtm13_audi` / `dtm13_bmw` / `dtm13_mercedes` plus `_lr`;
   - tagged on the supplier through `engines.json` `passby_audio`;
   - made by simulating a pass-by at 220 km/h and 12 m (Doppler, distance, pan) from clean onboard full-throttle audio;
-  - commentary-free TV pass-bys, if any, join the random bank as `dtm13_tv_NN`.
+  - commentary-free TV pass-bys, if any, join the random bank as `dtm13_tv_NN`. With all three suppliers tagged, that bank is never used, so they are not heard today.
 - **Grid and pit** (`race/race_engines.json`):
   - `grid_idle_NN` / `grid_launch_NN` pairs are simulated by `start_synth.py` (below), and `pit_exit_NN` would come from onboard pit exits (none so far);
   - they replace the stock clips with the same key; fire-ups and wheelguns stay stock;
@@ -104,12 +104,17 @@ RoFormer vocal models remove it without watery gaps. So the start is built
 from the clean onboards:
 
 - **Grid:** 22 cars in the 2013 make mix (8 Audi, 8 BMW, 6 Mercedes), each
-  from a different onboard, on the staggered grid; the listener stands in the
-  grandstand beside it.
+  from a different onboard, on the staggered grid; the listener stands
+  13–20 m away, beside the front half.
 - **Grid revs:** each car's onboard audio replayed at a rate set from its
-  tracked rpm, holding 3,800–5,000 rpm with blips.
-- **Launch:** a clutch-slip ramp from grid revs, then the onboard's real
-  acceleration with its upshifts.
+  tracked rpm. Drivers hold 5,000–6,500 rpm and jab the throttle about once
+  a second, up to 7,000 rpm or onto the 8,500 rpm limiter.
+- **Launch:** a rev flare as the clutch drops, the bog as it bites, then
+  within a second the onboard's real acceleration with its upshifts. Full
+  throttle at once with a bark: the level jumps about 11 dB in under 0.25 s.
+- **Real pack:** from half a second after lights out, a real trackside
+  recording of a pack arriving (`Oz5JnogDN_Q`, 2015 Hockenheim, 81.5 s on)
+  plays 3 dB under the simulated field. It is skipped if not extracted.
 - **Physics:** emission-time solving (travel time, Doppler), 1/r level,
   distance damping, an AB microphone pair, grandstand reflections.
 - **Cleanup:** a comb mask on each car's known rpm removes the onboard

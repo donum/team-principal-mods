@@ -1,0 +1,58 @@
+# DTM 2013 sound status
+
+What the private audio overlay changes in the installed `dtm2013` pack,
+compared with the vanilla audio it copies from `default26`. Checked against
+the installed pack on 2026-11-04. The audio itself is private and never in
+git or `dist/`.
+
+## Replaced
+
+These vanilla clips no longer play. The vanilla files stay on disk, but
+nothing points to them any more.
+
+| Slot | Vanilla | Now | Made from |
+|---|---|---|---|
+| Pass-by, Audi | random bank (`engine_passby_01`–`05`) | `dtm13_audi` + `_lr` | Rockenfeller onboard, Hockenheim, simulated pass-by at 220 km/h |
+| Pass-by, BMW | random bank | `dtm13_bmw` + `_lr` | Spengler onboard, Nürburgring |
+| Pass-by, Mercedes | random bank | `dtm13_mercedes` + `_lr` | Juncadella onboard, Norisring |
+| `grid_idle_01`, `grid_idle_02` | stock grid loops | simulated 22-car grid, seeds 1–2 | 22 onboards, `start_synth.py` |
+| `grid_launch_01`, `grid_launch_02` | stock launches | simulated launch + real 2015 Hockenheim pack layer | same, plus `Oz5JnogDN_Q` |
+
+The three makes are tagged in `engines.json` (`passby_audio`), so every
+finish-line pass-by in practice, qualifying, testing and races is ours.
+
+## Added
+
+| Slot | What | Heard? |
+|---|---|---|
+| `grid_idle_03`, `_04` + `grid_launch_03`, `_04` | two more simulated starts (seeds 3–4) | yes: the bank picks one of four pairs at random |
+| `dtm13_tv_01`–`03` + `_lr` | commentary-free pass-bys cut from the TV broadcasts | **no:** they sit in the random bank, which only untagged suppliers use, and all three suppliers are tagged |
+
+## Still vanilla
+
+| Folder | Slot | Count | Notes |
+|---|---|---|---|
+| `race/` | `pit_fireup_01`–`04` | 4 | the onboards have no fire-ups |
+| `race/` | `pit_exit_01`–`04` | 4 | no onboard pit exits found yet |
+| `race/` | `pit_wheelguns_01`–`04` | 4 | the broadcast pit-stop finder is unverified |
+| `race/` | `start_light.wav`, `lights_out.wav` | 2 | |
+| `ambience/` | `base_01`, `base_02` | 2 | base beds |
+| `ambience/` | `cars_on_track` | 1 | 393 s track bed: the biggest sound in a session |
+| `ambience/` | `crowd`, `pa`, `helicopter`, `pit_blowers`, `rain` | 5 | |
+| `session/` | `engine_passby_01`–`05` + `_lr` | 10 | still in the random bank, but never picked (see Added) |
+| `music/` | 6 menu tracks | 6 | the shared CC0 tracks |
+| `ui/` | clicks, confirm, error… | 12 | always taken from the shared folder; a pack can't change them |
+
+## Toward a consistent qualifying and race
+
+Pass-bys and starts are done. Across a whole session the vanilla ambience
+plays far more than either, so it is where the remaining immersion is:
+
+1. **`cars_on_track` and crowd:** a long DTM bed from the spectator
+   recordings (no commentary) and the quiet stretches of the broadcasts.
+2. **Pit lane:** fire-ups, exits and wheelguns, from broadcast pit-stop
+   windows or the spectator videos, if any show the pit lane.
+3. **TV pass-bys:** either untag the suppliers, so the make clips and the TV
+   clips share one bank, or drop the TV clips.
+
+All of this is one set per pack, never per track (wishlist E9).

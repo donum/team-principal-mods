@@ -6,20 +6,26 @@ the start is simulated, car by car, from the 45 clean onboard laps:
 
   grid      22 cars on the staggered 2013 grid (8 m per position, two
             columns 3 m either side of the centre line), each its own
-            onboard recording. The listener stands in the grandstand
-            beside the grid.
-  idle      before lights out each car holds 3,800-5,000 rpm with the odd
-            blip: its onboard audio replayed at a pitch-controlled rate.
-            The tracked rpm of the source sets the rate, so the pitch is
-            exact. Softer and duller than full throttle (no load).
+            onboard recording.
+  idle      before lights out each car holds 5,000-6,500 rpm and jabs the
+            throttle about once a second, up to 7,000 rpm or onto the 8,500
+            rpm limiter (a short bounce): its onboard audio replayed at a
+            pitch-controlled rate. The tracked rpm of the source sets the
+            rate, so the pitch is exact. Duller than full throttle (no load).
   launch    at its own reaction time (0.15-0.45 s, a little later further
-            back) each car slips the clutch from grid revs into its onboard
-            acceleration, which then plays at its real speed, upshifts and
-            all.
+            back) each car dumps the clutch: a short rev flare, the bog as
+            the clutch bites, then within a second its onboard
+            acceleration at real speed, upshifts and all. Full throttle at
+            once, with a bark on top; the first 0.6 s keeps more of the
+            raw crackle.
+  real pack from half a second after lights out, a real trackside recording
+            of a DTM pack arriving (2015 Hockenheim, no commentary) is
+            layered under the simulated field, 3 dB below it.
   motion    0-200 km/h-ish: v(t) = vmax (1 - exp(-t / tau)). Every car is
             heard through physics: emission-time solving (travel time and
             Doppler), 1/r level, distance damping of the highs, and an AB
             microphone pair 30 cm apart (natural stereo time differences).
+            The listener stands 13-20 m from the grid, beside its front half.
   cleanup   a comb mask on each car's known rpm keeps the engine lines and
             removes the onboard wind/road noise (strong on the grid, mild
             when moving); stereo narrowed to the stock clips' width.
@@ -50,8 +56,16 @@ FPS = 20                     # segment.py feature rate
 LAUNCH_S = 10.9              # game clip lengths
 IDLE_S = 8.0
 GRID = 22                    # 2013 entry list
+LIMIT = 8500                 # rev limiter (2013 DTM V8)
 WIDTH = 0.35                 # side-channel scale: stock grid clips have L/R correlation ~0.8
 MIX_2013 = {"Audi": 8, "BMW": 8, "Mercedes": 6}
+# Real trackside recording of a DTM V8 pack arriving (2015 Hockenheim, no
+# commentary): it swells from 82 s to 85 s. Layered under the simulated
+# launch from just after lights out, it gives the start a real crowd of
+# engines. (video id, source second that lines up with lights out + PACK_LAG)
+REAL_PACK = ("Oz5JnogDN_Q", 81.5)
+PACK_LAG = 0.5
+PACK_DB = -3.0               # its level relative to the simulated field, 2-6 s after go
 
 
 # ------------------------------------------------------------------ sources
@@ -171,30 +185,52 @@ def car_dry(s: Source, go: float, t0: float, t1: float, rng) -> np.ndarray:
     t = t0 + np.arange(n) / SR
     pre = max(0.0, go - t0) + 0.2
     # source audio: idle material from before the launch window, launch from the window
-    idle_from = max(0.0, s.start_s - 1.0 - pre * 1.6)
+    idle_from = max(0.0, s.start_s - 1.0 - pre * 1.8)
     src = decode(s.path, idle_from, (s.start_s - idle_from) + (t1 - go) + 1.0, SR, 1)[:, 0]
     src_rpm = lambda sec: np.interp((idle_from + sec) * FPS, np.arange(len(s.rpm)), s.rpm)
 
-    # grid revs: slow wander plus blips, as drivers hold the revs for the start
-    base = rng.uniform(3800, 4600)
-    walk = uniform_filter1d(rng.normal(0, 1, n), int(0.7 * SR)) * 900
-    target = base + walk
-    for b in rng.uniform(t0, go - 0.6, size=rng.integers(1, 4)):
-        target += 1300 * np.exp(-0.5 * ((t - b) / 0.12) ** 2)
-    target = np.clip(target, 3200, 6500)
+    # grid revs: drivers hold 5,000-6,500 rpm on the throttle, jab it every
+    # second or so (some up to the limiter, bouncing off it), never steady
+    hold = rng.uniform(5000, 6500)
+    kr = 100                                                   # control rate (Hz)
+    m_c = int((t1 - t0) * kr) + 2
+    tc = t0 + np.arange(m_c) / kr
+    jit = uniform_filter1d(rng.normal(0, 1, m_c), 12)
+    ctrl = hold + 1400 * jit / (jit.std() + 1e-9) * 0.25
+    tt = rng.uniform(t0, go - 0.25)
+    while tt < go - 0.25:
+        peak = rng.uniform(7000, LIMIT) if rng.random() < 0.75 else LIMIT
+        att, dec = rng.uniform(0.06, 0.12), rng.uniform(0.2, 0.45)
+        d = tc - tt
+        env = np.where(d < 0, 0, np.where(d < att, d / att, np.exp(-(d - att) / dec)))
+        ctrl = np.maximum(ctrl, hold + (peak - hold) * env)
+        if peak >= LIMIT:                                       # limiter bounce
+            hold_s = rng.uniform(0.2, 0.5)
+            on = (d >= att) & (d < att + hold_s)
+            saw = LIMIT - 350 * ((d - att) * rng.uniform(10, 14) % 1)
+            ctrl = np.where(on, saw, ctrl)
+        tt += rng.exponential(1.0) + 0.35
+    ctrl = np.clip(ctrl, 3800, LIMIT)
+    target = np.interp(t, tc, ctrl)
     idle = rate_play(src, src_rpm, 0.0, target)
-    idle = harmonic_mask(idle, target, floor=0.12)
-    idle = sosfilt(butter(2, rng.uniform(1800, 2600), fs=SR, output="sos"), idle) * 0.3
+    idle = harmonic_mask(idle, target, floor=0.15)
+    idle = sosfilt(butter(2, rng.uniform(2800, 3600), fs=SR, output="sos"), idle)
+    idle *= 0.3 + 0.3 * np.clip((target - 4000) / (LIMIT - 4000), 0, 1)   # louder when jabbed
 
-    # launch: clutch slip from grid revs up to the source's own rpm, then native playback
+    # launch: a flare as the clutch is dumped, the bog as it bites, then the
+    # source's own full-throttle acceleration at native speed
     k0 = int((go - t0) * SR)
     m = n - k0
     w0 = (s.start_s - idle_from) * SR
     src_at_go = src_rpm(s.start_s - idle_from)
-    ramp = np.clip((t[k0:] - go) / rng.uniform(1.0, 1.6), 0, 1)
+    tau = t[k0:] - go
+    h0 = target[k0]
+    flare = 0.07 * np.exp(-0.5 * ((tau - 0.05) / 0.04) ** 2)
+    bog = 0.17 * np.exp(-0.5 * ((tau - 0.22) / 0.09) ** 2)
+    want = h0 * (1 + flare - bog)
+    ramp = np.clip((tau - 0.3) / rng.uniform(0.4, 0.7), 0, 1)
     ramp = ramp * ramp * (3 - 2 * ramp)                       # smoothstep
-    rel = (target[k0] / src_at_go) * (1 - ramp) + ramp      # playback rate, 1 = native
-    # native timing after the ramp: rate_play with target == source rpm gives rate 1
+    rel = (want / src_at_go) * (1 - ramp) + ramp              # playback rate, 1 = native
     pos = np.empty(m)
     p = w0
     for i in range(0, m, 441):
@@ -206,9 +242,11 @@ def car_dry(s: Source, go: float, t0: float, t1: float, rng) -> np.ndarray:
     launch = np.interp(pos, np.arange(len(src)), src)
     rate = np.gradient(pos)
     out_rpm = rate * src_rpm(pos / SR)
-    launch = harmonic_mask(launch, out_rpm, floor=0.35)
-    load = 0.4 + 0.6 * np.clip((t[k0:] - go) / 0.35, 0, 1)   # throttle opening
-    launch *= load
+    rough = harmonic_mask(launch, out_rpm, floor=0.6)         # the bark: keep its crackle
+    clean = harmonic_mask(launch, out_rpm, floor=0.35)
+    mixr = np.clip(tau / 0.6, 0, 1)[:]
+    launch = rough * (1 - mixr) + clean * mixr
+    launch *= 1.0 + 0.6 * np.exp(-tau / 0.3)                 # full throttle at once, a bark on top
 
     out = idle.copy()
     xf = int(0.06 * SR)
@@ -269,12 +307,36 @@ def venue(x: np.ndarray, rng) -> np.ndarray:
     return np.stack([fftconvolve(x[:, c], ir[:, c])[:len(x)] for c in range(2)], axis=1)
 
 
+def add_real_pack(mix: np.ndarray, k0: int, width: float) -> np.ndarray:
+    """Layer the real pack recording from lights out + PACK_LAG (skipped if not extracted)."""
+    try:
+        db = connect()
+        row = db.execute("SELECT path FROM audio WHERE id=?", (REAL_PACK[0],)).fetchone()
+    except SystemExit:
+        row = None
+    if not row or not Path(row["path"]).exists():
+        return mix
+    start = k0 + int(PACK_LAG * SR)
+    n = len(mix) - start
+    real = decode(Path(row["path"]), REAL_PACK[1], n / SR, SR, 2)[:n]
+    n = len(real)
+    mid, side = (real[:, 0] + real[:, 1]) / 2, (real[:, 0] - real[:, 1]) / 2
+    real = np.stack([mid + width * side, mid - width * side], axis=1)
+    real *= np.clip(np.arange(n) / (0.8 * SR), 0, 1)[:, None]
+    a, b = int(1.5 * SR), int(5.5 * SR)                        # 2-6 s after go
+    rms = lambda x: np.sqrt(np.mean(np.square(x)) + 1e-12)
+    g = 10 ** (PACK_DB / 20) * rms(mix[start + a:start + b]) / rms(real[a:b])
+    out = mix.copy()
+    out[start:start + n] += g * real
+    return out
+
+
 def render_start(sources: list[Source], seed: int, listener_x: float | None = None,
                  listener_y: float | None = None):
     rng = np.random.default_rng(seed)
     grid = pick_grid(sources, rng)
-    lx = listener_x if listener_x is not None else rng.uniform(-110, 10)     # beside the grid
-    ly = listener_y if listener_y is not None else -rng.uniform(22, 38)      # grandstand distance
+    lx = listener_x if listener_x is not None else rng.uniform(-70, 0)       # beside the front half of the grid
+    ly = listener_y if listener_y is not None else -rng.uniform(13, 20)      # pit wall / front grandstand
     pre = IDLE_S + 1.5
     t0, t1 = -pre, LAUNCH_S + 0.5
     cars = []
@@ -289,6 +351,7 @@ def render_start(sources: list[Source], seed: int, listener_x: float | None = No
     mid, side = (mix[:, 0] + mix[:, 1]) / 2, (mix[:, 0] - mix[:, 1]) / 2
     mix = np.stack([mid + WIDTH * side, mid - WIDTH * side], axis=1)
     k0 = int(pre * SR)                                          # lights out
+    mix = add_real_pack(mix, k0, WIDTH * 1.6)
     launch = mix[k0 - int(0.05 * SR):k0 - int(0.05 * SR) + int(LAUNCH_S * SR)].copy()
     fo = int(1.5 * SR)
     launch[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 2
