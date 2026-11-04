@@ -418,8 +418,16 @@ def build(season_dir, game, install, private_audio=True):
         sys.exit(f"base pack not found: {base_dir}")
     out = REPO / "dist" / manifest["pack_folder"]
     if out.exists():
-        shutil.rmtree(out)
-    shutil.copytree(base_dir, out)
+        # An Explorer window open inside dist/ holds its folder; keep such a
+        # folder (it is emptied) instead of failing the whole build.
+        held = []
+        shutil.rmtree(out, onexc=lambda fn, path, exc: held.append(path))
+        for path in held:
+            if Path(path).is_file():
+                sys.exit(f"cannot remove {path}: in use by another program")
+        if held:
+            print(f"note: {len(held)} folder(s) in dist/ are open in another program and were kept empty")
+    shutil.copytree(base_dir, out, dirs_exist_ok=True)
 
     art_root = out / "assets"
     for sub in FICTIONAL_ASSET_DIRS:
