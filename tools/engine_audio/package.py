@@ -47,6 +47,10 @@ FADE = 0.03
 
 # ------------------------------------------------------------------ helpers
 
+START_IDLE_BOOST_DB = 5.0     # over the stock grid idle level
+START_LAUNCH_BOOST_DB = 7.0   # over the stock launch burst: lands on pass-by level
+
+
 def rms_db(x: np.ndarray) -> float:
     return float(10 * np.log10(np.mean(np.square(x, dtype=np.float64)) + 1e-12))
 
@@ -249,9 +253,14 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
         idle, launch = idle * g, launch * g
         save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle, loop=True)
         save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
-        entries.append((f"dtm13_grid_idle_{i:02d}.ogg", 0.5 if test_start else gain_for(idle, lvl_idle),
-                        f"dtm13_grid_launch_{i:02d}.wav", 0.8 if test_start else gain_for(launch, lvl_launch, loudest_db),
-                        src))
+        # matched to stock, the real start was inaudible in game (2026-11-04):
+        # the stock start is quiet, its burst ~6 dB under a pass-by, and our
+        # 22 s grandstand roar then reads as background. The launch's loudest
+        # 0.5 s now sits at pass-by level, the grid revving 5 dB over stock.
+        idle_g = round(min(1.0, gain_for(idle, lvl_idle) * 10 ** (START_IDLE_BOOST_DB / 20)), 6)
+        launch_g = round(min(1.0, gain_for(launch, lvl_launch, loudest_db) * 10 ** (START_LAUNCH_BOOST_DB / 20)), 6)
+        entries.append((f"dtm13_grid_idle_{i:02d}.ogg", 0.5 if test_start else idle_g,
+                        f"dtm13_grid_launch_{i:02d}.wav", 0.8 if test_start else launch_g, src))
     # fewer pairs than the stock bank: the stock slots left over would still be
     # picked at random, so they point at our files too
     stock_pairs = sum(1 for c in load_json(base_audio / "race/race_engines.json", {"clips": []})["clips"]

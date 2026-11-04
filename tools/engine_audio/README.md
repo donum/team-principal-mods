@@ -168,8 +168,12 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
   the field roared off on the 3rd light.
   **Level:** the recording stays as it is. A level automation onto the
   stock launch shape was tried and dropped: raising squashed phone audio
-  made it sound broken. `package.py` matches the launch's loudest 0.5 s
-  to the stock bursts and the grid loop's RMS to the stock idles.
+  made it sound broken. `package.py` sets the launch's loudest 0.5 s
+  7 dB over the stock burst, so it peaks at pass-by level, and the grid
+  loop 5 dB over the stock idle (`START_*_BOOST_DB`). Matched to stock it
+  was inaudible in game: the stock start is quiet, and a 22 s grandstand
+  roar at that level reads as background. A `--test-start` run proved the
+  slots play.
   **Test:** `package.py --install --test-start` swaps the start for loud
   non-car tones (a beep a second on the grid; three beeps, then a rising
   siren from lights out), to check in game that the start slots play at
