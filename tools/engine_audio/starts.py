@@ -51,13 +51,14 @@ OUT_DIR = LIBRARY_DIR / "starts"
 STARTS = [
     # go set by hand: the 1-4 kHz roar steps up 6 dB at 54.6 s and stays; the
     # phone's gain control smears the broadband level, so refine_go is off
-    # cut to 15 s (picked by ear 2026-11-04 over 12, 18 and the old 22.5 s with
-    # a 2017 tail): the loudest pass at 11.6 s stays, then a 3 s fade rides the
-    # recording's own drop-off as the field leaves; no borrowed ending needed
+    # cut to 12 s (picked by ear 2026-11-04 over 15, 18 and the old 22.5 s with
+    # a 2017 tail): a 3.5 s fade from 8.5 s, where the roar dips after the
+    # getaway, so the later close pass (11.6 s) is faded out; no borrowed
+    # ending needed
     dict(vid="fk9f2Qt5x20", idle=(37.0, 52.0), go=54.5, refine=False, end=None,
-         launch_s=15.0, fade_s=3.0,
-         note="Hockenheim finale, grid and start: clean revving, the field swelling past "
-              "and moving away, 15 s with a 3 s fade"),
+         launch_s=12.0, fade_s=3.5,
+         note="Hockenheim finale, grid and start: clean revving, the getaway and the "
+              "field swelling past, 12 s with a 3.5 s fade"),
 ]
 # Set aside after listening in game (2026-11-04): noise and mic overload at the
 # launch (Nurburgring 2014 x_JJhPIFjdY, Hockenheim 2012 kf4kpYMJ3vc, Zandvoort
