@@ -14,7 +14,7 @@ and listed by hand below. This stage
      clip opens with the grid's last revving and lights out falls 1.5 s in
      (the cars move at 2.0 s). The launch runs to the end of the recording,
      or on into a `tail` from another recording (equal-power crossfade,
-     levels matched), then fades out;
+     levels matched), is cut to `launch_s` if set, then fades out;
   3. loops the grid revving: up to IDLE_MAX_S of it, the tail crossfaded
      into the head so it repeats without a click.
 
@@ -45,16 +45,19 @@ GO_AT_S = 1.6
 OUT_DIR = LIBRARY_DIR / "starts"
 
 # video id, grid revving from/to, go estimate (refine=False: exact), launch end
-# (None: end of the video), optional tail (video id, from, to), note; seconds
-# in the video
+# (None: end of the video), optional tail (video id, from, to), optional
+# launch_s / fade_s (clip length and fade-out, default END_FADE_S), note;
+# seconds in the video
 STARTS = [
     # go set by hand: the 1-4 kHz roar steps up 6 dB at 54.6 s and stays; the
     # phone's gain control smears the broadband level, so refine_go is off
+    # cut to 15 s (picked by ear 2026-11-04 over 12, 18 and the old 22.5 s with
+    # a 2017 tail): the loudest pass at 11.6 s stays, then a 3 s fade rides the
+    # recording's own drop-off as the field leaves; no borrowed ending needed
     dict(vid="fk9f2Qt5x20", idle=(37.0, 52.0), go=54.5, refine=False, end=None,
-         tail=("IBuEsBSh9_I", 16.0, 22.5),
-         note="Hockenheim finale, grid and start: clean revving, the field swelling past; "
-              "the video stops 17 s after go, so the field fading towards turn 1 comes "
-              "from the 2017 Hockenheim start"),
+         launch_s=15.0, fade_s=3.0,
+         note="Hockenheim finale, grid and start: clean revving, the field swelling past "
+              "and moving away, 15 s with a 3 s fade"),
 ]
 # Set aside after listening in game (2026-11-04): noise and mic overload at the
 # launch (Nurburgring 2014 x_JJhPIFjdY, Hockenheim 2012 kf4kpYMJ3vc, Zandvoort
@@ -112,7 +115,9 @@ def render(db, s: dict):
     if s.get("tail"):
         _, tpath = path_of(db, s["tail"][0])
         launch = join_tail(launch, decode(tpath, s["tail"][1], s["tail"][2] - s["tail"][1], SR, 2))
-    fo = int(END_FADE_S * SR)
+    if s.get("launch_s"):
+        launch = launch[:int(s["launch_s"] * SR)]
+    fo = int(s.get("fade_s", END_FADE_S) * SR)
     launch[-fo:] *= np.cos(np.linspace(0, np.pi / 2, fo))[:, None]
     idle_end = min(s["idle"][1], go - 0.25)
     idle_start = max(s["idle"][0], idle_end - IDLE_MAX_S)

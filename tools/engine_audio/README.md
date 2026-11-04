@@ -142,9 +142,15 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
 
 - **Starts (`starts.py`):** one start, picked by ear: the Hockenheim
   finale "Grid and Start" video (`fk9f2Qt5x20`), 15 s of clean grid
-  revving and the field swelling past. The video stops 17 s after go, so
-  the field fading towards turn 1 is crossfaded in (2 s, equal power,
-  level matched) from the 2017 Hockenheim start (`IBuEsBSh9_I`, 16–22.5 s).
+  revving and the field swelling past.
+  **Length:** the launch is 15 s (`launch_s`), with a 3 s fade (`fade_s`)
+  from 12 s, as the recording's own level drops with the field moving
+  away. It keeps the loudest pass (11.6 s). Picked by ear over 12 s,
+  which fades before that pass and so plays 2 dB louder overall, 18 s,
+  and the old 22.5 s. The 22.5 s version crossfaded in the ending of the
+  2017 Hockenheim start (`IBuEsBSh9_I`, 16–22.5 s); that ending is no
+  longer needed. `STARTS` still takes a `tail` for a recording that
+  stops too early.
   Both stock slots (`grid_*_01`, `_02`) point at it, so the random pick
   never falls back to stock.
   **Why so few:** in most fan videos the crowd cheers and the phone mic
