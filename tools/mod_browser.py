@@ -43,13 +43,16 @@ LAYER_FILES = {"pa": "pa.ogg", "pit_blowers": "pit_blowers.ogg", "rain": "rain.o
                "cars": "cars_on_track.ogg", "helicopter": "helicopter.ogg"}
 LAYER_NAMES = {"pa": "Public address", "pit_blowers": "Pit blowers", "rain": "Rain", "crowd": "Crowd",
                "cars": "Cars on track", "helicopter": "Helicopter"}
-SLOT_NAMES = {"grid_idle": "Grid idle (loops until lights out)", "grid_launch": "Grid launch (from lights out)",
+SLOT_NAMES = {"grid_idle": "Grid idle (loops until lights out)", "grid_launch": "Grid launch (from the 3rd light; lights out 1.5 s in)",
               "pit_exit": "Pit exit", "pit_fireup": "Pit fire-up", "pit_wheelguns": "Wheelguns",
               "engine_passby": "Finish-line pass-by"}
 
 # Sound candidates: folders under private/engine_audio and what they are.
 # New folders show up on their own under their folder name.
 CANDIDATE_GROUPS = [
+    ("library/starts", "ingame_start_*.wav", "Starts as the game plays them",
+     "The installed pairs mixed with the game's timing and levels: grid idle, five lights 0.5 s apart, "
+     "the launch from the 3rd light, lights out at 2.5 s (start_preview.py)."),
     ("library/starts", "*idle_then_launch.wav", "Real starts",
      "Fan recordings of race starts: grid revving looped twice, then the launch. These are in the pack."),
     ("library/ambience", "*preview*.wav", "Track bed",
@@ -133,13 +136,22 @@ class Media:
             return None
         dst = (self.root / "audio" / rel).with_suffix(".ogg")
         dst.parent.mkdir(parents=True, exist_ok=True)
-        if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+        # a preview held open by a browser tab can't be replaced on Windows; the
+        # fresh one then goes under a versioned name (new URL, so never stale)
+        alt = dst.with_name(f"{dst.stem}.{int(src.stat().st_mtime)}.ogg")
+        if alt.exists() and alt.stat().st_mtime >= src.stat().st_mtime:
+            dst = alt
+        elif not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
             tmp = dst.with_name(dst.stem + ".tmp.ogg")
             res = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-map", "0:a:0", "-vn",
                                   "-c:a", "libvorbis", "-q:a", "3", str(tmp)], capture_output=True)
             if res.returncode or not tmp.exists():
                 return None
-            tmp.replace(dst)
+            try:
+                tmp.replace(dst)
+            except PermissionError:
+                tmp.replace(alt)
+                dst = alt
         self.used.add(dst)
         return f"media/audio/{dst.relative_to(self.root / 'audio').as_posix()}"
 
@@ -147,8 +159,11 @@ class Media:
         n = 0
         for p in sorted(self.root.rglob("*"), reverse=True):
             if p.is_file() and p not in self.used:
-                p.unlink()
-                n += 1
+                try:
+                    p.unlink()
+                    n += 1
+                except PermissionError:
+                    pass          # held open by a browser tab; goes next time
             elif p.is_dir() and not any(p.iterdir()):
                 p.rmdir()
         return n

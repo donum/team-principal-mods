@@ -41,6 +41,7 @@ python tools/engine_audio/package.py --install
 | `library.py` | segments | `library/index.html` (playable), `library/coverage.md`, ranked WAV clips |
 | `events.py` | broadcast features (race and qualifying re-lives) | table `events`: race-start, pit-stop, pass-by and track-bed candidates |
 | `starts.py` | fan recordings of race starts (hand-listed) | real grid idle loops and launches (used by `package.py`) |
+| `start_preview.py` | the installed pack | each start mixed with the game's own timing and levels (`library/starts/ingame_start_NN.wav`) |
 | `ambience.py` | spectator montages | 393 s `cars_on_track` loop of real trackside shots, cut at camera cuts |
 | `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (only with `package.py --synth-starts`) |
 | `package.py` | segments, base pack audio levels | `pack/dtm2013/` (files + `overlay.json`); `--install` applies it |
@@ -144,13 +145,24 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
   of grid revving before lights out; 2012 Hockenheim and 2015 Zandvoort only
   about 4 s. "Go" is refined to where the level steps up for good (median
   of the next 1.5 s against the previous 1.5 s), so a rev blip doesn't win.
-  Phone cameras flatten the launch to +3–4 dB over the grid, and a raw cut
-  stays loud until it stops dead, so in game the start felt toned down
-  with sound missing at the end. The launch is therefore levelled onto the
-  stock launch curve (`LAUNCH_SHAPE_DB`): a burst about 10 dB over the grid
-  within the first second, then the field fading over six seconds. Only
-  the level is automated (0.75 s window), so gear changes and blips stay
-  as recorded.
+  **Game timing** (read from the game's `ui/live_audio.py` and
+  `ui/screens/race_screen.py`): five lights come on 0.5 s apart; on the
+  3rd light the idle fades out in 0.2 s and `grid_launch` starts once;
+  lights out is 1.5 s later and the cars move 0.5 s after that. So a
+  launch clip is *not* "from lights out": it opens with 1.6 s of the
+  recording's own last grid revving (`GO_AT_S`), and the real getaway
+  lands on lights out. The first cut started at the getaway, so in game
+  the field roared off on the 3rd light.
+  **Level:** phone cameras flatten the launch to +3–4 dB over the grid,
+  and a raw cut stays loud until it stops dead. After go the launch is
+  levelled onto `LAUNCH_CURVE` (modelled on the stock launches): a burst
+  10 dB over the grid within half a second, then the field fading towards
+  turn 1. Only the level is automated (0.75 s window), so gear changes and
+  blips stay as recorded. `package.py` sets the launch gain so its loudest
+  0.5 s matches the stock bursts (whole-clip RMS left it 2–4 dB under).
+  **Check:** `start_preview.py` (run by `package.py --install`) mixes
+  each installed pair the way the game does, lights included, into
+  `library/starts/ingame_start_NN.wav`; the mod browser lists them first.
 - **Track bed (`ambience.py`):** the montages are cut into shots at camera
   cuts (a sudden spectral change between the 0.3 s before and after),
   keeping shots of 8+ s with engines, almost no speech and 9+ dB of level

@@ -51,6 +51,13 @@ def rms_db(x: np.ndarray) -> float:
     return float(10 * np.log10(np.mean(np.square(x, dtype=np.float64)) + 1e-12))
 
 
+def loudest_db(x: np.ndarray, win_s: float = 0.5) -> float:
+    """RMS dB of the loudest win_s stretch: what a launch burst is heard at."""
+    w = int(win_s * SR)
+    p = np.square(x.mean(axis=1), dtype=np.float64)
+    return float(10 * np.log10(np.convolve(p, np.ones(w) / w, mode="valid").max() + 1e-12))
+
+
 def fades(x: np.ndarray) -> np.ndarray:
     n = min(int(FADE * SR), len(x) // 4)
     if n:
@@ -71,20 +78,20 @@ def loudest_80ms(x: np.ndarray) -> float:
     return round((int(e.argmax()) + w / 2) / SR, 6)
 
 
-def stock_level(base_audio: Path, manifest: str, prefix: str) -> float:
-    """Median effective level (RMS dB + gain) of the stock clips with this key prefix."""
+def stock_level(base_audio: Path, manifest: str, prefix: str, measure=rms_db) -> float:
+    """Median effective level (measure dB + gain) of the stock clips with this key prefix."""
     m = load_json(base_audio / manifest, {"clips": []})
     folder = (base_audio / manifest).parent
     levels = []
     for c in m["clips"]:
         if c.get("key", "").startswith(prefix) and (folder / c["file"]).exists():
             x = decode(folder / c["file"], sr=SR, channels=2)
-            levels.append(rms_db(x) + 20 * np.log10(max(c.get("gain", 1.0), 1e-3)))
+            levels.append(measure(x) + 20 * np.log10(max(c.get("gain", 1.0), 1e-3)))
     return float(np.median(levels)) if levels else -20.0
 
 
-def gain_for(x: np.ndarray, target_db: float) -> float:
-    return round(float(np.clip(10 ** ((target_db - rms_db(x)) / 20), 0.05, 1.0)), 6)
+def gain_for(x: np.ndarray, target_db: float, measure=rms_db) -> float:
+    return round(float(np.clip(10 ** ((target_db - measure(x)) / 20), 0.05, 1.0)), 6)
 
 
 # ---------------------------------------------------------------- synthesis
@@ -221,7 +228,10 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
     # pairs (start_synth.py) only with --synth-starts; otherwise the stock
     # pairs stay for any slot without a real recording.
     lvl_idle = stock_level(base_audio, "race/race_engines.json", "grid_idle")
-    lvl_launch = stock_level(base_audio, "race/race_engines.json", "grid_launch")
+    # launches are matched on their burst (loudest 0.5 s), not the whole clip:
+    # ours hold the roar longer than stock, so whole-clip RMS left the burst
+    # 2-4 dB under the stock one
+    lvl_launch = stock_level(base_audio, "race/race_engines.json", "grid_launch", loudest_db)
     pairs = []
     for s in starts.real_starts(db)[:n_grid]:
         pairs.append((s["idle"], s["launch"], f"private: {s['video_id']} go @ {s['go_s']:.2f}s ({s['note']})"))
@@ -239,7 +249,7 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
             {"key": f"grid_idle_{i:02d}", "file": f"dtm13_grid_idle_{i:02d}.ogg",
              "gain": gain_for(idle, lvl_idle), "source": src},
             {"key": f"grid_launch_{i:02d}", "file": f"dtm13_grid_launch_{i:02d}.wav",
-             "gain": gain_for(launch, lvl_launch), "source": src}])
+             "gain": gain_for(launch, lvl_launch, loudest_db), "source": src}])
     report.append(f"grid idle/launch pairs: {len(pairs)} ({sum('simulated' not in p[2] for p in pairs)} real fan recordings)"
                   + ("" if pairs else ", stock kept"))
 
@@ -302,6 +312,8 @@ def main() -> int:
         if not target.is_dir():
             raise SystemExit(f"pack not installed yet: {target} (run build_pack.py --install)")
         print(overlay.apply(target, pack) if overlay.overlay_for(pack) else overlay.remove(target))
+        import start_preview          # the starts as the game mixes them, for the browser
+        start_preview.main()
         # keep the mod browser (tools/mod_browser.py) in sync with what is installed
         sys.path.insert(0, str(REPO / "tools"))
         import mod_browser

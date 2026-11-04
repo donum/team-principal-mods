@@ -333,6 +333,19 @@ under "Simplifications".
   session manifests) that names other files for that venue, falling back
   to the pack-wide set.
 
+### E10. Documented start-sound timing · P3
+- **Needed by:** dtm-2013.
+- **Today:** `grid_launch_NN` reads like "the launch", but the game starts
+  it when the **3rd** of five lights comes on (0.5 s apart), 1.5 s before
+  lights out; the cars move 0.5 s after that. None of this is documented,
+  and a clip that starts with the getaway roars off two lights early.
+  We found it by reading the game's start sequence.
+- **Workaround:** every launch clip opens with 1.6 s of grid revving, so
+  the getaway lands on lights out (`tools/engine_audio/starts.py`).
+- **Request:** document the timing next to `race_engines.json`, or let a
+  clip carry a `go_s` (where its getaway is) that the game lines up with
+  lights out.
+
 ---
 
 *Kept up to date as we find more. Collected while building

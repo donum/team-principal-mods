@@ -9,11 +9,13 @@ and roughly when the field launches. This stage
 
   1. refines "go": the largest lasting level step within +-1.5 s of the
      listed time (see refine_go);
-  2. cuts the launch from just before go, LAUNCH_S long (the game's clip
-     length), and levels it onto the stock launch curve (LAUNCH_SHAPE_DB):
-     a burst at go, then the field fading away. Phone audio is compressed,
-     so without this the launch is flat, barely louder than the grid, and
-     stops abruptly;
+  2. cuts the launch so that go lands GO_AT_S into it: the game starts
+     grid_launch when the 3rd of five lights comes on (0.5 s apart), so the
+     clip opens with 1.5 s of the grid's last revving and lights out falls
+     at 1.5 s (the cars move at 2.0 s). After go it is levelled onto
+     LAUNCH_CURVE: a burst about 10 dB over the grid, then the field fading
+     towards turn 1. Phone audio is compressed, so without this the launch
+     is flat, barely louder than the grid, and stops abruptly;
   3. loops the grid revving: up to IDLE_MAX_S of it, the tail crossfaded
      into the head so it repeats without a click.
 
@@ -36,15 +38,15 @@ SR = 44100
 LAUNCH_S = 10.9          # stock grid_launch length
 IDLE_MAX_S = 12.0
 LOOP_XF_S = 1.0
-# Level of the stock launches over time (dB per 0.25 s, mean of grid_launch_01
-# and _02, relative to their peak): a burst within the first second, a held
-# roar, then the field fading towards turn 1 over the last six seconds. Phone
-# recordings are compressed (automatic gain), so a raw cut stays flat and only
-# a few dB above the grid revving; the launch is levelled onto this curve.
-LAUNCH_SHAPE_DB = [-10, -5, -1, -1, -3, 0, -1, -3, -3, -2, -2, -3, -5, -7, -6, -6, -6, -8, -9, -9,
-                   -9, -9, -9, -10, -9, -10, -11, -12, -14, -15, -17, -19, -21, -24, -26, -29, -31,
-                   -35, -38, -42, -46, -55, -64]
-SHAPE_STEP_S = 0.25
+# When the game plays the pair (ui/live_audio.py, ui/screens/race_screen.py):
+# grid_idle loops on the grid; when the 3rd start light comes on (1.5 s into
+# the sequence) the idle fades out in 0.2 s and grid_launch starts once;
+# lights out is 1.5 s later and the cars move 0.5 s after that.
+GO_AT_S = 1.6
+# Level after go, dB over the recording's grid revving (seconds after go),
+# modelled on the stock launches: a burst within half a second, a held roar,
+# then the field fading towards turn 1. Before go the recording stays as is.
+LAUNCH_CURVE = [(0.0, 2), (0.5, 10), (3.0, 9), (5.0, 5), (7.5, -6), (LAUNCH_S - GO_AT_S, -30)]
 OUT_DIR = LIBRARY_DIR / "starts"
 
 # (video id, grid revving from, grid revving to, go estimate, note); seconds in the video
@@ -80,20 +82,22 @@ def make_loop(x: np.ndarray) -> np.ndarray:
 
 
 def shape_launch(launch: np.ndarray, idle: np.ndarray) -> np.ndarray:
-    """Level automation onto LAUNCH_SHAPE_DB. The recording's own short-term
-    level (0.75 s) is replaced by the stock curve, anchored so the held roar
-    sits 10 dB above this recording's grid revving, as in the stock pairs;
-    detail shorter than that (gear changes, blips) stays as recorded."""
+    """Level automation after go onto LAUNCH_CURVE, relative to this
+    recording's grid revving. The recording's own short-term level (0.75 s)
+    is replaced by the curve; detail shorter than that (gear changes, blips)
+    stays as recorded. The revving before go is left untouched, so it runs
+    on from the idle loop."""
     hop = int(0.01 * SR)
     m = launch.mean(axis=1)
     n = len(m) // hop
     p = np.square(m[:n * hop]).reshape(n, hop).mean(1)
     own = 10 * np.log10(uniform_filter1d(p, 75, mode="nearest") + 1e-12)
-    t = np.arange(n) * 0.01
-    shape = np.interp(t, np.arange(len(LAUNCH_SHAPE_DB)) * SHAPE_STEP_S, LAUNCH_SHAPE_DB)
+    t = np.arange(n) * 0.01 - GO_AT_S
+    ct, cdb = zip(*LAUNCH_CURVE)
     idle_db = 10 * np.log10(np.square(idle.mean(axis=1)).mean() + 1e-12)
-    g_db = uniform_filter1d(np.clip(idle_db + 10 + shape - own, -60, 14), 30, mode="nearest")
-    g = np.interp(np.arange(len(launch)) / SR, t, 10 ** (g_db / 20))
+    g_db = np.where(t < 0, 0.0, np.clip(idle_db + np.interp(t, ct, cdb) - own, -60, 14))
+    g_db = uniform_filter1d(g_db, 30, mode="nearest")
+    g = np.interp(np.arange(len(launch)) / SR, np.arange(n) * 0.01, 10 ** (g_db / 20))
     return launch * g[:, None]
 
 
@@ -101,7 +105,7 @@ def render(path: Path, idle_a: float, idle_b: float, go_guess: float):
     t0 = idle_a
     x = decode(path, t0, (go_guess - t0) + LAUNCH_S + 2.0, SR, 2)
     go = refine_go(x, t0, go_guess)
-    k = int((go - t0) * SR)
+    k = int((go - GO_AT_S - t0) * SR)
     launch = x[k:k + int(LAUNCH_S * SR)].copy()
     idle_end = min(idle_b, go - 0.25)
     idle_start = max(idle_a, idle_end - IDLE_MAX_S)

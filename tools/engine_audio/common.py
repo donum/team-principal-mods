@@ -3,7 +3,7 @@
 Pipeline (each stage is a re-runnable CLI script, see README.md):
     catalog.py -> extract.py -> segment.py -> library.py -> package.py
                                     +-> events.py -> separate.py -> review.py -+
-                                    +-> starts.py, ambience.py (spectator) ----+
+                                    +-> starts.py, start_preview.py, ambience.py (spectator) ----+
 
 All audio lives under private/engine_audio (gitignored). Never commit it.
 """
