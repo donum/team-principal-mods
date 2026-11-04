@@ -158,6 +158,23 @@ details[open] summary { margin-bottom: 6px; }
 .kv dt { color: var(--muted); font-family: var(--font-mono); }
 .kv dd { margin: 0; font-family: var(--font-mono); text-align: right; }
 
+/* backgrounds */
+.bggroup { display: grid; gap: 10px; }
+.bggroup > summary { list-style: none; }
+.bggroup > summary::-webkit-details-marker { display: none; }
+.bggroup > summary h3::before { content: "▸ "; color: var(--muted); }
+.bggroup[open] > summary h3::before { content: "▾ "; }
+.bgrid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+.bgrid.small { grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); }
+.bcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: grid; align-content: start; min-width: 0; }
+.bcard .pic { background: var(--sunken); display: block; max-width: 100%; }
+.bcard .pic img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.bcard .body { padding: 8px 10px 10px; display: grid; gap: 4px; }
+.bcard .nm { font: 600 15px/1.15 var(--font-display); letter-spacing: .02em; }
+.bcard.shared { border-style: dashed; }
+.slots { display: flex; flex-wrap: wrap; gap: 6px; }
+.slots span { font: 400 11px var(--font-mono); padding: 3px 6px; border: 1px dashed var(--line); border-radius: 4px; color: var(--muted); word-break: break-all; }
+
 /* sounds */
 .area { display: grid; gap: 8px; }
 .srow { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr) minmax(0, 1fr); gap: 10px 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; }
@@ -239,6 +256,7 @@ const VIEWS = [
   ["teams", "Teams & cars", () => D.teams.length],
   ["engines", "Engines & tyres", () => D.engines.length],
   ["tracks", "Calendar & tracks", () => D.tracks.length],
+  ["backgrounds", "Backgrounds", () => (D.backgrounds || []).reduce((n, g) => n + g.items.length, 0)],
   ["sounds", "Sounds", () => D.sounds.length],
   ["candidates", "Sound candidates", () => D.candidates.reduce((n, g) => n + g.items.length, 0)],
   ["files", "Files", () => D.files.length],
@@ -263,11 +281,13 @@ function filters(id, options, current) {
 function overview() {
   const fileCount = s => D.files.filter(f => f.status === s).length;
   const soundCount = s => D.sounds.filter(x => x.status === s).length;
+  const bgs = (D.backgrounds || []).filter(g => g.scope === "pack").flatMap(g => g.items);
   const rows = [
     ["Drivers", D.drivers.length, 0, 0, `${D.drivers.length} ours; the ${D.vanilla_drivers.length} vanilla drivers are replaced`],
     ["Teams & cars", D.teams.length, 0, 0, `${D.teams.length} ours; the ${D.vanilla_teams.length} vanilla teams are replaced`],
     ["Engines", D.engines.filter(e => e.prov === "custom").length, D.engines.filter(e => e.prov === "vanilla").length, 0, "suppliers"],
     ["Tracks", D.tracks.filter(t => t.prov === "custom").length, D.tracks.filter(t => t.prov !== "custom").length, 0, "track files"],
+    ["Backgrounds", bgs.filter(b => b.status === "custom" || b.status === "changed").length, bgs.filter(b => b.status === "vanilla").length, 0, "pack backgrounds"],
     ["Sounds", soundCount("replaced") + soundCount("added") - D.sounds.filter(s => s.private).length, soundCount("vanilla"), D.sounds.filter(s => s.private && s.status !== "vanilla").length, "sound slots"],
     ["Files", fileCount("custom") + fileCount("changed"), fileCount("vanilla"), fileCount("private"), `files; ${fileCount("removed")} vanilla files removed`],
   ];
@@ -386,6 +406,36 @@ function tracks() {
     </div></article>`).join("")}</div>`;
 }
 
+let bgFilter = "all";
+function bgCard(b) {
+  const ratio = b.px ? `${b.px[0]} / ${b.px[1]}` : "16 / 9";
+  const st = b.status === "shared" ? chip("vanilla", "shared, game-wide") : provChip(b.status);
+  return `<article class="bcard ${b.status === "shared" ? "shared" : ""}">
+    <div class="pic" style="aspect-ratio:${ratio}">${b.img ? `<img src="${esc(b.img)}" alt="${esc(b.name)}" loading="lazy" data-full tabindex="0">` : `<span class="none">missing</span>`}</div>
+    <div class="body"><span class="nm">${esc(b.name)}</span><div style="display:flex;flex-wrap:wrap;gap:4px">${st}</div>
+      <span class="small muted mono" style="word-break:break-all">${esc(b.where)}</span>
+      <span class="small muted mono">${b.px ? b.px[0] + " × " + b.px[1] + " px · " : ""}${kb(b.bytes)}</span>
+      ${b.note ? `<span class="small muted">${esc(b.note)}</span>` : ""}</div>
+  </article>`;
+}
+function backgrounds() {
+  const G = D.backgrounds || [];
+  const n = f => G.filter(g => f === "all" || g.scope === f).reduce((k, g) => k + g.items.length, 0);
+  const shown = G.filter(g => bgFilter === "all" || g.scope === bgFilter);
+  const group = g => {
+    const news = g.id.startsWith("news-");
+    const inner = `${g.items.length ? `<div class="bgrid ${g.items.length > 6 ? "small" : ""}">${g.items.map(bgCard).join("")}</div>` : `<span class="none">none in this pack</span>`}
+      ${g.missing && g.missing.length ? `<div style="display:grid;gap:6px"><span class="small muted">Free slots: a file with one of these names would give that team its own dashboard.</span><div class="slots">${g.missing.map(m => `<span title="${esc(m.team)}">${esc(m.file)}</span>`).join("")}</div></div>` : ""}`;
+    const head = `<div style="display:grid;gap:4px"><h3>${esc(g.title)} <span class="mono small muted">${g.items.length}</span></h3><span class="small muted">${esc(g.rule)}</span></div>`;
+    return news
+      ? `<details class="panel bggroup"><summary>${head}</summary>${inner}</details>`
+      : `<div class="panel bggroup">${head}${inner}</div>`;
+  };
+  return `<div style="display:grid;gap:6px"><h2>Backgrounds</h2><p class="lede">Every background the game draws, in the order it picks them. Pack slots can be replaced by the mod and are compared byte for byte with the vanilla pack; shared ones (dashed) are game-wide files a pack can't change. Click any picture for full size.</p></div>
+  ${filters("bgf", [["all", "All", n("all")], ["pack", "Pack slots", n("pack")], ["shared", "Shared, game-wide", n("shared")]], bgFilter)}
+  ${shown.map(group).join("")}`;
+}
+
 let soundFilter = "all";
 function sounds() {
   const areas = [...new Set(D.sounds.map(s => s.area))];
@@ -427,7 +477,7 @@ function files() {
   </tbody></table></div>`;
 }
 
-const RENDER = { overview, drivers, teams, engines, tracks, sounds, candidates, files };
+const RENDER = { overview, drivers, teams, engines, tracks, backgrounds, sounds, candidates, files };
 
 /* --------------------------------------------------------------- routing */
 
@@ -449,6 +499,7 @@ function wire(view) {
   hook("drvf", v => driverFilter = v);
   hook("teamf", v => teamFilter = v);
   hook("sndf", v => soundFilter = v);
+  hook("bgf", v => bgFilter = v);
   hook("filef", v => fileFilter = v);
   for (const id of ["drvq", "teamq", "fileq"]) {
     const q = $("#" + id);

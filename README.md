@@ -36,8 +36,10 @@ python tools/build_pack.py seasons/dtm-1991 --install
 `--install` copies the pack into `<game>/data/<pack_folder>` and rebuilds the
 **mod browser** for it (`tools/mod_browser.py`): one interactive page per
 installed pack with drivers, teams and cars, engines, calendar and tracks,
-every sound (vanilla and ours side by side, plus sound candidates) and every
-file, each marked as ours or vanilla. It is written to
+every background (main menu, team dashboard, per-team dashboard slots, hub
+tiles, news pages; pack slots vs shared game-wide art), every sound (vanilla
+and ours side by side, plus sound candidates) and every file, each marked as
+ours or vanilla. It is written to
 `private/mod_browser/<pack_folder>/index.html` (gitignored: it can carry
 private audio). Set your game
 path with `--game`, or in a `local.json` file (gitignored):

@@ -6,8 +6,19 @@ It reads what the game actually loads, the installed pack
 (<game>/data/<pack_folder>), and compares it with the vanilla base pack it was
 built from (season.json "base_pack"), the season source (seasons/<id>/) and
 the private audio overlay (tools/engine_audio). Tabs: overview, drivers,
-teams and cars, engines, calendar and tracks, sounds (vanilla and ours side
-by side), sound candidates, and every file.
+teams and cars, engines, calendar and tracks, backgrounds (the pack's own
+slots and the shared game-wide art, in the order the game picks them),
+sounds (vanilla and ours side by side), sound candidates, and every file.
+
+Backgrounds, as the game picks them (read from its ui/main_menu.py,
+ui/screens/team_dashboard_screen.py and ui/news_article_mail.py):
+    main menu   <pack>/assets/title_bg.png, else assets/title_bg.png
+    dashboard   <pack>/assets/[custom/]dashboard_bgs/<team name, alnum><N>.png|jpg
+                for the player's team, else every <pack>/assets/[custom/]
+                dashboard_bg<N>.png in number order, else
+                ui/assets/Dashboard PNGs/Background.png
+    hub tiles   ui/assets/Dashboard PNGs/*.png (shared)
+    news        assets/news/bg/bg_<outlet>[_<variant>].png (shared)
 
 Output (gitignored, it embeds private audio and game files):
     private/mod_browser/<pack_folder>/index.html   open locally
@@ -279,6 +290,105 @@ def build_teams(pack, base, season, manifest, media, sources):
     return out, vanilla
 
 
+def build_backgrounds(pack, base, game, media):
+    """Every full-screen or panel background the game draws, in the order the
+    game picks them (read from ui/main_menu.py, ui/screens/team_dashboard_screen.py
+    and ui/news_article_mail.py). Pack slots compare with the base pack; the
+    shared ones are game-wide files a pack can't change."""
+    def size_of(p: Path):
+        try:
+            from PIL import Image
+            with Image.open(p) as im:
+                return list(im.size)
+        except Exception:
+            return None
+
+    def item(p: Path, rel_media: str, name: str, status: str, where: str, note: str = "") -> dict:
+        return {"name": name, "img": media.image(p, rel_media), "status": status, "where": where,
+                "note": note, "px": size_of(p), "bytes": p.stat().st_size}
+
+    def pack_status(rel: str) -> str:
+        b = base / rel
+        return "custom" if not b.exists() else ("vanilla" if same_file(pack / rel, b) else "changed")
+
+    groups = []
+    # main menu
+    items, rel = [], "assets/title_bg.png"
+    if (pack / rel).exists():
+        items.append(item(pack / rel, "backgrounds/pack/title_bg.png", "Main menu", pack_status(rel), f"data/{pack.name}/{rel}"))
+    shared = game / "assets" / "title_bg.png"
+    if shared.exists():
+        items.append(item(shared, "backgrounds/shared/title_bg.png", "Main menu, shared fallback", "shared",
+                          "assets/title_bg.png", "used when the pack has no title_bg.png"))
+    groups.append({"id": "menu", "title": "Main menu", "scope": "pack", "items": items,
+                   "rule": "The selected pack's assets/title_bg.png, else the shared one. Landscape, 16:9 "
+                           "recommended; the menu draws its own logo and buttons on top."})
+
+    # team dashboard: per-team sets, else the pack set, else the shared fallback
+    roots = [pack / "assets" / "custom", pack / "assets"]
+    num = lambda n: int(re.fullmatch(r"dashboard_bg(\d*)\.png", n, re.I).group(1) or 1)
+    items = []
+    for root in roots:
+        if root.is_dir():
+            for p in sorted((p for p in root.iterdir() if re.fullmatch(r"dashboard_bg(\d*)\.png", p.name, re.I)),
+                            key=lambda p: num(p.name)):
+                rel = p.relative_to(pack).as_posix()
+                items.append(item(p, f"backgrounds/pack/{rel}", f"Dashboard {num(p.name)}", pack_status(rel),
+                                  f"data/{pack.name}/{rel}"))
+    for p in sorted((base / "assets").glob("dashboard_bg*.png")):
+        if not (pack / "assets" / p.name).exists():
+            items.append(item(p, f"backgrounds/base/{p.name}", f"Dashboard {num(p.name)} (vanilla)", "removed",
+                              f"data/{base.name}/assets/{p.name}", "in the vanilla pack, not in ours"))
+    groups.append({"id": "dashboard", "title": "Team dashboard", "scope": "pack", "items": items,
+                   "rule": "Every dashboard_bg<N>.png in the pack's assets (or assets/custom), in number order. "
+                           "Any count works; the dashboard rotates through them."})
+
+    team_key = lambda name: "".join(c for c in str(name) if c.isalnum())
+    items, missing = [], []
+    for t in load_json(pack / "teams.json", []):
+        key, found = team_key(t["name"]), []
+        for root in roots:
+            d = root / "dashboard_bgs"
+            if d.is_dir():
+                found += [p for p in sorted(d.iterdir()) if p.suffix.lower() in (".png", ".jpg", ".jpeg")
+                          and re.fullmatch(re.escape(key) + r"(\d*)", p.stem, re.I)]
+        for p in found:
+            rel = p.relative_to(pack).as_posix()
+            items.append(item(p, f"backgrounds/pack/{rel}", t["name"], pack_status(rel), f"data/{pack.name}/{rel}"))
+        if not found:
+            missing.append({"team": t["name"], "file": f"assets/dashboard_bgs/{key}.png"})
+    groups.append({"id": "team", "title": "Team dashboard, per team", "scope": "pack", "items": items,
+                   "missing": missing,
+                   "rule": "assets/dashboard_bgs/<team name, letters and digits only><N>.png (or .jpg) in the pack. "
+                           "When the player's team has one, it replaces the pack set."})
+
+    fb = game / "ui" / "assets" / "Dashboard PNGs" / "Background.png"
+    tiles_dir = fb.parent
+    groups.append({"id": "dashfallback", "title": "Team dashboard, shared fallback", "scope": "shared",
+                   "items": [item(fb, "backgrounds/shared/dashboard/Background.png", "Dashboard fallback", "shared",
+                                  "ui/assets/Dashboard PNGs/Background.png",
+                                  "used when the pack has no dashboard_bg")] if fb.exists() else [],
+                   "rule": "Drawn when neither a team set nor a pack set exists."})
+    tiles = [item(p, f"backgrounds/shared/dashboard/{p.name}", p.stem.replace("_", " ").capitalize(), "shared",
+                  f"ui/assets/Dashboard PNGs/{p.name}")
+             for p in sorted(tiles_dir.glob("*.png")) if p.name != "Background.png"] if tiles_dir.is_dir() else []
+    groups.append({"id": "tiles", "title": "Hub tiles", "scope": "shared", "items": tiles,
+                   "rule": "The picture behind each hub button (calendar, factory, finance…). Game-wide."})
+
+    news = game / "assets" / "news" / "bg"
+    outlets = {}
+    for p in sorted(news.glob("bg_*.png")) if news.is_dir() else []:
+        outlet, _, variant = p.stem[3:].partition("_")
+        outlets.setdefault(outlet, []).append(
+            item(p, f"backgrounds/shared/news/{p.name}", variant.replace("_", " ") or "default", "shared",
+                 f"assets/news/bg/{p.name}"))
+    for outlet, items in outlets.items():
+        groups.append({"id": f"news-{outlet}", "title": f"News: {outlet}", "scope": "shared", "items": items,
+                       "rule": "Tiled page texture of this news outlet's editions, with variants for "
+                               "celebrations, titles, milestones and wet races. Game-wide."})
+    return groups
+
+
 def build_engines(pack, base, media):
     eng = load_json(pack / "engines.json", {}) or {}
     base_names = set((load_json(base / "engines.json", {}) or {}).get("suppliers", {}))
@@ -476,6 +586,7 @@ def build(season: Path, game: Path) -> Path:
     teams, vanilla_teams = build_teams(pack, base, season, manifest, media, tsrc)
     engines, unit_rules, tyres = build_engines(pack, base, media)
     tracks, calendar = build_tracks(pack, base, season, manifest, media)
+    backgrounds = build_backgrounds(pack, base, game, media)
     sounds = build_sounds(pack, base, media, private_audio | private)
     # candidates belong to the private audio pipeline, so only packs carrying its overlay show them
     candidates, library_page = build_candidates(media) if private else ([], None)
@@ -490,7 +601,7 @@ def build(season: Path, game: Path) -> Path:
         "driver_template": dsrc.get("$template_from"), "team_template": tsrc.get("$template_from"),
         "teams": teams, "vanilla_teams": vanilla_teams,
         "engines": engines, "unit_rules": unit_rules, "tyres": tyres,
-        "tracks": tracks, "calendar": calendar,
+        "tracks": tracks, "calendar": calendar, "backgrounds": backgrounds,
         "sounds": sounds, "candidates": candidates, "library_page": library_page,
         "files": files,
         "constants": [{"name": k, "vanilla": bc.get(k), "mod": v} for k, v in pc.items() if bc.get(k) != v],
@@ -509,7 +620,7 @@ def build(season: Path, game: Path) -> Path:
     removed = media.prune()
     n_audio = sum(1 for _ in (out / "media" / "audio").rglob("*.ogg")) if (out / "media" / "audio").exists() else 0
     print(f"mod browser: {out / 'index.html'} ({len(drivers)} drivers, {len(teams)} teams, {len(tracks)} tracks, "
-          f"{len(sounds)} sound slots, {sum(len(g['items']) for g in candidates)} candidates, {n_audio} audio previews"
+          f"{sum(len(g['items']) for g in backgrounds)} backgrounds, {len(sounds)} sound slots, {sum(len(g['items']) for g in candidates)} candidates, {n_audio} audio previews"
           + (f", {removed} stale media removed" if removed else "") + ")")
     return out / "index.html"
 
