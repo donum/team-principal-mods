@@ -144,8 +144,13 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
   of grid revving before lights out; 2012 Hockenheim and 2015 Zandvoort only
   about 4 s. "Go" is refined to where the level steps up for good (median
   of the next 1.5 s against the previous 1.5 s), so a rev blip doesn't win.
-  Phone cameras flatten the launch to +3–4 dB; the game's separate idle and
-  launch gains restore the jump.
+  Phone cameras flatten the launch to +3–4 dB over the grid, and a raw cut
+  stays loud until it stops dead, so in game the start felt toned down
+  with sound missing at the end. The launch is therefore levelled onto the
+  stock launch curve (`LAUNCH_SHAPE_DB`): a burst about 10 dB over the grid
+  within the first second, then the field fading over six seconds. Only
+  the level is automated (0.75 s window), so gear changes and blips stay
+  as recorded.
 - **Track bed (`ambience.py`):** the montages are cut into shots at camera
   cuts (a sudden spectral change between the 0.3 s before and after),
   keeping shots of 8+ s with engines, almost no speech and 9+ dB of level

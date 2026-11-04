@@ -7,14 +7,18 @@ starts are listed by hand below (picked from level timelines and
 spectrograms, see README): the stretch of grid revving before lights out,
 and roughly when the field launches. This stage
 
-  1. refines "go" to 50 ms: the steepest broadband level rise within
-     +-1.5 s of the listed time;
+  1. refines "go": the largest lasting level step within +-1.5 s of the
+     listed time (see refine_go);
   2. cuts the launch from just before go, LAUNCH_S long (the game's clip
-     length), ending earlier with a fade at a camera cut;
+     length), and levels it onto the stock launch curve (LAUNCH_SHAPE_DB):
+     a burst at go, then the field fading away. Phone audio is compressed,
+     so without this the launch is flat, barely louder than the grid, and
+     stops abruptly;
   3. loops the grid revving: up to IDLE_MAX_S of it, the tail crossfaded
      into the head so it repeats without a click.
 
-Nothing is synthesised: both clips are the recording itself.
+Nothing is synthesised: both clips are the recording itself, only its
+level is automated.
 
     python tools/engine_audio/starts.py        # previews in private/.../library/starts
 """
@@ -32,6 +36,15 @@ SR = 44100
 LAUNCH_S = 10.9          # stock grid_launch length
 IDLE_MAX_S = 12.0
 LOOP_XF_S = 1.0
+# Level of the stock launches over time (dB per 0.25 s, mean of grid_launch_01
+# and _02, relative to their peak): a burst within the first second, a held
+# roar, then the field fading towards turn 1 over the last six seconds. Phone
+# recordings are compressed (automatic gain), so a raw cut stays flat and only
+# a few dB above the grid revving; the launch is levelled onto this curve.
+LAUNCH_SHAPE_DB = [-10, -5, -1, -1, -3, 0, -1, -3, -3, -2, -2, -3, -5, -7, -6, -6, -6, -8, -9, -9,
+                   -9, -9, -9, -10, -9, -10, -11, -12, -14, -15, -17, -19, -21, -24, -26, -29, -31,
+                   -35, -38, -42, -46, -55, -64]
+SHAPE_STEP_S = 0.25
 OUT_DIR = LIBRARY_DIR / "starts"
 
 # (video id, grid revving from, grid revving to, go estimate, note); seconds in the video
@@ -66,18 +79,34 @@ def make_loop(x: np.ndarray) -> np.ndarray:
     return body
 
 
+def shape_launch(launch: np.ndarray, idle: np.ndarray) -> np.ndarray:
+    """Level automation onto LAUNCH_SHAPE_DB. The recording's own short-term
+    level (0.75 s) is replaced by the stock curve, anchored so the held roar
+    sits 10 dB above this recording's grid revving, as in the stock pairs;
+    detail shorter than that (gear changes, blips) stays as recorded."""
+    hop = int(0.01 * SR)
+    m = launch.mean(axis=1)
+    n = len(m) // hop
+    p = np.square(m[:n * hop]).reshape(n, hop).mean(1)
+    own = 10 * np.log10(uniform_filter1d(p, 75, mode="nearest") + 1e-12)
+    t = np.arange(n) * 0.01
+    shape = np.interp(t, np.arange(len(LAUNCH_SHAPE_DB)) * SHAPE_STEP_S, LAUNCH_SHAPE_DB)
+    idle_db = 10 * np.log10(np.square(idle.mean(axis=1)).mean() + 1e-12)
+    g_db = uniform_filter1d(np.clip(idle_db + 10 + shape - own, -60, 14), 30, mode="nearest")
+    g = np.interp(np.arange(len(launch)) / SR, t, 10 ** (g_db / 20))
+    return launch * g[:, None]
+
+
 def render(path: Path, idle_a: float, idle_b: float, go_guess: float):
     t0 = idle_a
     x = decode(path, t0, (go_guess - t0) + LAUNCH_S + 2.0, SR, 2)
     go = refine_go(x, t0, go_guess)
     k = int((go - t0) * SR)
     launch = x[k:k + int(LAUNCH_S * SR)].copy()
-    fo = int(1.5 * SR)
-    launch[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 2
     idle_end = min(idle_b, go - 0.25)
     idle_start = max(idle_a, idle_end - IDLE_MAX_S)
     idle = make_loop(x[int((idle_start - t0) * SR):int((idle_end - t0) * SR)])
-    return idle, launch, go
+    return idle, shape_launch(launch, idle), go
 
 
 def real_starts(db) -> list[dict]:

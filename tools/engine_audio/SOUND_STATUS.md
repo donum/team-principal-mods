@@ -16,7 +16,7 @@ nothing points to them any more.
 | Pass-by, BMW | random bank | `dtm13_bmw` + `_lr` | Spengler onboard, Nürburgring |
 | Pass-by, Mercedes | random bank | `dtm13_mercedes` + `_lr` | Juncadella onboard, Norisring |
 | `grid_idle_01`, `grid_idle_02` | stock grid loops | real grid revving: Nürburgring 2014 main grandstand, Brands Hatch | fan recordings, `starts.py` |
-| `grid_launch_01`, `grid_launch_02` | stock launches | the real launches that follow | same |
+| `grid_launch_01`, `grid_launch_02` | stock launches | the real launches that follow, levelled onto the stock launch curve (burst at go, six-second fade) | same |
 | `cars_on_track` | stock 393 s bed | 393 s loop of real trackside DTM V8 recordings (Hockenheim 2013–2016) | `ambience.py`, 11 shots of fan videos |
 | `crowd` | stock 35 s murmur | 18 s loop of a real grandstand before the 2015 Nürburgring start | `ambience.py` (`CROWD`), picked from six candidates |
 
