@@ -18,6 +18,7 @@ nothing points to them any more.
 | `grid_idle_01`, `grid_idle_02` | stock grid loops | real grid revving: Nürburgring 2014 main grandstand, Brands Hatch | fan recordings, `starts.py` |
 | `grid_launch_01`, `grid_launch_02` | stock launches | the real launches that follow | same |
 | `cars_on_track` | stock 393 s bed | 393 s loop of real trackside DTM V8 recordings (Hockenheim 2013–2016) | `ambience.py`, 11 shots of fan videos |
+| `crowd` | stock 35 s murmur | 18 s loop of a real grandstand before the 2015 Nürburgring start | `ambience.py` (`CROWD`), picked from six candidates |
 
 The three makes are tagged in `engines.json` (`passby_audio`), so every
 finish-line pass-by in practice, qualifying, testing and races is ours.
@@ -41,22 +42,23 @@ Simulated starts (`start_synth.py`) are off by default.
 | `race/` | `pit_wheelguns_01`–`04` | 4 | the broadcast pit-stop finder is unverified |
 | `race/` | `start_light.wav`, `lights_out.wav` | 2 | |
 | `ambience/` | `base_01`, `base_02` | 2 | base beds |
-| `ambience/` | `crowd`, `pa`, `helicopter`, `pit_blowers`, `rain` | 5 | |
+| `ambience/` | `pa`, `helicopter`, `pit_blowers`, `rain` | 4 | |
 | `session/` | `engine_passby_01`–`05` + `_lr` | 10 | still in the random bank, but never picked (see Added) |
 | `music/` | 6 menu tracks | 6 | the shared CC0 tracks |
 | `ui/` | clicks, confirm, error… | 12 | always taken from the shared folder; a pack can't change them |
 
 ## Toward a consistent qualifying and race
 
-Starts and the track bed are real recordings now. Still open:
+Starts, the track bed and the crowd are real recordings now. Still open:
 
-1. **Crowd:** candidates cut for listening in
-   `private/engine_audio/pilot/crowd/`; pick one to loop.
-2. **Real pass-bys:** the spectator videos are full of real pass-bys, but
+1. **Real pass-bys:** the spectator videos are full of real pass-bys, but
    do not say which make passes, so they can't be tagged per make.
-3. **Pit lane:** fire-ups, exits and wheelguns. The 2013 Spielberg and
+2. **Pit lane:** fire-ups, exits and wheelguns. The 2013 Spielberg and
    2018 Misano fan videos show pit-lane starts and exits.
-4. **TV pass-bys:** either untag the suppliers, so the make clips and the TV
+3. **TV pass-bys:** either untag the suppliers, so the make clips and the TV
    clips share one bank, or drop the TV clips.
 
 All of this is one set per pack, never per track (wishlist E9).
+
+The mod browser (`tools/mod_browser.py`, rebuilt on every install) shows
+the same picture live, with every clip playable.

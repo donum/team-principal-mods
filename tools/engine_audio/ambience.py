@@ -18,7 +18,8 @@ minute per camera position, then a hard cut. This stage
 
 Nothing is synthesised or filtered: every second is a real recording.
 Output: private/engine_audio/library/ambience/cars_on_track.ogg (+ a
-listening preview and shots.json listing every source second used).
+listening preview and shots.json listing every source second used), and
+crowd.ogg: one hand-picked engine-free grandstand stretch (CROWD), looped.
 
     python tools/engine_audio/ambience.py [--seconds 393] [--seed 1]
 """
@@ -46,6 +47,10 @@ MAX_SHOT_S = 60.0
 TRIM_S = 0.4             # dropped at both ends of a shot (camera handling around cuts)
 XF_S = 2.0
 OUT_DIR = LIBRARY_DIR / "ambience"
+# Crowd layer: picked by ear from candidates (engine-free stretches of the
+# spectator videos): the steadiest (level +-0.8 dB), widest and least tonal.
+CROWD = ("J8dSJmxobSg", 29.0, 19.4, "Nurburgring 2015 grandstand before the start")
+CROWD_XF_S = 1.5
 
 
 NOT_BED = re.compile(r"start|grid|aufstellung|einf.hrung|runde 1|1ste runde|warm.?up", re.I)
@@ -174,12 +179,30 @@ def collect_shots(db) -> list[dict]:
     return shots
 
 
+def build_crowd(db) -> np.ndarray | None:
+    row = db.execute("SELECT path FROM audio WHERE id=?", (CROWD[0],)).fetchone()
+    if not row or not Path(row["path"]).exists():
+        return None
+    x = decode(Path(row["path"]), CROWD[1], CROWD[2], SR, 2)
+    xf = int(CROWD_XF_S * SR)
+    loop = x[:len(x) - xf].copy()
+    w = np.linspace(0, 1, xf)[:, None]
+    loop[:xf] = x[-xf:] * (1 - w) + x[:xf] * w
+    return loop * 10 ** (-1 / 20) / (np.abs(loop).max() + 1e-9)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--seconds", type=float, default=BED_S)
     ap.add_argument("--seed", type=int, default=1)
     args = ap.parse_args()
-    shots = collect_shots(connect())
+    db = connect()
+    crowd = build_crowd(db)
+    if crowd is not None:
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        write_wav(OUT_DIR / "crowd.ogg", crowd, SR)
+        print(f"crowd loop {len(crowd) / SR:.1f} s from {CROWD[0]} @ {CROWD[1]:.0f}s ({CROWD[3]})")
+    shots = collect_shots(db)
     bed, used = build_bed(shots, args.seconds, np.random.default_rng(args.seed))
     bed *= 10 ** (-1 / 20) / (np.abs(bed).max() + 1e-9)
     OUT_DIR.mkdir(parents=True, exist_ok=True)

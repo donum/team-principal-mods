@@ -521,6 +521,14 @@ def build(season_dir, game, install, private_audio=True):
             if overlay.overlay_for(manifest["pack_folder"]):
                 print(overlay.apply(target, manifest["pack_folder"]))
                 print("  NOTE: this installed pack now holds private audio; do not upload it to the Workshop")
+        # Keep the mod browser (private/mod_browser, see tools/mod_browser.py) in
+        # sync with what is installed.
+        sys.path.insert(0, str(Path(__file__).parent))
+        import mod_browser
+        try:
+            mod_browser.build(season_dir, game)
+        except Exception as err:          # the browser is a view; never fail an install over it
+            print(f"warning: mod browser not rebuilt: {err}")
 
 
 def main():

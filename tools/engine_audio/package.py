@@ -15,8 +15,9 @@ assets/audio/README_AUDIO.txt:
             onboard pit exits. They replace the stock clips with the same key; fire-ups
             and wheelguns stay stock. These banks are shared by all cars
             (wishlist E8).
-  ambience/ cars_on_track: a loop of real trackside recordings (ambience.py),
-            set through session_layers.json "cars.file".
+  ambience/ cars_on_track and crowd: loops of real trackside recordings
+            (ambience.py), set through session_layers.json "cars.file" and
+            "crowd.file".
 Levels follow the stock clips (whole-clip RMS x gain).
 
 Output: private/engine_audio/pack/<pack_folder>/ (files/ + overlay.json).
@@ -253,23 +254,25 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
              "gain": gain_for(x, lvl_pit), "peak_s": loudest_80ms(x), "source": ref(r)})
     report.append(f"pit exits: {len(exits)} (stock kept for the rest; fire-ups and wheelguns stay stock)")
 
-    # cars-on-track bed: real trackside recordings (ambience.py), a seamless loop,
-    # so written without the clip fades. Its gain keeps the stock layer's level.
-    bed_src = LIBRARY_DIR / "ambience" / "cars_on_track.ogg"
+    # ambience layers from real trackside recordings (ambience.py): seamless
+    # loops, so written without the clip fades; gains keep the stock level.
     layers = "assets/audio/ambience/session_layers.json"
-    if bed_src.exists():
-        rel = "assets/audio/ambience/dtm13_cars_on_track.ogg"
-        bed = decode(bed_src, 0, None, SR, 2)
-        stock = decode(base_audio / "ambience" / "cars_on_track.ogg", 0, None, SR, 2)
-        stock_gain = load_json(base_audio / "ambience" / "session_layers.json", {}).get("cars", {}).get("gain", 1.0)
-        gain = round(float(np.clip(stock_gain * 10 ** ((rms_db(stock) - rms_db(bed)) / 20), 0.005, 1.0)), 6)
+    stock_layers = load_json(base_audio / "ambience" / "session_layers.json", {})
+    for layer, stock_file, name in (("cars", "cars_on_track.ogg", "cars on track"), ("crowd", "crowd.ogg", "crowd")):
+        src_file = LIBRARY_DIR / "ambience" / stock_file
+        if not src_file.exists():
+            report.append(f"{name}: stock (run ambience.py)")
+            continue
+        rel = f"assets/audio/ambience/dtm13_{stock_file}"
+        new_audio = decode(src_file, 0, None, SR, 2)
+        stock = decode(base_audio / "ambience" / stock_file, 0, None, SR, 2)
+        stock_gain = stock_layers.get(layer, {}).get("gain", 1.0)
+        gain = round(float(np.clip(stock_gain * 10 ** ((rms_db(stock) - rms_db(new_audio)) / 20), 0.005, 1.0)), 6)
         (out / "files" / rel).parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(bed_src, out / "files" / rel)
+        shutil.copy2(src_file, out / "files" / rel)
         files.append(rel)
-        sets.setdefault(layers, {}).update({"cars.file": Path(rel).name, "cars.gain": gain})
-        report.append(f"cars on track: real trackside bed ({len(bed) / SR:.0f} s), gain {gain}")
-    else:
-        report.append("cars on track: stock (run ambience.py)")
+        sets.setdefault(layers, {}).update({f"{layer}.file": Path(rel).name, f"{layer}.gain": gain})
+        report.append(f"{name}: real trackside recording ({len(new_audio) / SR:.0f} s loop), gain {gain}")
 
     if files:
         dump_json(out / "overlay.json", {"pack": pack, "files": files, "clips": clips, "set": sets})
@@ -299,6 +302,13 @@ def main() -> int:
         if not target.is_dir():
             raise SystemExit(f"pack not installed yet: {target} (run build_pack.py --install)")
         print(overlay.apply(target, pack) if overlay.overlay_for(pack) else overlay.remove(target))
+        # keep the mod browser (tools/mod_browser.py) in sync with what is installed
+        sys.path.insert(0, str(REPO / "tools"))
+        import mod_browser
+        try:
+            mod_browser.build(args.season.resolve(), game_path())
+        except Exception as err:
+            print(f"warning: mod browser not rebuilt: {err}")
     return 0
 
 

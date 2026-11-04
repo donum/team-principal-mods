@@ -1,0 +1,463 @@
+<title>__PAGE_TITLE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a pit-wall data screen. Sticky header with the pack plate and tabs,
+   then one working view at a time. Colour is reserved for provenance:
+   blue = ours, grey = vanilla, amber = private audio, red = vanilla that the mod removed or replaced. */
+:root {
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --sunken: #e3e8ee;
+  --fg: #141a21;
+  --muted: #586473;
+  --line: #d3dae2;
+  --custom: #1d4fd1;
+  --custom-soft: #e2e9fb;
+  --vanilla: #6a7482;
+  --vanilla-soft: #e7eaee;
+  --private: #a8650a;
+  --private-soft: #f8ecd6;
+  --removed: #b42335;
+  --removed-soft: #f8e1e4;
+  --bar: #1d4fd1;
+  --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1318; --surface: #161b22; --sunken: #1c232c; --fg: #e5e9ef; --muted: #96a1b0; --line: #29313c;
+    --custom: #7da2ff; --custom-soft: #1b2847; --vanilla: #8f99a7; --vanilla-soft: #222932;
+    --private: #e6a94c; --private-soft: #33270f; --removed: #f07383; --removed-soft: #3a1a20; --bar: #7da2ff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1318; --surface: #161b22; --sunken: #1c232c; --fg: #e5e9ef; --muted: #96a1b0; --line: #29313c;
+  --custom: #7da2ff; --custom-soft: #1b2847; --vanilla: #8f99a7; --vanilla-soft: #222932;
+  --private: #e6a94c; --private-soft: #33270f; --removed: #f07383; --removed-soft: #3a1a20; --bar: #7da2ff;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 14px/1.5 var(--font-body); margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+a { color: var(--custom); }
+:focus-visible { outline: 2px solid var(--custom); outline-offset: 2px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.plate { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding-block: 12px 6px; }
+.plate h1 { font: 700 26px/1.1 var(--font-display); letter-spacing: .01em; margin: 0; text-wrap: balance; }
+.plate .meta { color: var(--muted); font: 400 12px/1.4 var(--font-mono); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; }
+nav.tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+nav.tabs::-webkit-scrollbar { display: none; }
+nav.tabs a { font: 600 15px/1 var(--font-display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 10px 12px 11px; border-bottom: 3px solid transparent; white-space: nowrap; }
+nav.tabs a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--custom); }
+nav.tabs a:hover { color: var(--fg); }
+nav.tabs .n { font: 500 11px var(--font-mono); color: var(--muted); margin-left: 4px; letter-spacing: 0; }
+
+main { padding-block: 20px 48px; }
+section[data-view] { display: grid; gap: 20px; }
+section[data-view] > * { min-width: 0; }
+pre { overflow-wrap: anywhere; }
+h2 { font: 700 22px/1.15 var(--font-display); letter-spacing: .02em; margin: 0; text-wrap: balance; }
+h3 { font: 600 17px/1.2 var(--font-display); letter-spacing: .03em; margin: 0; text-transform: uppercase; }
+.lede { color: var(--muted); max-width: 72ch; margin: 0; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
+.chip { display: inline-flex; align-items: center; gap: 5px; font: 500 11px/1 var(--font-mono); letter-spacing: .02em; padding: 4px 7px; border-radius: 99px; border: 1px solid transparent; white-space: nowrap; }
+.chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.chip.custom, .chip.added, .chip.replaced-by-mod { color: var(--custom); background: var(--custom-soft); }
+.chip.vanilla { color: var(--vanilla); background: var(--vanilla-soft); }
+.chip.private { color: var(--private); background: var(--private-soft); }
+.chip.removed, .chip.replaced { color: var(--removed); background: var(--removed-soft); }
+.chip.changed { color: var(--custom); background: var(--custom-soft); border-style: dashed; border-color: var(--custom); }
+.chip.unheard { color: var(--removed); background: transparent; border: 1px dashed var(--removed); }
+.chip.inuse { color: var(--custom); background: transparent; border: 1px solid var(--custom); }
+.chip.inuse::before { background: var(--custom); }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filter { font: 500 12px/1 var(--font-body); padding: 7px 11px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.filter[aria-pressed="true"] { background: var(--fg); color: var(--surface); border-color: var(--fg); }
+.filter .c { font-family: var(--font-mono); opacity: .7; margin-left: 4px; }
+input[type="search"] { font: 400 13px var(--font-body); padding: 7px 11px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); min-width: 0; flex: 1 1 180px; max-width: 320px; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; min-width: 0; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
+.grid.wide { grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); }
+
+/* overview */
+.split { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.provbar { display: flex; height: 10px; border-radius: 3px; overflow: hidden; background: var(--sunken); }
+.provbar span { display: block; height: 100%; }
+.provrow { display: grid; grid-template-columns: 9.5em 1fr auto; gap: 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.provrow:last-child { border-bottom: 0; }
+.provrow .lab { font: 600 15px var(--font-display); letter-spacing: .03em; text-transform: uppercase; }
+.provrow .cnt { font: 400 12px var(--font-mono); color: var(--muted); white-space: nowrap; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; font: 600 13px var(--font-display); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); }
+td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.scroll { overflow-x: auto; }
+
+/* driver cards */
+.dcard { display: grid; grid-template-columns: 88px 1fr; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; min-width: 0; }
+.dcard .ph { width: 88px; aspect-ratio: 4/5; max-width: 100%; border-radius: 4px; background: var(--sunken); object-fit: cover; }
+.dcard .name { font: 700 19px/1.1 var(--font-display); letter-spacing: .01em; }
+.teamline { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.swatch { width: 10px; height: 10px; border-radius: 2px; flex: none; border: 1px solid var(--line); }
+.facts { display: flex; flex-wrap: wrap; gap: 4px 12px; font: 400 12px var(--font-mono); color: var(--muted); margin-top: 6px; }
+.facts b { color: var(--fg); font-weight: 500; }
+.ratings { grid-column: 1 / -1; display: grid; grid-template-columns: 6.5em 1fr 2.2em; gap: 3px 8px; align-items: center; font-size: 12px; }
+.ratings .bar { height: 6px; background: var(--sunken); border-radius: 3px; overflow: hidden; }
+.ratings .bar i { display: block; height: 100%; background: var(--bar); }
+.ratings .v { font: 500 12px var(--font-mono); text-align: right; }
+details { grid-column: 1 / -1; }
+details summary { cursor: pointer; color: var(--muted); font-size: 12px; }
+details[open] summary { margin-bottom: 6px; }
+.fields td:first-child { font-family: var(--font-mono); font-size: 12px; white-space: nowrap; }
+.fields td:nth-child(2) { font-family: var(--font-mono); font-size: 12px; word-break: break-word; }
+.credit { grid-column: 1 / -1; font-size: 11px; color: var(--muted); }
+
+/* teams */
+.tcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: grid; min-width: 0; }
+.tcard .car { background: var(--sunken); display: grid; place-items: center; aspect-ratio: 16/7; max-width: 100%; }
+.tcard .car img { max-height: 100%; object-fit: contain; }
+.tcard .body { padding: 12px 14px 14px; display: grid; gap: 8px; }
+.tcard .head { display: flex; gap: 10px; align-items: center; }
+.tcard .head img { width: 40px; height: 40px; object-fit: contain; }
+.tcard .name { font: 700 19px/1.1 var(--font-display); }
+.history { font-size: 13px; color: var(--muted); max-height: 7.5em; overflow: auto; }
+.vteams { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+.vteam { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 8px; display: grid; gap: 6px; font-size: 12px; }
+.vteam img { aspect-ratio: 16/7; object-fit: contain; background: var(--sunken); border-radius: 4px; width: 100%; filter: grayscale(.6); opacity: .85; }
+
+/* engines */
+.ecard { display: grid; grid-template-columns: 72px 1fr; gap: 12px; }
+.ecard .logos { display: grid; gap: 6px; }
+.ecard .logos img { width: 72px; height: 72px; object-fit: contain; background: var(--sunken); border-radius: 4px; }
+
+/* tracks */
+.trk { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: grid; min-width: 0; }
+.trk .map { aspect-ratio: 4/3; max-width: 100%; background: var(--sunken); display: grid; place-items: center; }
+.trk .map img { max-height: 100%; object-fit: contain; }
+.trk .body { padding: 12px 14px 14px; display: grid; gap: 8px; }
+.cal { display: flex; flex-wrap: wrap; gap: 6px; }
+.cal .wk { display: grid; gap: 2px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); font-size: 12px; min-width: 6.5em; }
+.cal .wk b { font: 700 15px var(--font-display); letter-spacing: .02em; }
+.cal .wk.test { border-style: dashed; color: var(--muted); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 12px; }
+.kv dt { color: var(--muted); font-family: var(--font-mono); }
+.kv dd { margin: 0; font-family: var(--font-mono); text-align: right; }
+
+/* sounds */
+.area { display: grid; gap: 8px; }
+.srow { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr) minmax(0, 1fr); gap: 10px 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; }
+.srow .slot { display: grid; gap: 4px; align-content: start; }
+.srow .slot .k { font: 500 12px var(--font-mono); word-break: break-all; }
+.srow .slot .t { font: 600 15px/1.15 var(--font-display); letter-spacing: .02em; }
+.srow .col { display: grid; gap: 4px; min-width: 0; }
+.srow .col .lab { font: 600 12px var(--font-display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.srow .src { font-size: 12px; color: var(--muted); word-break: break-word; }
+.srow.unused { opacity: .75; }
+audio { width: 100%; height: 34px; }
+.none { font-size: 12px; color: var(--muted); padding-top: 6px; }
+
+/* candidates */
+.cgroup { display: grid; gap: 10px; }
+.citem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 6px 14px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line); }
+.citem:first-of-type { border-top: 0; }
+.citem .nm { font: 500 13px var(--font-body); word-break: break-word; }
+
+/* files */
+.ftable td:first-child { font-family: var(--font-mono); font-size: 12px; word-break: break-all; }
+.ftable td:last-child { font-family: var(--font-mono); font-size: 12px; text-align: right; white-space: nowrap; }
+
+@media (max-width: 720px) {
+  .srow { grid-template-columns: minmax(0, 1fr); }
+  .citem { grid-template-columns: minmax(0, 1fr); }
+  .provrow { grid-template-columns: 7em 1fr; }
+  .provrow .cnt { grid-column: 1 / -1; }
+  .legend, .plate .meta { display: none; }
+  .plate h1 { font-size: 20px; }
+  .plate { padding-block: 8px 2px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="plate">
+      <h1 id="title">Mod browser</h1>
+      <span class="meta" id="meta"></span>
+      <div class="legend" aria-label="Legend">
+        <span class="chip custom">ours</span>
+        <span class="chip vanilla">vanilla</span>
+        <span class="chip private">private audio</span>
+        <span class="chip replaced">vanilla, replaced or removed</span>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+  </div>
+</header>
+<main class="wrap" id="main"></main>
+
+<script>
+const D = /*MOD_DATA*/null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const rgb = a => Array.isArray(a) ? `rgb(${a.join(",")})` : "transparent";
+const chip = (cls, text) => `<span class="chip ${cls}">${esc(text ?? cls)}</span>`;
+const PROV_LABEL = { custom: "ours", vanilla: "vanilla", private: "private audio", changed: "vanilla, changed", removed: "vanilla, removed", replaced: "vanilla, replaced", added: "ours, added" };
+const provChip = p => chip(p, PROV_LABEL[p] || p);
+const kb = n => n > 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB";
+const nat = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
+const audioTag = a => a && a.audio ? `<audio controls preload="none" src="${esc(a.audio)}"></audio><span class="small muted mono">${esc(a.file)}${a.seconds ? " · " + a.seconds + " s" : ""}</span>` : `<span class="none">no file</span>`;
+const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+const VIEWS = [
+  ["overview", "Overview", () => ""],
+  ["drivers", "Drivers", () => D.drivers.length],
+  ["teams", "Teams & cars", () => D.teams.length],
+  ["engines", "Engines & tyres", () => D.engines.length],
+  ["tracks", "Calendar & tracks", () => D.tracks.length],
+  ["sounds", "Sounds", () => D.sounds.length],
+  ["candidates", "Sound candidates", () => D.candidates.reduce((n, g) => n + g.items.length, 0)],
+  ["files", "Files", () => D.files.length],
+];
+
+function fieldTable(rec, src, skip = []) {
+  const keys = Object.keys(rec).filter(k => !skip.includes(k)).sort();
+  const lab = { mod: chip("custom", "ours"), "mod-default": chip("custom", "ours, shared default"), vanilla: chip("vanilla", "vanilla default") };
+  return `<div class="scroll"><table class="fields"><tbody>${keys.map(k => {
+    const v = rec[k];
+    const shown = typeof v === "object" ? JSON.stringify(v) : String(v);
+    return `<tr><td>${esc(k)}</td><td>${esc(shown.length > 160 ? shown.slice(0, 160) + "…" : shown)}</td><td>${src && src[k] ? lab[src[k]] : ""}</td></tr>`;
+  }).join("")}</tbody></table></div>`;
+}
+
+function filters(id, options, current) {
+  return `<div class="toolbar" id="${id}">${options.map(([v, label, n]) => `<button type="button" class="filter" data-v="${v}" aria-pressed="${v === current}">${esc(label)}<span class="c">${n}</span></button>`).join("")}</div>`;
+}
+
+/* ---------------------------------------------------------------- views */
+
+function overview() {
+  const fileCount = s => D.files.filter(f => f.status === s).length;
+  const soundCount = s => D.sounds.filter(x => x.status === s).length;
+  const rows = [
+    ["Drivers", D.drivers.length, 0, 0, `${D.drivers.length} ours; the ${D.vanilla_drivers.length} vanilla drivers are replaced`],
+    ["Teams & cars", D.teams.length, 0, 0, `${D.teams.length} ours; the ${D.vanilla_teams.length} vanilla teams are replaced`],
+    ["Engines", D.engines.filter(e => e.prov === "custom").length, D.engines.filter(e => e.prov === "vanilla").length, 0, "suppliers"],
+    ["Tracks", D.tracks.filter(t => t.prov === "custom").length, D.tracks.filter(t => t.prov !== "custom").length, 0, "track files"],
+    ["Sounds", soundCount("replaced") + soundCount("added") - D.sounds.filter(s => s.private).length, soundCount("vanilla"), D.sounds.filter(s => s.private && s.status !== "vanilla").length, "sound slots"],
+    ["Files", fileCount("custom") + fileCount("changed"), fileCount("vanilla"), fileCount("private"), `files; ${fileCount("removed")} vanilla files removed`],
+  ];
+  const bar = (c, v, p) => {
+    const t = c + v + p || 1;
+    return `<div class="provbar" role="img" aria-label="${c} ours, ${v} vanilla, ${p} private audio"><span style="width:${100 * c / t}%;background:var(--custom)"></span><span style="width:${100 * p / t}%;background:var(--private)"></span><span style="width:${100 * v / t}%;background:var(--vanilla);opacity:.45"></span></div>`;
+  };
+  const unheard = D.sounds.filter(s => !s.heard);
+  return `
+  <div class="split">
+    <div class="panel" style="display:grid;gap:10px">
+      <h2>What the mod changes</h2>
+      <p class="lede">Built from <span class="mono">${esc(D.pack.season)}</span> on top of the vanilla pack <span class="mono">${esc(D.pack.base)}</span>. Read from the installed pack <span class="mono">${esc(D.pack.folder)}</span>, ${esc(D.generated)}.</p>
+      <div>${rows.map(([lab, c, v, p, note]) => `<div class="provrow"><span class="lab">${lab}</span>${bar(c, v, p)}<span class="cnt">${c} ours${p ? " · " + p + " private" : ""} · ${v} vanilla</span></div>`).join("")}</div>
+      ${D.pack.private_audio ? `<p class="small" style="margin:0">${chip("private", "private audio")} The installed pack holds private audio (ITR/DTM recordings). Never upload it to the Workshop.</p>` : ""}
+    </div>
+    <div class="panel" style="display:grid;gap:10px">
+      <h2>Rules changed from vanilla</h2>
+      <div class="scroll"><table><thead><tr><th>Constant</th><th>Vanilla</th><th>Mod</th></tr></thead><tbody>
+      ${D.constants.map(c => `<tr><td class="mono small">${esc(c.name)}</td><td class="mono small muted">${esc(c.vanilla ?? "—")}</td><td class="mono small">${esc(c.mod)}</td></tr>`).join("")}
+      </tbody></table></div>
+      ${unheard.length ? `<p class="small" style="margin:0">${chip("unheard", "never heard")} ${unheard.length} sound clips sit in a bank the game never picks from: ${esc(unheard.map(s => s.key).join(", "))}.</p>` : ""}
+    </div>
+  </div>
+  <div class="panel" style="display:grid;gap:8px">
+    <h3>Credits</h3>
+    <pre class="small muted" style="white-space:pre-wrap;margin:0;font-family:var(--font-mono)">${esc(D.credits)}</pre>
+  </div>`;
+}
+
+function driverCard(d) {
+  const r = ["cornering", "braking", "consistency", "smoothness", "control"];
+  const p = d.portrait_info || {};
+  const credit = p.source === "photo" ? `Photo: ${esc(p.author || "unknown")}, ${esc(p.license || "")}${p.year ? " (" + p.year + ")" : ""} · <a href="${esc(p.page)}" target="_blank" rel="noopener">Commons</a>` : (d.portrait ? "Drawn helmet card" : "No portrait");
+  const h = d.history || {};
+  return `<article class="dcard" data-search="${esc((d.name + " " + d.team + " " + d.nationality).toLowerCase())}">
+    ${d.portrait ? `<img class="ph" src="${esc(d.portrait)}" alt="${esc(d.name)}" loading="lazy">` : `<div class="ph"></div>`}
+    <div style="min-width:0">
+      <div class="name">${esc(d.name)}</div>
+      <div class="teamline"><span class="swatch" style="background:${rgb(d.team_color)}"></span>${esc(d.team || "reserve")}</div>
+      <div class="facts"><span><b>${esc(nat(d.nationality))}</b></span><span>age <b>${esc(d.age)}</b></span><span>talent <b>${esc(d.talent)}</b></span>${d.number ? `<span>#<b>${esc(d.number)}</b></span>` : ""}</div>
+      <div style="margin-top:6px">${provChip(d.prov)}</div>
+    </div>
+    <div class="ratings">${r.map(k => `<span class="muted">${k}</span><span class="bar"><i style="width:${100 * (d[k] || 0) / 20}%"></i></span><span class="v">${esc(d[k])}</span>`).join("")}</div>
+    <div class="facts" style="grid-column:1/-1;margin:0"><span>seasons <b>${h.seasons ?? 0}</b></span><span>titles <b>${h.championships ?? 0}</b></span><span>wins <b>${h.wins ?? 0}</b></span><span>podiums <b>${h.podiums ?? 0}</b></span><span>poles <b>${h.poles ?? 0}</b></span></div>
+    <div class="credit">${credit}</div>
+    <details><summary>All fields, and where each comes from</summary>${fieldTable(d, d.fields, ["portrait", "portrait_info", "fields", "prov", "team_color"])}</details>
+  </article>`;
+}
+
+let driverFilter = "custom";
+function drivers() {
+  const opts = [["custom", "Ours", D.drivers.length], ["replaced", "Vanilla roster (replaced)", D.vanilla_drivers.length]];
+  const body = driverFilter === "custom"
+    ? `<div class="grid">${D.drivers.map(driverCard).join("")}</div>`
+    : `<div class="panel scroll"><table><thead><tr><th>Vanilla driver</th><th>Team</th><th>Nationality</th><th>Age</th><th>Talent</th><th></th></tr></thead><tbody>${D.vanilla_drivers.map(d => `<tr data-search="${esc((d.name + " " + d.team).toLowerCase())}"><td>${esc(d.name)}</td><td>${esc(d.team || "—")}</td><td>${esc(nat(d.nationality))}</td><td class="mono">${esc(d.age)}</td><td class="mono">${esc(d.talent)}</td><td>${provChip("replaced")}</td></tr>`).join("")}</tbody></table></div>`;
+  return `<div style="display:grid;gap:6px"><h2>Drivers</h2><p class="lede">Each driver is built from a vanilla template record (${esc(D.driver_template || "none")}) with the mod's own values on top. Open "All fields" to see which values are ours and which are vanilla defaults.</p></div>
+  <div class="toolbar">${filters("drvf", opts, driverFilter)}<input type="search" id="drvq" placeholder="Search name, team, nationality" aria-label="Search drivers"></div>
+  ${body}`;
+}
+
+function teamCard(t) {
+  const s = (k, v) => `<span>${k} <b>${esc(v)}</b></span>`;
+  return `<article class="tcard" data-search="${esc((t.name + " " + t.engine).toLowerCase())}">
+    <div class="car">${t.car ? `<img src="${esc(t.car)}" alt="${esc(t.name)} car" loading="lazy">` : `<span class="none">no car image</span>`}</div>
+    <div class="body">
+      <div class="head">${t.logo ? `<img src="${esc(t.logo)}" alt="" loading="lazy">` : ""}<div style="min-width:0"><div class="name">${esc(t.name)}</div><div class="teamline"><span class="swatch" style="background:${rgb(t.color_rgb)}"></span><span class="swatch" style="background:${rgb(t.secondary_color_rgb)}"></span>${esc(t.engine)}</div></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">${provChip(t.prov)}${t.cloned_from ? chip("vanilla", "staff, sponsors and ownership cloned from vanilla " + t.cloned_from) : ""}</div>
+      <div class="facts" style="margin:0">${s("pace", t.team_pace)}${s("budget", "$" + t.budget_m + "m")}${s("reliability", t.chassis_reliability)}${s("tyres", t.tyre_management)}${s("prestige", t.prestige_base)}${s("mass", t.car_mass_kg + " kg")}</div>
+      <div class="small"><span class="muted">Drivers:</span> ${esc(t.drivers.join(", ") || "—")}</div>
+      ${t.history_text ? `<div class="history">${esc(t.history_text)}</div>` : ""}
+      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers"])}</details>
+    </div>
+  </article>`;
+}
+
+let teamFilter = "custom";
+function teams() {
+  const opts = [["custom", "Ours", D.teams.length], ["replaced", "Vanilla teams (replaced)", D.vanilla_teams.length]];
+  const body = teamFilter === "custom"
+    ? `<div class="grid wide">${D.teams.map(teamCard).join("")}</div>`
+    : `<div class="vteams">${D.vanilla_teams.map(t => `<div class="vteam" data-search="${esc(t.name.toLowerCase())}">${t.car ? `<img src="${esc(t.car)}" alt="${esc(t.name)} car" loading="lazy">` : ""}<div style="display:flex;align-items:center;gap:6px"><span class="swatch" style="background:${rgb(t.color_rgb)}"></span><b>${esc(t.name)}</b></div><span class="muted">${esc(t.engine || "")}</span>${provChip("replaced")}</div>`).join("")}</div>`;
+  return `<div style="display:grid;gap:6px"><h2>Teams &amp; cars</h2><p class="lede">Car images are our own layered liveries on traced outlines. Each team's records outside teams.json (staff, sponsors, ownership) are cloned from a vanilla team, shown on the card. Template record: ${esc(D.team_template || "none")}.</p></div>
+  <div class="toolbar">${filters("teamf", opts, teamFilter)}<input type="search" id="teamq" placeholder="Search team or engine" aria-label="Search teams"></div>
+  ${body}`;
+}
+
+function engines() {
+  const keys = ["engine", "power_rating", "reliability_rating", "fuel_efficiency", "mass_kg", "cost_m", "capacity", "factory", "nationality"];
+  return `<div style="display:grid;gap:6px"><h2>Engines &amp; tyres</h2><p class="lede">Engine suppliers and their units. The pass-by tag picks each make's own finish-line sound (see Sounds).</p></div>
+  <div class="grid wide">${D.engines.map(e => `<article class="panel ecard">
+    <div class="logos">${e.logo ? `<img src="${esc(e.logo)}" alt="${esc(e.supplier)} logo" loading="lazy">` : ""}${e.engine_img ? `<img src="${esc(e.engine_img)}" alt="${esc(e.engine)}" loading="lazy">` : ""}</div>
+    <div style="display:grid;gap:6px;min-width:0"><div class="name" style="font:700 19px/1.1 var(--font-display)">${esc(e.supplier)}</div>${provChip(e.prov)}
+      <dl class="kv">${keys.map(k => `<dt>${k}</dt><dd>${esc(e[k])}</dd>`).join("")}<dt>pass-by sound</dt><dd>${esc(e.passby_audio || "random bank")}</dd></dl></div>
+  </article>`).join("")}</div>
+  <div class="split">
+    <div class="panel" style="display:grid;gap:8px"><h3>Engine unit rules</h3><dl class="kv">${Object.entries(D.unit_rules).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl></div>
+    <div class="panel" style="display:grid;gap:8px"><h3>Tyre supplier</h3>${D.tyres.map(t => `<dl class="kv"><dt>supplier</dt><dd>${esc(t.supplier)}</dd>${Object.entries(t).filter(([k]) => k !== "supplier").map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`).join("")}</div>
+  </div>`;
+}
+
+function tracks() {
+  const byId = Object.fromEntries(D.tracks.map(t => [t.id, t]));
+  const statKeys = ["length_km", "race_laps", "overtaking_difficulty", "pit_lane_loss_s", "tyre_wear_mult", "lap_modifier", "nationality"];
+  return `<div style="display:grid;gap:6px"><h2>Calendar &amp; tracks</h2><p class="lede">The season by game week. Test and private weeks are dashed.</p></div>
+  <div class="cal">${D.calendar.map(c => `<div class="wk ${c.round ? "" : "test"}"><span class="mono small muted">week ${c.week}</span><b>${c.round ? "R" + c.round + " · " : ""}${esc(byId[c.event]?.name || nat(c.event))}</b></div>`).join("")}</div>
+  <div class="grid wide">${D.tracks.map(t => `<article class="trk">
+    <div class="map">${t.img ? `<img src="${esc(t.img)}" alt="${esc(t.name)} map" loading="lazy">` : `<span class="none">no image</span>`}</div>
+    <div class="body">
+      <div style="font:700 19px/1.1 var(--font-display)">${esc(t.name)}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">${provChip(t.prov)}${t.img ? chip(t.img_prov, "map image: " + (t.img_prov === "custom" ? "ours" : "vanilla")) : ""}</div>
+      <div class="small muted">${esc(t.origin)}${t.weeks.length ? " · weeks " + t.weeks.join(", ") : " · not on the calendar"}</div>
+      <dl class="kv">${statKeys.filter(k => t.stats[k] !== undefined).map(k => `<dt>${k}</dt><dd>${esc(t.stats[k])}</dd>`).join("")}<dt>DRS zones</dt><dd>${t.drs_zones}</dd></dl>
+      ${t.overrides ? `<div class="small">${chip("custom", "season overrides")} <span class="mono">${esc(JSON.stringify(t.overrides))}</span></div>` : ""}
+      ${t.source ? `<details><summary>Trace source</summary><div class="mono small" style="word-break:break-word">${esc(JSON.stringify(t.source))}</div></details>` : ""}
+    </div></article>`).join("")}</div>`;
+}
+
+let soundFilter = "all";
+function sounds() {
+  const areas = [...new Set(D.sounds.map(s => s.area))];
+  const match = s => soundFilter === "all" || (soundFilter === "ours" ? s.status !== "vanilla" : s.status === "vanilla");
+  const n = f => D.sounds.filter(s => f === "all" || (f === "ours" ? s.status !== "vanilla" : s.status === "vanilla")).length;
+  return `<div style="display:grid;gap:6px"><h2>Sounds</h2><p class="lede">Every sound slot the game plays for this pack. Where the mod replaces a vanilla clip, both play side by side. Previews are compressed OGG copies; the game uses the full files.</p></div>
+  ${filters("sndf", [["all", "All", n("all")], ["ours", "Ours", n("ours")], ["vanilla", "Vanilla", n("vanilla")]], soundFilter)}
+  ${areas.map(a => {
+    const rows = D.sounds.filter(s => s.area === a && match(s));
+    if (!rows.length) return "";
+    return `<div class="area"><h3>${esc(a)}</h3>${rows.map(s => `<div class="srow ${s.heard ? "" : "unused"}">
+      <div class="slot"><span class="t">${esc(s.slot)}</span><span class="k">${esc(s.key)}</span>
+        <div style="display:flex;flex-wrap:wrap;gap:4px">${s.status === "vanilla" ? provChip("vanilla") : chip("custom", s.status === "added" ? "ours, added" : "ours, replaces vanilla")}${s.private ? chip("private", "private audio") : ""}${s.heard ? "" : chip("unheard", "never heard")}</div>
+        ${s.why ? `<span class="small muted">${esc(s.why)}</span>` : ""}</div>
+      <div class="col"><span class="lab">${s.status === "vanilla" ? "Vanilla (in use)" : "Ours (in use)"}</span>${audioTag(s.now)}${s.source ? `<span class="src">${esc(s.source.replace(/^private: /, ""))}</span>` : ""}${s.gain != null ? `<span class="src mono">gain ${esc(s.gain)}</span>` : ""}</div>
+      <div class="col">${s.vanilla ? `<span class="lab">Vanilla (replaced)</span>${audioTag(s.vanilla)}` : (s.status === "added" ? `<span class="none">new slot, no vanilla clip</span>` : "")}</div>
+    </div>`).join("")}</div>`;
+  }).join("")}`;
+}
+
+function candidates() {
+  return `<div style="display:grid;gap:6px"><h2>Sound candidates</h2><p class="lede">Recordings considered for the pack, in use or set aside. Each group is a folder under private/engine_audio; new candidates appear here on the next build.${D.library_page ? ` The full ranked clip library has its own page: <a href="${esc(D.library_page)}">library/index.html</a> (opens only on this computer).` : ""}</p></div>
+  ${D.candidates.map(g => `<div class="panel cgroup">
+    <div style="display:grid;gap:4px"><h3>${esc(g.title)}</h3><span class="small muted">${esc(g.note)} <span class="mono">${esc(g.folder)}</span></span></div>
+    ${g.items.map(i => `<div class="citem"><div style="display:grid;gap:4px;min-width:0"><span class="nm">${esc(i.name)}</span>${i.in_use ? chip("inuse", "in the pack") : ""}${i.note ? `<span class="small muted">${esc(i.note)}</span>` : ""}</div><div style="display:grid;gap:2px;min-width:0">${audioTag(i)}</div></div>`).join("")}
+  </div>`).join("")}`;
+}
+
+let fileFilter = "all";
+function files() {
+  const statuses = ["custom", "changed", "private", "vanilla", "removed"];
+  const label = { custom: "Ours", changed: "Vanilla, changed", private: "Private audio", vanilla: "Vanilla", removed: "Vanilla, removed" };
+  const n = s => D.files.filter(f => s === "all" || f.status === s).length;
+  const rows = D.files.filter(f => fileFilter === "all" || f.status === fileFilter);
+  return `<div style="display:grid;gap:6px"><h2>Files</h2><p class="lede">Every file of the installed pack, compared byte for byte with the vanilla pack. "Removed" files are vanilla art the build clears because it would contradict a historic season.</p></div>
+  <div class="toolbar">${filters("filef", [["all", "All", n("all")], ...statuses.map(s => [s, label[s], n(s)])], fileFilter)}<input type="search" id="fileq" placeholder="Filter by path" aria-label="Filter files"></div>
+  <div class="panel scroll" style="padding:4px 8px"><table class="ftable"><thead><tr><th>Path</th><th>Status</th><th style="text-align:right">Size</th></tr></thead><tbody>
+  ${rows.map(f => `<tr data-search="${esc(f.path.toLowerCase())}"><td>${esc(f.path)}</td><td>${provChip(f.status)}</td><td>${kb(f.size)}</td></tr>`).join("")}
+  </tbody></table></div>`;
+}
+
+const RENDER = { overview, drivers, teams, engines, tracks, sounds, candidates, files };
+
+/* --------------------------------------------------------------- routing */
+
+function current() {
+  const h = location.hash.replace("#", "");
+  return RENDER[h] ? h : (store.get("modbrowser.view") || "overview");
+}
+
+function render() {
+  const view = current();
+  store.set("modbrowser.view", view);
+  $("#tabs").innerHTML = VIEWS.map(([id, label, n]) => `<a href="#${id}" ${id === view ? 'aria-current="page"' : ""}>${label}${n() !== "" ? `<span class="n">${n()}</span>` : ""}</a>`).join("");
+  $("#main").innerHTML = `<section data-view="${view}">${RENDER[view]()}</section>`;
+  wire(view);
+}
+
+function wire(view) {
+  const hook = (id, set) => { const bar = $("#" + id); if (bar) bar.addEventListener("click", e => { const b = e.target.closest("button[data-v]"); if (b) { set(b.dataset.v); render(); } }); };
+  hook("drvf", v => driverFilter = v);
+  hook("teamf", v => teamFilter = v);
+  hook("sndf", v => soundFilter = v);
+  hook("filef", v => fileFilter = v);
+  for (const id of ["drvq", "teamq", "fileq"]) {
+    const q = $("#" + id);
+    if (!q) continue;
+    q.addEventListener("input", () => {
+      const s = q.value.trim().toLowerCase();
+      document.querySelectorAll("#main [data-search]").forEach(el => { el.hidden = s && !el.dataset.search.includes(s); });
+    });
+  }
+  // one clip at a time
+  $("#main").addEventListener("play", e => document.querySelectorAll("#main audio").forEach(a => { if (a !== e.target) a.pause(); }), true);
+}
+
+if (D) {
+  $("#title").textContent = D.pack.title;
+  $("#meta").textContent = `${D.pack.folder} v${D.pack.version} · on ${D.pack.base} · built ${D.generated}`;
+  window.addEventListener("hashchange", render);
+  render();
+} else {
+  $("#main").innerHTML = `<p class="lede">No pack data. Build this page with tools/mod_browser.py.</p>`;
+}
+</script>

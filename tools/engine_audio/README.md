@@ -96,6 +96,10 @@ From the game's `assets/audio/README_AUDIO.txt`:
 - **Track bed** (`ambience/session_layers.json`): `cars.file` points to the `ambience.py` loop.
 - **Levels** match the stock clips.
 
+`package.py --install` also rebuilds the mod browser (`tools/mod_browser.py`),
+whose Sounds tab plays vanilla and our clips side by side and whose Sound
+candidates tab lists the `pilot/` and `library/` folders here.
+
 To target another game, add a builder next to `build()` in `package.py`. The
 segment references in `library.sqlite` are game-independent.
 
