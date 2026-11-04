@@ -63,12 +63,10 @@ python tools/engine_audio/package.py --install
 
 ## Analysis (`segment.py`)
 
-- **RPM:** a V8 fires 4 times per revolution, so the firing frequency is RPM/15. Each 50 ms frame scores candidate firing frequencies by the mean peak height of their harmonics below 4 kHz, and a Viterbi pass keeps the track continuous. Octave errors are then repaired:
-  - a ×2 or ×½ jump within 150 ms is undone, since no gear change is an octave;
-  - a stretch whose midway peaks are as strong as its harmonics is halved;
-  - each stretch is kept inside 2,500–10,000 RPM.
+- **RPM:** tracked from engine order 2 (f = RPM/30). A crossplane V8 fires each bank unevenly, so real onboards show a strong order-2 series with the firing order (RPM/15) as every second line, while order 1 is weak. Each 50 ms frame scores candidates by the mean peak height of their harmonics below 4 kHz, and a Viterbi pass keeps the track continuous. Octave slips are then repaired (a ×2 or ×½ jump within 150 ms is undone; each stretch is kept inside 2,500–10,000 RPM).
 
-  On synthetic V8 sweeps this lands within 2%. On real audio it is a rough guide, and not yet checked against a real onboard.
+  Checked against spectrograms of real onboards: the track follows the order-2 line through upshifts, braking and downshift blips. Across all 45 onboards the median is 6,600–7,100 RPM and the 90th percentile about 7,400.
+- **Throttle state** comes from RPM direction, not loudness: onboard audio is compressed so hard that lifting off changes the level by under 1 dB. Smooth rise is full throttle, smooth fall is overrun, and sudden 7–12 % jumps are gear changes (checked just before and after, since the ignition cut itself has no clean pitch).
 - **Flags:**
   - `commentary`: syllable gaps and 3–8 Hz rhythm in the voice band;
   - `wind`: low-frequency energy without harmonics;
@@ -96,8 +94,10 @@ From the game's `assets/audio/README_AUDIO.txt`:
 To target another game, add a builder next to `build()` in `package.py`. The
 segment references in `library.sqlite` are game-independent.
 
-## Findings so far (2026-11-04)
+## Findings so far (2026-11-04, all downloads in)
 
-- **Highlight shows (48 min each):** commentary over 79–97% of every show, so no clean pass-bys.
-- **Trackviews:** spectra show mirrored bands, one rising while another falls, which a real engine's harmonics cannot do. They look like simulator or processed audio, so packaging skips them. They stay in the library, labelled.
-- **Real material:** depends on the 45 driver onboards, which are still queued.
+- **Driver onboards (45, one flying lap each):** clean engine with only 2–5 % speech. They give about 1,000 s of steady high RPM and full throttle, roughly 950 upshifts and 180 downshifts. All three makes are covered at every track except Mercedes at Oschersleben.
+- **No idle, grid or pit material:** the onboards are single laps, so the grid idle/launch and pit-exit banks stay stock.
+- **Race and qualifying broadcasts (2 h each):** commentary almost throughout. About 50 pass-bys pass the commentary check, and 3 are good enough to package; listen to those before trusting them.
+- **Highlight shows:** commentary over 79–97 % of every show, so no clean pass-bys.
+- **Trackviews:** spectra show mirrored bands, one rising while another falls, which a single engine cannot do. They stay in the library, labelled, but packaging skips them.

@@ -1,10 +1,12 @@
 """Stage 3: analyse extracted audio and store labelled segments as references.
 
 Per video (cached in private/engine_audio/features/<id>.npz, 20 frames/s):
-  rpm       engine speed from the firing-order pitch. A four-stroke V8 fires
-            4 times per crank revolution, so f_fire = rpm / 60 * 4 = rpm / 15.
-            Each frame scores candidate firing frequencies by their harmonic
-            series in a whitened spectrum, a Viterbi pass keeps the track
+  rpm       engine speed from engine order 2 (f = rpm / 30). A crossplane V8
+            fires each bank unevenly, so onboards show a strong order-2 series
+            (odd and even multiples alike) with the firing order (4) as just
+            every second line; order 1 is weak. Tracking order 2 keeps the
+            tracker on one series. Each frame scores candidates by their
+            harmonic series in a whitened spectrum, a Viterbi pass keeps the track
             continuous, and a per-video octave check against the expected
             redline fixes half-order locks. Rough: +-5 % when the engine is
             clear, meaningless in commentary.
@@ -38,31 +40,33 @@ from scipy.ndimage import maximum_filter1d, median_filter, uniform_filter1d
 
 from common import FEATURE_DIR, connect, stream_decode
 
-VERSION = 2
+VERSION = 4
 SR = 16000
 HOP = 800                    # 50 ms -> 20 frames/s
 NFFT = 4096                  # 256 ms window, 3.9 Hz bins
 FPS = SR / HOP
 REDLINE = 8500.0             # rough DTM 2013 V8 rev limit, used for octave fixing
 RPM_LO, RPM_HI, NCAND = 1500.0, 10500.0, 160
-HARMONICS = 40              # every harmonic below FMAX counts
+HARMONICS = 80              # every harmonic below FMAX counts
 FMAX = 4000.0
 LOW_BIAS = 0.05              # per octave: breaks the f0 / 2*f0 tie toward f0
 MAX_STEP = 24                # Viterbi: max candidate jump per frame (~30 %)
 STEP_COST = 0.01             # Viterbi: cost per candidate step (scores are 0..1)
-CLEAR_DB = 5.0               # clarity above which the pitch track is trusted (noise: ~2-3)
-ODD_RATIO = 0.75             # midway/harmonic peak ratio above which a run is an octave too high
+CLEAR_DB = 3.0               # clarity above which the pitch track is trusted (real onboards: median ~4,
+                             # p10 ~2.3; braking smears the lines). Commentary is the speech flag's job.
+ODD_RATIO = 0.75             # midway/harmonic peak ratio above which a run is an octave too high (order 4)
 
 CAND_RPM = np.geomspace(RPM_LO, RPM_HI, NCAND)
-CAND_F = CAND_RPM / 15.0
+ORDER = 2                    # engine order tracked (see docstring)
+CAND_F = CAND_RPM * ORDER / 60.0
 FREQS = np.fft.rfftfreq(NFFT, 1 / SR)
 HBIN = np.rint(np.outer(CAND_F, np.arange(1, HARMONICS + 1)) * NFFT / SR).astype(int)
 HMASK = (np.outer(CAND_F, np.arange(1, HARMONICS + 1)) < FMAX).astype(np.float32)
 HWEIGHT = ((1 - LOW_BIAS * np.log2(CAND_F / CAND_F[0])) / HMASK.sum(axis=1)).astype(np.float32)
 HBIN = np.minimum(HBIN, len(FREQS) - 1)
 # Midway points (k - 0.5) * f. If the tracker sits an octave too high, these
-# are the true firing harmonics and as strong as its own; for the true series
-# they are only the weaker half-order peaks.
+# are the true order-2 harmonics and as strong as its own; for the true series
+# they are only the weak order-1 peaks.
 GPOS = np.outer(CAND_F, np.arange(1, HARMONICS + 1) - 0.5)
 GBIN = np.minimum(np.rint(GPOS * NFFT / SR).astype(int), len(FREQS) - 1)
 GMASK = (GPOS < FMAX).astype(np.float32)
@@ -117,13 +121,13 @@ def frame_features(path: Path) -> dict:
         # whitened log spectrum: peaks above the local spectral envelope
         logs = 20 * np.log10(spec)
         env = uniform_filter1d(logs, size=51, axis=1)                    # ~200 Hz
-        # peak height as a linear ratio over the envelope: weak half-order
-        # peaks then count far less than the firing-order series
+        # peak height as a linear ratio over the envelope: weak order-1
+        # peaks then count far less than the order-2 series
         # (square-root compressed, so one huge peak cannot carry a candidate)
         white = np.clip(10 ** (np.clip(logs - env, 0, 60) / 40) - 1, 0, None)
         white = maximum_filter1d(white, size=3, axis=1)                  # +-1 bin tolerance
         # mean peak height over the candidate's harmonics below FMAX: a series
-        # padded with weak half-order peaks scores lower than the firing series,
+        # padded with weak order-1 peaks scores lower than the order-2 series,
         # whatever the rpm. Done per chunk to bound memory.
         sc = np.empty((len(white), NCAND), np.float32)
         oddr = np.empty((len(white), NCAND), np.float16)
@@ -254,6 +258,7 @@ def analyse(path: Path, octave_fix: bool) -> dict:
         "clarity": clarity.astype(np.float32), "loud": f["loud"].astype(np.float32),
         "pan": f["pan"].astype(np.float32), "speech": speech_score(f["voice"]).astype(np.float32),
         "wind": wind.astype(np.float32), "multi": multi.astype(np.float32),
+        "oddr": oddr, "comb": best.astype(np.float32),
         "rpm_factor": factor,
     }
 
@@ -287,19 +292,29 @@ def find_segments(a: dict, video_type: str, duration_s: float) -> list[dict]:
         segs.append(dict(label=label, s=s, e=e, **extra))
 
     if onboard:
-        for s, e in runs(on & valid & (slope > 0.15), sec(0.8)):
+        # Onboard audio is heavily compressed: lifting off moves the level by
+        # well under 1 dB. Throttle state comes from the rpm direction instead:
+        # on track rpm only rises smoothly under power and only falls smoothly
+        # off throttle; gear changes are the sudden jumps (excluded by `smooth`).
+        jump3 = np.abs(np.concatenate([lr[3:] - lr[:-3], np.zeros(3)]))
+        smooth = maximum_filter1d(jump3, sec(0.4)) < 0.06
+        on = smooth & (slope > 0.05)
+        off = smooth & (slope < -0.08)
+        for s, e in runs(on & valid, sec(1.5)):
             add("full_throttle", s, e)
-        for s, e in runs(on & valid & (np.abs(slope) < 0.08) & (a["rpm"] > 0.75 * REDLINE), sec(1.0)):
+        for s, e in runs(smooth & valid & (np.abs(slope) < 0.05) & (a["rpm"] > 0.75 * REDLINE), sec(1.0)):
             add("steady_high", s, e)
-        for s, e in runs(off & valid & (slope < -0.05), sec(0.6)):
+        for s, e in runs(off & valid, sec(0.8)):
             add("overrun", s, e)
         idle_runs = runs(valid & (a["rpm"] < 0.55 * REDLINE) & (np.abs(slope) < 0.1), sec(2.0))
         for s, e in idle_runs:
             add("idle", s, e)
         # gear changes: fast pitch jumps
         jump = np.concatenate([lr[3:] - lr[:-3], np.zeros(3)])      # change over 150 ms
-        for label, sign, thr, ctx, pre, post in (("upshift", -1, 0.12, on, 0.6, 0.6),
-                                                 ("downshift", 1, 0.08, off, 0.5, 0.7)):
+        # context over the 0.5 s before: accelerating for upshifts, braking for downshifts.
+        # Real DTM shifts move the revs ~7-12 % within 150 ms (close-ratio gearbox).
+        for label, sign, thr, ctx, pre, post in (("upshift", -1, 0.07, slope > -0.01, 0.6, 0.6),
+                                                 ("downshift", 1, 0.06, slope < -0.03, 0.5, 0.7)):
             cand = np.flatnonzero(sign * jump > thr)
             last = -10 ** 9
             # strongest jump first; nothing within 0.5 s of an accepted one
@@ -307,11 +322,14 @@ def find_segments(a: dict, video_type: str, duration_s: float) -> list[dict]:
                 if abs(t - last) < sec(0.5) or any(abs(t - g["peak"]) < sec(0.5)
                                                    for g in segs if g["label"] == label):
                     continue
-                if t > 0 and ctx[max(0, t - sec(0.5)):t].mean() > 0.5 and valid[t:t + 4].all():
+                # the shift itself (ignition cut) has no clean pitch: need it just before and after
+                if (t > 0 and ctx[max(0, t - sec(0.5)):t].mean() > 0.5
+                        and valid[max(0, t - sec(0.3)):t].mean() > 0.6
+                        and valid[t + 4:t + 4 + sec(0.3)].mean() > 0.6):
                     add(label, t - sec(pre), t + sec(post), peak=t + 2)
                     last = t
         # idle/limiter straight into full throttle: race start or pit exit
-        throttle_starts = [s for s, e in runs(on & valid & (slope > 0.15), sec(1.5))]
+        throttle_starts = [s for s, e in runs(valid & (slope > 0.15), sec(1.5))]
         first_launch = True
         for s, e in idle_runs:
             nxt = [t for t in throttle_starts if e - sec(0.3) <= t <= e + sec(0.5)]
@@ -350,7 +368,7 @@ def find_segments(a: dict, video_type: str, duration_s: float) -> list[dict]:
         speech, wind, multi = (float(a[k][sl].mean()) for k in ("speech", "wind", "multi"))
         clarity = float(a["clarity"][sl].mean())
         dur = (e - s) / FPS
-        q = np.clip((clarity - CLEAR_DB) / 6, 0, 1) * (1 - speech) * (1 - 0.8 * wind) * (1 - 0.5 * multi)
+        q = np.clip((clarity - CLEAR_DB) / 3, 0, 1) * (1 - speech) * (1 - 0.8 * wind) * (1 - 0.5 * multi)
         if g["label"] == "passby":
             q *= min(1.0, g["prominence"] / 15) * min(1.0, g["doppler"] / 0.12)
         elif g["label"] in ("full_throttle", "steady_high", "idle", "overrun"):
