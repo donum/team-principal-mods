@@ -1,0 +1,4 @@
+# Hand fixes for titles the catalog parser gets wrong. One row per video id;
+# fill only the columns to override (blank = keep the parsed value).
+# Metadata only: no audio, safe to commit.
+id,video_type,manufacturer,driver,track,round,session,commentary,confidence,parse_notes

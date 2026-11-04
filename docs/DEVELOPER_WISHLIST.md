@@ -19,7 +19,7 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5, E8 |
 
 ---
 
@@ -305,6 +305,18 @@ under "Simplifications".
   - Previous-season standings and history per team and driver, to drive
     prestige and form.
   - A real date for each schedule week, for news and emails.
+
+### E8. Engine sounds per supplier beyond pass-bys · P3
+- **Needed by:** dtm-2013.
+- **2013:** three V8s with clearly different voices (Audi RS 5, BMW M3,
+  Mercedes C-Coupé).
+- **Today:** only pass-bys can be tagged per supplier (`passby_audio` in
+  `engines.json`). Grid idle and launch, pit fire-up and pit exit are one
+  random bank (`race/race_engines.json`) shared by every car.
+- **Workaround:** per-make pass-bys, and a mixed bank for the rest.
+- **Request:** the same `passby_audio`-style tag for `grid_idle`,
+  `grid_launch`, `pit_fireup` and `pit_exit`, so a BMW leaving its box
+  sounds like a BMW.
 
 ---
 

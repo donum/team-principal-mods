@@ -411,7 +411,7 @@ def validate(out):
     return errors, warnings
 
 
-def build(season_dir, game, install):
+def build(season_dir, game, install, private_audio=True):
     manifest = load_json(season_dir / "season.json")
     base_dir = game / "data" / manifest["base_pack"]
     if not base_dir.is_dir():
@@ -513,6 +513,14 @@ def build(season_dir, game, install):
                 except OSError as err:
                     print(f"warning: could not remove stale {path.relative_to(target)}: {err}")
         print(f"installed to {target} (select it in-game or via active_pack.json)")
+        # Private engine audio (private/engine_audio, never in dist/ or git) goes
+        # onto the installed copy only. See tools/engine_audio/README.md.
+        if private_audio:
+            sys.path.insert(0, str(Path(__file__).with_name("engine_audio")))
+            import overlay
+            if overlay.overlay_for(manifest["pack_folder"]):
+                print(overlay.apply(target, manifest["pack_folder"]))
+                print("  NOTE: this installed pack now holds private audio; do not upload it to the Workshop")
 
 
 def main():
@@ -520,8 +528,10 @@ def main():
     parser.add_argument("season", type=Path, help="season source folder, e.g. seasons/dtm-1991")
     parser.add_argument("--game", help="Team Principal install folder (else local.json, else default)")
     parser.add_argument("--install", action="store_true", help="copy the built pack into <game>/data/")
+    parser.add_argument("--no-private-audio", action="store_true",
+                        help="install without the private engine-audio overlay (tools/engine_audio)")
     args = parser.parse_args()
-    build(args.season.resolve(), game_path(args.game), args.install)
+    build(args.season.resolve(), game_path(args.game), args.install, not args.no_private_audio)
 
 
 if __name__ == "__main__":
