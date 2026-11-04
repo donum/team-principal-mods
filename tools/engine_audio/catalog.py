@@ -360,6 +360,9 @@ def main() -> int:
         if not prev:
             new += 1
         row.update(parse_title(e.get("title") or "", drivers))
+        if folder.name.lower().startswith("spectator"):
+            # grandstand / fan recordings: real field sound, no commentary
+            row.update(video_type="spectator", commentary="no")
         ov = overrides.get(vid, {})
         row.update(ov)
         row["overridden"] = ",".join(sorted(ov)) or None

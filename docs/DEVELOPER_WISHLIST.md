@@ -19,7 +19,7 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5, E8 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5, E8, E9 |
 
 ---
 
@@ -317,6 +317,21 @@ under "Simplifications".
 - **Request:** the same `passby_audio`-style tag for `grid_idle`,
   `grid_launch`, `pit_fireup` and `pit_exit`, so a BMW leaving its box
   sounds like a BMW.
+
+### E9. Ambience and start sounds per track · P3
+- **Needed by:** dtm-2013.
+- **2013:** the venues sound very different: the Norisring street circuit
+  between concrete walls and a packed grandstand, the open Lausitzring,
+  the dunes at Zandvoort, a half-empty Moscow Raceway. The broadcasts give
+  us a crowd and `cars_on_track` bed for every round.
+- **Today:** `ambience/session_layers.json` and its files are one set per
+  pack, so every round plays the same crowd, PA and track bed. The same
+  holds for the grid and pit banks.
+- **Workaround:** one season-wide set, picked for consistency.
+- **Request:** an optional per-track override, for example a
+  `tracks.<track id>` block in `session_layers.json` (and the race and
+  session manifests) that names other files for that venue, falling back
+  to the pack-wide set.
 
 ---
 

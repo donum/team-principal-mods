@@ -9,10 +9,12 @@ assets/audio/README_AUDIO.txt:
             distance gain and air absorption, and a pan sweep for a car
             passing 12 m away at 220 km/h. Real TV pass-bys, if any are free
             of commentary, join the random bank as dtm13_tv_NN.
-  race/     grid_idle_NN / grid_launch_NN pairs from onboard race starts, and
-            pit_exit_NN (13 s, peak_s) from onboard pit exits. They replace
-            the stock clips with the same key; fire-ups and wheelguns stay
-            stock. These banks are shared by all cars (wishlist E8).
+  race/     grid_idle_NN / grid_launch_NN pairs simulated from the clean
+            onboards (start_synth.py: a 22-car grid heard from the
+            grandstand), and pit_exit_NN (13 s, peak_s) from onboard pit
+            exits. They replace the stock clips with the same key; fire-ups
+            and wheelguns stay stock. These banks are shared by all cars
+            (wishlist E8).
 Levels follow the stock clips (whole-clip RMS x gain).
 
 Output: private/engine_audio/pack/<pack_folder>/ (files/ + overlay.json).
@@ -31,6 +33,7 @@ import numpy as np
 from scipy.signal import butter, sosfilt
 
 import overlay
+import start_synth
 from common import MAKES, PACK_DIR, REPO, connect, decode, dump_json, game_path, load_json, slug, write_wav
 
 SR = 44100
@@ -208,28 +211,30 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int) -> Pat
              "crossing_s": cross, "gain": gain, "source": ref(r)}])
     report.append(f"TV pass-bys: {min(len(tv), n_tv)} clean (of {len(tv)})")
 
-    # grid idle + launch pairs from race starts
+    # grid idle + launch pairs: simulated from clean onboards (start_synth.py).
+    # Broadcast starts are unusable (commentary peaks there), and the onboards
+    # are flying laps, so each pair is a 22-car grid rendered from a different
+    # seed (grid order, listener spot in the grandstand).
     lvl_idle = stock_level(base_audio, "race/race_engines.json", "grid_idle")
     lvl_launch = stock_level(base_audio, "race/race_engines.json", "grid_launch")
-    starts = round_robin(candidates(db, ("launch",), min_q), n_grid)
+    sources = start_synth.find_sources(db)
     used = 0
-    for r in starts:
-        i = used + 1
-        go, p = r["peak_s"], Path(r["audio_path"])
-        idle_start = max(0.0, go - 7.5)
-        if go - 0.5 - idle_start < 3.0:          # too little standing time before the start
-            continue
-        idle = peak_normalise(decode(p, idle_start, go - 0.5 - idle_start, SR, 2))
-        launch = peak_normalise(decode(p, max(0, go - 1.0), 11.0, SR, 2))
-        save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle)
-        save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
-        clips.setdefault(race, []).extend([
-            {"key": f"grid_idle_{i:02d}", "file": f"dtm13_grid_idle_{i:02d}.ogg",
-             "gain": gain_for(idle, lvl_idle), "source": ref(r)},
-            {"key": f"grid_launch_{i:02d}", "file": f"dtm13_grid_launch_{i:02d}.wav",
-             "gain": gain_for(launch, lvl_launch), "source": ref(r)}])
-        used += 1
-    report.append(f"grid idle/launch pairs: {used} (stock kept for the rest)")
+    if len(sources) >= 12:
+        for i in range(1, n_grid + 1):
+            idle, launch, info = start_synth.render_start(sources, seed=i)
+            g = 10 ** (-1 / 20) / (max(np.abs(idle).max(), np.abs(launch).max()) + 1e-9)
+            idle, launch = idle * g, launch * g
+            save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle)
+            save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
+            src = f"private: simulated 22-car start, seed {i}, listener {info['listener']}"
+            clips.setdefault(race, []).extend([
+                {"key": f"grid_idle_{i:02d}", "file": f"dtm13_grid_idle_{i:02d}.ogg",
+                 "gain": gain_for(idle, lvl_idle), "source": src},
+                {"key": f"grid_launch_{i:02d}", "file": f"dtm13_grid_launch_{i:02d}.wav",
+                 "gain": gain_for(launch, lvl_launch), "source": src}])
+            used += 1
+    report.append(f"grid idle/launch pairs: {used} simulated from {len(sources)} clean onboards"
+                  + ("" if used else " (too few sources, stock kept)"))
 
     # pit exits
     lvl_pit = stock_level(base_audio, "race/race_engines.json", "pit_exit")

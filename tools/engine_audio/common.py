@@ -2,6 +2,7 @@
 
 Pipeline (each stage is a re-runnable CLI script, see README.md):
     catalog.py -> extract.py -> segment.py -> library.py -> package.py
+                                    +-> events.py -> separate.py -> review.py -+
 
 All audio lives under private/engine_audio (gitignored). Never commit it.
 """
@@ -25,10 +26,12 @@ AUDIO_DIR = DATA / "audio"          # extract.py: lossless audio tracks
 FEATURE_DIR = DATA / "features"     # segment.py: per-video analysis cache
 LIBRARY_DIR = DATA / "library"      # library.py: ranked clips + reports
 PACK_DIR = DATA / "pack"            # package.py: game overlays, one per pack folder
+SEPARATED_DIR = DATA / "separated"  # separate.py: event windows, original and commentary removed
+CURATION = REPO / "tools" / "engine_audio" / "curation.csv"   # review.py decisions (metadata only)
 DEFAULT_SOURCE = Path(r"C:\Users\dan\Videos\yt\DTM")
 
 # Video types worth analysing for engine sound (features and animations are not).
-ENGINE_TYPES = ("onboard", "onboard_bestof", "taxi", "trackview", "broadcast", "highlights")
+ENGINE_TYPES = ("onboard", "onboard_bestof", "taxi", "trackview", "broadcast", "highlights", "spectator")
 MAKES = ("Audi", "BMW", "Mercedes")
 
 
@@ -108,12 +111,13 @@ def stream_decode(path: Path, sr: int, channels: int, block_s: float = 60.0):
 
 
 def write_wav(path: Path, audio: np.ndarray, sr: int = 44100, codec: str = "pcm_s16le") -> None:
-    """Write float audio (frames, channels) through ffmpeg (wav or ogg by suffix)."""
+    """Write float audio (frames, channels) through ffmpeg (wav, ogg or flac by suffix)."""
     path.parent.mkdir(parents=True, exist_ok=True)
     audio = np.clip(np.asarray(audio, dtype=np.float32), -1.0, 1.0)
     ch = 1 if audio.ndim == 1 else audio.shape[1]
     tmp = path.with_name(path.stem + ".tmp" + path.suffix)
-    enc = ["-c:a", "libvorbis", "-q:a", "6"] if path.suffix == ".ogg" else ["-c:a", codec]
+    enc = {".ogg": ["-c:a", "libvorbis", "-q:a", "6"],
+           ".flac": ["-c:a", "flac", "-sample_fmt", "s16"]}.get(path.suffix, ["-c:a", codec])
     cmd = ["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(sr), "-ac", str(ch),
            "-i", "-", *enc, str(tmp)]
     subprocess.run(cmd, input=audio.tobytes(), check=True, capture_output=True)

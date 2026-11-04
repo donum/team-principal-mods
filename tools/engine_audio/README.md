@@ -39,6 +39,8 @@ python tools/engine_audio/package.py --install
 | `extract.py` | catalog rows with status `done` | `audio/<make>/<track>/<session>/<driver>/<id>.mka` (stream copy, no re-encode) |
 | `segment.py` | extracted audio | `features/<id>.npz`, tables `analysis` and `segments` |
 | `library.py` | segments | `library/index.html` (playable), `library/coverage.md`, ranked WAV clips |
+| `events.py` | broadcast features (race and qualifying re-lives) | table `events`: race-start, pit-stop, pass-by and track-bed candidates |
+| `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (used by `package.py`; run alone for previews) |
 | `package.py` | segments, base pack audio levels | `pack/dtm2013/` (files + `overlay.json`); `--install` applies it |
 | `overlay.py` | `pack/dtm2013/` | `apply`, `remove`, `status` on the installed pack |
 
@@ -86,7 +88,7 @@ From the game's `assets/audio/README_AUDIO.txt`:
   - made by simulating a pass-by at 220 km/h and 12 m (Doppler, distance, pan) from clean onboard full-throttle audio;
   - commentary-free TV pass-bys, if any, join the random bank as `dtm13_tv_NN`.
 - **Grid and pit** (`race/race_engines.json`):
-  - `grid_idle_NN` / `grid_launch_NN` pairs come from onboard race starts, and `pit_exit_NN` from onboard pit exits;
+  - `grid_idle_NN` / `grid_launch_NN` pairs are simulated by `start_synth.py` (below), and `pit_exit_NN` would come from onboard pit exits (none so far);
   - they replace the stock clips with the same key; fire-ups and wheelguns stay stock;
   - these banks are shared by all cars (wishlist E8).
 - **Levels** match the stock clips.
@@ -94,10 +96,39 @@ From the game's `assets/audio/README_AUDIO.txt`:
 To target another game, add a builder next to `build()` in `package.py`. The
 segment references in `library.sqlite` are game-independent.
 
+## Simulated start (`start_synth.py`)
+
+The broadcasts can't give a clean start: the commentators talk loudest exactly
+there, and neither Demucs (`htdemucs`, `htdemucs_ft`, with shifts) nor the
+RoFormer vocal models remove it without watery gaps. So the start is built
+from the clean onboards:
+
+- **Grid:** 22 cars in the 2013 make mix (8 Audi, 8 BMW, 6 Mercedes), each
+  from a different onboard, on the staggered grid; the listener stands in the
+  grandstand beside it.
+- **Grid revs:** each car's onboard audio replayed at a rate set from its
+  tracked rpm, holding 3,800–5,000 rpm with blips.
+- **Launch:** a clutch-slip ramp from grid revs, then the onboard's real
+  acceleration with its upshifts.
+- **Physics:** emission-time solving (travel time, Doppler), 1/r level,
+  distance damping, an AB microphone pair, grandstand reflections.
+- **Cleanup:** a comb mask on each car's known rpm removes the onboard
+  wind and road noise; stereo narrowed to the stock clips' width.
+
+Each of the four game pairs uses its own seed (grid order, listener spot).
+Previews: `python tools/engine_audio/start_synth.py` writes
+`private/engine_audio/pilot/synth_start/start_NN_idle_then_launch.wav`.
+
+Spectator recordings (a `spectator_recordings` queue folder; catalog type
+`spectator`, no commentary) are the source for a real crowd and, if one
+shows a start, a real launch.
+
 ## Findings so far (2026-11-04, all downloads in)
 
 - **Driver onboards (45, one flying lap each):** clean engine with only 2–5 % speech. They give about 1,000 s of steady high RPM and full throttle, roughly 950 upshifts and 180 downshifts. All three makes are covered at every track except Mercedes at Oschersleben.
 - **No idle, grid or pit material:** the onboards are single laps, so the grid idle/launch and pit-exit banks stay stock.
 - **Race and qualifying broadcasts (2 h each):** commentary almost throughout. About 50 pass-bys pass the commentary check, and 3 are good enough to package; listen to those before trusting them.
+- **Race starts in the broadcasts:** found reliably (field surge after grid revs), but unusable: commentary peaks there and every separation model leaves watery gaps.
+- **Separation:** usable only where commentary is quiet (pass-bys, track ambience). Demucs runs at ~4x real time on this CPU, Mel-RoFormer at ~1x.
 - **Highlight shows:** commentary over 79–97 % of every show, so no clean pass-bys.
 - **Trackviews:** spectra show mirrored bands, one rising while another falls, which a single engine cannot do. They stay in the library, labelled, but packaging skips them.
