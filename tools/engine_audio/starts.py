@@ -14,7 +14,8 @@ and listed by hand below. This stage
      clip opens with the grid's last revving and lights out falls 1.5 s in
      (the cars move at 2.0 s). The launch runs to the end of the recording,
      or on into a `tail` from another recording (equal-power crossfade,
-     levels matched), is cut to `launch_s` if set, then fades out;
+     levels matched), has `skip` spliced out and is cut to `launch_s` if
+     set, then fades out;
   3. loops the grid revving: up to IDLE_MAX_S of it, the tail crossfaded
      into the head so it repeats without a click.
 
@@ -36,6 +37,7 @@ SR = 44100
 IDLE_MAX_S = 15.0
 LOOP_XF_S = 1.0
 TAIL_XF_S = 2.0
+SPLICE_XF_S = 1.0
 END_FADE_S = 2.5
 # When the game plays the pair (ui/live_audio.py, ui/screens/race_screen.py):
 # grid_idle loops on the grid; when the 3rd start light comes on (1.5 s into
@@ -46,19 +48,20 @@ OUT_DIR = LIBRARY_DIR / "starts"
 
 # video id, grid revving from/to, go estimate (refine=False: exact), launch end
 # (None: end of the video), optional tail (video id, from, to), optional
-# launch_s / fade_s (clip length and fade-out, default END_FADE_S), note;
+# skip (a, b: launch seconds spliced out), launch_s / fade_s (clip length and
+# fade-out, default END_FADE_S), note;
 # seconds in the video
 STARTS = [
     # go set by hand: the 1-4 kHz roar steps up 6 dB at 54.6 s and stays; the
     # phone's gain control smears the broadband level, so refine_go is off
-    # cut to 12 s (picked by ear 2026-11-04 over 15, 18 and the old 22.5 s with
-    # a 2017 tail): a 3.5 s fade from 8.5 s, where the roar dips after the
-    # getaway, so the later close pass (11.6 s) is faded out; no borrowed
-    # ending needed
+    # 12 s (picked by ear 2026-11-04 over 15, 18 and the old 22.5 s with a
+    # 2017 tail). A plain 12 s fade lost the close pass at 11.6 s and sounded
+    # flat, so 7-10 s of steady roar is spliced out: the pass lands at 8.6 s,
+    # then the recording's own drop-off and a 2 s fade
     dict(vid="fk9f2Qt5x20", idle=(37.0, 52.0), go=54.5, refine=False, end=None,
-         launch_s=12.0, fade_s=3.5,
-         note="Hockenheim finale, grid and start: clean revving, the getaway and the "
-              "field swelling past, 12 s with a 3.5 s fade"),
+         skip=(7.0, 10.0), launch_s=12.0, fade_s=2.0,
+         note="Hockenheim finale, grid and start: clean revving, the getaway, the field "
+              "swelling past (7-10 s spliced out), 12 s with a 2 s fade"),
 ]
 # Set aside after listening in game (2026-11-04): noise and mic overload at the
 # launch (Nurburgring 2014 x_JJhPIFjdY, Hockenheim 2012 kf4kpYMJ3vc, Zandvoort
@@ -101,6 +104,16 @@ def join_tail(launch: np.ndarray, tail: np.ndarray) -> np.ndarray:
     return np.concatenate([launch[:-xf], mid, tail[xf:]])
 
 
+def splice(x: np.ndarray, a: float, b: float) -> np.ndarray:
+    """Take out a..b s (equal-power crossfade of SPLICE_XF_S centred on the
+    cut, no level change): moves a later moment of the same recording earlier."""
+    xf = int(SPLICE_XF_S * SR)
+    i, j = int(a * SR) - xf // 2, int(b * SR) - xf // 2
+    th = np.linspace(0, np.pi / 2, xf)[:, None]
+    mid = x[i:i + xf] * np.cos(th) + x[j:j + xf] * np.sin(th)
+    return np.concatenate([x[:i], mid, x[j + xf:]])
+
+
 def path_of(db, vid: str) -> tuple[str, Path] | None:
     row = db.execute("SELECT v.title, a.path FROM videos v JOIN audio a ON a.id = v.id WHERE v.id=?",
                      (vid,)).fetchone()
@@ -116,6 +129,8 @@ def render(db, s: dict):
     if s.get("tail"):
         _, tpath = path_of(db, s["tail"][0])
         launch = join_tail(launch, decode(tpath, s["tail"][1], s["tail"][2] - s["tail"][1], SR, 2))
+    if s.get("skip"):
+        launch = splice(launch, *s["skip"])
     if s.get("launch_s"):
         launch = launch[:int(s["launch_s"] * SR)]
     fo = int(s.get("fade_s", END_FADE_S) * SR)

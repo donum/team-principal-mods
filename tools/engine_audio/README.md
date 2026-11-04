@@ -143,12 +143,14 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
 - **Starts (`starts.py`):** one start, picked by ear: the Hockenheim
   finale "Grid and Start" video (`fk9f2Qt5x20`), 15 s of clean grid
   revving and the field swelling past.
-  **Length:** the launch is 12 s (`launch_s`), with a 3.5 s fade
-  (`fade_s`) from 8.5 s, where the roar dips after the getaway. Picked by
-  ear over 15 s, 18 s and the old 22.5 s. The fade takes out the
-  recording's loudest pass (11.6 s), so the loudest 0.5 s that sets the
-  level is now the getaway roar (5.6 s), and the clip plays about 2 dB
-  louder than the longer cuts. The 22.5 s version crossfaded in the ending of the
+  **Length:** the launch is 12 s (`launch_s`), picked by ear over 15 s,
+  18 s and the old 22.5 s. A plain 12 s fade lost the recording's close
+  pass (11.6 s) and sounded flat: the level rule then lifted an even roar
+  with no climax. So 3 s of steady roar (7–10 s) are spliced out (`skip`,
+  1 s equal-power crossfade, no level change). The pass lands at 8.6 s,
+  then the recording's own drop-off and a 2 s fade (`fade_s`). As played:
+  about -20 dB after the getaway, -17 to -18 through the roar, -15 on the
+  pass. The 22.5 s version crossfaded in the ending of the
   2017 Hockenheim start (`IBuEsBSh9_I`, 16–22.5 s); that ending is no
   longer needed. `STARTS` still takes a `tail` for a recording that
   stops too early.
