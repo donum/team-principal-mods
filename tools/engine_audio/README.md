@@ -40,7 +40,7 @@ python tools/engine_audio/package.py --install
 | `segment.py` | extracted audio | `features/<id>.npz`, tables `analysis` and `segments` |
 | `library.py` | segments | `library/index.html` (playable), `library/coverage.md`, ranked WAV clips |
 | `events.py` | broadcast features (race and qualifying re-lives) | table `events`: race-start, pit-stop, pass-by and track-bed candidates |
-| `starts.py` | fan recordings of race starts (hand-listed) | real grid idle loops and launches (used by `package.py`) |
+| `starts.py` | fan recordings of race starts (hand-listed) | real grid idle loops and launches (used by `package.py`; its previews `library/starts/start_NN_*.wav` are rewritten by `package.py --install`) |
 | `start_preview.py` | the installed pack | each start mixed with the game's own timing and levels (`library/starts/ingame_start_NN.wav`) |
 | `ambience.py` | spectator montages | 393 s `cars_on_track` loop of real trackside shots, cut at camera cuts |
 | `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (only with `package.py --synth-starts`) |

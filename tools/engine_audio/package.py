@@ -335,6 +335,7 @@ def main() -> int:
         if not target.is_dir():
             raise SystemExit(f"pack not installed yet: {target} (run build_pack.py --install)")
         print(overlay.apply(target, pack) if overlay.overlay_for(pack) else overlay.remove(target))
+        starts.main()                 # library/starts/start_NN_*.wav, the browser's "Real starts"
         import start_preview          # the starts as the game mixes them, for the browser
         start_preview.main()
         # keep the mod browser (tools/mod_browser.py) in sync with what is installed
