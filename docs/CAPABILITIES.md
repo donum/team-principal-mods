@@ -128,7 +128,10 @@ that older packs don't have.
 2. Are custom option keys in `regulations.json` (e.g. `dtm_1991`) accepted?
 3. Can the same track appear in two consecutive weeks (heat 1 and heat 2)?
 4. Does `entry_count` above 3 work when `formula_team_entry_cap` is `three`?
-5. Does relabelling `car_parts.json` parts carry through to the UI?
+5. Does relabelling `car_parts.json` parts carry through to the UI? Not
+   everywhere: the race event log writes "FRONT WING DAMAGE" and "changed
+   front wing" (seen in a 2013 race). The Factory and Parts Warehouse
+   screens are still to check.
 6. How does the schedule key resolve: by track file stem (`hoc`) or by `name`
    (`Hockenheim`)? Both styles appear in the wild.
 7. Does a minimum mass above 1,000 kg break the speed model? Lap-time

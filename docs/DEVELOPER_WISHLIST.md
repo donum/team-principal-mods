@@ -250,9 +250,11 @@ under "Simplifications".
   happens in a race.
 - **Today:** contact sets part damage (`incidents.*_part_damage_fraction`,
   the lap-one `front_wing` outcome), and the pit-stop settings
-  (`pitstops`) cover only tyre wear, pit-lane loss and stop failures. How
-  a stop deals with a damaged part isn't in the data, so a pack can't make
-  it touring-car-like.
+  (`pitstops`) cover only tyre wear, pit-lane loss and stop failures.
+  Seen in a 2013 race event log: "FRONT WING DAMAGE: <driver> has severe
+  front wing damage", then at the next stop "FRONT WING: <driver> changed
+  front wing". So the game swaps the part F1-style, and no setting turns
+  that off or makes it slower.
 - **Workaround:** lap-one pile-ups mostly cost time (`front_wing` 0.3 →
   0.15), contact damages parts half as much as vanilla, and the radio
   lines say the driver carries on.
