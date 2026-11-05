@@ -19,7 +19,7 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5, E8, E9 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5, E8, E9, E10, E11 |
 
 ---
 
@@ -345,6 +345,28 @@ under "Simplifications".
 - **Request:** document the timing next to `race_engines.json`, or let a
   clip carry a `go_s` (where its getaway is) that the game lines up with
   lights out.
+
+### E11. A full field crossing the line · P3
+- **Needed by:** dtm-2013.
+- **2013:** 22 cars, and on the first laps the field crosses the line
+  nose to tail: a wall of sound, cars clearly one after another.
+- **Today** (read from `ui/audio_manager.py` and `ui/hotlap_audio.py`):
+  - every car gets a voice (no cap, channels grow as needed), but
+    `_refresh_flyby_mix` keeps only the **3** voices nearest the line at
+    full weight and turns the rest to **0.4** (-8 dB);
+  - a headroom term (`min(1/sqrt(sum w^2), 2.5/sum w)`) then scales the
+    whole group, so a pack is never much louder than about 2.5 cars. In
+    game a full field sounds like 7 or 8 cars;
+  - `passby_audio` is one clip key per supplier, so every Audi plays
+    the same recording; two Audis a few tenths apart fuse into one car.
+- **Workaround:** none in data for the mix. For the fusing: untag the
+  suppliers so cars pick at random from a larger bank (losing the make
+  sound per car), or live with it.
+- **Request:**
+  - make the foreground count, the background weight and the headroom
+    cap settings in `hotlap_flybys.json` (or raise them for races);
+  - let `passby_audio` take a list of keys, picked at random per car, so
+    a make can have several recordings.
 
 ---
 
