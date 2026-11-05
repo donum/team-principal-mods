@@ -143,17 +143,25 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
 - **Starts (`starts.py`):** one start, picked by ear: the Hockenheim
   finale "Grid and Start" video (`fk9f2Qt5x20`), 15 s of clean grid
   revving and the field swelling past.
-  **Length:** the launch is 12 s (`launch_s`), picked by ear over 15 s,
-  18 s and the old 22.5 s. A plain 12 s fade lost the recording's close
-  pass (11.6 s) and sounded flat: the level rule then lifted an even roar
-  with no climax. So 3 s of steady roar (7–10 s) are spliced out (`skip`,
-  1 s equal-power crossfade, no level change). The pass lands at 8.6 s,
-  then the recording's own drop-off and a 2 s fade (`fade_s`). As played:
-  about -20 dB after the getaway, -17 to -18 through the roar, -15 on the
-  pass. The 22.5 s version crossfaded in the ending of the
-  2017 Hockenheim start (`IBuEsBSh9_I`, 16–22.5 s); that ending is no
-  longer needed. `STARTS` still takes a `tail` for a recording that
-  stops too early.
+  **Shape and length** (14.5 s, tuned by ear against previews):
+  - *Climax:* the close pass (11.6 s into the recording) must stay in;
+    a plain 12 s fade lost it and sounded flat (the level rule then
+    lifted an even roar). 5–10 s of steady roar are spliced out (`skip`,
+    1 s equal-power crossfade, no level change), so the pass lands at
+    6.6 s, about 4.6 s after the cars move.
+  - *Moving away:* the stock launches are 10.9 s and fade out from the
+    getaway; ours ended on the field still loud. At 8 s it now
+    crossfades (1.5 s, levels matched) into the 2017 Hockenheim start
+    (`IBuEsBSh9_I`, 16–22.5 s), the field leaving towards turn 1: real
+    distance. Phone recordings lose little level as cars leave (the
+    gain control holds it up) but go dull, the spectral centroid falling
+    from ~4 kHz on the pass to 1.3 kHz here.
+  - *Fade:* the last 4 s fall a steady 30 dB (`fade_db`); the cosine
+    fade held and then dropped, which sounded like a file fading out.
+    A sliding low-pass on top was tried and left out: the recording is
+    already dull there.
+  - As played: about -20 dB after the getaway, -18 through the roar,
+    -15 on the pass, -17 to -18 in the 2017 part, then the fade.
   Both stock slots (`grid_*_01`, `_02`) point at it, so the random pick
   never falls back to stock.
   **Why so few:** in most fan videos the crowd cheers and the phone mic

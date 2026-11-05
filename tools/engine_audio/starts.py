@@ -12,10 +12,10 @@ and listed by hand below. This stage
   2. cuts the launch so that go lands GO_AT_S into it. The game starts
      grid_launch when the 3rd of five lights comes on (0.5 s apart), so the
      clip opens with the grid's last revving and lights out falls 1.5 s in
-     (the cars move at 2.0 s). The launch runs to the end of the recording,
-     or on into a `tail` from another recording (equal-power crossfade,
-     levels matched), has `skip` spliced out and is cut to `launch_s` if
-     set, then fades out;
+     (the cars move at 2.0 s). The launch can have a stretch spliced out
+     (`skip`), runs to the end of the recording or on into a `tail` from
+     another recording (equal-power crossfade, levels matched), is cut to
+     `launch_s` if set, then fades out;
   3. loops the grid revving: up to IDLE_MAX_S of it, the tail crossfaded
      into the head so it repeats without a click.
 
@@ -47,21 +47,27 @@ GO_AT_S = 1.6
 OUT_DIR = LIBRARY_DIR / "starts"
 
 # video id, grid revving from/to, go estimate (refine=False: exact), launch end
-# (None: end of the video), optional tail (video id, from, to), optional
-# skip (a, b: launch seconds spliced out), launch_s / fade_s (clip length and
-# fade-out, default END_FADE_S), note;
+# (None: end of the video), note; optional: skip (a, b: launch seconds spliced
+# out), tail (video id, from, to) joined at join_s launch seconds (default:
+# the end) over tail_xf_s, launch_s (clip length), fade_s (default
+# END_FADE_S) and fade_db (a steady fall of that many dB; default a cosine);
 # seconds in the video
 STARTS = [
     # go set by hand: the 1-4 kHz roar steps up 6 dB at 54.6 s and stays; the
     # phone's gain control smears the broadband level, so refine_go is off
-    # 12 s (picked by ear 2026-11-04 over 15, 18 and the old 22.5 s with a
-    # 2017 tail). A plain 12 s fade lost the close pass at 11.6 s and sounded
-    # flat, so 7-10 s of steady roar is spliced out: the pass lands at 8.6 s,
-    # then the recording's own drop-off and a 2 s fade
+    # 14.5 s, picked by ear 2026-11-05. 5-10 s of steady roar are spliced out
+    # so the close pass lands at 6.6 s (the plain 12 s cut lost it and sounded
+    # flat); at 8 s it crossfades into the 2017 Hockenheim field leaving
+    # towards turn 1, real distance (already dull: centroid 2.4 -> 1.3 kHz),
+    # then a 4 s fade falling steadily in dB. The cosine fade sounded like a
+    # file fading out, not cars moving away; a sliding low-pass (on our own
+    # recording, or on this ending) was tried and left out.
     dict(vid="fk9f2Qt5x20", idle=(37.0, 52.0), go=54.5, refine=False, end=None,
-         skip=(7.0, 10.0), launch_s=12.0, fade_s=2.0,
+         skip=(5.0, 10.0), tail=("IBuEsBSh9_I", 16.0, 22.5), join_s=8.0, tail_xf_s=1.5,
+         fade_s=4.0, fade_db=30,
          note="Hockenheim finale, grid and start: clean revving, the getaway, the field "
-              "swelling past (7-10 s spliced out), 12 s with a 2 s fade"),
+              "swelling past (5-10 s spliced out), then the 2017 Hockenheim field leaving "
+              "towards turn 1, 14.5 s"),
 ]
 # Set aside after listening in game (2026-11-04): noise and mic overload at the
 # launch (Nurburgring 2014 x_JJhPIFjdY, Hockenheim 2012 kf4kpYMJ3vc, Zandvoort
@@ -95,9 +101,9 @@ def rms(x: np.ndarray) -> float:
     return float(np.sqrt(np.mean(np.square(x, dtype=np.float64))) + 1e-12)
 
 
-def join_tail(launch: np.ndarray, tail: np.ndarray) -> np.ndarray:
+def join_tail(launch: np.ndarray, tail: np.ndarray, xf_s: float = TAIL_XF_S) -> np.ndarray:
     """Equal-power crossfade, the tail scaled to the launch's level where they meet."""
-    xf = int(TAIL_XF_S * SR)
+    xf = int(xf_s * SR)
     tail = tail * (rms(launch[-xf:]) / rms(tail[:xf]))
     th = np.linspace(0, np.pi / 2, xf)[:, None]
     mid = launch[-xf:] * np.cos(th) + tail[:xf] * np.sin(th)
@@ -126,15 +132,23 @@ def render(db, s: dict):
     x = decode(path, t0, None if s["end"] is None else s["end"] - t0, SR, 2)
     go = refine_go(x, t0, s["go"]) if s.get("refine", True) else s["go"]
     launch = x[int((go - GO_AT_S - t0) * SR):].copy()
-    if s.get("tail"):
-        _, tpath = path_of(db, s["tail"][0])
-        launch = join_tail(launch, decode(tpath, s["tail"][1], s["tail"][2] - s["tail"][1], SR, 2))
     if s.get("skip"):
         launch = splice(launch, *s["skip"])
+    if s.get("tail"):
+        if s.get("join_s"):
+            launch = launch[:int((s["join_s"] + s.get("tail_xf_s", TAIL_XF_S)) * SR)]
+        _, tpath = path_of(db, s["tail"][0])
+        launch = join_tail(launch, decode(tpath, s["tail"][1], s["tail"][2] - s["tail"][1], SR, 2),
+                           s.get("tail_xf_s", TAIL_XF_S))
     if s.get("launch_s"):
         launch = launch[:int(s["launch_s"] * SR)]
     fo = int(s.get("fade_s", END_FADE_S) * SR)
-    launch[-fo:] *= np.cos(np.linspace(0, np.pi / 2, fo))[:, None]
+    if s.get("fade_db"):
+        # steady fall in dB (how a receding field sounds), not a cosine that
+        # holds and then drops; the last 30 ms go to silence in package.fades
+        launch[-fo:] *= (10 ** (-s["fade_db"] * np.linspace(0, 1, fo) / 20))[:, None]
+    else:
+        launch[-fo:] *= np.cos(np.linspace(0, np.pi / 2, fo))[:, None]
     idle_end = min(s["idle"][1], go - 0.25)
     idle_start = max(s["idle"][0], idle_end - IDLE_MAX_S)
     idle = make_loop(x[int((idle_start - t0) * SR):int((idle_end - t0) * SR)])
