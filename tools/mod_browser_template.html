@@ -309,6 +309,10 @@ function overview() {
       <div class="scroll"><table><thead><tr><th>Constant</th><th>Vanilla</th><th>Mod</th></tr></thead><tbody>
       ${D.constants.map(c => `<tr><td class="mono small">${esc(c.name)}</td><td class="mono small muted">${esc(c.vanilla ?? "—")}</td><td class="mono small">${esc(c.mod)}</td></tr>`).join("")}
       </tbody></table></div>
+      ${(D.data_patches || []).length ? `<h3 style="margin:6px 0 0">Data changed from vanilla</h3>
+      <div class="scroll"><table><thead><tr><th>Setting</th><th>Vanilla</th><th>Mod</th></tr></thead><tbody>
+      ${D.data_patches.map(r => `<tr><td class="mono small">${esc(r.file.replace(/\.json$/, ""))} · ${esc(r.path)}</td><td class="mono small muted">${esc(r.vanilla ?? "—")}</td><td class="small">${r.lines ? r.lines.map(esc).join("<br>") : `<span class="mono">${esc(r.mod ?? "—")}</span>`}</td></tr>`).join("")}
+      </tbody></table></div>` : ""}
       ${unheard.length ? `<p class="small" style="margin:0">${chip("unheard", "never heard")} ${unheard.length} sound clips sit in a bank the game never picks from: ${esc(unheard.map(s => s.key).join(", "))}.</p>` : ""}
     </div>
   </div>

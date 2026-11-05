@@ -249,6 +249,29 @@ def classify_files(pack: Path, base: Path, private: set[str], season: Path) -> l
     return rows
 
 
+def data_patches(pack: Path, base: Path, season: Path) -> list[dict]:
+    """Leaf values that the season's "$merge_base" data files change, vanilla vs mod."""
+    rows = []
+
+    def walk(path, b, m):
+        if isinstance(b, dict) and isinstance(m, dict):
+            for k in sorted(set(b) | set(m)):
+                walk(f"{path}.{k}" if path else k, b.get(k), m.get(k))
+        elif b != m:
+            short = lambda v: v if v is None or isinstance(v, (int, float, str, bool)) else (
+                f"{len(v)} lines" if isinstance(v, list) else json.dumps(v, ensure_ascii=False))
+            rows.append({"file": name, "path": path, "vanilla": short(b), "mod": short(m),
+                         "lines": m if isinstance(m, list) and all(isinstance(x, str) for x in m) else None})
+
+    for src in sorted((season / "data").glob("*.json")):
+        spec = load_json(src, {})
+        if not (isinstance(spec, dict) and spec.get("$merge_base")) or not (base / src.name).exists():
+            continue
+        name = src.name
+        walk("", load_json(base / name, {}), load_json(pack / name, {}))
+    return rows
+
+
 # ------------------------------------------------------------- sections
 
 def build_drivers(pack, base, season, media, sources):
@@ -604,6 +627,7 @@ def build(season: Path, game: Path) -> Path:
         "tracks": tracks, "calendar": calendar, "backgrounds": backgrounds,
         "sounds": sounds, "candidates": candidates, "library_page": library_page,
         "files": files,
+        "data_patches": data_patches(pack, base, season),
         "constants": [{"name": k, "vanilla": bc.get(k), "mod": v} for k, v in pc.items() if bc.get(k) != v],
         "credits": (pack / "credits.txt").read_text(encoding="utf-8") if (pack / "credits.txt").exists() else "",
     }

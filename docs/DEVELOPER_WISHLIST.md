@@ -19,7 +19,7 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, E1, E2, E5, E8, E9, E10, E11 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, D6, D7, E1, E2, E5, E8, E9, E10, E11 |
 
 ---
 
@@ -197,6 +197,11 @@ under "Simplifications".
 - **Request:** data-defined part categories with labels and effects, so a
   pack can use e.g. splitter, rear spoiler, suspension, brakes, gearbox and
   tyres. Also a way to remove categories completely.
+- **2013 workaround:** the six slots are relabelled through
+  `car_parts.json` (front splitter, rear wing, underbody, diffuser, side
+  bodywork, monocoque), with low wear per lap. Not yet checked in game
+  that the labels reach every screen. The `front_wing` key still drives
+  the lap-one damage outcome and the "wing damage" radio bank.
 
 ### D2. Drivetrain · P2
 - **Needed by:** dtm-1991.
@@ -235,6 +240,42 @@ under "Simplifications".
   come out about 10 km/h high.
 - **Request:** a wider range, or a profile given as power (hp), drag area and
   downforce instead of multipliers.
+
+### D6. Damage repair at pit stops · P2
+- **Needed by:** dtm-2013 (and the Group A packs).
+- **Real world:** a DTM front end is the splitter, bumper and bodywork, not
+  a nose cone that clips off. After contact the crew pulls off loose
+  pieces or tapes them up, and the driver carries the damage to the end.
+  Swapping the front end costs far more than a tyre stop, so it rarely
+  happens in a race.
+- **Today:** contact sets part damage (`incidents.*_part_damage_fraction`,
+  the lap-one `front_wing` outcome), and the pit-stop settings
+  (`pitstops`) cover only tyre wear, pit-lane loss and stop failures. How
+  a stop deals with a damaged part isn't in the data, so a pack can't make
+  it touring-car-like.
+- **Workaround:** lap-one pile-ups mostly cost time (`front_wing` 0.3 →
+  0.15), contact damages parts half as much as vanilla, and the radio
+  lines say the driver carries on.
+- **Request:** a per-pack `damage_repair` setting under `pitstops`: `none`
+  (drive on with the damage), `repair` (fixed extra time, e.g. 20–40 s,
+  restores part of the damage) or `swap` (today's behaviour), ideally per
+  part.
+
+### D7. Development freeze and homologation · P2
+- **Needed by:** dtm-2013.
+- **Real world:** 2013 DTM cars were homologated before the season, and
+  aero development was largely frozen during it. Teams built spares to
+  replace crash damage, not new designs.
+- **Today:** teams design and build new part versions all season, as in
+  F1. `build_cost_m` and `staff_hours` in `car_parts.json` are
+  manufacturing values, so raising them only makes spares scarce; it
+  doesn't stop development.
+- **Workaround:** none.
+- **Request:** a regulation for each part category: `frozen` (spares of
+  the homologated design only), `tokens: N` (a set number of updates per
+  season), or `open`; or a homologation date after which new designs are
+  blocked until the next season. C4 (customer cars) covers who owns the
+  homologated design; this item covers when it may change.
 
 ## E. Modding and data format
 

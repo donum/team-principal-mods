@@ -1,0 +1,12 @@
+{
+  "$merge_base": true,
+  "$comment": "2013 DTM bodywork names for the game's part slots (the keys stay, wishlist D1). The cars really had a splitter, rear wing, flat underbody, diffuser, side bodywork with flicks and a carbon monocoque. Bodywork barely wears; contact is what damages it, so wear per lap is low. build_cost_m and staff_hours are manufacturing values and stay vanilla.",
+  "parts": {
+    "front_wing": { "label": "Front Splitter", "abbr": "FS", "wear_per_lap": 0.1 },
+    "rear_wing": { "wear_per_lap": 0.05 },
+    "underfloor": { "label": "Underbody", "abbr": "UB", "wear_per_lap": 0.1 },
+    "diffuser": { "wear_per_lap": 0.05 },
+    "sidepods": { "label": "Side Bodywork", "abbr": "SB", "wear_per_lap": 0.05 },
+    "chassis": { "label": "Monocoque", "abbr": "M", "wear_per_lap": 0.05 }
+  }
+}

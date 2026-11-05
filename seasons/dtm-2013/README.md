@@ -121,7 +121,13 @@ brackets).
 - **Top speeds** come out about 10 km/h high: the car profile is at the
   game's limits for drag and acceleration (D5).
 - **Development:** chassis and aero were homologated, but in the game teams
-  still develop at different rates during the season (C4).
+  still develop at different rates during the season (C4, D7).
+- **Parts** keep the game's open-wheel slots under touring-car names: front
+  splitter, rear wing, underbody, diffuser, side bodywork, monocoque (D1).
+  Bodywork wears little per lap; contact is what damages it.
+- **Damage:** a damaged front end was driven home, not swapped at a stop.
+  The game's repair at a stop isn't in the data (D6), so lap-one pile-ups
+  mostly cost time and contact damages parts half as much as vanilla.
 - **Time-limited races:** the wet Nürburgring and final Hockenheim races
   were stopped at 75 minutes, after 45 of 49 and 41 of 42 laps. The game
   always runs the full lap count (A3). In season 6 the dry races took 66–77
