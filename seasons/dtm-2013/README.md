@@ -47,6 +47,19 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   file; the game takes its compounds from this file and treats any other
   compound name as the default, the hard). `formula_compound_usage` forces
   both compounds in a dry race.
+- **Sponsors** (`sponsors` in `gen.json`): each team starts with its real
+  2013 sponsors from the liveries (`research/spotter_guide.csv`,
+  `research/liveries.csv`): the lower-numbered car's main sponsor as
+  primary, the team-mate's next, then partners seen on the team's cars
+  (Schnitzer: BMW Bank, Puma, H&R; Phoenix: Schaeffler, TAG Heuer). The
+  manufacturers' own campaigns (bmw.com/m3, AMG, Audi ultra, Audi Cup) and
+  the series partners (DEKRA, ADAC, Hankook) are left out. `build_pack.py`
+  swaps them in for the vanilla deals each team inherits from its clone.
+  Every real sponsor keeps the slot, contract length, rating and money of
+  the deal it replaces (left-over money goes to the primary), so sponsor
+  income is unchanged from v0.2. The replaced fictional sponsors leave the
+  pool; the other 29 stay as the free market for later seasons. Names are
+  used descriptively only; there are no sponsor logos.
 - **Economy:** budgets and salaries use the game's currency at the scale of
   the other packs, so the game's development and part costs still work. They
   aren't real euros. Top driver salaries are capped at 2.5 (DTM scale), not F1
@@ -139,6 +152,14 @@ brackets).
   the poles still calibrate the dry pace. The game rolls the weather per
   track (base chance of a wet race 5%, the Nürburgring 1.4×), so these
   rounds are usually dry in the game.
+- **Driver codes:** the three-letter timing codes (SPE, WER, TSC...) are in
+  `research/spotter_guide.csv`; the game has no field for them (C6).
+- **One car image per team:** team-mates' different liveries, Abt
+  Sportsline's red (#11) and yellow (#12) mirrors and Wehrlein's one-off
+  VfB Stuttgart design can't be shown (E4).
+- **Sponsors:** make-wide partners (Puma, Sonax, Würth, Petronas...) ran on
+  every car of a make; here each is on one team (E12). Sponsor money is the
+  vanilla deals' and not real (E6).
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
 
 ## Lap times

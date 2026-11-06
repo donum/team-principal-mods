@@ -359,11 +359,12 @@ function teamCard(t) {
     <div class="car">${t.car ? `<img src="${esc(t.car)}" alt="${esc(t.name)} car" loading="lazy" data-full tabindex="0">` : `<span class="none">no car image</span>`}</div>
     <div class="body">
       <div class="head">${t.logo ? `<img src="${esc(t.logo)}" alt="${esc(t.name)} logo" loading="lazy" data-full tabindex="0">` : ""}<div style="min-width:0"><div class="name">${esc(t.name)}</div><div class="teamline"><span class="swatch" style="background:${rgb(t.color_rgb)}"></span><span class="swatch" style="background:${rgb(t.secondary_color_rgb)}"></span>${esc(t.engine)}</div></div></div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px">${provChip(t.prov)}${t.cloned_from ? chip("vanilla", "staff, sponsors and ownership cloned from vanilla " + t.cloned_from) : ""}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">${provChip(t.prov)}${t.cloned_from ? chip("vanilla", (t.sponsors || []).some(x => x.prov === "custom") ? "staff, ownership and sponsor money cloned from vanilla " + t.cloned_from : "staff, sponsors and ownership cloned from vanilla " + t.cloned_from) : ""}</div>
       <div class="facts" style="margin:0">${s("pace", t.team_pace)}${s("budget", "$" + t.budget_m + "m")}${s("reliability", t.chassis_reliability)}${s("tyres", t.tyre_management)}${s("prestige", t.prestige_base)}${s("mass", t.car_mass_kg + " kg")}</div>
       <div class="small"><span class="muted">Drivers:</span> ${esc(t.drivers.join(", ") || "—")}</div>
+      ${(t.sponsors || []).length ? `<div class="small"><span class="muted">Sponsors:</span> ${t.sponsors.map(x => `<span title="${esc(x.slot + ", " + (x.industry || "?") + ", " + nat(x.nationality) + ", " + (x.seasons ?? "?") + " season(s)" + (x.prov === "vanilla" ? ", vanilla" : ""))}">${esc(x.name)}${x.amount_m != null ? ` <span class="muted">$${esc(x.amount_m)}m</span>` : ""}${x.prov === "vanilla" ? ` <span class="muted">(vanilla)</span>` : ""}</span>`).join(" · ")}</div>` : ""}
       ${t.history_text ? `<div class="history">${esc(t.history_text)}</div>` : ""}
-      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers"])}</details>
+      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers", "sponsors"])}</details>
     </div>
   </article>`;
 }

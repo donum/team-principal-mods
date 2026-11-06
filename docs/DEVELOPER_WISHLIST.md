@@ -19,7 +19,7 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, D1, D3, D4, D5, D6, D7, E1, E2, E5, E8, E9, E10, E11 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, D1, D3, D4, D5, D6, D7, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12 |
 
 ---
 
@@ -188,6 +188,16 @@ under "Simplifications".
 - **Today:** we changed `DRIVER_RETIREMENT_*` in `constants.py`.
 - **Request:** expose these in JSON (see E2).
 
+### C6. Driver timing codes · P3
+- **Needed by:** dtm-2013.
+- **2013:** every driver had a three-letter code on the timing screens and
+  on the car (SPE, WER, PAF; Scheider was TSC, not SCH).
+- **Today:** `drivers.json` has no field for it.
+- **Workaround:** none. The codes are kept in
+  `seasons/dtm-2013/research/spotter_guide.csv`.
+- **Request:** an optional `code` per driver, shown in timing towers and
+  results.
+
 ## D. Cars and simulation
 
 ### D1. Touring-car part set · P1
@@ -308,13 +318,18 @@ under "Simplifications".
     buyouts, events, relationships, staff).
 
 ### E4. Documented asset names · P2
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, dtm-2013.
 - **What we found:** engine logos are looked up by engine name without
   spaces (`fordcosworth.png`), and team images by team name without spaces.
 - **Request:**
   - Document the lookups, and allow an explicit `"logo": "file.png"` field.
   - Allow a **car image per entry**, not just per team. In 1991, AMG's
     Ludwig ran König Pilsener black while Thiim ran West red-white.
+  - **2013:** team-mates differed in sponsor and colour on almost every
+    team (Schnitzer: BMW Bank black and a white-blue M3 car), down to
+    details such as Abt Sportsline's red (#11) and yellow (#12) mirrors
+    and dive planes. Wehrlein's #18 ran a one-off VfB Stuttgart design at
+    one race. Request: a car image per entry, and optionally per round.
 
 ### E5. Track editor features · P2
 - **Needed by:** dtm-1991, dtm-2013.
@@ -338,10 +353,14 @@ under "Simplifications".
     Oschersleben and Zandvoort were moved onto the pit straight.
 
 ### E6. Currency and economy per pack · P3
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, dtm-2013.
 - **1991:** DTM budgets were in Deutsche Mark and much smaller than F1.
+- **2013:** the real 2013 sponsors replace the vanilla starting deals, but
+  each keeps the money of the vanilla deal it replaces ($25–325m a deal,
+  $137–410m a team against budgets of about $90m), so the economy the
+  pack was tested with doesn't change. The amounts aren't real.
 - **Request:** a currency label and symbol per pack, and global scale
-  factors for salaries, costs and prize money.
+  factors for salaries, costs, sponsor money and prize money.
 
 ### E7. Historical start state · P3
 - **Needed by:** dtm-1991.
@@ -411,6 +430,18 @@ under "Simplifications".
     cap settings in `hotlap_flybys.json` (or raise them for races);
   - let `passby_audio` take a list of keys, picked at random per car, so
     a make can have several recordings.
+
+### E12. A sponsor on several teams · P3
+- **Needed by:** dtm-2013.
+- **2013:** make-wide partners ran on every car of a make: Puma, Sonax,
+  Allgeier, Sachs and H&R on all eight BMWs, Petronas on all six
+  Mercedes, Würth on all eight Audis.
+- **Today:** a sponsor is one record in `sponsors.json`, and every vanilla
+  sponsor backs one team. We didn't test whether two teams can hold a
+  deal with the same sponsor.
+- **Workaround:** each partner goes to one team of its make.
+- **Request:** document whether a sponsor can back several teams, or
+  allow a make-wide (supplier) deal.
 
 ---
 

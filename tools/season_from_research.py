@@ -29,7 +29,10 @@ Seasons outside the Group A era override the template's rules in gen.json:
 * "skill_range" [low, high] spreads driver skills (default [10, 18]);
 * "track_placeholders" {id: {"from": track, "override": {...}}} copy a track
   under a new id, e.g. a second visit to a venue with its own rain chance;
-* "economy": "budget_per_rating", "salary_min_m", "salary_max_m".
+* "economy": "budget_per_rating", "salary_min_m", "salary_max_m";
+* "sponsors": {"pool": {name: {"industry", "nationality"}}, "teams": {team:
+  [names, primary first]}} real starting deals, copied to season.json for
+  build_pack.py, which swaps them in for the cloned teams' fictional deals.
 
 Usage:
     python tools/season_from_research.py seasons/dtm-1990
@@ -265,6 +268,8 @@ def main():
     manifest["track_overrides"] = gen.get("track_overrides", {})
     if gen.get("track_placeholders"):
         manifest["track_placeholders"] = gen["track_placeholders"]
+    if gen.get("sponsors"):
+        manifest["sponsors"] = {k: v for k, v in gen["sponsors"].items() if not k.startswith("$")}
     dump_json(season / "season.json", manifest)
     regulations = season / "patches" / "regulations.json"
     if gen.get("rules") == "own":

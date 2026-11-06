@@ -54,6 +54,15 @@
 - https://www.crash.net/dtm/results/190785/1/dtm-hockenheim-2013-race-results (42 laps, Hockenheim)
 - Search summaries of press reports on Haug and Wolff (autosport.com, grandprix247, emercedesbenz)
 - Wikidata for birth dates
+- Andy Blackmore, *2013 DTM Spotter Guide* v4 (andyblackmoredesign.com / SpotterGuides.com, for Fourtitude.com): driver codes, flags, team and car names, main and secondary sponsors, mirror colours, the #18 VfB design and the calendar. Transcribed to `spotter_guide.csv`; used as a reference for facts only, nothing copied from it.
+
+## Spotter guide vs entry list
+- Numbers, drivers, nationalities, makes and the calendar agree with `entries.csv` and `calendar.csv` (the guide misspells the finale "Hockheiming").
+- The guide names the Mercedes teams by operator ("Mercedes AMG DTM-Team (HWA)", "(Mücke)"). The entry list's entrant names (STIHL/AMG-Mercedes, EURONICS/Thomas Sabo AMG-Mercedes, stern/AMG-Mercedes) win, as before.
+- The guide writes "Audi RS5 DTM"; the entry list and Audi write "RS 5".
+- Timing codes follow the surname except Scheider (TSC).
+- Series partners on every car: DEKRA and ADAC (number panel), Hankook. Make-wide partners: BMW: Puma, Sonax, Castrol EDGE, Allgeier, Sachs, H&R, Akrapovič; Audi: Würth, Castrol, Akrapovič; Mercedes: Petronas, H&R, Sandtler.
+- #18 Wehrlein ran a VfB Stuttgart design at one race; the guide doesn't say which.
 
 ## Unverified
 - Moscow Raceway 2013 layout length: 2.555 km (fan wiki, "short layout") vs 2.661 km (racingyears). Laps: 74.

@@ -1,0 +1,23 @@
+number,code,flag,driver,guide_team,guide_car,make_badge,main_sponsor,other_sponsors,make_partners,guide_note,entries_check
+1,SPE,canadian,Bruno Spengler,BMW Team Schnitzer,BMW M3 DTM,BMW,BMW Bank,,Puma; Sonax; Castrol EDGE; Allgeier; Sachs; H&R; Akrapovič,,agrees
+2,WER,german,Dirk Werner,BMW Team Schnitzer,BMW M3 DTM,BMW,ADRENALIN IN SERIE: bmw.com/m3 (BMW's own M3 campaign),,Puma; Sonax; Castrol EDGE; Allgeier; Sachs; H&R; Akrapovič,,agrees
+3,PAF,british,Gary Paffett,Mercedes AMG DTM-Team (HWA),DTM Mercedes AMG C-Coupé,Mercedes-Benz,Euronics,best of electronics! (slogan),Petronas; H&R; Sandtler,,guide gives the umbrella team; entry list: EURONICS/Thomas Sabo AMG-Mercedes [HWA AG]
+4,MER,spanish,Roberto Merhi,Mercedes AMG DTM-Team (HWA),DTM Mercedes AMG C-Coupé,Mercedes-Benz,Thomas Sabo,Jewellery & Watches (tag),Petronas; H&R; Sandtler,,guide gives the umbrella team; entry list: EURONICS/Thomas Sabo AMG-Mercedes [HWA AG]
+5,MOR,italian,Edoardo Mortara,Audi Sport Team Rosberg,Audi RS5 DTM,Audi,quattro GmbH,Playboy,Würth; Castrol; Akrapovič,,agrees (guide spells RS5 without the space)
+6,ALB,portuguese,Filipe Albuquerque,Audi Sport Team Rosberg,Audi RS5 DTM,Audi,Audi Financial Services,,Würth; Castrol; Akrapovič,,agrees
+7,FAR,brazilian,Augusto Farfus,BMW Team RBM,BMW M3 DTM,BMW,Castrol EDGE,,Puma; Sonax; Allgeier; Sachs; H&R; Akrapovič,,agrees
+8,HAN,american,Joey Hand,BMW Team RBM,BMW M3 DTM,BMW,Exide Batteries,,Puma; Sonax; Castrol EDGE; Allgeier; Sachs; H&R; Akrapovič,,agrees
+9,VIE,german,Christian Vietoris,Mercedes AMG DTM-Team (HWA),DTM Mercedes AMG C-Coupé,Mercedes-Benz,AMG (Mercedes' own brand),media@home; Driving Performance (AMG slogan),Petronas; H&R; Sandtler,Chrome base colour,guide gives the umbrella team; entry list: STIHL/AMG-Mercedes [HWA AG]
+10,WIC,canadian,Robert Wickens,Mercedes AMG DTM-Team (HWA),DTM Mercedes AMG C-Coupé,Mercedes-Benz,STIHL,GRIP (RTL II motoring show),Petronas; H&R; Sandtler,,guide gives the umbrella team; entry list: STIHL/AMG-Mercedes [HWA AG]
+11,EKS,swedish,Mattias Ekström,Audi Sport Team Abt Sportsline,Audi RS5 DTM,Audi,Red Bull,ABT,Würth; Castrol; Akrapovič,Red mirrors and dive planes,agrees
+12,GRE,british,Jamie Green,Audi Sport Team Abt Sportsline,Audi RS5 DTM,Audi,Red Bull,ABT,Würth; Castrol; Akrapovič,Yellow mirrors and dive planes,agrees
+15,TOM,german,Martin Tomczyk,BMW Team RMG,BMW M3 DTM,BMW,BMW M Performance Zubehör,,Puma; Sonax; Castrol EDGE; Allgeier; Sachs; H&R; Akrapovič,,agrees
+16,PRI,british,Andy Priaulx,BMW Team RMG,BMW M3 DTM,BMW,Crowne Plaza Hotels & Resorts,,Puma; Sonax; Castrol EDGE; Allgeier; Sachs; H&R; Akrapovič,,agrees
+17,JUN,spanish,Daniel Juncadella,Mercedes AMG DTM-Team (Mücke),DTM Mercedes AMG C-Coupé,Mercedes-Benz,stern,,Petronas; H&R; Sandtler,,guide gives the umbrella team; entry list: stern/AMG-Mercedes [Mücke Motorsport]
+18,WEH,german,Pascal Wehrlein,Mercedes AMG DTM-Team (Mücke),DTM Mercedes AMG C-Coupé,Mercedes-Benz,Mercedes-Benz Bank,VfB Stuttgart (one-off design),Petronas; H&R; Sandtler,VfB Stuttgart livery for one race (the guide does not say which),guide gives the umbrella team; entry list: stern/AMG-Mercedes [Mücke Motorsport]
+19,ROC,german,Mike Rockenfeller,Audi Sport Team Phoenix,Audi RS5 DTM,Audi,Schaeffler,LuK; INA; FAG (Schaeffler brands); TAG Heuer,Würth; Castrol; Akrapovič,,agrees
+20,MOL,spanish,Miguel Molina,Audi Sport Team Phoenix,Audi RS5 DTM,Audi,Audi Cup (Audi's football tournament),Tickets www.audicup.de; FC Bayern München crest on the rear wing,Würth; Castrol; Akrapovič,,agrees
+21,WIT,german,Marco Wittmann,BMW Team MTEK,BMW M3 DTM,BMW,Ice-Watch,,Puma; Sonax; Castrol EDGE; Allgeier; Sachs; H&R; Akrapovič,,agrees
+22,GLO,german,Timo Glock,BMW Team MTEK,BMW M3 DTM,BMW,Deutsche Post,,Puma; Sonax; Castrol EDGE; Allgeier; Sachs; H&R; Akrapovič,,agrees
+23,TSC,german,Timo Scheider,Audi Sport Team Abt,Audi RS5 DTM,Audi,auto TEST,JEDEN MONAT NEU (magazine slogan); ABT,Würth; Castrol; Akrapovič,,agrees
+24,TAM,french,Adrien Tambay,Audi Sport Team Abt,Audi RS5 DTM,Audi,Audi ultra (Audi's lightweight-technology campaign),ABT,Würth; Castrol; Akrapovič,,agrees

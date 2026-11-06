@@ -295,10 +295,18 @@ def build_teams(pack, base, season, manifest, media, sources):
     hist = load_json(pack / "team_histories.json", {}) or {}
     clones = manifest.get("team_clones", {})
     drivers = load_json(pack / "drivers.json", [])
+    ours = set(manifest.get("sponsors", {}).get("pool", {}))
+    pool = {s["name"]: s for s in load_json(pack / "sponsors.json", [])}
+    deals = {t["team"]: t.get("sponsors", []) for t in (load_json(pack / "starting_sponsors.json", {}) or {}).get("teams", [])}
     out = []
     for t in load_json(pack / "teams.json", []):
         n = nospace(t["name"])
-        out.append({**t, "prov": "custom",
+        sponsors = [{"slot": d["slot"], "name": d["name"], "seasons": d.get("seasons"),
+                     "amount_m": pool.get(d["name"], {}).get("amount_m"),
+                     "industry": pool.get(d["name"], {}).get("industry"),
+                     "nationality": pool.get(d["name"], {}).get("nationality"),
+                     "prov": "custom" if d["name"] in ours else "vanilla"} for d in deals.get(t["name"], [])]
+        out.append({**t, "prov": "custom", "sponsors": sponsors,
                     "car": media.image(pack / "assets" / "Cars" / f"{n}.png", f"cars/{n}.png"),
                     "logo": media.image(pack / "assets" / "logos" / f"{n}.png", f"logos/{n}.png"),
                     "history_text": hist.get(t["name"]), "cloned_from": clones.get(t["name"]),

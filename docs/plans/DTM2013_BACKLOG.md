@@ -64,8 +64,9 @@ also exists (not looked at yet). The base pack has three made-up series
 and `starting_sponsors.json` (each team's deals) come from the base pack.
 `no_title_sponsors` only removes title status.
 
-- Starting deals per team from the 2013 liveries (`research/liveries.csv`
-  has the main sponsors).
+- ~~Starting deals per team from the 2013 liveries~~ done: `sponsors` in
+  `gen.json` (from `research/spotter_guide.csv`), swapped in by
+  `build_pack.py` with the vanilla deals' money (see the pack README).
 - A pool of sponsors from the period for later seasons.
 - Check trademarks first: [LICENSE-CONTENT.md](../../LICENSE-CONTENT.md)
   says to use real names descriptively only. Sponsor logos

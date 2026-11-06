@@ -178,6 +178,54 @@ def clone_team_records(out, clones, season_dir):
     edit("relationships.json", lambda d: {k: {} for k in d})
 
 
+SPONSOR_TERMS = ("rating", "amount_m", "amount_range_m", "prestige_min", "active")
+
+
+def apply_sponsors(out, spec):
+    """Swap the cloned teams' fictional starting deals for their real sponsors.
+
+    `spec` is season.json "sponsors": {"pool": {name: {"industry",
+    "nationality"}}, "teams": {team: [names, primary first]}}. Each real
+    sponsor takes the slot, contract length, rating and money of the inherited
+    deal it replaces, so a team's sponsor income stays what its vanilla clone
+    gave it. With fewer real sponsors than inherited deals, the left-over money
+    goes to the primary sponsor. The replaced fictional sponsors leave the
+    pool; the rest stay as the free market for later seasons.
+    """
+    starting = load_json(out / "starting_sponsors.json")
+    pool = load_json(out / "sponsors.json")
+    by_name = {s["name"]: s for s in pool}
+    deals_of = {t["team"]: t for t in starting.get("teams", [])}
+    replaced, added = set(), {}
+    for team, names in spec["teams"].items():
+        entry = deals_of.get(team)
+        if entry is None:
+            sys.exit(f"sponsors: {team!r} has no inherited deals (not in team_clones?)")
+        old = entry["sponsors"]
+        if not names or len(names) > len(old):
+            sys.exit(f"sponsors: {team!r} lists {len(names)} sponsors, its clone has {len(old)} deals")
+        for name in names:
+            if name not in spec["pool"]:
+                sys.exit(f"sponsors: {name!r} ({team}) is not in the sponsor pool")
+            if name in added or name in by_name:
+                sys.exit(f"sponsors: {name!r} is used twice or clashes with a vanilla sponsor")
+        recs = []
+        for deal, name in zip(old, names):
+            src = by_name[deal["name"]]
+            recs.append({"name": name, **{k: copy.deepcopy(src[k]) for k in SPONSOR_TERMS if k in src},
+                         **spec["pool"][name]})
+        for deal in old[len(names):]:
+            extra = by_name[deal["name"]]
+            recs[0]["amount_m"] = round(recs[0]["amount_m"] + extra["amount_m"], 1)
+            if "amount_range_m" in recs[0] and "amount_range_m" in extra:
+                recs[0]["amount_range_m"] = [round(a + b, 1) for a, b in zip(recs[0]["amount_range_m"], extra["amount_range_m"])]
+        added.update({r["name"]: r for r in recs})
+        replaced |= {d["name"] for d in old}
+        entry["sponsors"] = [{**deal, "name": name} for deal, name in zip(old, names)]
+    dump_json(out / "starting_sponsors.json", starting)
+    dump_json(out / "sponsors.json", [s for s in pool if s["name"] not in replaced] + list(added.values()))
+
+
 def strip_title_sponsors(out):
     """Stop sponsors from renaming teams ("Patronix BMW M Team Schnitzer").
 
@@ -440,6 +488,8 @@ def build(season_dir, game, install, private_audio=True):
 
     if "team_clones" in manifest:
         clone_team_records(out, manifest["team_clones"], season_dir)
+    if "sponsors" in manifest:
+        apply_sponsors(out, manifest["sponsors"])
     if manifest.get("no_title_sponsors"):
         strip_title_sponsors(out)
     readable_team_text(out)
