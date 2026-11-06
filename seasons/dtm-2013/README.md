@@ -127,7 +127,7 @@ brackets).
   Bodywork wears little per lap; contact is what damages it.
 - **Damage:** a damaged front end was driven home, not swapped at a stop.
   The game's repair at a stop isn't in the data (D6), so lap-one pile-ups
-  mostly cost time and contact damages parts half as much as vanilla.
+  never break the front wing and contact damages parts half as much as vanilla.
 - **Time-limited races:** the wet Nürburgring and final Hockenheim races
   were stopped at 75 minutes, after 45 of 49 and 41 of 42 laps. The game
   always runs the full lap count (A3). In season 6 the dry races took 66–77

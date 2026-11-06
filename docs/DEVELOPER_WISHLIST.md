@@ -255,9 +255,10 @@ under "Simplifications".
   front wing damage", then at the next stop "FRONT WING: <driver> changed
   front wing". So the game swaps the part F1-style, and no setting turns
   that off or makes it slower.
-- **Workaround:** lap-one pile-ups mostly cost time (`front_wing` 0.3 →
-  0.15), contact damages parts half as much as vanilla, and the radio
-  lines say the driver carries on.
+- **Workaround:** lap-one pile-ups no longer break the front wing
+  (`front_wing` 0.3 → 0, its share moved to `time_loss`), contact damages
+  parts half as much as vanilla, and the radio lines say the driver carries
+  on. Contact later in the race can still break it, and then it's swapped.
 - **Request:** a per-pack `damage_repair` setting under `pitstops`: `none`
   (drive on with the damage), `repair` (fixed extra time, e.g. 20–40 s,
   restores part of the damage) or `swap` (today's behaviour), ideally per
