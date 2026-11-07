@@ -72,10 +72,15 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 - **Art:**
   - Cars: drawn by Pappydhorn12 (used with permission, see
     [credits.txt](credits.txt)) and cropped from their team sheets with
-    `tools/car_drawings.py` (`art/drawings.json`). Checked against the 2013
-    spotter guide on 2026-11-07: every livery matches, with two small text
-    differences (#23's name panel reads "T. Schneider" for Scheider; #5 has
-    SCHAEFFLER on the rear quarter where the guide shows PLAYBOY). The first
+    `tools/car_drawings.py` (`art/drawings.json`). The tool keeps the tyres,
+    wheel-arch gaps and the black underfloor (splitter, diffuser), gives
+    each car its whole antenna where it reaches into the car above on a
+    sheet, and stands every car's tyres on the same ground line (y=720), so
+    the image doesn't jump between teams in the menus. Checked against the
+    2013 spotter guide on 2026-11-07: every livery matches, with two small
+    text differences: #23's name panel read "T. Schneider", which the tool
+    corrects to Scheider (an `edits` entry), and #5 has SCHAEFFLER on the
+    rear quarter where the guide shows PLAYBOY. The first
     sheet named Schnitzer holds the 2013 RBM cars, which are used for RBM;
     the corrected Schnitzer sheet is saved as `BMW_Team_Schnitzer_1_2.png`.
     The sheet named RBM shows 2014 cars (BMW M4, Farfus in BMW Bank colours)

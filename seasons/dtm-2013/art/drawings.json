@@ -3,7 +3,9 @@
  "artist": "Pappydhorn12",
  "sheets": {
   "Abt_Sportsline.png": {"cars": [11, 12], "team": "Audi Sport Team Abt Sportsline"},
-  "Audi_Sport_Team_Abt.png": {"cars": [23, 24], "team": "Audi Sport Team Abt"},
+  "Audi_Sport_Team_Abt.png": {"cars": [23, 24], "team": "Audi Sport Team Abt",
+   "edits": [{"cut": [1285, 1300], "rows": [409, 437], "until": 1380,
+              "note": "#23's name panel read 'T. Schneider': drop the n (Timo Scheider)"}]},
   "BMW_Team_MTEK.png": {"cars": [21, 22], "team": "BMW Team MTEK"},
   "BMW_Team_RMG.png": {"cars": [15, 16], "team": "BMW Team RMG"},
   "BMW_Team_Schnitzer.png": {"cars": [7, 8], "team": "BMW Team RBM",
