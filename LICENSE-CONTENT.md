@@ -62,8 +62,8 @@ trademarks, which belong to their owners.
 ### Artist drawings
 
 Some team car images are an artist's own drawings, used with their
-permission and listed per season in `seasons/*/art/drawings.json` (DTM 2013:
-Pappydhorn12). All rights to them stay with the artist: they are not under
+permission and listed per season in `seasons/*/art/drawings.json` (DTM 2012
+and 2013: Pappydhorn12). All rights to them stay with the artist: they are not under
 CC BY-SA or CC BY-NC-SA, and may not be reused outside these packs without
 the artist's permission. `tools/car_drawings.py` only crops them.
 
@@ -84,17 +84,25 @@ careers.
 
 ## Logos
 
-Team and engine logos (`seasons/*/assets/logos`, `seasons/*/assets/engines`,
-made with `tools/logo_art.py` from `seasons/*/art/logos.json`) come from three
-places:
+Team, engine and tyre logos (`seasons/*/assets/` and `bases/*/assets/`
+`logos`, `engines`, `tyre`, made with `tools/logo_art.py` from the
+`art/logos.json` files) come from these places:
 - **1991 team decals** from the AMS2 liveries, used with the livery author's
   permission.
-- **Public-domain period logos** from Wikimedia Commons. The file for each
+- **Logos from Wikimedia Commons:** mostly public domain; the Mercedes-Benz
+  star is CC BY-SA 4.0 (author credited in `credits.txt`). The file for each
   logo is listed in `logos.json`.
+- **The teams' own logos** (DTM 2012 and 2013: Phoenix Racing, Racing Bart
+  Mampaey, Team MTEK, Mücke Motorsport, Persson Motorsport, Reinhold
+  Motorsport, Team Rosberg) are not under any free licence and are in
+  neither this repository nor the packs: `logos.json` lists them as
+  `"source": "file"` from the author's own folder, and they are built only
+  into `build/`. The 2012 and 2013 packs show each team's maker emblem in
+  their place (`"team_tiles": "maker"`).
 - **Plain text crests** made for this pack (CC BY-NC-SA 4.0).
 
-The logos are trademarks of their owners and are used here only to depict the
-1991 season.
+The logos are trademarks of their owners and are used here only to identify
+the teams and makers of the seasons depicted.
 
 ## What this license does NOT cover
 

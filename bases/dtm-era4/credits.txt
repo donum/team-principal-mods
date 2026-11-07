@@ -1,0 +1,19 @@
+Track maps and track geometry:
+  Map data (c) OpenStreetMap contributors, available under the
+  Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
+  Track outlines are today's layouts and may differ from the season's in detail.
+
+Maker and tyre logos (assets/engines, assets/tyre, and the team list
+icons in assets/logos), from Wikimedia Commons:
+  Audi chrome rings ("Audi Logo 1995", public domain), without the wordmark.
+  BMW ("BMW.svg", public domain).
+  Mercedes-Benz star ("Mercedes-Logo.svg") by Khaled, CC BY-SA 4.0 -
+  https://commons.wikimedia.org/wiki/File:Mercedes-Logo.svg
+  Hankook ("Hankook logo as of 2019", public domain), the flame logo
+  raced in 2012 and 2013, stacked over the wordmark in white, without the
+  slogan.
+  All trademarks belong to their owners.
+
+Real team, driver, manufacturer and sponsor names are used for historical
+description only. Not affiliated with or endorsed by the DTM, ITR, the game's
+publisher or any manufacturer.

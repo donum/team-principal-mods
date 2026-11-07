@@ -4,7 +4,8 @@ base pack.
 
 It reads what the game actually loads, the installed pack
 (<game>/data/<pack_folder>), and compares it with the vanilla base pack it was
-built from (season.json "base_pack"), the season source (seasons/<id>/) and
+built from (season.json "base_pack"), the season source (seasons/<id>/, with
+its era base bases/<id>/ underneath, see tools/layers.py) and
 the private audio overlay (tools/engine_audio). Tabs: overview, drivers,
 teams and cars, engines, calendar and tracks, backgrounds (the pack's own
 slots and the shared game-wide art, in the order the game picks them),
@@ -43,6 +44,8 @@ from datetime import datetime
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import layers  # noqa: E402
 TEMPLATE = Path(__file__).with_name("mod_browser_template.html")
 OUT_ROOT = REPO / "private" / "mod_browser"
 AUDIO_DATA = REPO / "private" / "engine_audio"
@@ -70,8 +73,14 @@ CANDIDATE_GROUPS = [
      "The pit sets in the pack (pits.py), paired by number: the fire-up, the exit, the departure "
      "(fire-up crossfaded into the exit, as practice and qualifying play it) and the wheelguns "
      "(race stops)."),
+    ("library/fan_clips", "*.wav", "Fan clips: drive-bys, pit entries (not in the pack)",
+     "Oschersleben 2013 cuts that were pit exits until the user heard them on 2026-11-07: four drive-bys "
+     "and one pit entry, plus the probable exit (old 05), replaced by the 2013 pit-lane departures. Drive-bys of an unknown make can't be tagged per supplier, and the game has "
+     "no pit-entry slot (wishlist E14)."),
     ("pilot/pit_candidates", "*.wav", "Pit-lane candidates",
-     "Fire-ups, exits and wheelgun bursts found in the pit-lane fan videos, cut for listening."),
+     "Fire-ups, exits and wheelgun bursts found in the pit-lane fan videos, cut for listening. "
+     "The exit_EMSlNAM8zC0 clips are 2013 cars stopping in a pit lane and pulling away (probably "
+     "Lausitzring, June 2013): candidates for the pit exit, not in the pack yet."),
     ("library/ambience", "*preview*.wav", "Track bed",
      "First 90 s of the cars-on-track loop built from real trackside shots. In the pack."),
     ("pilot/crowd", "*.wav", "Crowd candidates",
@@ -269,7 +278,7 @@ def data_patches(pack: Path, base: Path, season: Path) -> list[dict]:
             rows.append({"file": name, "path": path, "vanilla": short(b), "mod": short(m),
                          "lines": m if isinstance(m, list) and all(isinstance(x, str) for x in m) else None})
 
-    for src in sorted((season / "data").glob("*.json")):
+    for src in layers.files(season, "data").values():
         spec = load_json(src, {})
         if not (isinstance(spec, dict) and spec.get("$merge_base")) or not (base / src.name).exists():
             continue
@@ -281,7 +290,7 @@ def data_patches(pack: Path, base: Path, season: Path) -> list[dict]:
 # ------------------------------------------------------------- sections
 
 def build_drivers(pack, base, season, media, sources):
-    portraits = load_json(season / "art" / "portraits.json", {}) or {}
+    portraits = layers.merged_json(season, "art/portraits.json")
     teams = {t["name"]: t for t in load_json(pack / "teams.json", [])}
     out = []
     for d in load_json(pack / "drivers.json", []):
@@ -304,9 +313,15 @@ def build_teams(pack, base, season, manifest, media, sources):
     ours = set(manifest.get("sponsors", {}).get("pool", {}))
     pool = {s["name"]: s for s in load_json(pack / "sponsors.json", [])}
     deals = {t["team"]: t.get("sponsors", []) for t in (load_json(pack / "starting_sponsors.json", {}) or {}).get("teams", [])}
+    # other liveries kept in the season source for a future livery choice
+    # (tools/car_drawings.py, art/liveries; not in the pack, wishlist E4)
+    liveries = (load_json(season / "art" / "liveries" / "liveries.json", {}) or {}).get("teams", {})
     out = []
     for t in load_json(pack / "teams.json", []):
         n = nospace(t["name"])
+        other = [{"number": c["number"],
+                  "car": media.image(season / c["file"], f"liveries/{Path(c['file']).name}")}
+                 for c in liveries.get(t["name"], []) if not c["team_image"] and (season / c["file"]).exists()]
         sponsors = [{"slot": d["slot"], "name": d["name"], "seasons": d.get("seasons"),
                      "amount_m": pool.get(d["name"], {}).get("amount_m"),
                      "industry": pool.get(d["name"], {}).get("industry"),
@@ -314,6 +329,8 @@ def build_teams(pack, base, season, manifest, media, sources):
                      "prov": "custom" if d["name"] in ours else "vanilla"} for d in deals.get(t["name"], [])]
         out.append({**t, "prov": "custom", "sponsors": sponsors,
                     "car": media.image(pack / "assets" / "Cars" / f"{n}.png", f"cars/{n}.png"),
+                    "car_number": next((c["number"] for c in liveries.get(t["name"], []) if c["team_image"]), None),
+                    "other_liveries": other,
                     "logo": media.image(pack / "assets" / "logos" / f"{n}.png", f"logos/{n}.png"),
                     "history_text": hist.get(t["name"]), "cloned_from": clones.get(t["name"]),
                     "drivers": [d["name"] for d in drivers if d.get("team") == t["name"]],
@@ -438,14 +455,15 @@ def build_engines(pack, base, media):
                                               f"engines/{nospace(s.get('engine', ''))}.png")})
     rules = {k: v for k, v in (eng.get("unit_rules") or {}).items() if not isinstance(v, (dict, list))}
     tyres = load_json(pack / "tyre_suppliers.json", {}) or {}
-    tyre = [{"supplier": n, **{k: v for k, v in s.items() if not isinstance(v, (dict, list))}}
+    tyre = [{"supplier": n, **{k: v for k, v in s.items() if not isinstance(v, (dict, list))},
+             "logo": media.image(pack / "assets" / "tyre" / f"{nospace(n)}.png", f"tyre/{nospace(n)}.png")}
             for n, s in tyres.get("suppliers", {}).items()]
     return out, rules, tyre
 
 
 def build_tracks(pack, base, season, manifest, media):
     sched = load_json(pack / "schedule.json", []) or []
-    own = {p.stem for p in (season / "tracks").glob("*.json")}
+    own = {name[:-5]: layers.layer_of(season, path) for name, path in layers.files(season, "tracks").items()}
     shared = manifest.get("shared_tracks", {})
     overrides = manifest.get("track_overrides", {})
     tracks = []
@@ -453,7 +471,7 @@ def build_tracks(pack, base, season, manifest, media):
         t = load_json(p, {})
         tid = p.stem
         if tid in own:
-            prov, origin = "custom", "Our own trace (seasons/dtm-2013/tracks)"
+            prov, origin = "custom", f"Our own trace ({own[tid].relative_to(REPO).as_posix()}/tracks)"
         elif tid in shared:
             prov, origin = "custom", f"Our trace, shared from {shared[tid]}"
         elif same_file(p, base / "tracks" / p.name):
@@ -572,11 +590,36 @@ def build_candidates(media):
         crowd_tag = f"{CROWD[0]}_{CROWD[1]:.0f}s"
     except Exception:
         crowd_tag = None
+    # only the 2013 car generation may be heard (engine_audio/common.py ERA):
+    # clips cut from other years' videos are left out, and counted
+    try:
+        from common import era_reason
+        import sqlite3
+        with sqlite3.connect(AUDIO_DATA / "library.sqlite") as db:
+            videos = {i: (t, ty) for i, t, ty in db.execute("SELECT id, title, video_type FROM videos")}
+    except Exception:
+        era_reason, videos = None, {}
+
+    def out_of_era(name: str) -> bool:
+        if not era_reason:
+            return False
+        from common import ERA
+        years = [int(y) for y in re.findall(r"(?<!\d)(20[0-2]\d)(?!\d)", name)]   # e.g. hockenheim2017_start
+        return (any(not ERA[0] <= y <= ERA[1] for y in years)
+                or any(era_reason(i, t, ty) for i, (t, ty) in videos.items() if i in name))
+
     starts_meta = load_json(AUDIO_DATA / "library" / "starts" / "starts.json", []) or []
+    pit_cand = {c["file"]: c for c in load_json(AUDIO_DATA / "pilot" / "pit_candidates" / "candidates.json", []) or []}
     pits_meta = load_json(AUDIO_DATA / "library" / "pits" / "pits.json", []) or []
+    fan_meta = {c["file"]: c["note"] for c in load_json(AUDIO_DATA / "library" / "fan_clips" / "fan_clips.json", []) or []}
     for folder, pattern, title, note in CANDIDATE_GROUPS:
         d = AUDIO_DATA / folder
         files = [p for p in sorted(d.glob(pattern)) if p.is_file() and p not in seen]
+        hidden = [p for p in files if out_of_era(p.name)]
+        seen.update(hidden)
+        files = [p for p in files if p not in hidden]
+        if hidden:
+            note = f"{note} {len(hidden)} clip(s) from other years' cars are hidden.".strip()
         if not files:
             continue
         items = []
@@ -594,13 +637,18 @@ def build_candidates(media):
             m = re.match(r"pit_(\d+)_", p.name)
             if folder == "library/pits" and m and int(m.group(1)) <= len(pits_meta):
                 item["note"] = pits_meta[int(m.group(1)) - 1]["note"]
+            if folder == "library/fan_clips":
+                item["note"] = fan_meta.get(p.name, "")
+            if folder == "pilot/pit_candidates" and p.name in pit_cand:
+                c = pit_cand[p.name]
+                item["note"] = c.get("note") or f"{c['kind']}, {c['video_id']} {c['start_s']}-{c['end_s']} s"
             items.append(item)
         groups.append({"title": title, "folder": f"private/engine_audio/{folder}", "note": note, "items": items})
     for d in sorted((AUDIO_DATA / "pilot").glob("*")):
         if d.is_dir() and not any(g[0] == f"pilot/{d.name}" for g in CANDIDATE_GROUPS):
             items = [{"name": p.stem.replace("_", " "), "file": p.name,
                       "audio": media.audio(p, f"candidates/pilot/{d.name}/{p.name}"), "seconds": duration(p),
-                      "in_use": False, "note": ""} for p in sorted(d.glob("*.wav"))]
+                      "in_use": False, "note": ""} for p in sorted(d.glob("*.wav")) if not out_of_era(p.name)]
             if items:
                 groups.append({"title": d.name.replace("_", " ").capitalize(), "folder": f"private/engine_audio/pilot/{d.name}",
                                "note": "", "items": items})
@@ -611,7 +659,7 @@ def build_candidates(media):
 # --------------------------------------------------------------------- main
 
 def build(season: Path, game: Path) -> Path:
-    manifest = load_json(season / "season.json")
+    manifest = layers.manifest(season)
     pack_folder, base_name = manifest["pack_folder"], manifest["base_pack"]
     pack, base = game / "data" / pack_folder, game / "data" / base_name
     if not pack.is_dir():
@@ -622,8 +670,9 @@ def build(season: Path, game: Path) -> Path:
     private = set(applied.get("files", []))
     private_audio = {f.split("assets/audio/", 1)[-1] for f in private}
 
-    dsrc = field_sources(season / "data" / "drivers.json", load_json(base / "drivers.json", []))
-    tsrc = field_sources(season / "data" / "teams.json", load_json(base / "teams.json", []))
+    data_files = layers.files(season, "data")
+    dsrc = field_sources(data_files.get("drivers.json", season / "data" / "drivers.json"), load_json(base / "drivers.json", []))
+    tsrc = field_sources(data_files.get("teams.json", season / "data" / "teams.json"), load_json(base / "teams.json", []))
     drivers, vanilla_drivers = build_drivers(pack, base, season, media, dsrc)
     teams, vanilla_teams = build_teams(pack, base, season, manifest, media, tsrc)
     engines, unit_rules, tyres = build_engines(pack, base, media)
@@ -637,7 +686,8 @@ def build(season: Path, game: Path) -> Path:
     data = {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "pack": {"title": manifest["title"], "folder": pack_folder, "version": manifest.get("version"),
-                 "base": base_name, "season": season.name, "series": manifest.get("series"),
+                 "base": base_name, "season": " + ".join(layer.name for layer in layers.chain(season)),
+                 "series": manifest.get("series"),
                  "private_audio": bool(private)},
         "drivers": drivers, "vanilla_drivers": vanilla_drivers,
         "driver_template": dsrc.get("$template_from"), "team_template": tsrc.get("$template_from"),

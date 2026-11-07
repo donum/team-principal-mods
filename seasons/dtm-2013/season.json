@@ -1,30 +1,10 @@
 {
+  "base": "dtm-era4",
   "title": "DTM 2013 - Deutsche Tourenwagen Masters",
   "pack_folder": "dtm2013",
   "version": "0.1",
-  "series": "formula",
-  "base_pack": "default26",
-  "no_title_sponsors": true,
   "constants": {
-    "SEASON_START_YEAR": 2013,
-    "POINTS_TOP10": [
-      25,
-      18,
-      15,
-      12,
-      10,
-      8,
-      6,
-      4,
-      2,
-      1
-    ],
-    "QUALI_GRID_LIMIT": 22,
-    "QUALI_MIN_ENTRANTS": 18,
-    "PREQUALIFYING_TRIGGER_CARS": 30,
-    "PREQUALIFYING_FIELD_LIMIT": 30,
-    "DRIVER_RETIREMENT_MIN_AGE": 36,
-    "DRIVER_RETIREMENT_ESCALATION_AGE": 44
+    "SEASON_START_YEAR": 2013
   },
   "team_clones": {
     "Audi Sport Team Phoenix": "Red Boar",
@@ -55,24 +35,6 @@
       "stern AMG-Mercedes": 6,
       "BMW Team RMG": 5,
       "Audi Sport Team Rosberg": 5
-    }
-  },
-  "shared_tracks": {
-    "norisring": "dtm-1991"
-  },
-  "track_overrides": {
-    "norisring": {
-      "race_laps": 83,
-      "speed_mult": 1.29,
-      "tyre_wear_mult": 0.65,
-      "pit_lane_loss_s": 18.0,
-      "drs_zones": [
-        {
-          "detection_progress": 0.8954,
-          "start_progress": 0.9354,
-          "end_progress": 0.254
-        }
-      ]
     }
   },
   "sponsors": {

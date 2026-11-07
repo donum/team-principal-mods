@@ -12,22 +12,11 @@ SpotterGuides.com), used as a reference for facts only: no part of the
 guide is included in the pack.
 See seasons/dtm-2013/README.md in the project repository for details.
 
-Track maps and track geometry:
-  Map data (c) OpenStreetMap contributors, available under the
-  Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
-  Track outlines are today's layouts and may differ from 2013 in detail.
-
 Car images (assets/Cars):
   Drawn by Pappydhorn12 and used with the artist's permission. All rights
   to these drawings stay with the artist; they are not covered by the
   pack's Creative Commons licences.
 
-Logos (assets/logos, assets/engines):
-  Public-domain logos from Wikimedia Commons: Abt (2010), HWA AG, Schnitzer
-  Motorsport, Audi (2009-2016), BMW (1997-2020), Mercedes-Benz (2010).
-  All trademarks belong to their owners.
-  Other teams use plain text crests made for this pack.
-
-Real team, driver, manufacturer and sponsor names are used for historical
-description only. Not affiliated with or endorsed by the DTM, ITR, the game's
-publisher or any manufacturer.
+Team list icons (assets/logos):
+  Each team is shown with its maker's emblem (Audi, BMW or Mercedes-Benz),
+  as on the TV timing graphics. See the maker logos below.

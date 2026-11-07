@@ -1,0 +1,209 @@
+{
+  "$comment": "Team logos for tools/logo_art.py. commons = logo file on Wikimedia Commons (public domain, licence recorded). file = a team's own logo from the author's folder (local.json \"logo_folders\"), kept out of git; these are the teams' trademarks and not covered by the pack's Creative Commons licences (see credits.txt). All are shown on a white plate so dark lettering stays readable on the game's dark screens. Maker and tyre logos are in bases/dtm-era4/art/logos.json. Persson's comes from the 2012 folder, the others from the 2013 one (\"folder\"). \"team_tiles\": \"maker\": the game shows team logos only as small list icons, where they can't be recognised, so the pack uses each team's maker emblem there (as on the TV graphics) and builds the team logos into build/art/<season>/team_logos only (not in the pack or git).",
+  "team_tiles": "maker",
+  "teams": {
+    "BMW Team RMG": {
+      "source": "file",
+      "file": "Reinhold_Motosport-705x505.jpg",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
+        255,
+        255,
+        255
+      ],
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "folder": "dtm-2013"
+    },
+    "Audi Sport Team Abt Sportsline": {
+      "source": "commons",
+      "file": "File:ABT Logo black.png",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "BMW Team Schnitzer": {
+      "source": "commons",
+      "file": "File:Schnitzer Motorsport Logo.png",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Audi Sport Team Phoenix": {
+      "source": "file",
+      "file": "Team_Phoenix_Logo.png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
+        255,
+        255,
+        255
+      ],
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "folder": "dtm-2013"
+    },
+    "BMW Team RBM": {
+      "source": "file",
+      "file": "Racing_Bart_Mampaey_(logo).png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
+        255,
+        255,
+        255
+      ],
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "folder": "dtm-2013"
+    },
+    "Audi Sport Team Abt": {
+      "source": "commons",
+      "file": "File:ABT Logo black.png",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Audi Sport Team Rosberg": {
+      "source": "file",
+      "file": "x_Logo_TeamRosberg_2022_Schriftzug.png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": null,
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "folder": "dtm-2013"
+    },
+    "AMG-Mercedes": {
+      "source": "commons",
+      "file": "File:HWA AG logo.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Thomas Sabo AMG-Mercedes": {
+      "source": "commons",
+      "file": "File:HWA AG logo.svg",
+      "license": "Public domain",
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "DHL AMG-Mercedes": {
+      "source": "file",
+      "file": "Mücke_Motorsport.png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
+        255,
+        255,
+        255
+      ],
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "crop": [
+        0.02,
+        0.05,
+        0.98,
+        0.95
+      ],
+      "note": "the source has a grey frame, cut off",
+      "folder": "dtm-2013"
+    },
+    "Junge Sterne AMG-Mercedes": {
+      "source": "file",
+      "file": "Logo_Persson_Motorsport.svg",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
+        255,
+        255,
+        255
+      ],
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$comment": "Generator defaults for every season of the 2012-2018 DTM (tools/season_from_research.py merges this under a season's gen.json): the modern-era rules (DRS, option tyre, knockout qualifying) instead of the Group A template's, the car profiles, the three 4.0 V8 engines and the Hankook control tyre. Tuned on 2013; a season changes what differs in its own gen.json.",
+  "template": "dtm-1991",
+  "rules": "own",
+  "default_tyre": "Hankook",
+  "rating_range": [55, 57.5],
+  "team_rating_from": "average",
+  "skill_range": [11, 18],
+  "economy": {"budget_per_rating": 1.6, "salary_min_m": 0.3, "salary_max_m": 2.5},
+  "mass_kg": {"Audi": 965.0, "BMW": 965.0, "Mercedes-Benz": 965.0},
+  "make_profiles": {"Audi": "audi_rs5_dtm", "BMW": "bmw_m3_dtm_e92", "Mercedes-Benz": "amg_c_coupe_dtm"},
+  "profiles": {
+    "audi_rs5_dtm": {"acceleration": 0, "straight": 0, "slow": 1, "med": 1, "high": 0, "braking": 0,
+                     "tyre_management": 1, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
+    "bmw_m3_dtm_e92": {"acceleration": 1, "straight": 0, "slow": 0, "med": 0, "high": 1, "braking": 0,
+                       "tyre_management": 0, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
+    "amg_c_coupe_dtm": {"acceleration": 0, "straight": 1, "slow": 0, "med": 0, "high": 1, "braking": 0,
+                        "tyre_management": 0, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0}
+  },
+  "engines": {
+    "Audi": {"engine": "Audi 4.0 V8", "factory": false, "power_rating": 58.0, "reliability_rating": 70.0,
+             "cost_m": 6, "annual_budget_m": 60, "capacity": 8, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
+             "fuel_efficiency": 55.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_03"},
+    "BMW": {"engine": "BMW P66 4.0 V8", "factory": false, "power_rating": 59.0, "reliability_rating": 71.0,
+            "cost_m": 6, "annual_budget_m": 60, "capacity": 8, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
+            "fuel_efficiency": 54.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_01"},
+    "Mercedes-Benz": {"engine": "Mercedes-AMG 4.0 V8", "factory": false, "power_rating": 58.0, "reliability_rating": 70.0,
+                      "cost_m": 6, "annual_budget_m": 60, "capacity": 6, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
+                      "fuel_efficiency": 55.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_04"}
+  },
+  "tyre_suppliers": {
+    "Hankook": {
+      "active": true, "join_chance": 0.0, "leave_chance": 0.0,
+      "prices": {"works": 0, "partner": 0, "customer": 0},
+      "nationality": "south_korean",
+      "lateral_grip": {"soft": 58.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
+      "longitudinal_grip": {"soft": 58.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
+      "durability": {"soft": 40.0, "hard": 60.0, "intermediate": 55.0, "wet": 55.0},
+      "temperature_tolerance": {"soft": 50.0, "hard": 54.0, "intermediate": 50.0, "wet": 50.0},
+      "trend": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
+      "development_preference": "endurance"
+    }
+  },
+  "tyre_development": {
+    "$comment": "DTM 2013 had no medium: it is dropped from the development programmes too.",
+    "programs": {
+      "cornering_grip": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
+      "traction_braking": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
+      "durability": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
+      "thermal_stability": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}}
+    }
+  }
+}

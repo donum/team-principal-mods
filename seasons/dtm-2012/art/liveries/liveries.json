@@ -1,0 +1,137 @@
+{
+ "$comment": "Every drawn car per team, team image first. Written by tools/car_drawings.py; the other liveries wait for a game feature (wishlist E4) and are not in the pack.",
+ "teams": {
+  "AMG-Mercedes": [
+   {
+    "number": 5,
+    "team_image": true,
+    "file": "assets/Cars/AMG-Mercedes.png"
+   },
+   {
+    "number": 6,
+    "team_image": false,
+    "file": "art/liveries/AMG-Mercedes_06.png"
+   }
+  ],
+  "Audi Sport Team Abt": [
+   {
+    "number": 17,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamAbt.png"
+   },
+   {
+    "number": 18,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamAbt_18.png"
+   }
+  ],
+  "Audi Sport Team Abt Sportsline": [
+   {
+    "number": 3,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamAbtSportsline.png"
+   },
+   {
+    "number": 4,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamAbtSportsline_04.png"
+   }
+  ],
+  "Audi Sport Team Phoenix": [
+   {
+    "number": 9,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamPhoenix.png"
+   },
+   {
+    "number": 10,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamPhoenix_10.png"
+   }
+  ],
+  "Audi Sport Team Rosberg": [
+   {
+    "number": 21,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamRosberg.png"
+   },
+   {
+    "number": 22,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamRosberg_22.png"
+   }
+  ],
+  "BMW Team RBM": [
+   {
+    "number": 15,
+    "team_image": true,
+    "file": "assets/Cars/BMWTeamRBM.png"
+   },
+   {
+    "number": 16,
+    "team_image": false,
+    "file": "art/liveries/BMWTeamRBM_16.png"
+   }
+  ],
+  "BMW Team RMG": [
+   {
+    "number": 1,
+    "team_image": true,
+    "file": "assets/Cars/BMWTeamRMG.png"
+   },
+   {
+    "number": 2,
+    "team_image": false,
+    "file": "art/liveries/BMWTeamRMG_02.png"
+   }
+  ],
+  "BMW Team Schnitzer": [
+   {
+    "number": 7,
+    "team_image": true,
+    "file": "assets/Cars/BMWTeamSchnitzer.png"
+   },
+   {
+    "number": 8,
+    "team_image": false,
+    "file": "art/liveries/BMWTeamSchnitzer_08.png"
+   }
+  ],
+  "DHL AMG-Mercedes": [
+   {
+    "number": 19,
+    "team_image": true,
+    "file": "assets/Cars/DHLAMG-Mercedes.png"
+   },
+   {
+    "number": 20,
+    "team_image": false,
+    "file": "art/liveries/DHLAMG-Mercedes_20.png"
+   }
+  ],
+  "Junge Sterne AMG-Mercedes": [
+   {
+    "number": 23,
+    "team_image": true,
+    "file": "assets/Cars/JungeSterneAMG-Mercedes.png"
+   },
+   {
+    "number": 24,
+    "team_image": false,
+    "file": "art/liveries/JungeSterneAMG-Mercedes_24.png"
+   }
+  ],
+  "Thomas Sabo AMG-Mercedes": [
+   {
+    "number": 11,
+    "team_image": true,
+    "file": "assets/Cars/ThomasSaboAMG-Mercedes.png"
+   },
+   {
+    "number": 12,
+    "team_image": false,
+    "file": "art/liveries/ThomasSaboAMG-Mercedes_12.png"
+   }
+  ]
+ }
+}

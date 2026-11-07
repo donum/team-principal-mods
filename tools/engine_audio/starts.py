@@ -62,12 +62,14 @@ STARTS = [
     # then a 4 s fade falling steadily in dB. The cosine fade sounded like a
     # file fading out, not cars moving away; a sliding low-pass (on our own
     # recording, or on this ending) was tried and left out.
+    # 2026-11-07: the 2017 Hockenheim tail ("IBuEsBSh9_I", 16.0, 22.5, joined
+    # at join_s=8.0 over 1.5 s) is out: only 2012-2013 cars may be heard
+    # (common.ERA). Until an in-era recording of the field leaving is found,
+    # the launch runs to the end of this recording and fades there.
     dict(vid="fk9f2Qt5x20", idle=(37.0, 52.0), go=54.5, refine=False, end=None,
-         skip=(5.0, 10.0), tail=("IBuEsBSh9_I", 16.0, 22.5), join_s=8.0, tail_xf_s=1.5,
-         fade_s=4.0, fade_db=30,
-         note="Hockenheim finale, grid and start: clean revving, the getaway, the field "
-              "swelling past (5-10 s spliced out), then the 2017 Hockenheim field leaving "
-              "towards turn 1, 14.5 s"),
+         skip=(5.0, 10.0), tail=None, fade_s=4.0, fade_db=30,
+         note="Hockenheim finale 2013, grid and start: clean revving, the getaway, the field "
+              "swelling past (5-10 s spliced out), to the end of the recording, then a 4 s fade"),
 ]
 # Set aside after listening in game (2026-11-04): noise and mic overload at the
 # launch (Nurburgring 2014 x_JJhPIFjdY, Hockenheim 2012 kf4kpYMJ3vc, Zandvoort

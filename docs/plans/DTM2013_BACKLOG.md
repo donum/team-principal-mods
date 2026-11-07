@@ -108,8 +108,14 @@ simulation.
 - **Menu and dashboard art:** our own `title_bg.png`, `dashboard_bg*.png`. · P3
 - **Engines:** all three makes have `factory: false` while every team is
   `works: true`. Check whether that's intended. · P2
-- **Portraits:** 2 of 22 drivers have helmet cards; look for free photos. · P3
+- **Portraits:** Joey Hand still has a helmet card, and Wickens, Scheider
+  and Priaulx have tight close-ups (bigger heads). Werner's photo is black
+  and white with sunglasses. Look for better free photos of these five. · P3
 - **Moscow length:** 2.555 vs 2.661 km still open.
+- **Workshop description:** write it before the first upload. It must
+  credit the car images to Pappydhorn12 (used with permission, rights stay
+  with the artist) and list the photo, logo and map credits from
+  `credits.txt`. · P1
 
 ## 7. Still to check in-game
 

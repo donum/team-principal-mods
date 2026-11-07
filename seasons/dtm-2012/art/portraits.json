@@ -1,0 +1,219 @@
+{
+  "Bruno Spengler": {
+    "source": "photo",
+    "file": "File:Bruno Spengler (3665325752).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bruno_Spengler_(3665325752).jpg",
+    "author": "Crosa from Nuernberg",
+    "license": "CC BY 2.0",
+    "year": 2009,
+    "pinned": true
+  },
+  "Dirk Werner": {
+    "source": "photo",
+    "file": "File:Dirk Werner LeMans24 2017.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dirk_Werner_LeMans24_2017.jpg",
+    "author": "Muztiko",
+    "license": "CC BY-SA 4.0",
+    "year": 2017,
+    "pinned": true,
+    "face": [
+      0.525,
+      0.405,
+      0.085
+    ]
+  },
+  "Gary Paffett": {
+    "source": "photo",
+    "file": "File:Gary Paffett DTM Brands Hatch 2012 003.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gary_Paffett_DTM_Brands_Hatch_2012_003.jpg",
+    "author": "Ian McWilliams",
+    "license": "CC BY 2.0",
+    "year": 2012,
+    "pinned": true,
+    "zoom": 1.2
+  },
+  "Christian Vietoris": {
+    "source": "photo",
+    "file": "File:Christian Vietoris.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Christian_Vietoris.JPG",
+    "author": "Lutz H",
+    "license": "CC BY 2.0 de",
+    "year": 2007,
+    "pinned": true
+  },
+  "Jamie Green": {
+    "source": "photo",
+    "file": "File:2014 DTM HockenheimringII Jamie Green by 2eight 8SC5376.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014_DTM_HockenheimringII_Jamie_Green_by_2eight_8SC5376.jpg",
+    "author": "Stefan Brending (2eight)",
+    "license": "CC BY-SA 3.0 de",
+    "year": 2014,
+    "pinned": true,
+    "face": [
+      0.5,
+      0.375,
+      0.19
+    ]
+  },
+  "Edoardo Mortara": {
+    "source": "photo",
+    "file": "File:2014 DTM HockenheimringII Edoardo Mortara by 2eight 8SC3371.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014_DTM_HockenheimringII_Edoardo_Mortara_by_2eight_8SC3371.jpg",
+    "author": "Stefan Brending (2eight)",
+    "license": "CC BY-SA 3.0 de",
+    "year": 2014,
+    "pinned": true
+  },
+  "Filipe Albuquerque": {
+    "source": "photo",
+    "file": "File:Filipe Albuquerque, Blancpain GT Series Silverstone, May 2016.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Filipe_Albuquerque,_Blancpain_GT_Series_Silverstone,_May_2016.jpg",
+    "author": "Nmduarte",
+    "license": "CC BY-SA 4.0",
+    "year": 2016,
+    "pinned": true
+  },
+  "Mattias Ekström": {
+    "source": "photo",
+    "file": "File:2014 DTM HockenheimringII Mattias Ekstroem by 2eight 8SC3364.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014_DTM_HockenheimringII_Mattias_Ekstroem_by_2eight_8SC3364.jpg",
+    "author": "Stefan Brending (2eight)",
+    "license": "CC BY-SA 3.0 de",
+    "year": 2014,
+    "pinned": true
+  },
+  "Timo Scheider": {
+    "source": "photo",
+    "file": "File:Timo-Scheider-Frankfurt-Nov-2011 LWS0174.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Timo-Scheider-Frankfurt-Nov-2011_LWS0174.jpg",
+    "author": "L.Willms",
+    "license": "CC BY-SA 3.0",
+    "year": 2011,
+    "pinned": true,
+    "max_pad": 0.12,
+    "min_zoom": 0.4
+  },
+  "Augusto Farfus": {
+    "source": "photo",
+    "file": "File:2014 DTM HockenheimringII Augusto Farfus by 2eight 8SC3378.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014_DTM_HockenheimringII_Augusto_Farfus_by_2eight_8SC3378.jpg",
+    "author": "Stefan Brending (2eight)",
+    "license": "CC BY-SA 3.0 de",
+    "year": 2014,
+    "pinned": true,
+    "face": [
+      0.535,
+      0.3,
+      0.14
+    ]
+  },
+  "Andy Priaulx": {
+    "source": "photo",
+    "file": "File:Andy Priaulx 2008 Japan.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Andy_Priaulx_2008_Japan.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 3.0",
+    "year": 2008,
+    "pinned": true,
+    "max_pad": 0.15,
+    "min_zoom": 0.5
+  },
+  "Mike Rockenfeller": {
+    "source": "photo",
+    "file": "File:2014 DTM HockenheimringII Mike Rockenfeller by 2eight 8SC5363.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014_DTM_HockenheimringII_Mike_Rockenfeller_by_2eight_8SC5363.jpg",
+    "author": "Stefan Brending (2eight)",
+    "license": "CC BY-SA 3.0 de",
+    "year": 2014,
+    "pinned": true,
+    "face": [
+      0.38,
+      0.32,
+      0.27
+    ]
+  },
+  "Miguel Molina": {
+    "source": "photo",
+    "file": "File:2014 DTM HockenheimringII Miguel Molina by 2eight 8SC3351.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014_DTM_HockenheimringII_Miguel_Molina_by_2eight_8SC3351.jpg",
+    "author": "Stefan Brending (2eight)",
+    "license": "CC BY-SA 3.0 de",
+    "year": 2014,
+    "pinned": true,
+    "zoom": 0.82
+  },
+  "Martin Tomczyk": {
+    "source": "photo",
+    "file": "File:Martin Tomczyk.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Martin_Tomczyk.JPG",
+    "author": "Erika39",
+    "license": "CC BY 3.0",
+    "year": 2008,
+    "pinned": true
+  },
+  "Joey Hand": {
+    "source": "helmet",
+    "pinned": true
+  },
+  "Adrien Tambay": {
+    "source": "photo",
+    "file": "File:Adrien tambay brandshatch2012.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Adrien_tambay_brandshatch2012.JPG",
+    "author": "Robk23oxf",
+    "license": "CC BY-SA 3.0",
+    "year": 2012,
+    "pinned": true
+  },
+  "Robert Wickens": {
+    "source": "photo",
+    "file": "File:Robert Wickens 2011.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Robert_Wickens_2011.JPG",
+    "author": "Henry Mineur (talk)",
+    "license": "CC BY-SA 3.0",
+    "year": 2011,
+    "pinned": true,
+    "max_pad": 0.12,
+    "min_zoom": 0.4
+  },
+  "Roberto Merhi": {
+    "source": "photo",
+    "file": "File:Roberto Merhi 2015 Malaysia.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Roberto_Merhi_2015_Malaysia.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "year": 2015,
+    "pinned": true
+  },
+  "Ralf Schumacher": {
+    "source": "photo",
+    "file": "File:Ralf Schumacher, 2016.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Ralf_Schumacher,_2016.png",
+    "author": "9EkieraM1",
+    "license": "CC BY-SA 4.0",
+    "year": 2016
+  },
+  "Rahel Frey": {
+    "source": "photo",
+    "file": "File:Rahel Frey.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Rahel_Frey.JPG",
+    "author": "Lutz H",
+    "license": "CC BY 2.0 de",
+    "year": 2008
+  },
+  "David Coulthard": {
+    "source": "photo",
+    "file": "File:David Coulthard at the 2025 Adelaide Grand Final Parade - 12.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:David_Coulthard_at_the_2025_Adelaide_Grand_Final_Parade_-_12.jpg",
+    "author": "Yu Chu Chin",
+    "license": "CC BY-SA 4.0",
+    "year": 2025
+  },
+  "Susie Wolff": {
+    "source": "photo",
+    "file": "File:Susie Wolff Silverstone.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Susie_Wolff_Silverstone.jpg",
+    "author": "Denisruben DE",
+    "license": "CC BY-SA 4.0",
+    "year": 2019
+  }
+}

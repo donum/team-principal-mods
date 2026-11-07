@@ -10,7 +10,16 @@ written:
 * the team image to <season>/assets/Cars/<Team>.png (the game shows one car
   per team: the sheet's "team" takes its first car, "teams" names a car per
   team);
+* every other car to <season>/art/liveries/<Team>_NN.png, kept for a future
+  livery choice (wishlist E4). art/ is never copied into the pack, so the
+  game doesn't see them; art/liveries/liveries.json lists every team's cars
+  (team image first). A sheet's "liveries" maps the other cars of a
+  "teams" sheet to their team;
 * every car to build/art/<season>/drawn_NN.png for checking.
+
+A sheet may set "shadow_max": rows of the sheet with no pixel brighter than
+this are cleared to background, for faint shadow lines drawn under the cars
+(they join the tyres to the body at ground level).
 
 car_art.py skips the teams listed here, so a rerun doesn't overwrite them.
 
@@ -177,6 +186,10 @@ def tyres(gray, mine):
     ground = y0 + ground_row(Image.fromarray((crop * 255).astype(np.uint8)))
     row = np.flatnonzero(mine[ground])
     runs = [r for r in np.split(row, np.flatnonzero(np.diff(row) > 1) + 1) if len(r) >= 8]
+    # A low splitter or diffuser can touch the ground row too: tyres sit
+    # between 10% and 90% of the car's length.
+    inside = [r for r in runs if 0.1 <= (r.mean() - x0) / (x1 - x0) <= 0.9]
+    runs = inside if len(inside) >= 2 else runs
     guess = TYRE_R * (x1 - x0)
     extra = np.zeros_like(mine)
     radii = []
@@ -220,10 +233,15 @@ def apply_edits(im, edits):
     return Image.fromarray(rgb)
 
 
-def cut_cars(path, n, edits=()):
+def cut_cars(path, n, edits=(), shadow_max=0):
     """The n cars on a sheet, top to bottom, as RGBA crops."""
     im = apply_edits(Image.open(path).convert("RGB"), edits)
     rgb = np.asarray(im)
+    if shadow_max:
+        # Faint shadow lines under the cars: rows with nothing brighter
+        # than shadow_max are background (the tyres are redrawn as discs).
+        rgb = rgb.copy()
+        rgb[rgb.max(axis=2).max(axis=1) <= shadow_max] = 0
     fg = foreground(rgb)
     owner = split_cars(fg, n)
     claim_antennas(fg, owner, n)
@@ -294,11 +312,17 @@ def main():
             raise SystemExit(f'pass --source or set "car_drawings": {{"{season.name}": "<dir>"}} in local.json')
         source = Path(source)
     out_dir = season / "assets" / "Cars"
+    out_dir.mkdir(parents=True, exist_ok=True)
     all_dir = CACHE / season.name
     all_dir.mkdir(parents=True, exist_ok=True)
     written = []
+    liv_dir = season / "art" / "liveries"
+    liv_dir.mkdir(parents=True, exist_ok=True)
+    for old in liv_dir.glob("*.png"):
+        old.unlink()
+    liveries = {}
     for name, sheet in cfg["sheets"].items():
-        cars = cut_cars(source / name, len(sheet["cars"]), sheet.get("edits", ()))
+        cars = cut_cars(source / name, len(sheet["cars"]), sheet.get("edits", ()), sheet.get("shadow_max", 0))
         by_number = dict(zip(sheet["cars"], (place(c) for c in cars)))
         for number, img in by_number.items():
             img.save(all_dir / f"drawn_{number:02d}.png", optimize=True)
@@ -308,6 +332,21 @@ def main():
             by_number[number].save(path, optimize=True)
             written.append((f"#{number} - {team}", by_number[number]))
             print(f"wrote {path.relative_to(REPO)} (#{number} from {name})")
+            liveries.setdefault(team, []).append({"number": number, "team_image": True,
+                                                  "file": path.relative_to(season).as_posix()})
+        others = {n: sheet["team"] for n in sheet["cars"] if n not in teams.values()} if "team" in sheet             else {int(n): t for n, t in sheet.get("liveries", {}).items()}
+        for number, team in others.items():
+            path = liv_dir / f"{team.replace(' ', '')}_{number:02d}.png"
+            by_number[number].save(path, optimize=True)
+            liveries.setdefault(team, []).append({"number": number, "team_image": False,
+                                                  "file": path.relative_to(season).as_posix()})
+            print(f"wrote {path.relative_to(REPO)} (#{number} from {name}, other livery)")
+    with open(liv_dir / "liveries.json", "w", encoding="utf-8") as fh:
+        json.dump({"$comment": "Every drawn car per team, team image first. Written by tools/car_drawings.py; "
+                               "the other liveries wait for a game feature (wishlist E4) and are not in the pack.",
+                   "teams": {t: sorted(v, key=lambda c: not c["team_image"]) for t, v in sorted(liveries.items())}},
+                  fh, indent=1, ensure_ascii=False)
+        fh.write("\n")
     if args.preview:
         cols, w, h = 2, 1024, 512
         sheet = Image.new("RGB", (cols * w, math.ceil(len(written) / cols) * (h + 34)), (200, 200, 204))

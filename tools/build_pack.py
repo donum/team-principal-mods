@@ -6,7 +6,9 @@ from a base pack of the user's local game install at build time, so no
 proprietary game files ever end up in git (EULA section 4.3).
 
 Season source layout (seasons/<id>/):
-    season.json        build manifest (base pack, constants, workshop meta)
+    season.json        build manifest (base pack, constants, workshop meta);
+                       "base": "<id>" puts an era base (bases/<id>/, same
+                       layout, manifest base.json) underneath, see layers.py
     data/<file>.json   replaces <file>.json of the base pack; list files may
                        use "$template" to deep-merge every record onto a
                        record taken from the base pack
@@ -28,6 +30,9 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import layers  # noqa: E402
+from layers import deep_merge  # noqa: E402,F401  (re-exported for other tools)
 DEFAULT_GAME = Path(r"X:\SteamLibrary\steamapps\common\Team Principal A Racing Manager")
 SCHEDULE_KEYWORDS = {None, "private", "test"}
 # Base-pack art that would contradict a historic season; removed unless the
@@ -45,20 +50,6 @@ def dump_json(path, data):
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
         json.dump(data, fh, indent=2, ensure_ascii=False)
         fh.write("\n")
-
-
-def deep_merge(base, override):
-    """Return base with override applied; dicts merge, everything else replaces.
-    A null value in an override dict removes that key."""
-    if isinstance(base, dict) and isinstance(override, dict):
-        out = copy.deepcopy(base)
-        for key, value in override.items():
-            if value is None:
-                out.pop(key, None)
-            else:
-                out[key] = deep_merge(out[key], value) if key in out else copy.deepcopy(value)
-        return out
-    return copy.deepcopy(override)
 
 
 def game_path(cli_value):
@@ -136,14 +127,14 @@ def expand_templates(name, data, base_dir):
     return records
 
 
-def clone_team_records(out, clones, season_dir):
+def clone_team_records(out, clones, shipped):
     """Re-key every base-pack file that is indexed by team name.
 
     `clones` maps each new team to the base team whose secondary settings
     (supplier contracts, starting tech, ERS levels, ownership, sponsors) it
-    inherits. Files the season ships itself in data/ are left alone.
+    inherits. Files the season or its base ship in data/ (`shipped`) are
+    left alone.
     """
-    shipped = {p.name for p in (season_dir / "data").glob("*.json")}
 
     def rekey_dict(mapping):
         return {new: copy.deepcopy(mapping[old]) for new, old in clones.items() if old in mapping}
@@ -343,9 +334,14 @@ def patch_regulations(regs, patch):
         options = cat.setdefault("options", [])
         next_id = max((o.get("id", 0) for o in options), default=0) + 1
         for option in change.get("add_options", []):
-            options[:] = [o for o in options if o.get("key") != option["key"]]
-            options.append({"id": next_id, **option})
-            next_id += 1
+            # An option with a key already there (e.g. a season replacing its
+            # base's) keeps its place and id: the game rejects gaps in the ids.
+            same = next((i for i, o in enumerate(options) if o.get("key") == option["key"]), None)
+            if same is not None:
+                options[same] = {"id": options[same].get("id", next_id), **option}
+            else:
+                options.append({"id": next_id, **option})
+                next_id += 1
         if "default" in change:
             if change["default"] not in {o.get("key") for o in options}:
                 raise ValueError(f"regulations: {key} default {change['default']!r} is not an option")
@@ -356,20 +352,29 @@ def patch_regulations(regs, patch):
 
 
 def place_tracks(season_dir, out, manifest):
-    """Copy our traced tracks, then fill placeholders for untraced venues."""
+    """Copy our traced tracks, then fill placeholders for untraced venues.
+
+    The season's own tracks are always copied. A base's tracks and shared
+    tracks only when the season races them (or a placeholder copies them),
+    so a season doesn't carry the whole era's venues.
+    """
     tracks_dir = out / "tracks"
     art_dir = out / "assets" / "tracks"
+    needed = set(load_json(out / "schedule.json")) - SCHEDULE_KEYWORDS
+    needed |= {spec["from"] for spec in manifest.get("track_placeholders", {}).values()}
     keep = set()
-    for track in sorted((season_dir / "tracks").glob("*.json")):
+    for track in layers.files(season_dir, "tracks").values():
+        if layers.layer_of(season_dir, track) != season_dir.resolve() and track.stem not in needed:
+            continue
         shutil.copy2(track, tracks_dir / track.name)
         keep.add(track.stem)
     # Tracks reused from another season ("shared_tracks": {"zolder": "dtm-1991"}),
     # with per-season overrides (length_km, race_laps -> lap_modifier, speed;
     # speed_mult scales every micro-sector target speed for this season only).
     for track_id, src_season in manifest.get("shared_tracks", {}).items():
-        if track_id in keep:
+        if track_id in keep or track_id not in needed:
             continue
-        src = REPO / "seasons" / src_season
+        src = layers.source_dir(src_season)
         shutil.copy2(src / "tracks" / f"{track_id}.json", tracks_dir / f"{track_id}.json")
         shutil.copy2(src / "assets" / "tracks" / f"{track_id}.png", art_dir / f"{track_id}.png")
         keep.add(track_id)
@@ -460,7 +465,8 @@ def validate(out):
 
 
 def build(season_dir, game, install, private_audio=True):
-    manifest = load_json(season_dir / "season.json")
+    manifest = layers.manifest(season_dir)
+    chain = layers.chain(season_dir)
     base_dir = game / "data" / manifest["base_pack"]
     if not base_dir.is_dir():
         sys.exit(f"base pack not found: {base_dir}")
@@ -483,22 +489,24 @@ def build(season_dir, game, install, private_audio=True):
             shutil.rmtree(art_root / sub)
             (art_root / sub).mkdir()
 
-    for src in sorted((season_dir / "data").glob("*.json")):
-        dump_json(out / src.name, expand_templates(src.name, load_json(src), base_dir))
+    data_files = layers.files(season_dir, "data")
+    for name, src in data_files.items():
+        dump_json(out / name, expand_templates(name, load_json(src), base_dir))
 
     if "team_clones" in manifest:
-        clone_team_records(out, manifest["team_clones"], season_dir)
+        clone_team_records(out, manifest["team_clones"], set(data_files))
     if "sponsors" in manifest:
         apply_sponsors(out, manifest["sponsors"])
     if manifest.get("no_title_sponsors"):
         strip_title_sponsors(out)
     readable_team_text(out)
-    if "staff" in manifest and not (season_dir / "data" / "staff.json").exists():
+    if "staff" in manifest and "staff.json" not in data_files:
         generate_staff(out, base_dir, manifest["staff"], load_json(out / "teams.json"))
 
-    patch = season_dir / "patches" / "regulations.json"
-    if patch.exists():
-        dump_json(out / "regulations.json", patch_regulations(load_json(out / "regulations.json"), load_json(patch)))
+    for layer in chain:
+        patch = layer / "patches" / "regulations.json"
+        if patch.exists():
+            dump_json(out / "regulations.json", patch_regulations(load_json(out / "regulations.json"), load_json(patch)))
 
     constants = out / "constants.py"
     raw = constants.read_bytes().decode("utf-8")
@@ -512,8 +520,14 @@ def build(season_dir, game, install, private_audio=True):
 
     placeholders = place_tracks(season_dir, out, manifest)
 
-    if (season_dir / "assets").is_dir():
-        shutil.copytree(season_dir / "assets", art_root, dirs_exist_ok=True)
+    for layer in chain:
+        if (layer / "assets").is_dir():
+            shutil.copytree(layer / "assets", art_root, dirs_exist_ok=True)
+    # A base's track images for venues this season doesn't race.
+    for layer in chain[:-1]:
+        for art in (layer / "assets" / "tracks").glob("*.png"):
+            if not (out / "tracks" / f"{art.stem}.json").exists() and art.stem not in placeholders:
+                (art_root / "tracks" / art.name).unlink(missing_ok=True)
     # A placeholder of one of our own tracks only finds its image now.
     for track_id, source in placeholders.items():
         art = art_root / "tracks" / f"{source}.png"
@@ -529,15 +543,23 @@ def build(season_dir, game, install, private_audio=True):
         "pack": {"source_name": manifest["pack_folder"]},
         "version": manifest["version"],
     })
-    for extra in ("README.txt", "credits.txt"):
-        if (season_dir / extra).exists():
-            shutil.copy2(season_dir / extra, out / extra)
-    portraits = season_dir / "art" / "portraits.json"
-    if portraits.exists() and (out / "credits.txt").exists():
+    readme = [layer / "README.txt" for layer in chain if (layer / "README.txt").exists()]
+    if readme:
+        shutil.copy2(readme[-1], out / "README.txt")
+    # Credits: the season's own text first, then each base's (tracks, makers...).
+    credits = [(layer / "credits.txt").read_text(encoding="utf-8").strip("\n") for layer in reversed(chain)
+               if (layer / "credits.txt").exists()]
+    if credits:
+        with open(out / "credits.txt", "w", encoding="utf-8", newline="\n") as fh:
+            fh.write("\n\n".join(credits) + "\n")
+    portraits = layers.merged_json(season_dir, "art/portraits.json")
+    if portraits and (out / "credits.txt").exists():
         lines = ["", "Driver portraits (assets/portraits), free-licence photos from Wikimedia Commons:"]
-        for name, c in sorted(load_json(portraits).items()):
+        for name, c in sorted(portraits.items()):
             if c.get("source") == "photo":
                 lines.append(f"  {name}: {c['author'] or 'unknown author'}, {c['license']} - {c['page']}")
+        lines.append("  Photos are cropped to the head and shoulders; a few close-ups have")
+        lines.append("  their edges extended with a blurred copy of the photo.")
         lines.append("  Drivers without a free photo have a drawn helmet card.")
         with open(out / "credits.txt", "a", encoding="utf-8", newline="\n") as fh:
             fh.write("\n".join(lines) + "\n")
@@ -576,8 +598,9 @@ def build(season_dir, game, install, private_audio=True):
         if private_audio:
             sys.path.insert(0, str(Path(__file__).with_name("engine_audio")))
             import overlay
-            if overlay.overlay_for(manifest["pack_folder"]):
-                print(overlay.apply(target, manifest["pack_folder"]))
+            sound = layers.audio_overlay(manifest)
+            if overlay.overlay_for(sound):
+                print(overlay.apply(target, sound, manifest["pack_folder"]))
                 print("  NOTE: this installed pack now holds private audio; do not upload it to the Workshop")
         # Keep the mod browser (private/mod_browser, see tools/mod_browser.py) in
         # sync with what is installed.

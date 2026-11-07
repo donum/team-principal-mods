@@ -1,7 +1,25 @@
 # Engine-audio pipeline (private)
 
 Builds a DTM 2013 engine-sound library from downloaded onboard and TV videos,
-and packages it as a sound overlay for the locally installed `dtm2013` pack.
+and packages it as one sound overlay for the whole era base
+[`bases/dtm-era4`](../../bases/dtm-era4) (DTM 2012–2018). Every installed
+season on that base (`dtm2013` today; 2012, 2014... later) gets the same
+sounds.
+
+**Where the settings live:** `bases/dtm-era4/base.json` `"audio"`:
+- `overlay`: the overlay id, `private/engine_audio/pack/<id>/`;
+- `recording_years`: which cars may be heard (`common.ERA`, see "Era");
+- `research_season`: the entry list that tells who drove which make in the
+  videos (`catalog.py`);
+- `key_prefix`: the start of our clip keys (`dtm13_audi`, `dtm13_grid_idle_01`...).
+
+The pass-by tags are set per make when the overlay is applied
+(`overlay.json` `"passby_by_make"`): every engine supplier whose name starts
+with Audi, BMW or Mercedes gets that make's clip, whatever the season.
+
+**Another generation** (say Group A, era 1) gets its own sound library: give
+its base an `"audio"` section, then run the stages with
+`ENGINE_AUDIO_BASE=<base id>` and its own `ENGINE_AUDIO_DATA` folder.
 
 **Personal use only.** The source audio belongs to ITR / DTM. Audio, clips and
 caches live in `private/engine_audio/` (gitignored). Only code and the
@@ -35,7 +53,7 @@ python tools/engine_audio/package.py --install
 
 | Stage | Reads | Writes |
 |---|---|---|
-| `catalog.py` | each queue folder's `done.json` / `todo.json` (read-only), `seasons/dtm-2013/research` | `library.sqlite` table `videos`, `manifest.csv`, coverage matrix on stdout |
+| `catalog.py` | each queue folder's `done.json` / `todo.json` (read-only), the base's `research_season` (`seasons/dtm-2013/research`) | `library.sqlite` table `videos`, `manifest.csv`, coverage matrix on stdout |
 | `extract.py` | catalog rows with status `done` | `audio/<make>/<track>/<session>/<driver>/<id>.mka` (stream copy, no re-encode) |
 | `segment.py` | extracted audio | `features/<id>.npz`, tables `analysis` and `segments` |
 | `library.py` | segments | `library/index.html` (playable), `library/coverage.md`, ranked WAV clips |
@@ -45,11 +63,20 @@ python tools/engine_audio/package.py --install
 | `start_preview.py` | the installed pack | each start mixed with the game's own timing and levels (`library/starts/ingame_start_NN.wav`) |
 | `ambience.py` | spectator montages | 393 s `cars_on_track` loop of real trackside shots, cut at camera cuts |
 | `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (only with `package.py --synth-starts`) |
-| `package.py` | segments, base pack audio levels | `pack/dtm2013/` (files + `overlay.json`); `--install` applies it |
-| `overlay.py` | `pack/dtm2013/` | `apply`, `remove`, `status` on the installed pack |
+| `package.py` | segments, base pack audio levels | `pack/dtm-era4/` (files + `overlay.json`); `--install` applies it to every installed season of the base |
+| `overlay.py` | `pack/dtm-era4/` | `apply`, `remove`, `status` on an installed pack (`--pack dtm2013`) |
 
 `build_pack.py --install` re-applies the overlay after reinstalling the pack.
 `--no-private-audio` installs without it.
+
+## Era
+
+Only cars of the 2013 generation are heard: the 2012–2013 Audi RS 5, BMW M3
+and Mercedes C-Coupé (`common.ERA`, `common.era_reason`). A fan video's
+year is the year in its title, or else its upload year (`UPLOAD_YEARS`);
+`ERA_EXCLUDE` drops in-era videos that mix in other cars. The track bed
+(`ambience.py`) and the mod browser's candidate lists follow it. The
+onboard, TV and archive playlists are the 2013 season itself.
 
 ## Catalog
 
@@ -114,8 +141,9 @@ From the game's `assets/audio/README_AUDIO.txt`:
 - Every stock set number points at one of ours, so the bag never draws a stock exit.
 
 **Sources** (2026-11-07):
-- *Exits:* Oschersleben 2013, filmed at the fence of the pit-exit lane (`UD-N3wMEJWg`, `nUfRLnhcaKc`). The cars hold the limiter (steady harmonics), pass with a Doppler drop and pull away, like the stock exits. They are cut so the pass lands 4.4–5.6 s in (stock: 4.4–5.8 s).
-- *Wheelguns:* spectators at the 2013 Brands Hatch pit-stop practice, Audi and BMW crews (`gpLEQ52Q4F4`, `Yy28JpRzFD0`, `1K5GsYD9vmI`, `H64vMO6NpuY`). These are the strongest bursts of `--scan`, checked on the spectrogram and frames.
+- *Exits:* six 2013 cars pulling away down a pit lane in "DTM Sound 1" (`EMSlNAM8zC0`, Don Blech, June 2013, probably Lausitzring), no commentary: ten sets, three Audis and seven Mercedes (no BMW leaves in it). Picked from 15 departures by frames and level, not yet confirmed by ear (`exit_unconfirmed`, shown in the mod browser); the pull-away lands 5 s in (stock: 4.4–5.8 s). The rest are in `pilot/pit_candidates/exit_EMSlNAM8zC0_*.wav`.
+- *Oschersleben cuts (old exits):* by ear (2026-11-07) four were drive-bys, one a pit entry and one probably an exit. All six are in `FAN_CLIPS`, previews only (`library/fan_clips`): unknown-make drive-bys can't be tagged and the game has no pit-entry slot (wishlist E14).
+- *Wheelguns:* spectators at the 2013 Brands Hatch pit-stop practice, Audi and BMW crews (`gpLEQ52Q4F4`, `Yy28JpRzFD0`, `1K5GsYD9vmI`, `H64vMO6NpuY`, `HF-w0SiCD-Y`), and a Mercedes race stop filmed close at the 2013 Lausitzring (`DPFz3gE17zQ`, which also opens with the car rolling in: a pit entry, kept as a preview). These are the strongest bursts of `--scan`, checked on the spectrogram and frames.
 - *Fire-ups:* none found. The Lausitzring 2013 pit-lane clips are a garage walk with no engines running. The Norisring "roll-out" and the Hockenheim sound check are cars on track. The Norisring paddock clip of the Euronics AMG starts with the engine already running, apparently at an edit, so it is only a candidate.
 - *Set aside:* the Spielberg 2013 pit-exit practice starts (`0sl-m42P15Q`) are faint and windy behind a fence. Misano 2018 is mostly distant generator hum.
 
@@ -174,10 +202,11 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
     1 s equal-power crossfade, no level change), so the pass lands at
     6.6 s, about 4.6 s after the cars move.
   - *Moving away:* the stock launches are 10.9 s and fade out from the
-    getaway; ours ended on the field still loud. At 8 s it now
-    crossfades (1.5 s, levels matched) into the 2017 Hockenheim start
-    (`IBuEsBSh9_I`, 16–22.5 s), the field leaving towards turn 1: real
-    distance. Phone recordings lose little level as cars leave (the
+    getaway; ours ended on the field still loud. Until 2026-11-07 it
+    crossfaded at 8 s into the 2017 Hockenheim start (`IBuEsBSh9_I`,
+    16–22.5 s), the field leaving towards turn 1. That tail is out (era
+    rule), so the launch now runs to the end of the 2013 recording and
+    fades there. An in-era recording of the field leaving is wanted. Phone recordings lose little level as cars leave (the
     gain control holds it up) but go dull, the spectral centroid falling
     from ~4 kHz on the pass to 1.3 kHz here.
   - *Fade:* the last 4 s fall a steady 30 dB (`fade_db`); the cosine
@@ -226,7 +255,8 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
   cuts (a sudden spectral change between the 0.3 s before and after),
   keeping shots of 8+ s with engines, almost no speech and 9+ dB of level
   swing (cars coming and going; uploads whose level was flattened sound
-  like a wall). V8 era only: from 2019 the DTM ran turbo four-cylinders.
+  like a wall). 2012–2013 cars only (see "Era"): since 2026-11-07 the
+  bed is the 2013 Hockenheim sound check, Nürburgring and Norisring roll-out.
   Start and grid clips stay out of the bed.
 
 ## Findings so far (2026-11-04, all downloads in)

@@ -1,42 +1,45 @@
 {
-  "$comment": "2013 logos. commons = logo file on Wikimedia Commons (public domain, licence recorded); crest = plain text crest made for this pack where no free logo exists. Maker logos are the versions in use in 2013.",
+  "$comment": "2013 team logos for tools/logo_art.py. commons = logo file on Wikimedia Commons (public domain, licence recorded). file = a team's own logo from the author's folder (local.json \"logo_folders\"), kept out of git; these are the teams' trademarks and not covered by the pack's Creative Commons licences (see credits.txt). All are shown on a white plate so dark lettering stays readable on the game's dark screens. Maker and tyre logos are in bases/dtm-era4/art/logos.json. \"team_tiles\": \"maker\": the game shows team logos only as small list icons, where they can't be recognised, so the pack uses each team's maker emblem there (as on the TV graphics) and builds the team logos into build/art/<season>/team_logos only (not in the pack or git).",
+  "team_tiles": "maker",
   "teams": {
     "Audi Sport Team Phoenix": {
-      "source": "crest",
-      "text": "PHOENIX\nRACING",
-      "fg": [
+      "source": "file",
+      "file": "Team_Phoenix_Logo.png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
         255,
         255,
         255
       ],
-      "bg": [
-        20,
-        20,
-        22
+      "plate": [
+        255,
+        255,
+        255
       ],
-      "accent": [
-        240,
-        120,
-        0
+      "border": [
+        30,
+        30,
+        30
       ]
     },
     "BMW Team RBM": {
-      "source": "crest",
-      "text": "RBM",
-      "fg": [
+      "source": "file",
+      "file": "Racing_Bart_Mampaey_(logo).png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
         255,
         255,
         255
       ],
-      "bg": [
-        20,
-        40,
-        100
+      "plate": [
+        255,
+        255,
+        255
       ],
-      "accent": [
-        0,
-        160,
-        225
+      "border": [
+        30,
+        30,
+        30
       ]
     },
     "STIHL AMG-Mercedes": {
@@ -71,7 +74,7 @@
     },
     "Audi Sport Team Abt Sportsline": {
       "source": "commons",
-      "file": "File:Abt-logo 2010.svg",
+      "file": "File:ABT Logo black.png",
       "license": "Public domain",
       "plate": [
         255,
@@ -100,27 +103,35 @@
       ]
     },
     "BMW Team MTEK": {
-      "source": "crest",
-      "text": "MTEK",
-      "fg": [
-        20,
-        20,
-        20
-      ],
+      "source": "file",
+      "file": "Team_MTEK.webp",
+      "origin": "team logo supplied by the pack author (not a free licence)",
       "bg": [
         255,
-        204,
-        0
+        255,
+        255
       ],
-      "accent": [
-        20,
-        20,
-        20
-      ]
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "crop": [
+        0.19,
+        0,
+        1,
+        1
+      ],
+      "note": "only the //M Team MTEK part: the BMW roundel on the left is cut off"
     },
     "Audi Sport Team Abt": {
       "source": "commons",
-      "file": "File:Abt-logo 2010.svg",
+      "file": "File:ABT Logo black.png",
       "license": "Public domain",
       "plate": [
         255,
@@ -134,99 +145,66 @@
       ]
     },
     "stern AMG-Mercedes": {
-      "source": "crest",
-      "text": "MÜCKE\nMOTORSPORT",
-      "fg": [
+      "source": "file",
+      "file": "Mücke_Motorsport.png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
         255,
         255,
         255
       ],
-      "bg": [
-        200,
-        20,
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
         30
       ],
-      "accent": [
-        255,
-        255,
-        255
-      ]
+      "crop": [
+        0.02,
+        0.05,
+        0.98,
+        0.95
+      ],
+      "note": "the source has a grey frame, cut off"
     },
     "BMW Team RMG": {
-      "source": "crest",
-      "text": "RMG",
-      "fg": [
+      "source": "file",
+      "file": "Reinhold_Motosport-705x505.jpg",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": [
         255,
         255,
         255
       ],
-      "bg": [
-        40,
-        40,
-        45
+      "plate": [
+        255,
+        255,
+        255
       ],
-      "accent": [
-        0,
-        120,
-        200
+      "border": [
+        30,
+        30,
+        30
       ]
     },
     "Audi Sport Team Rosberg": {
-      "source": "crest",
-      "text": "TEAM\nROSBERG",
-      "fg": [
-        255,
-        255,
-        255
-      ],
-      "bg": [
-        0,
-        70,
-        150
-      ],
-      "accent": [
-        255,
-        255,
-        255
-      ]
-    }
-  },
-  "engines": {
-    "Audi": {
-      "source": "commons",
-      "file": "File:Audi logo detail.svg",
-      "license": "Public domain",
-      "period": "2009-2016",
+      "source": "file",
+      "file": "x_Logo_TeamRosberg_2022_Schriftzug.png",
+      "origin": "team logo supplied by the pack author (not a free licence)",
+      "bg": null,
       "plate": [
         255,
         255,
         255
       ],
-      "also_as": [
-        "Audi 4.0 V8"
-      ]
-    },
-    "BMW": {
-      "source": "commons",
-      "file": "File:BMW.svg",
-      "license": "Public domain",
-      "period": "1997-2020",
-      "also_as": [
-        "BMW P66 4.0 V8"
-      ]
-    },
-    "Mercedes-Benz": {
-      "source": "commons",
-      "file": "File:Mercedes-Benz Logo 2010.svg",
-      "license": "Public domain",
-      "period": "2009-",
-      "plate": [
-        255,
-        255,
-        255
-      ],
-      "also_as": [
-        "Mercedes-AMG 4.0 V8"
+      "border": [
+        30,
+        30,
+        30
       ]
     }
   }

@@ -9,6 +9,13 @@ rules, sources and unverified points), see
 2013 is the season whose rules match the game best: one race per weekend,
 two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 
+**Era base:** 2013 builds on [`bases/dtm-era4`](../../bases/dtm-era4) (`"base": "dtm-era4"`),
+which holds what every 2012–2018 season shares: the rules, the tyre and
+damage tuning, the traced tracks, the engine and tyre logos, the generator
+defaults and the private sounds. They were tuned on 2013. This folder keeps
+only what is 2013's own: teams, drivers, sponsors, calendar, car images,
+team logos and portraits. See [bases/README.md](../../bases/README.md).
+
 ## How it's built
 
 - **Teams and drivers:**
@@ -26,7 +33,11 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   10–19 (season 5) the four top teams still took 80% of the points
   (real: 58%) and Rockenfeller won 6 of 10, so both ranges were narrowed.
   These are estimates, not history.
-- **Rules** (`rules: "own"` in `gen.json`, see `patches/regulations.json`):
+- **Previous position:** each team's `previous_position` in `gen.json` is its
+  2012 teams' standing (Schnitzer 1st … Mücke 10th), not its 2013 result.
+  MTEK, new in 2013, is last (11th). See research/season.md.
+- **Rules** (`rules: "own"` in the base's `gen.json`, see the base's
+  [`patches/regulations.json`](../../bases/dtm-era4/patches/regulations.json)):
   - Points 25-18-15-12-10-8-6-4-2-1 (the game's `modern_top10`).
   - Knockout qualifying. The real Q4 single-lap shootout of the top 4 isn't
     in the game.
@@ -41,7 +52,7 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 - **Engines:** Audi 4.0 V8, BMW P66 4.0 V8 and Mercedes-AMG 4.0 V8 as works
   partners with near-equal ratings. BMW is rated a little higher (it won the
   2013 manufacturers' title).
-- **Tyres:** Hankook only. `data/tyremodel.json` makes the soft the option
+- **Tyres:** Hankook only. The base's `data/tyremodel.json` makes the soft the option
   tyre (about 2% more grip, quick wear) and the hard the standard tyre, plus
   the wet. There was no medium, so it is removed (a `null` in the merged
   file; the game takes its compounds from this file and treats any other
@@ -64,7 +75,7 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   the other packs, so the game's development and part costs still work. They
   aren't real euros. Top driver salaries are capped at 2.5 (DTM scale), not F1
   levels.
-- **Tracks:** 8 new venues traced from OpenStreetMap (`track_specs/`), plus
+- **Tracks:** 8 new venues traced from OpenStreetMap (the base's `track_specs/`), plus
   the 1991 Norisring (`shared_tracks`). Each new spec sets `race_laps` to
   the scheduled 2013 distance (`research/calendar.csv`, all about 190 km or
   70 minutes; the Nürburgring 49 laps, of which the wet race ran 45) and one
@@ -93,10 +104,24 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
     used as a reference only: no part of it is in the pack.
     `research/liveries.csv` lists the 22 liveries. The game shows one car per
     team, so each team image is its lower-numbered car.
-  - Logos: public-domain Commons logos for Abt, HWA and Schnitzer, crests for
-    the other teams, and the Audi, BMW and Mercedes-Benz logos in use in 2013
-    (`art/logos.json`).
+  - Logos: the game shows team logos only as small icons in the team list,
+    where they can't be recognised, so each team shows its maker's emblem
+    there, as on the 2012-2013 TV timing graphics (`"team_tiles": "maker"`
+    in `art/logos.json`). The emblems come from the base: chrome Audi rings,
+    the BMW roundel and the chrome Mercedes star, sized to each other as on
+    TV. The team logos (ABT, HWA and Schnitzer from Commons, the others
+    from the author's folder, MTEK without the BMW roundel) are still listed in `art/logos.json` and
+    built into `build/art/<season>/team_logos/`, but they are not in the
+    pack or git: several are the teams' own logos, which aren't freely
+    licensed. Hankook's flame sits over its wordmark, so it fills the small
+    square the game gives the tyre logo.
   - Portraits: free Commons photos where they exist (`art/portraits.json`).
+    Every photo is picked by hand and pinned (`"pinned": true`). Most come
+    from Stefan Brending's (2eight) photos of the 2014 Hockenheim finale,
+    the closest free set to 2013. All heads are cropped to the same size
+    (2.4 face widths, `FACE_SPAN` in `tools/portrait_art.py`). Wickens,
+    Scheider and Priaulx only have tight close-ups, so their heads are
+    larger. Joey Hand has a helmet card: no free photo shows him clearly.
 
 ## Tracks
 
@@ -177,6 +202,7 @@ brackets).
   every car of a make; here each is on one team (E12). Sponsor money is the
   vanilla deals' and not real (E6).
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
+- **Language:** team texts are English only. The game has no language setting, so a German version would need a second pack (E13).
 
 ## Lap times
 
@@ -232,7 +258,7 @@ python tools/season_from_research.py seasons/dtm-2013
 ```
 
 ```bash
-python tools/osm_track.py seasons/dtm-2013/track_specs/*.json
+python tools/osm_track.py bases/dtm-era4/track_specs/*.json
 ```
 
 ```bash
@@ -248,6 +274,10 @@ python tools/car_drawings.py seasons/dtm-2013 --preview
 
 ```bash
 python tools/logo_art.py seasons/dtm-2013
+```
+
+```bash
+python tools/logo_art.py bases/dtm-era4
 ```
 
 ```bash

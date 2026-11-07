@@ -1,7 +1,7 @@
 # Wish List for the Team Principal Developer
 
 These are feature requests from building historically accurate DTM season
-packs: 1990–1992 (Group A) and 2013. Each item lists the real-world need,
+packs: 1990–1992 (Group A), 2012 and 2013. Each item lists the real-world need,
 what the game can't do today, our current workaround, and what would solve
 it. **Needed by** names the season packs (`seasons/dtm-*`) that would use
 it. Findings are based on game version 0.99.5. See
@@ -19,7 +19,8 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, D1, D3, D4, D5, D6, D7, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12 |
+| dtm-2012 | A5, B5, B7, C4, D1, D3, D5, D6, D7, E1, E2, E4, E5, E6, E8, E9, E12 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, D1, D3, D4, D5, D6, D7, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14 |
 
 ---
 
@@ -63,7 +64,7 @@ under "Simplifications".
   (day of year).
 
 ### A5. Single-lap shootout (Q4) · P2
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012 (the top 4 also had a single-lap shootout).
 - **2013:** the four fastest from Q3 ran one timed lap each, alone on the
   track, for the first two rows.
 - **Today:** the game's knockout stops at Q3.
@@ -111,7 +112,7 @@ under "Simplifications".
   points rules and eligible entries (e.g. `"privateer": true`).
 
 ### B5. Mandatory pit stops · P1
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012 (two mandatory stops, each inside a pit window).
 - **2013:** **two mandatory stops**, no pit window, but none in the first or
   last 3 laps.
 - **Today:** no regulation can require a number of stops.
@@ -134,7 +135,7 @@ under "Simplifications".
   activation budget instead of zones, and `disable_last_laps`.
 
 ### B7. Tyre allocation rules · P2
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012 (one dry tyre for the whole season; the pack keeps the soft as a copy of the hard, since the game's need for a soft can't be checked).
 - **2013:** the Hankook hard was the standard tyre, plus **one set of the
   option (soft) per race**, which every driver had to use.
 - **Today:** `formula_compound_usage` asks for two different dry compounds,
@@ -172,7 +173,7 @@ under "Simplifications".
 - **Request:** a `number` on the contract, including for reserves.
 
 ### C4. Customer cars and homologation · P2
-- **Needed by:** dtm-1991, dtm-2013 (chassis and aero were homologated and largely frozen; in the game teams develop at different rates, and in season 5 the gap between the fastest and slowest car grew from 3.6 to 4.3 rating points).
+- **Needed by:** dtm-1991, dtm-2013 (chassis and aero were homologated and largely frozen; in the game teams develop at different rates, and in season 5 the gap between the fastest and slowest car grew from 3.6 to 4.3 rating points), dtm-2012.
 - **1991:** privateers bought homologated cars (Evo models) from BMW,
   Mercedes and Opel. Chassis development was mostly the manufacturer's job,
   not the team's.
@@ -201,7 +202,7 @@ under "Simplifications".
 ## D. Cars and simulation
 
 ### D1. Touring-car part set · P1
-- **Needed by:** dtm-1990, dtm-1991, dtm-1992, dtm-2013.
+- **Needed by:** dtm-1990, dtm-1991, dtm-1992, dtm-2013, dtm-2012.
 - **Today:** the parts are open-wheel ones (front and rear wing, underfloor,
   diffuser, sidepods), plus ERS and DRS.
 - **Request:** data-defined part categories with labels and effects, so a
@@ -221,7 +222,7 @@ under "Simplifications".
   traction, wet performance and tyre wear.
 
 ### D3. Documented lap-time controls · P1
-- **Needed by:** dtm-1991, dtm-2013 (we fitted lap times by running the game's physics model offline).
+- **Needed by:** dtm-1991, dtm-2013 (we fitted lap times by running the game's physics model offline), dtm-2012.
 - **What we found:**
   - `lap_modifier` sets the **number of laps**: race laps = `options.laps`
     × `lap_modifier`.
@@ -242,7 +243,7 @@ under "Simplifications".
   real strategy.
 
 ### D5. Wider car-profile range · P2
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012.
 - **What we found:** `car_profile` multipliers must stay within 0.5–1.5 (the
   game raises an error otherwise). A 2013 DTM car (about 480 hp, 1,110 kg,
   a lot of drag) needs more drag and less acceleration than that allows.
@@ -252,7 +253,7 @@ under "Simplifications".
   downforce instead of multipliers.
 
 ### D6. Damage repair at pit stops · P2
-- **Needed by:** dtm-2013 (and the Group A packs).
+- **Needed by:** dtm-2013 (and the Group A packs), dtm-2012.
 - **Real world:** a DTM front end is the splitter, bumper and bodywork, not
   a nose cone that clips off. After contact the crew pulls off loose
   pieces or tapes them up, and the driver carries the damage to the end.
@@ -275,7 +276,7 @@ under "Simplifications".
   part.
 
 ### D7. Development freeze and homologation · P2
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012.
 - **Real world:** 2013 DTM cars were homologated before the season, and
   aero development was largely frozen during it. Teams built spares to
   replace crash damage, not new designs.
@@ -318,7 +319,7 @@ under "Simplifications".
     buyouts, events, relationships, staff).
 
 ### E4. Documented asset names · P2
-- **Needed by:** dtm-1991, dtm-2013.
+- **Needed by:** dtm-1991, dtm-2013, dtm-2012.
 - **What we found:** engine logos are looked up by engine name without
   spaces (`fordcosworth.png`), and team images by team name without spaces.
 - **Request:**
@@ -330,9 +331,13 @@ under "Simplifications".
     details such as Abt Sportsline's red (#11) and yellow (#12) mirrors
     and dive planes. Wehrlein's #18 ran a one-off VfB Stuttgart design at
     one race. Request: a car image per entry, and optionally per round.
+  - **Livery choice per team:** until per-entry images exist, let a pack
+    ship several images for a team (for example `Cars/<Team>.png`,
+    `Cars/<Team>_2.png`) and let the player pick which one the team shows,
+    for any team. The 2013 pack has all 22 cars drawn and ready for this.
 
 ### E5. Track editor features · P2
-- **Needed by:** dtm-1991, dtm-2013.
+- **Needed by:** dtm-1991, dtm-2013, dtm-2012.
 - **What we found:** `use_raw_canvas_coordinates` and `raw_canvas_size` are
   needed so cars follow the drawn track.
 - **Requests:**
@@ -353,7 +358,7 @@ under "Simplifications".
     Oschersleben and Zandvoort were moved onto the pit straight.
 
 ### E6. Currency and economy per pack · P3
-- **Needed by:** dtm-1991, dtm-2013.
+- **Needed by:** dtm-1991, dtm-2013, dtm-2012.
 - **1991:** DTM budgets were in Deutsche Mark and much smaller than F1.
 - **2013:** the real 2013 sponsors replace the vanilla starting deals, but
   each keeps the money of the vanilla deal it replaces ($25–325m a deal,
@@ -370,7 +375,7 @@ under "Simplifications".
   - A real date for each schedule week, for news and emails.
 
 ### E8. Engine sounds per supplier beyond pass-bys · P3
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012.
 - **2013:** three V8s with clearly different voices (Audi RS 5, BMW M3,
   Mercedes C-Coupé).
 - **Today:** only pass-bys can be tagged per supplier (`passby_audio` in
@@ -382,7 +387,7 @@ under "Simplifications".
   sounds like a BMW.
 
 ### E9. Ambience and start sounds per track · P3
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012.
 - **2013:** the venues sound very different: the Norisring street circuit
   between concrete walls and a packed grandstand, the open Lausitzring,
   the dunes at Zandvoort, a half-empty Moscow Raceway. The broadcasts give
@@ -432,7 +437,7 @@ under "Simplifications".
     a make can have several recordings.
 
 ### E12. A sponsor on several teams · P3
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012 (Deutsche Post on Abt Sportsline's Audi and Schnitzer's BMW).
 - **2013:** make-wide partners ran on every car of a make: Puma, Sonax,
   Allgeier, Sachs and H&R on all eight BMWs, Petronas on all six
   Mercedes, Würth on all eight Audis.
@@ -442,6 +447,28 @@ under "Simplifications".
 - **Workaround:** each partner goes to one team of its make.
 - **Request:** document whether a sponsor can back several teams, or
   allow a make-wide (supplier) deal.
+
+### E13. Translated pack texts · P3
+- **Needed by:** all packs (German first: the DTM is a German series).
+- **Today:** the game has no language setting. Pack texts are one string
+  each, for example `team_histories.json` maps a team name to one text.
+  A German version would have to be a second pack.
+- **Workaround:** English texts only.
+- **Request:** an optional language map per text, for example
+  `{"en": "...", "de": "..."}` in `team_histories.json`, with a game
+  language setting that picks the matching text and falls back to English.
+
+### E14. Pit-entry sound · P3
+- **Needed by:** dtm-2013.
+- **2013:** fan recordings at the Oschersleben pit lane hold cars braking
+  in off the track and rolling in on the limiter, as distinct as the exits.
+- **Today:** `race/race_engines.json` has pit exits, fire-ups and
+  wheelguns; nothing plays when a car enters the pit lane, so the stop
+  starts in silence (or with the wheelguns).
+- **Workaround:** the pit-entry recording stays a preview in the mod
+  browser, outside the pack.
+- **Request:** an optional `pit_entry_NN` bank, played as a car crosses
+  the pit-lane entry, paired by number like the other pit clips.
 
 ---
 

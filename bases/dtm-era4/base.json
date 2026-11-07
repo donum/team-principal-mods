@@ -1,0 +1,55 @@
+{
+  "$comment": "Era base for the 2012-2018 DTM (New DTM, 4.0 V8: Audi A5/RS 5, BMW M3/M4, Mercedes C-Coupe). Every season in seasons/ with \"base\": \"dtm-era4\" builds on it (tools/layers.py): rules, tyres, damage, traced tracks, maker and tyre art, and one private sound overlay for all of them.",
+  "title": "DTM 2012-2018 (era base)",
+  "base_pack": "default26",
+  "series": "formula",
+  "no_title_sponsors": true,
+  "constants": {
+    "POINTS_TOP10": [
+      25,
+      18,
+      15,
+      12,
+      10,
+      8,
+      6,
+      4,
+      2,
+      1
+    ],
+    "QUALI_GRID_LIMIT": 22,
+    "QUALI_MIN_ENTRANTS": 18,
+    "PREQUALIFYING_TRIGGER_CARS": 30,
+    "PREQUALIFYING_FIELD_LIMIT": 30,
+    "DRIVER_RETIREMENT_MIN_AGE": 36,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 44
+  },
+  "shared_tracks": {
+    "norisring": "dtm-1991"
+  },
+  "track_overrides": {
+    "norisring": {
+      "race_laps": 83,
+      "speed_mult": 1.29,
+      "tyre_wear_mult": 0.65,
+      "pit_lane_loss_s": 18.0,
+      "drs_zones": [
+        {
+          "detection_progress": 0.8954,
+          "start_progress": 0.9354,
+          "end_progress": 0.254
+        }
+      ]
+    }
+  },
+  "audio": {
+    "$comment": "Private engine sounds (tools/engine_audio, never in git or the Workshop), shared by every season on this base. recording_years: only recordings of these years' cars are used (the 2012-2013 Audi RS 5, BMW M3 and Mercedes C-Coupe). research_season: the entry list that tells which driver drove which make in the videos. key_prefix: start of the clip keys in the game's sound manifests.",
+    "overlay": "dtm-era4",
+    "recording_years": [
+      2012,
+      2013
+    ],
+    "research_season": "dtm-2013",
+    "key_prefix": "dtm13"
+  }
+}

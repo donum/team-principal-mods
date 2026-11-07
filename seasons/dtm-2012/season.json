@@ -1,0 +1,205 @@
+{
+  "base": "dtm-era4",
+  "title": "DTM 2012 - Deutsche Tourenwagen Masters",
+  "pack_folder": "dtm2012",
+  "version": "0.1",
+  "constants": {
+    "SEASON_START_YEAR": 2012
+  },
+  "team_clones": {
+    "BMW Team Schnitzer": "Red Boar",
+    "Thomas Sabo AMG-Mercedes": "Mercurion",
+    "AMG-Mercedes": "McMean",
+    "Audi Sport Team Rosberg": "Audex",
+    "Audi Sport Team Abt Sportsline": "Scuderia Rossa",
+    "BMW Team RBM": "Ashton Darting",
+    "Audi Sport Team Phoenix": "French Blue",
+    "BMW Team RMG": "Alpha Bison",
+    "Audi Sport Team Abt": "Willens Racing",
+    "DHL AMG-Mercedes": "Hossden GP",
+    "Junge Sterne AMG-Mercedes": "Cadylacky Motors"
+  },
+  "staff": {
+    "seed": 2012,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "BMW Team Schnitzer": 16,
+      "Thomas Sabo AMG-Mercedes": 15,
+      "AMG-Mercedes": 13,
+      "Audi Sport Team Rosberg": 11,
+      "Audi Sport Team Abt Sportsline": 11,
+      "BMW Team RBM": 10,
+      "Audi Sport Team Phoenix": 10,
+      "BMW Team RMG": 9,
+      "Audi Sport Team Abt": 6,
+      "DHL AMG-Mercedes": 6,
+      "Junge Sterne AMG-Mercedes": 4
+    }
+  },
+  "track_overrides": {
+    "$comment": "2012 race distances (research/calendar.csv) where they differ from the base's 2013 ones. Hockenheim keeps 42 laps (the finale); the opener ran 40.",
+    "brandshatch": {
+      "race_laps": 97
+    },
+    "norisring": {
+      "race_laps": 78
+    },
+    "zandvoort": {
+      "race_laps": 43
+    }
+  },
+  "sponsors": {
+    "pool": {
+      "BMW M Performance": {
+        "industry": "Automobile",
+        "nationality": "german"
+      },
+      "Exide": {
+        "industry": "Technology",
+        "nationality": "american"
+      },
+      "Allgeier": {
+        "industry": "Technology",
+        "nationality": "german"
+      },
+      "Red Bull": {
+        "industry": "Consumer Goods",
+        "nationality": "austrian"
+      },
+      "Deutsche Post": {
+        "industry": "Telecom",
+        "nationality": "german"
+      },
+      "Petronas": {
+        "industry": "Energy",
+        "nationality": "malaysian"
+      },
+      "STIHL": {
+        "industry": "Consumer Goods",
+        "nationality": "german"
+      },
+      "BMW Bank": {
+        "industry": "Finance",
+        "nationality": "german"
+      },
+      "Puma": {
+        "industry": "Clothing",
+        "nationality": "german"
+      },
+      "H&R": {
+        "industry": "Automobile",
+        "nationality": "german"
+      },
+      "Schaeffler": {
+        "industry": "Automobile",
+        "nationality": "german"
+      },
+      "Thomas Sabo": {
+        "industry": "Consumer Goods",
+        "nationality": "german"
+      },
+      "Mercedes-Benz Bank": {
+        "industry": "Finance",
+        "nationality": "german"
+      },
+      "Crowne Plaza": {
+        "industry": "Consumer Goods",
+        "nationality": "british"
+      },
+      "Castrol": {
+        "industry": "Energy",
+        "nationality": "british"
+      },
+      "Sonax": {
+        "industry": "Chemicals/Materials",
+        "nationality": "german"
+      },
+      "Computer Bild Spiele": {
+        "industry": "Telecom",
+        "nationality": "german"
+      },
+      "Würth": {
+        "industry": "Chemicals/Materials",
+        "nationality": "german"
+      },
+      "DHL": {
+        "industry": "Telecom",
+        "nationality": "german"
+      },
+      "stern": {
+        "industry": "Telecom",
+        "nationality": "german"
+      },
+      "Playboy": {
+        "industry": "Consumer Goods",
+        "nationality": "american"
+      },
+      "TV Movie": {
+        "industry": "Telecom",
+        "nationality": "german"
+      },
+      "Junge Sterne": {
+        "industry": "Automobile",
+        "nationality": "german"
+      },
+      "TV Spielfilm": {
+        "industry": "Telecom",
+        "nationality": "german"
+      },
+      "Yahoo!": {
+        "industry": "Technology",
+        "nationality": "american"
+      }
+    },
+    "teams": {
+      "BMW Team RMG": [
+        "BMW M Performance",
+        "Exide",
+        "Allgeier"
+      ],
+      "Audi Sport Team Abt Sportsline": [
+        "Red Bull",
+        "Deutsche Post"
+      ],
+      "AMG-Mercedes": [
+        "Petronas",
+        "STIHL"
+      ],
+      "BMW Team Schnitzer": [
+        "BMW Bank",
+        "Puma",
+        "H&R"
+      ],
+      "Audi Sport Team Phoenix": [
+        "Schaeffler"
+      ],
+      "Thomas Sabo AMG-Mercedes": [
+        "Thomas Sabo",
+        "Mercedes-Benz Bank"
+      ],
+      "BMW Team RBM": [
+        "Crowne Plaza",
+        "Castrol",
+        "Sonax"
+      ],
+      "Audi Sport Team Abt": [
+        "Computer Bild Spiele",
+        "Würth"
+      ],
+      "DHL AMG-Mercedes": [
+        "DHL",
+        "stern"
+      ],
+      "Audi Sport Team Rosberg": [
+        "Playboy",
+        "TV Movie"
+      ],
+      "Junge Sterne AMG-Mercedes": [
+        "Junge Sterne",
+        "TV Spielfilm",
+        "Yahoo!"
+      ]
+    }
+  }
+}

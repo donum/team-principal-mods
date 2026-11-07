@@ -9,8 +9,8 @@ minute per camera position, then a hard cut. This stage
      video's own frame-to-frame variation;
   2. keeps the shots in between that are long enough (>= MIN_SHOT_S), carry
      engines (clarity) and almost no speech, breathe (cars coming and going,
-     MIN_DR_DB), and come from the V8 era (title year 2011-2018 or none;
-     from 2019 the cars had turbo four-cylinders); start, grid and
+     MIN_DR_DB), and come from the 2013 car generation (common.era_reason:
+     2012-2013 only, by title or upload year); start, grid and
      formation-lap clips stay out (a start mid-session would be wrong);
   3. joins them into one loop of BED_S seconds, every shot level-matched to
      the others but with its own dynamics kept, 2 s equal-power crossfades,
@@ -34,7 +34,7 @@ from pathlib import Path
 import numpy as np
 from scipy.ndimage import uniform_filter1d
 
-from common import FEATURE_DIR, LIBRARY_DIR, connect, decode, dump_json, write_wav
+from common import FEATURE_DIR, LIBRARY_DIR, connect, decode, dump_json, era_reason, write_wav
 
 SR = 44100
 FPS = 20                 # segment.py feature rate
@@ -54,12 +54,6 @@ CROWD_XF_S = 1.5
 
 
 NOT_BED = re.compile(r"start|grid|aufstellung|einf.hrung|runde 1|1ste runde|warm.?up", re.I)
-
-
-def era_ok(title: str) -> bool:
-    years = [int(y) for y in re.findall(r"\b(20[0-2]\d)\b", title)]
-    years += [2000 + int(y) for y in re.findall(r"\b\d{1,2}\.\d{1,2}\.(\d{2})\b", title)]
-    return all(2011 <= y <= 2018 for y in years)
 
 
 def band_frames(path: Path) -> np.ndarray:
@@ -171,7 +165,7 @@ def collect_shots(db) -> list[dict]:
                          WHERE v.video_type = 'spectator' AND v.status = 'done'""").fetchall()
     shots = []
     for r in rows:
-        if not era_ok(r["title"]) or NOT_BED.search(r["title"]) or not (FEATURE_DIR / f"{r['id']}.npz").exists():
+        if era_reason(r["id"], r["title"]) or NOT_BED.search(r["title"]) or not (FEATURE_DIR / f"{r['id']}.npz").exists():
             continue
         s = shots_of(r, Path(r["path"]))
         print(f"{r['id']} {r['title'][:50]:<50} {len(s):3} shots, {sum(x['end_s'] - x['start_s'] for x in s):5.0f} s")

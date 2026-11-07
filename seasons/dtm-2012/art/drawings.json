@@ -1,0 +1,17 @@
+{
+  "$comment": "DTM 2012 car images drawn by Pappydhorn12 (used with the artist's permission). Each source file is a square sheet of a team's cars on black, stacked top to bottom; 'cars' lists their numbers in that order (from research/entries.csv) and 'team' picks the team image (the lower-numbered car, as the game shows one car per team). tools/car_drawings.py crops them; the other car of each team is kept in art/liveries (not in the pack) for a future livery choice (wishlist E4).",
+  "artist": "Pappydhorn12",
+  "sheets": {
+    "Abt_Sportsline.png": {"cars": [3, 4], "team": "Audi Sport Team Abt Sportsline"},
+    "Audi_Sport_Team_Abt.png": {"cars": [17, 18], "team": "Audi Sport Team Abt"},
+    "BMW_Team_RBM.png": {"cars": [15, 16], "team": "BMW Team RBM"},
+    "BMW_Team_RMG.png": {"cars": [1, 2], "team": "BMW Team RMG"},
+    "BMW_Team_Schnitzer.png": {"cars": [7, 8], "team": "BMW Team Schnitzer"},
+    "HWA_Team.png": {"cars": [11, 12], "team": "Thomas Sabo AMG-Mercedes"},
+    "Mercedes_AMG.png": {"cars": [5, 6], "team": "AMG-Mercedes", "shadow_max": 30, "note": "a faint shadow line (values up to 30, 12 px below the tyres) runs under #6 at ground level and joined its tyres"},
+    "Mucke_Motorsport.png": {"cars": [19, 20], "team": "DHL AMG-Mercedes", "note": "Wickens' stern car is drawn with number 21; the 2012 entry list (research/entries.csv) has him as #20"},
+    "Persson_Motorsport.png": {"cars": [23, 24], "team": "Junge Sterne AMG-Mercedes", "note": "Wolff's TV Spielfilm car is drawn with number 20; the 2012 entry list has her as #24"},
+    "Phoenix_Racing.png": {"cars": [9, 10], "team": "Audi Sport Team Phoenix", "shadow_max": 16, "note": "faint shadow lines (values up to 15) under both cars"},
+    "Team_Rosberg.png": {"cars": [21, 22], "team": "Audi Sport Team Rosberg", "shadow_max": 40, "note": "faint shadow lines (values up to 38) under both cars"}
+  }
+}

@@ -10,6 +10,17 @@ For every driver in a season pack's data/drivers.json:
 4. crop around the detected face (OpenCV) to the game's portrait format.
 
 Drivers without a usable photo get a drawn helmet card in team colours.
+
+A hand-picked photo is pinned in art/portraits.json with "pinned": true and
+its "file"; the tool then uses that file and nothing else. A pinned
+{"source": "helmet"} keeps the helmet card. "max_pad" (default 0.45) lets a
+close-up be blur-extended further past its edge instead of failing,
+"min_zoom" (default MIN_ZOOM) lets it zoom in further instead, and "zoom"
+evens out a head the detector boxed too wide or too tight (>1 = bigger). An optional
+"face": [cx, cy, w] (shares of the photo's width and height) sets the face
+centre and width by hand when the detector misses it or picks someone
+else. Every crop uses the same face width per tile, so heads are the
+same size across the pack.
 Each photo's author, licence and source page go to art/portraits.json and
 into the pack's credits. Downloads are cached in build/portraits/.
 
@@ -33,6 +44,8 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps
 REPO = Path(__file__).resolve().parent.parent
 CACHE = REPO / "build" / "portraits"
 SIZE = (683, 1024)
+FACE_SPAN = 2.4      # crop width in face widths (2014 DTM press photos)
+MIN_ZOOM = 0.8       # a close-up may be zoomed in to this share of FACE_SPAN
 UA = "team-principal-mods/0.1 (driver portraits; free-licence photos from Wikimedia Commons)"
 FREE = re.compile(r"^(public domain|pd|cc0|cc by(-sa)?( \d\.\d)?( [a-z]{2})?|cc-by(-sa)?-\d\.\d)", re.I)
 DRIVER_WORDS = ("racing driver", "racecar driver", "race car driver", "rennfahrer", "automobilrennfahrer",
@@ -99,30 +112,65 @@ def commons_files(images, category):
     return [f for f in files if f["thumb"] and FREE.match(f["license"])]
 
 
-def face_crop(img):
+def file_info(title, width=2400):
+    q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "imageinfo",
+                                "iiprop": "url|extmetadata|size", "iiurlwidth": width, "format": "json"})
+    page = next(iter(get("https://commons.wikimedia.org/w/api.php?" + q)["query"]["pages"].values()))
+    info = page["imageinfo"][0]
+    meta = info.get("extmetadata", {})
+    date = re.sub(r"<[^>]+>", "", meta.get("DateTimeOriginal", {}).get("value", ""))
+    year = int(m.group(0)) if (m := re.search(r"(19|20)\d\d", date)) else None
+    return {"title": page["title"], "thumb": info.get("thumburl") or info["url"], "page": info.get("descriptionurl"),
+            "license": re.sub(r"<[^>]+>", "", meta.get("LicenseShortName", {}).get("value", "")).strip(),
+            "year": year, "author": re.sub(r"<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip()[:120]}
+
+
+def blur_fill(img, p, left, top):
+    """Grow the photo by p px per side: a blurred, enlarged copy of itself
+    fills the new border, and the sharp photo fades into it at its edges."""
+    W, H = img.size
+    big = img.resize((W + 2 * p, H + 2 * p), Image.LANCZOS).filter(ImageFilter.GaussianBlur(max(8, p // 3)))
+    feather = max(6, min(W, H) // 25)
+    mask = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(mask).rectangle([feather, feather, W - 1 - feather, H - 1 - feather], fill=255)
+    mask = mask.filter(ImageFilter.GaussianBlur(feather / 2))
+    big.paste(img, (p, p), mask)
+    return big, left + p, top + p
+
+
+def face_crop(img, face=None, max_pad=0.45, zoom=1.0, min_zoom=MIN_ZOOM):
     import cv2
     import numpy as np
-    arr = np.array(img.convert("RGB"))
-    gray = cv2.cvtColor(arr, cv2.COLOR_RGB2GRAY)
-    det = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
-    faces = det.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6, minSize=(40, 40))
-    if len(faces) == 0:
-        return None
-    x, y, w, h = max(faces, key=lambda f: f[2] * f[3])
+    W, H = img.size
+    if face:
+        w = face[2] * W
+        x, y, h = face[0] * W - w / 2, face[1] * H - w / 2, w
+    else:
+        arr = np.array(img.convert("RGB"))
+        gray = cv2.cvtColor(arr, cv2.COLOR_RGB2GRAY)
+        det = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+        faces = det.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6, minSize=(40, 40))
+        if len(faces) == 0:
+            return None
+        x, y, w, h = max(faces, key=lambda f: f[2] * f[3])
     if w < 60:
         return None
-    cw = w * 3.0
-    ch = cw * SIZE[1] / SIZE[0]
     cx, cy = x + w / 2, y + h / 2
-    left, top = cx - cw / 2, cy - ch * 0.36
     W, H = img.size
-    # Keep inside the photo; shrink if the photo is too small around the face.
-    scale = min(1.0, W / cw, H / ch)
-    cw, ch = cw * scale, ch * scale
-    left = min(max(0, cx - cw / 2), W - cw)
-    top = min(max(0, cy - ch * 0.36), H - ch)
-    if cw < 220:
+    # Same head size on every tile: the crop is FACE_SPAN face widths wide.
+    # Where a close-up runs past the photo, zoom in a little (at most to
+    # MIN_ZOOM, so heads stay alike) and blur-extend the last strip.
+    for k in [1 - i * 0.05 for i in range(int(round((1 - min_zoom) / 0.05)) + 1)]:
+        cw = w * FACE_SPAN * k / zoom
+        ch = cw * SIZE[1] / SIZE[0]
+        left, top = cx - cw / 2, cy - ch * 0.36
+        pad = max(0, -left, -top, left + cw - W, top + ch - H)
+        if pad <= cw * 0.02:
+            break
+    if cw < 220 or pad > cw * max_pad:
         return None
+    if pad > 0:
+        img, left, top = blur_fill(img.convert("RGB"), int(pad) + 4, left, top)
     return img.crop((round(left), round(top), round(left + cw), round(top + ch))).resize(SIZE, Image.LANCZOS)
 
 
@@ -173,35 +221,46 @@ def main():
         number = d.get("number", d.get("reserve_number"))
         fname = name.replace(" ", "") + ".png"
         meta_path = CACHE / (fname + ".json")
-        if name in credits and not args.refresh and (out_dir / fname).exists():
+        pin = credits.get(name, {}) if credits.get(name, {}).get("pinned") else None
+        if name in credits and not args.refresh and not args.only and (out_dir / fname).exists():
             continue
         try:
-            if meta_path.exists() and not args.refresh:
+            if pin and pin.get("source") == "helmet":
+                files = []
+            elif pin:
+                files = [file_info(pin["file"])]
+            elif meta_path.exists() and not args.refresh:
                 files = load_json(meta_path)
             else:
                 qid = wikidata_driver(name)
                 files = commons_files(*claims(qid)) if qid else []
                 meta_path.write_text(json.dumps(files, ensure_ascii=False), encoding="utf-8")
             # Closest to the season first; undated main images after dated ones.
-            files.sort(key=lambda f: (abs((f["year"] or 2050) - year), not f["main"]))
+            files.sort(key=lambda f: (abs((f["year"] or 2050) - year), not f.get("main")))
             done = None
             for f in files[:8]:
-                raw = CACHE / re.sub(r"[^\w.-]", "_", f["title"])
+                raw = CACHE / (("pin_" if pin else "") + re.sub(r"[^\w.-]", "_", f["title"]))
                 if not raw.exists():
                     raw.write_bytes(get(f["thumb"], binary=True))
                 try:
                     img = ImageOps.exif_transpose(Image.open(raw)).convert("RGB")
                 except Exception:
                     continue
-                crop = face_crop(img)
+                opts = {k: pin[k] for k in ("max_pad", "zoom", "min_zoom") if pin and k in pin}
+                crop = face_crop(img, pin.get("face") if pin else None, **opts)
                 if crop:
                     crop.save(out_dir / fname, optimize=True)
                     done = {"source": "photo", "file": f["title"], "page": f["page"], "author": f["author"],
                             "license": f["license"], "year": f["year"]}
+                    if pin:
+                        done.update({k: pin[k] for k in ("pinned", "face", "max_pad", "zoom", "min_zoom") if k in pin})
                     break
+            if not done and pin and pin.get("source") != "helmet":
+                print(f"{name:28s} pinned photo gave no face crop; set 'face' by hand")
+                continue
             if not done:
                 helmet_card(name, number, [team.get("color_rgb", [200, 200, 200]), team.get("secondary_color_rgb", [30, 30, 30])]).save(out_dir / fname, optimize=True)
-                done = {"source": "helmet"}
+                done = {"source": "helmet", **({"pinned": True} if pin else {})}
         except RuntimeError as err:
             print(f"{name:28s} skipped ({err}); re-run to retry")
             continue

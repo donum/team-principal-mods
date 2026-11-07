@@ -2,7 +2,8 @@
 
 German touring-car racing falls into six eras, each defined by its technical
 rules. One season pack per year fits best, with shared car and rule
-templates per era. The research data for every season is in
+templates per era: an era base in [`bases/`](../bases/README.md) (era 4 is
+`bases/dtm-era4`). The research data for every season is in
 `seasons/<id>/research/`; browse it in the season archive
 (`tools/build_browser.py`).
 

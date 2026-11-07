@@ -38,6 +38,30 @@
 | Audi Motorsport | Wolfgang Ullrich | not fetched |
 | MTEK | Ernest Knoors | en.wiki |
 
+## 2012 teams' standings (the pack's "previous position")
+de.wiki "DTM-Saison 2012", Teamwertung; positions 8-11 checked against the driver points.
+| 2012 | Team (2012 name) | Pts | 2013 team in the pack |
+|---|---|---|---|
+| 1 | BMW Team Schnitzer | 178 | BMW Team Schnitzer |
+| 2 | Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes (HWA: Paffett, Vietoris) | 170 | Euronics AMG-Mercedes (Paffett) |
+| 3 | AMG-Mercedes (HWA: Green, R. Schumacher) | 131 | STIHL AMG-Mercedes (the other HWA entry) |
+| 4 | Audi Sport Team Rosberg | 108 | same |
+| 5 | Audi Sport Team Abt Sportsline | 100 | same |
+| 6 | BMW Team RBM | 93 | same |
+| 7 | Audi Sport Team Phoenix | 93 | same |
+| 8 | BMW Team RMG | 75 | same |
+| 9 | Audi Sport Team Abt | 34 | same |
+| 10 | DHL Paket/stern AMG-Mercedes (Mücke) | 28 | stern AMG-Mercedes |
+| 11 | Junge Sterne/TV-Spielfilm AMG-Mercedes (Persson) | 0 | left; MTEK (new in 2013) takes 11th |
+
+The two HWA entries are matched by Paffett's car; which 2012 HWA entry STIHL continues is a judgement call.
+
+## Team bases
+- Team Rosberg: Neustadt an der Weinstraße (de/en.wiki "Team Rosberg"). First DTM season 1995 with Opel, Mercedes 2000-2004, Audi from 2006.
+- RBM: Mechelen, Belgium (en/de.wiki "Racing Bart Mampaey").
+- MTEK: Amsterdam (en.wiki "Team MTEK"); see Unverified.
+- Adrien Tambay started in the DTM in 2012 with Audi Sport Team Abt, so he was not a rookie in 2013.
+
 ## Storylines
 - Rockenfeller was consistent, with wins at Brands Hatch and Moscow and 6 podiums.
 - Farfus won 3 times (Hockenheim, Oschersleben, Zandvoort).
@@ -48,6 +72,8 @@
 
 ## Sources
 - https://de.wikipedia.org/wiki/DTM-Saison_2013
+- https://de.wikipedia.org/wiki/DTM-Saison_2012 and https://en.wikipedia.org/wiki/2012_Deutsche_Tourenwagen_Masters (2012 teams' standings)
+- https://en.wikipedia.org/wiki/Team_Rosberg, https://en.wikipedia.org/wiki/Racing_Bart_Mampaey, https://en.wikipedia.org/wiki/Team_MTEK (team bases)
 - https://en.wikipedia.org/wiki/2013_Deutsche_Tourenwagen_Masters
 - https://dtm.fandom.com/wiki/2013_DTM_Season (race pages via the fandom API: laps, lengths, times)
 - https://www.racingyears.com/results/2013/DTM
@@ -65,6 +91,7 @@
 - #18 Wehrlein ran a VfB Stuttgart design at one race; the guide doesn't say which.
 
 ## Unverified
+- MTEK base in 2013: en.wiki says Amsterdam; bimmerlife reports the team closing its Munich-area base and moving to the Netherlands, so the 2013 workshop may not have been in Amsterdam yet.
 - Moscow Raceway 2013 layout length: 2.555 km (fan wiki, "short layout") vs 2.661 km (racingyears). Laps: 74.
 - Norisring laps: 83 (racingyears and the fan-wiki result row) vs 82 (fan-wiki infobox).
 - Nürburgring: only 45 laps (163.3 km) per both sources. Whether this was scheduled or shortened is not verified.

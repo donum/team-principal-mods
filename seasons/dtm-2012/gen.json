@@ -1,0 +1,90 @@
+{
+  "$comment": "Inputs for tools/season_from_research.py: maps the 2012 entrants to pack teams, colours and tracks. Rules, car profiles, engines and tyres come from the era base (bases/dtm-era4/gen.json); 2012 differs only in what is set here and in patches/regulations.json and data/tyremodel.json (no DRS, one dry tyre). Colours and sponsors are read from Pappydhorn12's 2012 drawings.",
+  "base": "dtm-era4",
+  "year": 2012,
+  "title": "DTM 2012 - Deutsche Tourenwagen Masters",
+  "mass_kg": {"Audi": 955.0, "BMW": 955.0, "Mercedes-Benz": 955.0},
+  "tyre_suppliers": {
+    "Hankook": {
+      "lateral_grip": {"soft": 54.0},
+      "longitudinal_grip": {"soft": 54.0},
+      "durability": {"soft": 60.0},
+      "temperature_tolerance": {"soft": 54.0}
+    }
+  },
+  "teams": {
+    "BMW Team RMG": {"previous_position": 9, "entrants": ["BMW Team RMG [Reinhold Motorsport / Team RMG]"], "color": [245, 245, 245], "secondary": [28, 105, 212], "tyres": "Hankook", "works": true,
+                     "history": "Stefan Reinhold's team from Andernach. New to the DTM in 2012. Martin Tomczyk won the 2011 title and moves to BMW with the number 1."},
+    "Audi Sport Team Abt Sportsline": {"previous_position": 1, "entrants": ["Audi Sport Team Abt Sportsline [Abt Sportsline]"], "color": [25, 40, 95], "secondary": [215, 25, 50], "tyres": "Hankook", "works": true,
+                                       "history": "Hans-Jürgen Abt's team from Kempten. Has run Audis in the DTM since 2000. Mattias Ekström won the title with the team in 2004 and 2007."},
+    "AMG-Mercedes": {"previous_position": 4, "entrants": ["AMG-Mercedes [HWA AG]"], "color": [190, 192, 196], "secondary": [60, 60, 66], "tyres": "Hankook", "works": true,
+                     "history": "Run by HWA AG from Affalterbach. HWA builds and runs the Mercedes DTM cars. One of two HWA teams in 2012."},
+    "BMW Team Schnitzer": {"previous_position": 10, "entrants": ["BMW Team Schnitzer [Schnitzer Motorsport]"], "color": [25, 25, 28], "secondary": [0, 102, 177], "tyres": "Hankook", "works": true,
+                           "history": "Based in Freilassing. Has raced BMWs since the 1960s. Back in the DTM with BMW in 2012."},
+    "Audi Sport Team Phoenix": {"previous_position": 3, "entrants": ["Audi Sport Team Phoenix [Phoenix Racing]"], "color": [185, 205, 20], "secondary": [0, 100, 60], "tyres": "Hankook", "works": true,
+                                "history": "Founded by Ernst Moser. Based in Meuspath, next to the Nürburgring. Has run Audis in the DTM since 2006."},
+    "Thomas Sabo AMG-Mercedes": {"previous_position": 2, "entrants": ["Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG]"], "color": [20, 20, 22], "secondary": [200, 200, 205], "tyres": "Hankook", "works": true,
+                                 "history": "The second HWA AG team, entered as Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes. Gary Paffett won the 2005 title."},
+    "BMW Team RBM": {"previous_position": 11, "entrants": ["BMW Team RBM [Racing Bart Mampaey]"], "nationality": "belgian", "color": [140, 40, 130], "secondary": [245, 245, 245], "tyres": "Hankook", "works": true,
+                     "history": "Founded by Bart Mampaey. Based in Mechelen, Belgium. New to the DTM in 2012."},
+    "Audi Sport Team Abt": {"previous_position": 5, "entrants": ["Audi Sport Team Abt [Abt Sportsline]"], "color": [245, 195, 0], "secondary": [200, 20, 30], "tyres": "Hankook", "works": true,
+                            "history": "The second Abt Sportsline team, also from Kempten. Rahel Frey and the rookie Adrien Tambay drive."},
+    "DHL AMG-Mercedes": {"previous_position": 7, "entrants": ["DHL Paket/Stern AMG-Mercedes [Mücke Motorsport]"], "color": [255, 204, 0], "secondary": [212, 5, 17], "tyres": "Hankook", "works": true,
+                         "history": "Peter Mücke's team from Berlin. Runs Mercedes cars. Former Formula 1 driver David Coulthard drives for the team."},
+    "Audi Sport Team Rosberg": {"previous_position": 6, "entrants": ["Audi Sport Team Rosberg [Team Rosberg]"], "color": [190, 20, 30], "secondary": [25, 25, 28], "tyres": "Hankook", "works": true,
+                                "history": "Keke Rosberg's team from Neustadt an der Weinstraße. First DTM season in 1995 with Opel. Raced Mercedes from 2000 to 2004 and Audi since 2006."},
+    "Junge Sterne AMG-Mercedes": {"previous_position": 8, "entrants": ["Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport]"], "color": [25, 110, 215], "secondary": [230, 40, 140], "tyres": "Hankook", "works": true,
+                                  "history": "Persson Motorsport runs two Mercedes cars. Entered as Junge Sterne/TV-Spielfilm AMG-Mercedes."}
+  },
+  "sponsors": {
+    "$comment": "Starting deals from Pappydhorn12's 2012 drawings, primary first: the lower-numbered car's main sponsor, then the team-mate's, then partners on the team's cars. Each sponsor is on one team only (wishlist E12), so Deutsche Post (E-Postbrief on Scheider's Audi and Werner's BMW) goes to Abt Sportsline and the make-wide partners are spread. The manufacturers' own campaigns (Audi ultra, Audi Sport performance cars, BMW M, AMG) and the series partners (DEKRA, ADAC, Hankook, Bosch) are left out.",
+    "pool": {
+      "BMW M Performance": {"industry": "Automobile", "nationality": "german"},
+      "Exide": {"industry": "Technology", "nationality": "american"},
+      "Allgeier": {"industry": "Technology", "nationality": "german"},
+      "Red Bull": {"industry": "Consumer Goods", "nationality": "austrian"},
+      "Deutsche Post": {"industry": "Telecom", "nationality": "german"},
+      "Petronas": {"industry": "Energy", "nationality": "malaysian"},
+      "STIHL": {"industry": "Consumer Goods", "nationality": "german"},
+      "BMW Bank": {"industry": "Finance", "nationality": "german"},
+      "Puma": {"industry": "Clothing", "nationality": "german"},
+      "H&R": {"industry": "Automobile", "nationality": "german"},
+      "Schaeffler": {"industry": "Automobile", "nationality": "german"},
+      "Thomas Sabo": {"industry": "Consumer Goods", "nationality": "german"},
+      "Mercedes-Benz Bank": {"industry": "Finance", "nationality": "german"},
+      "Crowne Plaza": {"industry": "Consumer Goods", "nationality": "british"},
+      "Castrol": {"industry": "Energy", "nationality": "british"},
+      "Sonax": {"industry": "Chemicals/Materials", "nationality": "german"},
+      "Computer Bild Spiele": {"industry": "Telecom", "nationality": "german"},
+      "Würth": {"industry": "Chemicals/Materials", "nationality": "german"},
+      "DHL": {"industry": "Telecom", "nationality": "german"},
+      "stern": {"industry": "Telecom", "nationality": "german"},
+      "Playboy": {"industry": "Consumer Goods", "nationality": "american"},
+      "TV Movie": {"industry": "Telecom", "nationality": "german"},
+      "Junge Sterne": {"industry": "Automobile", "nationality": "german"},
+      "TV Spielfilm": {"industry": "Telecom", "nationality": "german"},
+      "Yahoo!": {"industry": "Technology", "nationality": "american"}
+    },
+    "teams": {
+      "BMW Team RMG": ["BMW M Performance", "Exide", "Allgeier"],
+      "Audi Sport Team Abt Sportsline": ["Red Bull", "Deutsche Post"],
+      "AMG-Mercedes": ["Petronas", "STIHL"],
+      "BMW Team Schnitzer": ["BMW Bank", "Puma", "H&R"],
+      "Audi Sport Team Phoenix": ["Schaeffler"],
+      "Thomas Sabo AMG-Mercedes": ["Thomas Sabo", "Mercedes-Benz Bank"],
+      "BMW Team RBM": ["Crowne Plaza", "Castrol", "Sonax"],
+      "Audi Sport Team Abt": ["Computer Bild Spiele", "Würth"],
+      "DHL AMG-Mercedes": ["DHL", "stern"],
+      "Audi Sport Team Rosberg": ["Playboy", "TV Movie"],
+      "Junge Sterne AMG-Mercedes": ["Junge Sterne", "TV Spielfilm", "Yahoo!"]
+    }
+  },
+  "tracks": {"1": "hockenheim13", "2": "lausitzring", "3": "brandshatch", "4": "redbullring", "5": "norisring",
+             "6": "nuerburgring13", "7": "zandvoort", "8": "oschersleben", "9": "valencia", "10": "hockenheim13"},
+  "track_overrides": {
+    "$comment": "2012 race distances (research/calendar.csv) where they differ from the base's 2013 ones. Hockenheim keeps 42 laps (the finale); the opener ran 40.",
+    "brandshatch": {"race_laps": 97},
+    "norisring": {"race_laps": 78},
+    "zandvoort": {"race_laps": 43}
+  }
+}

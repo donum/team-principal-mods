@@ -39,8 +39,15 @@ def place(mix: np.ndarray, x: np.ndarray, at_s: float) -> None:
     mix[k:k + n] += x[:n]
 
 
-def main() -> int:
-    pack = load_json(REPO / "seasons" / "dtm-2013" / "season.json")["pack_folder"]
+def main(pack: str | None = None) -> int:
+    """pack: an installed pack carrying the overlay (default: the first
+    installed season on the sound library's base)."""
+    if pack is None:
+        sys.path.insert(0, str(REPO / "tools"))
+        import layers
+        from common import OVERLAY_ID
+        packs = [load_json(s / "season.json")["pack_folder"] for s in layers.seasons_on_overlay(OVERLAY_ID)]
+        pack = next((p for p in packs if (game_path(None) / "data" / p).is_dir()), packs[0] if packs else "dtm2013")
     race = game_path(None) / "data" / pack / "assets" / "audio" / "race"
     clips = {c["key"]: c for c in load_json(race / "race_engines.json")["clips"]}
     light, out = decode(race / "start_light.wav", sr=SR, channels=2), decode(race / "lights_out.wav", sr=SR, channels=2)

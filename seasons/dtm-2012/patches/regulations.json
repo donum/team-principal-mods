@@ -1,0 +1,38 @@
+{
+  "$comment": "2012 changes on top of the era base's rules (bases/dtm-era4/patches/regulations.json, applied first): no DRS and no option tyre yet (both came in 2013), and 1,100 kg instead of 1,110 kg. The two car options keep their base keys, so this replaces them.",
+  "categories": {
+    "drs_policy": {
+      "default": "disabled"
+    },
+    "formula_compound_usage": {
+      "default": "disabled"
+    },
+    "car_profile": {
+      "add_options": [
+        {
+          "key": "dtm_2013",
+          "name": "DTM 2012",
+          "corner_speed_multiplier": 1.13,
+          "acceleration_multiplier": 0.5,
+          "braking_multiplier": 1.0,
+          "drag_multiplier": 1.5,
+          "summary": "Carbon-chassis DTM coupes with about 470 hp and 1,100 kg.",
+          "description": "The new 2012 DTM cars (Audi A5, BMW M3, AMG C-Coupe). They corner far faster than Group A saloons but stay well below single-seaters. Same settings as the 2013 cars, which were fitted to the 2013 qualifying times."
+        }
+      ],
+      "default": "dtm_2013"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "dtm_2013",
+          "name": "DTM 2012",
+          "min_car_mass_kg": 955.0,
+          "summary": "1,100 kg including the driver for every make.",
+          "description": "One minimum weight for all three makes and no success ballast. The chassis figure here excludes the engine mass the game adds on top."
+        }
+      ],
+      "default": "dtm_2013"
+    }
+  }
+}

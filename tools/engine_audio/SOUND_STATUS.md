@@ -1,6 +1,7 @@
 # DTM 2013 sound status
 
-What the private audio overlay changes in the installed `dtm2013` pack,
+What the private audio overlay (`dtm-era4`, shared by every season on
+`bases/dtm-era4`) changes in the installed `dtm2013` pack,
 compared with the vanilla audio it copies from `default26`. Checked against
 the installed pack on 2026-11-04, after the real starts and track bed went
 in, and on 2026-11-07 after the pit sets. The audio itself is private and never in git or `dist/`.
@@ -16,11 +17,11 @@ nothing points to them any more.
 | Pass-by, BMW | random bank | `dtm13_bmw` + `_lr` | Spengler onboard, Nürburgring |
 | Pass-by, Mercedes | random bank | `dtm13_mercedes` + `_lr` | Juncadella onboard, Norisring |
 | `grid_idle_01`, `grid_idle_02` | stock grid loops | real grid revving, 14 s loop: Hockenheim finale, grid and start (both slots) | fan recording, `starts.py` |
-| `grid_launch_01`, `grid_launch_02` | stock launches | the real launch that follows, 14.5 s: 1.6 s of grid revving (the game starts the clip on the 3rd light), the getaway on lights out, the field swelling past (5 s of steady roar spliced out so the close pass lands 6.6 s in), then the field leaving towards turn 1 (from the 2017 Hockenheim start) and a 4 s fade | same |
-| `cars_on_track` | stock 393 s bed | 393 s loop of real trackside DTM V8 recordings (Hockenheim 2013–2016) | `ambience.py`, 11 shots of fan videos |
+| `grid_launch_01`, `grid_launch_02` | stock launches | the real launch that follows, 14.5 s: 1.6 s of grid revving (the game starts the clip on the 3rd light), the getaway on lights out, the field swelling past (5 s of steady roar spliced out so the close pass lands 6.6 s in), then to the end of the 2013 recording with a 4 s fade (the 2017 tail went out on 2026-11-07: 2012–2013 cars only) | same |
+| `cars_on_track` | stock 393 s bed | 393 s loop of real trackside 2013 recordings (Hockenheim sound check, Nürburgring, Norisring roll-out) | `ambience.py`, 11 shots of fan videos |
 | `crowd` | stock 35 s murmur | 18 s loop of a real grandstand before the 2015 Nürburgring start | `ambience.py` (`CROWD`), picked from six candidates |
-| `pit_exit_01`–`06` | 4 stock exits | 6 real 2013 cars on the Oschersleben pit-exit lane: on the limiter, the pass, away (10.7–13 s, pass 4.4–5.6 s in) | fan recordings, `pits.py` |
-| `pit_wheelguns_01`–`06` | 4 stock bursts | 6 real wheelgun bursts from the 2013 Brands Hatch pit-stop practice (Audi and BMW crews, 2.1–3.6 s) | same |
+| `pit_exit_01`–`10` | 4 stock exits | 10 real 2013 cars pulling away down a pit lane (3 Audi, 7 Mercedes; June 2013, probably Lausitzring), 13 s, pull-away 5 s in; picked by frames and level, **not yet confirmed by ear** | fan recordings, `pits.py` |
+| `pit_wheelguns_01`–`10` | 4 stock bursts | 10 real 2013 wheelgun bursts: 7 from the Brands Hatch pit-stop practice (Audi and BMW crews), 3 from a Mercedes race stop at the Lausitzring (2.1–3.6 s) | same |
 
 The three makes are tagged in `engines.json` (`passby_audio`), so every
 finish-line pass-by in practice, qualifying, testing and races is ours.
@@ -52,7 +53,8 @@ Starts, the track bed and the crowd are real recordings now. Still open:
 
 1. **Real pass-bys:** the spectator videos are full of real pass-bys, but
    do not say which make passes, so they can't be tagged per make.
-2. **Pit lane:** exits and wheelguns are real now; fire-ups are still
+2. **Pit lane:** the exits are six 2013 pit-lane departures, still to be
+   confirmed by ear (no BMW among them). Wheelguns are real; fire-ups are still
    stock. The 18 pit-lane videos downloaded on 2026-11-07 had none: garage
    walks with no engine, cars on track, and one paddock clip that starts at
    an edit (in the Sound candidates tab to judge by ear). A video of a car

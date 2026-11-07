@@ -8,7 +8,7 @@ assets/audio/README_AUDIO.txt:
             Made from clean onboard full-throttle audio: Doppler shift,
             distance gain and air absorption, and a pan sweep for a car
             passing 12 m away at 220 km/h. Real TV pass-bys, if any are free
-            of commentary, join the random bank as dtm13_tv_NN.
+            of commentary, join the random bank as <prefix>_tv_NN.
   race/     grid_idle_NN / grid_launch_NN pairs cut from fan recordings of
             real race starts (starts.py; simulated ones from start_synth.py
             only with --synth-starts), and pit sets (pits.py): pit_fireup_NN,
@@ -20,10 +20,12 @@ assets/audio/README_AUDIO.txt:
             "crowd.file".
 Levels follow the stock clips (whole-clip RMS x gain).
 
-Output: private/engine_audio/pack/<pack_folder>/ (files/ + overlay.json).
---install applies it to the installed pack, never to dist/ or the repo.
+Output: private/engine_audio/pack/<overlay id>/ (files/ + overlay.json), one
+overlay per era base (bases/<id>/base.json "audio"), shared by all its seasons.
+--install applies it to every installed pack of that base, never to dist/ or
+the repo.
 
-    python tools/engine_audio/package.py [--season seasons/dtm-2013] [--install]
+    python tools/engine_audio/package.py [--install]
 """
 from __future__ import annotations
 
@@ -39,7 +41,11 @@ import overlay
 import pits
 import start_synth
 import starts
-from common import LIBRARY_DIR, MAKES, PACK_DIR, REPO, connect, decode, dump_json, game_path, load_json, slug, write_wav
+from common import (BASE_ID, KEY_PREFIX, LIBRARY_DIR, MAKES, OVERLAY_ID, PACK_DIR, REPO, connect, decode,
+                    dump_json, game_path, load_json, slug, write_wav)
+
+sys.path.insert(0, str(REPO / "tools"))
+import layers as source_layers  # noqa: E402  (build() has a local "layers")
 
 SR = 44100
 C = 343.0
@@ -168,10 +174,10 @@ def ref(r) -> str:
 
 # --------------------------------------------------------------------- main
 
-def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
+def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
           synth_starts: bool = False, test_start: bool = False) -> Path:
-    manifest = load_json(season / "season.json")
-    pack, base = manifest["pack_folder"], manifest["base_pack"]
+    manifest = source_layers.manifest(source_layers.source_dir(BASE_ID))
+    pack, base = OVERLAY_ID, manifest["base_pack"]
     base_audio = game_path() / "data" / base / "assets" / "audio"
     out = PACK_DIR / pack
     if out.exists():
@@ -187,7 +193,7 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
 
     # pass-bys, one per make, tagged on the supplier
     lvl = stock_level(base_audio, "session/hotlap_flybys.json", "engine_passby")
-    suppliers = load_json(season / "data" / "engines.json", {}).get("suppliers", {})
+    by_make = {}          # make -> clip key; overlay.py tags each season's suppliers by name
     for make in MAKES:
         for r in candidates(db, ("full_throttle", "steady_high"), min_q, make=make):
             if r["end_s"] - r["start_s"] < 2.0:
@@ -197,7 +203,7 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
                 rl = peak_normalise(synth_passby(src))
             except ValueError:
                 continue
-            key = f"dtm13_{slug(make).lower()}"
+            key = f"{KEY_PREFIX}_{slug(make).lower()}"
             gain, cross = gain_for(rl, lvl), loudest_80ms(rl)
             save(f"assets/audio/session/{key}.wav", rl)
             save(f"assets/audio/session/{key}_lr.wav", rl[:, ::-1].copy())
@@ -205,9 +211,7 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
                 {"key": key, "file": f"{key}.wav", "crossing_s": cross, "gain": gain, "source": ref(r)},
                 {"key": f"{key}_lr", "file": f"{key}_lr.wav", "direction": "lr",
                  "crossing_s": cross, "gain": gain, "source": ref(r)}])
-            for name in suppliers:
-                if slug(name).lower().startswith(slug(make).lower()):
-                    sets.setdefault("engines.json", {})[f"suppliers.{name}.passby_audio"] = key
+            by_make[make] = key
             report.append(f"pass-by {make}: synthesised from {ref(r)}, q={r['quality']:.2f}")
             break
         else:
@@ -218,7 +222,7 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
     for i, r in enumerate(tv[:n_tv], 1):
         x = peak_normalise(decode(Path(r["audio_path"]), r["peak_s"] - 2.0, 4.0, SR, 2))
         rl = x if r["direction"] == "rl" else x[:, ::-1].copy()
-        key = f"dtm13_tv_{i:02d}"
+        key = f"{KEY_PREFIX}_tv_{i:02d}"
         gain, cross = gain_for(rl, lvl), loudest_80ms(rl)
         save(f"assets/audio/session/{key}.wav", rl)
         save(f"assets/audio/session/{key}_lr.wav", rl[:, ::-1].copy())
@@ -252,16 +256,16 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
     for i, (idle, launch, src) in enumerate(pairs, 1):
         g = 10 ** (-1 / 20) / (max(np.abs(idle).max(), np.abs(launch).max()) + 1e-9)
         idle, launch = idle * g, launch * g
-        save(f"assets/audio/race/dtm13_grid_idle_{i:02d}.ogg", idle, loop=True)
-        save(f"assets/audio/race/dtm13_grid_launch_{i:02d}.wav", launch)
+        save(f"assets/audio/race/{KEY_PREFIX}_grid_idle_{i:02d}.ogg", idle, loop=True)
+        save(f"assets/audio/race/{KEY_PREFIX}_grid_launch_{i:02d}.wav", launch)
         # matched to stock, the real start was inaudible in game (2026-11-04):
         # the stock start is quiet, its burst ~6 dB under a pass-by, and our
         # 22 s grandstand roar then reads as background. The launch's loudest
         # 0.5 s now sits at pass-by level, the grid revving 5 dB over stock.
         idle_g = round(min(1.0, gain_for(idle, lvl_idle) * 10 ** (START_IDLE_BOOST_DB / 20)), 6)
         launch_g = round(min(1.0, gain_for(launch, lvl_launch, loudest_db) * 10 ** (START_LAUNCH_BOOST_DB / 20)), 6)
-        entries.append((f"dtm13_grid_idle_{i:02d}.ogg", 0.5 if test_start else idle_g,
-                        f"dtm13_grid_launch_{i:02d}.wav", 0.8 if test_start else launch_g, src))
+        entries.append((f"{KEY_PREFIX}_grid_idle_{i:02d}.ogg", 0.5 if test_start else idle_g,
+                        f"{KEY_PREFIX}_grid_launch_{i:02d}.wav", 0.8 if test_start else launch_g, src))
     # fewer pairs than the stock bank: the stock slots left over would still be
     # picked at random, so they point at our files too
     stock_pairs = sum(1 for c in load_json(base_audio / "race/race_engines.json", {"clips": []})["clips"]
@@ -304,12 +308,15 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
         files.append(f"assets/audio/race/{name}")
         return {"file": name, "gain": 1.0, "source": source}
 
-    files_for = []
+    files_for, written = [], {}       # (kind, source) -> entry: a clip shared by sets is written once
     for i, s in enumerate(pit_sets, 1):
         entry = {}
         for kind in ("exit", "wheelguns", "fireup"):
             x = s[kind]
-            name = f"dtm13_pit_{kind}_{i:02d}.wav"
+            name = f"{KEY_PREFIX}_pit_{kind}_{i:02d}.wav"
+            if s["sources"].get(kind) and (kind, s["sources"][kind]) in written:
+                entry[kind] = dict(written[(kind, s["sources"][kind])])
+                continue
             if kind == "fireup":
                 if x is not None:
                     entry[kind] = fireup_entry(x, name, "private: " + " ".join(map(str, s["sources"][kind])))
@@ -329,6 +336,9 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
             entry[kind] = {"file": name, "gain": gain, "source": "private: " + " ".join(map(str, s["sources"][kind]))}
             if kind == "exit":
                 entry[kind]["peak_s"] = loudest_80ms(x)
+                if s.get("exit_unconfirmed"):
+                    entry[kind]["source"] += " (UNCONFIRMED pit exit: not yet confirmed by ear)"
+            written[(kind, s["sources"][kind])] = entry[kind]
         files_for.append(entry)
     for n in range(max(len(files_for), stock_n if files_for else 0)):
         for kind, e in files_for[n % len(files_for)].items():
@@ -346,7 +356,7 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
         if not src_file.exists():
             report.append(f"{name}: stock (run ambience.py)")
             continue
-        rel = f"assets/audio/ambience/dtm13_{stock_file}"
+        rel = f"assets/audio/ambience/{KEY_PREFIX}_{stock_file}"
         new_audio = decode(src_file, 0, None, SR, 2)
         stock = decode(base_audio / "ambience" / stock_file, 0, None, SR, 2)
         stock_gain = stock_layers.get(layer, {}).get("gain", 1.0)
@@ -358,7 +368,8 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
         report.append(f"{name}: real trackside recording ({len(new_audio) / SR:.0f} s loop), gain {gain}")
 
     if files:
-        dump_json(out / "overlay.json", {"pack": pack, "files": files, "clips": clips, "set": sets})
+        dump_json(out / "overlay.json", {"pack": pack, "files": files, "clips": clips, "set": sets,
+                                         "passby_by_make": by_make})
         (out / "report.txt").write_text("\n".join(report) + "\n", encoding="utf-8")
     print("\n".join(report))
     print(f"{len(files)} files -> {out}" if files else "nothing clean enough to package yet")
@@ -367,7 +378,6 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--season", type=Path, default=REPO / "seasons" / "dtm-2013")
     ap.add_argument("--target", default="team_principal", choices=["team_principal"])
     ap.add_argument("--min-quality", type=float, default=0.3)
     ap.add_argument("--grid-pairs", type=int, default=4)
@@ -375,29 +385,33 @@ def main() -> int:
                     help="use simulated grid/launch pairs (off: only real recordings, else stock)")
     ap.add_argument("--test-start", action="store_true",
                     help="replace the start with loud test tones (checks the game plays the start slots)")
-    ap.add_argument("--pit-sets", type=int, default=8)
+    ap.add_argument("--pit-sets", type=int, default=12)
     ap.add_argument("--tv-passbys", type=int, default=5)
-    ap.add_argument("--install", action="store_true", help="apply to <game>/data/<pack_folder>")
+    ap.add_argument("--install", action="store_true",
+                    help="apply to every installed pack whose season is on this base")
     args = ap.parse_args()
-    build(args.season, args.min_quality, args.grid_pairs, args.pit_sets, args.tv_passbys,
+    build(args.min_quality, args.grid_pairs, args.pit_sets, args.tv_passbys,
           args.synth_starts, args.test_start)
     if args.install:
-        pack = load_json(args.season / "season.json")["pack_folder"]
-        target = game_path() / "data" / pack
-        if not target.is_dir():
-            raise SystemExit(f"pack not installed yet: {target} (run build_pack.py --install)")
-        print(overlay.apply(target, pack) if overlay.overlay_for(pack) else overlay.remove(target))
+        installed = [(s, load_json(s / "season.json")["pack_folder"]) for s in source_layers.seasons_on_overlay(OVERLAY_ID)]
+        installed = [(s, pack) for s, pack in installed if (game_path() / "data" / pack).is_dir()]
+        if not installed:
+            raise SystemExit(f"no pack of base {BASE_ID} is installed yet (run build_pack.py <season> --install)")
+        for _, pack in installed:
+            target = game_path() / "data" / pack
+            print(f"{pack}: " + (overlay.apply(target, OVERLAY_ID, pack) if overlay.overlay_for(OVERLAY_ID)
+                                 else overlay.remove(target)))
         starts.main()                 # library/starts/start_NN_*.wav, the browser's "Real starts"
         pits.main()                   # library/pits/pit_NN_*.wav, the browser's "Pit lane"
         import start_preview          # the starts as the game mixes them, for the browser
-        start_preview.main()
+        start_preview.main(installed[0][1])
         # keep the mod browser (tools/mod_browser.py) in sync with what is installed
-        sys.path.insert(0, str(REPO / "tools"))
         import mod_browser
-        try:
-            mod_browser.build(args.season.resolve(), game_path())
-        except Exception as err:
-            print(f"warning: mod browser not rebuilt: {err}")
+        for season, pack in installed:
+            try:
+                mod_browser.build(season, game_path())
+            except Exception as err:
+                print(f"warning: mod browser for {pack} not rebuilt: {err}")
     return 0
 
 

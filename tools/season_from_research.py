@@ -15,6 +15,13 @@ Ratings are estimates, not history:
 Edit gen.json (team names, colours, tyres, overrides) and re-run; the
 generated data files are then the source for build_pack.py.
 
+A season of a car generation names its era base: gen.json "base": "<id>"
+(bases/<id>/, see tools/layers.py). The base's own gen.json is merged under
+the season's, so the generation's rules, car profiles, engines and tyres are
+written once. The season.json written then holds only the season's own
+values ("base", title, teams, staff, sponsors, its own constants and
+tracks); build_pack.py merges the base's base.json underneath.
+
 Seasons outside the Group A era override the template's rules in gen.json:
 * "rules": "own" keeps the season's hand-written patches/regulations.json
   instead of copying the template's;
@@ -23,6 +30,8 @@ Seasons outside the Group A era override the template's rules in gen.json:
 * "engines" replace or add engine suppliers, "tyre_suppliers" replace the
   template's tyre suppliers, "tyre_development" is merged onto the base
   game's tyre development rules (null removes a key);
+* "default_tyre" names the tyre supplier of teams without one (a single-make
+  series);
 * "rating_range" [low, high] spreads team ratings (default [36, 60]), from
   each team's best driver, or from its average points per car with
   "team_rating_from": "average";
@@ -30,6 +39,8 @@ Seasons outside the Group A era override the template's rules in gen.json:
 * "track_placeholders" {id: {"from": track, "override": {...}}} copy a track
   under a new id, e.g. a second visit to a venue with its own rain chance;
 * "economy": "budget_per_rating", "salary_min_m", "salary_max_m";
+* a team's "previous_position" sets its previous_constructor_position (the
+  year before's teams' standing); without it, the team's rank this season;
 * "sponsors": {"pool": {name: {"industry", "nationality"}}, "teams": {team:
   [names, primary first]}} real starting deals, copied to season.json for
   build_pack.py, which swaps them in for the cloned teams' fictional deals.
@@ -47,6 +58,9 @@ import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+import sys  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import layers  # noqa: E402
 
 NATIONALITY = {"GER": "german", "GDR": "german", "FRA": "french", "DEN": "danish", "AUT": "austrian", "SUI": "swiss",
                "ITA": "italian", "GBR": "british", "VEN": "venezuelan", "BEL": "belgian", "SWE": "swedish",
@@ -103,8 +117,9 @@ def main():
     ap.add_argument("season", type=Path)
     args = ap.parse_args()
     season = args.season.resolve()
-    gen = load_json(season / "gen.json")
-    tmpl = (REPO / "seasons" / gen.get("template", "dtm-1991")).resolve()
+    own = load_json(season / "gen.json")
+    gen = layers.gen_config(season, own)
+    tmpl = layers.source_dir(gen.get("template", "dtm-1991"))
     year = gen["year"]
     research = season / "research"
 
@@ -161,7 +176,8 @@ def main():
         seated = [d for d in members if len(d["rounds"]) >= total_rounds / 2][:3] or members[:1]
         base = round(rating_lo + (rating_hi - rating_lo) * (best / top_team) ** 0.7, 1)
         base = cfg.get("rating", base)
-        tyre = cfg.get("tyres") or (max(set(t["tyres"]), key=t["tyres"].count) if t["tyres"] else DEFAULT_TYRE[make])
+        tyre = cfg.get("tyres") or (max(set(t["tyres"]), key=t["tyres"].count) if t["tyres"]
+                                    else gen.get("default_tyre") or DEFAULT_TYRE[make])
         works = cfg.get("works", best / top_team > 0.45)
         tier = min(len(CLONE_TIERS) - 1, (pos - 1) * len(CLONE_TIERS) // max(1, len(ranked)))
         clones[name] = CLONE_TIERS[tier]
@@ -175,7 +191,7 @@ def main():
             "heritage_prestige": cfg.get("heritage", round(base + 12)), "form_prestige": round(base + 10),
             "prestige_base": round(base + 11), "budget_m": round(base * econ.get("budget_per_rating", 1.6)), "starting_balance_m": round(base / 2, 1),
             "difficulty": "easy" if base >= 55 else "medium" if base >= 48 else "hard",
-            "previous_constructor_position": pos,
+            "previous_constructor_position": cfg.get("previous_position", pos),
             "headquarters": {"hospitality_pr_center": 2 + works, "wind_tunnel": 1 + works, "engine_plant": 0,
                              "test_track": int(works), "factory": 2 + 2 * works, "cfd_center": 1, "recon_centre": 1 + works,
                              "driver_centre": 1 + works},
@@ -258,23 +274,30 @@ def main():
     dump_json(out_data / "schedule.json", schedule)
 
     # ---- season.json
-    manifest = copy.deepcopy(load_json(tmpl / "season.json"))
-    manifest.update({"title": gen.get("title", f"DTM {year} - Deutsche Tourenwagen-Meisterschaft"),
-                     "pack_folder": f"dtm{year}", "version": "0.1", "team_clones": clones})
-    manifest["constants"]["SEASON_START_YEAR"] = year
-    manifest["constants"].update(gen.get("constants", {}))
+    title = gen.get("title", f"DTM {year} - Deutsche Tourenwagen-Meisterschaft")
+    if own.get("base"):
+        # Only the season's own values: the base's base.json supplies the rest
+        # (base pack, series, shared constants and tracks) at build time.
+        manifest = {"base": own["base"], "title": title, "pack_folder": f"dtm{year}", "version": "0.1",
+                    "constants": {"SEASON_START_YEAR": year, **own.get("constants", {})}, "team_clones": clones}
+        gen_tracks = own
+    else:
+        manifest = copy.deepcopy(load_json(tmpl / "season.json"))
+        manifest.update({"title": title, "pack_folder": f"dtm{year}", "version": "0.1", "team_clones": clones})
+        manifest["constants"]["SEASON_START_YEAR"] = year
+        manifest["constants"].update(gen.get("constants", {}))
+        gen_tracks = {"shared_tracks": {}, "track_overrides": {}, **gen}
     manifest["staff"] = {"seed": year, "salary_per_level_m": 0.1, "named": [], "levels": staff_levels}
-    manifest["shared_tracks"] = gen.get("shared_tracks", {})
-    manifest["track_overrides"] = gen.get("track_overrides", {})
-    if gen.get("track_placeholders"):
-        manifest["track_placeholders"] = gen["track_placeholders"]
+    for key in ("shared_tracks", "track_overrides", "track_placeholders"):
+        if key in gen_tracks and (gen_tracks[key] or key != "track_placeholders"):
+            manifest[key] = gen_tracks[key]
     if gen.get("sponsors"):
         manifest["sponsors"] = {k: v for k, v in gen["sponsors"].items() if not k.startswith("$")}
     dump_json(season / "season.json", manifest)
     regulations = season / "patches" / "regulations.json"
     if gen.get("rules") == "own":
-        if not regulations.exists():
-            raise SystemExit(f'gen.json says "rules": "own" but {regulations} is missing')
+        if not any((layer / "patches" / "regulations.json").exists() for layer in layers.chain(season)):
+            raise SystemExit(f'gen.json says "rules": "own" but no patches/regulations.json in {season} or its base')
     else:
         regulations.parent.mkdir(exist_ok=True)
         regulations.write_text((tmpl / "patches" / "regulations.json").read_text(encoding="utf-8")

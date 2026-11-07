@@ -1,0 +1,94 @@
+{
+  "$comment": "Maker and tyre logos of the 2012-2018 DTM, for tools/logo_art.py (assets/engines, assets/tyre). commons = logo file on Wikimedia Commons (licence recorded). Maker logos are the period emblems alone, as on the cars and TV graphics: chrome Audi rings, the BMW roundel and the chrome Mercedes star. team_content sizes them as team list icons (a season's \"team_tiles\": \"maker\") in the proportions of the 2012-2013 TV timing graphic: rings 97 px wide, roundel 48, star 55.",
+  "engines": {
+    "Audi": {
+      "source": "commons",
+      "file": "File:Audi Logo 1995.svg",
+      "license": "Public domain",
+      "note": "the chrome rings, as on the cars in 2012 and 2013 (the 2009 update changed the wordmark, which is cut off here); this file's rings are bright on dark screens, unlike the shadowed 'Audi logo detail.svg'",
+      "crop": [
+        0,
+        0,
+        1,
+        0.6
+      ],
+      "team_content": 860,
+      "also_as": [
+        "Audi 4.0 V8"
+      ]
+    },
+    "BMW": {
+      "source": "commons",
+      "file": "File:BMW.svg",
+      "license": "Public domain",
+      "period": "1997-2020",
+      "also_as": [
+        "BMW P66 4.0 V8"
+      ],
+      "team_content": 600,
+      "note": "the chrome-edged roundel of 1997-2020. As a list icon it is larger than on TV (600, not 425): its black outer ring disappears on the game's dark list, so only the blue and white centre reads"
+    },
+    "Mercedes-Benz": {
+      "source": "commons",
+      "file": "File:Mercedes-Logo.svg",
+      "license": "CC BY-SA 4.0",
+      "author": "Khaled",
+      "note": "the chrome star in its ring, as on the cars and TV graphics (no plate, no wordmark)",
+      "also_as": [
+        "Mercedes-AMG 4.0 V8"
+      ],
+      "team_content": 490
+    }
+  },
+  "tyres": {
+    "Hankook": {
+      "source": "commons",
+      "file": "File:Hankook logo as of 2019.png",
+      "license": "Public domain",
+      "period": "flame and wordmark as raced in the 2013 DTM; slogan driving emotion",
+      "recolor": [
+        [
+          [
+            8,
+            4,
+            3
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          70
+        ],
+        [
+          [
+            159,
+            159,
+            160
+          ],
+          [
+            205,
+            205,
+            210
+          ],
+          40
+        ]
+      ],
+      "crop": [
+        0,
+        0,
+        1,
+        0.62
+      ],
+      "content": 1000,
+      "note": "flame over the wordmark, without the slogan: the game shows the tyre logo in a small square, where the wide logo was a thin strip",
+      "stack": true,
+      "stack_color": [
+        228,
+        104,
+        26
+      ],
+      "stack_ratio": 2.4
+    }
+  }
+}

@@ -48,26 +48,62 @@ FADE_OUT_S = {"fireup": 0.05, "exit": 2.0, "wheelguns": 0.15}
 
 # One dict per set: fireup / exit / wheelguns = (video id, from s, to s) or
 # None; note says what it is. Times are seconds in the video.
-# Exits: Oschersleben 2013, filmed at the fence of the pit-exit lane (quiet,
-# no commentary): each car holds the pit limiter (steady harmonics), passes
-# with a Doppler drop and pulls away, like the stock exits; cut so the pass
-# lands ~5 s in. Wheelguns: spectators at the 2013 Brands Hatch pit-stop
-# practice, the strongest flat broadband bursts of `pits.py --scan`
-# (2026-11-07), checked on the spectrogram and frames.
+# `exit_unconfirmed` marks an exit not yet confirmed by ear (package.py adds
+# "UNCONFIRMED" to its source, which the mod browser shows).
+# Exits (2026-11-07): "DTM Sound 1" (EMSlNAM8zC0, Don Blech, June 2013,
+# probably the Lausitzring pit lane): 2013 cars wait by the camera, then pull
+# away down the pit lane, no commentary. Picked from 15 departures by the
+# frames and the level (waiting, a rise as the car leaves, 3-6 dB down as it
+# goes); cut so the pull-away lands 5 s in (stock: 4.4-5.8 s). Not yet heard
+# by the user. Before them, six Oschersleben 2013 cuts were the exits; by ear
+# four were drive-bys and one a pit entry (FAN_CLIPS below), and the sixth,
+# probably an exit, is in FAN_CLIPS too. Wheelguns: spectators at the 2013
+# Brands Hatch pit-stop practice, the strongest flat broadband bursts of
+# `pits.py --scan`, checked on the spectrogram and frames.
+EXIT_VIDEO = "EMSlNAM8zC0"
 PITS: list[dict] = [
-    dict(exit=("nUfRLnhcaKc", 5.5, 18.5), wheelguns=("gpLEQ52Q4F4", 12.7, 15.3),
-         note="Oschersleben 2013 pit exit; Audi Phoenix stop, Brands Hatch practice"),
-    dict(exit=("UD-N3wMEJWg", 23.3, 34.0), wheelguns=("1K5GsYD9vmI", 2.1, 5.7),
-         note="Oschersleben 2013 pit exit; BMW stop, Brands Hatch practice"),
-    dict(exit=("UD-N3wMEJWg", 62.5, 75.5), wheelguns=("Yy28JpRzFD0", 13.1, 15.6),
-         note="Oschersleben 2013 pit exit; Audi stop, Brands Hatch practice"),
-    dict(exit=("nUfRLnhcaKc", 15.0, 28.0), wheelguns=("H64vMO6NpuY", 0.3, 3.4),
-         note="Oschersleben 2013 pit exit; BMW Schnitzer stop (Priaulx car), Brands Hatch practice"),
-    dict(exit=("UD-N3wMEJWg", 44.5, 57.5), wheelguns=("gpLEQ52Q4F4", 119.8, 122.3),
-         note="Oschersleben 2013 pit exit; Audi Phoenix stop, Brands Hatch practice"),
-    dict(exit=("UD-N3wMEJWg", 3.2, 16.2), wheelguns=("gpLEQ52Q4F4", 31.3, 33.4),
-         note="Oschersleben 2013 pit exit; Audi Phoenix stop, Brands Hatch practice"),
+    dict(exit=(EXIT_VIDEO, 16.3, 29.3), exit_unconfirmed=True, wheelguns=("gpLEQ52Q4F4", 12.7, 15.3),
+         note="2013 pit lane, Audi Red Bull pulls away; Audi Phoenix stop, Brands Hatch practice"),
+    dict(exit=(EXIT_VIDEO, 146.3, 159.3), exit_unconfirmed=True, wheelguns=("1K5GsYD9vmI", 2.1, 5.7),
+         note="2013 pit lane, Mercedes Thomas Sabo pulls away; BMW stop, Brands Hatch practice"),
+    dict(exit=(EXIT_VIDEO, 120.2, 133.2), exit_unconfirmed=True, wheelguns=("Yy28JpRzFD0", 13.1, 15.6),
+         note="2013 pit lane, Audi ultra pulls away; Audi stop, Brands Hatch practice"),
+    dict(exit=(EXIT_VIDEO, 174.1, 187.1), exit_unconfirmed=True, wheelguns=("H64vMO6NpuY", 0.3, 3.4),
+         note="2013 pit lane, Mercedes Euronics pulls away; BMW Schnitzer stop (Priaulx car), Brands Hatch practice"),
+    dict(exit=(EXIT_VIDEO, 194.7, 207.7), exit_unconfirmed=True, wheelguns=("gpLEQ52Q4F4", 119.8, 122.3),
+         note="2013 pit lane, orange Mercedes pulls away; Audi Phoenix stop, Brands Hatch practice"),
+    dict(exit=(EXIT_VIDEO, 226.1, 239.1), exit_unconfirmed=True, wheelguns=("gpLEQ52Q4F4", 31.3, 33.4),
+         note="2013 pit lane, silver AMG Mercedes pulls away; Audi Phoenix stop, Brands Hatch practice"),
+    # 2026-11-07, user's second batch: a real 2013 race stop at the Lausitzring
+    # (DPFz3gE17zQ, Mercedes, filmed close: four bursts 13-24 s, flatness up
+    # to 0.5) and one more Brands Hatch BMW practice burst (HF-w0SiCD-Y).
+    dict(exit=(EXIT_VIDEO, 31.5, 44.5), exit_unconfirmed=True, wheelguns=("DPFz3gE17zQ", 13.1, 15.4),
+         note="2013 pit lane, Audi Schaeffler pulls away; Mercedes race stop, Lausitzring 2013"),
+    dict(exit=(EXIT_VIDEO, 210.5, 223.5), exit_unconfirmed=True, wheelguns=("DPFz3gE17zQ", 15.9, 18.1),
+         note="2013 pit lane, red-white Mercedes pulls away; Mercedes race stop, Lausitzring 2013"),
+    dict(exit=(EXIT_VIDEO, 92.5, 105.5), exit_unconfirmed=True, wheelguns=("DPFz3gE17zQ", 21.2, 24.3),
+         note="2013 pit lane, Mercedes VfB pulls away; Mercedes race stop, Lausitzring 2013"),
+    dict(exit=(EXIT_VIDEO, 63.5, 76.5), exit_unconfirmed=True, wheelguns=("HF-w0SiCD-Y", 32.9, 35.0),
+         note="2013 pit lane, dark red Mercedes pulls away; BMW stop, Brands Hatch practice"),
 ]
+
+# Fan clips that are not pit exits, set aside from the pack (by ear,
+# 2026-11-07; old pit_exit_NN in brackets). Real drive-bys whose make is not
+# known can't be tagged per supplier (README "Real pass-bys"), and the game
+# has no pit-entry slot (wishlist E14), so they are previews only:
+# library/fan_clips/<kind>_NN_<video id>.wav.
+FAN_CLIPS: list[dict] = [
+    dict(kind="passby", clip=("nUfRLnhcaKc", 5.5, 18.5), note="Oschersleben 2013 drive-by [old pit_exit_01]"),
+    dict(kind="passby", clip=("UD-N3wMEJWg", 23.3, 34.0), note="Oschersleben 2013 drive-by [old pit_exit_02]"),
+    dict(kind="passby", clip=("nUfRLnhcaKc", 15.0, 28.0), note="Oschersleben 2013 drive-by [old pit_exit_04]"),
+    dict(kind="passby", clip=("UD-N3wMEJWg", 3.2, 16.2), note="Oschersleben 2013 drive-by [old pit_exit_06]"),
+    dict(kind="pit_entry", clip=("UD-N3wMEJWg", 62.5, 75.5), note="Oschersleben 2013 pit entry [old pit_exit_03]"),
+    dict(kind="pit_entry", clip=("DPFz3gE17zQ", 0.0, 12.9),
+         note="Lausitzring 2013 race stop: the Mercedes rolls in on the pit limiter and stops"),
+    dict(kind="pit_exit", clip=("UD-N3wMEJWg", 44.5, 57.5),
+         note="Oschersleben 2013, probably a pit exit (user not sure) [old pit_exit_05]"),
+]
+FAN_DIR = LIBRARY_DIR / "fan_clips"
 
 
 def game_boost(x: np.ndarray) -> float:
@@ -122,8 +158,27 @@ def real_pits(db) -> list[dict]:
         clips = {k: cut(db, s.get(k), k) for k in ("fireup", "exit", "wheelguns")}
         if clips["exit"] is None:
             continue
-        out.append(dict(note=s["note"], sources={k: s.get(k) for k in clips}, **clips))
+        out.append(dict(note=s["note"], sources={k: s.get(k) for k in clips},
+                        exit_unconfirmed=bool(s.get("exit_unconfirmed")), **clips))
     return out
+
+
+def write_fan_clips(db) -> list[dict]:
+    """FAN_CLIPS as previews in library/fan_clips (not in the pack)."""
+    FAN_DIR.mkdir(parents=True, exist_ok=True)
+    for old in FAN_DIR.glob("*.wav"):
+        old.unlink()
+    meta, n = [], {}
+    for c in FAN_CLIPS:
+        x = cut(db, c["clip"], "exit")
+        if x is None:
+            continue
+        n[c["kind"]] = n.get(c["kind"], 0) + 1
+        name = f"{c['kind']}_{n[c['kind']]:02d}_{c['clip'][0]}.wav"
+        write_wav(FAN_DIR / name, x, SR)
+        meta.append(dict(c, file=name))
+    dump_json(FAN_DIR / "fan_clips.json", meta)
+    return meta
 
 
 CAND_DIR = LIBRARY_DIR.parent / "pilot" / "pit_candidates"
@@ -233,10 +288,12 @@ def main() -> int:
                 write_wav(OUT_DIR / f"pit_{i:02d}_{k}.wav", s[k], SR)
         if s["fireup"] is not None:
             write_wav(OUT_DIR / f"pit_{i:02d}_departure.wav", departure(s["fireup"], s["exit"]), SR)
-        meta.append(dict(note=s["note"], sources=s["sources"]))
+        meta.append(dict(note=s["note"], sources=s["sources"], exit_unconfirmed=s["exit_unconfirmed"]))
         print(f"pit set {i}: " + ", ".join(f"{k} {len(s[k]) / SR:.1f}s" for k in ("fireup", "exit", "wheelguns")
                                             if s[k] is not None) + f"  ({s['note']})")
     dump_json(OUT_DIR / "pits.json", meta)
+    for c in write_fan_clips(connect()):
+        print(f"fan clip {c['file']}  ({c['note']})")
     return 0
 
 

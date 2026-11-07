@@ -12,7 +12,8 @@ starting with **1991**.
 | DTM 1990 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-1990`](seasons/dtm-1990) |
 | DTM 1991 | ✅ playable; lap times need calibrating | [`seasons/dtm-1991`](seasons/dtm-1991) |
 | DTM 1992 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-1992`](seasons/dtm-1992) |
-| DTM 2013 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-2013`](seasons/dtm-2013) |
+| DTM 2012 | 🚧 generated and installed, not yet played in-game | [`seasons/dtm-2012`](seasons/dtm-2012), on the era base [`bases/dtm-era4`](bases/dtm-era4) (2012–2018) |
+| DTM 2013 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-2013`](seasons/dtm-2013), on the era base [`bases/dtm-era4`](bases/dtm-era4) (2012–2018) |
 | DTM 1984–2026 | 📚 research data ([season archive](tools/build_browser.py)) | `seasons/*/research` |
 
 ## How it works
@@ -23,7 +24,11 @@ The repo only contains **our own content**. A pack is assembled from:
    which supplies the engine files we don't touch (constants, audio, tyre
    model...), and
 2. our **season overlay**: teams, drivers, staff, engines, tyres, calendar,
-   regulation patches, traced tracks and our own artwork.
+   regulation patches, traced tracks and our own artwork. A season can build
+   on an **era base** ([`bases/`](bases/README.md)) that holds what a whole
+   car generation shares (rules, tracks, engine art, sounds), so a new year
+   of that generation only adds its own teams, drivers and calendar. Each
+   season still exports one full pack.
 
 ```bash
 python tools/build_pack.py seasons/dtm-1991
@@ -60,6 +65,8 @@ yet, and is reported in the output.
   game would need for full historical accuracy.
 - [DTM eras](docs/ERAS.md): the six eras from 1984 to today, and how each
   maps to the game.
+- [Era bases](bases/README.md): one shared base per car generation, one
+  season folder per year on top.
 - [DTM 1991 season dossier](seasons/dtm-1991/README.md): sourced facts behind
   the data.
 
@@ -70,4 +77,8 @@ yet, and is reported in the output.
 
 This is unofficial community content. It is not affiliated with the game's
 publisher, the DTM, or any manufacturer. Real names are used for historical
-description only. No official logos or third-party mod files are included.
+description only. Team and maker logos are their owners' trademarks, used
+only to identify the teams and makers; the licence of each is in
+[LICENSE-CONTENT.md](LICENSE-CONTENT.md) and each pack's `credits.txt`. The
+artist's car drawings are not covered by our licences. No third-party mod
+files are included.

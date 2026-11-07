@@ -156,7 +156,7 @@
       "budget_m": 92,
       "starting_balance_m": 28.8,
       "difficulty": "easy",
-      "previous_constructor_position": 1,
+      "previous_constructor_position": 7,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -200,7 +200,7 @@
       "budget_m": 92,
       "starting_balance_m": 28.7,
       "difficulty": "easy",
-      "previous_constructor_position": 2,
+      "previous_constructor_position": 6,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -288,7 +288,7 @@
       "budget_m": 92,
       "starting_balance_m": 28.6,
       "difficulty": "easy",
-      "previous_constructor_position": 4,
+      "previous_constructor_position": 1,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -376,7 +376,7 @@
       "budget_m": 91,
       "starting_balance_m": 28.4,
       "difficulty": "easy",
-      "previous_constructor_position": 6,
+      "previous_constructor_position": 2,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -420,7 +420,7 @@
       "budget_m": 91,
       "starting_balance_m": 28.4,
       "difficulty": "easy",
-      "previous_constructor_position": 7,
+      "previous_constructor_position": 11,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -464,7 +464,7 @@
       "budget_m": 90,
       "starting_balance_m": 28.2,
       "difficulty": "easy",
-      "previous_constructor_position": 8,
+      "previous_constructor_position": 9,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -508,7 +508,7 @@
       "budget_m": 89,
       "starting_balance_m": 27.9,
       "difficulty": "easy",
-      "previous_constructor_position": 9,
+      "previous_constructor_position": 10,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -552,7 +552,7 @@
       "budget_m": 89,
       "starting_balance_m": 27.8,
       "difficulty": "easy",
-      "previous_constructor_position": 10,
+      "previous_constructor_position": 8,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -596,7 +596,7 @@
       "budget_m": 89,
       "starting_balance_m": 27.8,
       "difficulty": "easy",
-      "previous_constructor_position": 11,
+      "previous_constructor_position": 4,
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,

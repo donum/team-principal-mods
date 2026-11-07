@@ -20,13 +20,22 @@ from pathlib import Path
 import numpy as np
 
 REPO = Path(__file__).resolve().parents[2]
+# The era base whose sounds this library makes (bases/<id>/base.json "audio").
+# Every season on that base gets the same overlay. ENGINE_AUDIO_BASE picks
+# another base; give it its own ENGINE_AUDIO_DATA, since one library holds
+# one car generation.
+BASE_ID = os.environ.get("ENGINE_AUDIO_BASE", "dtm-era4")
+AUDIO = json.loads((REPO / "bases" / BASE_ID / "base.json").read_text(encoding="utf-8"))["audio"]
+OVERLAY_ID = AUDIO["overlay"]
+KEY_PREFIX = AUDIO.get("key_prefix", OVERLAY_ID.replace("-", ""))
+RESEARCH = REPO / "seasons" / AUDIO["research_season"] / "research"   # who drove which make in the videos
 # ENGINE_AUDIO_DATA redirects everything (tests, or a bigger disk)
 DATA = Path(os.environ.get("ENGINE_AUDIO_DATA", REPO / "private" / "engine_audio"))
 DB_PATH = DATA / "library.sqlite"
 AUDIO_DIR = DATA / "audio"          # extract.py: lossless audio tracks
 FEATURE_DIR = DATA / "features"     # segment.py: per-video analysis cache
 LIBRARY_DIR = DATA / "library"      # library.py: ranked clips + reports
-PACK_DIR = DATA / "pack"            # package.py: game overlays, one per pack folder
+PACK_DIR = DATA / "pack"            # package.py: game overlays, one per era base (OVERLAY_ID)
 SEPARATED_DIR = DATA / "separated"  # separate.py: event windows, original and commentary removed
 CURATION = REPO / "tools" / "engine_audio" / "curation.csv"   # review.py decisions (metadata only)
 DEFAULT_SOURCE = Path(r"C:\Users\dan\Videos\yt\DTM")
@@ -34,6 +43,48 @@ DEFAULT_SOURCE = Path(r"C:\Users\dan\Videos\yt\DTM")
 # Video types worth analysing for engine sound (features and animations are not).
 ENGINE_TYPES = ("onboard", "onboard_bestof", "taxi", "trackview", "broadcast", "highlights", "spectator")
 MAKES = ("Audi", "BMW", "Mercedes")
+
+# Era: only cars of the 2013 generation (Audi RS 5, BMW M3, Mercedes
+# C-Coupé, raced 2012-2013) may be heard (user, 2026-11-07). 2011 and earlier
+# cars and the 2014-2018 V8s sound different and are out, even in the bed.
+# A video's year is the year in its title; titles without one take the
+# upload year from the file's metadata (listed here by hand).
+# The years are the base's "recording_years".
+ERA = tuple(AUDIO["recording_years"])
+UPLOAD_YEARS = {
+    "EMSlNAM8zC0": 2013,   # "DTM Sound 1", Don Blech: 2013 pit lane, 2013 liveries
+    "fk9f2Qt5x20": 2013,   # "DTM Finale at Hockenheim - Grid and Start"
+    "Ks5j_yh9CN8": 2017,   # "für die ohren"
+    "JDtk4MRd1d0": 2018,   # "DTM Sound Pure V8 - Downshifts & Starts" (Lausitzring 2018)
+    "plmbOpRMwHs": 2017,   # "The Sounds of DTM!"
+    "4pue6jM-VQY": 2010,   # "Brands Hatch Round of DTM - Start"
+}
+# In era by year but kept out anyway (reason shown in the mod browser).
+ERA_EXCLUDE = {
+    "YJSGHrT5x-s": "BMW promo film that mixes in the 1987 M3 E30",
+    "-Kq_G6F1CYI": "same footage as ywftpjRPJPE (BigB.TV, Nürburgring 2013)",
+}
+
+
+def video_years(title: str) -> list[int]:
+    years = [int(y) for y in re.findall(r"\b(20[0-2]\d)\b", title or "")]
+    years += [2000 + int(y) for y in re.findall(r"\b\d{1,2}\.\d{1,2}\.(\d{2})\b", title or "")]
+    return years
+
+
+def era_reason(vid: str, title: str, video_type: str = "spectator") -> str | None:
+    """None if the video's cars are of the era, else why not. Only fan
+    (spectator) uploads need checking: the onboard, TV and archive
+    playlists are the 2013 season itself."""
+    if vid in ERA_EXCLUDE:
+        return ERA_EXCLUDE[vid]
+    if video_type != "spectator":
+        return None
+    years = video_years(title) or ([UPLOAD_YEARS[vid]] if vid in UPLOAD_YEARS else [])
+    if not years:
+        return "year unknown"
+    bad = [y for y in years if not ERA[0] <= y <= ERA[1]]
+    return f"{bad[0]} cars" if bad else None
 
 
 def load_json(path: Path, default=None):

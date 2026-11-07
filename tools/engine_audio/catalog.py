@@ -33,9 +33,9 @@ import sys
 import unicodedata
 from pathlib import Path
 
-from common import DATA, DEFAULT_SOURCE, REPO
+from common import DATA, DEFAULT_SOURCE, RESEARCH
 
-SEASON = REPO / "seasons" / "dtm-2013" / "research"
+SEASON = RESEARCH
 OVERRIDES = Path(__file__).with_name("overrides.csv")
 
 MEDIA_EXT = {".mkv", ".webm", ".mp4", ".m4a", ".opus", ".ogg", ".mka"}

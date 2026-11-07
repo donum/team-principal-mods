@@ -1,5 +1,5 @@
 {
- "$comment": "DTM 2013 car images drawn by Pappydhorn12 (used with the artist's permission). Each source file is a square sheet of a team's cars on black, stacked top to bottom; 'cars' lists their numbers in that order and 'team' (or 'teams') picks the team image (the lower-numbered car, as the game shows one car per team). tools/car_drawings.py crops them; tools/car_art.py leaves these teams alone. Checked against the 2013 spotter guide on 2026-11-07.",
+ "$comment": "DTM 2013 car images drawn by Pappydhorn12 (used with the artist's permission). Each source file is a square sheet of a team's cars on black, stacked top to bottom; 'cars' lists their numbers in that order and 'team' (or 'teams') picks the team image (the lower-numbered car, as the game shows one car per team). tools/car_drawings.py crops them; tools/car_art.py leaves these teams alone. The other car of each team is kept in art/liveries (not in the pack) for a future livery choice (wishlist E4); 'liveries' names the team of a 'teams' sheet's other cars. Checked against the 2013 spotter guide on 2026-11-07.",
  "artist": "Pappydhorn12",
  "sheets": {
   "Abt_Sportsline.png": {"cars": [11, 12], "team": "Audi Sport Team Abt Sportsline"},
@@ -12,7 +12,8 @@
    "note": "the first file named Schnitzer holds the 2013 RBM cars (Farfus #7 Castrol EDGE, Hand #8 Exide on the M3), which match the spotter guide"},
   "BMW_Team_Schnitzer_1_2.png": {"cars": [1, 2], "team": "BMW Team Schnitzer",
    "note": "the corrected Schnitzer file (Spengler #1 BMW Bank, Werner #2 Adrenalin in Serie), saved under this name next to the first one"},
-  "HWA_Team.png": {"cars": [3, 4, 9, 10], "teams": {"Euronics AMG-Mercedes": 3, "STIHL AMG-Mercedes": 9}},
+  "HWA_Team.png": {"cars": [3, 4, 9, 10], "teams": {"Euronics AMG-Mercedes": 3, "STIHL AMG-Mercedes": 9},
+   "liveries": {"4": "Euronics AMG-Mercedes", "10": "STIHL AMG-Mercedes"}},
   "Mucke_Motorsport.png": {"cars": [17, 18], "team": "stern AMG-Mercedes",
    "note": "#18 Wehrlein is drawn in the one-off VfB Stuttgart design, as on the spotter guide"},
   "Phoenix_Racing.png": {"cars": [19, 20], "team": "Audi Sport Team Phoenix"},

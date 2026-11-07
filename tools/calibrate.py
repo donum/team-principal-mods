@@ -16,6 +16,11 @@ Usage:
     python tools/calibrate.py seasons/dtm-1991                              # report
     python tools/calibrate.py seasons/dtm-1991 --apply                      # update specs
 then regenerate the tracks (tools/osm_track.py) and rebuild the pack.
+
+Track specs of an era base (bases/<id>/track_specs) are shared by all its
+seasons: --apply there changes every season of the base. To speed one
+season up or down alone, set "track_overrides": {id: {"speed_mult": x}}
+in its gen.json instead.
 """
 
 import argparse
@@ -28,6 +33,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_pack import game_path, load_json  # noqa: E402
+import layers  # noqa: E402
 
 
 def parse_time(text):
@@ -85,7 +91,8 @@ def main():
     obs = load_json(path)["observations"] if path.exists() else []
     poles = real_poles(season_dir)
     print(f"{'track':14s} {'real pole':>9s} {'game pole':>9s} {'scale':>6s} {'new':>6s}")
-    for spec_path in sorted((season_dir / "track_specs").glob("*.json")):
+    shared = set()
+    for spec_path in layers.files(season_dir, "track_specs").values():
         spec = load_json(spec_path)
         tid = spec["id"]
         mine = [o for o in obs if o["track"] == tid and o.get("session") == "qualifying" and "speed_scale" in o]
@@ -99,8 +106,12 @@ def main():
             text = spec_path.read_text(encoding="utf-8")
             text = re.sub(r'("speed_scale":\s*)[0-9.]+', lambda m: m.group(1) + str(new), text, count=1)
             spec_path.write_text(text, encoding="utf-8", newline="\n")
+            if layers.layer_of(season_dir, spec_path) != season_dir:
+                shared.add(layers.layer_of(season_dir, spec_path).name)
     if args.apply:
         print("\nspeed_scale updated; regenerate tracks and rebuild the pack.")
+    for base in sorted(shared):
+        print(f"note: base {base} track specs changed, so every season on {base} is affected")
 
 
 if __name__ == "__main__":

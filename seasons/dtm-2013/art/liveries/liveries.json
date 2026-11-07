@@ -1,0 +1,137 @@
+{
+ "$comment": "Every drawn car per team, team image first. Written by tools/car_drawings.py; the other liveries wait for a game feature (wishlist E4) and are not in the pack.",
+ "teams": {
+  "Audi Sport Team Abt": [
+   {
+    "number": 23,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamAbt.png"
+   },
+   {
+    "number": 24,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamAbt_24.png"
+   }
+  ],
+  "Audi Sport Team Abt Sportsline": [
+   {
+    "number": 11,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamAbtSportsline.png"
+   },
+   {
+    "number": 12,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamAbtSportsline_12.png"
+   }
+  ],
+  "Audi Sport Team Phoenix": [
+   {
+    "number": 19,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamPhoenix.png"
+   },
+   {
+    "number": 20,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamPhoenix_20.png"
+   }
+  ],
+  "Audi Sport Team Rosberg": [
+   {
+    "number": 5,
+    "team_image": true,
+    "file": "assets/Cars/AudiSportTeamRosberg.png"
+   },
+   {
+    "number": 6,
+    "team_image": false,
+    "file": "art/liveries/AudiSportTeamRosberg_06.png"
+   }
+  ],
+  "BMW Team MTEK": [
+   {
+    "number": 21,
+    "team_image": true,
+    "file": "assets/Cars/BMWTeamMTEK.png"
+   },
+   {
+    "number": 22,
+    "team_image": false,
+    "file": "art/liveries/BMWTeamMTEK_22.png"
+   }
+  ],
+  "BMW Team RBM": [
+   {
+    "number": 7,
+    "team_image": true,
+    "file": "assets/Cars/BMWTeamRBM.png"
+   },
+   {
+    "number": 8,
+    "team_image": false,
+    "file": "art/liveries/BMWTeamRBM_08.png"
+   }
+  ],
+  "BMW Team RMG": [
+   {
+    "number": 15,
+    "team_image": true,
+    "file": "assets/Cars/BMWTeamRMG.png"
+   },
+   {
+    "number": 16,
+    "team_image": false,
+    "file": "art/liveries/BMWTeamRMG_16.png"
+   }
+  ],
+  "BMW Team Schnitzer": [
+   {
+    "number": 1,
+    "team_image": true,
+    "file": "assets/Cars/BMWTeamSchnitzer.png"
+   },
+   {
+    "number": 2,
+    "team_image": false,
+    "file": "art/liveries/BMWTeamSchnitzer_02.png"
+   }
+  ],
+  "Euronics AMG-Mercedes": [
+   {
+    "number": 3,
+    "team_image": true,
+    "file": "assets/Cars/EuronicsAMG-Mercedes.png"
+   },
+   {
+    "number": 4,
+    "team_image": false,
+    "file": "art/liveries/EuronicsAMG-Mercedes_04.png"
+   }
+  ],
+  "STIHL AMG-Mercedes": [
+   {
+    "number": 9,
+    "team_image": true,
+    "file": "assets/Cars/STIHLAMG-Mercedes.png"
+   },
+   {
+    "number": 10,
+    "team_image": false,
+    "file": "art/liveries/STIHLAMG-Mercedes_10.png"
+   }
+  ],
+  "stern AMG-Mercedes": [
+   {
+    "number": 17,
+    "team_image": true,
+    "file": "assets/Cars/sternAMG-Mercedes.png"
+   },
+   {
+    "number": 18,
+    "team_image": false,
+    "file": "art/liveries/sternAMG-Mercedes_18.png"
+   }
+  ]
+ }
+}

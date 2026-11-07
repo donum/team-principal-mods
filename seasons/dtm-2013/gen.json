@@ -1,89 +1,31 @@
 {
-  "$comment": "Inputs for tools/season_from_research.py: maps the 2013 entrants to pack teams, colours and tracks, and sets the modern-era rules (DRS, option tyre, knockout qualifying) instead of the Group A template's.",
+  "$comment": "Inputs for tools/season_from_research.py: maps the 2013 entrants to pack teams, colours and tracks. Rules, car profiles, engines and tyres come from the era base (bases/dtm-era4/gen.json).",
+  "base": "dtm-era4",
   "year": 2013,
-  "template": "dtm-1991",
   "title": "DTM 2013 - Deutsche Tourenwagen Masters",
-  "rules": "own",
-  "constants": {
-    "POINTS_TOP10": [25, 18, 15, 12, 10, 8, 6, 4, 2, 1],
-    "QUALI_GRID_LIMIT": 22,
-    "QUALI_MIN_ENTRANTS": 18,
-    "PREQUALIFYING_TRIGGER_CARS": 30,
-    "PREQUALIFYING_FIELD_LIMIT": 30,
-    "DRIVER_RETIREMENT_MIN_AGE": 36,
-    "DRIVER_RETIREMENT_ESCALATION_AGE": 44
-  },
-  "rating_range": [55, 57.5],
-  "team_rating_from": "average",
-  "skill_range": [11, 18],
-  "economy": {"budget_per_rating": 1.6, "salary_min_m": 0.3, "salary_max_m": 2.5},
-  "mass_kg": {"Audi": 965.0, "BMW": 965.0, "Mercedes-Benz": 965.0},
-  "make_profiles": {"Audi": "audi_rs5_dtm", "BMW": "bmw_m3_dtm_e92", "Mercedes-Benz": "amg_c_coupe_dtm"},
-  "profiles": {
-    "audi_rs5_dtm": {"acceleration": 0, "straight": 0, "slow": 1, "med": 1, "high": 0, "braking": 0,
-                     "tyre_management": 1, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
-    "bmw_m3_dtm_e92": {"acceleration": 1, "straight": 0, "slow": 0, "med": 0, "high": 1, "braking": 0,
-                       "tyre_management": 0, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
-    "amg_c_coupe_dtm": {"acceleration": 0, "straight": 1, "slow": 0, "med": 0, "high": 1, "braking": 0,
-                        "tyre_management": 0, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0}
-  },
-  "engines": {
-    "Audi": {"engine": "Audi 4.0 V8", "factory": false, "power_rating": 58.0, "reliability_rating": 70.0,
-             "cost_m": 6, "annual_budget_m": 60, "capacity": 8, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
-             "fuel_efficiency": 55.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_03"},
-    "BMW": {"engine": "BMW P66 4.0 V8", "factory": false, "power_rating": 59.0, "reliability_rating": 71.0,
-            "cost_m": 6, "annual_budget_m": 60, "capacity": 8, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
-            "fuel_efficiency": 54.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_01"},
-    "Mercedes-Benz": {"engine": "Mercedes-AMG 4.0 V8", "factory": false, "power_rating": 58.0, "reliability_rating": 70.0,
-                      "cost_m": 6, "annual_budget_m": 60, "capacity": 6, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
-                      "fuel_efficiency": 55.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_04"}
-  },
-  "tyre_suppliers": {
-    "Hankook": {
-      "active": true, "join_chance": 0.0, "leave_chance": 0.0,
-      "prices": {"works": 0, "partner": 0, "customer": 0},
-      "nationality": "south_korean",
-      "lateral_grip": {"soft": 58.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
-      "longitudinal_grip": {"soft": 58.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
-      "durability": {"soft": 40.0, "hard": 60.0, "intermediate": 55.0, "wet": 55.0},
-      "temperature_tolerance": {"soft": 50.0, "hard": 54.0, "intermediate": 50.0, "wet": 50.0},
-      "trend": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
-      "variance": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
-      "development_preference": "endurance"
-    }
-  },
-  "tyre_development": {
-    "$comment": "DTM 2013 had no medium: it is dropped from the development programmes too.",
-    "programs": {
-      "cornering_grip": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
-      "traction_braking": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
-      "durability": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
-      "thermal_stability": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}}
-    }
-  },
   "teams": {
-    "Audi Sport Team Phoenix": {"entrants": ["Audi Sport Team Phoenix [Phoenix Racing]"], "color": [185, 205, 20], "secondary": [0, 100, 60], "tyres": "Hankook", "works": true,
-                                "history": "Ernst Moser's team from Meuspath next to the Nürburgring. Audi works team in the DTM since 2006."},
-    "BMW Team RBM": {"entrants": ["BMW Team RBM [Racing Bart Mampaey]"], "nationality": "belgian", "color": [0, 125, 65], "secondary": [215, 30, 40], "tyres": "Hankook", "works": true,
-                     "history": "Bart Mampaey's Belgian team, a BMW works entrant since the marque's DTM return in 2012."},
-    "STIHL AMG-Mercedes": {"entrants": ["STIHL/AMG-Mercedes [HWA AG]"], "color": [243, 112, 33], "secondary": [60, 60, 66], "tyres": "Hankook", "works": true, "rating": 56.9,
-                           "history": "One of the two HWA AG entries from Affalterbach. HWA builds and runs the AMG-Mercedes DTM cars."},
-    "BMW Team Schnitzer": {"entrants": ["BMW Team Schnitzer [Schnitzer Motorsport]"], "color": [25, 25, 28], "secondary": [0, 102, 177], "tyres": "Hankook", "works": true, "rating": 57.3,
-                           "history": "Schnitzer Motorsport of Freilassing, BMW's partner since the 1960s. Bruno Spengler won the 2012 title on BMW's return."},
-    "Audi Sport Team Abt Sportsline": {"entrants": ["Audi Sport Team Abt Sportsline [Abt Sportsline]"], "color": [25, 40, 95], "secondary": [215, 25, 50], "tyres": "Hankook", "works": true,
-                                       "history": "Hans-Jürgen Abt's team from Kempten, Audi's lead DTM squad since 2000."},
-    "Euronics AMG-Mercedes": {"entrants": ["EURONICS/Thomas Sabo AMG-Mercedes [HWA AG]"], "color": [0, 65, 150], "secondary": [255, 210, 0], "tyres": "Hankook", "works": true,
-                              "history": "HWA AG's second entry, run as EURONICS/Thomas Sabo AMG-Mercedes. Gary Paffett was the 2005 champion."},
-    "BMW Team MTEK": {"entrants": ["BMW Team MTEK [Team MTEK]"], "nationality": "dutch", "color": [255, 204, 0], "secondary": [25, 25, 25], "tyres": "Hankook", "works": true,
-                      "history": "Ernest Knoors' Dutch team, new to the DTM in 2013 with ex-F1 driver Timo Glock and rookie Marco Wittmann."},
-    "Audi Sport Team Abt": {"entrants": ["Audi Sport Team Abt [Abt Sportsline]"], "color": [35, 35, 38], "secondary": [200, 200, 205], "tyres": "Hankook", "works": true,
-                            "history": "Abt Sportsline's second Audi entry, with double champion Timo Scheider and rookie Adrien Tambay."},
-    "stern AMG-Mercedes": {"entrants": ["stern/AMG-Mercedes [Mücke Motorsport]"], "color": [210, 20, 30], "secondary": [255, 255, 255], "tyres": "Hankook", "works": true,
-                           "history": "Peter Mücke's Berlin team, running two F3 graduates for Mercedes in 2013."},
-    "BMW Team RMG": {"entrants": ["BMW Team RMG [Reinhold Motorsport / Team RMG]"], "color": [245, 245, 245], "secondary": [100, 40, 120], "tyres": "Hankook", "works": true,
-                     "history": "Stefan Reinhold's team from Andernach, a BMW works entrant since 2012. Martin Tomczyk was the 2011 champion."},
-    "Audi Sport Team Rosberg": {"entrants": ["Audi Sport Team Rosberg [Team Rosberg]"], "color": [125, 12, 25], "secondary": [195, 195, 200], "tyres": "Hankook", "works": true,
-                                "history": "Keke Rosberg's team, in the DTM since 1995 and with Audi since 2006."}
+    "Audi Sport Team Phoenix": {"previous_position": 7, "entrants": ["Audi Sport Team Phoenix [Phoenix Racing]"], "color": [185, 205, 20], "secondary": [0, 100, 60], "tyres": "Hankook", "works": true,
+                                "history": "Founded by Ernst Moser. Based in Meuspath, next to the Nürburgring. Has run Audis in the DTM since 2006."},
+    "BMW Team RBM": {"previous_position": 6, "entrants": ["BMW Team RBM [Racing Bart Mampaey]"], "nationality": "belgian", "color": [0, 125, 65], "secondary": [215, 30, 40], "tyres": "Hankook", "works": true,
+                     "history": "Founded by Bart Mampaey. Based in Mechelen, Belgium. Has run BMWs in the DTM since 2012."},
+    "STIHL AMG-Mercedes": {"previous_position": 3, "entrants": ["STIHL/AMG-Mercedes [HWA AG]"], "color": [243, 112, 33], "secondary": [60, 60, 66], "tyres": "Hankook", "works": true, "rating": 56.9,
+                           "history": "Run by HWA AG from Affalterbach. HWA builds and runs the Mercedes DTM cars. One of two HWA teams in 2013."},
+    "BMW Team Schnitzer": {"previous_position": 1, "entrants": ["BMW Team Schnitzer [Schnitzer Motorsport]"], "color": [25, 25, 28], "secondary": [0, 102, 177], "tyres": "Hankook", "works": true, "rating": 57.3,
+                           "history": "Based in Freilassing. Has raced BMWs since the 1960s. Bruno Spengler won the 2012 title with the team."},
+    "Audi Sport Team Abt Sportsline": {"previous_position": 5, "entrants": ["Audi Sport Team Abt Sportsline [Abt Sportsline]"], "color": [25, 40, 95], "secondary": [215, 25, 50], "tyres": "Hankook", "works": true,
+                                       "history": "Hans-Jürgen Abt's team from Kempten. Has run Audis in the DTM since 2000. Mattias Ekström won the title with the team in 2004 and 2007."},
+    "Euronics AMG-Mercedes": {"previous_position": 2, "entrants": ["EURONICS/Thomas Sabo AMG-Mercedes [HWA AG]"], "color": [0, 65, 150], "secondary": [255, 210, 0], "tyres": "Hankook", "works": true,
+                              "history": "The second HWA AG team, entered as EURONICS/Thomas Sabo AMG-Mercedes. Gary Paffett won the 2005 title."},
+    "BMW Team MTEK": {"previous_position": 11, "entrants": ["BMW Team MTEK [Team MTEK]"], "nationality": "dutch", "color": [255, 204, 0], "secondary": [25, 25, 25], "tyres": "Hankook", "works": true,
+                      "history": "Ernest Knoors' team from the Netherlands. New to the DTM in 2013. Drivers are former Formula 1 driver Timo Glock and rookie Marco Wittmann."},
+    "Audi Sport Team Abt": {"previous_position": 9, "entrants": ["Audi Sport Team Abt [Abt Sportsline]"], "color": [35, 35, 38], "secondary": [200, 200, 205], "tyres": "Hankook", "works": true,
+                            "history": "The second Abt Sportsline team. Timo Scheider won the title in 2008 and 2009. Adrien Tambay is in his second DTM season."},
+    "stern AMG-Mercedes": {"previous_position": 10, "entrants": ["stern/AMG-Mercedes [Mücke Motorsport]"], "color": [210, 20, 30], "secondary": [255, 255, 255], "tyres": "Hankook", "works": true,
+                           "history": "Peter Mücke's team from Berlin. Runs Mercedes cars. Both drivers come from Formula 3."},
+    "BMW Team RMG": {"previous_position": 8, "entrants": ["BMW Team RMG [Reinhold Motorsport / Team RMG]"], "color": [245, 245, 245], "secondary": [100, 40, 120], "tyres": "Hankook", "works": true,
+                     "history": "Stefan Reinhold's team from Andernach. Has run BMWs in the DTM since 2012. Martin Tomczyk won the 2011 title."},
+    "Audi Sport Team Rosberg": {"previous_position": 4, "entrants": ["Audi Sport Team Rosberg [Team Rosberg]"], "color": [125, 12, 25], "secondary": [195, 195, 200], "tyres": "Hankook", "works": true,
+                                "history": "Keke Rosberg's team from Neustadt an der Weinstraße. First DTM season in 1995 with Opel. Raced Mercedes from 2000 to 2004 and Audi since 2006."}
   },
   "sponsors": {
     "$comment": "Starting deals from the 2013 liveries (research/spotter_guide.csv, research/liveries.csv), primary first: the lower-numbered car's main sponsor, then the team-mate's, then partners on the team's cars. Each sponsor is on one team only, so make-wide partners (Puma, Sonax, Würth...) are spread over that make's teams. The manufacturers' own campaigns (bmw.com/m3, AMG, Audi ultra, Audi Cup) and the series partners (DEKRA, ADAC, Hankook) are left out. Names are used descriptively only, no logos. build_pack.py keeps each team's sponsor income at what its cloned vanilla team had.",
@@ -133,9 +75,5 @@
     }
   },
   "tracks": {"1": "hockenheim13", "2": "brandshatch", "3": "redbullring", "4": "lausitzring", "5": "norisring",
-             "6": "moscow", "7": "nuerburgring13", "8": "oschersleben", "9": "zandvoort", "10": "hockenheim13"},
-  "shared_tracks": {"norisring": "dtm-1991"},
-  "track_overrides": {
-    "norisring": {"race_laps": 83, "speed_mult": 1.29, "tyre_wear_mult": 0.65, "pit_lane_loss_s": 18.0, "drs_zones": [{"detection_progress": 0.8954, "start_progress": 0.9354, "end_progress": 0.254}]}
-  }
+             "6": "moscow", "7": "nuerburgring13", "8": "oschersleben", "9": "zandvoort", "10": "hockenheim13"}
 }
