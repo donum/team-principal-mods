@@ -11,10 +11,10 @@ assets/audio/README_AUDIO.txt:
             of commentary, join the random bank as dtm13_tv_NN.
   race/     grid_idle_NN / grid_launch_NN pairs cut from fan recordings of
             real race starts (starts.py; simulated ones from start_synth.py
-            only with --synth-starts), and pit_exit_NN (13 s, peak_s) from
-            onboard pit exits. They replace the stock clips with the same key; fire-ups
-            and wheelguns stay stock. These banks are shared by all cars
-            (wishlist E8).
+            only with --synth-starts), and pit sets (pits.py): pit_fireup_NN,
+            pit_exit_NN (peak_s) and pit_wheelguns_NN cut from fan recordings
+            of the pit lane, paired by number. They replace the stock clips
+            with the same key. These banks are shared by all cars (wishlist E8).
   ambience/ cars_on_track and crowd: loops of real trackside recordings
             (ambience.py), set through session_layers.json "cars.file" and
             "crowd.file".
@@ -36,6 +36,7 @@ import numpy as np
 from scipy.signal import butter, sosfilt
 
 import overlay
+import pits
 import start_synth
 import starts
 from common import LIBRARY_DIR, MAKES, PACK_DIR, REPO, connect, decode, dump_json, game_path, load_json, slug, write_wav
@@ -274,16 +275,67 @@ def build(season: Path, min_q: float, n_grid: int, n_pit: int, n_tv: int,
                   + (f", filling {stock_pairs} stock slots" if pairs and len(pairs) < stock_pairs else "")
                   + ("" if pairs else ", stock kept"))
 
-    # pit exits
-    lvl_pit = stock_level(base_audio, "race/race_engines.json", "pit_exit")
-    exits = round_robin(candidates(db, ("pit_exit",), min_q), n_pit)
-    for i, r in enumerate(exits, 1):
-        x = peak_normalise(decode(Path(r["audio_path"]), max(0, r["peak_s"] - 6.0), 13.0, SR, 2))
-        save(f"assets/audio/race/dtm13_pit_exit_{i:02d}.wav", x)
-        clips.setdefault(race, []).append(
-            {"key": f"pit_exit_{i:02d}", "file": f"dtm13_pit_exit_{i:02d}.wav",
-             "gain": gain_for(x, lvl_pit), "peak_s": loudest_80ms(x), "source": ref(r)})
-    report.append(f"pit exits: {len(exits)} (stock kept for the rest; fire-ups and wheelguns stay stock)")
+    # pit sets (pits.py): fire-up / exit / wheelguns, paired by number. The
+    # game boosts each pit clip toward full scale (pits.game_boost), so levels
+    # are matched as heard, not as the files are. Every stock set number is
+    # pointed at one of ours (cycling), so the shuffled bag never draws a
+    # stock exit; a kind our set lacks keeps the stock clip of that number.
+    stock_race = load_json(base_audio / "race" / "race_engines.json", {"clips": []})
+    stock_n = sum(1 for c in stock_race["clips"] if c.get("key", "").startswith("pit_exit_"))
+    heard = {}
+    for kind in ("fireup", "exit", "wheelguns"):
+        lv = [pits.heard_db(decode(base_audio / "race" / c["file"], sr=SR, channels=2), c.get("gain", 1.0))
+              for c in stock_race["clips"] if c.get("key", "").startswith(f"pit_{kind}_")]
+        heard[kind] = float(np.median(lv)) if lv else -24.0
+    pit_sets = [] if test_start else pits.real_pits(db)[:n_pit]
+    stock_by_key = {c["key"]: c for c in stock_race["clips"] if "key" in c}
+
+    def fireup_entry(x: np.ndarray, name: str, source: str) -> dict:
+        # The game clamps clip gains to 1.0 and scales the fire-up by
+        # fireup_gain / exit_gain before joining it to the exit; the joined
+        # departure is then boosted by pits.game_boost, which is ~1 for our
+        # near-full-scale exits (stock exits are boosted 5x). So the fire-up
+        # is written at the level it should be heard at, gain 1.0, and the
+        # exit gain no longer turns it down.
+        boost = pits.GAME_PEAK / 10 ** (-1 / 20)
+        x = x * 10 ** ((heard["fireup"] - rms_db(x)) / 20) / boost
+        x = x * min(1.0, 0.89 / (np.abs(x).max() + 1e-9))
+        write_wav(out / "files" / f"assets/audio/race/{name}", x, SR)
+        files.append(f"assets/audio/race/{name}")
+        return {"file": name, "gain": 1.0, "source": source}
+
+    files_for = []
+    for i, s in enumerate(pit_sets, 1):
+        entry = {}
+        for kind in ("exit", "wheelguns", "fireup"):
+            x = s[kind]
+            name = f"dtm13_pit_{kind}_{i:02d}.wav"
+            if kind == "fireup":
+                if x is not None:
+                    entry[kind] = fireup_entry(x, name, "private: " + " ".join(map(str, s["sources"][kind])))
+                else:
+                    # no real fire-up yet: the stock one of a stock set
+                    # number, levelled the same way
+                    src = stock_by_key.get(f"pit_fireup_{(i - 1) % stock_n + 1:02d}") if stock_n else None
+                    if src:
+                        entry[kind] = fireup_entry(decode(base_audio / "race" / src["file"], sr=SR, channels=2),
+                                                   name, f"stock {src['file']}, levelled for our exits")
+                continue
+            if x is None:
+                continue
+            write_wav(out / "files" / f"assets/audio/race/{name}", x, SR)   # pits.py already faded it
+            files.append(f"assets/audio/race/{name}")
+            gain = round(float(np.clip(10 ** ((heard[kind] - pits.heard_db(x)) / 20), 0.02, 1.0)), 6)
+            entry[kind] = {"file": name, "gain": gain, "source": "private: " + " ".join(map(str, s["sources"][kind]))}
+            if kind == "exit":
+                entry[kind]["peak_s"] = loudest_80ms(x)
+        files_for.append(entry)
+    for n in range(max(len(files_for), stock_n if files_for else 0)):
+        for kind, e in files_for[n % len(files_for)].items():
+            clips.setdefault(race, []).append({"key": f"pit_{kind}_{n + 1:02d}", **e})
+    real = {k: sum(k in e and e[k]["source"].startswith("private") for e in files_for) for k in ("fireup", "exit", "wheelguns")}
+    report.append(f"pit sets: {len(files_for)} (real: " + ", ".join(f"{v} {k}" for k, v in real.items())
+                  + ("; the rest of the fire-ups are stock, levelled for our exits)" if files_for else "), stock kept"))
 
     # ambience layers from real trackside recordings (ambience.py): seamless
     # loops, so written without the clip fades; gains keep the stock level.
@@ -323,11 +375,11 @@ def main() -> int:
                     help="use simulated grid/launch pairs (off: only real recordings, else stock)")
     ap.add_argument("--test-start", action="store_true",
                     help="replace the start with loud test tones (checks the game plays the start slots)")
-    ap.add_argument("--pit-exits", type=int, default=4)
+    ap.add_argument("--pit-sets", type=int, default=8)
     ap.add_argument("--tv-passbys", type=int, default=5)
     ap.add_argument("--install", action="store_true", help="apply to <game>/data/<pack_folder>")
     args = ap.parse_args()
-    build(args.season, args.min_quality, args.grid_pairs, args.pit_exits, args.tv_passbys,
+    build(args.season, args.min_quality, args.grid_pairs, args.pit_sets, args.tv_passbys,
           args.synth_starts, args.test_start)
     if args.install:
         pack = load_json(args.season / "season.json")["pack_folder"]
@@ -336,6 +388,7 @@ def main() -> int:
             raise SystemExit(f"pack not installed yet: {target} (run build_pack.py --install)")
         print(overlay.apply(target, pack) if overlay.overlay_for(pack) else overlay.remove(target))
         starts.main()                 # library/starts/start_NN_*.wav, the browser's "Real starts"
+        pits.main()                   # library/pits/pit_NN_*.wav, the browser's "Pit lane"
         import start_preview          # the starts as the game mixes them, for the browser
         start_preview.main()
         # keep the mod browser (tools/mod_browser.py) in sync with what is installed

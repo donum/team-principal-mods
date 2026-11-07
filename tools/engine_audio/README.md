@@ -39,7 +39,8 @@ python tools/engine_audio/package.py --install
 | `extract.py` | catalog rows with status `done` | `audio/<make>/<track>/<session>/<driver>/<id>.mka` (stream copy, no re-encode) |
 | `segment.py` | extracted audio | `features/<id>.npz`, tables `analysis` and `segments` |
 | `library.py` | segments | `library/index.html` (playable), `library/coverage.md`, ranked WAV clips |
-| `events.py` | broadcast features (race and qualifying re-lives) | table `events`: race-start, pit-stop, pass-by and track-bed candidates |
+| `events.py` | broadcast features (race and qualifying re-lives) | table `events`: race-start, pit-stop, pass-by and track-bed candidates (the pit-stop finder mistakes speech for wheelguns: its top hits were all commentary) |
+| `pits.py` | fan recordings of the pit lane and pit-stop practice (hand-listed) | pit sets: exit, wheelguns and (when found) fire-up, paired by number (used by `package.py`; previews `library/pits/pit_NN_*.wav`). `pits.py --scan <video id>...` cuts wheelgun bursts and fire-up onsets into `pilot/pit_candidates/` for listening |
 | `starts.py` | fan recordings of race starts (hand-listed) | real grid idle loops and launches (used by `package.py`; its previews `library/starts/start_NN_*.wav` are rewritten by `package.py --install`) |
 | `start_preview.py` | the installed pack | each start mixed with the game's own timing and levels (`library/starts/ingame_start_NN.wav`) |
 | `ambience.py` | spectator montages | 393 s `cars_on_track` loop of real trackside shots, cut at camera cuts |
@@ -91,11 +92,34 @@ From the game's `assets/audio/README_AUDIO.txt`:
   - made by simulating a pass-by at 220 km/h and 12 m (Doppler, distance, pan) from clean onboard full-throttle audio;
   - commentary-free TV pass-bys, if any, join the random bank as `dtm13_tv_NN`. With all three suppliers tagged, that bank is never used, so they are not heard today.
 - **Grid and pit** (`race/race_engines.json`):
-  - `grid_idle_NN` / `grid_launch_NN` pairs are cut from fan recordings of real starts by `starts.py` (simulated ones only with `--synth-starts`), and `pit_exit_NN` would come from onboard pit exits (none so far);
-  - they replace the stock clips with the same key; fire-ups and wheelguns stay stock;
+  - `grid_idle_NN` / `grid_launch_NN` pairs are cut from fan recordings of real starts by `starts.py` (simulated ones only with `--synth-starts`);
+  - pit sets come from `pits.py` (see "Pit lane" below): `pit_exit_NN`, `pit_wheelguns_NN` and `pit_fireup_NN`, paired by number;
+  - they replace the stock clips with the same key;
   - these banks are shared by all cars (wishlist E8).
 - **Track bed** (`ambience/session_layers.json`): `cars.file` points to the `ambience.py` loop.
-- **Levels** match the stock clips.
+- **Levels** match the stock clips as the game plays them. For pit clips that includes the game's own boost (below).
+
+## Pit lane (`pits.py`)
+
+**How the game plays them** (read from its `ui/audio_manager.py` and `ui/pit_exit_audio.py`):
+- A pit set is picked from a shuffled bag of the `pit_exit_NN` keys; the fire-up and wheelguns of the same NN go with it.
+- *Practice and qualifying:* the fire-up is scaled by fire-up gain / exit gain and crossfaded into the exit over `pit_fireup_crossfade_s` (0.65 s), played as one "departure".
+- *Race:* the wheelguns play when the stop starts; at release they fade out over 0.65 s as the exit fades in. No fire-up.
+- *Level:* each clip, and the joined departure, is boosted by min(`pit_departure_gain` = 5, 0.95 full scale / its peak), then played at its gain. Gains are clamped to 1.0. The stock clips peak 15–35 dB under full scale, so the game plays them about 14 dB louder than the files.
+
+**What `package.py` does with that:**
+- Exits and wheelguns are written peak-normalised. Their gain is set so that the clip, after the game's boost, plays at the stock clips' median level.
+- Fire-ups are written at the level they should be heard at, with gain 1.0. Our exits are already near full scale, so the joined departure is hardly boosted, and with the clamp the exit gain would otherwise leave the fire-up about 13 dB quieter than vanilla.
+- Until a real fire-up is found, each set carries a stock fire-up, levelled the same way.
+- Every stock set number points at one of ours, so the bag never draws a stock exit.
+
+**Sources** (2026-11-07):
+- *Exits:* Oschersleben 2013, filmed at the fence of the pit-exit lane (`UD-N3wMEJWg`, `nUfRLnhcaKc`). The cars hold the limiter (steady harmonics), pass with a Doppler drop and pull away, like the stock exits. They are cut so the pass lands 4.4–5.6 s in (stock: 4.4–5.8 s).
+- *Wheelguns:* spectators at the 2013 Brands Hatch pit-stop practice, Audi and BMW crews (`gpLEQ52Q4F4`, `Yy28JpRzFD0`, `1K5GsYD9vmI`, `H64vMO6NpuY`). These are the strongest bursts of `--scan`, checked on the spectrogram and frames.
+- *Fire-ups:* none found. The Lausitzring 2013 pit-lane clips are a garage walk with no engines running. The Norisring "roll-out" and the Hockenheim sound check are cars on track. The Norisring paddock clip of the Euronics AMG starts with the engine already running, apparently at an edit, so it is only a candidate.
+- *Set aside:* the Spielberg 2013 pit-exit practice starts (`0sl-m42P15Q`) are faint and windy behind a fence. Misano 2018 is mostly distant generator hum.
+
+Check in game: the pit-lane sound in practice (fire-up then exit) and at a race stop (wheelguns then exit).
 
 `package.py --install` also rebuilds the mod browser (`tools/mod_browser.py`),
 whose Sounds tab plays vanilla and our clips side by side and whose Sound
@@ -208,7 +232,7 @@ catalog type `spectator`, no commentary) give what the broadcasts can't:
 ## Findings so far (2026-11-04, all downloads in)
 
 - **Driver onboards (45, one flying lap each):** clean engine with only 2–5 % speech. They give about 1,000 s of steady high RPM and full throttle, roughly 950 upshifts and 180 downshifts. All three makes are covered at every track except Mercedes at Oschersleben.
-- **No idle, grid or pit material:** the onboards are single laps, so the grid idle/launch and pit-exit banks stay stock.
+- **No idle, grid or pit material:** the onboards are single laps. The grid and pit banks came later, from fan recordings (`starts.py`, `pits.py`).
 - **Race and qualifying broadcasts (2 h each):** commentary almost throughout. About 50 pass-bys pass the commentary check, and 3 are good enough to package; listen to those before trusting them.
 - **Race starts in the broadcasts:** found reliably (field surge after grid revs), but unusable: commentary peaks there and every separation model leaves watery gaps.
 - **Separation:** usable only where commentary is quiet (pass-bys, track ambience). Demucs runs at ~4x real time on this CPU, Mel-RoFormer at ~1x.

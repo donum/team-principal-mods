@@ -66,6 +66,12 @@ CANDIDATE_GROUPS = [
      "the launch from the 3rd light, lights out at 2.5 s (start_preview.py)."),
     ("library/starts", "*idle_then_launch.wav", "Real starts",
      "The real start in the pack: the grid revving loop, then the launch (with its borrowed ending)."),
+    ("library/pits", "pit_*.wav", "Pit lane",
+     "The pit sets in the pack (pits.py), paired by number: the fire-up, the exit, the departure "
+     "(fire-up crossfaded into the exit, as practice and qualifying play it) and the wheelguns "
+     "(race stops)."),
+    ("pilot/pit_candidates", "*.wav", "Pit-lane candidates",
+     "Fire-ups, exits and wheelgun bursts found in the pit-lane fan videos, cut for listening."),
     ("library/ambience", "*preview*.wav", "Track bed",
      "First 90 s of the cars-on-track loop built from real trackside shots. In the pack."),
     ("pilot/crowd", "*.wav", "Crowd candidates",
@@ -567,6 +573,7 @@ def build_candidates(media):
     except Exception:
         crowd_tag = None
     starts_meta = load_json(AUDIO_DATA / "library" / "starts" / "starts.json", []) or []
+    pits_meta = load_json(AUDIO_DATA / "library" / "pits" / "pits.json", []) or []
     for folder, pattern, title, note in CANDIDATE_GROUPS:
         d = AUDIO_DATA / folder
         files = [p for p in sorted(d.glob(pattern)) if p.is_file() and p not in seen]
@@ -577,12 +584,16 @@ def build_candidates(media):
             seen.add(p)
             item = {"name": p.stem.replace("_", " "), "file": p.name,
                     "audio": media.audio(p, f"candidates/{folder}/{p.name}"), "seconds": duration(p),
-                    "in_use": folder in ("library/starts", "library/ambience") or bool(crowd_tag and crowd_tag in p.name),
+                    "in_use": folder in ("library/starts", "library/ambience", "library/pits")
+                              or bool(crowd_tag and crowd_tag in p.name),
                     "note": ""}
             m = re.match(r"start_(\d+)_", p.name)
             if folder == "library/starts" and m and int(m.group(1)) <= len(starts_meta):
                 s = starts_meta[int(m.group(1)) - 1]
                 item["note"] = f"{s['title']} — {s['note']} (go at {s['go_s']} s, grid loop {s['idle_s']} s)"
+            m = re.match(r"pit_(\d+)_", p.name)
+            if folder == "library/pits" and m and int(m.group(1)) <= len(pits_meta):
+                item["note"] = pits_meta[int(m.group(1)) - 1]["note"]
             items.append(item)
         groups.append({"title": title, "folder": f"private/engine_audio/{folder}", "note": note, "items": items})
     for d in sorted((AUDIO_DATA / "pilot").glob("*")):

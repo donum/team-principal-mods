@@ -3,7 +3,7 @@
 What the private audio overlay changes in the installed `dtm2013` pack,
 compared with the vanilla audio it copies from `default26`. Checked against
 the installed pack on 2026-11-04, after the real starts and track bed went
-in. The audio itself is private and never in git or `dist/`.
+in, and on 2026-11-07 after the pit sets. The audio itself is private and never in git or `dist/`.
 
 ## Replaced
 
@@ -19,6 +19,8 @@ nothing points to them any more.
 | `grid_launch_01`, `grid_launch_02` | stock launches | the real launch that follows, 14.5 s: 1.6 s of grid revving (the game starts the clip on the 3rd light), the getaway on lights out, the field swelling past (5 s of steady roar spliced out so the close pass lands 6.6 s in), then the field leaving towards turn 1 (from the 2017 Hockenheim start) and a 4 s fade | same |
 | `cars_on_track` | stock 393 s bed | 393 s loop of real trackside DTM V8 recordings (Hockenheim 2013–2016) | `ambience.py`, 11 shots of fan videos |
 | `crowd` | stock 35 s murmur | 18 s loop of a real grandstand before the 2015 Nürburgring start | `ambience.py` (`CROWD`), picked from six candidates |
+| `pit_exit_01`–`06` | 4 stock exits | 6 real 2013 cars on the Oschersleben pit-exit lane: on the limiter, the pass, away (10.7–13 s, pass 4.4–5.6 s in) | fan recordings, `pits.py` |
+| `pit_wheelguns_01`–`06` | 4 stock bursts | 6 real wheelgun bursts from the 2013 Brands Hatch pit-stop practice (Audi and BMW crews, 2.1–3.6 s) | same |
 
 The three makes are tagged in `engines.json` (`passby_audio`), so every
 finish-line pass-by in practice, qualifying, testing and races is ours.
@@ -36,9 +38,7 @@ Simulated starts (`start_synth.py`) are off by default.
 
 | Folder | Slot | Count | Notes |
 |---|---|---|---|
-| `race/` | `pit_fireup_01`–`04` | 4 | the onboards have no fire-ups |
-| `race/` | `pit_exit_01`–`04` | 4 | no onboard pit exits found yet |
-| `race/` | `pit_wheelguns_01`–`04` | 4 | the broadcast pit-stop finder is unverified |
+| `race/` | `pit_fireup_01`–`06` | 4 | no clean fire-up in any recording yet; the stock ones are re-levelled for our exits (`package.py`), and sets 05–06 reuse 01–02 |
 | `race/` | `start_light.wav`, `lights_out.wav` | 2 | |
 | `ambience/` | `base_01`, `base_02` | 2 | base beds |
 | `ambience/` | `pa`, `helicopter`, `pit_blowers`, `rain` | 4 | |
@@ -52,8 +52,11 @@ Starts, the track bed and the crowd are real recordings now. Still open:
 
 1. **Real pass-bys:** the spectator videos are full of real pass-bys, but
    do not say which make passes, so they can't be tagged per make.
-2. **Pit lane:** fire-ups, exits and wheelguns. The 2013 Spielberg and
-   2018 Misano fan videos show pit-lane starts and exits.
+2. **Pit lane:** exits and wheelguns are real now; fire-ups are still
+   stock. The 18 pit-lane videos downloaded on 2026-11-07 had none: garage
+   walks with no engine, cars on track, and one paddock clip that starts at
+   an edit (in the Sound candidates tab to judge by ear). A video of a car
+   being started in the garage or the pit box is what's missing.
 3. **TV pass-bys:** either untag the suppliers, so the make clips and the TV
    clips share one bank, or drop the TV clips.
 
