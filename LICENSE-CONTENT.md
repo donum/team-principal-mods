@@ -59,6 +59,14 @@ Because of ShareAlike, these images are licensed **CC BY-SA 4.0**
 credits are in each pack's `credits.txt`. The liveries show real sponsor
 trademarks, which belong to their owners.
 
+### Artist drawings
+
+Some team car images are an artist's own drawings, used with their
+permission and listed per season in `seasons/*/art/drawings.json` (DTM 2013:
+Pappydhorn12). All rights to them stay with the artist: they are not under
+CC BY-SA or CC BY-NC-SA, and may not be reused outside these packs without
+the artist's permission. `tools/car_drawings.py` only crops them.
+
 ## Driver portraits
 
 Driver portraits (`seasons/*/assets/portraits`, made with

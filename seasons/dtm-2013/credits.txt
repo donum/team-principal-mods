@@ -18,18 +18,9 @@ Track maps and track geometry:
   Track outlines are today's layouts and may differ from 2013 in detail.
 
 Car images (assets/Cars):
-  Car outlines traced by hand from photos on Wikimedia Commons:
-    BMW M3 DTM: "DTM Brands Hatch 2013 - -2 Dirk Werner, Schnitzer BMW M3 DTM"
-      by Mark Seymour, CC BY 2.0
-    DTM AMG Mercedes C-Coupe: "DTM Brands Hatch 2013 - -17 Daniel Juncadella
-      (ESP), Mercedes AMG C" by Mark Seymour, CC BY 2.0
-    Audi RS 5 DTM: "Audi RS5 DTM (R17) of Team Rosberg" by kevinmcgill,
-      CC BY-SA 2.0
-  Liveries drawn for this pack. Colours and sponsor positions were read from
-  period photos and from Andy Blackmore's 2013 DTM spotter guide
-  (andyblackmoredesign.com), which was used as a reference only: no part of
-  the guide is included.
-  The car images are licensed CC BY-SA 4.0.
+  Drawn by Pappydhorn12 and used with the artist's permission. All rights
+  to these drawings stay with the artist; they are not covered by the
+  pack's Creative Commons licences.
 
 Logos (assets/logos, assets/engines):
   Public-domain logos from Wikimedia Commons: Abt (2010), HWA AG, Schnitzer

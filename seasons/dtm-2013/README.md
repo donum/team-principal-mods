@@ -70,7 +70,18 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
   70 minutes; the Nürburgring 49 laps, of which the wet race ran 45) and one
   DRS zone (`drs_zones`) on the longest straight. Zandvoort has none: DRS wasn't used there in 2013.
 - **Art:**
-  - Cars: layered liveries drawn on our own outlines of the three cars, traced
+  - Cars: drawn by Pappydhorn12 (used with permission, see
+    [credits.txt](credits.txt)) and cropped from their team sheets with
+    `tools/car_drawings.py` (`art/drawings.json`). Checked against the 2013
+    spotter guide on 2026-11-07: every livery matches, with two small text
+    differences (#23's name panel reads "T. Schneider" for Scheider; #5 has
+    SCHAEFFLER on the rear quarter where the guide shows PLAYBOY). The first
+    sheet named Schnitzer holds the 2013 RBM cars, which are used for RBM;
+    the corrected Schnitzer sheet is saved as `BMW_Team_Schnitzer_1_2.png`.
+    The sheet named RBM shows 2014 cars (BMW M4, Farfus in BMW Bank colours)
+    and isn't used.
+  - Placeholder cars (`tools/car_art.py`, no longer shipped; it skips every
+    team in `drawings.json`): layered liveries drawn on our own outlines of the three cars, traced
     from Commons photos (`art/*_trace.json`, `art/cars.json`, see
     [credits.txt](credits.txt)). The colours and sponsor positions were read
     from period photos and Andy Blackmore's 2013 spotter guide. The guide was
@@ -222,6 +233,13 @@ python tools/osm_track.py seasons/dtm-2013/track_specs/*.json
 ```bash
 python tools/car_art.py seasons/dtm-2013 --preview
 ```
+
+```bash
+python tools/car_drawings.py seasons/dtm-2013 --preview
+```
+
+`car_drawings.py` reads the artist's sheets from `--source` or
+`"car_drawings": {"dtm-2013": "<folder>"}` in `local.json`.
 
 ```bash
 python tools/logo_art.py seasons/dtm-2013

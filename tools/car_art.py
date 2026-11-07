@@ -483,6 +483,17 @@ def render_car(model, livery, zip_path, season=None):
     return fit_canvas(out)
 
 
+def drawing_teams(season):
+    """Teams whose image comes from an artist's drawing (<season>/art/drawings.json)."""
+    path = season / "art" / "drawings.json"
+    if not path.exists():
+        return set()
+    teams = set()
+    for sheet in load_json(path)["sheets"].values():
+        teams.update([sheet["team"]] if "team" in sheet else sheet["teams"])
+    return teams
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("season", type=Path)
@@ -500,7 +511,10 @@ def main():
         # Layered liveries: every car, first car of each team as the team image.
         all_dir = CACHE / season.name
         all_dir.mkdir(parents=True, exist_ok=True)
-        done = set()
+        # Teams with an artist's drawing (car_drawings.py) keep it.
+        done = drawing_teams(season)
+        for team in sorted(done):
+            print(f"kept the drawing for {team} (tools/car_drawings.py)")
         for car in cfg["cars"]:
             if args.only and car["team"] != args.only:
                 continue
