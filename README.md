@@ -57,6 +57,43 @@ The build validates cross-references: teams ↔ drivers ↔ engines ↔ tyres �
 calendar ↔ tracks. Placeholder geometry is used for venues we haven't traced
 yet, and is reported in the output.
 
+### Simulating seasons without the game
+
+`tools/simulate.py` plays whole seasons with the game's own code, in
+spectator mode, without opening the game. It loads the game's Python modules
+straight from `TeamPrincipal.exe` (unpacked once into `private/game_code/`)
+and drives its real screens headlessly: week advance, AI management,
+testing, practice, qualifying, race and scoring. Each run works in its own
+sandbox under `build/sim/`, so the game install is never written to.
+
+One-time setup, a venv with the Python and pygame versions the game uses:
+
+```bash
+py -V:3.13 -m venv private/sim-venv
+```
+
+```bash
+private/sim-venv/Scripts/python -m pip install pygame==2.6.1
+```
+
+Then, after `tools/build_pack.py` (sims use `dist/<pack_folder>`):
+
+```bash
+python tools/simulate.py dtm-2013 --runs 6
+```
+
+That runs six new careers side by side (about 40 minutes for one season)
+and writes `report.md`: simulated poles against the real ones per round,
+winners, and team and driver point shares against the real season in
+`research/results/`. `--seasons N` plays several seasons per career,
+`--save` continues from a save, `--installed` uses the installed pack.
+Each run keeps the game's own saves in `run-NN/saves/`, so
+`tools/calibrate.py --observe-save` works on them too.
+
+Limits: the game's code must match the installed game (a game update is
+unpacked again automatically), and anything only the UI shows, like sounds
+or screen layouts, still needs the real game.
+
 ## Docs
 
 - [Modding capabilities and limits](docs/CAPABILITIES.md): what the game

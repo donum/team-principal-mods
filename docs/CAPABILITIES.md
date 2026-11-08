@@ -50,6 +50,7 @@ Status legend:
 | `headquarters.json`, `startingtechnologies.json`, `ers_development.json`, `parts.json`, `tyremodel.json`, `config.json` | Mechanics tuning | Mostly inherit, turn off ERS |
 | `assets/Cars/<TeamName>.png`, `assets/logos/`, `assets/engines/`, `assets/portraits/`, `assets/sponsors/` | Images, mapped by name with spaces removed (`Red Boar` → `RedBoar.png`) | Our own side-profile car drawings in team colours |
 | `assets/title_bg.png`, `dashboard_bg*.png`, `assets/audio/` | Menu and dashboard art, sound and music | DTM-flavoured menu art (our own) |
+| `assets/dashboard_bgs/<TeamName><N>.png` | Dashboard art for one team, numbered like the pack set (`BMWTeamSchnitzer.png`, `BMWTeamSchnitzer2.png`...). Name with letters and digits only: spaces and hyphens go (`STIHL AMG-Mercedes` → `STIHLAMGMercedes.png`). When the player's team has a set, it replaces the pack set. Several images per team work and the dashboard moves through them. ✅ (tested with DTM 2013) | Team-specific dashboard art |
 
 ### Track geometry (confirmed in-game)
 
