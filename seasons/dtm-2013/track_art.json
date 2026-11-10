@@ -1,0 +1,86 @@
+{
+  "note": "Track art and game lines share one frame, the race-tracks plan frame (whole lap in the visible map area): tools/art_track.py writes tracks/<id>.json from these. speed_scale keeps the reference lap of the previous osm_track.py file (tools/art_track.py --calibrate). Not generated yet (2026-11-10): the pack's images are still in the old frame. Run tools/art_track.py only together with art in the plan frame (race-track-themes tools/reframe_2013.py), or the cars leave the drawn track.",
+  "tracks": {
+    "brandshatch": {
+      "race_tracks": {
+        "track": "brands-hatch",
+        "layout": "indy@2003"
+      },
+      "spec": "bases/dtm-era4/track_specs/brandshatch.json",
+      "art": "",
+      "speed_scale": 0.9837
+    },
+    "hockenheim13": {
+      "race_tracks": {
+        "track": "hockenheimring",
+        "layout": "gp@2002"
+      },
+      "spec": "bases/dtm-era4/track_specs/hockenheim13.json",
+      "art": "",
+      "speed_scale": 1.0882
+    },
+    "lausitzring": {
+      "race_tracks": {
+        "track": "lausitzring",
+        "layout": "sprint@2008"
+      },
+      "spec": "bases/dtm-era4/track_specs/lausitzring.json",
+      "art": "",
+      "speed_scale": 0.9935
+    },
+    "moscow": {
+      "race_tracks": {
+        "track": "moscow-raceway",
+        "layout": "sprint@2013"
+      },
+      "spec": "bases/dtm-era4/track_specs/moscow.json",
+      "art": "",
+      "speed_scale": 1.0332
+    },
+    "norisring": {
+      "race_tracks": {
+        "track": "norisring",
+        "layout": "street@1972"
+      },
+      "spec": "seasons/dtm-1991/track_specs/norisring.json",
+      "art": "",
+      "speed_scale": 1.0676
+    },
+    "nuerburgring13": {
+      "race_tracks": {
+        "track": "nurburgring",
+        "layout": "sprint@2002"
+      },
+      "spec": "bases/dtm-era4/track_specs/nuerburgring13.json",
+      "art": "",
+      "speed_scale": 0.9724
+    },
+    "oschersleben": {
+      "race_tracks": {
+        "track": "oschersleben",
+        "layout": "gp@2007"
+      },
+      "spec": "bases/dtm-era4/track_specs/oschersleben.json",
+      "art": "",
+      "speed_scale": 1.0378
+    },
+    "redbullring": {
+      "race_tracks": {
+        "track": "red-bull-ring",
+        "layout": "gp@2011"
+      },
+      "spec": "bases/dtm-era4/track_specs/redbullring.json",
+      "art": "",
+      "speed_scale": 1.0662
+    },
+    "zandvoort": {
+      "race_tracks": {
+        "track": "zandvoort",
+        "layout": "gp@1999"
+      },
+      "spec": "bases/dtm-era4/track_specs/zandvoort.json",
+      "art": "",
+      "speed_scale": 1.015
+    }
+  }
+}

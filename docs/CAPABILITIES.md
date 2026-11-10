@@ -71,6 +71,12 @@ Status legend:
   session header (top) and the status bar (bottom) cover it, and they have
   fixed screen heights, so they hide more of the image in a short window:
   about 33 image px at the top and everything below y ≈ 954 in that window. ✅
+  At 3840×2160 (16:9, measured 2026-11-10 from 47 screenshots registered
+  to the track images): ×1.99 on both axes from the window's top-left, so
+  the panel shows image x 9–1035, y 124–870; the driver cards cover
+  y 788–870 in the race and the north arrow x < 80, y < 210. Tracks for
+  this pack keep the whole lap inside (9, 124, 1035, 788) with 16 px padding
+  (`tools/art_track.py`, race-track-themes `tools/reframe_2013.py`).
 - **`lap_modifier` sets race length.** A race runs `options.json` `laps` ×
   `lap_modifier` laps. Confirmed from a save: Zolder 50 × 1.12 = 56 laps,
   Hockenheim 50 × 0.9 = 45. ✅

@@ -11,6 +11,17 @@ Every venue is generated from OpenStreetMap with
 The racing line stays inside the area the race screen doesn't cover
 (`SAFE_BOX`). The background map fills the whole image.
 
+**Tracks with race-tracks artwork (DTM 2013)** don't use the OSM trace:
+`tools/art_track.py seasons/dtm-2013` writes `seasons/dtm-2013/tracks/<id>.json`
+from the race-tracks centreline in the artwork's own frame
+(`seasons/dtm-2013/track_art.json`), so the cars run on the drawn track, start
+at the reviewed start line, and split sectors at the real 2013 timing
+intermediates. The frame keeps the whole lap in the measured visible map area
+(see docs/CAPABILITIES.md). `--calibrate <old tracks>` sets each `speed_scale`
+so the reference lap stays what the lap-time calibration was fitted to.
+The season's `tracks/` files are generated only together with artwork in that
+frame; until then the pack keeps the `osm_track.py` files and their images.
+
 Map data © OpenStreetMap contributors, ODbL 1.0. See
 [LICENSE-CONTENT.md](../LICENSE-CONTENT.md).
 
