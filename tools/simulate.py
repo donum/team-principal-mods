@@ -123,6 +123,8 @@ def worker(args):
     sandbox = Path(args.worker).resolve()
     import game_code
     game_code.install(args.exe, sandbox)
+    pack_constants = game_code.load_pack_constants(sandbox, load_json(sandbox / "active_pack.json")["active_pack"])
+    print(f"constants: SEASON_START_YEAR {getattr(pack_constants, 'SEASON_START_YEAR', '?')}", flush=True)
     random.seed(args.seed)
     import pygame
     pygame.init()

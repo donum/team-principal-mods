@@ -72,6 +72,39 @@ def unpack(exe):
     return out
 
 
+def load_pack_constants(sandbox, pack):
+    """Apply the pack's constants.py the way the game's entry script does.
+
+    main._load_constants (0.99.6) runs data/<pack>/constants.py for a local
+    pack, or reads it with workshop_manager.load_safe_constants for a
+    workshop_* pack, fills every name it lacks from the built-in defaults and
+    registers the result as the `constants` module. The simulator never runs
+    main, so without this every season ran on the built-in constants
+    (SEASON_START_YEAR 2025 and all).
+    Call after install() and before anything imports the game's modules.
+    """
+    import types
+
+    path = Path(sandbox) / "data" / pack / "constants.py"
+    defaults = importlib.import_module("constants")
+    if not path.exists():
+        return defaults
+    if pack.startswith("workshop_"):
+        from workshop_manager import load_safe_constants
+        module = types.ModuleType("constants")
+        module.__dict__.update(vars(defaults))
+        module.__dict__.update(load_safe_constants(path))
+    else:
+        spec = importlib.util.spec_from_file_location("constants", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        for name, value in vars(defaults).items():
+            if name.isupper():
+                module.__dict__.setdefault(name, value)
+    sys.modules["constants"] = module
+    return module
+
+
 class _Finder(importlib.abc.MetaPathFinder, importlib.abc.Loader):
     """Imports the game's own modules; anything installed locally (stdlib, pygame) wins."""
 
