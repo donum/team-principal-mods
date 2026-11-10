@@ -112,6 +112,22 @@ def clean_name(name):
     return re.sub(r",\s*[A-Z]{1,3}$", "", name).strip()
 
 
+def chassis_fields(cfg):
+    """Team chassis naming (0.99.6+) from gen.json "chassis": {make: {"prefix", "names"}}.
+
+    The game names each new chassis prefix + two-digit year (e.g. "M3/13");
+    "names" pins whole years ({"2013": "M3 DTM"}) to the real car's name.
+    """
+    if not cfg:
+        return {}
+    out = {}
+    if cfg.get("prefix"):
+        out["chassis_prefix"] = cfg["prefix"]
+    if cfg.get("names"):
+        out["chassis_names"] = {str(y): n for y, n in cfg["names"].items()}
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("season", type=Path)
@@ -192,6 +208,7 @@ def main():
             "prestige_base": round(base + 11), "budget_m": round(base * econ.get("budget_per_rating", 1.6)), "starting_balance_m": round(base / 2, 1),
             "difficulty": "easy" if base >= 55 else "medium" if base >= 48 else "hard",
             "previous_constructor_position": cfg.get("previous_position", pos),
+            **chassis_fields(gen.get("chassis", {}).get(make)),
             "headquarters": {"hospitality_pr_center": 2 + works, "wind_tunnel": 1 + works, "engine_plant": 0,
                              "test_track": int(works), "factory": 2 + 2 * works, "cfd_center": 1, "recon_centre": 1 + works,
                              "driver_centre": 1 + works},
@@ -201,10 +218,11 @@ def main():
             pts = standings.get(d["name"], 0)
             share = pts / top_points
             skill = max(9, min(skill_hi, round(skill_lo + (skill_hi - skill_lo) * share ** 0.6)))
-            age = 30
+            age, birth_year = 30, None
             if d["birth"][:4].isdigit():
                 b = datetime.date.fromisoformat(d["birth"]) if len(d["birth"]) == 10 else datetime.date(int(d["birth"][:4]), 7, 1)
                 age = year - b.year - ((3, 1) < (b.month, b.day))
+                birth_year = b.year
             main = d in seated
             num = d["number"] if d["number"].isdigit() else ""
             if main and (not num or num in used_numbers):
@@ -220,6 +238,10 @@ def main():
                  "career_stage": "top_veteran" if share > 0.6 and age >= 34 else "top_racer" if share > 0.6
                  else "reliable_veteran" if age >= 38 else "racer",
                  "nationality": d["nationality"]}
+            if birth_year and gen.get("birth_years"):
+                # 0.99.6+: the game ages the driver from SEASON_START_YEAR, and
+                # birth_year wins over age. age stays as the fallback.
+                r["birth_year"] = birth_year
             if main:
                 r["team"] = name
                 r["number"] = int(num) if num else len(driver_records) + 1
@@ -304,6 +326,192 @@ def main():
                                .replace("1991", str(year)), encoding="utf-8", newline="\n")
     print(f"{season.name}: {len(team_records)} teams, {sum(t['entry_count'] for t in team_records)} seats, "
           f"{len(driver_records)} drivers, {total_rounds} rounds")
+
+    if gen.get("juniors"):
+        juniors(season, gen, year, driver_records, out_data)
+
+
+# Feeder series: the game's junior_series.json (see docs/CAPABILITIES.md). The
+# game seats the listed drivers only in its first season, matched by name
+# against free drivers (team null, no contract) inside the age band, and fills
+# empty seats with free drivers at random. Results come from driver skill +
+# 2 x team quality + luck; the track is only a label, one race per week.
+FLAG_DIR = "ui/assets/flags"
+
+
+def juniors(season, gen, year, driver_records, out_data):
+    cfg = gen["juniors"]
+    research = season / "research" / "juniors"
+    venue_ids = cfg.get("venues", {})
+    taken = {d["name"] for d in driver_records}   # DTM drivers stay DTM drivers
+    series_out, licence, records, seen = [], {}, [], {}
+    flags = None
+    local = REPO / "local.json"
+    game = Path(load_json(local)["game_path"]) if local.exists() and "game_path" in load_json(local) else None
+    if game and (game / FLAG_DIR).is_dir():
+        flags = {p.stem for p in (game / FLAG_DIR).glob("*.png")}
+
+    # Each driver races in one series in the game: the first listed series in
+    # which they did at least half the rounds, else the one with most rounds.
+    entries = {}
+    for s in cfg["series"]:
+        cal = [r for r in read_csv(research / f"{s['id']}_calendar.csv") if r["round"].strip().isdigit()]
+        total = len(cal)
+        rows = read_csv(research / f"{s['id']}_entries.csv")
+        per = {}
+        for e in rows:
+            name = clean_name(e["driver"])
+            d = per.setdefault(name, {"rows": [], "rounds": set()})
+            d["rows"].append(e)
+            d["rounds"] |= rounds_of(e["rounds"], total)
+        entries[s["id"]] = (cal, total, per)
+    home = {}
+    for s in cfg["series"]:
+        cal, total, per = entries[s["id"]]
+        for name, d in per.items():
+            share = len(d["rounds"]) / max(1, total)
+            best = home.get(name)
+            if best is None or (share >= 0.5 and best[1] < 0.5):
+                home[name] = (s["id"], share)
+
+    for s in cfg["series"]:
+        sid = s["id"]
+        cal, total, per = entries[sid]
+        # "classes": {"Division 2": 0.7} scales a slower class's points (notes start with its name)
+        scale = s.get("classes", {})
+        standings = {clean_name(r["driver"]): float(r["points"] or 0) * next(
+                         (f for c, f in scale.items() if r["notes"].startswith(c)), 1.0)
+                     for r in read_csv(research / f"{sid}_standings.csv") if r["pos"].strip().isdigit()}
+        top = max(standings.values(), default=0) or 1.0
+        colours = {r["team"]: r for r in read_csv(research / f"{sid}_teams.csv")}
+        team_alias = s.get("team_names", {})
+        skill_lo, skill_hi = s["skill_range"]
+        min_rounds = s.get("min_rounds", 2)
+
+        teams, skipped = {}, []
+        for name, d in per.items():
+            if name in taken or home[name][0] != sid or len(d["rounds"]) < min_rounds:
+                continue
+            # the entrant they raced for most
+            counts = {}
+            for e in d["rows"]:
+                ent = team_alias.get(e["entrant"].strip(), e["entrant"].strip())
+                counts[ent] = counts.get(ent, 0) + len(rounds_of(e["rounds"], total))
+            team = max(counts, key=counts.get)
+            e0 = d["rows"][0]
+            pts = standings.get(name, 0.0)
+            share = pts / top
+            skill = max(6, min(skill_hi, round(skill_lo + (skill_hi - skill_lo) * share ** 0.6)))
+            birth = (e0.get("birth_date") or "").strip()
+            age, birth_year = s.get("default_age", 20), None
+            if birth[:4].isdigit():
+                b = datetime.date.fromisoformat(birth) if len(birth) == 10 else datetime.date(int(birth[:4]), 7, 1)
+                age = year - b.year - ((3, 1) < (b.month, b.day))
+                birth_year = b.year
+            # with birth_year the game counts age as season year - birth year
+            game_age = year - birth_year if birth_year and gen.get("birth_years") else age
+            if not s["min_age"] <= game_age <= s["max_age"]:
+                # the game would not seat them; leaving them out also keeps
+                # the seat count honest
+                skipped.append(f"{name} ({game_age})")
+                continue
+            talent = round(52 + 30 * share ** 0.6 + 2.5 * (s.get("talent_age", 21) - age))
+            talent = max(45, min(s.get("talent_cap", 90), talent))
+            nat = e0["nationality"].strip() or "german"
+            if flags is not None and nat not in flags:
+                print(f"  warning: {sid}: {name}: no flag for nationality {nat!r}")
+            rec = {"name": name, "team": None, "licence_points": min(10, round(s.get("licence_start", 0) * share)),
+                   "cornering": skill, "braking": skill, "consistency": max(6, skill - 1), "smoothness": skill,
+                   "control": skill, "balance_preference": 50, "traction_preference": 50,
+                   "age": age, "talent": talent, "traits": [], "personalities": ["loyal"],
+                   "career_stage": "racer", "nationality": nat}
+            if birth_year and gen.get("birth_years"):
+                rec["birth_year"] = birth_year
+            records.append(rec)
+            teams.setdefault(team, []).append((len(d["rounds"]), pts, name))
+            taken.add(name)
+        if skipped:
+            print(f"  junior {s['abbreviation']}: outside ages {s['min_age']}-{s['max_age']}, left out: {', '.join(skipped)}")
+
+        ranked = sorted(teams, key=lambda t: -max(p for _, p, _ in teams[t]))
+        best_team = max((max(p for _, p, _ in teams[t]) for t in teams), default=1.0) or 1.0
+        q_lo, q_hi = s.get("quality_range", [3, 10])
+        team_out = []
+        for t in ranked:
+            col = colours.get(t, {})
+            members = sorted(teams[t], key=lambda m: (-m[0], -m[1]))
+            best = max(p for _, p, _ in members)
+            team_out.append({
+                "name": t,
+                "primary_color_rgb": hex_rgb(col.get("primary_color_hex"), [200, 200, 200]),
+                "secondary_color_rgb": hex_rgb(col.get("secondary_color_hex"), [40, 40, 40]),
+                "quality": round(q_lo + (q_hi - q_lo) * (best / best_team) ** 0.7),
+                "drivers": [n for _, _, n in members[:s["drivers_per_team"]]],
+            })
+
+        schedule = [None] * 52
+        for r in cal:
+            day = datetime.date.fromisoformat(r["date_last_day"])
+            week = (day - datetime.date(year, 1, 1)).days // 7 + 1
+            venue = r["venue"].strip()
+            tid = venue_ids.get(venue) or re.sub(r"[^a-z0-9]", "", venue.lower())[:12]
+            while 0 < week <= 52 and schedule[week - 1] is not None:
+                week += 1
+            if 0 < week <= 52:
+                schedule[week - 1] = tid
+        series_out.append({
+            "series_name": s["name"], "series_abbreviation": s["abbreviation"], "description": s["description"],
+            "tier": s["tier"], "minimum_driver_age": s["min_age"], "maximum_driver_age": s["max_age"],
+            "drivers_per_team": s["drivers_per_team"], "dnf_rate_percent": s["dnf_rate"],
+            "points_format": {"points": s["points"]}, "teams": team_out, "schedule": schedule})
+        licence[s["abbreviation"]] = {"tier": s["tier"], "points": s["licence_points"]}
+        print(f"  junior {s['abbreviation']}: {len(team_out)} teams, "
+              f"{sum(len(t['drivers']) for t in team_out)} seated, "
+              f"{sum(1 for t in teams.values() for _ in t)} drivers, {len(cal)} rounds")
+
+    # A few hand-rated free agents (ex-F1, Red Bull juniors) from
+    # research/juniors/free_agents.csv. The game favours free agents when
+    # teams sign drivers, so the list stays short.
+    picks = cfg.get("free_agents", {})
+    if picks:
+        for r in read_csv(research / "free_agents.csv"):
+            name = clean_name(r["driver"])
+            if name not in picks or name in taken:
+                continue
+            p = picks[name]
+            b = r["birth_date"].strip()
+            rec = {"name": name, "team": None, "licence_points": p.get("licence", 10),
+                   "cornering": p["skill"], "braking": p["skill"], "consistency": p["skill"] - 1,
+                   "smoothness": p["skill"], "control": p["skill"], "balance_preference": 50,
+                   "traction_preference": 50, "age": year - int(b[:4]) - (b[5:] > "03-01"), "talent": p["talent"],
+                   "traits": [], "personalities": ["loyal"], "career_stage": "racer",
+                   "nationality": r["nationality"].strip()}
+            if gen.get("birth_years"):
+                rec["birth_year"] = int(b[:4])
+            records.append(rec)
+            taken.add(name)
+        names = [n for n in picks if not n.startswith("$")]
+        print(f"  free agents: {sum(1 for n in names if n in taken)} of {len(names)}")
+        # The game seats any free driver inside a feeder's age band, so a free
+        # agent is kept for DTM only if every band stops below their age.
+        for rec in records:
+            if rec["name"] in picks:
+                game_age = year - rec["birth_year"] if "birth_year" in rec else rec["age"]
+                open_to = [x["abbreviation"] for x in cfg["series"] if x["min_age"] <= game_age <= x["max_age"]]
+                if open_to:
+                    print(f"  note: free agent {rec['name']} ({game_age}) can take a seat in {', '.join(open_to)}")
+
+    dump_json(out_data / "junior_series.json", series_out)
+    dump_json(out_data / "driverslicense.json", {"enabled": cfg.get("licences", True), "series": licence})
+    drivers = load_json(out_data / "drivers.json")
+    drivers["records"] = driver_records + records
+    drivers["$comment"] += f" Feeder-series drivers ({len(records)}, team null) from research/juniors."
+    dump_json(out_data / "drivers.json", drivers)
+
+
+def hex_rgb(value, fallback):
+    value = (value or "").strip().lstrip("#")
+    return [int(value[i:i + 2], 16) for i in (0, 2, 4)] if len(value) == 6 else fallback
 
 
 if __name__ == "__main__":

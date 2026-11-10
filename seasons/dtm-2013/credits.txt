@@ -20,3 +20,9 @@ Car images (assets/Cars):
 Team list icons (assets/logos):
   Each team is shown with its maker's emblem (Audi, BMW or Mercedes-Benz),
   as on the TV timing graphics. See the maker logos below.
+
+Track maps (assets/tracks):
+  Race-day illustrations of the 2013 venues, made in the race-track-themes
+  project. The scenery is AI-rendered. The track surface, kerbs, pit lane
+  and paddock layout are drawn over it from OpenStreetMap data (see the
+  map data credit below).

@@ -259,6 +259,7 @@ const VIEWS = [
   ["overview", "Overview", () => ""],
   ["drivers", "Drivers", () => D.drivers.length],
   ["teams", "Teams & cars", () => D.teams.length],
+  ["feeders", "Feeder series", () => (D.juniors || []).length],
   ["engines", "Engines & tyres", () => D.engines.length],
   ["tracks", "Calendar & tracks", () => D.tracks.length],
   ["backgrounds", "Backgrounds", () => (D.backgrounds || []).reduce((n, g) => n + g.items.length, 0)],
@@ -336,8 +337,8 @@ function driverCard(d) {
     ${d.portrait ? `<img class="ph" src="${esc(d.portrait)}" alt="${esc(d.name)}" loading="lazy" data-full tabindex="0">` : `<div class="ph"></div>`}
     <div style="min-width:0">
       <div class="name">${esc(d.name)}</div>
-      <div class="teamline"><span class="swatch" style="background:${rgb(d.team_color)}"></span>${esc(d.team || "reserve")}</div>
-      <div class="facts"><span><b>${esc(nat(d.nationality))}</b></span><span>age <b>${esc(d.age)}</b></span><span>talent <b>${esc(d.talent)}</b></span>${d.number ? `<span>#<b>${esc(d.number)}</b></span>` : ""}</div>
+      <div class="teamline"><span class="swatch" style="background:${rgb(d.team_color)}"></span>${esc(d.team || d.junior || "free agent")}</div>
+      <div class="facts"><span><b>${esc(nat(d.nationality))}</b></span><span>age <b>${esc(d.age)}</b>${d.birth_year ? ` <span class="muted">(born ${esc(d.birth_year)})</span>` : ""}</span><span>talent <b>${esc(d.talent)}</b></span>${d.number ? `<span>#<b>${esc(d.number)}</b></span>` : ""}</div>
       <div style="margin-top:6px">${provChip(d.prov)}</div>
     </div>
     <div class="ratings">${r.map(k => `<span class="muted">${k}</span><span class="bar"><i style="width:${100 * (d[k] || 0) / 20}%"></i></span><span class="v">${esc(d[k])}</span>`).join("")}</div>
@@ -349,9 +350,11 @@ function driverCard(d) {
 
 let driverFilter = "custom";
 function drivers() {
-  const opts = [["custom", "Ours", D.drivers.length], ["replaced", "Vanilla roster (replaced)", D.vanilla_drivers.length]];
-  const body = driverFilter === "custom"
-    ? `<div class="grid">${D.drivers.map(driverCard).join("")}</div>`
+  const seated = D.drivers.filter(d => d.team), free = D.drivers.filter(d => !d.team);
+  const opts = [["custom", "Ours", D.drivers.length], ["seated", "Race seats", seated.length], ["free", "Feeder & free", free.length], ["replaced", "Vanilla roster (replaced)", D.vanilla_drivers.length]];
+  const shown = driverFilter === "seated" ? seated : driverFilter === "free" ? free : D.drivers;
+  const body = driverFilter !== "replaced"
+    ? `<div class="grid">${shown.map(driverCard).join("")}</div>`
     : `<div class="panel scroll"><table><thead><tr><th>Vanilla driver</th><th>Team</th><th>Nationality</th><th>Age</th><th>Talent</th><th></th></tr></thead><tbody>${D.vanilla_drivers.map(d => `<tr data-search="${esc((d.name + " " + d.team).toLowerCase())}"><td>${esc(d.name)}</td><td>${esc(d.team || "—")}</td><td>${esc(nat(d.nationality))}</td><td class="mono">${esc(d.age)}</td><td class="mono">${esc(d.talent)}</td><td>${provChip("replaced")}</td></tr>`).join("")}</tbody></table></div>`;
   return `<div style="display:grid;gap:6px"><h2>Drivers</h2><p class="lede">Each driver is built from a vanilla template record (${esc(D.driver_template || "none")}) with the mod's own values on top. Open "All fields" to see which values are ours and which are vanilla defaults.</p></div>
   <div class="toolbar">${filters("drvf", opts, driverFilter)}<input type="search" id="drvq" placeholder="Search name, team, nationality" aria-label="Search drivers"></div>
@@ -364,13 +367,13 @@ function teamCard(t) {
     <div class="car">${t.car ? `<img src="${esc(t.car)}" alt="${esc(t.name)} car" loading="lazy" data-full tabindex="0">` : `<span class="none">no car image</span>`}</div>
     ${(t.other_liveries || []).length ? `<div class="liveries small"><span class="muted">In game: #${esc(t.car_number ?? "?")}. Other livery, kept for a livery choice (not in the game yet):</span>${t.other_liveries.map(l => `<figure><img src="${esc(l.car)}" alt="${esc(t.name)} car #${esc(l.number)}" loading="lazy" data-full tabindex="0"><figcaption>#${esc(l.number)}</figcaption></figure>`).join("")}</div>` : ""}
     <div class="body">
-      <div class="head">${t.logo ? `<img src="${esc(t.logo)}" alt="${esc(t.name)} logo" loading="lazy" data-full tabindex="0">` : ""}<div style="min-width:0"><div class="name">${esc(t.name)}</div><div class="teamline"><span class="swatch" style="background:${rgb(t.color_rgb)}"></span><span class="swatch" style="background:${rgb(t.secondary_color_rgb)}"></span>${esc(t.engine)}</div></div></div>
+      <div class="head">${t.logo ? `<img src="${esc(t.logo)}" alt="${esc(t.name)} logo" loading="lazy" data-full tabindex="0">` : ""}<div style="min-width:0"><div class="name">${esc(t.name)}</div><div class="teamline"><span class="swatch" style="background:${rgb(t.color_rgb)}"></span><span class="swatch" style="background:${rgb(t.secondary_color_rgb)}"></span>${t.chassis_name ? esc(t.chassis_name) + " · " : ""}${esc(t.engine)}</div></div></div>
       <div style="display:flex;flex-wrap:wrap;gap:6px">${provChip(t.prov)}${t.cloned_from ? chip("vanilla", (t.sponsors || []).some(x => x.prov === "custom") ? "staff, ownership and sponsor money cloned from vanilla " + t.cloned_from : "staff, sponsors and ownership cloned from vanilla " + t.cloned_from) : ""}</div>
       <div class="facts" style="margin:0">${s("pace", t.team_pace)}${s("budget", "$" + t.budget_m + "m")}${s("reliability", t.chassis_reliability)}${s("tyres", t.tyre_management)}${s("prestige", t.prestige_base)}${s("mass", t.car_mass_kg + " kg")}</div>
       <div class="small"><span class="muted">Drivers:</span> ${esc(t.drivers.join(", ") || "—")}</div>
       ${(t.sponsors || []).length ? `<div class="small"><span class="muted">Sponsors:</span> ${t.sponsors.map(x => `<span title="${esc(x.slot + ", " + (x.industry || "?") + ", " + nat(x.nationality) + ", " + (x.seasons ?? "?") + " season(s)" + (x.prov === "vanilla" ? ", vanilla" : ""))}">${esc(x.name)}${x.amount_m != null ? ` <span class="muted">$${esc(x.amount_m)}m</span>` : ""}${x.prov === "vanilla" ? ` <span class="muted">(vanilla)</span>` : ""}</span>`).join(" · ")}</div>` : ""}
       ${t.history_text ? `<div class="history">${esc(t.history_text)}</div>` : ""}
-      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers", "sponsors"])}</details>
+      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers", "sponsors", "chassis_name"])}</details>
     </div>
   </article>`;
 }
@@ -384,6 +387,28 @@ function teams() {
   return `<div style="display:grid;gap:6px"><h2>Teams &amp; cars</h2><p class="lede">Car images are our own layered liveries on traced outlines. Each team's records outside teams.json (staff, sponsors, ownership) are cloned from a vanilla team, shown on the card. Template record: ${esc(D.team_template || "none")}.</p></div>
   <div class="toolbar">${filters("teamf", opts, teamFilter)}<input type="search" id="teamq" placeholder="Search team or engine" aria-label="Search teams"></div>
   ${body}`;
+}
+
+function feeders() {
+  const J = D.juniors || [];
+  const lic = D.licences || {};
+  const byName = Object.fromEntries(D.drivers.map(d => [d.name, d]));
+  const free = D.drivers.filter(d => !d.team && !J.some(s => s.teams.some(t => t.drivers.includes(d.name))));
+  const seat = n => {
+    const d = byName[n];
+    return d ? `<span title="${esc(nat(d.nationality) + ", age " + d.age + ", talent " + d.talent + ", cornering " + d.cornering + ", licence " + (d.licence_points ?? "?"))}">${esc(n)} <span class="muted mono">${esc(d.age)}/${esc(d.talent)}</span></span>` : `<span class="muted" title="not in drivers.json: the game drops this name">${esc(n)}?</span>`;
+  };
+  return `<div style="display:grid;gap:6px"><h2>Feeder series</h2><p class="lede">The game's junior series (junior_series.json). The listed drivers start in these seats in the first season only; empty seats are filled with free drivers at random. A result is driver skill + 2 × team quality + luck; the track is only a label and each series races at most once a week. Licences: ${lic.enabled ? "on, a race seat needs 10 points" : "off"}. Drivers show age/talent.</p></div>
+  ${J.length ? J.map(s => `<article class="panel" style="display:grid;gap:8px">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline"><h3 style="margin:0">${esc(s.series_name)}</h3><span class="mono small muted">${esc(s.series_abbreviation)} · tier ${esc(s.tier)}</span>${provChip(s.prov)}</div>
+    <p class="small" style="margin:0">${esc(s.description)}</p>
+    <div class="facts" style="margin:0"><span>ages <b>${esc(s.minimum_driver_age)}–${esc(s.maximum_driver_age)}</b></span><span>per team <b>${esc(s.drivers_per_team)}</b></span><span>DNF <b>${esc(s.dnf_rate_percent)}%</b></span><span>points <b class="mono">${esc((s.points_format?.points || []).join("-"))}</b></span><span>licence <b class="mono">${esc((lic.series?.[s.series_abbreviation]?.points || []).join("-") || "none")}</b></span></div>
+    <div class="small"><span class="muted">Weeks:</span> ${s.schedule.map((w, i) => w ? `<span class="mono">${i + 1}</span> ${esc(w)}` : "").filter(Boolean).join(" · ")}</div>
+    <div class="scroll"><table><thead><tr><th>Team</th><th>Quality</th><th>Drivers</th></tr></thead><tbody>
+    ${s.teams.map(t => `<tr data-search="${esc((t.name + " " + t.drivers.join(" ")).toLowerCase())}"><td><span class="swatch" style="background:${rgb(t.primary_color_rgb)}"></span><span class="swatch" style="background:${rgb(t.secondary_color_rgb)}"></span> ${esc(t.name)}</td><td class="mono">${esc(t.quality)}</td><td class="small">${t.drivers.map(seat).join(", ")}</td></tr>`).join("")}
+    </tbody></table></div></article>`).join("") : `<p class="muted">No junior_series.json in the pack.</p>`}
+  <div class="panel" style="display:grid;gap:6px"><h3>Free drivers without a seat</h3><p class="small muted" style="margin:0">Free agents: no team and not listed in a feeder seat. Teams and series can sign them.</p>
+  <div class="small">${free.map(d => seat(d.name)).join(", ") || "none"}</div></div>`;
 }
 
 function engines() {
@@ -488,7 +513,7 @@ function files() {
   </tbody></table></div>`;
 }
 
-const RENDER = { overview, drivers, teams, engines, tracks, backgrounds, sounds, candidates, files };
+const RENDER = { overview, drivers, teams, feeders, engines, tracks, backgrounds, sounds, candidates, files };
 
 /* --------------------------------------------------------------- routing */
 

@@ -208,6 +208,10 @@ def main():
     year = load_json(season / "season.json")["constants"]["SEASON_START_YEAR"]
     teams = {t["name"]: t for t in load_json(season / "data" / "teams.json")["records"]}
     drivers = load_json(season / "data" / "drivers.json")["records"]
+    junior_file = season / "data" / "junior_series.json"
+    junior_colours = {n: {"color_rgb": t.get("primary_color_rgb"), "secondary_color_rgb": t.get("secondary_color_rgb")}
+                      for s in (load_json(junior_file) if junior_file.exists() else []) for t in s["teams"]
+                      for n in t["drivers"]}
     out_dir = season / "assets" / "portraits"
     out_dir.mkdir(parents=True, exist_ok=True)
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -217,7 +221,8 @@ def main():
         name = d["name"]
         if args.only and name != args.only:
             continue
-        team = teams.get(d.get("team") or d["contract"]["team"], {})
+        # feeder drivers (no team, no contract) use their feeder team's colours
+        team = teams.get(d.get("team") or (d.get("contract") or {}).get("team"), {}) or junior_colours.get(name, {})
         number = d.get("number", d.get("reserve_number"))
         fname = name.replace(" ", "") + ".png"
         meta_path = CACHE / (fname + ".json")

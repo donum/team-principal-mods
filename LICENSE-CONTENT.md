@@ -42,6 +42,11 @@ track JSON carries it in its `source` field. The rendered maps are Produced
 Works under ODbL. Any track geometry that counts as extracted data stays under
 the ODbL as well.
 
+The DTM 2013 race-day maps (`seasons/dtm-2013/assets/tracks/*.png`) come from
+the race-track-themes project instead. Their scenery is AI-rendered, with a
+track, kerb and pit-lane overlay drawn from the same OpenStreetMap data, so
+they carry the same attribution.
+
 ## Car images: CC BY-SA 4.0
 
 The team car images (`seasons/*/assets/Cars/*.png`, made with
@@ -110,6 +115,10 @@ the teams and makers of the seasons depicted.
   backgrounds and other base-game data belong to the Team Principal publisher.
   This repository does not include them. The build tool copies them from your
   local install at build time (EULA §4.3).
+- **Press photos.** The DTM 2013 main menu background is a BMW press photo
+  (© BMW AG, free for editorial use). It is in neither this repository nor
+  the packs: `seasons/dtm-2013/art/menu.json` names the file, and
+  `tools/menu_art.py` builds it into `private/` for a local install only.
 - **Third-party trademarks and likenesses.** Names and logos of manufacturers,
   teams, sponsors and drivers (for example BMW, Mercedes-Benz, Audi, Opel,
   Warsteiner, Jägermeister, DTM) belong to their owners. This license does not

@@ -464,7 +464,7 @@ def validate(out):
     return errors, warnings
 
 
-def build(season_dir, game, install, private_audio=True):
+def build(season_dir, game, install, private_audio=True, private_art=True):
     manifest = layers.manifest(season_dir)
     chain = layers.chain(season_dir)
     base_dir = game / "data" / manifest["base_pack"]
@@ -602,6 +602,22 @@ def build(season_dir, game, install, private_audio=True):
             if overlay.overlay_for(sound):
                 print(overlay.apply(target, sound, manifest["pack_folder"]))
                 print("  NOTE: this installed pack now holds private audio; do not upload it to the Workshop")
+        # Private menu background (private/menu_art, never in dist/ or git; see
+        # tools/menu_art.py) goes onto the installed copy only, like the audio.
+        if private_art:
+            import menu_art
+            title_bg = menu_art.private_title_bg(season_dir)
+            if title_bg.exists():
+                (target / "assets").mkdir(exist_ok=True)
+                shutil.copy2(title_bg, target / "assets" / "title_bg.png")
+                spec = menu_art.active_photo(season_dir)
+                with open(target / "credits.txt", "a", encoding="utf-8", newline="\n") as fh:
+                    fh.write(f"\nMain menu background (assets/title_bg.png, this install only):\n"
+                             f"  {spec.get('caption', '')}\n  {spec.get('rights', '')} - {spec.get('page', '')}\n")
+                print(f"menu background: {title_bg.relative_to(REPO)}")
+                print("  NOTE: this installed pack now holds a press photo; do not upload it to the Workshop")
+            elif (season_dir / "art" / "menu.json").exists():
+                print(f"warning: no {title_bg.relative_to(REPO)}; run tools/menu_art.py {season_dir.relative_to(REPO)}")
         # Keep the mod browser (private/mod_browser, see tools/mod_browser.py) in
         # sync with what is installed.
         sys.path.insert(0, str(Path(__file__).parent))
@@ -619,8 +635,11 @@ def main():
     parser.add_argument("--install", action="store_true", help="copy the built pack into <game>/data/")
     parser.add_argument("--no-private-audio", action="store_true",
                         help="install without the private engine-audio overlay (tools/engine_audio)")
+    parser.add_argument("--no-private-art", action="store_true",
+                        help="install without the private menu background (tools/menu_art.py)")
     args = parser.parse_args()
-    build(args.season.resolve(), game_path(args.game), args.install, not args.no_private_audio)
+    build(args.season.resolve(), game_path(args.game), args.install, not args.no_private_audio,
+          not args.no_private_art)
 
 
 if __name__ == "__main__":

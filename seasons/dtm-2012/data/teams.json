@@ -157,6 +157,16 @@
       "starting_balance_m": 28.8,
       "difficulty": "easy",
       "previous_constructor_position": 10,
+      "chassis_prefix": "M4/",
+      "chassis_names": {
+        "2012": "M3 DTM",
+        "2013": "M3 DTM",
+        "2014": "M4 DTM",
+        "2015": "M4 DTM",
+        "2016": "M4 DTM",
+        "2017": "M4 DTM",
+        "2018": "M4 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -201,6 +211,16 @@
       "starting_balance_m": 28.7,
       "difficulty": "easy",
       "previous_constructor_position": 2,
+      "chassis_prefix": "C63/",
+      "chassis_names": {
+        "2012": "AMG C-Coupé DTM",
+        "2013": "AMG C-Coupé DTM",
+        "2014": "AMG C-Coupé DTM",
+        "2015": "C 63 DTM",
+        "2016": "C 63 DTM",
+        "2017": "C 63 DTM",
+        "2018": "C 63 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -245,6 +265,16 @@
       "starting_balance_m": 28.5,
       "difficulty": "easy",
       "previous_constructor_position": 4,
+      "chassis_prefix": "C63/",
+      "chassis_names": {
+        "2012": "AMG C-Coupé DTM",
+        "2013": "AMG C-Coupé DTM",
+        "2014": "AMG C-Coupé DTM",
+        "2015": "C 63 DTM",
+        "2016": "C 63 DTM",
+        "2017": "C 63 DTM",
+        "2018": "C 63 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -289,6 +319,16 @@
       "starting_balance_m": 28.4,
       "difficulty": "easy",
       "previous_constructor_position": 6,
+      "chassis_prefix": "RS5/",
+      "chassis_names": {
+        "2012": "A5 DTM",
+        "2013": "RS 5 DTM",
+        "2014": "RS 5 DTM",
+        "2015": "RS 5 DTM",
+        "2016": "RS 5 DTM",
+        "2017": "RS 5 DTM",
+        "2018": "RS 5 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -333,6 +373,16 @@
       "starting_balance_m": 28.4,
       "difficulty": "easy",
       "previous_constructor_position": 1,
+      "chassis_prefix": "RS5/",
+      "chassis_names": {
+        "2012": "A5 DTM",
+        "2013": "RS 5 DTM",
+        "2014": "RS 5 DTM",
+        "2015": "RS 5 DTM",
+        "2016": "RS 5 DTM",
+        "2017": "RS 5 DTM",
+        "2018": "RS 5 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -377,6 +427,16 @@
       "starting_balance_m": 28.3,
       "difficulty": "easy",
       "previous_constructor_position": 11,
+      "chassis_prefix": "M4/",
+      "chassis_names": {
+        "2012": "M3 DTM",
+        "2013": "M3 DTM",
+        "2014": "M4 DTM",
+        "2015": "M4 DTM",
+        "2016": "M4 DTM",
+        "2017": "M4 DTM",
+        "2018": "M4 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -421,6 +481,16 @@
       "starting_balance_m": 28.3,
       "difficulty": "easy",
       "previous_constructor_position": 3,
+      "chassis_prefix": "RS5/",
+      "chassis_names": {
+        "2012": "A5 DTM",
+        "2013": "RS 5 DTM",
+        "2014": "RS 5 DTM",
+        "2015": "RS 5 DTM",
+        "2016": "RS 5 DTM",
+        "2017": "RS 5 DTM",
+        "2018": "RS 5 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -465,6 +535,16 @@
       "starting_balance_m": 28.2,
       "difficulty": "easy",
       "previous_constructor_position": 9,
+      "chassis_prefix": "M4/",
+      "chassis_names": {
+        "2012": "M3 DTM",
+        "2013": "M3 DTM",
+        "2014": "M4 DTM",
+        "2015": "M4 DTM",
+        "2016": "M4 DTM",
+        "2017": "M4 DTM",
+        "2018": "M4 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -509,6 +589,16 @@
       "starting_balance_m": 27.9,
       "difficulty": "easy",
       "previous_constructor_position": 5,
+      "chassis_prefix": "RS5/",
+      "chassis_names": {
+        "2012": "A5 DTM",
+        "2013": "RS 5 DTM",
+        "2014": "RS 5 DTM",
+        "2015": "RS 5 DTM",
+        "2016": "RS 5 DTM",
+        "2017": "RS 5 DTM",
+        "2018": "RS 5 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -553,6 +643,16 @@
       "starting_balance_m": 27.9,
       "difficulty": "easy",
       "previous_constructor_position": 7,
+      "chassis_prefix": "C63/",
+      "chassis_names": {
+        "2012": "AMG C-Coupé DTM",
+        "2013": "AMG C-Coupé DTM",
+        "2014": "AMG C-Coupé DTM",
+        "2015": "C 63 DTM",
+        "2016": "C 63 DTM",
+        "2017": "C 63 DTM",
+        "2018": "C 63 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,
@@ -597,6 +697,16 @@
       "starting_balance_m": 27.5,
       "difficulty": "easy",
       "previous_constructor_position": 8,
+      "chassis_prefix": "C63/",
+      "chassis_names": {
+        "2012": "AMG C-Coupé DTM",
+        "2013": "AMG C-Coupé DTM",
+        "2014": "AMG C-Coupé DTM",
+        "2015": "C 63 DTM",
+        "2016": "C 63 DTM",
+        "2017": "C 63 DTM",
+        "2018": "C 63 DTM"
+      },
       "headquarters": {
         "hospitality_pr_center": 3,
         "wind_tunnel": 2,

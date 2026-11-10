@@ -7,7 +7,7 @@ It reads what the game actually loads, the installed pack
 built from (season.json "base_pack"), the season source (seasons/<id>/, with
 its era base bases/<id>/ underneath, see tools/layers.py) and
 the private audio overlay (tools/engine_audio). Tabs: overview, drivers,
-teams and cars, engines, calendar and tracks, backgrounds (the pack's own
+teams and cars, feeder series, engines, calendar and tracks, backgrounds (the pack's own
 slots and the shared game-wide art, in the order the game picks them),
 sounds (vanilla and ours side by side), sound candidates, and every file.
 
@@ -141,6 +141,11 @@ def constants(path: Path) -> dict:
             if m:
                 out[m.group(1)] = m.group(2)
     return out
+
+
+def start_year(pack: Path) -> int | None:
+    raw = constants(pack / "constants.py").get("SEASON_START_YEAR", "")
+    return int(raw) if raw.isdigit() else None
 
 
 class Media:
@@ -290,6 +295,7 @@ def data_patches(pack: Path, base: Path, season: Path) -> list[dict]:
 # ------------------------------------------------------------- sections
 
 def build_drivers(pack, base, season, media, sources):
+    year = start_year(pack)
     portraits = layers.merged_json(season, "art/portraits.json")
     teams = {t["name"]: t for t in load_json(pack / "teams.json", [])}
     out = []
@@ -298,6 +304,9 @@ def build_drivers(pack, base, season, media, sources):
         img = media.image(pack / "assets" / "portraits" / f"{nospace(d['name'])}.png",
                           f"portraits/{nospace(d['name'])}.png")
         team = teams.get(d.get("team"), {})
+        if isinstance(d.get("birth_year"), int) and year:
+            # 0.99.6+: birth_year wins over age; the game ages from SEASON_START_YEAR
+            d = {**d, "age": year - d["birth_year"]}
         out.append({**d, "prov": "custom", "portrait": img,
                     "portrait_info": {k: art.get(k) for k in ("source", "author", "license", "page", "year")},
                     "team_color": team.get("color_rgb"), "fields": sources.get(d["name"], {})})
@@ -316,9 +325,13 @@ def build_teams(pack, base, season, manifest, media, sources):
     # other liveries kept in the season source for a future livery choice
     # (tools/car_drawings.py, art/liveries; not in the pack, wishlist E4)
     liveries = (load_json(season / "art" / "liveries" / "liveries.json", {}) or {}).get("teams", {})
+    year = start_year(pack)
     out = []
     for t in load_json(pack / "teams.json", []):
         n = nospace(t["name"])
+        # 0.99.6+ chassis naming: a pinned name for the year, else prefix + two-digit year
+        chassis = (t.get("chassis_names") or {}).get(str(year)) or (
+            f"{t['chassis_prefix']}{year % 100:02d}" if t.get("chassis_prefix") and year else None)
         other = [{"number": c["number"],
                   "car": media.image(season / c["file"], f"liveries/{Path(c['file']).name}")}
                  for c in liveries.get(t["name"], []) if not c["team_image"] and (season / c["file"]).exists()]
@@ -327,7 +340,7 @@ def build_teams(pack, base, season, manifest, media, sources):
                      "industry": pool.get(d["name"], {}).get("industry"),
                      "nationality": pool.get(d["name"], {}).get("nationality"),
                      "prov": "custom" if d["name"] in ours else "vanilla"} for d in deals.get(t["name"], [])]
-        out.append({**t, "prov": "custom", "sponsors": sponsors,
+        out.append({**t, "prov": "custom", "sponsors": sponsors, "chassis_name": chassis,
                     "car": media.image(pack / "assets" / "Cars" / f"{n}.png", f"cars/{n}.png"),
                     "car_number": next((c["number"] for c in liveries.get(t["name"], []) if c["team_image"]), None),
                     "other_liveries": other,
@@ -342,6 +355,17 @@ def build_teams(pack, base, season, manifest, media, sources):
                         "prov": "replaced",
                         "car": media.image(base / "assets" / "Cars" / f"{n}.png", f"vanilla/cars/{n}.png")})
     return out, vanilla
+
+
+def build_juniors(pack, base):
+    """The feeder series (junior_series.json) and licence rules (driverslicense.json)
+    as installed; each series is "custom" unless it is the vanilla one."""
+    vanilla = {s.get("series_abbreviation"): s for s in load_json(base / "junior_series.json", [])}
+    out = []
+    for s in load_json(pack / "junior_series.json", []):
+        same = vanilla.get(s.get("series_abbreviation")) == s
+        out.append({**s, "prov": "vanilla" if same else "custom"})
+    return out, load_json(pack / "driverslicense.json", {})
 
 
 def build_backgrounds(pack, base, game, media):
@@ -677,6 +701,9 @@ def build(season: Path, game: Path) -> Path:
     teams, vanilla_teams = build_teams(pack, base, season, manifest, media, tsrc)
     engines, unit_rules, tyres = build_engines(pack, base, media)
     tracks, calendar = build_tracks(pack, base, season, manifest, media)
+    juniors, licences = build_juniors(pack, base)
+    junior_of = {n: s["series_abbreviation"] + " · " + t["name"] for s in juniors for t in s["teams"] for n in t["drivers"]}
+    drivers = [{**d, "junior": junior_of.get(d["name"])} for d in drivers]
     backgrounds = build_backgrounds(pack, base, game, media)
     sounds = build_sounds(pack, base, media, private_audio | private)
     # candidates belong to the private audio pipeline, so only packs carrying its overlay show them
@@ -692,6 +719,7 @@ def build(season: Path, game: Path) -> Path:
         "drivers": drivers, "vanilla_drivers": vanilla_drivers,
         "driver_template": dsrc.get("$template_from"), "team_template": tsrc.get("$template_from"),
         "teams": teams, "vanilla_teams": vanilla_teams,
+        "juniors": juniors, "licences": licences,
         "engines": engines, "unit_rules": unit_rules, "tyres": tyres,
         "tracks": tracks, "calendar": calendar, "backgrounds": backgrounds,
         "sounds": sounds, "candidates": candidates, "library_page": library_page,
@@ -712,7 +740,7 @@ def build(season: Path, game: Path) -> Path:
         + page + "\n</body></html>\n", encoding="utf-8")
     removed = media.prune()
     n_audio = sum(1 for _ in (out / "media" / "audio").rglob("*.ogg")) if (out / "media" / "audio").exists() else 0
-    print(f"mod browser: {out / 'index.html'} ({len(drivers)} drivers, {len(teams)} teams, {len(tracks)} tracks, "
+    print(f"mod browser: {out / 'index.html'} ({len(drivers)} drivers, {len(teams)} teams, {len(juniors)} feeder series, {len(tracks)} tracks, "
           f"{sum(len(g['items']) for g in backgrounds)} backgrounds, {len(sounds)} sound slots, {sum(len(g['items']) for g in candidates)} candidates, {n_audio} audio previews"
           + (f", {removed} stale media removed" if removed else "") + ")")
     return out / "index.html"

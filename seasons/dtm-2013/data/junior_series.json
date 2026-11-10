@@ -1,0 +1,1274 @@
+[
+  {
+    "series_name": "FIA Formula 3 European Championship",
+    "series_abbreviation": "F3EU",
+    "description": "The European Formula 3 championship. Dallara cars with Mercedes, Volkswagen and Toyota engines. It races at most DTM weekends, and several DTM drivers came from here.",
+    "tier": 2,
+    "minimum_driver_age": 16,
+    "maximum_driver_age": 26,
+    "drivers_per_team": 4,
+    "dnf_rate_percent": 6,
+    "points_format": {
+      "points": [
+        25,
+        18,
+        15,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2,
+        1
+      ]
+    },
+    "teams": [
+      {
+        "name": "Prema Powerteam",
+        "primary_color_rgb": [
+          216,
+          30,
+          30
+        ],
+        "secondary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "quality": 10,
+        "drivers": [
+          "Raffaele Marciello",
+          "Alex Lynn",
+          "Lucas Auer",
+          "Eddie Cheever III"
+        ]
+      },
+      {
+        "name": "kfzteile24 Mücke Motorsport",
+        "primary_color_rgb": [
+          240,
+          125,
+          26
+        ],
+        "secondary_color_rgb": [
+          30,
+          76,
+          154
+        ],
+        "quality": 10,
+        "drivers": [
+          "Felix Rosenqvist",
+          "Roy Nissany",
+          "Mitchell Gilbert",
+          "Michael Lewis"
+        ]
+      },
+      {
+        "name": "Carlin",
+        "primary_color_rgb": [
+          26,
+          63,
+          168
+        ],
+        "secondary_color_rgb": [
+          63,
+          169,
+          224
+        ],
+        "quality": 8,
+        "drivers": [
+          "Harry Tincknell",
+          "Jordan King",
+          "Nicholas Latifi",
+          "Jann Mardenborough"
+        ]
+      },
+      {
+        "name": "EuroInternational",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 7,
+        "drivers": [
+          "Tom Blomqvist"
+        ]
+      },
+      {
+        "name": "Fortec Motorsports",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          227,
+          38,
+          43
+        ],
+        "quality": 7,
+        "drivers": [
+          "Luis Felipe Derani",
+          "Félix Serrallés",
+          "Josh Hill"
+        ]
+      },
+      {
+        "name": "ma-con",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          30,
+          60,
+          140
+        ],
+        "quality": 6,
+        "drivers": [
+          "Sven Müller",
+          "André Rudersdorf"
+        ]
+      },
+      {
+        "name": "ThreeBond with T-Sport",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          215,
+          38,
+          46
+        ],
+        "quality": 6,
+        "drivers": [
+          "Richard Goddard",
+          "William Buller",
+          "Alexander Sims"
+        ]
+      },
+      {
+        "name": "Double R Racing",
+        "primary_color_rgb": [
+          245,
+          196,
+          0
+        ],
+        "secondary_color_rgb": [
+          215,
+          38,
+          46
+        ],
+        "quality": 5,
+        "drivers": [
+          "Antonio Giovinazzi",
+          "Tatiana Calderón",
+          "Sean Gelael"
+        ]
+      },
+      {
+        "name": "URD Rennsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 5,
+        "drivers": [
+          "Lucas Wolf"
+        ]
+      },
+      {
+        "name": "Van Amersfoort Racing",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          30,
+          90,
+          168
+        ],
+        "quality": 5,
+        "drivers": [
+          "Dennis van de Laar",
+          "Måns Grenhagen"
+        ]
+      },
+      {
+        "name": "Jo Zeller Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 4,
+        "drivers": [
+          "Sandro Zeller"
+        ]
+      },
+      {
+        "name": "Romeo Ferraris",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 4,
+        "drivers": [
+          "Michela Cerruti",
+          "Gary Thompson"
+        ]
+      }
+    ],
+    "schedule": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "monza",
+      null,
+      null,
+      "silverstone",
+      null,
+      null,
+      "hockenheim13",
+      null,
+      "brandshatch",
+      null,
+      "redbullring",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "norisring",
+      null,
+      null,
+      null,
+      null,
+      "nuerburgring13",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "zandvoort",
+      null,
+      "vallelunga",
+      "hockenheim13",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "series_name": "Porsche Carrera Cup Deutschland",
+    "series_abbreviation": "PCCD",
+    "description": "A one-make cup with the Porsche 911 GT3 Cup. It races at DTM weekends. Young professionals race here on their way to GT and touring car seats.",
+    "tier": 2,
+    "minimum_driver_age": 17,
+    "maximum_driver_age": 28,
+    "drivers_per_team": 3,
+    "dnf_rate_percent": 5,
+    "points_format": {
+      "points": [
+        20,
+        18,
+        16,
+        14,
+        12,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    "teams": [
+      {
+        "name": "ATTEMPTO Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 8,
+        "drivers": [
+          "Kévin Estre",
+          "Nicki Thiim",
+          "Chris Bauer"
+        ]
+      },
+      {
+        "name": "Konrad Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 8,
+        "drivers": [
+          "Christian Engelhart",
+          "Christopher Zöchling",
+          "Felipe Fernández Laser"
+        ]
+      },
+      {
+        "name": "Logiplus MRS-Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 7,
+        "drivers": [
+          "Philipp Eng",
+          "Kyle Marcelli"
+        ]
+      },
+      {
+        "name": "Project 1",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 7,
+        "drivers": [
+          "Jeffrey Schmidt",
+          "Sean Edwards",
+          "Sean Johnston"
+        ]
+      },
+      {
+        "name": "FÖRCH Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 6,
+        "drivers": [
+          "Robert Lukas",
+          "Connor De Phillippi"
+        ]
+      },
+      {
+        "name": "ATTEMPTO Racing by Motorvision",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 5,
+        "drivers": [
+          "Alex Riberas",
+          "Fabien Thuner"
+        ]
+      },
+      {
+        "name": "Team Bleekemolen",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 5,
+        "drivers": [
+          "Pieter Schothorst",
+          "Jeroen Mul"
+        ]
+      },
+      {
+        "name": "Aust Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 4,
+        "drivers": [
+          "Elia Erhart"
+        ]
+      },
+      {
+        "name": "Land Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 4,
+        "drivers": [
+          "Luca Stolz"
+        ]
+      },
+      {
+        "name": "Team ZaWotec Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 4,
+        "drivers": [
+          "Sascha Halek"
+        ]
+      },
+      {
+        "name": "Team 75 Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 3,
+        "drivers": [
+          "Florian Spengler",
+          "Antti Buri"
+        ]
+      },
+      {
+        "name": "Highspeed Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 3,
+        "drivers": [
+          "Thomas Langer",
+          "Christof Langer"
+        ]
+      },
+      {
+        "name": "MRS GT-Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 3,
+        "drivers": [
+          "Antonis Wossos"
+        ]
+      }
+    ],
+    "schedule": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "hockenheim13",
+      null,
+      "nordschleife",
+      null,
+      "redbullring",
+      null,
+      "lausitzring",
+      null,
+      null,
+      null,
+      "norisring",
+      null,
+      null,
+      null,
+      null,
+      "nuerburgring13",
+      null,
+      null,
+      null,
+      "oschersleben",
+      null,
+      "zandvoort",
+      null,
+      null,
+      "hockenheim13",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "series_name": "ATS Formel 3 Cup",
+    "series_abbreviation": "GF3",
+    "description": "The German Formula 3 championship. Smaller teams and a Trophy class for older cars. It races at ADAC GT Masters weekends.",
+    "tier": 3,
+    "minimum_driver_age": 15,
+    "maximum_driver_age": 28,
+    "drivers_per_team": 3,
+    "dnf_rate_percent": 6,
+    "points_format": {
+      "points": [
+        25,
+        18,
+        15,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2,
+        1
+      ]
+    },
+    "teams": [
+      {
+        "name": "Lotus",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 8,
+        "drivers": [
+          "Marvin Kirchhöfer",
+          "Artem Markelov",
+          "Emil Bernstorff"
+        ]
+      },
+      {
+        "name": "Van Amersfoort Racing",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          31,
+          60,
+          136
+        ],
+        "quality": 6,
+        "drivers": [
+          "Gustavo Menezes"
+        ]
+      },
+      {
+        "name": "Performance Racing",
+        "primary_color_rgb": [
+          215,
+          20,
+          26
+        ],
+        "secondary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "quality": 6,
+        "drivers": [
+          "John Bryant-Meisner",
+          "Thomas Jäger",
+          "Yannick Mettler"
+        ]
+      },
+      {
+        "name": "ADM Motorsport",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          30,
+          58,
+          138
+        ],
+        "quality": 5,
+        "drivers": [
+          "Matteo Cairoli",
+          "Tomasz Krzeminski",
+          "Nikita Zlobin"
+        ]
+      },
+      {
+        "name": "EuroInternational",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          0,
+          161,
+          154
+        ],
+        "quality": 4,
+        "drivers": [
+          "Nabil Jeffri"
+        ]
+      },
+      {
+        "name": "GU-Racing",
+        "primary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "secondary_color_rgb": [
+          79,
+          179,
+          224
+        ],
+        "quality": 4,
+        "drivers": [
+          "Sebastian Balthasar",
+          "Freddy Killensberger"
+        ]
+      },
+      {
+        "name": "ADAC Team Nordbayern",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 3,
+        "drivers": [
+          "Hubertus-Carlos Vier"
+        ]
+      },
+      {
+        "name": "JBR Motorsport & Engineering",
+        "primary_color_rgb": [
+          215,
+          20,
+          26
+        ],
+        "secondary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "quality": 3,
+        "drivers": [
+          "Nicolai Sylvest"
+        ]
+      },
+      {
+        "name": "CR Racing Team",
+        "primary_color_rgb": [
+          17,
+          17,
+          17
+        ],
+        "secondary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "quality": 3,
+        "drivers": [
+          "Thomas Amweg"
+        ]
+      },
+      {
+        "name": "Franz Wöss Racing",
+        "primary_color_rgb": [
+          215,
+          20,
+          26
+        ],
+        "secondary_color_rgb": [
+          255,
+          255,
+          255
+        ],
+        "quality": 3,
+        "drivers": [
+          "Maximilian Hackl"
+        ]
+      }
+    ],
+    "schedule": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "oschersleben",
+      null,
+      "spa",
+      "nuerburgring13",
+      null,
+      null,
+      "sachsenring",
+      "lausitzring",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "nuerburgring13",
+      null,
+      null,
+      null,
+      "lausitzring",
+      null,
+      "oschersleben",
+      null,
+      "hockenheim13",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "series_name": "ADAC Formel Masters",
+    "series_abbreviation": "AFM",
+    "description": "A single-seater series for teenagers stepping up from karting. All drivers use the same Dallara car with a Volkswagen engine. It races at ADAC GT Masters weekends.",
+    "tier": 4,
+    "minimum_driver_age": 15,
+    "maximum_driver_age": 20,
+    "drivers_per_team": 4,
+    "dnf_rate_percent": 8,
+    "points_format": {
+      "points": [
+        25,
+        18,
+        15,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2,
+        1
+      ]
+    },
+    "teams": [
+      {
+        "name": "Mücke Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 7,
+        "drivers": [
+          "Alessio Picariello",
+          "Maximilian Günther",
+          "Hendrik Grapp",
+          "Kim-Luis Schramm"
+        ]
+      },
+      {
+        "name": "Schiller Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 5,
+        "drivers": [
+          "Jason Kremer",
+          "Fabian Schiller"
+        ]
+      },
+      {
+        "name": "Neuhauser Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 5,
+        "drivers": [
+          "Nicolas Beer",
+          "Marvin Dienst",
+          "Stefan Riener"
+        ]
+      },
+      {
+        "name": "Team KUG Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 4,
+        "drivers": [
+          "Ralph Boschung",
+          "Stéphane Kox",
+          "Florian Herzog"
+        ]
+      },
+      {
+        "name": "Lotus",
+        "primary_color_rgb": [
+          17,
+          17,
+          17
+        ],
+        "secondary_color_rgb": [
+          200,
+          162,
+          74
+        ],
+        "quality": 4,
+        "drivers": [
+          "Beitske Visser",
+          "Mikkel Jensen",
+          "Callan O'Keeffe"
+        ]
+      },
+      {
+        "name": "JBR Motorsport & Engineering",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 2,
+        "drivers": [
+          "Benedikt Gentgen",
+          "Hannes Utsch",
+          "Marcel Lenerz"
+        ]
+      },
+      {
+        "name": "KSW Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 2,
+        "drivers": [
+          "Kim-Alexander Giersiepen",
+          "Martin Gatz"
+        ]
+      }
+    ],
+    "schedule": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "oschersleben",
+      null,
+      "spa",
+      null,
+      null,
+      null,
+      "sachsenring",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "nuerburgring13",
+      "redbullring",
+      null,
+      null,
+      "lausitzring",
+      null,
+      "slovakiaring",
+      null,
+      "hockenheim13",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "series_name": "Deutsche Tourenwagen Challenge",
+    "series_abbreviation": "DTC",
+    "description": "The ADAC Procar series for production-based touring cars. Super 2000 and Super 1600 cars race in two divisions at ADAC GT Masters weekends. From 2016 it was called Deutscher Tourenwagen Cup.",
+    "tier": 3,
+    "minimum_driver_age": 17,
+    "maximum_driver_age": 28,
+    "drivers_per_team": 3,
+    "dnf_rate_percent": 6,
+    "points_format": {
+      "points": [
+        10,
+        8,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    "teams": [
+      {
+        "name": "Liqui Moly Team Engstler",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 6,
+        "drivers": [
+          "Johannes Leidinger",
+          "Julia Trampert",
+          "Thomas Krebs"
+        ]
+      },
+      {
+        "name": "ETH Tuning",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 5,
+        "drivers": [
+          "David Griessner",
+          "Andreas Rinke"
+        ]
+      },
+      {
+        "name": "Glatzel Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 5,
+        "drivers": [
+          "Yury Krauchuk"
+        ]
+      },
+      {
+        "name": "Mierschke Motorsport",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 3,
+        "drivers": [
+          "Nils Mierschke"
+        ]
+      },
+      {
+        "name": "NK Racing Team",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 3,
+        "drivers": [
+          "Pascal Hoffmann"
+        ]
+      },
+      {
+        "name": "Kowalski Racing",
+        "primary_color_rgb": [
+          200,
+          200,
+          200
+        ],
+        "secondary_color_rgb": [
+          40,
+          40,
+          40
+        ],
+        "quality": 2,
+        "drivers": [
+          "Michael Kowalski"
+        ]
+      }
+    ],
+    "schedule": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "oschersleben",
+      null,
+      "spa",
+      null,
+      null,
+      null,
+      "sachsenring",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "nuerburgring13",
+      "redbullring",
+      null,
+      null,
+      "lausitzring",
+      null,
+      "slovakiaring",
+      null,
+      "hockenheim13",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
+]

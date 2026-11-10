@@ -1,0 +1,29 @@
+number,driver,nationality,birth_date,entrant,team_base,chassis,engine,rounds,notes
+1,Jens-Guido Weimann,german,1977-05-25,Thate Motorsport,,BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),1-8,Division 1; Division 1 champion (106 pts); collided with Leidinger in Hockenheim race 1 and missed race 2; dob driverdb
+3,Johannes Leidinger,german,1987-04-15,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),1-8,Division 1; 2nd (92 pts); disqualified from both Hockenheim races for the clash with Weimann (Engstler appeal withdrawn); 2011 champion with Engstler; dob driverdb
+4,Michael Bräutigam,german,1986-06-27,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),1,Division 1; Engstler press/VIP guest car; dob driverdb
+20,Christian Klien,austrian,1983-02-07,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),2,Division 1; Engstler press/VIP guest car; won Spa race 1; ex-F1 driver; dob de.wikipedia
+21,Guido Naumann,german,1968-04-14,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),3,Division 1; Engstler press/VIP guest car; dob driverdb
+22,Reiner Kuhn,german,,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),5,Division 1; Engstler press/VIP guest car
+24,Tim Schrick,german,1976-01-20,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),7,Division 1; Engstler press/VIP guest car; TV presenter; dob de.wikipedia
+25,Thomas Winkelhock,german,1968-05-22,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),8,Division 1; Engstler press/VIP guest car; won Hockenheim race 1; raced in the DTM in 1990 and 1992 (de.wikipedia); dob de.wikipedia
+27,Mark Warnecke,german,1970-02-15,Liqui Moly Team Engstler,"Wiggensbach, Germany",BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),6,Division 1; Engstler press/VIP guest car; former swimmer; dob de.wikipedia
+9,Markus Huggler,swiss,1970-06-08,Huggler Motorsport,,BMW 320i E46,BMW 2.0 four-cylinder (Super 2000),"1-4,8",Division 1; won Oschersleben race 1; dob driverdb
+10,Ardi van der Hoek,dutch,1976-09-07,RSK Motorsport,,BMW 320si E90,BMW 2.0 four-cylinder (Super 2000),1-3,Division 1; en.wikipedia says rounds 1-4 but de.wikipedia results show no start after round 3; dob driverdb
+30,David Griessner,austrian,1994-09-03,ETH Tuning,,Peugeot 207 Sport,1.6 litre (Super 1600),1-8,Division 2; rookie; Division 2 champion (104 pts); rolled in Slovakia race 1; dob driverdb
+31,Guido Thierfelder,german,1970-01-15,ETH Tuning,,Peugeot 207 Sport,1.6 litre (Super 1600),1-3,Division 2; 2012 Division 2 champion; dob driverdb
+45,Norbert Heinz,german,,ETH Tuning,,Peugeot 207 Sport,1.6 litre (Super 1600),4,Division 2
+32,Andreas Rinke,german,1986-03-01,ETH Tuning,,Citroën Saxo VTS,1.6 litre (Super 1600),1-8,"Division 2; Citroën Saxo VTS in rounds 1-4,8 and Peugeot 207 Sport in rounds 5-7; won both Hockenheim races; dob driverdb"
+47,Arno Dahm,german,1966-07-10,ETH Tuning,,Citroën Saxo VTS,1.6 litre (Super 1600),6-7,Division 2; dob driverdb
+33,Julia Trampert,german,1992-11-23,Liqui Moly Team Engstler,"Wiggensbach, Germany",Ford Fiesta 1.6 16V,1.6 litre (Super 1600),1-8,Division 2; only woman in the field; backed by ADAC Stiftung Sport; dob driverdb
+34,Thomas Krebs,danish,1993-04-23,Liqui Moly Team Engstler,"Wiggensbach, Germany",Ford Fiesta 1.6 16V,1.6 litre (Super 1600),2-8,Division 2; came from karting; won Slovakia race 2; dob de.wikipedia
+35,Pascal Hoffmann,german,1996-06-24,NK Racing Team,,Ford Fiesta ST,1.6 litre (Super 1600; exact engine not documented),"1-2,4,6-8","Division 2; entered by RSK Motorsport in rounds 1-2 and NK Racing Team in rounds 4,6-8 (de.wikipedia); backed by ADAC Stiftung Sport; dob driverdb"
+46,Ronny Reinsberger,german,1979-06-26,NK Racing Team,,Ford Fiesta 1.6 16V,1.6 litre (Super 1600),"3-4,6-8",Division 2; de.wikipedia lists a Fiesta 1.6 16V and en.wikipedia a Fiesta ST; en.wikipedia gives rounds 2-4 and 6-8; dob driverdb
+37,Michael Kowalski,german,1985-03-16,Kowalski Racing,,Ford Fiesta ST,1.6 litre (Super 1600; exact engine not documented),"1,4,6,8",Division 2; en.wikipedia adds round 3; dob driverdb
+38,Olaf Müller,german,1963-09-17,Lafia Motorsport,,Citroën C2 VTS,1.6 litre (Super 1600),"1,3-4",Division 2; dob driverdb
+50,Norbert Fuchs,german,,Lafia Motorsport,,Citroën C2 VTS,1.6 litre (Super 1600),8,Division 2
+39,Kai Jordan,german,1969-04-18,Glatzel Racing,,Ford Fiesta ST,1.6 litre (Super 1600; exact engine not documented),"2-6,8",Division 2; two-time former champion; missed Slovakia through injury; dob driverdb
+40,Yury Krauchuk,belarusian,1991-09-03,Glatzel Racing,,Ford Fiesta ST,1.6 litre (Super 1600; exact engine not documented),1-8,Division 2; dob driverdb
+41,Oleksandr Danylchenko,ukrainian,,Glatzel Racing,,Ford Fiesta ST,1.6 litre (Super 1600; exact engine not documented),8,Division 2
+42,Ralf Glatzel,german,1983-08-22,Glatzel Racing,,Ford Fiesta 1.6 16V,1.6 litre (Super 1600),1-8,Division 2; 2nd in Division 2 (89 pts); dob driverdb
+48,Nils Mierschke,german,1989-10-13,Mierschke Motorsport,,Ford Fiesta ST,1.6 litre (Super 1600; exact engine not documented),"5-6,8",Division 2; Fiesta ST in rounds 5-6 and Fiesta 1.6 16V in round 8 (de.wikipedia); 2011 Division 2 champion; dob driverdb

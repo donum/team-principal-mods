@@ -1,7 +1,8 @@
 # Team Principal Modding: Capabilities and Limits
 
 This is a living reference for what a Team Principal data pack can change and
-what it can't. It's based on game version **0.99.5** (the `VERSION` constant)
+what it can't. It's based on game version **0.99.5** (the `VERSION` constant), with the
+0.99.6 beta's new keys in [section 3a](#3a-new-in-0996)
 and on the installed default packs (`default22` to `default26`) plus eight
 community Workshop seasons, as of 2026-11-01.
 
@@ -45,7 +46,7 @@ Status legend:
 | `regulations.json` | Rule categories with data-driven options (points tables, min weight, car speed profile, refuelling, DRS, ERS...) plus voting / scripted change control | See §3 |
 | `car_parts.json` | Manufactured part types with **labels**, wear, cost, stock | Maybe relabel as touring-car parts (splitter, rear spoiler...) 🧪 |
 | `sponsors.json`, `starting_sponsors.json` | Sponsor pool (name, tier type, amount, industry, nationality) | Period sponsors (to keep trademark risk low, see LICENSE-CONTENT) |
-| `junior_series.json` | Up to 4 feeder series with teams, drivers, 52-week schedule, points | German F3 1991, Formel Opel Lotus, ADAC GT Cup, Porsche Carrera Cup 1991 |
+| `junior_series.json` | Feeder series (no fixed limit; unique `series_abbreviation`) with teams (colours, `quality`), drivers, a 52-week schedule and points. Listed drivers are matched by name to free drivers in `drivers.json` (`team` null, no contract, inside the age band) and seated in season 1 only; empty seats get random free drivers. A result is skill + 2 × quality + luck; the track id is only a label; one race per week. `tier` must match `driverslicense.json`. ✅ (read from the game code, 2013 pack) | DTM 2013: FIA F3 Europe, Porsche Carrera Cup Deutschland, German F3, ADAC Formel Masters, ADAC Procar (DTC) |
 | `team_histories.json`, `team_ownership.json`, `team_buyouts.json`, `relationships.json`, `events.json`, `radio_quotes.json` | Flavour and economy | Era storylines |
 | `headquarters.json`, `startingtechnologies.json`, `ers_development.json`, `parts.json`, `tyremodel.json`, `config.json` | Mechanics tuning | Mostly inherit, turn off ERS |
 | `assets/Cars/<TeamName>.png`, `assets/logos/`, `assets/engines/`, `assets/portraits/`, `assets/sponsors/` | Images, mapped by name with spaces removed (`Red Boar` → `RedBoar.png`) | Our own side-profile car drawings in team colours |
@@ -94,6 +95,25 @@ that older packs don't have.
 | Multi-car teams (AMG and Zakspeed ran 3+ cars) | `formula_team_entry_cap` (`one`/`two`/`three`), `formula_team_entry_requirement` `variable`, team `entry_count` | ✅ up to 3; more than 3 ❓ |
 | Grid size of ~30 cars | `QUALI_GRID_LIMIT`, `PREQUALIFYING_*` in `constants.py` | ✅ |
 | Rule evolution over seasons | `change_control.mode` (`voting`), `scripted_changes` list | ✅ structure / 🧪 scripted format |
+
+## 3a. New in 0.99.6
+
+From the 0.99.6 beta's modding guide (2026-11-09), checked against the game
+code. ✅ here means the key is in the code and our build writes it; 🧪 means
+it hasn't been seen in a game yet.
+
+| Feature | Key | What we use it for | Status |
+|---|---|---|---|
+| Shared pit crew per team | `config.json` `pitstops.double_stack_enabled` (default **on** for Formula packs) | Kept on in `dtm-era4`: team-mates queue in one box | ✅ code / 🧪 effect |
+| Punctures | `config.json` `incidents.punctures` (off by default) | On in `dtm-era4`, game rates, `contact_prob` 0.04 | ✅ code / 🧪 effect |
+| Chassis names | `teams.json` `chassis_prefix`, `chassis_names` {year: name}. The prefix keeps letters, digits and `/` (12 max) and gets the two-digit year. | Each make's real car per year 2012 to 2018 (`dtm-era4/gen.json` `chassis`) | ✅ code / 🧪 in game |
+| Birth years | `drivers.json` `birth_year`, wins over `age`; age = `SEASON_START_YEAR` + season − 1 − birth year | Written from `entries.csv` birth dates (`gen.json` `birth_years`) | ✅ code |
+| Safe `constants.py` | Workshop packs (`data/workshop_*`) are read with `workshop_manager.load_safe_constants`: literal values of whitelisted names only. Local packs are still executed (`main._load_constants`), with missing names taken from the built-in defaults. | Our build only writes literals, so both paths load it. `tools/simulate.py` now does the same step (`game_code.load_pack_constants`). | ✅ |
+| Banned-aid cheating | `DRIVER_AID_*` in `constants.py` (whitelisted) | AI cheat chance 0.01 per team per season (vanilla 0.05) | ✅ |
+| Espionage | `ESPIONAGE_*` in `constants.py` (whitelisted) | At most one operation per team and per grid per season (vanilla 2 and 4) | ✅ |
+| Scripted test weeks | `regulations.json` `scripted_changes`, `calendar` rows `add_test` / `remove_test` | Not used: our test weeks are in `schedule.json` | ✅ documented |
+| Season windows, team announcements, revivals, guaranteed events, supplier join/leave, factory programme ending, rebrand nationality | `events.json`, `team_buyouts.json` | Not used: they only matter for careers past the pack's season | ✅ documented |
+| Safety progression, staff role unlock years, staff with negative ages | `config.json`, `staff.json` | Not needed for 2012 to 2018 | ✅ documented |
 
 ## 4. Gaps: not natively supported
 

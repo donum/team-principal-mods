@@ -46,6 +46,7 @@
       ],
       "career_stage": "top_racer",
       "nationality": "canadian",
+      "birth_year": 1983,
       "team": "BMW Team Schnitzer",
       "number": 7
     },
@@ -75,6 +76,7 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
+      "birth_year": 1981,
       "team": "BMW Team Schnitzer",
       "number": 8
     },
@@ -104,6 +106,7 @@
       ],
       "career_stage": "top_racer",
       "nationality": "british",
+      "birth_year": 1981,
       "team": "Thomas Sabo AMG-Mercedes",
       "number": 11
     },
@@ -133,6 +136,7 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
+      "birth_year": 1989,
       "team": "Thomas Sabo AMG-Mercedes",
       "number": 12
     },
@@ -162,6 +166,7 @@
       ],
       "career_stage": "top_racer",
       "nationality": "british",
+      "birth_year": 1982,
       "team": "AMG-Mercedes",
       "number": 5
     },
@@ -191,6 +196,7 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
+      "birth_year": 1975,
       "team": "AMG-Mercedes",
       "number": 6
     },
@@ -220,6 +226,7 @@
       ],
       "career_stage": "racer",
       "nationality": "italian",
+      "birth_year": 1987,
       "team": "Audi Sport Team Rosberg",
       "number": 21
     },
@@ -249,6 +256,7 @@
       ],
       "career_stage": "racer",
       "nationality": "portuguese",
+      "birth_year": 1985,
       "team": "Audi Sport Team Rosberg",
       "number": 22
     },
@@ -278,6 +286,7 @@
       ],
       "career_stage": "racer",
       "nationality": "swedish",
+      "birth_year": 1978,
       "team": "Audi Sport Team Abt Sportsline",
       "number": 3
     },
@@ -307,6 +316,7 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
+      "birth_year": 1978,
       "team": "Audi Sport Team Abt Sportsline",
       "number": 4
     },
@@ -336,6 +346,7 @@
       ],
       "career_stage": "racer",
       "nationality": "brazilian",
+      "birth_year": 1983,
       "team": "BMW Team RBM",
       "number": 16
     },
@@ -365,6 +376,7 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "british",
+      "birth_year": 1973,
       "team": "BMW Team RBM",
       "number": 15
     },
@@ -394,6 +406,7 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
+      "birth_year": 1983,
       "team": "Audi Sport Team Phoenix",
       "number": 9
     },
@@ -423,6 +436,7 @@
       ],
       "career_stage": "racer",
       "nationality": "spanish",
+      "birth_year": 1989,
       "team": "Audi Sport Team Phoenix",
       "number": 10
     },
@@ -452,6 +466,7 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
+      "birth_year": 1981,
       "team": "BMW Team RMG",
       "number": 1
     },
@@ -481,6 +496,7 @@
       ],
       "career_stage": "racer",
       "nationality": "american",
+      "birth_year": 1979,
       "team": "BMW Team RMG",
       "number": 2
     },
@@ -510,6 +526,7 @@
       ],
       "career_stage": "racer",
       "nationality": "french",
+      "birth_year": 1991,
       "team": "Audi Sport Team Abt",
       "number": 18
     },
@@ -539,6 +556,7 @@
       ],
       "career_stage": "racer",
       "nationality": "swiss",
+      "birth_year": 1986,
       "team": "Audi Sport Team Abt",
       "number": 17
     },
@@ -568,6 +586,7 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "british",
+      "birth_year": 1971,
       "team": "DHL AMG-Mercedes",
       "number": 19
     },
@@ -597,6 +616,7 @@
       ],
       "career_stage": "racer",
       "nationality": "canadian",
+      "birth_year": 1989,
       "team": "DHL AMG-Mercedes",
       "number": 20
     },
@@ -626,6 +646,7 @@
       ],
       "career_stage": "racer",
       "nationality": "spanish",
+      "birth_year": 1991,
       "team": "Junge Sterne AMG-Mercedes",
       "number": 23
     },
@@ -655,6 +676,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
+      "birth_year": 1982,
       "team": "Junge Sterne AMG-Mercedes",
       "number": 24
     }

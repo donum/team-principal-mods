@@ -4,7 +4,8 @@ These are feature requests from building historically accurate DTM season
 packs: 1990–1992 (Group A), 2012 and 2013. Each item lists the real-world need,
 what the game can't do today, our current workaround, and what would solve
 it. **Needed by** names the season packs (`seasons/dtm-*`) that would use
-it. Findings are based on game version 0.99.5. See
+it. Findings are based on game version 0.99.5, rechecked against the
+0.99.6 beta's modding guide (no item closed). See
 [CAPABILITIES.md](CAPABILITIES.md) for what we confirmed works.
 
 Priority: **P1** = needed for an authentic series, **P2** = big gain,
@@ -19,8 +20,21 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2012 | A5, B5, B7, C4, D1, D3, D5, D6, D7, E1, E2, E4, E5, E6, E8, E9, E12 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, D1, D3, D4, D5, D6, D7, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14 |
+| dtm-2012 | A5, B5, B7, C4, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14 |
+
+Seasons without a pack yet (research only) are covered for qualifying and
+race rules in [dtm_rules.html](dtm_rules.html), which maps every season's
+rules to these items:
+
+| Seasons | Items |
+|---|---|
+| dtm-1984 to dtm-1989 | A1, A2, A3, A5, B1, B2, B3, B7, B9 |
+| dtm-1993 to itc-1996 | A1, A5, B2, B4, D2 |
+| dtm-2000 to dtm-2011 | A1, A2, A3, A5, B1, B2, B3, B5, B7, B8, B10, B11 |
+| dtm-2014 to dtm-2018 | A1, A3, B1, B5, B6, B7, B8, B9, B10 |
+| dtm-2019 to dtm-2020 | A1, A3, B4, B6, B7, B8 |
+| dtm-2021 to dtm-2026 | A3, B1, B2, B3, B4, B5, B7, B8, B9, B10, B11 |
 
 ---
 
@@ -89,8 +103,9 @@ under "Simplifications".
   - Opel could remove **50 kg after Hockenheim**.
   - Minimum weights depended on displacement and drivetrain (BMW and
     Mercedes 980 kg, Opel 1130 kg, Audi 1290 kg).
-- **Today:** `scripted_changes` exists but has no documented format. The
-  minimum weight is one global value.
+- **Today:** since 0.99.6 the guide documents `scripted_changes` rows
+  (`key`, `effective_season`, `new_regulation`), but only per season, not per
+  week or per make. The minimum weight is one global value.
 - **Request:**
   - Scripted rule changes tied to season and week, e.g.
     `{"season": 1, "week": 23, "engine": "Audi", "mass_kg": -40}`.
@@ -138,11 +153,52 @@ under "Simplifications".
 - **Needed by:** dtm-2013, dtm-2012 (one dry tyre for the whole season; the pack keeps the soft as a copy of the hard, since the game's need for a soft can't be checked).
 - **2013:** the Hankook hard was the standard tyre, plus **one set of the
   option (soft) per race**, which every driver had to use.
+- **2013 look:** the tyres were called **standard** (white sidewall) and
+  **option** (yellow sidewall). There was no medium.
 - **Today:** `formula_compound_usage` asks for two different dry compounds,
-  with no limit on sets.
-- **Workaround:** the two-compound rule.
+  with no limit on sets. The weekend allocation screen always lists soft,
+  medium and hard, even when `tyremodel.json` sets the medium to null:
+  `DRY_COMPOUNDS` is fixed in `managers/weekend_tyre_allocation.py` and in
+  the screen. The presets also hand out medium sets. Compound names and
+  colours (red, yellow, white) are fixed in the screens' code.
+- **Workaround:** the two-compound rule. The player sets the medium to 0 by
+  hand each weekend.
 - **Request:** a set limit per compound and race, and "must use compound X"
-  as a rule.
+  as a rule. Take the dry compounds for the allocation screen and presets
+  from `tyremodel.json` (see D8 for names and colours).
+- **Other seasons:** 3 to 9 sets per weekend (2000 to 2006, 2015, 2019,
+  2022 on; the game's lowest allocation is 12), a cap of half the race
+  distance on the option (2014), the top 5 or top 10 must start on their
+  qualifying tyres (2023 on), tyre warmer bans (2003, 2017).
+
+### B8. Qualifying points · P2
+- **Needed by:** dtm-2001, dtm-2002 (3-2-1 for the qualifying race), dtm-2017 to dtm-2026 (3-2-1 for the top three in qualifying), dtm-2022 (fastest-lap point only for a top-10 finisher).
+- **Today:** `pole_point` gives +1 to pole only, and `fastest_lap_point`
+  gives +1 to the fastest-lap holder wherever they finish.
+- **Workaround:** pole point on, which gives 1 point instead of 3 and
+  nothing to second and third.
+- **Request:** a qualifying points table (`[3, 2, 1]`), and an optional
+  `min_finish_position` for the fastest-lap point.
+
+### B9. Non-scoring guest entries · P2
+- **Needed by:** dtm-1984 (only German drivers scored), dtm-1987 (guest Ludwig won round 7 and scored nothing), dtm-2018, dtm-2021 to dtm-2026 (guest and wildcard drivers).
+- **Today:** every entry scores.
+- **Request:** a `guest: true` flag on a driver or entry. Guests race and
+  are classified, but the points go to the next eligible drivers.
+
+### B10. Pit-stop procedure rules · P3
+- **Needed by:** dtm-2001 (25-minute service window between the races), dtm-2017 (8 mechanics, one wheelgun per side), dtm-2021 (a stop under safety car doesn't count), dtm-2022 to dtm-2026 (rear wheels first, 4 to 6 crew).
+- **Today:** one stop-time model for every pack; no setting for crew size
+  or what counts as the mandatory stop.
+- **Request:** `pitstops.crew_size` or a base stop time per pack, and rules
+  for which stops count (`not_under_sc`, `not_under_fcy`).
+
+### B11. Race control rules · P3
+- **Needed by:** dtm-2007 (pit lane closed under the safety car), dtm-2022 to dtm-2026 (full-course yellow at 60 km/h), dtm-2023 to dtm-2026 (penalty lap).
+- **Today:** `safety_car_policy` picks the safety car and the virtual
+  safety car. The VSC stands in for the FCY.
+- **Request:** `pit_lane_closed_under_sc`, and a penalty-lap penalty type
+  next to time penalties.
 
 ## C. Entries, teams and drivers
 
@@ -199,6 +255,33 @@ under "Simplifications".
 - **Request:** an optional `code` per driver, shown in timing towers and
   results.
 
+### C7. Feeder series with real race weekends · P2
+- **Needed by:** dtm-2013 (five real feeder series in `junior_series.json`).
+- **2013:** FIA F3 Europe and ADAC Formel Masters ran 3 races per weekend,
+  German F3, the Carrera Cup and the DTC 2. The DTC scored two classes
+  separately. German F3 gave points for pole and
+  fastest lap, and its second race used a different points table.
+- **Today:**
+  - A junior series races at most once a week, so a weekend is one race.
+  - Points go by finishing position only, with one table for all races.
+  - The result is driver skill + 2 × team quality + luck. The track is
+    only a label, and a venue without a track file has no country flag.
+  - Feeder teams have colours but no logo, and the named drivers are only
+    seated in the first season.
+  - Any free driver inside a series' age band can take an open seat. A
+    pack cannot keep a driver out, so ex-F1 drivers waiting for a DTM
+    seat would race in F3 or the Carrera Cup.
+- **Workaround:** one race per weekend, with the main race's points table.
+  Venues of the DTM calendar use the DTM track ids. Every feeder stops at
+  age 28, below the ex-F1 free agents (29 and up). The older gentleman
+  drivers of the Carrera Cup, the DTC and the German F3 Trophy class are
+  left out, among them the DTC champion Jens-Guido Weimann. The young
+  Red Bull juniors still fit the F3 bands.
+- **Request:** `races_per_event` and a points table per race (with
+  pole/fastest-lap bonus) for junior series, a `nationality` per schedule
+  entry, an optional team logo, and a per-driver flag (for example
+  `"junior_eligible": false`) that keeps a free driver out of feeder seats.
+
 ## D. Cars and simulation
 
 ### D1. Touring-car part set · P1
@@ -210,8 +293,18 @@ under "Simplifications".
   tyres. Also a way to remove categories completely.
 - **2013 workaround:** the six slots are relabelled through
   `car_parts.json` (front splitter, rear wing, underbody, diffuser, side
-  bodywork, monocoque), with low wear per lap. Not yet checked in game
-  that the labels reach every screen. The `front_wing` key still drives
+  bodywork, monocoque), with low wear per lap. The Aerodynamics screen in
+  the Development Centre uses the pack's `abbr` in the part codes
+  (FS-13-A-1, UB-13-A-1). Other screens not yet checked.
+- **Part drawings:** the Aerodynamics screen draws open-wheel sketches (an
+  F1 front wing, a rear wing on a pylon). They load from the install
+  folder (`ui/assets/aero/frontwing.png`, `rearwing.png`, `floor.png`,
+  `diffuser.png`, `sidepod.png`), not from the pack. Swapping them there
+  changes every pack and a game update puts them back. The stat names on
+  the cards (Low Speed, Dirty Air...) are fixed in code too.
+- **Request (art):** a pack folder for part drawings (for example
+  `assets/parts/<part_key>.png`), used before the game's own, and a
+  drawing per part category once categories are data-defined. The `front_wing` key still drives
   the lap-one damage outcome and the "wing damage" radio bank.
 
 ### D2. Drivetrain · P2
@@ -291,6 +384,28 @@ under "Simplifications".
   blocked until the next season. C4 (customer cars) covers who owns the
   homologated design; this item covers when it may change.
 
+### D8. Custom tyre compounds · P2
+- **Needed by:** dtm-2013, dtm-2012.
+- **Real world:** 2013 had two Hankook dry tyres, the **standard** tyre
+  (white or silver sidewall) and the **option** (yellow sidewall). 2012 had
+  one dry tyre only.
+- **Today:** the compound keys are fixed to soft, medium, hard,
+  intermediate and wet. A pack can tune their grip, wear and temperature
+  in `tyremodel.json` and set the medium to null, but the allocation
+  screen, the presets, the strategy tools and the race screens still use
+  the fixed list. Names (SOFT, MEDIUM, HARD) and colours (red, yellow,
+  white) are fixed in the code.
+- **Workaround:** soft stands in for the option and hard for the standard
+  tyre. The option shows as a red "SOFT".
+- **Request:** compounds defined in `tyremodel.json`, each with
+  - an id, a `label` and a short letter (for 2013: "Option", "O"),
+  - a `color` used on every screen (allocation, timing, strategy,
+    telemetry),
+  - its grip, wear, cliff and temperature values, as today,
+  - whether it is dry or wet,
+  - how many there are: one, two or more dry compounds, with the screens
+    showing only the ones the pack defines.
+
 ## E. Modding and data format
 
 ### E1. Overlay (partial) packs · P1
@@ -303,10 +418,14 @@ under "Simplifications".
 
 ### E2. Settings as data, not Python · P1
 - **Needed by:** all packs.
-- **Today:** `constants.py` is **executed Python**. That's a security risk
-  for Workshop content, and tools can't edit it safely.
+- **Today:** since 0.99.6 a Workshop pack's `constants.py` is read as data
+  (`workshop_manager.load_safe_constants`: literal assignments of
+  whitelisted names, no calls or imports beyond `UITheme`). A local pack in
+  `data/<pack>/` is still **executed Python**, and the file is still Python
+  syntax, so tools can't edit it as data.
 - **Request:** move pack settings (start year, points, grid size, salaries,
-  retirement ages) to `constants.json`, and stop running pack code.
+  retirement ages) to `constants.json`, and read local packs the safe way
+  too.
 
 ### E3. Published schema and validation · P2
 - **Needed by:** dtm-1991.
@@ -453,7 +572,10 @@ under "Simplifications".
 - **Today:** the game has no language setting. Pack texts are one string
   each, for example `team_histories.json` maps a team name to one text.
   A German version would have to be a second pack.
-- **Workaround:** English texts only.
+- **Workaround:** English texts only. `tools/translatable_strings.py`
+  lists a pack's own in-game texts in `seasons/<season>/translations.csv`
+  (DTM 2013: 51 strings, mostly team histories, rule descriptions and
+  radio messages), ready for a translator.
 - **Request:** an optional language map per text, for example
   `{"en": "...", "de": "..."}` in `team_histories.json`, with a game
   language setting that picks the matching text and falls back to English.

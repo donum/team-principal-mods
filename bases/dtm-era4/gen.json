@@ -9,6 +9,13 @@
   "economy": {"budget_per_rating": 1.6, "salary_min_m": 0.3, "salary_max_m": 2.5},
   "mass_kg": {"Audi": 965.0, "BMW": 965.0, "Mercedes-Benz": 965.0},
   "make_profiles": {"Audi": "audi_rs5_dtm", "BMW": "bmw_m3_dtm_e92", "Mercedes-Benz": "amg_c_coupe_dtm"},
+  "birth_years": true,
+  "chassis": {
+    "$comment": "Chassis names (game 0.99.6+). Each make's real car per year of the era; a year without a name falls back to prefix + two-digit year (RS5/19).",
+    "Audi": {"prefix": "RS5/", "names": {"2012": "A5 DTM", "2013": "RS 5 DTM", "2014": "RS 5 DTM", "2015": "RS 5 DTM", "2016": "RS 5 DTM", "2017": "RS 5 DTM", "2018": "RS 5 DTM"}},
+    "BMW": {"prefix": "M4/", "names": {"2012": "M3 DTM", "2013": "M3 DTM", "2014": "M4 DTM", "2015": "M4 DTM", "2016": "M4 DTM", "2017": "M4 DTM", "2018": "M4 DTM"}},
+    "Mercedes-Benz": {"prefix": "C63/", "names": {"2012": "AMG C-Coupé DTM", "2013": "AMG C-Coupé DTM", "2014": "AMG C-Coupé DTM", "2015": "C 63 DTM", "2016": "C 63 DTM", "2017": "C 63 DTM", "2018": "C 63 DTM"}}
+  },
   "profiles": {
     "audi_rs5_dtm": {"acceleration": 0, "straight": 0, "slow": 1, "med": 1, "high": 0, "braking": 0,
                      "tyre_management": 1, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},

@@ -1,5 +1,5 @@
 {
-  "$comment": "Maker and tyre logos of the 2012-2018 DTM, for tools/logo_art.py (assets/engines, assets/tyre). commons = logo file on Wikimedia Commons (licence recorded). Maker logos are the period emblems alone, as on the cars and TV graphics: chrome Audi rings, the BMW roundel and the chrome Mercedes star. team_content sizes them as team list icons (a season's \"team_tiles\": \"maker\") in the proportions of the 2012-2013 TV timing graphic: rings 97 px wide, roundel 48, star 55.",
+  "$comment": "Maker and tyre logos of the 2012-2018 DTM, for tools/logo_art.py (assets/engines, assets/tyre). commons = logo file on Wikimedia Commons (licence recorded). Maker logos are the period emblems alone, as on the cars and TV graphics: chrome Audi rings, the BMW roundel and the chrome Mercedes star. team_content sizes them as team list icons (a season's \"team_tiles\": \"maker\"): 938 for all three, so they match the engine icons (860) on the qualifying results screen, which draws team icons in a 22 px box and engine icons in a 24 px one (860 x 24 / 22). Until November 2026 they used the 2012-2013 TV proportions (rings 860, roundel 600, star 490), which left the roundel and the star tiny next to the engine column. outline: a thin dark edge (about 0.5 px at list-icon size, 50% strength), so the chrome rings and star stay visible on light team colours (Phoenix lime, MTEK yellow, STIHL orange, RMG white).",
   "engines": {
     "Audi": {
       "source": "commons",
@@ -12,7 +12,11 @@
         1,
         0.6
       ],
-      "team_content": 860,
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938,
       "also_as": [
         "Audi 4.0 V8"
       ]
@@ -25,8 +29,12 @@
       "also_as": [
         "BMW P66 4.0 V8"
       ],
-      "team_content": 600,
-      "note": "the chrome-edged roundel of 1997-2020. As a list icon it is larger than on TV (600, not 425): its black outer ring disappears on the game's dark list, so only the blue and white centre reads"
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938,
+      "note": "the chrome-edged roundel of 1997-2020"
     },
     "Mercedes-Benz": {
       "source": "commons",
@@ -37,7 +45,11 @@
       "also_as": [
         "Mercedes-AMG 4.0 V8"
       ],
-      "team_content": 490
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
     }
   },
   "tyres": {

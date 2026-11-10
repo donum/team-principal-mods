@@ -68,8 +68,8 @@ rules where 2012 differs (see below). See
     where they can't be recognised, so each team shows its maker's emblem
     there, as on the 2012-2013 TV timing graphics (`"team_tiles": "maker"`
     in `art/logos.json`). The emblems come from the base: chrome Audi rings,
-    the BMW roundel and the chrome Mercedes star, sized to each other as on
-    TV. The team logos (ABT, HWA and Schnitzer from Commons, the others
+    the BMW roundel and the chrome Mercedes star, drawn as large as the
+    engine logos next to them. The team logos (ABT, HWA and Schnitzer from Commons, the others
     from the author's folders; Persson's SVG is rendered with headless Edge) are still listed in `art/logos.json` and
     built into `build/art/<season>/team_logos/`, but they are not in the
     pack or git: several are the teams' own logos, which aren't freely
@@ -100,6 +100,8 @@ Game gaps are listed in the
 - **B7:** no single spec tyre (see Rules).
 - **E12:** a sponsor can be on one team only.
 - Also C4, D1, D3, D5, D6, D7, E1, E2, E4, E5, E6, E8, E9, as for 2013.
+- Pit crews, punctures, cheating and espionage come from the era base, as
+  for 2013 (game 0.99.6).
 
 ## Rebuild
 

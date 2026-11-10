@@ -11,8 +11,10 @@ only in this repository.
 bases/dtm-era4/          DTM 2012–2018: New DTM, 4.0 V8   ("era 4" in docs/ERAS.md)
   base.json              shared build settings: base pack, constants, shared
                          tracks, and the "audio" section (private sounds)
-  gen.json               generator defaults: rules, car profiles, engines, tyres
-  data/                  shared data files (tyres, damage, part names, radio)
+  gen.json               generator defaults: rules, car profiles, engines, tyres,
+                         chassis names per make and year
+  data/                  shared data files (tyres, damage, punctures, pit crews,
+                         part names, radio)
   patches/regulations.json
   tracks/ track_specs/   traced venues, shared by every season
   assets/                shared images (tracks, engine and tyre logos)
@@ -33,7 +35,7 @@ seasons/dtm-2012/, seasons/dtm-2013/
 | Rules and points that hold for the generation | Teams, drivers, numbers, sponsors |
 | Tyre model, damage, car part names | Calendar (`gen.json` `tracks`) |
 | Traced tracks and their lap-time calibration | Car images and liveries |
-| Engine and tyre logos, car profiles | Team logos, driver portraits |
+| Engine and tyre logos, car profiles, chassis names | Team logos, driver portraits |
 | Private engine sounds | Anything that differs that year |
 
 Whatever a season puts in its own folder replaces the base's version. So when

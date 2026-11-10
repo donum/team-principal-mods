@@ -1,0 +1,466 @@
+<title>DTM Rulebook by Season</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: timing-sheet page. Header, gap matrix (seasons x game gaps), then one sheet per season with a rule row per item. */
+:root{
+  --bg:#f2f4f7; --panel:#ffffff; --ink:#151a22; --muted:#5b6474; --line:#dde2ea;
+  --accent:#1d4fd8; --fit:#127a43; --fit-bg:#e2f4ea; --apx:#9a5b00; --apx-bg:#fbefd9; --no:#b4232f; --no-bg:#fbe3e5;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1319; --panel:#171c24; --ink:#e7ebf1; --muted:#97a1b2; --line:#2a313d;
+  --accent:#7ea2ff; --fit:#5fd393; --fit-bg:#163325; --apx:#f0b44c; --apx-bg:#3a2b12; --no:#ff7b85; --no-bg:#3d1a1e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1319; --panel:#171c24; --ink:#e7ebf1; --muted:#97a1b2; --line:#2a313d;
+  --accent:#7ea2ff; --fit:#5fd393; --fit-bg:#163325; --apx:#f0b44c; --apx-bg:#3a2b12; --no:#ff7b85; --no-bg:#3d1a1e; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
+h1{font-size:clamp(34px,5vw,52px);font-weight:700;line-height:1}
+h2{font-size:26px;font-weight:600}
+h3{font-size:22px;font-weight:600}
+.lede{max-width:68ch;color:var(--muted);margin:10px 0 0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:var(--muted)}
+.chip{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.fit{color:var(--fit);background:var(--fit-bg)} .apx{color:var(--apx);background:var(--apx-bg)} .no{color:var(--no);background:var(--no-bg)}
+.tally{display:flex;flex-wrap:wrap;gap:12px}
+.tally div{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 16px;min-width:130px}
+.tally b{display:block;font-family:var(--display);font-size:32px;line-height:1;font-variant-numeric:tabular-nums}
+.tally span{font-size:13px;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.controls button{font:600 14px var(--body);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:6px 12px;cursor:pointer}
+.controls button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--panel)}
+.controls button:focus-visible,.cell:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.controls .sep{width:1px;height:22px;background:var(--line);margin:0 6px}
+.matrix-box{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:6px}
+table.matrix{border-collapse:collapse;font-size:12px;min-width:100%}
+.matrix th,.matrix td{border-bottom:1px solid var(--line);padding:0}
+.matrix thead th{font-family:var(--mono);font-weight:400;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);padding:6px 2px;height:46px;text-align:left}
+.matrix thead th.era{border-left:2px solid var(--line)}
+.matrix tbody th{text-align:left;font-weight:600;font-size:13px;padding:5px 12px 5px 10px;white-space:nowrap;position:sticky;left:0;background:var(--panel);z-index:1}
+.matrix tbody th small{font-family:var(--mono);color:var(--muted);font-weight:400;margin-right:6px}
+.matrix td{width:20px;height:24px;text-align:center}
+.matrix td.era{border-left:2px solid var(--line)}
+.cell{display:block;width:16px;height:16px;margin:auto;border-radius:2px}
+.cell.fit{background:var(--fit)} .cell.apx{background:var(--apx)} .cell.no{background:var(--no)}
+a.cell{cursor:pointer}
+.era-block{display:grid;gap:14px}
+.era-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;border-bottom:2px solid var(--ink);padding-bottom:6px}
+.era-head p{margin:0;color:var(--muted);font-size:14px;max-width:80ch}
+.season{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;scroll-margin-top:16px}
+.season header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.season header .yr{font-family:var(--display);font-size:30px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.season header .sub{color:var(--muted);font-size:14px}
+.season header .mini{margin-left:auto;display:flex;gap:6px}
+.rule{display:grid;grid-template-columns:110px minmax(0,1.25fr) 120px minmax(0,1fr);gap:4px 14px;padding:9px 16px;border-bottom:1px solid var(--line);align-items:start}
+.rule:last-child{border-bottom:0}
+.rule .cat{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.rule .game{font-size:14px;color:var(--muted)}
+.rule .game code{font-family:var(--mono);font-size:12px;color:var(--ink)}
+.wish{font-family:var(--mono);font-size:11px;color:var(--accent);margin-left:4px}
+.hidden-rule{display:none}
+.gaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.gaps article{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 16px}
+.gaps article h3{font-size:19px}
+.gaps article p{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.gaps article .seasons{font-family:var(--mono);font-size:12px;color:var(--ink);margin-top:8px}
+footer{color:var(--muted);font-size:13px;max-width:80ch}
+@media (max-width:760px){
+  .rule{grid-template-columns:1fr auto}
+  .rule .cat{grid-column:1/-1;padding:0}
+  .rule .txt{grid-column:1}
+  .rule .st{grid-column:2;grid-row:2}
+  .rule .game{grid-column:1/-1}
+  .season header .mini{margin-left:0}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">DPM 1984 to DTM 2026 · Team Principal 0.99.5 / 0.99.6 beta</div>
+    <h1>DTM Rulebook by Season</h1>
+    <p class="lede">How qualifying, the races, pit stops, tyres, points and weight balancing worked in every DTM season, and whether each rule can be set in a Team Principal data pack. The game runs one qualifying and one race per scheduled week, with a race length in laps.</p>
+  </header>
+
+  <div class="legend">
+    <span><span class="chip fit">Works</span> set directly in pack data</span>
+    <span><span class="chip apx">Approximated</span> close stand-in, behaviour differs</span>
+    <span><span class="chip no">Not possible</span> no game mechanism today</span>
+    <span><span class="wish">A1</span> item in <code>docs/DEVELOPER_WISHLIST.md</code></span>
+  </div>
+
+  <div class="tally" id="tally"></div>
+
+  <section style="display:grid;gap:12px">
+    <h2>Gaps by season</h2>
+    <p class="lede" style="margin:0">Each row is one game gap, each column a season. A square shows the season needs it; red means the rule can't be shown at all, amber that a stand-in exists. Click a square to jump to that season.</p>
+    <div class="matrix-box"><table class="matrix" id="matrix"></table></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>What the game is missing</h2>
+    <div class="gaps" id="gaps"></div>
+  </section>
+
+  <section style="display:grid;gap:20px">
+    <h2>Season by season</h2>
+    <div class="controls" id="controls"></div>
+    <div id="seasons" style="display:grid;gap:30px"></div>
+  </section>
+
+  <footer>
+    Sources: the research dossiers in <code>seasons/&lt;id&gt;/research/season.md</code> (touringcarracing.net, de/en.wikipedia, period magazines, official 2023 and 2025 sporting regulations), checked against the game's <code>regulations.json</code> options and code. 2012 knockout cuts from Audi and BMW press material. Items marked "unverified" in the dossiers are flagged in the text. Details beyond qualifying and race format (engines, homologation, testing) are left out.
+  </footer>
+</div>
+
+<script>
+const ERAS={
+ 1:["Production cars and Group A","1984 to 1992","Displacement weights, ballast and an open tyre war. Heats from 1988, a qualification race from 1989."],
+ 2:["Class 1","1993 to 1996","High-tech 2.5 litre V6 cars with 4WD and driver aids. Two heats per round. 1995 ran beside the ITC, 1996 was ITC only."],
+ 3:["Masters, V8 silhouettes","2000 to 2011","Control tyres and pit stops. A qualifying race in 2001 and 2002, then single one-hour races with two stops and refuelling."],
+ 4:["Class One, 4.0 V8","2012 to 2018","No refuelling, DRS and option tyres, then two races per weekend from 2015."],
+ 5:["Class One turbo","2019 to 2020","2.0 turbo engines with push-to-pass and DRS."],
+ 6:["GT3","2021 to 2026","Customer GT3 cars under balance of performance and success ballast, rolling starts and pit windows."]
+};
+const GAPS={
+ A1:["Several races per round","Heats, or two races per weekend, each with its own points. The heat 2 grid often came from the heat 1 result.","Run each race as its own week at the same track."],
+ A2:["Qualification race","A short race for the cars outside the direct grid places (1989 to 1992), or a sprint that set the main-race grid (2001, 2002).","None. Cars are cut by the grid limit."],
+ A3:["Session, start and length rules","Rolling starts, time-limited races (55 or 60 minutes plus one lap), qualifying lap limits, red-flag aggregates.","Races run a set number of laps from a standing start. Laps are worked out from typical lap times."],
+ A5:["Single-lap shootout","Top-qualifying (1989), Superpole (2003 to 2005), Q4 (2009 to 2013): one flying lap each, alone on track.","The last knockout stage sets the front of the grid."],
+ B1:["Success ballast and performance weights","Kilos added for results: per driver (Group A), per make (2005 to 2009, 2014 to 2016), per finishing place in the last race (GT3).","Typical weight baked into each team's car mass."],
+ B2:["Weights per make and changes on a date","Minimum weights by displacement, drivetrain or car generation, restrictor cuts, balance of performance between rounds.","One global minimum weight. Differences go into team mass and ratings."],
+ B3:["Points per race, drop scores, half points","Drop results, half points for short events or red-flagged races, different tables per race.","One points table per season, every result counts."],
+ B4:["More classifications","Manufacturer scores from the best car or best N cars, privateer and Class 2 cups, rookie award, team totals of the best two cars.","Only the game's drivers' and constructors' titles."],
+ B5:["Mandatory stops and pit windows","Set number of stops (one or two), stops only between given minutes or race thirds, no stops on first and last laps.","The two-compound rule forces one stop in the dry; tyre wear is tuned for the rest."],
+ B6:["DRS and push-to-pass rules","DRS anywhere, a set number of uses per lap or race, a gap limit, banned in the last laps, race only.","DRS is on or off for the whole weekend, in zones. Push-to-pass maps to spec ERS."],
+ B7:["Tyre allocation rules","3 to 9 sets per weekend, one option set that must be used, an option distance cap, top 5 or 10 must start on qualifying tyres, tyre warmer bans.","Weekend allocation of 12 or 15 dry sets, or unlimited; two-compound rule."],
+ B8:["Qualifying points","3-2-1 for the top three in qualifying (2017 on) or in the qualifying race (2001, 2002). Fastest-lap point only inside the top 10 (2022).","The game has a single +1 pole point and an unconditional fastest-lap point."],
+ B9:["Non-scoring guest entries","Guests and foreign drivers (1984) raced but scored nothing; drivers behind them moved up.","None. Every entry scores."],
+ B10:["Pit-stop procedure","Crew size limits, one wheelgun per side, rear wheels first, a service window between heats, no stop under safety car counts.","None. The game's stop time model is the same for every series."],
+ B11:["Race control rules","Pit lane closed under safety car (2007), full-course yellow (2022 on), penalty lap (2023 on).","Safety car and virtual safety car exist; VSC stands in for FCY."],
+ D2:["Drivetrain","4WD Audi V8 (1990 to 1992), Alfa 155 and Opel Calibra (1993 to 1996). Big wet-weather and start advantage.","Ratings for acceleration and mass only."]
+};
+// rule: [category, status, real rule, game handling, wishlist id]
+const Q="Qualifying",R="Race",P="Pits & tyres",PT="Points",BL="Balance";
+const S=[
+{y:"1984",e:1,t:"DPM, Group A",r:[
+ [Q,"fit","Timed practice sets the grid. No qualifying race.","<code>qualifying_format</code> session_60"],
+ [R,"fit","Mostly one sprint of about 100 km, standing start.","Laps via <code>lap_modifier</code>"],
+ [R,"apx","AVUS, Nürburgring and Hockenheim ran two heats with half points each.","One race at full distance","A1"],
+ [P,"fit","No pit stops. Open tyre war.","Compound rule off, tyre suppliers per team"],
+ [PT,"apx","20-18-16-15 down to 1 for the top 18.","Custom <code>points_system</code> table; 18 places untested",""],
+ [PT,"no","Two drop results.","Every result counts","B3"],
+ [PT,"no","Only German drivers score. Guests drop out of the points order.","Every entry scores","B9"],
+ [BL,"no","Minimum weight and rim width by displacement (750 to 1425 kg), plus ONS handicaps.","Baked into team car mass","B2"]]},
+{y:"1985",e:1,t:"DPM, Group A",r:[
+ [Q,"fit","Timed practice sets the grid.","session_60"],
+ [R,"apx","About 100 km sprints. Erding and Diepholz ran two heats with half points.","One race per round","A1"],
+ [PT,"apx","20 down to 1 for the top 18. Foreign drivers now score.","Custom table, 18 places untested"],
+ [PT,"no","One drop result.","Every result counts","B3"],
+ [BL,"no","Displacement weights, +70 kg for multi-valve engines. ONS changed weights mid-season at Diepholz.","One weight per team for the season","B2"]]},
+{y:"1986",e:1,t:"DTM, Group A",r:[
+ [Q,"fit","Timed practice sets the grid.","session_60"],
+ [R,"fit","One race of 100 to 114 km per event, full points.","Laps via lap_modifier"],
+ [R,"no","Zolder I was red-flagged and restarted, result on aggregate.","No red-flag aggregate","A3"],
+ [PT,"apx","20 down to 1 for the top 18.","Custom table, 18 places untested"],
+ [PT,"no","One drop result (best 8 of 9).","Every result counts","B3"],
+ [BL,"no","Turbo cars (Volvo 240T, Sierra) at 1400 kg.","Team car mass","B2"]]},
+{y:"1987",e:1,t:"DTM, Group A",r:[
+ [Q,"fit","Practice and qualifying set the grid.","session_60"],
+ [R,"fit","One race of 100 to 114 km. Tyre changes only when needed.","Laps via lap_modifier"],
+ [PT,"no","20 down to 1 for the top 18, one drop result. Guest Ludwig won round 7 and scored nothing.","Custom table works; drops and guests don't","B9"],
+ [BL,"no","Base weights per model (M3 1000 kg, Sierra 1350 kg), success ballast, and weight changes after rounds 2, 4 and 6.","One weight per team","B2"],
+ [BL,"no","Ballast on top of base weight per driver.","None","B1"]]},
+{y:"1988",e:1,t:"DTM, Group A",r:[
+ [Q,"fit","Qualifying sets the grid for race 1. Tight cut: 1.8 s off pole meant DNQ at Mainz.","session_60, <code>QUALI_GRID_LIMIT</code>"],
+ [R,"no","Two races of about 100 km, 15 minutes apart. Race 2 grid is the race 1 finishing order.","Two weeks at one track at best; grid comes from qualifying","A1"],
+ [P,"apx","No refuelling between the races. 10 tyres per weekend.","<code>weekend_tyre_allocation</code> strict is 12 sets","B7"],
+ [PT,"no","20 down to 1 for the top 18, four drop results.","Drops not possible","B3"],
+ [BL,"no","Sierra restrictor cut from 43.5 to 38 mm after round 1, then to 36 mm. Weight penalties.","One engine rating for the season","B2"]]},
+{y:"1989",e:1,t:"DTM, Group A",r:[
+ [Q,"no","Timed qualifying, then a single-flying-lap Top-Qualifying for the top 16 (top 20 at Zolder).","No shootout","A5"],
+ [Q,"no","All other cars run an 8 to 22 lap qualification race for places 17 on. Non-qualifiers from it don't start.","Grid limit cuts the slowest","A2"],
+ [R,"no","Two races of about 100 km.","One race per week","A1"],
+ [PT,"no","20 down to 1 for the top 18, four drop results.","Drops not possible","B3"],
+ [BL,"no","Ford restrictor 36 to 40 mm after round 2, weight changes at rounds 4 and 9, driver handicap weight.","None","B1"]]},
+{y:"1990",e:1,t:"DTM, Group A",r:[
+ [Q,"no","About 16 cars go straight to the heats. The rest run a 40 to 50 km qualification race (not at the Nordschleife).","Grid limit","A2"],
+ [R,"no","Two heats of about 100 km. No planned stops.","One race at heat distance","A1"],
+ [PT,"fit","20-15-12-10-8-6-4-3-2-1 per heat, all results count.","Custom points table"],
+ [BL,"no","Success ballast up to 100 kg, removed after poor results. Newcomers start on zero.","None","B1"],
+ [BL,"no","Audi V8 at 1250 kg, BMW and Mercedes 1040 kg. Audi +80 kg for Diepholz, 50 kg off again.","One weight per team","B2"],
+ [BL,"no","Audi V8 quattro 4WD.","Acceleration rating","D2"]]},
+{y:"1991",e:1,t:"DTM, Group A",r:[
+ [Q,"no","Two qualifying sessions set places 1 to 16. Everyone else runs a 50 km qualification race.","Single session plus grid limit","A2"],
+ [R,"no","Two heats of about 100 km. Heat 2 grid is the heat 1 order.","One race at heat distance (pack dtm-1991)","A1"],
+ [PT,"fit","20-15-12-10-8-6-4-3-2-1 per heat.","<code>points_system: dtm_1991</code>"],
+ [PT,"no","Teams', manufacturers' (best car per make) and privateer classifications.","Drivers and constructors only","B4"],
+ [BL,"no","Success ballast up to 50 kg. Newcomers start on the maximum.","None","B1"],
+ [BL,"no","Minimum weights by make (BMW 980 kg, Audi 1290 kg). Audi lost 40 kg from Wunstorf.","Team car mass","B2"],
+ [BL,"no","Audi 4WD, about a minute clear in the wet Hockenheim heat.","None","D2"]]},
+{y:"1992",e:1,t:"DTM, Group A",r:[
+ [Q,"no","Qualifying plus a qualification race, except at the Eifel, AVUS and Nordschleife.","Grid limit","A2"],
+ [R,"no","Two heats of about 100 km.","One race at heat distance","A1"],
+ [PT,"fit","20-15-12-10-8-6-4-3-2-1 per heat, all count.","Custom table"],
+ [PT,"no","Manufacturer points from the best car of each make.","Constructors' title sums all cars","B4"],
+ [BL,"no","Success ballast. BMW got a bigger splitter and wing from the Nordschleife round. Audi 1300 kg.","None","B2"]]},
+{y:"1993",e:2,t:"DTM, Class 1",r:[
+ [Q,"no","Timed qualifying, then a top-10 shootout (top 15 at some rounds).","Knockout or one session","A5"],
+ [R,"no","Two heats of about 100 km. Heat 2 grid is the heat 1 order, retirements at the back.","One race per week","A1"],
+ [P,"fit","No mandatory stop. Stops for tyres or damage only.","Compound rule off"],
+ [PT,"fit","20-15-12-10-8-6-4-3-2-1 per heat.","Custom table"],
+ [PT,"no","A Class 2 \"2000 Cup\" in the same races.","No class classification","B4"],
+ [BL,"fit","4WD, traction control, ABS and active diffs allowed.","<code>driver_aid_restrictions</code> relaxed"],
+ [BL,"no","Alfa 155 V6 TI 4WD against RWD Mercedes.","Ratings only","D2"]]},
+{y:"1994",e:2,t:"DTM, Class 1",r:[
+ [Q,"apx","Qualifying sets the heat 1 grid. A shootout is not confirmed in the sources.","session_60"],
+ [R,"no","Two heats of 95 to 104 km, heat 2 grid from heat 1.","One race per week","A1"],
+ [PT,"fit","20-15-12-10-8-6-4-3-2-1 per heat.","Custom table"],
+ [BL,"no","4WD Alfa and Opel, RWD Mercedes.","Ratings only","D2"]]},
+{y:"1995",e:2,t:"DTM and ITC, Class 1",r:[
+ [Q,"apx","Qualifying sets the heat 1 grid (Q2 and Q3 sheets exist; format unverified).","session_60"],
+ [R,"no","Two heats of about 100 km on Sunday, 30 minutes apart, 22 minutes for repairs.","One race per week","A1"],
+ [PT,"no","DTM and ITC were separate titles with the same cars. Manufacturer points from the best car per make.","One championship per pack","B4"],
+ [BL,"no","Minimum weight 1020 kg for 2WD, 1060 kg for 4WD.","One global minimum","B2"],
+ [BL,"no","4WD Alfa and Opel.","Ratings only","D2"]]},
+{y:"1996",e:2,t:"ITC, Class 1",r:[
+ [Q,"apx","Qualifying sets the heat 1 grid.","session_60"],
+ [R,"no","Two heats of about 100 km, 30 minutes apart. Heat 2 grid is the heat 1 order.","One race per week","A1"],
+ [PT,"fit","20-15-12-10-8-6-4-3-2-1 per heat.","Custom table"],
+ [BL,"fit","1040 kg for every drivetrain.","<code>chassis_minimum_weight</code>"],
+ [BL,"no","4WD Opel and Alfa against RWD Mercedes.","Ratings only","D2"]]},
+{y:"2000",e:3,t:"DTM",r:[
+ [Q,"fit","Qualifying sets the race 1 grid.","session_60"],
+ [R,"no","Two races of about 100 km or 40 minutes, 15 minutes apart, equal points. Race 2 grid rule unknown.","One race per week","A1"],
+ [R,"no","Rolling starts.","Standing starts only","A3"],
+ [P,"apx","No stops. Dunlop control tyre, 5 sets per weekend.","Single supplier; fewest sets is 12","B7"],
+ [PT,"fit","20-15-12-10-8-6-4-3-2-1 per race.","Custom table"]]},
+{y:"2001",e:3,t:"DTM",r:[
+ [Q,"apx","45 minutes, at most 12 laps per driver.","session_60 has no lap cap","A3"],
+ [Q,"no","Qualifying race of 30 to 35 km on Sunday sets the main-race grid.","None","A2"],
+ [R,"no","Main race of about 100 km. Rolling starts.","Standing start","A3"],
+ [P,"apx","One mandatory stop, all four tyres, no refuelling.","Two-compound rule forces one stop","B5"],
+ [P,"no","25-minute service window between the races for fuel, tyres and repairs.","None","B10"],
+ [PT,"no","Qualifying race 3-2-1, main race 20-15-12-10-8-6-4-3-2-1.","One table per race only","B8"]]},
+{y:"2002",e:3,t:"DTM",r:[
+ [Q,"apx","45 minutes, at most 12 laps.","session_60","A3"],
+ [Q,"no","Qualifying race of 30 to 35 km sets the main-race grid.","None","A2"],
+ [R,"fit","Main race of about 100 km, now with standing starts.","Laps via lap_modifier"],
+ [P,"apx","One mandatory stop, four tyres, no refuelling.","Two-compound rule","B5"],
+ [PT,"no","Main race 10-6-4-3-2-1, qualifying race 3-2-1.","Main table works; QR points don't","B8"]]},
+{y:"2003",e:3,t:"DTM",r:[
+ [Q,"apx","20 minutes, at most 9 laps, sets places 11 and down.","session_60","A3"],
+ [Q,"no","Superpole: top 10 run one flying lap each in reverse order for places 1 to 10.","None","A5"],
+ [R,"apx","One race of about 60 minutes, up to 170 km. Qualifying race dropped.","Laps worked out from lap times","A3"],
+ [P,"apx","Two mandatory stops with tyre changes.","Tyre wear tuned for two stops","B5"],
+ [P,"fit","Refuelling from churns, 70 litre tank.","<code>formula_refueling</code> allowed"],
+ [P,"no","Tyre warmers banned.","None","B7"],
+ [PT,"fit","10-8-6-5-4-3-2-1 for the top 8. Manufacturers' title from all cars.","Custom table, constructors"]]},
+{y:"2004",e:3,t:"DTM",r:[
+ [Q,"no","Timed session, then a top-10 Superpole.","None","A5"],
+ [R,"apx","One race of about one hour, 150 to 170 km.","Laps from lap times","A3"],
+ [P,"apx","Two mandatory stops, refuelling allowed and needed.","Tyre wear tuning; refuelling allowed","B5"],
+ [PT,"fit","10-8-6-5-4-3-2-1.","Custom table"],
+ [BL,"no","Year-old 2003 coupés allowed beside the new saloons.","None","B2"]]},
+{y:"2005",e:3,t:"DTM",r:[
+ [Q,"no","Timed session plus a top-10 single-lap Super Pole.","None","A5"],
+ [R,"apx","One race of 160 to 170 km, about one hour.","Laps from lap times","A3"],
+ [P,"apx","Two mandatory stops, refuelling. 9 tyre sets per weekend.","Tyre wear; 12 sets minimum","B5"],
+ [PT,"fit","10-8-6-5-4-3-2-1.","Custom table"],
+ [BL,"no","Brand handicap: winning make +10 kg, third make −10 kg, at most ±20 kg, current cars only.","None","B1"],
+ [BL,"no","New cars 1050 kg, year-old cars 1035 kg.","One minimum weight","B2"]]},
+{y:"2006",e:3,t:"DTM",r:[
+ [Q,"apx","New three-part knockout, the slowest six drop out after each part.","Game knockout; it sets the cut sizes"],
+ [R,"apx","One race of about one hour.","Laps from lap times","A3"],
+ [P,"apx","Two mandatory stops, refuelling. 7 sets per weekend.","Tyre wear; 12 sets minimum","B7"],
+ [BL,"no","Make handicap ±10 kg per round, max ±20 kg.","None","B1"]]},
+{y:"2007",e:3,t:"DTM",r:[
+ [Q,"apx","Three-part knockout.","Game knockout"],
+ [R,"apx","One race of 160 to 170 km. Two stops, refuelling.","Laps, tyre wear","B5"],
+ [R,"no","Pit lane closed when the safety car came out.","Safety car exists, no pit closure","B11"],
+ [PT,"no","10-8-6-5-4-3-2-1. Lausitz paid half points.","No half points","B3"],
+ [BL,"no","Handicap per car generation: 7 kg steps, 5 kg from Mugello.","None","B1"]]},
+{y:"2008",e:3,t:"DTM",r:[
+ [Q,"apx","Q1 to Q3 knockout (sources conflict).","Game knockout"],
+ [P,"no","Two stops, both in the middle third of the race. From mid-season, in the 2nd and 3rd quarters.","No pit windows","B5"],
+ [PT,"fit","10-8-6-5-4-3-2-1. Team orders banned.","Custom table"],
+ [BL,"no","Per-generation placement weights of 5 kg. Year-old base weights cut 10 kg mid-season.","None","B1"]]},
+{y:"2009",e:3,t:"DTM",r:[
+ [Q,"no","Four-part knockout: Q1 14 min (top 14 go on), Q2 10 min, Q3 9 min (top 4), Q4 one timed lap each. Parc fermé before Q4.","Knockout stops at Q3","A5"],
+ [R,"apx","One race of 174 to 198 km. Two stops, refuelling.","Laps, tyre wear","B5"],
+ [PT,"fit","10-8-6-5-4-3-2-1.","Custom table"],
+ [BL,"no","2009 cars 1050 kg, 2008 cars 1030 kg, 2007 cars 1010 kg, plus success ballast (last year).","None","B2"]]},
+{y:"2010",e:3,t:"DTM",r:[
+ [Q,"no","Q1 to Q3 knockout plus a Q4 single-lap shootout of the top 4.","Knockout to Q3","A5"],
+ [R,"apx","One race of 160 to 190 km with a time limit.","Laps from lap times","A3"],
+ [P,"apx","Two mandatory stops, refuelling allowed.","Tyre wear; refuelling allowed","B5"],
+ [PT,"fit","10-8-6-5-4-3-2-1. No ballast any more.","Custom table"]]},
+{y:"2011",e:3,t:"DTM",r:[
+ [Q,"no","Q1 to Q3 knockout plus a Q4 shootout of the top 4.","Knockout to Q3","A5"],
+ [R,"no","Time limit: Brands Hatch stopped at 88 of 98 laps, Oschersleben at 45 of 50.","Lap count only","A3"],
+ [P,"apx","Two stops, refuelling (last year). Hankook control slick and wet.","Tyre wear; single supplier","B5"],
+ [PT,"fit","10-8-6-5-4-3-2-1.","Custom table"]]},
+{y:"2012",e:4,t:"DTM",r:[
+ [Q,"apx","Q1 16 min, 22 to 16 cars. Q2 to 10, Q3 to 4.","Game knockout; cut sizes are its own"],
+ [Q,"no","Q4: the last four run one timed lap each.","Q3 order is the grid (pack dtm-2012)","A5"],
+ [R,"fit","One race, standing start, no refuelling (120 litre tank).","Laps; <code>formula_refueling</code> banned"],
+ [P,"no","Two mandatory stops, each inside a pit window.","Tyre wear tuned for two stops","B5"],
+ [PT,"fit","25-18-15-12-10-8-6-4-2-1.","<code>modern_top10</code>"]]},
+{y:"2013",e:4,t:"DTM",r:[
+ [Q,"no","Q1 to Q3 knockout plus the last Q4 single-lap shootout.","Q3 order is the grid","A5"],
+ [R,"apx","One race. Wet Nürburgring and final Hockenheim limited to 75 minutes.","Lap count","A3"],
+ [P,"apx","Two stops, no window, none in the first or last 3 laps. Damage stops don't count.","Tyre wear: 160 of 220 cars stopped twice in a test season","B5"],
+ [P,"apx","One option tyre set per race, which every driver must use.","Two-compound rule, no set limit","B7"],
+ [R,"apx","DRS once per lap anywhere, within 2 s, race only, not first or last 3 laps.","<code>drs_policy</code> on, one zone, also in qualifying","B6"],
+ [PT,"fit","25-18-15-12-10-8-6-4-2-1.","modern_top10"]]},
+{y:"2014",e:4,t:"DTM",r:[
+ [Q,"fit","F1-style Q1/Q2/Q3 knockout. Shootout dropped.","<code>qualifying_format</code> knockout"],
+ [P,"no","One mandatory stop in the middle third of the race. Not under safety car. Window dropped for wet races.","Two-compound rule forces one stop, no window","B5"],
+ [P,"no","At most half the race distance on the option tyre.","No distance cap","B7"],
+ [R,"apx","DRS now to the end of the race.","DRS zones","B6"],
+ [BL,"no","Performance weights per make, up to 10 kg.","None","B1"],
+ [PT,"fit","25-18-15-12-10-8-6-4-2-1.","modern_top10"]]},
+{y:"2015",e:4,t:"DTM",r:[
+ [Q,"apx","A separate 20-minute session before each race.","One 60-minute session per week; two weeks give two sessions"],
+ [R,"apx","Two races: Saturday 40 min, Sunday 60 min, each plus one lap. Equal points.","Two weeks at one track, laps from lap times","A1"],
+ [P,"apx","Saturday no stop, Sunday one stop. Option tyre dropped.","Compound rule per race isn't possible: one setting for the season","B5"],
+ [P,"no","4 slick sets for both qualifyings and both races.","12 sets minimum","B7"],
+ [R,"no","DRS up to 3 times per lap, within 1 s, anywhere.","DRS zones","B6"],
+ [BL,"no","Performance weights per driver from round 3 (1105 to 1140 kg).","None","B1"]]},
+{y:"2016",e:4,t:"DTM",r:[
+ [Q,"apx","Separate qualifying per race.","Session per week"],
+ [R,"apx","Saturday 40 min no tyre change, Sunday 60 min one stop.","Two weeks per round","A1"],
+ [R,"no","DRS from lap 2 within 1 s, a budget of uses per race that depends on track length.","DRS zones","B6"],
+ [BL,"no","Weights set after qualifying from each make's best theoretical lap: 2.5 or 5 kg steps.","None","B1"]]},
+{y:"2017",e:4,t:"DTM",r:[
+ [Q,"apx","Separate qualifying per race.","Session per week"],
+ [PT,"no","Top 3 in qualifying score 3-2-1.","Only +1 pole point","B8"],
+ [R,"apx","Both races 55 min plus one lap, one mandatory stop each.","Two weeks per round, two-compound rule","A1"],
+ [P,"no","8 mechanics, one wheelgun per side, tyre warmers banned. No team-to-driver radio.","Same stop model for all","B10"],
+ [BL,"no","Performance weights 1095 to 1140 kg, abolished from round 8.","None","B1"]]},
+{y:"2018",e:4,t:"DTM",r:[
+ [Q,"apx","Separate qualifying per race, 3-2-1 points.","Session per week; +1 pole point only","B8"],
+ [R,"apx","55 min plus one lap, one stop per race.","Two weeks per round","A1"],
+ [PT,"no","Guest entries don't score; drivers behind move up.","Every entry scores","B9"],
+ [BL,"fit","No performance weights, 1115 kg for all.","chassis_minimum_weight"]]},
+{y:"2019",e:5,t:"DTM",r:[
+ [Q,"apx","Separate qualifying per race, 3-2-1 points.","Session per week; pole point only","B8"],
+ [R,"apx","Round 1 on fixed laps (about 58 min), then 55 min plus one lap, up to 2 safety-car laps added.","Two weeks per round, laps","A3"],
+ [P,"apx","One stop per race, not under safety car. 7 slick sets, at most 2 new in qualifying.","Compound rule; 12 sets minimum","B7"],
+ [R,"apx","Push-to-pass +30 hp, up to 12 times per race.","<code>ers_policy</code> spec","B6"],
+ [R,"no","DRS within 3 s. In the last 5 laps everyone but the leader may use it.","DRS zones","B6"],
+ [PT,"no","Manufacturers score from their best 4 cars per race.","All cars count","B4"]]},
+{y:"2020",e:5,t:"DTM",r:[
+ [Q,"apx","Separate qualifying per race, 3-2-1 points.","Pole point only","B8"],
+ [R,"apx","55 min plus one lap, one stop.","Two weeks per round","A1"],
+ [R,"apx","Push-to-pass doubled to +60 hp. DRS use unrestricted.","Spec ERS, DRS zones","B6"],
+ [PT,"no","Team totals from the best two cars of a three-car team.","All cars count","B4"]]},
+{y:"2021",e:6,t:"DTM, GT3",r:[
+ [Q,"apx","20 minutes before each race, 3-2-1 points.","Session per week; pole point only","B8"],
+ [R,"no","Rolling two-abreast start. 55 min plus one lap, Saturday and Sunday.","Standing start, laps","A3"],
+ [P,"apx","One stop with four wheels. A change under safety car doesn't count.","Two-compound rule","B10"],
+ [BL,"no","Success ballast for the next race: 25, 18 and 15 kg for the top three.","None","B1"],
+ [BL,"no","AVL balance of performance per track.","None","B2"],
+ [PT,"no","Guest drivers score nothing. Manufacturers count their best 3 cars.","All entries score","B9"],
+ [BL,"fit","ABS and traction control allowed.","driver_aid_restrictions"]]},
+{y:"2022",e:6,t:"DTM, GT3",r:[
+ [Q,"apx","20 minutes per race, 3-2-1 points.","Pole point only","B8"],
+ [P,"no","Stop between minute 10 and 40, rear wheels first, 4 wheel mechanics. Stops under safety car now count.","No window, same stop model","B5"],
+ [P,"apx","3 tyre sets per race day.","12 sets minimum","B7"],
+ [R,"apx","Full-course yellow at 60 km/h. A stop under FCY doesn't count.","Virtual safety car (<code>safety_car_policy</code> all_types)","B11"],
+ [PT,"apx","Fastest lap +1, only for a top-10 finisher.","Fastest-lap point for anyone","B8"],
+ [BL,"no","Success ballast 25, 15 and 5 kg.","None","B1"]]},
+{y:"2023",e:6,t:"DTM, GT3",r:[
+ [Q,"apx","Two 20-minute qualifyings, one per race, 3-2-1 points.","Pole point only","B8"],
+ [R,"no","Two races of 60 min plus one lap, rolling start in a start corridor.","Standing start, laps","A3"],
+ [P,"no","Stop between minute 20 and 40, 6 crew, rear wheels first. Pit stop challenge award.","No window","B5"],
+ [P,"no","3 or 4 new Pirelli sets by track. The top 5 start on their qualifying tyres.","12 sets minimum","B7"],
+ [PT,"apx","Top 15 score 25-20-16-13-11-10-9-8-7-6-5-4-3-2-1.","Custom table; 15 places untested"],
+ [PT,"no","Half points for a race stopped before 75%.","None","B3"],
+ [R,"no","Penalty lap of about 5 s for minor offences.","Time penalties only","B11"],
+ [BL,"no","Success ballast 20, 10 and 5 kg in races only, not qualifying. Drivers ballasted to 85 kg.","None","B1"]]},
+{y:"2024",e:6,t:"DTM, GT3",r:[
+ [Q,"apx","Two 20-minute qualifyings, 3-2-1 points.","Pole point only","B8"],
+ [R,"apx","60 min plus one lap.","Laps from lap times","A3"],
+ [P,"no","Stop between minute 20 and 40. A change under SC or FCY doesn't count.","No window","B5"],
+ [P,"no","The top 10 start on their qualifying tyres.","None","B7"],
+ [BL,"no","Success ballast 20, 10 and 5 kg, BoP per event.","None","B1"]]},
+{y:"2025",e:6,t:"DTM, GT3",r:[
+ [Q,"apx","Two 20-minute qualifyings, 3-2-1 points.","Pole point only","B8"],
+ [R,"apx","55 min plus one lap, up to 2 safety-car laps added.","Laps from lap times","A3"],
+ [P,"no","Saturday one stop (minute 20 to 40). Sunday two stops (minute 10 to 20 and 39 to 45).","No count or window rules","B5"],
+ [P,"no","3 or 4 new sets, top 10 start on qualifying tyres.","12 sets minimum","B7"],
+ [PT,"no","Rookie of the Year with its own points.","None","B4"],
+ [BL,"no","Success ballast 20, 10 and 5 kg. BoP per event.","None","B1"]]},
+{y:"2026",e:6,t:"DTM, GT3",r:[
+ [Q,"apx","Two 20-minute qualifyings, 3-2-1 points.","Pole point only","B8"],
+ [P,"no","Saturday one stop, Sunday two (as 2025).","No count or window rules","B5"],
+ [P,"no","Race-day pool of 3 or 4 new sets per track, plus a test pool. A discarded wheel leaves the allocation.","Weekend allocation of 12 or 15 sets","B7"],
+ [PT,"apx","Top 15 score 25 down to 1.","Custom table, 15 places untested"],
+ [BL,"no","Success ballast and BoP assumed unchanged.","None","B1"]]}
+];
+
+const LBL={fit:"Works",apx:"Approximated",no:"Not possible"};
+const rank={fit:0,apx:1,no:2};
+const esc=s=>s.replace(/&(?!amp;|lt;|gt;)/g,"&amp;");
+// tally
+let n={fit:0,apx:0,no:0};S.forEach(s=>s.r.forEach(r=>n[r[1]]++));
+document.getElementById("tally").innerHTML=
+ `<div><b>${S.length}</b><span>seasons</span></div>`+
+ ["fit","apx","no"].map(k=>`<div><b style="color:var(--${k=="apx"?"apx":k})">${n[k]}</b><span>${LBL[k].toLowerCase()} rules</span></div>`).join("")+
+ `<div><b>${Object.keys(GAPS).length}</b><span>game gaps</span></div>`;
+
+// matrix
+const gapIds=Object.keys(GAPS);
+const cellOf={};S.forEach(s=>s.r.forEach(r=>{const g=r[4];if(!g)return;const k=g+"|"+s.y;if(!cellOf[k]||rank[r[1]]>rank[cellOf[k]])cellOf[k]=r[1];}));
+let h="<thead><tr><th style='writing-mode:horizontal-tb;transform:none'></th>";
+S.forEach((s,i)=>{const era=i==0||S[i-1].e!=s.e;h+=`<th class="${era?"era":""}">${s.y}</th>`});
+h+="</tr></thead><tbody>";
+gapIds.forEach(g=>{h+=`<tr><th><small>${g}</small>${GAPS[g][0]}</th>`;
+ S.forEach((s,i)=>{const era=i==0||S[i-1].e!=s.e;const st=cellOf[g+"|"+s.y];
+  h+=`<td class="${era?"era":""}">${st?`<a class="cell ${st}" href="#s${s.y}" title="${s.y}: ${GAPS[g][0]} (${LBL[st]})" aria-label="${s.y} ${GAPS[g][0]} ${LBL[st]}"></a>`:""}</td>`});
+ h+="</tr>"});
+document.getElementById("matrix").innerHTML=h+"</tbody>";
+
+// gap cards
+document.getElementById("gaps").innerHTML=gapIds.map(g=>{
+ const ys=S.filter(s=>cellOf[g+"|"+s.y]).map(s=>s.y);
+ return `<article><h3><span class="wish" style="margin:0 6px 0 0">${g}</span>${GAPS[g][0]}</h3><p>${GAPS[g][1]}</p><p><b>Today:</b> ${GAPS[g][2]}</p><div class="seasons">${ys.join(" · ")}</div></article>`}).join("");
+
+// controls
+let eraF=0,stF="all";
+const ctr=document.getElementById("controls");
+function btns(){ctr.innerHTML=
+ `<button data-era="0" aria-pressed="${eraF==0}">All eras</button>`+
+ Object.entries(ERAS).map(([k,v])=>`<button data-era="${k}" aria-pressed="${eraF==k}">${v[1]}</button>`).join("")+
+ `<span class="sep"></span>`+
+ [["all","All rules"],["gaps","Gaps only"],["no","Not possible"]].map(([k,v])=>`<button data-st="${k}" aria-pressed="${stF==k}">${v}</button>`).join("");}
+ctr.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.era!=null)eraF=+b.dataset.era;else stF=b.dataset.st;btns();render();
+ try{localStorage.setItem("dtmrules",JSON.stringify({eraF,stF}))}catch(_){}});
+try{const v=JSON.parse(localStorage.getItem("dtmrules")||"null");if(v){eraF=v.eraF;stF=v.stF}}catch(_){}
+
+function render(){
+ let out="";
+ Object.entries(ERAS).forEach(([k,v])=>{
+  if(eraF&&eraF!=k)return;
+  const ss=S.filter(s=>s.e==k);
+  out+=`<section class="era-block"><div class="era-head"><h2>Era ${k}: ${v[0]}</h2><span class="eyebrow">${v[1]}</span><p>${v[2]}</p></div>`;
+  ss.forEach(s=>{
+   const c={fit:0,apx:0,no:0};s.r.forEach(r=>c[r[1]]++);
+   const rows=s.r.filter(r=>stF=="all"||(stF=="gaps"&&r[1]!="fit")||(stF=="no"&&r[1]=="no"));
+   out+=`<article class="season" id="s${s.y}"><header><span class="yr">${s.y}</span><span class="sub">${s.t}</span><span class="mini">${["fit","apx","no"].filter(x=>c[x]).map(x=>`<span class="chip ${x}">${c[x]} ${LBL[x]}</span>`).join("")}</span></header>`+
+    (rows.length?rows.map(r=>`<div class="rule"><span class="cat">${r[0]}</span><span class="txt">${esc(r[2])}</span><span class="st"><span class="chip ${r[1]}">${LBL[r[1]]}</span></span><span class="game">${r[3]}${r[4]?`<span class="wish">${r[4]}</span>`:""}</span></div>`).join(""):`<div class="rule"><span class="game">No rows match this filter.</span></div>`)+
+    `</article>`});
+  out+="</section>";});
+ document.getElementById("seasons").innerHTML=out;
+}
+btns();render();
+document.getElementById("matrix").addEventListener("click",e=>{const a=e.target.closest("a.cell");if(!a)return;if(eraF||stF!="all"){eraF=0;stF="all";btns();render();}});
+</script>

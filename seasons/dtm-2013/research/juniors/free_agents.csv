@@ -1,0 +1,20 @@
+group,driver,nationality,birth_date,f1_starts,f1_years,status_2013,later_dtm,suggested,notes
+ex_f1,Vitaly Petrov,russian,1984-09-08,57,2010-2012,No race programme (lost Caterham F1 seat),Mercedes 2014,yes,DTM 2014 with Mücke Motorsport; 23rd and no points; then left the sport
+ex_f1,Robert Kubica,polish,1984-12-07,76,2006-2010,WRC2 and European Rally Championship with Citroën; WRC2 champion,BMW 2020,yes,Tested a Mercedes DTM C-Coupé at Valencia on 24 Jan 2013; 2020 DTM with Orlen Team ART (BMW M4); returned to F1 2019 and 2021
+ex_f1,Heikki Kovalainen,finnish,1981-10-19,109,2007-2012,Caterham F1 reserve; stood in for Räikkönen at Lotus for the US and Brazilian GPs,,yes,Started 2013 without a race seat; 111 career starts incl. 2 in late 2013; tested a BMW M4 DTM at the Lausitzring in Aug 2014
+ex_f1,Lucas di Grassi,brazilian,1984-08-11,18,2010,Audi factory driver in WEC and ALMS (3rd at Le Mans),,yes,Already an Audi works driver; tested the Audi RS 5 DTM at the Red Bull Ring in Aug 2013 but ruled out a DTM switch
+ex_f1,Jérôme d'Ambrosio,belgian,1985-12-27,20,2011-2012,Lotus F1 reserve driver,,no,No other racing listed for 2013
+ex_f1,Bruno Senna,brazilian,1983-10-15,46,2010-2012,WEC GTE with Aston Martin Racing,,no,Tested a Mercedes DTM car in 2009 but declined a Mercedes DTM deal to focus on F1
+ex_f1,Kamui Kobayashi,japanese,1986-09-13,60,2009-2012,WEC GTE Pro with AF Corse (Ferrari 458),,no,Returned to F1 with Caterham in 2014
+ex_f1,Jaime Alguersuari,spanish,1990-03-23,46,2009-2011,Pirelli F1 test driver,,no,BBC Radio 5 Live summariser in 2012; ADAC GT Masters with Rowe Racing in 2014
+ex_f1,Sébastien Buemi,swiss,1988-10-31,55,2009-2011,Red Bull Racing reserve; WEC with Toyota (3rd in standings),,no,Tied to Red Bull and Toyota
+ex_f1,Nick Heidfeld,german,1977-05-10,183,2000-2011,WEC and ALMS P1 with Rebellion Racing,,no,Age 35 at season start
+ex_f1,Vitantonio Liuzzi,italian,1980-08-06,80,2005-2011,International Superstars Series (Mercedes-AMG Romeo Ferraris); WEC LMP2 with Lotus,,no,Not in F1 since 2011
+ex_f1,Christian Klien,austrian,1983-02-07,49,2004-2006 and 2010,Superstars; Auto GP; ADAC Procar; ELMS LMP2,,no,Guest entries in 2021 DTM with JP Motorsport (McLaren); not eligible for points
+ex_f1,Karun Chandhok,indian,1984-01-19,11,2010-2011,FIA GT Series with Seyffarth Motorsport,,no,
+ex_f1,Narain Karthikeyan,indian,1977-01-14,46,2005 and 2011-2012,Auto GP with Zele Racing then Super Nova Racing (4th),,no,Age 36 at season start
+red_bull,António Félix da Costa,portuguese,1991-08-31,0,,Formula Renault 3.5 with Arden Caterham (3rd); Red Bull junior,BMW 2014-2016,yes,Joined the Red Bull Junior Team mid 2012 replacing Williamson; won 2012 Macau GP; DTM with BMW Team MTEK 2014 and Schnitzer 2015-2016
+red_bull,Carlos Sainz Jr.,spanish,1994-09-01,0,,GP3 with MW Arden (10th); part-season Formula Renault 3.5 with Zeta Corse; Red Bull junior,,yes,No real DTM link; plausible only if Red Bull drops him; F1 with Toro Rosso from 2015
+red_bull,Lewis Williamson,british,1989-11-11,0,,GP3 with Bamboo Engineering (12th),,no,Dropped by Red Bull in June 2012 after scoring no points in Formula Renault 3.5
+red_bull,Alexander Albon,thai,1996-03-23,0,,Eurocup Formula Renault 2.0 with KTR; Formula Renault 2.0 NEC,AF Corse (Ferrari) 2021,no,Dropped by Red Bull at end of 2012; only 16 at season start; races under the Thai flag (dual Thai and British)
+red_bull,Stefan Wackerbauer,german,1995-11-02,0,,Eurocup Formula Renault 2.0 with Interwetten Racing (4 races),,no,Red Bull junior in 2012 only

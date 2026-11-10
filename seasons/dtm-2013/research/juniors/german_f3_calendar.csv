@@ -1,0 +1,10 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2013-04-27,2013-04-28,Motorsport Arena Oschersleben,DEU,3,ADAC GT Masters,ADAC Masters Weekend; event 26-28 April; races 27 Apr (R1 R2) and 28 Apr (R3)
+2,2013-05-11,2013-05-12,Circuit de Spa-Francorchamps,BEL,3,ADAC GT Masters,ADAC Masters Weekend; event 10-12 May; only round outside Germany
+3,2013-05-18,2013-05-19,Nürburgring,DEU,2,24 Hours Nürburgring,support of ADAC Zurich 24h race; event 17-19 May; race 2 cancelled after fog changed the schedule; layout used not confirmed
+4,2013-06-08,2013-06-09,Sachsenring,DEU,3,ADAC GT Masters,ADAC Masters Weekend; event 7-9 June
+5,2013-06-15,2013-06-16,Lausitzring,DEU,3,DTM,DTM support round (DTM race 16 June); event 14-16 June
+6,2013-08-03,2013-08-04,Nürburgring,DEU,3,ADAC GT Masters,ADAC Masters Weekend; event 2-4 August
+7,2013-08-31,2013-09-01,Lausitzring,DEU,3,ADAC GT Masters,ADAC Masters Weekend; event 30 Aug - 1 Sep
+8,2013-09-14,2013-09-15,Motorsport Arena Oschersleben,DEU,3,DTM,DTM support round (DTM race 15 September); event 13-15 September
+9,2013-09-28,2013-09-29,Hockenheimring,DEU,3,ADAC GT Masters,ADAC Masters Weekend season finale; event 27-29 September

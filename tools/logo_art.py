@@ -37,11 +37,16 @@ Optional layout keys for any source:
                    a wide logo can take up to about 1000.
 * "team_content":  (engines) the logo's size when it stands for a team, see
                    "team_tiles" below.
+* "outline": {"width": px, "opacity": 0-1, "color": [r, g, b]}  a dark edge
+                   around the logo's shape, in tile pixels (about 40 px per
+                   screen pixel at the game's list-icon size), so a chrome
+                   emblem stays visible on light team colours. Default
+                   colour [15, 15, 18].
 
 "team_tiles": "maker" in a season's logos.json puts each team's maker emblem
 (the engine logo of its engine_supplier, from this file or the base's) in
-assets/logos, sized by "team_content" so the emblems keep their TV-graphic
-proportions to each other. The game shows these tiles as small list icons,
+assets/logos, sized by "team_content" (the game draws team icons a little
+smaller than engine icons, so a larger value makes the two columns match). The game shows these tiles as small list icons,
 where a team logo can't be recognised. The team logos are still built, into
 build/art/<season>/team_logos/ (not in the pack or git), for when the game
 shows them larger.
@@ -61,7 +66,7 @@ import math
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageDraw
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from car_art import CACHE, REPO, ams2_texture, commons_png, font, load_json
@@ -174,6 +179,24 @@ def fit_tile(logo, content=CONTENT):
     tile = Image.new("RGBA", (TILE, TILE), (0, 0, 0, 0))
     tile.paste(logo, ((TILE - logo.size[0]) // 2, (TILE - logo.size[1]) // 2), logo)
     return tile
+
+
+def outlined(tile, spec):
+    """Put a dark edge of spec["width"] px around the tile's opaque shape."""
+    if not spec:
+        return tile
+    r = spec["width"]
+    alpha = tile.split()[3]
+    grown = alpha.copy()
+    for dx in range(-r, r + 1):
+        for dy in range(-r, r + 1):
+            if dx * dx + dy * dy <= r * r:
+                grown = ImageChops.lighter(grown, ImageChops.offset(alpha, dx, dy))
+    grown = grown.filter(ImageFilter.GaussianBlur(max(1, r / 8)))
+    grown = grown.point(lambda v: round(v * spec.get("opacity", 1.0)))
+    edge = Image.new("RGBA", tile.size, tuple(spec.get("color", [15, 15, 18])) + (0,))
+    edge.putalpha(grown)
+    return Image.alpha_composite(edge, tile)
 
 
 def crest(spec):
@@ -307,7 +330,8 @@ def team_maker_tiles(season, cfg, zip_path):
             raise SystemExit(f"team {team['name']}: no engine logo for {make!r} to use as its tile")
         if make not in cache:
             spec = engines[make]
-            cache[make] = fit_tile(build_logo(spec, zip_path), spec.get("team_content", spec.get("content", CONTENT)))
+            cache[make] = outlined(fit_tile(build_logo(spec, zip_path), spec.get("team_content", spec.get("content", CONTENT))),
+                                   spec.get("outline"))
         cache[make].save(out_dir / f"{team['name'].replace(' ', '')}.png", optimize=True)
         done.append((team["name"], cache[make]))
         print(f"wrote logos/{team['name'].replace(' ', '')}.png ({make} emblem)")
@@ -337,7 +361,7 @@ def main():
             if args.only and key != args.only:
                 continue
             logo_dir = args.source or folders.get(spec.get("folder", season.name))
-            tile = fit_tile(build_logo(spec, zip_path, logo_dir), spec.get("content", CONTENT))
+            tile = outlined(fit_tile(build_logo(spec, zip_path, logo_dir), spec.get("content", CONTENT)), spec.get("outline"))
             names = [key] + spec.get("also_as", [])
             for name in names:
                 path = out_dir / f"{name.replace(' ', '')}.png"

@@ -1,0 +1,31 @@
+number,driver,nationality,birth_date,entrant,team_base,chassis,engine,rounds,notes
+1,Artem Markelov,russian,1994-09-10,Lotus (Motopark),"Oschersleben, Germany",Dallara F311/002,Volkswagen Power Engine,1-9,Cup class
+2,Emil Bernstorff,british,1993-06-07,Lotus (Motopark),"Oschersleben, Germany",Dallara F308/098,Volkswagen Power Engine,1-9,Cup class; born Middlesex
+3,Marvin Kirchhöfer,german,1994-03-19,Lotus (Motopark),"Oschersleben, Germany",Dallara F308/099,Volkswagen Power Engine,1-9,Cup class; rookie; champion
+4,Sheban Siddiqi,british,1988-03-27,Lotus (Motopark),"Oschersleben, Germany",Dallara F308/096,Volkswagen Power Engine,1-9,Cup class; born Bangalore (India)
+5,Gustavo Menezes,american,1994-09-19,Van Amersfoort Racing,"Huizen, Netherlands",Dallara F308/007,Volkswagen Power Engine,1-9,Cup class; rookie
+12,Jordi Weckx,belgian,1979-03-19,Van Amersfoort Racing,"Huizen, Netherlands",Dallara F308/006,Volkswagen Power Engine,"1-6,9",Cup class
+7,Roman Beregech,russian,1990-02-22,Performance Racing,Sweden,Dallara F308/092,Volkswagen Power Engine,9,Cup class; rookie; guest driver not eligible for points; drove car F308/092 that Jäger used earlier
+8,John Bryant-Meisner,swedish,1994-09-21,Performance Racing,Sweden,Dallara F310/002,Volkswagen Power Engine,1-9,Cup class; rookie
+9,Thomas Jäger,austrian,1994-08-16,Performance Racing,Sweden,Dallara F308/092,Volkswagen Power Engine,1-6,Cup class; rookie
+10,Yannick Mettler,swiss,1989-10-26,Performance Racing,Sweden,Dallara F308/020,Volkswagen Power Engine,1-3,Cup class
+17,Tomasz Krzeminski,polish,1993-03-09,ADM Motorsport,Italy,Dallara F308/014,Volkswagen Power Engine,"1-3,7-9",Cup class; rookie; #17 ADM Motorsport (Dallara F308/014) rounds 1-3; then #11 Performance Racing (Dallara F308/020) rounds 7-9; missed rounds 4-6
+13,Nabil Jeffri,malaysian,1993-10-24,EuroInternational,Italy,Dallara F308/057,Volkswagen Power Engine,1-9,Cup class; rookie; Petronas backed
+14,Aston Hare,south_african,1996-04-12,EuroInternational,Italy,Dallara F311/001,Volkswagen Power Engine,1,Cup class; rookie
+16,Matteo Cairoli,italian,1996-06-01,ADM Motorsport,Italy,Dallara F308/029,Volkswagen Power Engine,1-9,Cup class; rookie; later DTM driver (2026)
+52,Luca Iannaccone,italian,1965-05-22,Aberer Motorsport,Switzerland,Dallara F306/034,Volkswagen,"1-2,4-6,8-9","TROPHY class (rounds 1-2,4-5,8-9); #52 Aberer Motorsport (F306/034 VW) rounds 1-2; #52 TTCmotorsport (F305/002 Mercedes) rounds 4-5; #18 ADM Motorsport (F308/014 VW Power Engine; Cup-class car) round 6; #52 Rennsport Rössler (F305/024 OPC-Challenge) round 8; #52 Franz Wöss Racing (F302/044 OPC-Challenge) round 9; spelt Iannacone in some sources"
+19,Nikita Zlobin,russian,1996-04-04,ADM Motorsport,Italy,Dallara F308/014,Volkswagen Power Engine,7-9,Cup class; rookie; SMP Racing backed
+23,Nicolai Sylvest,danish,1997-06-23,JBR Motorsport & Engineering,Germany,Dallara F309/023,Volkswagen Power Engine,"7,9",Cup class; rookie; en.wikipedia writes chassis as F09/023 (typo for F309)
+51,Michael Aberer,austrian,1971-11-29,Aberer Motorsport,Switzerland,Dallara F306/034,Volkswagen,5,TROPHY class; born Stuttgart; de.wikipedia gives Swiss nationality
+55,Jan Schwitter,swiss,1995-11-02,Rennsport Rössler,Germany,Dallara F305/024,Opel (OPC-Challenge),3,TROPHY class; rookie
+57,Maximilian Hackl,german,1992-11-01,Franz Wöss Racing,Austria,Dallara F305/062,Opel (OPC-Challenge),"1-7,9",TROPHY class
+58,Christopher Höher,austrian,1997-05-19,Franz Wöss Racing,Austria,Dallara F305/040,Opel (OPC-Challenge),7,TROPHY class
+59,Stefan Neuburger,austrian,1982-06-22,Franz Wöss Racing,Austria,Dallara F308/052,Opel (OPC-Challenge),7,TROPHY class
+62,Freddy Killensberger,german,1996-03-02,GU-Racing,Germany,Dallara F305/034,Opel (OPC-Challenge),1-9,TROPHY class; rookie; Trophy runner-up
+63,Sebastian Balthasar,german,1996-08-30,GU-Racing,Germany,Dallara F308/074,Mercedes,1-9,TROPHY class; rookie; Trophy champion; F308 with non-VW engine so Trophy-eligible
+64,Hubertus-Carlos Vier,german,1995-03-05,ADAC Team Nordbayern e.V. (run by TTCmotorsport),Germany,Dallara F305/030,Mercedes,"1-5,9",TROPHY class; rookie; father Reinhard Vier runs TTCmotorsport; de.wikipedia lists rounds 1 and 4 under TTCmotorsport and 2-3/5/9 under ADAC Team Nordbayern (uncertain)
+66,Andreas Germann,german,1964-12-12,CR Racing Team,Germany,Dallara F305/063,Opel (OPC-Challenge),2-9,TROPHY class; also team principal
+77,Christian Zeller,german,1965-09-14,CR Racing Team,Germany,Dallara F308/030,Mercedes,"2-3,5-6,9",TROPHY class
+85,Thomas Amweg,swiss,1985-01-09,CR Racing Team,Germany,Dallara F305/011,Mercedes,"3,6,9",TROPHY class; #85 Jo Zeller Racing round 3; #85 CR Racing Team rounds 6 and 9 (same car F305/011); car prepared by Amweg Motorsport per formel3guide
+88,Thomas Warken,german,1967-02-07,CR Racing Team,Germany,Dallara F303/021,Opel (OPC-Challenge),"2-3,5",TROPHY class
+99,Frank Debruyne,german,1970-11-10,CR Racing Team,Germany,Dallara F303/006,Opel,"7,9",TROPHY class

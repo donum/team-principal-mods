@@ -1,0 +1,11 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2013-03-23,2013-03-24,Autodromo Nazionale Monza,ITA,3,WTCC,Race 1 Saturday; races 2-3 Sunday. Race 3 red-flagged in heavy rain after half distance; half points
+2,2013-04-13,2013-04-14,Silverstone Circuit,GBR,3,FIA WEC,6 Hours of Silverstone; races 1-2 Saturday; race 3 Sunday
+3,2013-05-04,2013-05-05,Hockenheimring,DEU,3,DTM,
+4,2013-05-18,2013-05-19,Brands Hatch,GBR,3,DTM,
+5,2013-06-01,2013-06-02,Red Bull Ring,AUT,3,DTM,
+6,2013-07-13,2013-07-14,Norisring,DEU,3,DTM,Moved back a week after DTM changed its date (calendar revised 19 Dec 2012)
+7,2013-08-17,2013-08-18,Nürburgring,DEU,3,DTM,
+8,2013-09-28,2013-09-29,Circuit Park Zandvoort,NLD,3,DTM,
+9,2013-10-12,2013-10-13,Autodromo Vallelunga Piero Taruffi,ITA,3,Superstars Series,Race 1 Saturday; races 2-3 Sunday
+10,2013-10-19,2013-10-20,Hockenheimring,DEU,3,DTM,DTM finale

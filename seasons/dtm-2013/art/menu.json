@@ -1,0 +1,26 @@
+{
+  "title_bg": {
+    "use": "hockenheim",
+    "photos": {
+      "hockenheim": {
+        "folder": "dtm-2013",
+        "file": "teams/BMW Team Schnitzer/press_bmw/on_track/P90120874_highRes_hockenheim-de-05th-m.jpg",
+        "caption": "Hockenheim, 5 May 2013: Bruno Spengler (BMW Bank M3 DTM) and the field",
+        "rights": "© BMW AG, copyright free for editorial use",
+        "page": "https://newsroom.bmwgroup.com/global/media-library/?tab=image&q=dtm%202013",
+        "crop": [0.0, 0.0, 1.0, 1.0],
+        "grade": "cinematic",
+        "logo_shade": true
+      },
+      "nurburgring": {
+        "folder": "dtm-2013",
+        "file": "teams/BMW Team Schnitzer/press_bmw/on_track/P90131940_highRes_nuerburgring-de-18th.jpg",
+        "caption": "Nürburgring, 18 August 2013: Spengler, Tomczyk, Werner and Glock (BMW M3 DTM)",
+        "rights": "© BMW AG, copyright free for editorial use",
+        "page": "https://newsroom.bmwgroup.com/global/media-library/?tab=image&q=dtm%202013",
+        "crop": [0.0, 0.0, 1.0, 1.0],
+        "grade": "cinematic"
+      }
+    }
+  }
+}
