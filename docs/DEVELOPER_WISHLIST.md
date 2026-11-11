@@ -20,8 +20,8 @@ under "Simplifications".
 | dtm-1990 | A1, B1, B2, D1, E1, E2 |
 | dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
 | dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2012 | A5, B5, B7, C4, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14 |
+| dtm-2012 | A5, B5, B7, C4, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E15 |
+| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15 |
 
 Seasons without a pack yet (research only) are covered for qualifying and
 race rules in [dtm_rules.html](dtm_rules.html), which maps every season's
@@ -282,6 +282,22 @@ rules to these items:
   entry, an optional team logo, and a per-driver flag (for example
   `"junior_eligible": false`) that keeps a free driver out of feeder seats.
 
+### C8. Driver crews per car (endurance) · P3
+- **Needed by:** no current pack. Fits the developers' planned endurance
+  update.
+- **Today:** one driver per car. Session tabs and timing are per driver.
+- **Request:**
+  - Entries as the unit: an entry has a car, a number, a car image (E4)
+    and one to three drivers. Session tabs show entries; the driver card
+    shows the crew.
+  - Drive-time rules as pack data: minimum per driver, maximum stint,
+    maximum total.
+  - Fatigue that rises with stint length, heat and night driving.
+  - A stint planner with an AI plan the player can accept or edit. AI
+    teams use the same rules: swap at a stop that is already needed, give
+    the faster driver the start and the finish, give the better wet driver
+    the rain stint.
+
 ## D. Cars and simulation
 
 ### D1. Touring-car part set · P1
@@ -300,7 +316,9 @@ rules to these items:
   F1 front wing, a rear wing on a pylon). They load from the install
   folder (`ui/assets/aero/frontwing.png`, `rearwing.png`, `floor.png`,
   `diffuser.png`, `sidepod.png`), not from the pack. Swapping them there
-  changes every pack and a game update puts them back. The stat names on
+  changes every pack and a game update puts them back. The Car Setup
+  screen has the same problem: its controls say "Front Wing" and "Change
+  Wing", and a touring car has a front splitter and dive planes instead. The stat names on
   the cards (Low Speed, Dirty Air...) are fixed in code too.
 - **Request (art):** a pack folder for part drawings (for example
   `assets/parts/<part_key>.png`), used before the game's own, and a
@@ -454,6 +472,15 @@ rules to these items:
     ship several images for a team (for example `Cars/<Team>.png`,
     `Cars/<Team>_2.png`) and let the player pick which one the team shows,
     for any team. The 2013 pack has all 22 cars drawn and ready for this.
+  - **Car Setup:** the screen draws the same open-wheel line art for every
+    series. Request: show the selected entry's car image there instead.
+    Fallback: entry image, then team image, then today's line art.
+  - **Team selection:** the screen shows one car per team and the drivers
+    as plain rows. Request: each driver row with portrait and car, and the
+    big car image follows the selected driver. All optional: without
+    per-entry images the team car shows, as today.
+  - **Mockups** of this and E15 for the developers:
+    https://claude.ai/artifact/Akt86veBSfVUJi4L1mYtSU
 
 ### E5. Track editor features · P2
 - **Needed by:** dtm-1991, dtm-2013, dtm-2012.
@@ -591,6 +618,21 @@ rules to these items:
   browser, outside the pack.
 - **Request:** an optional `pit_entry_NN` bank, played as a car crosses
   the pit-lane entry, paired by number like the other pit clips.
+
+### E15. Car and portrait in session screens · P3
+- **Needed by:** dtm-2013, dtm-2012.
+- **Why:** the player knows a car by its livery long before they read the
+  name in the timing tower. The packs ship car images and portraits, but
+  the race screens show neither.
+- **Today:** the in-session driver panel shows name, position and team
+  colour. The driver tabs show a name and a flag. The results podium shows
+  flags.
+- **Request:**
+  - Portrait and car image (E4) in the driver panel header and the driver
+    tabs.
+  - Optional small car thumbnails in the timing tower and results, next to
+    the number and the timing code (C6).
+  - Cars and portraits on the results podium.
 
 ---
 
