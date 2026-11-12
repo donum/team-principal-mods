@@ -1,0 +1,14 @@
+{
+  "$comment": "Pirelli 2011-2013: tyres built to wear out. Every compound wears faster than the base game's, loses grip sooner and drops off a steeper cliff, so a team that is kind to its tyres can beat a faster car. The temperature windows are narrower and lower, so hot races punish cars that run their tyres hot. The game still has three dry compounds; 2012 nominated two of four per race (super soft, soft, medium, hard), which the soft and hard stand in for.",
+  "$merge_base": true,
+  "default_compound": "medium",
+  "mandatory_compound_count": 2,
+  "compounds": {
+    "soft": {"lat_grip_base": 1.022, "long_grip_base": 1.021, "wear_rate_base": 0.047, "wear_grip_loss_lat": 0.08, "wear_grip_loss_long": 0.12,
+             "wear_cliff_onset_pct": 28, "wear_cliff_mult_lat": 2.6, "wear_cliff_mult_long": 2.6, "temp_window_c": [82.0, 96.0]},
+    "medium": {"lat_grip_base": 1.012, "long_grip_base": 1.012, "wear_rate_base": 0.033, "wear_grip_loss_lat": 0.07, "wear_grip_loss_long": 0.1,
+               "wear_cliff_onset_pct": 38, "wear_cliff_mult_lat": 2.3, "wear_cliff_mult_long": 2.3, "temp_window_c": [85.0, 99.0]},
+    "hard": {"wear_rate_base": 0.024, "wear_grip_loss_lat": 0.06, "wear_grip_loss_long": 0.09,
+             "wear_cliff_onset_pct": 48, "wear_cliff_mult_lat": 2.1, "wear_cliff_mult_long": 2.1, "temp_window_c": [90.0, 104.0]}
+  }
+}

@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,10,Lewis Hamilton,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,,1:34.484,+0.000,,qualified,best in Q3; Q1 1:35.793 (1); Q2 1:35.078 (1); Q3 1:34.484 (1); grid 1
+2,7,Kimi Räikkönen,Lotus F1 Team,Lotus E21,,1:34.761,+0.277,,qualified,best in Q3; Q1 1:37.046 (12); Q2 1:35.659 (6); Q3 1:34.761 (2); grid 2
+3,3,Fernando Alonso,Scuderia Ferrari,Ferrari F138,,1:34.788,+0.304,,qualified,best in Q3; Q1 1:36.253 (5); Q2 1:35.148 (2); Q3 1:34.788 (3); grid 3
+4,9,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,,1:34.861,+0.377,,qualified,best in Q3; Q1 1:35.959 (2); Q2 1:35.537 (5); Q3 1:34.861 (4); grid 4
+5,4,Felipe Massa,Scuderia Ferrari,Ferrari F138,,1:34.933,+0.449,,qualified,best in Q3; Q1 1:35.972 (3); Q2 1:35.403 (4); Q3 1:34.933 (5); grid 5
+6,8,Romain Grosjean,Lotus F1 Team,Lotus E21,,1:35.364,+0.880,,qualified,best in Q3; Q1 1:36.929 (8); Q2 1:36.065 (8); Q3 1:35.364 (6); grid 6
+7,19,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR8,,1:35.998,+1.514,,qualified,best in Q3; Q1 1:36.993 (11); Q2 1:36.258 (9); Q3 1:35.998 (7); grid 7
+8,5,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-28,,1:35.784,+1.300,,qualified,best in Q2; Q1 1:36.667 (7); Q2 1:35.784 (7); Q3 2:05.673 (8); grid 8
+9,1,Sebastian Vettel,Infiniti Red Bull Racing,Red Bull RB9,,1:35.343,+0.859,,qualified,best in Q2; Q1 1:36.537 (6); Q2 1:35.343 (3); grid 9
+10,11,Nico Hülkenberg,Sauber F1 Team,Sauber C32,,1:36.261,+1.777,,qualified,best in Q2; Q1 1:36.985 (10); Q2 1:36.261 (10); grid 10
+11,14,Paul di Resta,Sahara Force India F1 Team,Force India VJM06,,1:36.287,+1.803,,qualified,best in Q2; Q1 1:37.478 (15); Q2 1:36.287 (11); grid 11
+12,6,Sergio Pérez,Vodafone McLaren Mercedes,McLaren MP4-28,,1:36.314,+1.830,,qualified,best in Q2; Q1 1:36.952 (9); Q2 1:36.314 (12); grid 12
+13,15,Adrian Sutil,Sahara Force India F1 Team,Force India VJM06,,1:36.405,+1.921,,qualified,best in Q2; Q1 1:37.349 (14); Q2 1:36.405 (13); grid 13
+14,16,Pastor Maldonado,Williams F1 Team,Williams FW35,,1:37.139,+2.655,,qualified,best in Q2; Q1 1:37.281 (13); Q2 1:37.139 (15); grid 14
+15,18,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR8,,1:37.199,+2.715,,qualified,best in Q2; Q1 1:37.508 (16); Q2 1:37.199 (16); grid 15
+16,17,Valtteri Bottas,Williams F1 Team,Williams FW35,,1:37.769,+3.285,,qualified,best in Q1; Q1 1:37.769 (17); grid 16
+17,12,Esteban Gutiérrez,Sauber F1 Team,Sauber C32,,1:37.990,+3.506,,qualified,best in Q1; Q1 1:37.990 (18); grid 17
+18,22,Jules Bianchi,Marussia F1 Team,Marussia MR02,,1:38.780,+4.296,,qualified,best in Q1; Q1 1:38.780 (19); grid 18
+19,23,Max Chilton,Marussia F1 Team,Marussia MR02,,1:39.537,+5.053,,qualified,best in Q1; Q1 1:39.537 (20); grid 19
+20,20,Charles Pic,Caterham F1 Team,Caterham CT03,,1:39.614,+5.130,,qualified,best in Q1; Q1 1:39.614 (21); grid 20
+21,21,Giedo van der Garde,Caterham F1 Team,Caterham CT03,,1:39.660,+5.176,,qualified,best in Q1; Q1 1:39.660 (22); grid 21
+,2,Mark Webber,Infiniti Red Bull Racing,Red Bull RB9,,1:36.148,+1.664,,excluded,"best in Q1; Q1 1:36.148 (4); Q2 1:36.679 (14); Webber originally qualified 14th but was relegated to the back of the grid for failing to provide a one-litre fuel sample after qualifying. The Red Bull team opted to change Webber's gearbox to improve his straight line speed and overtaking ability, obliging them to start from the pit lane.; grid pit lane"

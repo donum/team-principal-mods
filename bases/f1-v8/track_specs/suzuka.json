@@ -1,0 +1,50 @@
+{
+  "id": "suzuka",
+  "name": "Suzuka Circuit",
+  "nationality": "japanese",
+  "bbox": [
+    136.52,
+    34.8375,
+    136.5448,
+    34.8498
+  ],
+  "length_km": 5.807,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 53,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.65,
+  "pit_lane_loss_s": 22.0,
+  "tyre_wear_mult": 1.25,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.4,
+  "pole_side": "right",
+  "drs_zones": [
+    {
+      "detection_progress": 0.9683,
+      "start_progress": 0.0083,
+      "end_progress": 0.1294
+    }
+  ],
+  "notes": "Suzuka Circuit, Grand Prix course (figure of eight, the lap crosses itself on a bridge before 130R). Raceway loop. The karting and leisure tracks in the park are excluded by name and id. The crossing needs no special handling: the bridge way shares no node with the track below. Traced 5757 m vs 5807 m. Start line from the middle of the pit lane. One DRS zone on the pit straight as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Pit Lane"
+  ],
+  "exclude_way_names": [
+    "Pit Lane",
+    "West Circuit Pit Lane",
+    "ene-1",
+    "DREAM R",
+    "アクロエックス エボリューション",
+    "プッチグランプリ",
+    "チララのフラワーワゴン",
+    "ツーリングバイク コースマップ",
+    "アドバンスカート"
+  ],
+  "exclude_way_ids": [
+    "183393709",
+    "466005789",
+    "153525062"
+  ],
+  "assemble_multipolygons": true
+}

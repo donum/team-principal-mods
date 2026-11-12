@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,6,Mark Webber,Red Bull Racing,Red Bull RB6,66,1:35:44.101,,1:24.828,classified,grid 1; 25 pts
+2,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,66,1:36:08.166,+24.065,1:24.846,classified,grid 4; 18 pts
+3,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,66,1:36:35.439,+51.338,1:25.176,classified,grid 2; 15 pts
+4,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,66,1:36:46.296,+1:02.195,1:25.529,classified,grid 6; 12 pts
+5,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,66,1:36:47.829,+1:03.728,1:25.166,classified,grid 5; 10 pts
+6,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,66,1:36:49.868,+1:05.767,1:25.497,classified,grid 9; 8 pts
+7,14,Adrian Sutil,Force India F1 Team,Force India VJM03,66,1:36:57.042,+1:12.941,1:25.845,classified,grid 11; 6 pts
+8,11,Robert Kubica,Renault F1 Team,Renault R30,66,1:36:57.778,+1:13.677,1:25.466,classified,grid 7; 4 pts
+9,9,Rubens Barrichello,AT&T Williams,Williams FW32,65,,+1 lap,1:25.728,classified,grid 17; 2 pts
+10,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,65,,+1 lap,1:25.655,classified,grid 15; 1 pts
+11,12,Vitaly Petrov,Renault F1 Team,Renault R30,65,,+1 lap,1:25.470,classified,grid 19; 0 pts
+12,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,65,,+1 lap,1:26.083,classified,grid 10; 0 pts
+13,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,65,,+1 lap,1:25.455,classified,grid 8; 0 pts
+14,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,64,,+2 laps,1:24.357,classified,"Puncture, classified as he completed 90% of the distance; grid 3; 0 pts; Lewis Hamilton's accident was caused by a damaged wheel rim that punctured his tyre."
+15,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,64,,+2 laps,1:25.924,classified,"Engine, classified as he completed 90% of the distance; grid 16; 0 pts"
+16,10,Nico Hülkenberg,AT&T Williams,Williams FW32,64,,+2 laps,1:26.863,classified,grid 13; 0 pts
+17,18,Jarno Trulli,Lotus Racing,Lotus T127,63,,+3 laps,1:29.564,classified,grid 18; 0 pts
+18,24,Timo Glock,Virgin Racing,Virgin VR-01,63,,+3 laps,1:29.776,classified,grid 22; 0 pts
+19,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,62,,+4 laps,1:29.904,classified,grid 23; 0 pts
+,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,42,,,1:26.724,DNF,Hydraulics; grid 14; 0 pts
+,20,Karun Chandhok,Hispania Racing F1 Team,Hispania F110,27,,,1:32.041,DNF,Suspension (en.wiki: Collision damage); grid 24; 0 pts
+,22,Pedro de la Rosa,BMW Sauber F1 Team,Sauber C29,18,,,1:30.411,DNF,Collision; grid 12; 0 pts; en.wiki gives 20 laps
+,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,0,,,,DNF,Accident; grid 21; 0 pts
+,19,Heikki Kovalainen,Lotus Racing,Lotus T127,0,,,,DNS,Gearbox; grid 20; 0 pts

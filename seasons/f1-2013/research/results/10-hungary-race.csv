@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,10,Lewis Hamilton,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,70,1:42:29.445,,1:24.647,classified,grid 1; 3 pit stops; 25 pts
+2,7,Kimi Räikkönen,Lotus F1 Team,Lotus E21,70,1:42:40.383,+10.938,1:25.260,classified,grid 6; 2 pit stops; 18 pts
+3,1,Sebastian Vettel,Infiniti Red Bull Racing,Red Bull RB9,70,1:42:41.904,+12.459,1:24.553,classified,grid 2; 3 pit stops; 15 pts
+4,2,Mark Webber,Infiniti Red Bull Racing,Red Bull RB9,70,1:42:47.489,+18.044,1:24.069,classified,grid 10; 3 pit stops; 12 pts
+5,3,Fernando Alonso,Scuderia Ferrari,Ferrari F138,70,1:43:00.856,+31.411,1:25.394,classified,grid 5; 3 pit stops; 10 pts
+6,8,Romain Grosjean,Lotus F1 Team,Lotus E21,70,1:43:21.740,+52.295,1:25.328,classified,"grid 3; 4 pit stops; 8 pts; Romain Grosjean was given a 20-second post-race penalty in lieu of a drive-through penalty for hitting Jenson Button's McLaren during an overtake attempt. Grosjean's time difference to race winner Lewis Hamilton was +32.295 at the finish line, and the post-race penalty did not thus affect final race standings."
+7,5,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-28,70,1:43:23.264,+53.819,1:26.195,classified,grid 13; 2 pit stops; 6 pts
+8,4,Felipe Massa,Scuderia Ferrari,Ferrari F138,70,1:43:25.892,+56.447,1:25.176,classified,grid 7; 3 pit stops; 4 pts
+9,6,Sergio Pérez,Vodafone McLaren Mercedes,McLaren MP4-28,69,,+1 lap,1:26.143,classified,grid 9; 2 pit stops; 2 pts
+10,16,Pastor Maldonado,Williams F1 Team,Williams FW35,69,,+1 lap,1:25.597,classified,grid 15; 3 pit stops; 1 pts
+11,11,Nico Hülkenberg,Sauber F1 Team,Sauber C32,69,,+1 lap,1:26.740,classified,grid 12; 3 pit stops; 0 pts
+12,18,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR8,69,,+1 lap,1:26.491,classified,grid 14; 3 pit stops; 0 pts
+13,19,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR8,69,,+1 lap,1:26.863,classified,grid 8; 2 pit stops; 0 pts
+14,21,Giedo van der Garde,Caterham F1 Team,Caterham CT03,68,,+2 laps,1:27.473,classified,grid 20; 3 pit stops; 0 pts
+15,20,Charles Pic,Caterham F1 Team,Caterham CT03,68,,+2 laps,1:27.725,classified,grid 19; 2 pit stops; 0 pts
+16,22,Jules Bianchi,Marussia F1 Team,Marussia MR02,67,,+3 laps,1:28.250,classified,grid 21; 3 pit stops; 0 pts
+17,23,Max Chilton,Marussia F1 Team,Marussia MR02,67,,+3 laps,1:28.160,classified,grid 22; 3 pit stops; 0 pts
+18,14,Paul di Resta,Sahara Force India F1 Team,Force India VJM06,66,,+4 laps,1:26.608,classified,"Hydraulics, classified as he completed 90% of the distance; grid 18; 3 pit stops; 0 pts"
+19,9,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,64,,+6 laps,1:25.089,classified,"Engine, classified as he completed 90% of the distance; grid 4; 3 pit stops; 0 pts"
+,17,Valtteri Bottas,Williams F1 Team,Williams FW35,42,,,1:27.127,DNF,Hydraulics; grid 16; 2 pit stops; 0 pts
+,12,Esteban Gutiérrez,Sauber F1 Team,Sauber C32,28,,,1:29.135,DNF,Transmission; grid 17; 1 pit stop; 0 pts
+,15,Adrian Sutil,Sahara Force India F1 Team,Force India VJM06,19,,,1:28.548,DNF,Hydraulics; grid 11; 0 pit stops; 0 pts

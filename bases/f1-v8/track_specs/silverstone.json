@@ -1,0 +1,35 @@
+{
+  "id": "silverstone",
+  "name": "Silverstone",
+  "nationality": "british",
+  "bbox": [
+    -1.026,
+    52.0617,
+    -1.0058,
+    52.082
+  ],
+  "length_km": 5.891,
+  "width_m": 15.0,
+  "speed_scale": 1.0,
+  "race_laps": 52,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.55,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.25,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.5,
+  "pole_side": "right",
+  "drs_zones": [
+    {
+      "detection_progress": 0.1635,
+      "start_progress": 0.2035,
+      "end_progress": 0.3009
+    }
+  ],
+  "notes": "Silverstone Arena Grand Prix layout from 2011 (clockwise). Raceway loop. Traced 5827 m vs 5891 m. Start line on the Hamilton Straight between Club and Abbey, level with the Wing. One DRS zone on the Wellington Straight as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "start": [
+    52.06934,
+    -1.02214
+  ],
+  "assemble_multipolygons": true
+}

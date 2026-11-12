@@ -1,0 +1,117 @@
+{
+  "id": "nuerburgring",
+  "name": "Nürburgring",
+  "nationality": "german",
+  "bbox": [
+    6.918,
+    50.322,
+    6.952,
+    50.345
+  ],
+  "length_km": 5.148,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 60,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.55,
+  "pit_lane_loss_s": 19.0,
+  "tyre_wear_mult": 1.0,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.4,
+  "pole_side": "right",
+  "drs_zones": [
+    {
+      "detection_progress": 0.9246,
+      "start_progress": 0.9646,
+      "end_progress": 0.1124
+    }
+  ],
+  "notes": "Nurburgring Grand Prix circuit with the Mercedes Arena (clockwise), the F1 layout of 2011 and 2013. Via route over the raceways as in dtm-1991 nuerburgring, with the 'Variante 24h-Rennen' (way 31010602) and the motorcycle NGK chicane (way 820679450) excluded, so the lap takes the Mercedes Arena and the F1 chicane. Traced 5063 m vs 5148 m. Start line as in dtm-era4 nuerburgring13. 60 laps (2011). One DRS zone on the pit straight; the 2011 and 2013 zone position is not verified. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Boxengasse"
+  ],
+  "route_ways": [
+    {
+      "highway": "raceway"
+    }
+  ],
+  "exclude_way_ids": [
+    "1113008496",
+    "1113008498",
+    "1113008501",
+    "1113008502",
+    "1113009320",
+    "1113009321",
+    "1113009324",
+    "1113009325",
+    "1113009326",
+    "1113009622",
+    "30815119",
+    "46194345",
+    "769107218",
+    "26543901",
+    "799394496",
+    "799394497",
+    "41395681",
+    "41395684",
+    "1009142894",
+    "1009142895",
+    "41395670",
+    "41395668",
+    "41395673",
+    "799394495",
+    "27852583",
+    "31009257",
+    "32894824",
+    "32894825",
+    "32894842",
+    "199642469",
+    "199642470",
+    "710354617",
+    "31010602",
+    "820679450"
+  ],
+  "via": [
+    [
+      50.33456,
+      6.94412
+    ],
+    [
+      50.33214,
+      6.94049
+    ],
+    [
+      50.32959,
+      6.93912
+    ],
+    [
+      50.32739,
+      6.94049
+    ],
+    [
+      50.3255,
+      6.93666
+    ],
+    [
+      50.32404,
+      6.93431
+    ],
+    [
+      50.32727,
+      6.93725
+    ],
+    [
+      50.33261,
+      6.93635
+    ],
+    [
+      50.33708,
+      6.94664
+    ]
+  ],
+  "start": [
+    50.33535,
+    6.94714
+  ],
+  "assemble_multipolygons": true
+}

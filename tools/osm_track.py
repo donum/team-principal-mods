@@ -377,6 +377,27 @@ def render(path_png, proj, to_px, nodes, ways, relations, loop_px, pit_px, width
     def fill_areas(match, color):
         polys = [ring(wid) for wid, w in ways.items()
                  if match(w["tags"]) and w["nds"][0] == w["nds"][-1] and not modern(wid)]
+        if spec.get("assemble_multipolygons"):
+            # Join each multipolygon's member ways into rings and cut its inner
+            # rings out (islands in a river). Rings left open by the download
+            # area are skipped: closing them with a straight line floods the map.
+            for rel in relations:
+                if match(rel["tags"]):
+                    mask = Image.new("L", img.size, 0)
+                    mdraw = ImageDraw.Draw(mask)
+                    for role, fill in (("outer", 255), ("inner", 0)):
+                        for nds in join_rings([ways[ref]["nds"] for ref, r in rel["members"]
+                                               if r == role and ref in ways]):
+                            pts = [px(n) for n in nds if n in nodes]
+                            if len(pts) >= 3:
+                                mdraw.polygon(pts, fill=fill)
+                                if fill:
+                                    polys.append(pts)
+                    img.paste(color, None, mask)
+            for poly in polys:
+                if len(poly) >= 3:
+                    draw.polygon(poly, fill=color)
+            return polys
         for rel in relations:
             if match(rel["tags"]):
                 polys += [ring(ref) for ref, role in rel["members"] if role == "outer"]
@@ -444,6 +465,34 @@ def thick_line(draw, pts, color, width):
     r = width / 2
     for x, y in pts:
         draw.ellipse([x - r, y - r, x + r, y + r], fill=color)
+
+
+def join_rings(chains):
+    """Join way node lists end to end into closed rings; open chains are dropped."""
+    chains = [list(c) for c in chains if len(c) > 1]
+    rings = []
+    while chains:
+        cur = chains.pop()
+        grown = True
+        while cur[0] != cur[-1] and grown:
+            grown = False
+            for i, c in enumerate(chains):
+                if c[0] == cur[-1]:
+                    cur += c[1:]
+                elif c[-1] == cur[-1]:
+                    cur += c[-2::-1]
+                elif c[-1] == cur[0]:
+                    cur = c[:-1] + cur
+                elif c[0] == cur[0]:
+                    cur = c[:0:-1] + cur
+                else:
+                    continue
+                chains.pop(i)
+                grown = True
+                break
+        if cur[0] == cur[-1]:
+            rings.append(cur)
+    return rings
 
 
 def point_in_poly(x, y, poly):

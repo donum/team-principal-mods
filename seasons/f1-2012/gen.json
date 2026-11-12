@@ -1,0 +1,1398 @@
+{
+  "$comment": "F1 2012, tuned for its story: the top six cars start within about a point of each other, each strong on a different kind of corner, and the Pirelli tyres plus a large weekend variability shuffle the order, so the opening races should have many different winners. Red Bull starts on par but has the most headroom and the best people (Newey), so it should pull away in the second half. Ratings are design choices, checked with tools/simulate.py against research/.",
+  "base": "f1-v8",
+  "year": 2012,
+  "title": "Formula 1 2012",
+  "pack_folder": "f1-2012",
+  "teams": {
+    "Red Bull Racing": {
+      "entrants": [
+        "Red Bull Racing"
+      ],
+      "make": "Renault",
+      "clone": "Red Boar",
+      "nationality": "austrian",
+      "previous_position": 1,
+      "color": [
+        18,
+        30,
+        72
+      ],
+      "secondary": [
+        220,
+        30,
+        50
+      ],
+      "rating": 52.0,
+      "profile": "rb8",
+      "potential": 9.0,
+      "staff_level": 18,
+      "budget_m": 340,
+      "starting_balance_m": 60.0,
+      "engine_contract_type": "partner",
+      "headquarters": {
+        "hospitality_pr_center": 5,
+        "wind_tunnel": 5,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 5,
+        "cfd_center": 4,
+        "recon_centre": 3,
+        "driver_centre": 4
+      },
+      "prestige": {
+        "heritage": 72,
+        "form": 92,
+        "base": 80
+      },
+      "difficulty": "easy",
+      "chassis": {
+        "prefix": "RB",
+        "names": {
+          "2010": "RB6",
+          "2011": "RB7",
+          "2012": "RB8",
+          "2013": "RB9"
+        }
+      },
+      "history": "Based in Milton Keynes. Took over Jaguar Racing in 2005. Won both titles in 2010 and 2011 with cars by Adrian Newey."
+    },
+    "McLaren": {
+      "entrants": [
+        "Vodafone McLaren Mercedes"
+      ],
+      "make": "Mercedes",
+      "clone": "McMean",
+      "nationality": "british",
+      "previous_position": 2,
+      "color": [
+        200,
+        200,
+        205
+      ],
+      "secondary": [
+        200,
+        20,
+        30
+      ],
+      "rating": 52.6,
+      "profile": "mp4_27",
+      "potential": 6.0,
+      "staff_level": 16,
+      "budget_m": 320,
+      "starting_balance_m": 55.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 5,
+        "wind_tunnel": 4,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 5,
+        "cfd_center": 4,
+        "recon_centre": 3,
+        "driver_centre": 5
+      },
+      "prestige": {
+        "heritage": 92,
+        "form": 86,
+        "base": 85
+      },
+      "difficulty": "easy",
+      "chassis": {
+        "prefix": "MP4-",
+        "names": {
+          "2010": "MP4-25",
+          "2011": "MP4-26",
+          "2012": "MP4-27",
+          "2013": "MP4-28"
+        }
+      },
+      "history": "Founded by Bruce McLaren in 1963. Based in Woking. Has won eight constructors' titles. Uses Mercedes engines."
+    },
+    "Ferrari": {
+      "entrants": [
+        "Scuderia Ferrari"
+      ],
+      "make": "Ferrari",
+      "clone": "Scuderia Rossa",
+      "nationality": "italian",
+      "previous_position": 3,
+      "color": [
+        205,
+        20,
+        20
+      ],
+      "secondary": [
+        255,
+        220,
+        0
+      ],
+      "rating": 51.4,
+      "profile": "f2012",
+      "potential": 7.0,
+      "staff_level": 16,
+      "budget_m": 360,
+      "starting_balance_m": 65.0,
+      "engine_contract_type": "works",
+      "headquarters": {
+        "hospitality_pr_center": 5,
+        "wind_tunnel": 3,
+        "engine_plant": 4,
+        "test_track": 2,
+        "factory": 5,
+        "cfd_center": 3,
+        "recon_centre": 3,
+        "driver_centre": 5
+      },
+      "prestige": {
+        "heritage": 100,
+        "form": 84,
+        "base": 92
+      },
+      "difficulty": "easy",
+      "chassis": {
+        "prefix": "F",
+        "names": {
+          "2010": "F10",
+          "2011": "150° Italia",
+          "2012": "F2012",
+          "2013": "F138"
+        }
+      },
+      "history": "Racing in the championship since 1950, the only team in every season. Based in Maranello. Builds its own engines."
+    },
+    "Lotus": {
+      "entrants": [
+        "Lotus F1 Team"
+      ],
+      "make": "Renault",
+      "clone": "French Blue",
+      "nationality": "british",
+      "previous_position": 5,
+      "color": [
+        20,
+        20,
+        20
+      ],
+      "secondary": [
+        200,
+        170,
+        70
+      ],
+      "rating": 51.9,
+      "profile": "e20",
+      "potential": 4.0,
+      "staff_level": 14,
+      "budget_m": 230,
+      "starting_balance_m": 30.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 3,
+        "wind_tunnel": 4,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 4,
+        "cfd_center": 3,
+        "recon_centre": 2,
+        "driver_centre": 3
+      },
+      "prestige": {
+        "heritage": 70,
+        "form": 72,
+        "base": 70
+      },
+      "difficulty": "medium",
+      "chassis": {
+        "prefix": "E",
+        "names": {
+          "2012": "E20",
+          "2013": "E21"
+        }
+      },
+      "history": "Based in Enstone. Raced as Toleman, Benetton and Renault before. Renamed Lotus F1 Team in 2012. Uses Renault engines."
+    },
+    "Mercedes": {
+      "entrants": [
+        "Mercedes AMG Petronas F1 Team"
+      ],
+      "make": "Mercedes",
+      "clone": "Mercurion",
+      "nationality": "german",
+      "previous_position": 4,
+      "color": [
+        170,
+        175,
+        180
+      ],
+      "secondary": [
+        0,
+        160,
+        150
+      ],
+      "rating": 51.8,
+      "profile": "w03",
+      "potential": 2.5,
+      "staff_level": 15,
+      "budget_m": 300,
+      "starting_balance_m": 50.0,
+      "engine_contract_type": "works",
+      "headquarters": {
+        "hospitality_pr_center": 4,
+        "wind_tunnel": 4,
+        "engine_plant": 4,
+        "test_track": 0,
+        "factory": 5,
+        "cfd_center": 4,
+        "recon_centre": 2,
+        "driver_centre": 4
+      },
+      "prestige": {
+        "heritage": 78,
+        "form": 70,
+        "base": 76
+      },
+      "difficulty": "medium",
+      "chassis": {
+        "prefix": "W",
+        "names": {
+          "2010": "MGP W01",
+          "2011": "MGP W02",
+          "2012": "F1 W03",
+          "2013": "F1 W04"
+        }
+      },
+      "history": "Based in Brackley. Raced as BAR, Honda and Brawn, the 2009 champions. The Mercedes works team since 2010."
+    },
+    "Sauber": {
+      "entrants": [
+        "Sauber F1 Team"
+      ],
+      "make": "Ferrari",
+      "clone": "Audex",
+      "nationality": "swiss",
+      "previous_position": 7,
+      "color": [
+        245,
+        245,
+        245
+      ],
+      "secondary": [
+        30,
+        40,
+        90
+      ],
+      "rating": 51.0,
+      "profile": "c31",
+      "potential": 4.0,
+      "staff_level": 11,
+      "budget_m": 190,
+      "starting_balance_m": 22.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 2,
+        "wind_tunnel": 4,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 3,
+        "cfd_center": 2,
+        "recon_centre": 2,
+        "driver_centre": 2
+      },
+      "prestige": {
+        "heritage": 58,
+        "form": 58,
+        "base": 56
+      },
+      "difficulty": "medium",
+      "chassis": {
+        "prefix": "C",
+        "names": {
+          "2010": "C29",
+          "2011": "C30",
+          "2012": "C31",
+          "2013": "C32"
+        }
+      },
+      "history": "Founded by Peter Sauber. Based in Hinwil, Switzerland. In the championship since 1993. Uses Ferrari engines."
+    },
+    "Force India": {
+      "entrants": [
+        "Sahara Force India F1 Team"
+      ],
+      "make": "Mercedes",
+      "clone": "Ashton Darting",
+      "nationality": "indian",
+      "previous_position": 6,
+      "color": [
+        255,
+        255,
+        255
+      ],
+      "secondary": [
+        240,
+        110,
+        20
+      ],
+      "rating": 50.3,
+      "profile": "vjm05",
+      "potential": 4.0,
+      "staff_level": 11,
+      "budget_m": 180,
+      "starting_balance_m": 20.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 3,
+        "wind_tunnel": 2,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 3,
+        "cfd_center": 2,
+        "recon_centre": 1,
+        "driver_centre": 2
+      },
+      "prestige": {
+        "heritage": 52,
+        "form": 58,
+        "base": 54
+      },
+      "difficulty": "medium",
+      "chassis": {
+        "prefix": "VJM",
+        "names": {
+          "2010": "VJM03",
+          "2011": "VJM04",
+          "2012": "VJM05",
+          "2013": "VJM06"
+        }
+      },
+      "history": "Based in Silverstone, at the old Jordan factory. Owned by Vijay Mallya and Sahara. Uses Mercedes engines."
+    },
+    "Williams": {
+      "entrants": [
+        "Williams F1 Team"
+      ],
+      "make": "Renault",
+      "clone": "Willens Racing",
+      "nationality": "british",
+      "previous_position": 9,
+      "color": [
+        10,
+        30,
+        80
+      ],
+      "secondary": [
+        255,
+        255,
+        255
+      ],
+      "rating": 50.9,
+      "profile": "fw34",
+      "potential": 2.5,
+      "staff_level": 12,
+      "budget_m": 200,
+      "starting_balance_m": 25.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 3,
+        "wind_tunnel": 3,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 4,
+        "cfd_center": 2,
+        "recon_centre": 2,
+        "driver_centre": 3
+      },
+      "prestige": {
+        "heritage": 88,
+        "form": 46,
+        "base": 66
+      },
+      "difficulty": "medium",
+      "chassis": {
+        "prefix": "FW",
+        "names": {
+          "2010": "FW32",
+          "2011": "FW33",
+          "2012": "FW34",
+          "2013": "FW35"
+        }
+      },
+      "history": "Founded by Frank Williams and Patrick Head. Based in Grove. Has won nine constructors' titles. Back to Renault engines in 2012."
+    },
+    "Toro Rosso": {
+      "entrants": [
+        "Scuderia Toro Rosso"
+      ],
+      "make": "Ferrari",
+      "clone": "Alpha Bison",
+      "nationality": "italian",
+      "previous_position": 8,
+      "color": [
+        20,
+        40,
+        110
+      ],
+      "secondary": [
+        200,
+        20,
+        40
+      ],
+      "rating": 49.0,
+      "profile": "str7",
+      "potential": 3.0,
+      "staff_level": 10,
+      "budget_m": 190,
+      "starting_balance_m": 20.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 2,
+        "wind_tunnel": 2,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 3,
+        "cfd_center": 2,
+        "recon_centre": 1,
+        "driver_centre": 3
+      },
+      "prestige": {
+        "heritage": 50,
+        "form": 48,
+        "base": 50
+      },
+      "difficulty": "hard",
+      "chassis": {
+        "prefix": "STR",
+        "names": {
+          "2010": "STR5",
+          "2011": "STR6",
+          "2012": "STR7",
+          "2013": "STR8"
+        }
+      },
+      "history": "Based in Faenza. Red Bull's second team since 2006, formerly Minardi. Sebastian Vettel won here in 2008. Uses Ferrari engines."
+    },
+    "Caterham": {
+      "entrants": [
+        "Caterham F1 Team"
+      ],
+      "make": "Renault",
+      "clone": "Cadylacky Motors",
+      "nationality": "malaysian",
+      "previous_position": 10,
+      "color": [
+        0,
+        90,
+        50
+      ],
+      "secondary": [
+        255,
+        210,
+        0
+      ],
+      "rating": 46.5,
+      "profile": "ct01",
+      "potential": 3.0,
+      "staff_level": 9,
+      "budget_m": 160,
+      "starting_balance_m": 18.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 2,
+        "wind_tunnel": 2,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 3,
+        "cfd_center": 2,
+        "recon_centre": 1,
+        "driver_centre": 2
+      },
+      "prestige": {
+        "heritage": 36,
+        "form": 36,
+        "base": 38
+      },
+      "difficulty": "hard",
+      "chassis": {
+        "prefix": "CT",
+        "names": {
+          "2012": "CT01",
+          "2013": "CT03"
+        }
+      },
+      "history": "Founded by Tony Fernandes as Lotus Racing in 2010. Raced as Team Lotus in 2011, Caterham from 2012. Based in Leafield."
+    },
+    "Marussia": {
+      "entrants": [
+        "Marussia F1 Team"
+      ],
+      "make": "Cosworth",
+      "clone": "Hossden GP",
+      "nationality": "russian",
+      "previous_position": 12,
+      "color": [
+        30,
+        30,
+        30
+      ],
+      "secondary": [
+        200,
+        20,
+        30
+      ],
+      "rating": 44.5,
+      "profile": "mr01",
+      "potential": 3.0,
+      "staff_level": 7,
+      "budget_m": 120,
+      "starting_balance_m": 12.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 1,
+        "wind_tunnel": 1,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 2,
+        "cfd_center": 3,
+        "recon_centre": 1,
+        "driver_centre": 1
+      },
+      "prestige": {
+        "heritage": 30,
+        "form": 30,
+        "base": 30
+      },
+      "difficulty": "hard",
+      "chassis": {
+        "prefix": "MR",
+        "names": {
+          "2012": "MR01",
+          "2013": "MR02"
+        }
+      },
+      "history": "Entered in 2010 as Virgin Racing. Based in Banbury. Russian owned. First car with a wind tunnel in 2012."
+    },
+    "HRT": {
+      "entrants": [
+        "HRT Formula 1 Team",
+        "HRT F1 Team"
+      ],
+      "make": "Cosworth",
+      "clone": "Hossden GP",
+      "nationality": "spanish",
+      "previous_position": 11,
+      "color": [
+        230,
+        230,
+        230
+      ],
+      "secondary": [
+        170,
+        20,
+        30
+      ],
+      "rating": 43.5,
+      "profile": "f112",
+      "potential": 2.0,
+      "staff_level": 5,
+      "budget_m": 100,
+      "starting_balance_m": 8.0,
+      "engine_contract_type": "customer",
+      "headquarters": {
+        "hospitality_pr_center": 1,
+        "wind_tunnel": 0,
+        "engine_plant": 0,
+        "test_track": 0,
+        "factory": 1,
+        "cfd_center": 1,
+        "recon_centre": 0,
+        "driver_centre": 1
+      },
+      "prestige": {
+        "heritage": 26,
+        "form": 26,
+        "base": 26
+      },
+      "difficulty": "hard",
+      "chassis": {
+        "prefix": "F1",
+        "names": {
+          "2012": "F112"
+        }
+      },
+      "history": "Entered in 2010 as Hispania Racing. Moved to Madrid in 2012. Spanish owned since 2011."
+    }
+  },
+  "profiles": {
+    "$comment": "Car character, deltas over a team's rating. Each top car has its own strong kind of track, so the order changes from race to race.",
+    "rb8": {
+      "high": 2,
+      "med": 1,
+      "slow": 0,
+      "straight": -2,
+      "braking": 1,
+      "acceleration": 0,
+      "tyre_management": 0,
+      "chassis_reliability": 0,
+      "aero_efficiency_rating": 3,
+      "dirty_air_sensitivity": 2
+    },
+    "mp4_27": {
+      "high": 1,
+      "med": 1,
+      "slow": 0,
+      "straight": 1,
+      "braking": 1,
+      "acceleration": 0,
+      "tyre_management": -1,
+      "chassis_reliability": -2,
+      "aero_efficiency_rating": 2,
+      "dirty_air_sensitivity": 0
+    },
+    "f2012": {
+      "high": -1,
+      "med": 0,
+      "slow": 1,
+      "straight": 1,
+      "braking": 0,
+      "acceleration": 2,
+      "tyre_management": 1,
+      "chassis_reliability": 3,
+      "aero_efficiency_rating": 0,
+      "dirty_air_sensitivity": -2
+    },
+    "e20": {
+      "high": 1,
+      "med": 1,
+      "slow": 0,
+      "straight": -2,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 4,
+      "chassis_reliability": 1,
+      "aero_efficiency_rating": 1,
+      "dirty_air_sensitivity": -2
+    },
+    "w03": {
+      "high": -1,
+      "med": 0,
+      "slow": 1,
+      "straight": 3,
+      "braking": 0,
+      "acceleration": 1,
+      "tyre_management": -4,
+      "chassis_reliability": -2,
+      "aero_efficiency_rating": 2,
+      "dirty_air_sensitivity": 2
+    },
+    "c31": {
+      "high": -1,
+      "med": 1,
+      "slow": 1,
+      "straight": -1,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 4,
+      "chassis_reliability": 0,
+      "aero_efficiency_rating": 0,
+      "dirty_air_sensitivity": -3
+    },
+    "vjm05": {
+      "high": 0,
+      "med": 0,
+      "slow": -1,
+      "straight": 1,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 2,
+      "chassis_reliability": 1,
+      "aero_efficiency_rating": 0,
+      "dirty_air_sensitivity": 0
+    },
+    "fw34": {
+      "high": 0,
+      "med": 1,
+      "slow": 1,
+      "straight": -1,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 2,
+      "chassis_reliability": -1,
+      "aero_efficiency_rating": 0,
+      "dirty_air_sensitivity": 0
+    },
+    "str7": {
+      "high": 0,
+      "med": 0,
+      "slow": 0,
+      "straight": 1,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 0,
+      "chassis_reliability": 0,
+      "aero_efficiency_rating": 0,
+      "dirty_air_sensitivity": 0
+    },
+    "ct01": {
+      "high": 0,
+      "med": 0,
+      "slow": 0,
+      "straight": 0,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 0,
+      "chassis_reliability": 1,
+      "aero_efficiency_rating": -2,
+      "dirty_air_sensitivity": 0
+    },
+    "mr01": {
+      "high": -1,
+      "med": 0,
+      "slow": 0,
+      "straight": 0,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 0,
+      "chassis_reliability": 1,
+      "aero_efficiency_rating": -3,
+      "dirty_air_sensitivity": 0
+    },
+    "f112": {
+      "high": -1,
+      "med": -1,
+      "slow": 0,
+      "straight": 0,
+      "braking": 0,
+      "acceleration": 0,
+      "tyre_management": 0,
+      "chassis_reliability": -2,
+      "aero_efficiency_rating": -4,
+      "dirty_air_sensitivity": 0
+    }
+  },
+  "drivers": {
+    "$comment": "Hand-set skills (1-20) and talent. The top drivers are close, so a good weekend decides; traits follow each driver's 2012 reputation.",
+    "Sebastian Vettel": {
+      "cornering": 19,
+      "braking": 19,
+      "consistency": 18,
+      "smoothness": 18,
+      "control": 19,
+      "talent": 97,
+      "traits": [
+        "hotlapper",
+        "clean_air_merchant"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 15.0
+      }
+    },
+    "Mark Webber": {
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 16,
+      "control": 17,
+      "talent": 84,
+      "traits": [
+        "mechanic"
+      ],
+      "personalities": [
+        "quiet_professional"
+      ],
+      "contract": {
+        "salary_m": 9.0
+      }
+    },
+    "Fernando Alonso": {
+      "cornering": 19,
+      "braking": 19,
+      "consistency": 20,
+      "smoothness": 18,
+      "control": 19,
+      "talent": 97,
+      "traits": [
+        "overtake_artist",
+        "mechanic"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 30.0,
+        "status": "first",
+        "priority": "first"
+      }
+    },
+    "Felipe Massa": {
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "team_player"
+      ],
+      "contract": {
+        "salary_m": 6.0,
+        "status": "second",
+        "priority": "second"
+      }
+    },
+    "Lewis Hamilton": {
+      "cornering": 19,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 17,
+      "control": 19,
+      "talent": 96,
+      "traits": [
+        "hotlapper",
+        "overtake_artist"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 16.0
+      }
+    },
+    "Jenson Button": {
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 17,
+      "smoothness": 20,
+      "control": 17,
+      "talent": 88,
+      "traits": [
+        "tyre_whisperer",
+        "rainmaster"
+      ],
+      "personalities": [
+        "quiet_professional"
+      ],
+      "contract": {
+        "salary_m": 14.0
+      }
+    },
+    "Kimi Räikkönen": {
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 19,
+      "smoothness": 18,
+      "control": 18,
+      "talent": 92,
+      "traits": [
+        "tyre_whisperer"
+      ],
+      "personalities": [
+        "mercenary"
+      ],
+      "contract": {
+        "salary_m": 12.0
+      }
+    },
+    "Romain Grosjean": {
+      "cornering": 17,
+      "braking": 16,
+      "consistency": 12,
+      "smoothness": 15,
+      "control": 15,
+      "talent": 86,
+      "traits": [
+        "hotlapper",
+        "crash_happy"
+      ],
+      "personalities": [
+        "impatient"
+      ],
+      "contract": {
+        "salary_m": 2.0
+      }
+    },
+    "Nico Rosberg": {
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 17,
+      "smoothness": 16,
+      "control": 17,
+      "talent": 88,
+      "traits": [
+        "hotlapper"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 9.0
+      }
+    },
+    "Michael Schumacher": {
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 15,
+      "control": 17,
+      "talent": 82,
+      "traits": [
+        "rainmaster",
+        "mentor"
+      ],
+      "personalities": [
+        "comeback_artist"
+      ],
+      "contract": {
+        "salary_m": 20.0
+      }
+    },
+    "Kamui Kobayashi": {
+      "cornering": 15,
+      "braking": 16,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "talent": 80,
+      "traits": [
+        "overtake_artist"
+      ],
+      "personalities": [
+        "loyal"
+      ],
+      "contract": {
+        "salary_m": 1.5
+      }
+    },
+    "Sergio Pérez": {
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 16,
+      "smoothness": 19,
+      "control": 16,
+      "talent": 86,
+      "traits": [
+        "tyre_whisperer"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 1.5
+      }
+    },
+    "Paul di Resta": {
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 16,
+      "smoothness": 16,
+      "control": 15,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "security_seeker"
+      ],
+      "contract": {
+        "salary_m": 1.5
+      }
+    },
+    "Nico Hülkenberg": {
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 16,
+      "smoothness": 16,
+      "control": 16,
+      "talent": 86,
+      "traits": [
+        "rainmaster"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 1.5
+      }
+    },
+    "Pastor Maldonado": {
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 11,
+      "smoothness": 14,
+      "control": 15,
+      "talent": 80,
+      "traits": [
+        "crash_happy",
+        "pay_driver"
+      ],
+      "personalities": [
+        "impatient"
+      ],
+      "contract": {
+        "salary_m": 2.0
+      }
+    },
+    "Bruno Senna": {
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 14,
+      "talent": 72,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "loyal"
+      ],
+      "contract": {
+        "salary_m": 1.0
+      }
+    },
+    "Daniel Ricciardo": {
+      "cornering": 15,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 15,
+      "control": 15,
+      "talent": 87,
+      "traits": [
+        "hotlapper"
+      ],
+      "personalities": [
+        "team_player"
+      ],
+      "contract": {
+        "salary_m": 0.8
+      }
+    },
+    "Jean-Éric Vergne": {
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 14,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 0.8
+      }
+    },
+    "Heikki Kovalainen": {
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 15,
+      "smoothness": 15,
+      "control": 15,
+      "talent": 78,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "contract": {
+        "salary_m": 2.0
+      }
+    },
+    "Vitaly Petrov": {
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 14,
+      "smoothness": 14,
+      "control": 14,
+      "talent": 72,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "security_seeker"
+      ],
+      "contract": {
+        "salary_m": 1.0
+      }
+    },
+    "Timo Glock": {
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 15,
+      "smoothness": 15,
+      "control": 15,
+      "talent": 76,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "contract": {
+        "salary_m": 2.0
+      }
+    },
+    "Charles Pic": {
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 13,
+      "smoothness": 13,
+      "control": 13,
+      "talent": 72,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "contract": {
+        "salary_m": 0.5
+      }
+    },
+    "Pedro de la Rosa": {
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 14,
+      "smoothness": 14,
+      "control": 13,
+      "talent": 62,
+      "traits": [
+        "mechanic",
+        "mentor"
+      ],
+      "personalities": [
+        "quiet_professional"
+      ],
+      "contract": {
+        "salary_m": 1.0
+      }
+    },
+    "Narain Karthikeyan": {
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 12,
+      "smoothness": 12,
+      "control": 12,
+      "talent": 60,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "security_seeker"
+      ],
+      "contract": {
+        "salary_m": 0.5
+      }
+    },
+    "Jérôme d'Ambrosio": {
+      "skill": 13,
+      "talent": 72
+    }
+  },
+  "tracks": {
+    "1": "albertpark",
+    "2": "sepang",
+    "3": "shanghai",
+    "4": "sakhir",
+    "5": "catalunya",
+    "6": "monaco",
+    "7": "montreal",
+    "8": "valenciastreet",
+    "9": "silverstone",
+    "10": "hockenheim",
+    "11": "hungaroring",
+    "12": "spa",
+    "13": "monza",
+    "14": "marinabay",
+    "15": "suzuka",
+    "16": "yeongam",
+    "17": "buddh",
+    "18": "yasmarina",
+    "19": "cota",
+    "20": "interlagos"
+  },
+  "sponsors": {
+    "$comment": "First pass of the real 2012 deals (primary first). No tobacco brands. The game can't put one sponsor on two teams (wishlist E12), so each appears once. Marussia and HRT keep their clone's fictional deals until checked.",
+    "pool": {
+      "Infiniti": {
+        "industry": "Automobile",
+        "nationality": "japanese"
+      },
+      "Total": {
+        "industry": "Energy",
+        "nationality": "french"
+      },
+      "Pepe Jeans": {
+        "industry": "Clothing",
+        "nationality": "spanish"
+      },
+      "Casio": {
+        "industry": "Technology",
+        "nationality": "japanese"
+      },
+      "Vodafone": {
+        "industry": "Telecom",
+        "nationality": "british"
+      },
+      "Mobil 1": {
+        "industry": "Energy",
+        "nationality": "american"
+      },
+      "Johnnie Walker": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      },
+      "Hugo Boss": {
+        "industry": "Clothing",
+        "nationality": "german"
+      },
+      "Santander": {
+        "industry": "Finance",
+        "nationality": "spanish"
+      },
+      "Shell": {
+        "industry": "Energy",
+        "nationality": "dutch"
+      },
+      "Acer": {
+        "industry": "Technology",
+        "nationality": "taiwanese"
+      },
+      "Kaspersky Lab": {
+        "industry": "Technology",
+        "nationality": "russian"
+      },
+      "Burn": {
+        "industry": "Consumer Goods",
+        "nationality": "american"
+      },
+      "Clear": {
+        "industry": "Consumer Goods",
+        "nationality": "british"
+      },
+      "Microsoft Dynamics": {
+        "industry": "Technology",
+        "nationality": "american"
+      },
+      "Rexona": {
+        "industry": "Consumer Goods",
+        "nationality": "british"
+      },
+      "Petronas": {
+        "industry": "Energy",
+        "nationality": "malaysian"
+      },
+      "Monster Energy": {
+        "industry": "Consumer Goods",
+        "nationality": "american"
+      },
+      "Allianz": {
+        "industry": "Finance",
+        "nationality": "german"
+      },
+      "Telmex": {
+        "industry": "Telecom",
+        "nationality": "mexican"
+      },
+      "Claro": {
+        "industry": "Telecom",
+        "nationality": "mexican"
+      },
+      "NEC": {
+        "industry": "Technology",
+        "nationality": "japanese"
+      },
+      "Sahara": {
+        "industry": "Finance",
+        "nationality": "indian"
+      },
+      "Kingfisher": {
+        "industry": "Alcohol",
+        "nationality": "indian"
+      },
+      "Whyte and Mackay": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      },
+      "PDVSA": {
+        "industry": "Energy",
+        "nationality": "venezuelan"
+      },
+      "Randstad": {
+        "industry": "Finance",
+        "nationality": "dutch"
+      },
+      "Oris": {
+        "industry": "Consumer Goods",
+        "nationality": "swiss"
+      },
+      "Cepsa": {
+        "industry": "Energy",
+        "nationality": "spanish"
+      },
+      "AirAsia": {
+        "industry": "Consumer Goods",
+        "nationality": "malaysian"
+      },
+      "GE": {
+        "industry": "Technology",
+        "nationality": "american"
+      },
+      "Dell": {
+        "industry": "Technology",
+        "nationality": "american"
+      }
+    },
+    "teams": {
+      "Red Bull Racing": [
+        "Infiniti",
+        "Total",
+        "Pepe Jeans",
+        "Casio"
+      ],
+      "McLaren": [
+        "Vodafone",
+        "Mobil 1",
+        "Johnnie Walker",
+        "Hugo Boss"
+      ],
+      "Ferrari": [
+        "Santander",
+        "Shell",
+        "Acer",
+        "Kaspersky Lab"
+      ],
+      "Lotus": [
+        "Burn",
+        "Clear",
+        "Microsoft Dynamics",
+        "Rexona"
+      ],
+      "Mercedes": [
+        "Petronas",
+        "Monster Energy",
+        "Allianz"
+      ],
+      "Sauber": [
+        "Telmex",
+        "Claro",
+        "NEC"
+      ],
+      "Force India": [
+        "Sahara",
+        "Kingfisher",
+        "Whyte and Mackay"
+      ],
+      "Williams": [
+        "PDVSA",
+        "Randstad",
+        "Oris"
+      ],
+      "Toro Rosso": [
+        "Cepsa"
+      ],
+      "Caterham": [
+        "AirAsia",
+        "GE",
+        "Dell"
+      ]
+    }
+  }
+}

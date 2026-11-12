@@ -1,0 +1,74 @@
+{
+  "id": "albertpark",
+  "name": "Albert Park",
+  "nationality": "australian",
+  "bbox": [
+    144.96,
+    -37.858,
+    144.984,
+    -37.836
+  ],
+  "length_km": 5.303,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 58,
+  "dnf_modifier": 1.1,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 22.0,
+  "tyre_wear_mult": 0.95,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.9,
+  "pole_side": "right",
+  "drs_zones": [
+    {
+      "detection_progress": 0.9086,
+      "start_progress": 0.9486,
+      "end_progress": 0.0812
+    },
+    {
+      "detection_progress": 0.0897,
+      "start_progress": 0.1297,
+      "end_progress": 0.2181
+    }
+  ],
+  "notes": "Albert Park, Melbourne (clockwise), 5.303 km in 2012. Via route over OSM circuit relation 280443 (Aughtie Drive, Lakeside Drive, Albert Road Drive). OSM has today's roads, so this is the 2021 layout: the Turn 9 and 10 chicane is a fast sweep and some corners are wider. Traced 5250 m. Start line on the pit straight level with the pit building. Two DRS zones as in 2012: the pit straight and the run from Turn 2 to Turn 3. In 2012 they shared one detection point before Turn 14; the game needs one per zone. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "route_relation": "280443",
+  "exclude_way_ids": [
+    "28119448"
+  ],
+  "via": [
+    [
+      -37.8503,
+      144.9698
+    ],
+    [
+      -37.84755,
+      144.96613
+    ],
+    [
+      -37.84458,
+      144.96418
+    ],
+    [
+      -37.83798,
+      144.9678
+    ],
+    [
+      -37.8426,
+      144.9717
+    ],
+    [
+      -37.85338,
+      144.97853
+    ],
+    [
+      -37.85377,
+      144.97644
+    ]
+  ],
+  "start": [
+    -37.8503,
+    144.9698
+  ],
+  "assemble_multipolygons": true
+}

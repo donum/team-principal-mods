@@ -1,0 +1,1025 @@
+{
+  "$comment": "F1 2012 drivers, generated from research/entries.csv and standings.csv. Skills and talent are estimates from championship points; part-timers are reserves.",
+  "$template": {
+    "index": 0,
+    "override": {
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      }
+    },
+    "drop": [
+      "contract"
+    ],
+    "drop_if_absent": [
+      "team",
+      "number"
+    ]
+  },
+  "records": [
+    {
+      "name": "Sebastian Vettel",
+      "cornering": 19,
+      "braking": 19,
+      "consistency": 18,
+      "smoothness": 18,
+      "control": 19,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Red Bull Racing",
+        "length_weeks": 52,
+        "salary_m": 15.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 24,
+      "talent": 97,
+      "traits": [
+        "hotlapper",
+        "clean_air_merchant"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "german",
+      "birth_year": 1987,
+      "team": "Red Bull Racing",
+      "number": 1
+    },
+    {
+      "name": "Mark Webber",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 16,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Red Bull Racing",
+        "length_weeks": 52,
+        "salary_m": 9.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 35,
+      "talent": 84,
+      "traits": [
+        "mechanic"
+      ],
+      "personalities": [
+        "quiet_professional"
+      ],
+      "career_stage": "top_veteran",
+      "nationality": "australian",
+      "birth_year": 1976,
+      "team": "Red Bull Racing",
+      "number": 2
+    },
+    {
+      "name": "Fernando Alonso",
+      "cornering": 19,
+      "braking": 19,
+      "consistency": 20,
+      "smoothness": 18,
+      "control": 19,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Ferrari",
+        "length_weeks": 52,
+        "salary_m": 30.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "first",
+        "priority": "first"
+      },
+      "age": 30,
+      "talent": 97,
+      "traits": [
+        "overtake_artist",
+        "mechanic"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "spanish",
+      "birth_year": 1981,
+      "team": "Ferrari",
+      "number": 5
+    },
+    {
+      "name": "Felipe Massa",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Ferrari",
+        "length_weeks": 52,
+        "salary_m": 6.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "second",
+        "priority": "second"
+      },
+      "age": 30,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "team_player"
+      ],
+      "career_stage": "racer",
+      "nationality": "brazilian",
+      "birth_year": 1981,
+      "team": "Ferrari",
+      "number": 6
+    },
+    {
+      "name": "Kimi Räikkönen",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 19,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Lotus",
+        "length_weeks": 52,
+        "salary_m": 12.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 32,
+      "talent": 92,
+      "traits": [
+        "tyre_whisperer"
+      ],
+      "personalities": [
+        "mercenary"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "finnish",
+      "birth_year": 1979,
+      "team": "Lotus",
+      "number": 9
+    },
+    {
+      "name": "Romain Grosjean",
+      "cornering": 17,
+      "braking": 16,
+      "consistency": 12,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Lotus",
+        "length_weeks": 52,
+        "salary_m": 2.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 25,
+      "talent": 86,
+      "traits": [
+        "hotlapper",
+        "crash_happy"
+      ],
+      "personalities": [
+        "impatient"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1986,
+      "team": "Lotus",
+      "number": 10
+    },
+    {
+      "name": "Jérôme d'Ambrosio",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 13,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Lotus",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 26,
+      "talent": 72,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "belgian",
+      "birth_year": 1985,
+      "reserve_number": 10
+    },
+    {
+      "name": "Lewis Hamilton",
+      "cornering": 19,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 17,
+      "control": 19,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "McLaren",
+        "length_weeks": 52,
+        "salary_m": 16.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 96,
+      "traits": [
+        "hotlapper",
+        "overtake_artist"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "british",
+      "birth_year": 1985,
+      "team": "McLaren",
+      "number": 4
+    },
+    {
+      "name": "Jenson Button",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 17,
+      "smoothness": 20,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "McLaren",
+        "length_weeks": 52,
+        "salary_m": 14.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 32,
+      "talent": 88,
+      "traits": [
+        "tyre_whisperer",
+        "rainmaster"
+      ],
+      "personalities": [
+        "quiet_professional"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "british",
+      "birth_year": 1980,
+      "team": "McLaren",
+      "number": 3
+    },
+    {
+      "name": "Nico Rosberg",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 17,
+      "smoothness": 16,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Mercedes",
+        "length_weeks": 52,
+        "salary_m": 9.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 88,
+      "traits": [
+        "hotlapper"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1985,
+      "team": "Mercedes",
+      "number": 8
+    },
+    {
+      "name": "Michael Schumacher",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 15,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Mercedes",
+        "length_weeks": 52,
+        "salary_m": 20.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 43,
+      "talent": 82,
+      "traits": [
+        "rainmaster",
+        "mentor"
+      ],
+      "personalities": [
+        "comeback_artist"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "german",
+      "birth_year": 1969,
+      "team": "Mercedes",
+      "number": 7
+    },
+    {
+      "name": "Sergio Pérez",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 16,
+      "smoothness": 19,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Sauber",
+        "length_weeks": 52,
+        "salary_m": 1.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 22,
+      "talent": 86,
+      "traits": [
+        "tyre_whisperer"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "racer",
+      "nationality": "mexican",
+      "birth_year": 1990,
+      "team": "Sauber",
+      "number": 15
+    },
+    {
+      "name": "Kamui Kobayashi",
+      "cornering": 15,
+      "braking": 16,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Sauber",
+        "length_weeks": 52,
+        "salary_m": 1.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 25,
+      "talent": 80,
+      "traits": [
+        "overtake_artist"
+      ],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "japanese",
+      "birth_year": 1986,
+      "team": "Sauber",
+      "number": 14
+    },
+    {
+      "name": "Esteban Gutiérrez",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Sauber",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 20,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "mexican",
+      "birth_year": 1991
+    },
+    {
+      "name": "Nico Hülkenberg",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 16,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Force India",
+        "length_weeks": 52,
+        "salary_m": 1.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 24,
+      "talent": 86,
+      "traits": [
+        "rainmaster"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1987,
+      "team": "Force India",
+      "number": 12
+    },
+    {
+      "name": "Paul di Resta",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 16,
+      "smoothness": 16,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Force India",
+        "length_weeks": 52,
+        "salary_m": 1.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 25,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "security_seeker"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1986,
+      "team": "Force India",
+      "number": 11
+    },
+    {
+      "name": "Jules Bianchi",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Force India",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 22,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1989
+    },
+    {
+      "name": "Pastor Maldonado",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 11,
+      "smoothness": 14,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Williams",
+        "length_weeks": 52,
+        "salary_m": 2.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 80,
+      "traits": [
+        "crash_happy",
+        "pay_driver"
+      ],
+      "personalities": [
+        "impatient"
+      ],
+      "career_stage": "racer",
+      "nationality": "venezuelan",
+      "birth_year": 1985,
+      "team": "Williams",
+      "number": 18
+    },
+    {
+      "name": "Bruno Senna",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Williams",
+        "length_weeks": 52,
+        "salary_m": 1.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 28,
+      "talent": 72,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "brazilian",
+      "birth_year": 1983,
+      "team": "Williams",
+      "number": 19
+    },
+    {
+      "name": "Valtteri Bottas",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Williams",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 22,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "finnish",
+      "birth_year": 1989
+    },
+    {
+      "name": "Jean-Éric Vergne",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Toro Rosso",
+        "length_weeks": 52,
+        "salary_m": 0.8,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 21,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1990,
+      "team": "Toro Rosso",
+      "number": 17
+    },
+    {
+      "name": "Daniel Ricciardo",
+      "cornering": 15,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Toro Rosso",
+        "length_weeks": 52,
+        "salary_m": 0.8,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 22,
+      "talent": 87,
+      "traits": [
+        "hotlapper"
+      ],
+      "personalities": [
+        "team_player"
+      ],
+      "career_stage": "racer",
+      "nationality": "australian",
+      "birth_year": 1989,
+      "team": "Toro Rosso",
+      "number": 16
+    },
+    {
+      "name": "Timo Glock",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 15,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Marussia",
+        "length_weeks": 52,
+        "salary_m": 2.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 29,
+      "talent": 76,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1982,
+      "team": "Marussia",
+      "number": 24
+    },
+    {
+      "name": "Charles Pic",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 13,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Marussia",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 22,
+      "talent": 72,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "ambitious"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1990,
+      "team": "Marussia",
+      "number": 25
+    },
+    {
+      "name": "Max Chilton",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Marussia",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 20,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1991
+    },
+    {
+      "name": "Pedro de la Rosa",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 14,
+      "smoothness": 14,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "HRT",
+        "length_weeks": 52,
+        "salary_m": 1.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 41,
+      "talent": 62,
+      "traits": [
+        "mechanic",
+        "mentor"
+      ],
+      "personalities": [
+        "quiet_professional"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "spanish",
+      "birth_year": 1971,
+      "team": "HRT",
+      "number": 22
+    },
+    {
+      "name": "Narain Karthikeyan",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 12,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "HRT",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 35,
+      "talent": 60,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "security_seeker"
+      ],
+      "career_stage": "racer",
+      "nationality": "indian",
+      "birth_year": 1977,
+      "team": "HRT",
+      "number": 23
+    },
+    {
+      "name": "Dani Clos",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "HRT",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 23,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "spanish",
+      "birth_year": 1988
+    },
+    {
+      "name": "Ma Qinghua",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "HRT",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 24,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "chinese",
+      "birth_year": 1987
+    },
+    {
+      "name": "Heikki Kovalainen",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 15,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Caterham",
+        "length_weeks": 52,
+        "salary_m": 2.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 30,
+      "talent": 78,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "finnish",
+      "birth_year": 1981,
+      "team": "Caterham",
+      "number": 20
+    },
+    {
+      "name": "Vitaly Petrov",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 14,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Caterham",
+        "length_weeks": 52,
+        "salary_m": 1.0,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 72,
+      "traits": [
+        "pay_driver"
+      ],
+      "personalities": [
+        "security_seeker"
+      ],
+      "career_stage": "racer",
+      "nationality": "russian",
+      "birth_year": 1984,
+      "team": "Caterham",
+      "number": 21
+    },
+    {
+      "name": "Giedo van der Garde",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Caterham",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 26,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "dutch",
+      "birth_year": 1985
+    },
+    {
+      "name": "Alexander Rossi",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Caterham",
+        "length_weeks": 52,
+        "salary_m": 0.5,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 20,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "american",
+      "birth_year": 1991
+    }
+  ]
+}

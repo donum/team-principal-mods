@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,,1:24.178,+0.000,,qualified,best in Q3; Q1 1:26.218 (2); Q2 1:24.657 (1); Q3 1:24.178 (1); grid 1
+2,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,,1:24.474,+0.296,,qualified,best in Q3; Q1 1:26.563 (8); Q2 1:25.019 (2); Q3 1:24.474 (2); Lewis Hamilton and Sergio Pérez were given three-place grid penalties for ignoring yellow flags during the first practice session.; grid 5
+3,2,Mark Webber,Red Bull Racing,Red Bull RB7,,1:24.508,+0.330,,qualified,best in Q3; Q1 1:26.473 (6); Q2 1:25.282 (4); Q3 1:24.508 (3); grid 2
+4,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,,1:24.519,+0.341,,qualified,best in Q3; Q1 1:26.774 (11); Q2 1:25.158 (3); Q3 1:24.519 (4); grid 3
+5,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,,1:24.950,+0.772,,qualified,best in Q3; Q1 1:26.225 (3); Q2 1:25.299 (5); Q3 1:24.950 (5); grid 4
+6,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,,1:25.122,+0.944,,qualified,best in Q3; Q1 1:27.012 (15); Q2 1:25.522 (6); Q3 1:25.122 (6); grid 6
+7,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,,1:25.451,+1.273,,qualified,best in Q3; Q1 1:26.364 (5); Q2 1:25.555 (7); Q3 1:25.451 (7); grid 7
+8,14,Adrian Sutil,Force India F1 Team,Force India VJM04,,1:26.140,+1.962,,qualified,best in Q2; Q1 1:26.271 (4); Q2 1:26.140 (8); grid 8
+9,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,,1:26.161,+1.983,,qualified,best in Q2; Q1 1:26.608 (9); Q2 1:26.161 (9); grid 9
+10,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,,1:26.319,+2.141,,qualified,best in Q2; Q1 1:26.557 (7); Q2 1:26.319 (10); grid 10
+11,10,Vitaly Petrov,Lotus Renault GP,Renault R31,,1:26.189,+2.011,,qualified,"best in Q1; Q1 1:26.189 (1); Q2 1:26.319 (11); Vitaly Petrov was given a five-place grid penalty for causing an accident with Michael Schumacher at the . Although Petrov and Jaime Alguersuari set identical lap times in Q2, Alguersuari advanced to Q3 because he had set his lap time three minutes before Petrov.; grid 16"
+12,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,,1:26.337,+2.159,,qualified,best in Q2; Q1 1:26.790 (12); Q2 1:26.337 (12); grid 11
+13,15,Paul di Resta,Force India F1 Team,Force India VJM04,,1:26.503,+2.325,,qualified,best in Q2; Q1 1:26.864 (14); Q2 1:26.503 (13); grid 12
+14,12,Pastor Maldonado,AT&T Williams,Williams FW33,,1:26.537,+2.359,,qualified,best in Q2; Q1 1:26.829 (13); Q2 1:26.537 (14); grid 13
+15,9,Bruno Senna,Lotus Renault GP,Renault R31,,1:26.651,+2.473,,qualified,best in Q2; Q1 1:26.766 (10); Q2 1:26.651 (15); grid 14
+16,11,Rubens Barrichello,AT&T Williams,Williams FW33,,1:27.247,+3.069,,qualified,best in Q2; Q1 1:27.479 (17); Q2 1:27.247 (16); grid 15
+17,17,Sergio Pérez,Sauber F1 Team,Sauber C30,,1:27.249,+3.071,,qualified,best in Q1; Q1 1:27.249 (16); Q2 1:27.562 (17); Lewis Hamilton and Sergio Pérez were given three-place grid penalties for ignoring yellow flags during the first practice session.; grid 20
+18,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,,1:27.876,+3.698,,qualified,best in Q1; Q1 1:27.876 (18); grid 17
+19,20,Heikki Kovalainen,Team Lotus,Lotus T128,,1:28.565,+4.387,,qualified,best in Q1; Q1 1:28.565 (19); grid 18
+20,21,Jarno Trulli,Team Lotus,Lotus T128,,1:28.752,+4.574,,qualified,best in Q1; Q1 1:28.752 (20); grid 19
+21,23,Daniel Ricciardo,HRT Formula 1 Team,HRT F111,,1:30.216,+6.038,,qualified,best in Q1; Q1 1:30.216 (21); Daniel Ricciardo was given a five-place grid penalty for a gearbox change.; grid 23
+22,22,Narain Karthikeyan,HRT Formula 1 Team,HRT F111,,1:30.238,+6.060,,qualified,best in Q1; Q1 1:30.238 (22); Narain Karthikeyan was given a five-place grid penalty for impeding Michael Schumacher during Q1.; grid 24
+23,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,,1:30.866,+6.688,,qualified,best in Q1; Q1 1:30.866 (23); grid 21
+24,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,,1:34.046,+9.868,,qualified,best in Q1; Q1 1:34.046 (24); grid 22

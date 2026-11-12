@@ -1,0 +1,61 @@
+{
+  "$merge_base": true,
+  "$replace": [
+    "suppliers"
+  ],
+  "suppliers": {
+    "Pirelli": {
+      "$comment": "Sole supplier from 2011. Low temperature tolerance narrows every compound's working window (tyremodel.json), and low durability makes the cliff come early.",
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.0,
+      "prices": {
+        "works": 0,
+        "partner": 0,
+        "customer": 0
+      },
+      "nationality": "italian",
+      "lateral_grip": {
+        "soft": 60.0,
+        "medium": 58.0,
+        "hard": 54.0,
+        "intermediate": 50.0,
+        "wet": 52.0
+      },
+      "longitudinal_grip": {
+        "soft": 60.0,
+        "medium": 58.0,
+        "hard": 54.0,
+        "intermediate": 50.0,
+        "wet": 52.0
+      },
+      "durability": {
+        "soft": 32.0,
+        "medium": 38.0,
+        "hard": 46.0,
+        "intermediate": 48.0,
+        "wet": 50.0
+      },
+      "temperature_tolerance": {
+        "soft": 32.0,
+        "medium": 34.0,
+        "hard": 36.0,
+        "intermediate": 45.0,
+        "wet": 45.0
+      },
+      "trend": {
+        "lateral_grip": 0.0,
+        "longitudinal_grip": 0.0,
+        "durability": 0.0,
+        "temperature_tolerance": 0.0
+      },
+      "variance": {
+        "lateral_grip": 0.0,
+        "longitudinal_grip": 0.0,
+        "durability": 0.0,
+        "temperature_tolerance": 0.0
+      },
+      "development_preference": "grip"
+    }
+  }
+}

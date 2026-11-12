@@ -1,0 +1,31 @@
+{
+  "id": "interlagos",
+  "name": "Interlagos",
+  "nationality": "brazilian",
+  "bbox": [
+    -46.7016,
+    -23.7077,
+    -46.6911,
+    -23.6956
+  ],
+  "length_km": 4.309,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 71,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 21.0,
+  "tyre_wear_mult": 1.0,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.7,
+  "pole_side": "left",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Autodromo Jose Carlos Pace, Interlagos (anticlockwise). Raceway loop. Traced 4259 m vs 4309 m. Start line on the pit straight in front of the pit building. One DRS zone on the pit straight as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "start": [
+    -23.70427,
+    -46.69999
+  ],
+  "assemble_multipolygons": true
+}

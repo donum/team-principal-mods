@@ -1,0 +1,41 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Sebastian Vettel,german,1987-07-03,Red Bull Racing,Milton Keynes,Red Bull RB7,Renault RS27-2011 2.4 V8,Pirelli,1-19,reigning champion
+2,Mark Webber,australian,1976-08-27,Red Bull Racing,Milton Keynes,Red Bull RB7,Renault RS27-2011 2.4 V8,Pirelli,1-19,
+3,Lewis Hamilton,british,1985-01-07,Vodafone McLaren Mercedes,Woking,McLaren MP4-26,Mercedes FO 108Y 2.4 V8,Pirelli,1-19,
+4,Jenson Button,british,1980-01-19,Vodafone McLaren Mercedes,Woking,McLaren MP4-26,Mercedes FO 108Y 2.4 V8,Pirelli,1-19,
+5,Fernando Alonso,spanish,1981-07-29,Scuderia Ferrari,Maranello,Ferrari 150° Italia,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+6,Felipe Massa,brazilian,1981-04-25,Scuderia Ferrari,Maranello,Ferrari 150° Italia,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+7,Michael Schumacher,german,1969-01-03,Mercedes GP Petronas F1 Team,Brackley,Mercedes MGP W02,Mercedes FO 108Y 2.4 V8,Pirelli,1-19,
+8,Nico Rosberg,german,1985-06-27,Mercedes GP Petronas F1 Team,Brackley,Mercedes MGP W02,Mercedes FO 108Y 2.4 V8,Pirelli,1-19,
+9,Nick Heidfeld,german,1977-05-10,Lotus Renault GP,Enstone,Renault R31,Renault RS27-2011 2.4 V8,Pirelli,1-11,replaced the injured Robert Kubica (rally crash before the season); replaced by Senna from round 12
+9,Bruno Senna,brazilian,1983-10-15,Lotus Renault GP,Enstone,Renault R31,Renault RS27-2011 2.4 V8,Pirelli,12-19,Lotus Renault GP reserve driver; raced from round 12 (Belgium)
+10,Vitaly Petrov,russian,1984-09-08,Lotus Renault GP,Enstone,Renault R31,Renault RS27-2011 2.4 V8,Pirelli,1-19,
+11,Rubens Barrichello,brazilian,1972-05-23,AT&T Williams,Grove,Williams FW33,Cosworth CA2011K 2.4 V8,Pirelli,1-19,
+12,Pastor Maldonado,venezuelan,1985-03-09,AT&T Williams,Grove,Williams FW33,Cosworth CA2011K 2.4 V8,Pirelli,1-19,
+14,Adrian Sutil,german,1983-01-11,Force India F1 Team,Silverstone,Force India VJM04,Mercedes FO 108Y 2.4 V8,Pirelli,1-19,
+15,Paul di Resta,british,1986-04-16,Force India F1 Team,Silverstone,Force India VJM04,Mercedes FO 108Y 2.4 V8,Pirelli,1-19,
+16,Kamui Kobayashi,japanese,1986-09-13,Sauber F1 Team,Hinwil,Sauber C30,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+17,Sergio Pérez,mexican,1990-01-26,Sauber F1 Team,Hinwil,Sauber C30,Ferrari Type 056 2.4 V8,Pirelli,"1-6,8-19",missed the Monaco race (round 6) after a qualifying crash and was replaced at Canada (round 7)
+17,Pedro de la Rosa,spanish,1971-02-24,Sauber F1 Team,Hinwil,Sauber C30,Ferrari Type 056 2.4 V8,Pirelli,7,Sauber stand-in for Pérez at round 7 (Canada)
+18,Sébastien Buemi,swiss,1988-10-31,Scuderia Toro Rosso,Faenza,Toro Rosso STR6,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+19,Jaime Alguersuari,spanish,1990-03-23,Scuderia Toro Rosso,Faenza,Toro Rosso STR6,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+20,Heikki Kovalainen,finnish,1981-10-19,Team Lotus,Hingham,Lotus T128,Renault RS27-2011 2.4 V8,Pirelli,1-19,
+21,Jarno Trulli,italian,1974-07-13,Team Lotus,Hingham,Lotus T128,Renault RS27-2011 2.4 V8,Pirelli,"1-9,11-19",
+21,Karun Chandhok,indian,1984-01-19,Team Lotus,Hingham,Lotus T128,Renault RS27-2011 2.4 V8,Pirelli,10,drove Trulli's car at round 10 (Germany)
+22,Narain Karthikeyan,indian,1977-01-14,HRT Formula 1 Team,Murcia,HRT F111,Cosworth CA2011 2.4 V8,Pirelli,"1-8,17","replaced by Ricciardo from round 9; back in car 22 at round 17 (India), when Ricciardo drove car 23"
+22,Daniel Ricciardo,australian,1989-07-01,HRT Formula 1 Team,Murcia,HRT F111,Cosworth CA2011 2.4 V8,Pirelli,"9-16,18-19","Toro Rosso reserve driver, placed at HRT from round 9 (Britain); car 23 at round 17 (India)"
+23,Vitantonio Liuzzi,italian,1980-08-06,HRT Formula 1 Team,Murcia,HRT F111,Cosworth CA2011 2.4 V8,Pirelli,"1-16,18-19",stood down at round 17 (India) so that Karthikeyan could race at home
+23,Daniel Ricciardo,australian,1989-07-01,HRT Formula 1 Team,Murcia,HRT F111,Cosworth CA2011 2.4 V8,Pirelli,17,"Toro Rosso reserve driver, placed at HRT from round 9 (Britain); car 23 at round 17 (India)"
+24,Timo Glock,german,1982-03-18,Marussia Virgin Racing,Dinnington,Virgin MVR-02,Cosworth CA2011 2.4 V8,Pirelli,1-19,
+25,Jérôme d'Ambrosio,belgian,1985-12-27,Marussia Virgin Racing,Dinnington,Virgin MVR-02,Cosworth CA2011 2.4 V8,Pirelli,1-19,
+,Nico Hülkenberg,german,1987-08-19,Force India F1 Team,Silverstone,Force India VJM04,Mercedes FO 108Y 2.4 V8,Pirelli,"1-5,7-13,15,19",Friday practice only; Force India reserve driver
+,Daniel Ricciardo,australian,1989-07-01,Scuderia Toro Rosso,Faenza,Toro Rosso STR6,Ferrari Type 056 2.4 V8,Pirelli,1-8,Friday practice only; Toro Rosso reserve driver; raced for HRT from round 9
+,Jean-Éric Vergne,french,1990-04-25,Scuderia Toro Rosso,Faenza,Toro Rosso STR6,Ferrari Type 056 2.4 V8,Pirelli,"16,18-19",Friday practice only
+,Karun Chandhok,indian,1984-01-19,Team Lotus,Hingham,Lotus T128,Renault RS27-2011 2.4 V8,Pirelli,"1,4,8-9,12-13,15-17",Friday practice only; Team Lotus reserve driver; raced in round 10
+,Davide Valsecchi,italian,1987-01-24,Team Lotus,Hingham,Lotus T128,Renault RS27-2011 2.4 V8,Pirelli,2,Friday practice only
+,Luiz Razia,brazilian,1989-04-04,Team Lotus,Hingham,Lotus T128,Renault RS27-2011 2.4 V8,Pirelli,"3,19",Friday practice only
+,Bruno Senna,brazilian,1983-10-15,Lotus Renault GP,Enstone,Renault R31,Renault RS27-2011 2.4 V8,Pirelli,11,Friday practice only; Lotus Renault GP reserve driver; raced from round 12
+,Romain Grosjean,french,1986-04-17,Lotus Renault GP,Enstone,Renault R31,Renault RS27-2011 2.4 V8,Pirelli,18-19,Friday practice only; Lotus Renault GP reserve driver
+,Narain Karthikeyan,indian,1977-01-14,HRT Formula 1 Team,Murcia,HRT F111,Cosworth CA2011 2.4 V8,Pirelli,"10,14-16",Friday practice only; raced in rounds 1-8 and 17
+,Jan Charouz,czech,1987-07-17,HRT Formula 1 Team,Murcia,HRT F111,Cosworth CA2011 2.4 V8,Pirelli,19,Friday practice only
+,Robert Wickens,canadian,1989-03-13,Marussia Virgin Racing,Dinnington,Virgin MVR-02,Cosworth CA2011 2.4 V8,Pirelli,18,Friday practice only

@@ -1,0 +1,31 @@
+{
+  "id": "spa",
+  "name": "Circuit de Spa-Francorchamps",
+  "nationality": "belgian",
+  "bbox": [
+    5.956,
+    50.4262,
+    5.9798,
+    50.4476
+  ],
+  "length_km": 7.004,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 44,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.4,
+  "pit_lane_loss_s": 18.0,
+  "tyre_wear_mult": 1.15,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.7,
+  "pole_side": "right",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Circuit de Spa-Francorchamps (clockwise). Raceway loop. Traced 6867 m vs 7004 m. Start line on the short straight between the Bus Stop chicane and La Source. One DRS zone on the Kemmel straight as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "start": [
+    50.44294,
+    5.96669
+  ],
+  "assemble_multipolygons": true
+}

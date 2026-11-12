@@ -1,0 +1,72 @@
+{
+  "id": "yeongam",
+  "name": "Korea International Circuit",
+  "nationality": "south_korean",
+  "bbox": [
+    126.399,
+    34.7255,
+    126.4264,
+    34.7453
+  ],
+  "length_km": 5.615,
+  "width_m": 15.0,
+  "speed_scale": 1.0,
+  "race_laps": 55,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.1,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.1,
+  "pole_side": "right",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Korea International Circuit, Grand Prix layout (anticlockwise). Via route over the single OSM way 'YEONGAM F1 Track'. It is not oneway, so the via points set the direction. Traced 5524 m vs 5615 m. Start line from the middle of the GP pit lane. One DRS zone on the long back straight from Turn 2 to Turn 3 as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "GP Pit Lane"
+  ],
+  "route_way_ids": [
+    "708763326"
+  ],
+  "snap_gap_m": 60.0,
+  "via": [
+    [
+      34.73153,
+      126.41415
+    ],
+    [
+      34.73842,
+      126.41136
+    ],
+    [
+      34.73884,
+      126.41876
+    ],
+    [
+      34.73952,
+      126.41774
+    ],
+    [
+      34.73988,
+      126.41421
+    ],
+    [
+      34.73911,
+      126.40938
+    ],
+    [
+      34.73575,
+      126.40733
+    ],
+    [
+      34.73131,
+      126.40993
+    ]
+  ],
+  "start": [
+    34.73153,
+    126.41415
+  ],
+  "assemble_multipolygons": true
+}

@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,67,1:27:38.864,,1:15.880,classified,"grid 2; 25 pts; Ferrari were called before the Race Stewards after the race, and were found guilty of breaching Article 39.1 of the FIA Sporting Regulations, in relation to team orders and Article 151c of the FIA International Sporting Code for bringing the sport into disrepute. The result stood, although Ferrari were fined US$100,000 and the matter was referred to the FIA World Motor Sport Council."
+2,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,67,1:27:43.060,+4.196,1:16.097,classified,"grid 3; 18 pts; Ferrari were called before the Race Stewards after the race, and were found guilty of breaching Article 39.1 of the FIA Sporting Regulations, in relation to team orders and Article 151c of the FIA International Sporting Code for bringing the sport into disrepute. The result stood, although Ferrari were fined US$100,000 and the matter was referred to the FIA World Motor Sport Council."
+3,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,67,1:27:43.985,+5.121,1:15.824,classified,grid 1; 15 pts
+4,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,67,1:28:05.760,+26.896,1:16.503,classified,grid 6; 12 pts
+5,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,67,1:28:08.346,+29.482,1:16.451,classified,grid 5; 10 pts
+6,6,Mark Webber,Red Bull Racing,Red Bull RB6,67,1:28:22.470,+43.606,1:16.678,classified,grid 4; 8 pts
+7,11,Robert Kubica,Renault F1 Team,Renault R30,66,,+1 lap,1:17.166,classified,grid 7; 6 pts
+8,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,66,,+1 lap,1:16.609,classified,grid 9; 4 pts
+9,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,66,,+1 lap,1:17.088,classified,grid 11; 2 pts
+10,12,Vitaly Petrov,Renault F1 Team,Renault R30,66,,+1 lap,1:17.198,classified,grid 13; 1 pts
+11,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,66,,+1 lap,1:17.100,classified,grid 12; 0 pts
+12,9,Rubens Barrichello,AT&T Williams,Williams FW32,66,,+1 lap,1:17.029,classified,grid 8; 0 pts
+13,10,Nico Hülkenberg,AT&T Williams,Williams FW32,66,,+1 lap,1:16.836,classified,grid 10; 0 pts
+14,22,Pedro de la Rosa,BMW Sauber F1 Team,Sauber C29,66,,+1 lap,1:16.527,classified,grid 14; 0 pts
+15,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,66,,+1 lap,1:16.971,classified,grid 15; 0 pts
+16,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,65,,+2 laps,1:16.596,classified,grid 21; 0 pts
+17,14,Adrian Sutil,Force India F1 Team,Force India VJM03,65,,+2 laps,1:16.687,classified,grid 19; 0 pts
+18,24,Timo Glock,Virgin Racing,Virgin VR-01,64,,+3 laps,1:18.211,classified,grid 23; 0 pts
+19,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,63,,+4 laps,1:20.861,classified,grid 20; 0 pts
+,19,Heikki Kovalainen,Lotus Racing,Lotus T127,56,,,1:20.664,DNF,Collision; grid 18; 0 pts
+,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,50,,,1:20.703,DNF,Gearbox (en.wiki: Suspension); grid 24; 0 pts
+,20,Sakon Yamamoto,Hispania Racing F1 Team,Hispania F110,19,,,1:23.541,DNF,Engine (en.wiki: Gearbox); grid 22; 0 pts
+,18,Jarno Trulli,Lotus Racing,Lotus T127,3,,,2:14.452,DNF,Gearbox; grid 17; 0 pts
+,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,1,,,,DNF,Collision; grid 16; 0 pts

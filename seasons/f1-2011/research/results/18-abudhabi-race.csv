@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,55,1:37:11.886,,1:43.461,classified,grid 2; 2 pit stops; 25 pts
+2,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,55,1:37:20.343,+8.457,1:43.914,classified,grid 5; 2 pit stops; 18 pts
+3,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,55,1:37:37.767,+25.881,1:43.154,classified,grid 3; 2 pit stops; 15 pts; en.wiki gives +25.871
+4,2,Mark Webber,Red Bull Racing,Red Bull RB7,55,1:37:47.670,+35.784,1:42.612,classified,grid 4; 3 pit stops; 12 pts
+5,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,55,1:38:02.464,+50.578,1:44.288,classified,grid 6; 2 pit stops; 10 pts
+6,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,55,1:38:04.203,+52.317,1:43.993,classified,grid 7; 2 pit stops; 8 pts
+7,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,55,1:38:27.850,+1:15.964,1:44.916,classified,grid 8; 2 pit stops; 6 pts
+8,14,Adrian Sutil,Force India F1 Team,Force India VJM04,55,1:38:29.008,+1:17.122,1:44.709,classified,grid 9; 2 pit stops; 4 pts
+9,15,Paul di Resta,Force India F1 Team,Force India VJM04,55,1:38:52.973,+1:41.087,1:44.120,classified,grid 10; 1 pit stop; 2 pts
+10,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,54,,+1 lap,1:43.521,classified,grid 16; 2 pit stops; 1 pts
+11,17,Sergio Pérez,Sauber F1 Team,Sauber C30,54,,+1 lap,1:44.566,classified,grid 11; 2 pit stops; 0 pts
+12,11,Rubens Barrichello,AT&T Williams,Williams FW33,54,,+1 lap,1:44.438,classified,grid 24; 2 pit stops; 0 pts
+13,10,Vitaly Petrov,Lotus Renault GP,Renault R31,54,,+1 lap,1:43.673,classified,grid 12; 2 pit stops; 0 pts
+14,12,Pastor Maldonado,AT&T Williams,Williams FW33,54,,+1 lap,1:44.628,classified,"grid 23; 2 pit stops; 0 pts; Pastor Maldonado (30 seconds) and Jaime Alguersuari (20 seconds) were given time penalties for ignoring blue flags, but did not alter their respective finishing positions."
+15,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,54,,+1 lap,1:44.093,classified,"grid 15; 2 pit stops; 0 pts; Pastor Maldonado (30 seconds) and Jaime Alguersuari (20 seconds) were given time penalties for ignoring blue flags, but did not alter their respective finishing positions."
+16,9,Bruno Senna,Lotus Renault GP,Renault R31,54,,+1 lap,1:46.150,classified,grid 14; 3 pit stops; 0 pts
+17,20,Heikki Kovalainen,Team Lotus,Lotus T128,54,,+1 lap,1:46.610,classified,grid 17; 2 pit stops; 0 pts
+18,21,Jarno Trulli,Team Lotus,Lotus T128,53,,+2 laps,1:47.444,classified,grid 18; 2 pit stops; 0 pts
+19,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,53,,+2 laps,1:48.085,classified,grid 19; 2 pit stops; 0 pts
+20,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,53,,+2 laps,1:49.242,classified,grid 22; 1 pit stop; 0 pts
+,22,Daniel Ricciardo,HRT Formula 1 Team,HRT F111,48,,,1:48.274,DNF,Mechanical (en.wiki: Alternator); grid 20; 2 pit stops; 0 pts; en.wiki gives 47 laps
+,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,19,,,1:47.094,DNF,Hydraulics; grid 13; 0 pit stops; 0 pts; en.wiki gives 18 laps
+,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,18,,,1:51.196,DNF,Brakes; grid 21; 0 pit stops; 0 pts; en.wiki gives 17 laps
+,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,1,,,,DNF,Puncture; grid 1; 0 pit stops; 0 pts

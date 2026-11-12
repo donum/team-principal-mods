@@ -1,0 +1,84 @@
+{
+  "unit_rules": {
+    "base_wear_per_lap": 0.1,
+    "max_pace_penalty_s": 0.0,
+    "max_power_rating_loss_at_zero_condition": 6.25,
+    "power_rating_wear_quantum": 0.25,
+    "fail_prob_per_lap_over_50_wear": 0.0025,
+    "build_staff_hours": 50,
+    "build_cost_m": 0.5,
+    "allocation_choices": [
+      4,
+      6,
+      8,
+      10,
+      12
+    ]
+  },
+  "suppliers": {
+    "Renault": {
+      "engine": "Renault RS27 2.4 V8",
+      "factory": false,
+      "power_rating": 57.0,
+      "reliability_rating": 66.0,
+      "cost_m": 12,
+      "annual_budget_m": 60,
+      "capacity": 4,
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.0,
+      "fuel_efficiency": 60.0,
+      "mass_kg": 95.0,
+      "nationality": "french",
+      "passby_audio": "engine_passby_01"
+    },
+    "Ferrari": {
+      "engine": "Ferrari 056 2.4 V8",
+      "factory": true,
+      "power_rating": 58.5,
+      "reliability_rating": 70.0,
+      "cost_m": 12,
+      "annual_budget_m": 0,
+      "capacity": 3,
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.0,
+      "fuel_efficiency": 54.0,
+      "mass_kg": 95.0,
+      "nationality": "italian",
+      "passby_audio": "engine_passby_02"
+    },
+    "Mercedes": {
+      "engine": "Mercedes FO 108Z 2.4 V8",
+      "factory": true,
+      "power_rating": 60.0,
+      "reliability_rating": 70.0,
+      "cost_m": 12,
+      "annual_budget_m": 0,
+      "capacity": 3,
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.0,
+      "fuel_efficiency": 56.0,
+      "mass_kg": 95.0,
+      "nationality": "german",
+      "passby_audio": "engine_passby_04"
+    },
+    "Cosworth": {
+      "engine": "Cosworth CA2012 2.4 V8",
+      "factory": false,
+      "power_rating": 53.5,
+      "reliability_rating": 63.0,
+      "cost_m": 7,
+      "annual_budget_m": 20,
+      "capacity": 2,
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.02,
+      "fuel_efficiency": 52.0,
+      "mass_kg": 95.0,
+      "nationality": "british",
+      "passby_audio": "engine_passby_05"
+    }
+  }
+}

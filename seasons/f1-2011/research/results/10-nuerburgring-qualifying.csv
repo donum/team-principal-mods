@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,2,Mark Webber,Red Bull Racing,Red Bull RB7,,1:30.079,+0.000,,qualified,best in Q3; Q1 1:33.096 (11); Q2 1:31.311 (4); Q3 1:30.079 (1); grid 1
+2,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,,1:30.134,+0.055,,qualified,best in Q3; Q1 1:32.934 (8); Q2 1:30.998 (1); Q3 1:30.134 (2); grid 2
+3,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,,1:30.216,+0.137,,qualified,best in Q3; Q1 1:32.973 (9); Q2 1:31.017 (2); Q3 1:30.216 (3); grid 3
+4,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,,1:30.442,+0.363,,qualified,best in Q3; Q1 1:32.916 (7); Q2 1:31.150 (3); Q3 1:30.442 (4); grid 4
+5,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,,1:30.910,+0.831,,qualified,best in Q3; Q1 1:31.826 (1); Q2 1:31.582 (7); Q3 1:30.910 (5); grid 5
+6,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,,1:31.263,+1.184,,qualified,best in Q3; Q1 1:32.785 (6); Q2 1:31.343 (5); Q3 1:31.263 (6); grid 6
+7,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,,1:31.288,+1.209,,qualified,best in Q3; Q1 1:33.224 (13); Q2 1:31.532 (6); Q3 1:31.288 (7); grid 7
+8,14,Adrian Sutil,Force India F1 Team,Force India VJM04,,1:31.809,+1.730,,qualified,best in Q2; Q1 1:32.286 (2); Q2 1:31.809 (8); Q3 1:32.010 (8); grid 8
+9,10,Vitaly Petrov,Lotus Renault GP,Renault R31,,1:31.985,+1.906,,qualified,best in Q2; Q1 1:33.187 (12); Q2 1:31.985 (9); Q3 1:32.187 (9); grid 9
+10,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,,1:32.180,+2.101,,qualified,best in Q2; Q1 1:32.603 (4); Q2 1:32.180 (10); Q3 1:32.482 (10); grid 10
+11,9,Nick Heidfeld,Lotus Renault GP,Renault R31,,1:32.215,+2.136,,qualified,best in Q2; Q1 1:32.505 (3); Q2 1:32.215 (11); grid 11
+12,15,Paul di Resta,Force India F1 Team,Force India VJM04,,1:32.560,+2.481,,qualified,best in Q2; Q1 1:32.651 (5); Q2 1:32.560 (12); grid 12
+13,12,Pastor Maldonado,AT&T Williams,Williams FW33,,1:32.635,+2.556,,qualified,best in Q2; Q1 1:33.003 (10); Q2 1:32.635 (13); grid 13
+14,11,Rubens Barrichello,AT&T Williams,Williams FW33,,1:33.043,+2.964,,qualified,best in Q2; Q1 1:33.664 (17); Q2 1:33.043 (14); grid 14
+15,17,Sergio Pérez,Sauber F1 Team,Sauber C30,,1:33.176,+3.097,,qualified,best in Q2; Q1 1:33.295 (14); Q2 1:33.176 (15); grid 15
+16,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,,1:33.658,+3.579,,qualified,best in Q1; Q1 1:33.658 (16); Q2 1:33.698 (17); grid 16
+17,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,,1:33.786,+3.707,,qualified,best in Q1; Q1 1:33.786 (18); grid 17
+18,20,Heikki Kovalainen,Team Lotus,Lotus T128,,1:35.599,+5.520,,qualified,best in Q1; Q1 1:35.599 (19); grid 18
+19,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,,1:36.400,+6.321,,qualified,best in Q1; Q1 1:36.400 (20); grid 19
+20,21,Karun Chandhok,Team Lotus,Lotus T128,,1:36.422,+6.343,,qualified,best in Q1; Q1 1:36.422 (21); grid 20
+21,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,,1:36.641,+6.562,,qualified,best in Q1; Q1 1:36.641 (22); grid 21
+22,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,,1:37.011,+6.932,,qualified,best in Q1; Q1 1:37.011 (23); Vitantonio Liuzzi received a five-place grid penalty for a gearbox change.; grid 23
+23,22,Daniel Ricciardo,HRT Formula 1 Team,HRT F111,,1:37.036,+6.957,,qualified,best in Q1; Q1 1:37.036 (24); grid 22
+,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,,1:33.546,+3.467,,excluded,best in Q2; Q1 1:33.635 (15); Q2 1:33.546 (16); Sebastien Buemi was excluded from qualifying for an irregularity with the fuel in his Toro Rosso.; grid 24

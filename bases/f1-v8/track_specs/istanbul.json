@@ -1,0 +1,31 @@
+{
+  "id": "istanbul",
+  "name": "Istanbul Park",
+  "nationality": "turkish",
+  "bbox": [
+    29.3978,
+    40.95,
+    29.419,
+    40.9645
+  ],
+  "length_km": 5.338,
+  "width_m": 15.0,
+  "speed_scale": 1.0,
+  "race_laps": 58,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 21.0,
+  "tyre_wear_mult": 1.25,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.6,
+  "pole_side": "left",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Istanbul Park (anticlockwise). Raceway loop (one closed OSM way). Traced 5290 m vs 5338 m. F1 raced here up to 2011, so the values are from 2011. Start line in the middle of the pit straight. One DRS zone on the back straight from Turn 11 to Turn 12 as in 2011. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "start": [
+    40.95205,
+    29.40512
+  ],
+  "assemble_multipolygons": true
+}

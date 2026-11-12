@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,61,1:57:53.579,,1:47.976,classified,grid 1; 25 pts
+2,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,61,1:57:53.872,+0.293,1:48.141,classified,grid 2; 18 pts
+3,6,Mark Webber,Red Bull Racing,Red Bull RB6,61,1:58:22.720,+29.141,1:49.706,classified,grid 5; 15 pts
+4,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,61,1:58:23.963,+30.384,1:49.711,classified,grid 4; 12 pts
+5,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,61,1:58:42.973,+49.394,1:50.125,classified,grid 7; 10 pts
+6,9,Rubens Barrichello,AT&T Williams,Williams FW32,61,1:58:49.680,+56.101,1:50.334,classified,grid 6; 8 pts
+7,11,Robert Kubica,Renault F1 Team,Renault R30,61,1:59:20.138,+1:26.559,1:49.255,classified,grid 8; 6 pts
+8,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,61,1:59:46.876,+1:53.297,1:52.079,classified,grid 24; 4 pts
+9,14,Adrian Sutil,Force India F1 Team,Force India VJM03,61,1:59:55.995,+2:02.416,1:52.473,classified,grid 15; 2 pts; Adrian Sutil was penalised 20 seconds post-race for illegally gaining an advantage at turn seven on the first lap.; en.wiki gives +2:12.416
+10,10,Nico Hülkenberg,AT&T Williams,Williams FW32,61,2:00:06.370,+2:12.791,1:52.213,classified,"grid 17; 1 pts; Following a protest by Force India, Hülkenberg was penalised 20 seconds post-race for illegally gaining an advantage."
+11,12,Vitaly Petrov,Renault F1 Team,Renault R30,60,,+1 lap,1:51.903,classified,grid 12; 0 pts
+12,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,60,,+1 lap,1:52.333,classified,grid 11; 0 pts; Jaime Alguersuari started from the pit lane following a coolant leak before the race.
+13,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,60,,+1 lap,1:49.680,classified,grid 9; 0 pts
+14,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,60,,+1 lap,1:49.710,classified,grid 13; 0 pts
+15,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,59,,+2 laps,1:52.513,classified,grid 20; 0 pts
+16,19,Heikki Kovalainen,Lotus Racing,Lotus T127,58,,+3 laps,1:53.051,classified,"Engine, classified as he completed 90% of the distance; grid 19; 0 pts; Heikki Kovalainen was classified because he completed over 90% of the race distance."
+,24,Timo Glock,Virgin Racing,Virgin VR-01,49,,,1:53.559,DNF,Hydraulics; grid 18; 0 pts
+,22,Nick Heidfeld,BMW Sauber F1 Team,Sauber C29,36,,,1:52.475,DNF,Collision; grid 14; 0 pts
+,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,35,,,1:50.750,DNF,Collision; grid 3; 0 pts
+,20,Christian Klien,Hispania Racing F1 Team,Hispania F110,31,,,1:57.766,DNF,Hydraulics; grid 22; 0 pts
+,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,30,,,1:53.957,DNF,Accident; grid 10; 0 pts
+,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,29,,,1:57.962,DNF,Accident; grid 23; 0 pts
+,18,Jarno Trulli,Lotus Racing,Lotus T127,27,,,1:56.386,DNF,Hydraulics; grid 21; 0 pts
+,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,1,,,,DNF,Collision (en.wiki: Suspension); grid 16; 0 pts

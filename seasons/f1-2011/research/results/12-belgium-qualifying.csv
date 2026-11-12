@@ -1,0 +1,24 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,,1:48.298,+0.000,,qualified,best in Q3; Q1 2:03.029 (4); Q2 2:03.317 (4); Q3 1:48.298 (1); grid 1
+2,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,,1:48.730,+0.432,,qualified,best in Q3; Q1 2:03.008 (3); Q2 2:02.823 (2); Q3 1:48.730 (2); grid 2
+3,2,Mark Webber,Red Bull Racing,Red Bull RB7,,1:49.376,+1.078,,qualified,best in Q3; Q1 2:02.827 (2); Q2 2:03.302 (3); Q3 1:49.376 (3); grid 3
+4,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,,1:50.256,+1.958,,qualified,best in Q3; Q1 2:05.834 (13); Q2 2:04.507 (8); Q3 1:50.256 (4); grid 4
+5,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,,1:50.552,+2.254,,qualified,best in Q3; Q1 2:05.091 (8); Q2 2:03.723 (6); Q3 1:50.552 (5); grid 5
+6,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,,1:50.773,+2.475,,qualified,best in Q3; Q1 2:05.419 (10); Q2 2:04.561 (9); Q3 1:50.773 (6); grid 6
+7,9,Bruno Senna,Lotus Renault GP,Renault R31,,1:51.121,+2.823,,qualified,best in Q3; Q1 2:05.047 (7); Q2 2:04.452 (7); Q3 1:51.121 (7); grid 7
+8,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,,1:51.251,+2.953,,qualified,best in Q3; Q1 2:04.450 (5); Q2 2:02.768 (1); Q3 1:51.251 (8); grid 8
+9,17,Sergio Pérez,Sauber F1 Team,Sauber C30,,1:51.374,+3.076,,qualified,best in Q3; Q1 2:06.284 (15); Q2 2:04.625 (10); Q3 1:51.374 (9); grid 9
+10,10,Vitaly Petrov,Lotus Renault GP,Renault R31,,1:52.303,+4.005,,qualified,best in Q3; Q1 2:05.292 (9); Q2 2:03.466 (5); Q3 1:52.303 (10); grid 10
+11,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,,2:04.692,+16.394,,qualified,best in Q2; Q1 2:04.744 (6); Q2 2:04.692 (11); grid 11
+12,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,,2:04.757,+16.459,,qualified,best in Q2; Q1 2:07.194 (17); Q2 2:04.757 (12); grid 12
+13,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,,2:01.813,+13.515,,qualified,best in Q1; Q1 2:01.813 (1); Q2 2:05.150 (13); grid 13
+14,11,Rubens Barrichello,AT&T Williams,Williams FW33,,2:05.720,+17.422,,qualified,best in Q1; Q1 2:05.720 (12); Q2 2:07.349 (14); grid 14
+15,14,Adrian Sutil,Force India F1 Team,Force India VJM04,,2:06.000,+17.702,,qualified,best in Q1; Q1 2:06.000 (14); Q2 2:07.777 (15); grid 15
+16,12,Pastor Maldonado,AT&T Williams,Williams FW33,,2:05.621,+17.323,,qualified,best in Q1; Q1 2:05.621 (11); Q2 2:08.106 (16); Pastor Maldonado was penalised 5 grid places for causing an avoidable accident with Lewis Hamilton at the end of the second qualifying session.; grid 21
+17,20,Heikki Kovalainen,Team Lotus,Lotus T128,,2:06.780,+18.482,,qualified,best in Q1; Q1 2:06.780 (16); Q2 2:08.354 (17); grid 16
+18,15,Paul di Resta,Force India F1 Team,Force India VJM04,,2:07.758,+19.460,,qualified,best in Q1; Q1 2:07.758 (18); grid 17
+19,21,Jarno Trulli,Team Lotus,Lotus T128,,2:08.773,+20.475,,qualified,best in Q1; Q1 2:08.773 (19); grid 18
+20,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,,2:09.566,+21.268,,qualified,best in Q1; Q1 2:09.566 (20); grid 19
+21,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,,2:11.601,+23.303,,qualified,"best in Q1; Q1 2:11.601 (21); Despite being outside the 107% margin, Jérôme d'Ambrosio, Daniel Ricciardo and Vitantonio Liuzzi were granted dispensations to race on the grounds that variable weather conditions in qualifying meant their times were not representative of their ability to qualify.; grid 20"
+22,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,,2:11.616,+23.318,,qualified,"best in Q1; Q1 2:11.616 (22); Despite being outside the 107% margin, Jérôme d'Ambrosio, Daniel Ricciardo and Vitantonio Liuzzi were granted dispensations to race on the grounds that variable weather conditions in qualifying meant their times were not representative of their ability to qualify.; grid 22"
+23,22,Daniel Ricciardo,HRT Formula 1 Team,HRT F111,,2:13.077,+24.779,,qualified,"best in Q1; Q1 2:13.077 (23); Despite being outside the 107% margin, Jérôme d'Ambrosio, Daniel Ricciardo and Vitantonio Liuzzi were granted dispensations to race on the grounds that variable weather conditions in qualifying meant their times were not representative of their ability to qualify.; grid 23"

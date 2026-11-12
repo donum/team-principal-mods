@@ -1,0 +1,30 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Sebastian Vettel,german,1987-07-03,Infiniti Red Bull Racing,Milton Keynes,Red Bull RB9,Renault RS27-2013 2.4 V8,Pirelli,1-19,reigning champion
+2,Mark Webber,australian,1976-08-27,Infiniti Red Bull Racing,Milton Keynes,Red Bull RB9,Renault RS27-2013 2.4 V8,Pirelli,1-19,last F1 season
+3,Fernando Alonso,spanish,1981-07-29,Scuderia Ferrari,Maranello,Ferrari F138,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+4,Felipe Massa,brazilian,1981-04-25,Scuderia Ferrari,Maranello,Ferrari F138,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+5,Jenson Button,british,1980-01-19,Vodafone McLaren Mercedes,Woking,McLaren MP4-28,Mercedes FO 108F 2.4 V8,Pirelli,1-19,
+6,Sergio Pérez,mexican,1990-01-26,Vodafone McLaren Mercedes,Woking,McLaren MP4-28,Mercedes FO 108F 2.4 V8,Pirelli,1-19,
+7,Kimi Räikkönen,finnish,1979-10-17,Lotus F1 Team,Enstone,Lotus E21,Renault RS27-2013 2.4 V8,Pirelli,1-17,missed rounds 18-19 for back surgery
+7,Heikki Kovalainen,finnish,1981-10-19,Lotus F1 Team,Enstone,Lotus E21,Renault RS27-2013 2.4 V8,Pirelli,18-19,replaced Räikkönen for rounds 18-19
+8,Romain Grosjean,french,1986-04-17,Lotus F1 Team,Enstone,Lotus E21,Renault RS27-2013 2.4 V8,Pirelli,1-19,
+9,Nico Rosberg,german,1985-06-27,Mercedes AMG Petronas F1 Team,Brackley,Mercedes F1 W04,Mercedes FO 108F 2.4 V8,Pirelli,1-19,
+10,Lewis Hamilton,british,1985-01-07,Mercedes AMG Petronas F1 Team,Brackley,Mercedes F1 W04,Mercedes FO 108F 2.4 V8,Pirelli,1-19,
+11,Nico Hülkenberg,german,1987-08-19,Sauber F1 Team,Hinwil,Sauber C32,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+12,Esteban Gutiérrez,mexican,1991-08-05,Sauber F1 Team,Hinwil,Sauber C32,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+14,Paul di Resta,british,1986-04-16,Sahara Force India F1 Team,Silverstone,Force India VJM06,Mercedes FO 108F 2.4 V8,Pirelli,1-19,
+15,Adrian Sutil,german,1983-01-11,Sahara Force India F1 Team,Silverstone,Force India VJM06,Mercedes FO 108F 2.4 V8,Pirelli,1-19,
+16,Pastor Maldonado,venezuelan,1985-03-09,Williams F1 Team,Grove,Williams FW35,Renault RS27-2013 2.4 V8,Pirelli,1-19,
+17,Valtteri Bottas,finnish,1989-08-28,Williams F1 Team,Grove,Williams FW35,Renault RS27-2013 2.4 V8,Pirelli,1-19,
+18,Jean-Éric Vergne,french,1990-04-25,Scuderia Toro Rosso,Faenza,Toro Rosso STR8,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+19,Daniel Ricciardo,australian,1989-07-01,Scuderia Toro Rosso,Faenza,Toro Rosso STR8,Ferrari Type 056 2.4 V8,Pirelli,1-19,
+20,Charles Pic,french,1990-02-15,Caterham F1 Team,Leafield,Caterham CT03,Renault RS27-2013 2.4 V8,Pirelli,1-19,
+21,Giedo van der Garde,dutch,1985-04-25,Caterham F1 Team,Leafield,Caterham CT03,Renault RS27-2013 2.4 V8,Pirelli,1-19,
+22,Jules Bianchi,french,1989-08-03,Marussia F1 Team,Banbury,Marussia MR02,Cosworth CA2013 2.4 V8,Pirelli,1-19,
+23,Max Chilton,british,1991-04-21,Marussia F1 Team,Banbury,Marussia MR02,Cosworth CA2013 2.4 V8,Pirelli,1-19,
+,Heikki Kovalainen,finnish,1981-10-19,Caterham F1 Team,Leafield,Caterham CT03,Renault RS27-2013 2.4 V8,Pirelli,"4-5,11-12,15,17",Friday practice only; Caterham reserve driver; raced for Lotus in rounds 18-19
+,Ma Qinghua,chinese,1987-12-25,Caterham F1 Team,Leafield,Caterham CT03,Renault RS27-2013 2.4 V8,Pirelli,3,Friday practice only
+,Alexander Rossi,american,1991-09-25,Caterham F1 Team,Leafield,Caterham CT03,Renault RS27-2013 2.4 V8,Pirelli,"7,18",Friday practice only
+,James Calado,british,1989-06-13,Sahara Force India F1 Team,Silverstone,Force India VJM06,Mercedes FO 108F 2.4 V8,Pirelli,"12,14,16-17,19",Friday practice only
+,Rodolfo González,venezuelan,1986-05-14,Marussia F1 Team,Banbury,Marussia MR02,Cosworth CA2013 2.4 V8,Pirelli,"4-5,9-10,12,14,17-19",Friday practice only; Marussia reserve driver
+,Daniil Kvyat,russian,1994-04-26,Scuderia Toro Rosso,Faenza,Toro Rosso STR8,Ferrari Type 056 2.4 V8,Pirelli,18-19,Friday practice only

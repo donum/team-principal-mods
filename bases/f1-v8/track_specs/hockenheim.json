@@ -1,0 +1,44 @@
+{
+  "id": "hockenheim",
+  "name": "Hockenheimring",
+  "nationality": "german",
+  "bbox": [
+    8.555,
+    49.318,
+    8.592,
+    49.338
+  ],
+  "length_km": 4.574,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 67,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 17.0,
+  "tyre_wear_mult": 1.0,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "right",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Hockenheimring Grand Prix circuit since 2002 (clockwise). Same raceway loop as dtm-era4 hockenheim13: the members of OSM relation 284588 without the pit lanes. Traced 4517 m vs 4574 m. Start line from the middle of the pit lane. One DRS zone on the Parabolika to the hairpin as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Boxengasse"
+  ],
+  "loop_relation": "284588",
+  "exclude_way_names": [
+    "Boxengasse",
+    "Pitlane"
+  ],
+  "exclude_way_ids": [
+    "31318810",
+    "22940941",
+    "1416119746",
+    "446193574",
+    "446193575",
+    "446193576",
+    "446193577"
+  ],
+  "assemble_multipolygons": true
+}

@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Infiniti Red Bull Racing,Red Bull RB9,56,1:38:56.681,,1:40.446,classified,grid 1; 4 pit stops; 25 pts
+2,2,Mark Webber,Infiniti Red Bull Racing,Red Bull RB9,56,1:39:00.979,+4.298,1:40.685,classified,grid 5; 4 pit stops; 18 pts
+3,10,Lewis Hamilton,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,56,1:39:08.862,+12.181,1:41.001,classified,grid 4; 4 pit stops; 15 pts
+4,9,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,56,1:39:09.321,+12.640,1:40.755,classified,grid 6; 4 pit stops; 12 pts
+5,4,Felipe Massa,Scuderia Ferrari,Ferrari F138,56,1:39:22.329,+25.648,1:39.805,classified,grid 2; 4 pit stops; 10 pts
+6,8,Romain Grosjean,Lotus F1 Team,Lotus E21,56,1:39:32.245,+35.564,1:41.226,classified,grid 11; 3 pit stops; 8 pts
+7,7,Kimi Räikkönen,Lotus F1 Team,Lotus E21,56,1:39:45.160,+48.479,1:41.769,classified,grid 10; 3 pit stops; 6 pts
+8,11,Nico Hülkenberg,Sauber F1 Team,Sauber C32,56,1:39:49.725,+53.044,1:40.727,classified,grid 12; 4 pit stops; 4 pts
+9,6,Sergio Pérez,Vodafone McLaren Mercedes,McLaren MP4-28,56,1:40:09.038,+1:12.357,1:39.199,classified,grid 9; 4 pit stops; 2 pts
+10,18,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR8,56,1:40:23.805,+1:27.124,1:40.492,classified,grid 17; 3 pit stops; 1 pts
+11,17,Valtteri Bottas,Williams F1 Team,Williams FW35,56,1:40:25.291,+1:28.610,1:41.373,classified,grid 18; 3 pit stops; 0 pts
+12,12,Esteban Gutiérrez,Sauber F1 Team,Sauber C32,55,,+1 lap,1:40.929,classified,grid 14; 4 pit stops; 0 pts
+13,22,Jules Bianchi,Marussia F1 Team,Marussia MR02,55,,+1 lap,1:42.423,classified,grid 19; 4 pit stops; 0 pts
+14,20,Charles Pic,Caterham F1 Team,Caterham CT03,55,,+1 lap,1:42.942,classified,grid 20; 4 pit stops; 0 pts
+15,21,Giedo van der Garde,Caterham F1 Team,Caterham CT03,55,,+1 lap,1:43.157,classified,grid 22; 4 pit stops; 0 pts
+16,23,Max Chilton,Marussia F1 Team,Marussia MR02,54,,+2 laps,1:43.150,classified,grid 21; 4 pit stops; 0 pts
+17,5,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-28,53,,+3 laps,1:40.556,classified,"Withdrew, classified as he completed 90% of the distance; grid 7; 3 pit stops; 0 pts; Jenson Button and Daniel Ricciardo were classified even though they did not finish the race, as they had completed more than 90% of the race distance."
+18,19,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR8,51,,+5 laps,1:42.581,classified,"Retired, classified as he completed 90% of the distance; grid 13; 3 pit stops; 0 pts; Jenson Button and Daniel Ricciardo were classified even though they did not finish the race, as they had completed more than 90% of the race distance."
+,16,Pastor Maldonado,Williams F1 Team,Williams FW35,45,,,1:43.465,DNF,Retired (en.wiki: KERS failure); grid 16; 3 pit stops; 0 pts
+,15,Adrian Sutil,Sahara Force India F1 Team,Force India VJM06,27,,,1:42.791,DNF,Wheel nut; grid 8; 2 pit stops; 0 pts
+,14,Paul di Resta,Sahara Force India F1 Team,Force India VJM06,22,,,1:43.094,DNF,Wheel nut; grid 15; 2 pit stops; 0 pts
+,3,Fernando Alonso,Scuderia Ferrari,Ferrari F138,1,,,,DNF,Collision; grid 3; 0 pit stops; 0 pts

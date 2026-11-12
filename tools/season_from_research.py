@@ -45,6 +45,23 @@ Seasons outside the Group A era override the template's rules in gen.json:
   [names, primary first]}} real starting deals, copied to season.json for
   build_pack.py, which swaps them in for the cloned teams' fictional deals.
 
+Single-seater series (F1) name the car's maker by its engine, and tune each
+team by hand rather than from its points:
+* "make_from": "engine" reads the make from entries.csv's engine column,
+  with "makes": {"text in the engine": "supplier key"};
+* "test_weeks": {"private": [weeks], "test": [weeks]} (1-based) replace the
+  default test weeks 3 (private), 5 and 6;
+* per team in "teams": "make", "rating", "profile" (a car profile name),
+  "adjust" (extra profile deltas), "potential" (development headroom above
+  the starting ratings, default 6), "chassis" {"prefix", "names"},
+  "headquarters" (merged over the generated levels), "budget_m",
+  "starting_balance_m", "staff_level", "engine_contract_type", "mass_kg",
+  "clone" (the vanilla team whose secondary settings it takes), "prestige"
+  {"heritage", "form", "base"}, "difficulty", "nationality";
+* "drivers": {name: {...}} is merged over a driver's generated record
+  ("skill" sets all five skills at once; "contract" merges), so the
+  pecking order of drivers is set by hand.
+
 Usage:
     python tools/season_from_research.py seasons/dtm-1990
 """
@@ -104,8 +121,9 @@ def rounds_of(spec, total):
     return out
 
 
-def make_of(car):
-    return next((m for key, m in MAKES if key.lower() in (car or "").lower()), "BMW")
+def make_of(car, makes=None):
+    pairs = list(makes.items()) if makes else MAKES
+    return next((m for key, m in pairs if key.lower() in (car or "").lower()), pairs[0][1] if makes else "BMW")
 
 
 def clean_name(name):
@@ -154,7 +172,8 @@ def main():
             continue
         name = rename.get(cfg_key, {}).get("name", cfg_key)
         team = teams.setdefault(name, {"entrant": entrant, "cfg": rename.get(cfg_key, {}), "makes": [], "tyres": []})
-        team["makes"].append(make_of(e["car"]))
+        team["makes"].append(make_of(e["engine"], gen.get("makes")) if gen.get("make_from") == "engine"
+                             else make_of(e["car"]))
         if e.get("tyres"):
             team["tyres"].append(e["tyres"])
         dname = clean_name(e["driver"])
@@ -162,7 +181,8 @@ def main():
         d = drivers.setdefault(dname, {"name": dname, "team": name, "number": e["number"].strip(),
                                        "nationality": NATIONALITY.get(nat, nat if nat.islower() else "german"),
                                        "birth": e.get("birth_date", ""), "rounds": set()})
-        d["rounds"] |= rounds_of(e["rounds"], total_rounds)
+        if "friday practice only" not in (e.get("notes") or "").lower():   # F1 test drivers stay reserves
+            d["rounds"] |= rounds_of(e["rounds"], total_rounds)
 
     # ---- per team: seats, points, rating
     profile_of = {**PROFILE, **gen.get("make_profiles", {})}
@@ -192,26 +212,35 @@ def main():
         seated = [d for d in members if len(d["rounds"]) >= total_rounds / 2][:3] or members[:1]
         base = round(rating_lo + (rating_hi - rating_lo) * (best / top_team) ** 0.7, 1)
         base = cfg.get("rating", base)
+        rating = {"base": base, "profile": cfg.get("profile", profile_of.get(make))}
+        for key in ("adjust", "potential"):
+            if key in cfg:
+                rating[key] = cfg[key]
         tyre = cfg.get("tyres") or (max(set(t["tyres"]), key=t["tyres"].count) if t["tyres"]
                                     else gen.get("default_tyre") or DEFAULT_TYRE[make])
         works = cfg.get("works", best / top_team > 0.45)
         tier = min(len(CLONE_TIERS) - 1, (pos - 1) * len(CLONE_TIERS) // max(1, len(ranked)))
-        clones[name] = CLONE_TIERS[tier]
-        staff_levels[name] = max(4, min(16, round(4 + 12 * best / top_team)))
+        clones[name] = cfg.get("clone", CLONE_TIERS[tier])
+        staff_levels[name] = cfg.get("staff_level", max(4, min(16, round(4 + 12 * best / top_team))))
+        prestige = cfg.get("prestige", {})
         rec = {
             "name": name, "nationality": cfg.get("nationality", "german"), "entry_count": len(seated),
             "color_rgb": cfg.get("color", [240, 240, 240]), "secondary_color_rgb": cfg.get("secondary", [30, 30, 30]),
-            "engine": None, "engine_supplier": make, "engine_contract_type": "partner" if works else "customer",
+            "engine": None, "engine_supplier": make,
+            "engine_contract_type": cfg.get("engine_contract_type", "partner" if works else "customer"),
             "tyre_contract": {"supplier": tyre, "type": "partner" if works else "customer"},
-            "car_mass_kg": mass_of[make], "$rating": {"base": base, "profile": profile_of[make]},
-            "heritage_prestige": cfg.get("heritage", round(base + 12)), "form_prestige": round(base + 10),
-            "prestige_base": round(base + 11), "budget_m": round(base * econ.get("budget_per_rating", 1.6)), "starting_balance_m": round(base / 2, 1),
-            "difficulty": "easy" if base >= 55 else "medium" if base >= 48 else "hard",
+            "car_mass_kg": cfg.get("mass_kg", mass_of[make]), "$rating": rating,
+            "heritage_prestige": prestige.get("heritage", cfg.get("heritage", round(base + 12))),
+            "form_prestige": prestige.get("form", round(base + 10)),
+            "prestige_base": prestige.get("base", round(base + 11)),
+            "budget_m": cfg.get("budget_m", round(base * econ.get("budget_per_rating", 1.6))),
+            "starting_balance_m": cfg.get("starting_balance_m", round(base / 2, 1)),
+            "difficulty": cfg.get("difficulty", "easy" if base >= 55 else "medium" if base >= 48 else "hard"),
             "previous_constructor_position": cfg.get("previous_position", pos),
-            **chassis_fields(gen.get("chassis", {}).get(make)),
+            **chassis_fields(cfg.get("chassis") or gen.get("chassis", {}).get(make)),
             "headquarters": {"hospitality_pr_center": 2 + works, "wind_tunnel": 1 + works, "engine_plant": 0,
                              "test_track": int(works), "factory": 2 + 2 * works, "cfd_center": 1, "recon_centre": 1 + works,
-                             "driver_centre": 1 + works},
+                             "driver_centre": 1 + works, **cfg.get("headquarters", {})},
         }
         team_records.append(rec)
         for d in members:
@@ -248,6 +277,12 @@ def main():
                 r["contract"].update(status="equal", priority="equal")
             elif num:
                 r["reserve_number"] = int(num)
+            over = copy.deepcopy(gen.get("drivers", {}).get(d["name"], {}))
+            if "skill" in over:
+                lvl = over.pop("skill")
+                r.update(cornering=lvl, braking=lvl, consistency=lvl, smoothness=lvl, control=lvl)
+            r["contract"].update(over.pop("contract", {}))
+            r.update(over)
             driver_records.append(r)
 
     # Fix team engine names from the template engines.
@@ -264,13 +299,13 @@ def main():
     teams_file = load_json(tmpl / "data" / "teams.json")
     out_data = season / "data"
     dump_json(out_data / "teams.json", {
-        "$comment": f"DTM {year} entrants, generated by tools/season_from_research.py from research/entries.csv "
+        "$comment": f"{gen.get('series_label', 'DTM')} {year} entrants, generated by tools/season_from_research.py from research/entries.csv "
                     f"and gen.json. Ratings are estimates from the {year} standings.",
         "$template": teams_file["$template"], "$profiles": {**teams_file["$profiles"], **gen.get("profiles", {})},
         "records": team_records})
     drivers_file = load_json(tmpl / "data" / "drivers.json")
     dump_json(out_data / "drivers.json", {
-        "$comment": f"DTM {year} drivers, generated from research/entries.csv and standings.csv. Skills and talent are "
+        "$comment": f"{gen.get('series_label', 'DTM')} {year} drivers, generated from research/entries.csv and standings.csv. Skills and talent are "
                     f"estimates from championship points; part-timers are reserves.",
         "$template": drivers_file["$template"], "records": driver_records})
     dump_json(out_data / "engines.json", engines)
@@ -285,7 +320,10 @@ def main():
 
     # ---- calendar -> schedule
     schedule = [None] * 52
-    schedule[2], schedule[4], schedule[5] = "private", "test", "test"
+    tests = gen.get("test_weeks", {"private": [3], "test": [5, 6]})
+    for kind, weeks in tests.items():
+        for w in weeks:
+            schedule[w - 1] = kind
     track_map = gen["tracks"]
     for r in calendar:
         week = (datetime.date.fromisoformat(r["date"]) - datetime.date(year, 1, 1)).days // 7 + 1
@@ -300,7 +338,7 @@ def main():
     if own.get("base"):
         # Only the season's own values: the base's base.json supplies the rest
         # (base pack, series, shared constants and tracks) at build time.
-        manifest = {"base": own["base"], "title": title, "pack_folder": f"dtm{year}", "version": "0.1",
+        manifest = {"base": own["base"], "title": title, "pack_folder": gen.get("pack_folder", f"dtm{year}"), "version": "0.1",
                     "constants": {"SEASON_START_YEAR": year, **own.get("constants", {})}, "team_clones": clones}
         gen_tracks = own
     else:

@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,53,1:16:24.572,,1:24.139,classified,grid 1; 25 pts
+2,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,53,1:16:27.510,+2.938,1:24.598,classified,grid 2; 18 pts
+3,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,53,1:16:28.795,+4.223,1:24.575,classified,grid 3; 15 pts
+4,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,53,1:16:52.768,+28.196,1:24.493,classified,grid 6; 12 pts
+5,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,53,1:16:54.514,+29.942,1:24.491,classified,grid 7; 10 pts
+6,6,Mark Webber,Red Bull Racing,Red Bull RB6,53,1:16:55.848,+31.276,1:24.278,classified,grid 4; 8 pts
+7,10,Nico Hülkenberg,AT&T Williams,Williams FW32,53,1:16:57.384,+32.812,1:24.576,classified,grid 8; 6 pts
+8,11,Robert Kubica,Renault F1 Team,Renault R30,53,1:16:58.600,+34.028,1:24.560,classified,grid 9; 4 pts
+9,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,53,1:17:09.520,+44.948,1:24.947,classified,grid 12; 2 pts
+10,9,Rubens Barrichello,AT&T Williams,Williams FW32,53,1:17:28.785,+1:04.213,1:25.239,classified,grid 10; 1 pts
+11,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,53,1:17:29.628,+1:05.056,1:25.224,classified,grid 14; 0 pts
+12,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,53,1:17:30.678,+1:06.106,1:25.102,classified,grid 19; 0 pts
+13,12,Vitaly Petrov,Renault F1 Team,Renault R30,53,1:17:43.491,+1:18.919,1:24.644,classified,grid 20; 0 pts
+14,22,Pedro de la Rosa,BMW Sauber F1 Team,Sauber C29,52,,+1 lap,1:26.325,classified,grid 16; 0 pts
+15,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,52,,+1 lap,1:25.472,classified,grid 15; 0 pts
+16,14,Adrian Sutil,Force India F1 Team,Force India VJM03,52,,+1 lap,1:24.937,classified,grid 11; 0 pts
+17,24,Timo Glock,Virgin Racing,Virgin VR-01,51,,+2 laps,1:27.765,classified,grid 24; 0 pts
+18,19,Heikki Kovalainen,Lotus Racing,Lotus T127,51,,+2 laps,1:27.822,classified,grid 18; 0 pts
+19,20,Sakon Yamamoto,Hispania Racing F1 Team,Hispania F110,51,,+2 laps,1:28.875,classified,grid 23; 0 pts
+20,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,50,,+3 laps,1:28.171,classified,grid 21; 0 pts; Di Grassi was classified for completing 90% of the race winner's distance.
+,18,Jarno Trulli,Lotus Racing,Lotus T127,46,,,1:29.017,DNF,Engine (en.wiki: Gearbox); grid 17; 0 pts
+,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,11,,,1:30.880,DNF,Retired (en.wiki: Hydraulics); grid 22; 0 pts
+,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,0,,,,DNF,Collision; grid 5; 0 pts
+,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,0,,,,DNF,Gearbox; grid pit lane; 0 pts

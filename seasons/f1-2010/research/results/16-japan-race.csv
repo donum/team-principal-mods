@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,53,1:30:27.323,,1:33.653,classified,grid 1; 25 pts
+2,6,Mark Webber,Red Bull Racing,Red Bull RB6,53,1:30:28.228,+0.905,1:33.474,classified,grid 2; 18 pts
+3,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,53,1:30:30.044,+2.721,1:33.823,classified,grid 4; 15 pts
+4,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,53,1:30:40.845,+13.522,1:33.529,classified,grid 5; 12 pts
+5,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,53,1:31:06.918,+39.595,1:35.182,classified,grid 8; 10 pts
+6,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,53,1:31:27.256,+59.933,1:34.853,classified,grid 10; 8 pts
+7,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,53,1:31:31.361,+1:04.038,1:34.486,classified,grid 14; 6 pts
+8,22,Nick Heidfeld,BMW Sauber F1 Team,Sauber C29,53,1:31:36.971,+1:09.648,1:35.521,classified,grid 11; 4 pts
+9,9,Rubens Barrichello,AT&T Williams,Williams FW32,53,1:31:38.169,+1:10.846,1:35.597,classified,grid 7; 2 pts
+10,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,53,1:31:40.129,+1:12.806,1:35.116,classified,grid 18; 1 pts
+11,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,52,,+1 lap,1:34.365,classified,grid 16; 0 pts
+12,19,Heikki Kovalainen,Lotus Racing,Lotus T127,52,,+1 lap,1:37.620,classified,grid 20; 0 pts
+13,18,Jarno Trulli,Lotus Racing,Lotus T127,51,,+2 laps,1:39.710,classified,grid 19; 0 pts
+14,24,Timo Glock,Virgin Racing,Virgin VR-01,51,,+2 laps,1:39.813,classified,grid 22; 0 pts
+15,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,51,,+2 laps,1:40.329,classified,grid 23; 0 pts
+16,20,Sakon Yamamoto,Hispania Racing F1 Team,Hispania F110,50,,+3 laps,1:39.806,classified,grid 24; 0 pts
+,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,47,,,1:36.108,DNF,Suspension (en.wiki: Wheel); grid 6; 0 pts
+,14,Adrian Sutil,Force India F1 Team,Force India VJM03,44,,,1:36.319,DNF,Oil leak (en.wiki: Engine); grid 15; 0 pts
+,11,Robert Kubica,Renault F1 Team,Renault R30,2,,,2:41.378,DNF,Wheel; grid 3; 0 pts
+,10,Nico Hülkenberg,AT&T Williams,Williams FW32,0,,,,DNF,Accident (en.wiki: Collision); grid 9; 0 pts
+,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,0,,,,DNF,Accident (en.wiki: Collision); grid 12; 0 pts
+,12,Vitaly Petrov,Renault F1 Team,Renault R30,0,,,,DNF,Accident (en.wiki: Collision); grid 13; 0 pts
+,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,0,,,,DNF,Accident (en.wiki: Collision); grid 17; 0 pts
+,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,0,,,,DNF,Suspension (en.wiki: Accident); grid 21; 0 pts; Lucas di Grassi was unable to start the Grand Prix due to him crashing heavily on his way to the starting grid.

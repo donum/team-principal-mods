@@ -1,0 +1,27 @@
+{
+  "id": "shanghai",
+  "name": "Shanghai International Circuit",
+  "nationality": "chinese",
+  "bbox": [
+    121.211,
+    31.3335,
+    121.2306,
+    31.3474
+  ],
+  "length_km": 5.451,
+  "width_m": 15.0,
+  "speed_scale": 1.0,
+  "race_laps": 56,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.4,
+  "pit_lane_loss_s": 22.0,
+  "tyre_wear_mult": 1.2,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "right",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Shanghai International Circuit (clockwise). Raceway loop. Traced 5386 m vs 5451 m. Start line on the pit straight, from the middle of the pit lane. One DRS zone on the back straight as in 2012, detection near Turn 12. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "assemble_multipolygons": true
+}

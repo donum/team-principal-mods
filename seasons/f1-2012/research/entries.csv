@@ -1,0 +1,34 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Sebastian Vettel,german,1987-07-03,Red Bull Racing,Milton Keynes,Red Bull RB8,Renault RS27-2012 2.4 V8,Pirelli,1-20,reigning champion
+2,Mark Webber,australian,1976-08-27,Red Bull Racing,Milton Keynes,Red Bull RB8,Renault RS27-2012 2.4 V8,Pirelli,1-20,
+3,Jenson Button,british,1980-01-19,Vodafone McLaren Mercedes,Woking,McLaren MP4-27,Mercedes FO 108Z 2.4 V8,Pirelli,1-20,
+4,Lewis Hamilton,british,1985-01-07,Vodafone McLaren Mercedes,Woking,McLaren MP4-27,Mercedes FO 108Z 2.4 V8,Pirelli,1-20,
+5,Fernando Alonso,spanish,1981-07-29,Scuderia Ferrari,Maranello,Ferrari F2012,Ferrari Type 056 2.4 V8,Pirelli,1-20,
+6,Felipe Massa,brazilian,1981-04-25,Scuderia Ferrari,Maranello,Ferrari F2012,Ferrari Type 056 2.4 V8,Pirelli,1-20,
+7,Michael Schumacher,german,1969-01-03,Mercedes AMG Petronas F1 Team,Brackley,Mercedes F1 W03,Mercedes FO 108Z 2.4 V8,Pirelli,1-20,
+8,Nico Rosberg,german,1985-06-27,Mercedes AMG Petronas F1 Team,Brackley,Mercedes F1 W03,Mercedes FO 108Z 2.4 V8,Pirelli,1-20,
+9,Kimi Räikkönen,finnish,1979-10-17,Lotus F1 Team,Enstone,Lotus E20,Renault RS27-2012 2.4 V8,Pirelli,1-20,
+10,Romain Grosjean,french,1986-04-17,Lotus F1 Team,Enstone,Lotus E20,Renault RS27-2012 2.4 V8,Pirelli,"1-12,14-20",banned for round 13 (Monza) after causing the start crash at Spa
+10,Jérôme d'Ambrosio,belgian,1985-12-27,Lotus F1 Team,Enstone,Lotus E20,Renault RS27-2012 2.4 V8,Pirelli,13,
+11,Paul di Resta,british,1986-04-16,Sahara Force India F1 Team,Silverstone,Force India VJM05,Mercedes FO 108Z 2.4 V8,Pirelli,1-20,
+12,Nico Hülkenberg,german,1987-08-19,Sahara Force India F1 Team,Silverstone,Force India VJM05,Mercedes FO 108Z 2.4 V8,Pirelli,1-20,
+14,Kamui Kobayashi,japanese,1986-09-13,Sauber F1 Team,Hinwil,Sauber C31,Ferrari Type 056 2.4 V8,Pirelli,1-20,
+15,Sergio Pérez,mexican,1990-01-26,Sauber F1 Team,Hinwil,Sauber C31,Ferrari Type 056 2.4 V8,Pirelli,1-20,
+16,Daniel Ricciardo,australian,1989-07-01,Scuderia Toro Rosso,Faenza,Toro Rosso STR7,Ferrari Type 056 2.4 V8,Pirelli,1-20,
+17,Jean-Éric Vergne,french,1990-04-25,Scuderia Toro Rosso,Faenza,Toro Rosso STR7,Ferrari Type 056 2.4 V8,Pirelli,1-20,
+18,Pastor Maldonado,venezuelan,1985-03-09,Williams F1 Team,Grove,Williams FW34,Renault RS27-2012 2.4 V8,Pirelli,1-20,
+19,Bruno Senna,brazilian,1983-10-15,Williams F1 Team,Grove,Williams FW34,Renault RS27-2012 2.4 V8,Pirelli,1-20,
+20,Heikki Kovalainen,finnish,1981-10-19,Caterham F1 Team,Leafield,Caterham CT01,Renault RS27-2012 2.4 V8,Pirelli,1-20,
+21,Vitaly Petrov,russian,1984-09-08,Caterham F1 Team,Leafield,Caterham CT01,Renault RS27-2012 2.4 V8,Pirelli,1-20,
+22,Pedro de la Rosa,spanish,1971-02-24,HRT Formula 1 Team,Madrid,HRT F112,Cosworth CA2012 2.4 V8,Pirelli,1-20,
+23,Narain Karthikeyan,indian,1977-01-14,HRT Formula 1 Team,Madrid,HRT F112,Cosworth CA2012 2.4 V8,Pirelli,1-20,
+24,Timo Glock,german,1982-03-18,Marussia F1 Team,Banbury,Marussia MR01,Cosworth CA2012 2.4 V8,Pirelli,1-20,withdrew from round 8 (Valencia) before qualifying through illness (food poisoning)
+25,Charles Pic,french,1990-02-15,Marussia F1 Team,Banbury,Marussia MR01,Cosworth CA2012 2.4 V8,Pirelli,1-20,
+,Valtteri Bottas,finnish,1989-08-28,Williams F1 Team,Grove,Williams FW34,Renault RS27-2012 2.4 V8,Pirelli,"2-5,8-13,15-18,20",Friday practice only; Williams reserve driver
+,Jules Bianchi,french,1989-08-03,Sahara Force India F1 Team,Silverstone,Force India VJM05,Mercedes FO 108Z 2.4 V8,Pirelli,"3,5,8-11,13,16,18",Friday practice only; Force India reserve driver
+,Giedo van der Garde,dutch,1985-04-25,Caterham F1 Team,Leafield,Caterham CT01,Renault RS27-2012 2.4 V8,Pirelli,"3,15-18,20",Friday practice only
+,Alexander Rossi,american,1991-09-25,Caterham F1 Team,Leafield,Caterham CT01,Renault RS27-2012 2.4 V8,Pirelli,5,Friday practice only
+,Dani Clos,spanish,1988-10-23,HRT Formula 1 Team,Madrid,HRT F112,Cosworth CA2012 2.4 V8,Pirelli,"5,9-12,16",Friday practice only
+,Ma Qinghua,chinese,1987-12-25,HRT Formula 1 Team,Madrid,HRT F112,Cosworth CA2012 2.4 V8,Pirelli,"13-14,18-19",Friday practice only
+,Max Chilton,british,1991-04-21,Marussia F1 Team,Banbury,Marussia MR01,Cosworth CA2012 2.4 V8,Pirelli,18,Friday practice only
+,Esteban Gutiérrez,mexican,1991-08-05,Sauber F1 Team,Hinwil,Sauber C31,Ferrari Type 056 2.4 V8,Pirelli,17,Friday practice only; Sauber reserve driver

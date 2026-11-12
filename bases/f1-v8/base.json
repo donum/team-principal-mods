@@ -1,0 +1,20 @@
+{
+  "$comment": "Era base for Formula 1 2010-2013: the last 2.4 V8 years, the Vettel and Red Bull titles. Every season in seasons/ with \"base\": \"f1-v8\" builds on it (tools/layers.py): rules, Pirelli tyres, traced tracks. 2010 (Bridgestone, no DRS, no KERS) overrides what differs in its own season folder. The vanilla game is a modern F1 manager, so the base pack's economy and car scale fit almost unchanged.",
+  "title": "F1 2010-2013 (era base)",
+  "base_pack": "default26",
+  "series": "formula",
+  "no_title_sponsors": true,
+  "constants": {
+    "POINTS_TOP10": [25, 18, 15, 12, 10, 8, 6, 4, 2, 1],
+    "QUALI_GRID_LIMIT": 24,
+    "QUALI_MIN_ENTRANTS": 20,
+    "PREQUALIFYING_TRIGGER_CARS": 30,
+    "PREQUALIFYING_FIELD_LIMIT": 30,
+    "DRIVER_RETIREMENT_MIN_AGE": 34,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 42,
+    "DRIVER_AID_AI_CHEAT_BASE_CHANCE": 0.01,
+    "WEEKEND_CORNERING_VARIABILITY_LEVEL_MIN": 3,
+    "WEEKEND_CORNERING_VARIABILITY_LEVEL_MAX": 10,
+    "WEEKEND_CORNERING_VARIABILITY_KMH_PER_LEVEL": 0.6
+  }
+}

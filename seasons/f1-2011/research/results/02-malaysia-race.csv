@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,56,1:37:39.832,,1:41.539,classified,grid 1; 3 pit stops; 25 pts
+2,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,56,1:37:43.093,+3.261,1:41.264,classified,grid 4; 3 pit stops; 18 pts
+3,9,Nick Heidfeld,Lotus Renault GP,Renault R31,56,1:38:04.907,+25.075,1:41.547,classified,grid 6; 3 pit stops; 15 pts
+4,2,Mark Webber,Red Bull Racing,Red Bull RB7,56,1:38:06.216,+26.384,1:40.571,classified,grid 3; 4 pit stops; 12 pts
+5,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,56,1:38:16.790,+36.958,1:41.999,classified,grid 7; 3 pit stops; 10 pts
+6,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,56,1:38:37.080,+57.248,1:40.717,classified,"grid 5; 4 pit stops; 8 pts; Fernando Alonso was penalised 20 seconds post-race for contact while trying to pass Lewis Hamilton.; gap +57.248 as in en.wiki, includes the 20-second post-race penalty; Jolpica gives +37.248"
+7,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,56,1:38:46.271,+1:06.439,1:42.095,classified,grid 10; 2 pit stops; 6 pts
+8,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,56,1:38:49.789,+1:09.957,1:41.512,classified,"grid 2; 4 pit stops; 4 pts; Lewis Hamilton originally finished seventh but was also penalised 20 seconds post-race, for weaving while being passed by Fernando Alonso."
+9,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,56,1:39:04.728,+1:24.896,1:42.491,classified,grid 11; 3 pit stops; 2 pts
+10,15,Paul di Resta,Force India F1 Team,Force India VJM04,56,1:39:11.395,+1:31.563,1:42.883,classified,grid 14; 3 pit stops; 1 pts
+11,14,Adrian Sutil,Force India F1 Team,Force India VJM04,55,1:39:21.211,+1:41.379,1:42.973,classified,grid 17; 3 pit stops; 0 pts; en.wiki gives 56 laps
+12,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,55,,+1 lap,1:41.778,classified,grid 9; 3 pit stops; 0 pts
+13,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,55,,+1 lap,1:42.659,classified,grid 12; 3 pit stops; 0 pts
+14,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,55,,+1 lap,1:43.744,classified,grid 13; 2 pit stops; 0 pts
+15,20,Heikki Kovalainen,Team Lotus,Lotus T128,55,,+1 lap,1:43.677,classified,grid 19; 2 pit stops; 0 pts
+16,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,54,,+2 laps,1:45.357,classified,grid 21; 2 pit stops; 0 pts
+17,10,Vitaly Petrov,Lotus Renault GP,Renault R31,52,,+4 laps,1:41.054,classified,"Accident, classified as he completed 90% of the distance; grid 8; 3 pit stops; 0 pts; Vitaly Petrov crashed his Renault on lap 53 of the race, but was classified as he had completed 90% of the race-winner's distance."
+,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,46,,,1:46.521,DNF,+10 Laps (en.wiki: Rear wing); grid 23; 3 pit stops; 0 pts
+,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,42,,,1:45.346,DNF,Accident (en.wiki: Electrical); grid 22; 2 pit stops; 0 pts
+,21,Jarno Trulli,Team Lotus,Lotus T128,31,,,1:45.280,DNF,Clutch; grid 20; 1 pit stop; 0 pts
+,17,Sergio Pérez,Sauber F1 Team,Sauber C30,23,,,1:43.298,DNF,Accident (en.wiki: Electrical); grid 16; 1 pit stop; 0 pts
+,11,Rubens Barrichello,AT&T Williams,Williams FW33,22,,,1:45.516,DNF,Gearbox (en.wiki: Hydraulics); grid 15; 2 pit stops; 0 pts
+,22,Narain Karthikeyan,HRT Formula 1 Team,HRT F111,14,,,1:49.385,DNF,+42 Laps (en.wiki: Mechanical); grid 24; 0 pit stops; 0 pts
+,12,Pastor Maldonado,AT&T Williams,Williams FW33,8,,,1:45.689,DNF,Engine misfire; grid 18; 0 pit stops; 0 pts

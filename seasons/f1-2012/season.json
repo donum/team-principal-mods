@@ -1,0 +1,228 @@
+{
+  "base": "f1-v8",
+  "title": "Formula 1 2012",
+  "pack_folder": "f1-2012",
+  "version": "0.1",
+  "constants": {
+    "SEASON_START_YEAR": 2012
+  },
+  "team_clones": {
+    "Red Bull Racing": "Red Boar",
+    "Ferrari": "Scuderia Rossa",
+    "Lotus": "French Blue",
+    "McLaren": "McMean",
+    "Mercedes": "Mercurion",
+    "Sauber": "Audex",
+    "Force India": "Ashton Darting",
+    "Williams": "Willens Racing",
+    "Toro Rosso": "Alpha Bison",
+    "Marussia": "Hossden GP",
+    "HRT": "Hossden GP",
+    "Caterham": "Cadylacky Motors"
+  },
+  "staff": {
+    "seed": 2012,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "Red Bull Racing": 18,
+      "Ferrari": 16,
+      "Lotus": 14,
+      "McLaren": 16,
+      "Mercedes": 15,
+      "Sauber": 11,
+      "Force India": 11,
+      "Williams": 12,
+      "Toro Rosso": 10,
+      "Marussia": 7,
+      "HRT": 5,
+      "Caterham": 9
+    }
+  },
+  "sponsors": {
+    "pool": {
+      "Infiniti": {
+        "industry": "Automobile",
+        "nationality": "japanese"
+      },
+      "Total": {
+        "industry": "Energy",
+        "nationality": "french"
+      },
+      "Pepe Jeans": {
+        "industry": "Clothing",
+        "nationality": "spanish"
+      },
+      "Casio": {
+        "industry": "Technology",
+        "nationality": "japanese"
+      },
+      "Vodafone": {
+        "industry": "Telecom",
+        "nationality": "british"
+      },
+      "Mobil 1": {
+        "industry": "Energy",
+        "nationality": "american"
+      },
+      "Johnnie Walker": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      },
+      "Hugo Boss": {
+        "industry": "Clothing",
+        "nationality": "german"
+      },
+      "Santander": {
+        "industry": "Finance",
+        "nationality": "spanish"
+      },
+      "Shell": {
+        "industry": "Energy",
+        "nationality": "dutch"
+      },
+      "Acer": {
+        "industry": "Technology",
+        "nationality": "taiwanese"
+      },
+      "Kaspersky Lab": {
+        "industry": "Technology",
+        "nationality": "russian"
+      },
+      "Burn": {
+        "industry": "Consumer Goods",
+        "nationality": "american"
+      },
+      "Clear": {
+        "industry": "Consumer Goods",
+        "nationality": "british"
+      },
+      "Microsoft Dynamics": {
+        "industry": "Technology",
+        "nationality": "american"
+      },
+      "Rexona": {
+        "industry": "Consumer Goods",
+        "nationality": "british"
+      },
+      "Petronas": {
+        "industry": "Energy",
+        "nationality": "malaysian"
+      },
+      "Monster Energy": {
+        "industry": "Consumer Goods",
+        "nationality": "american"
+      },
+      "Allianz": {
+        "industry": "Finance",
+        "nationality": "german"
+      },
+      "Telmex": {
+        "industry": "Telecom",
+        "nationality": "mexican"
+      },
+      "Claro": {
+        "industry": "Telecom",
+        "nationality": "mexican"
+      },
+      "NEC": {
+        "industry": "Technology",
+        "nationality": "japanese"
+      },
+      "Sahara": {
+        "industry": "Finance",
+        "nationality": "indian"
+      },
+      "Kingfisher": {
+        "industry": "Alcohol",
+        "nationality": "indian"
+      },
+      "Whyte and Mackay": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      },
+      "PDVSA": {
+        "industry": "Energy",
+        "nationality": "venezuelan"
+      },
+      "Randstad": {
+        "industry": "Finance",
+        "nationality": "dutch"
+      },
+      "Oris": {
+        "industry": "Consumer Goods",
+        "nationality": "swiss"
+      },
+      "Cepsa": {
+        "industry": "Energy",
+        "nationality": "spanish"
+      },
+      "AirAsia": {
+        "industry": "Consumer Goods",
+        "nationality": "malaysian"
+      },
+      "GE": {
+        "industry": "Technology",
+        "nationality": "american"
+      },
+      "Dell": {
+        "industry": "Technology",
+        "nationality": "american"
+      }
+    },
+    "teams": {
+      "Red Bull Racing": [
+        "Infiniti",
+        "Total",
+        "Pepe Jeans",
+        "Casio"
+      ],
+      "McLaren": [
+        "Vodafone",
+        "Mobil 1",
+        "Johnnie Walker",
+        "Hugo Boss"
+      ],
+      "Ferrari": [
+        "Santander",
+        "Shell",
+        "Acer",
+        "Kaspersky Lab"
+      ],
+      "Lotus": [
+        "Burn",
+        "Clear",
+        "Microsoft Dynamics",
+        "Rexona"
+      ],
+      "Mercedes": [
+        "Petronas",
+        "Monster Energy",
+        "Allianz"
+      ],
+      "Sauber": [
+        "Telmex",
+        "Claro",
+        "NEC"
+      ],
+      "Force India": [
+        "Sahara",
+        "Kingfisher",
+        "Whyte and Mackay"
+      ],
+      "Williams": [
+        "PDVSA",
+        "Randstad",
+        "Oris"
+      ],
+      "Toro Rosso": [
+        "Cepsa"
+      ],
+      "Caterham": [
+        "AirAsia",
+        "GE",
+        "Dell"
+      ]
+    }
+  }
+}

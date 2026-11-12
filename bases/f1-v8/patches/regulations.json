@@ -1,0 +1,76 @@
+{
+  "$comment": "F1 2011-2013 rules: 25-18-15 points, Q1-Q3 knockout, no refuelling, DRS, KERS as spec ERS, both dry compounds in the race, 640 kg, testing ban. 2010 turns DRS and ERS off in its own patch.",
+  "categories": {
+    "points_system": {
+      "default": "modern_top10"
+    },
+    "qualifying_format": {
+      "default": "knockout"
+    },
+    "formula_refueling": {
+      "default": "banned"
+    },
+    "formula_compound_usage": {
+      "default": "enabled"
+    },
+    "drs_policy": {
+      "default": "enabled"
+    },
+    "ers_policy": {
+      "default": "spec"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "f1_v8",
+          "name": "640 kg with Driver",
+          "min_car_mass_kg": 545.0,
+          "summary": "Cars must weigh at least 640 kg with the driver and without fuel.",
+          "description": "The 2011 to 2013 minimum weight. The chassis figure here leaves out the 95 kg engine the game adds on top."
+        }
+      ],
+      "default": "f1_v8"
+    },
+    "formula_team_entry_cap": {
+      "default": "two"
+    },
+    "formula_team_entry_requirement": {
+      "default": "fixed"
+    },
+    "pole_point": {
+      "default": "disabled"
+    },
+    "fastest_lap_point": {
+      "default": "disabled"
+    },
+    "driver_aid_restrictions": {
+      "default": "full_prohibition"
+    },
+    "safety_car_policy": {
+      "default": "physical_only"
+    },
+    "private_testing_limits": {
+      "default": "strict"
+    },
+    "compulsory_reserve_sessions": {
+      "default": "disabled"
+    },
+    "weekend_tyre_allocation": {
+      "add_options": [
+        {
+          "key": "f1_2011",
+          "name": "11 Dry Sets",
+          "dry_sets_per_driver": 11,
+          "intermediate_sets_per_driver": 4,
+          "wet_sets_per_driver": 3,
+          "summary": "Each driver gets 11 dry sets for the weekend: 6 of the harder and 5 of the softer compound.",
+          "description": "The 2011 to 2013 allocation. Sets keep their wear from practice to the race, so a set saved on Friday is a fresh set for Sunday."
+        }
+      ],
+      "default": "f1_2011"
+    }
+  },
+  "change_control": {
+    "scripted_changes": []
+  }
+}

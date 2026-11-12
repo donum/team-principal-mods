@@ -1,0 +1,73 @@
+{
+  "id": "monza",
+  "name": "Autodromo Nazionale Monza",
+  "nationality": "italian",
+  "bbox": [
+    9.274,
+    45.605,
+    9.299,
+    45.6345
+  ],
+  "length_km": 5.793,
+  "width_m": 14.0,
+  "speed_scale": 1.0,
+  "race_laps": 53,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 24.0,
+  "tyre_wear_mult": 0.85,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.8,
+  "pole_side": "right",
+  "drs_zones": [
+    {
+      "detection_progress": 0.4351,
+      "start_progress": 0.4751,
+      "end_progress": 0.6364
+    },
+    {
+      "detection_progress": 0.8654,
+      "start_progress": 0.9054,
+      "end_progress": 0.1134
+    }
+  ],
+  "notes": "Autodromo Nazionale Monza, Grand Prix circuit (clockwise). Via route over OSM circuit relation 284565. Its ways are tagged access=no, so the raceway loop search skips them. Pit lane excluded. Traced 5745 m vs 5793 m. Start line on the Rettifilo. Two DRS zones as in 2012: the straight from Lesmo 2 to Ascari and the pit straight. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Pit Lane"
+  ],
+  "route_relation": "284565",
+  "exclude_way_ids": [
+    "38168747"
+  ],
+  "via": [
+    [
+      45.6185,
+      9.2811
+    ],
+    [
+      45.62915,
+      9.28358
+    ],
+    [
+      45.63124,
+      9.29617
+    ],
+    [
+      45.62689,
+      9.29293
+    ],
+    [
+      45.62147,
+      9.28554
+    ],
+    [
+      45.612,
+      9.28195
+    ]
+  ],
+  "start": [
+    45.6185,
+    9.2811
+  ],
+  "assemble_multipolygons": true
+}

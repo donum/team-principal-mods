@@ -1,0 +1,37 @@
+{
+  "id": "sakhir",
+  "name": "Bahrain International Circuit",
+  "nationality": "bahraini",
+  "bbox": [
+    50.505,
+    26.022,
+    50.5225,
+    26.04
+  ],
+  "length_km": 5.412,
+  "width_m": 15.0,
+  "speed_scale": 1.0,
+  "race_laps": 57,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.45,
+  "pit_lane_loss_s": 22.0,
+  "tyre_wear_mult": 1.2,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.05,
+  "pole_side": "right",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Bahrain International Circuit, Grand Prix layout (clockwise). Raceway loop over the three 'Grand Prix Circuit' ways. The Outer, Inner and Endurance links are excluded. Traced 5355 m vs 5412 m. Start line from the middle of the pit lane. One DRS zone on the pit straight as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Pit Lane"
+  ],
+  "exclude_way_ids": [
+    "881756725",
+    "881756731",
+    "4818387",
+    "4818386",
+    "4818389"
+  ],
+  "assemble_multipolygons": true
+}

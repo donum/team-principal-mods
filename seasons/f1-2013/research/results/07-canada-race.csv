@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Infiniti Red Bull Racing,Red Bull RB9,70,1:32:09.143,,1:16.561,classified,grid 1; 2 pit stops; 25 pts
+2,3,Fernando Alonso,Scuderia Ferrari,Ferrari F138,70,1:32:23.551,+14.408,1:16.203,classified,grid 6; 2 pit stops; 18 pts
+3,10,Lewis Hamilton,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,70,1:32:25.085,+15.942,1:16.354,classified,grid 2; 2 pit stops; 15 pts
+4,2,Mark Webber,Infiniti Red Bull Racing,Red Bull RB9,70,1:32:34.874,+25.731,1:16.182,classified,grid 5; 2 pit stops; 12 pts
+5,9,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,70,1:33:18.868,+1:09.725,1:16.534,classified,grid 4; 3 pit stops; 10 pts
+6,18,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR8,69,,+1 lap,1:17.909,classified,grid 7; 2 pit stops; 8 pts
+7,14,Paul di Resta,Sahara Force India F1 Team,Force India VJM06,69,,+1 lap,1:17.841,classified,grid 17; 1 pit stop; 6 pts
+8,4,Felipe Massa,Scuderia Ferrari,Ferrari F138,69,,+1 lap,1:16.939,classified,grid 16; 2 pit stops; 4 pts
+9,7,Kimi Räikkönen,Lotus F1 Team,Lotus E21,69,,+1 lap,1:17.766,classified,grid 10; 1 pit stop; 2 pts
+10,15,Adrian Sutil,Sahara Force India F1 Team,Force India VJM06,69,,+1 lap,1:17.694,classified,grid 8; 3 pit stops; 1 pts
+11,6,Sergio Pérez,Vodafone McLaren Mercedes,McLaren MP4-28,69,,+1 lap,1:17.369,classified,grid 12; 2 pit stops; 0 pts
+12,5,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-28,69,,+1 lap,1:17.458,classified,grid 14; 1 pit stop; 0 pts
+13,8,Romain Grosjean,Lotus F1 Team,Lotus E21,69,,+1 lap,1:17.607,classified,grid 22; 2 pit stops; 0 pts
+14,17,Valtteri Bottas,Williams F1 Team,Williams FW35,69,,+1 lap,1:18.004,classified,grid 3; 2 pit stops; 0 pts
+15,19,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR8,68,,+2 laps,1:18.257,classified,grid 11; 2 pit stops; 0 pts
+16,16,Pastor Maldonado,Williams F1 Team,Williams FW35,68,,+2 laps,1:18.105,classified,grid 13; 3 pit stops; 0 pts
+17,22,Jules Bianchi,Marussia F1 Team,Marussia MR02,68,,+2 laps,1:18.873,classified,grid 19; 1 pit stop; 0 pts
+18,20,Charles Pic,Caterham F1 Team,Caterham CT03,67,,+3 laps,1:19.380,classified,grid 18; 2 pit stops; 0 pts
+19,23,Max Chilton,Marussia F1 Team,Marussia MR02,67,,+3 laps,1:19.566,classified,grid 20; 1 pit stop; 0 pts
+20,12,Esteban Gutiérrez,Sauber F1 Team,Sauber C32,63,,+7 laps,1:19.478,classified,"Accident, classified as he completed 90% of the distance; grid 15; 2 pit stops; 0 pts; Esteban Gutiérrez was classified despite retiring as he had completed 90% of the race distance."
+,11,Nico Hülkenberg,Sauber F1 Team,Sauber C32,45,,,1:19.056,DNF,Collision; grid 9; 2 pit stops; 0 pts
+,21,Giedo van der Garde,Caterham F1 Team,Caterham CT03,43,,,1:21.811,DNF,Collision; grid 21; 4 pit stops; 0 pts

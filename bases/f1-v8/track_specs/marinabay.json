@@ -1,0 +1,84 @@
+{
+  "id": "marinabay",
+  "name": "Marina Bay Street Circuit",
+  "nationality": "singaporean",
+  "bbox": [
+    103.849,
+    1.282,
+    103.867,
+    1.3
+  ],
+  "length_km": 5.073,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 61,
+  "dnf_modifier": 1.15,
+  "overtaking_difficulty": 0.85,
+  "pit_lane_loss_s": 29.0,
+  "tyre_wear_mult": 0.95,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.9,
+  "pole_side": "left",
+  "drs_zones": [
+    {
+      "detection_progress": 0.1886,
+      "start_progress": 0.2286,
+      "end_progress": 0.3602
+    }
+  ],
+  "notes": "Marina Bay Street Circuit (anticlockwise). Via route over OSM circuit relation 421263, which has today's layout. The 2008 to 2012 Singapore Sling chicane (Turn 10) and the 2008 to 2022 section on the float platform (Turns 16 to 19) are not in OSM and are not modelled, so the route follows the later roads there. Traced 4873 m vs 5073 m. Start line in the middle of the pit straight. One DRS zone on Raffles Boulevard (Turn 5 to Turn 7) as in 2012. The bay water is not drawn on the overview. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Pit Lane"
+  ],
+  "route_relation": "421263",
+  "exclude_way_ids": [
+    "100484287"
+  ],
+  "via": [
+    [
+      1.29046,
+      103.86435
+    ],
+    [
+      1.29484,
+      103.86273
+    ],
+    [
+      1.29205,
+      103.86289
+    ],
+    [
+      1.2921,
+      103.85768
+    ],
+    [
+      1.29308,
+      103.85598
+    ],
+    [
+      1.29191,
+      103.85299
+    ],
+    [
+      1.28766,
+      103.85261
+    ],
+    [
+      1.28926,
+      103.85427
+    ],
+    [
+      1.28997,
+      103.85658
+    ],
+    [
+      1.2887,
+      103.86277
+    ]
+  ],
+  "start": [
+    1.29046,
+    103.86435
+  ],
+  "assemble_multipolygons": true
+}

@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,5,Fernando Alonso,Scuderia Ferrari,Ferrari F2012,,1:46.515,+0.236,,qualified,best in Q1; Q1 1:46.515 (5); Q2 1:56.921 (9); Q3 1:51.746 (1); grid 1
+2,2,Mark Webber,Red Bull Racing,Red Bull RB8,,1:47.276,+0.997,,qualified,best in Q1; Q1 1:47.276 (11); Q2 1:55.898 (4); Q3 1:51.793 (2); grid 2
+3,7,Michael Schumacher,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,,1:46.571,+0.292,,qualified,best in Q1; Q1 1:46.571 (6); Q2 1:55.799 (3); Q3 1:52.020 (3); grid 3
+4,1,Sebastian Vettel,Red Bull Racing,Red Bull RB8,,1:46.279,+0.000,,qualified,best in Q1; Q1 1:46.279 (1); Q2 1:56.931 (10); Q3 1:52.199 (4); grid 4
+5,6,Felipe Massa,Scuderia Ferrari,Ferrari F2012,,1:47.401,+1.122,,qualified,best in Q1; Q1 1:47.401 (13); Q2 1:56.388 (5); Q3 1:53.065 (5); grid 5
+6,9,Kimi Räikkönen,Lotus F1 Team,Lotus E20,,1:47.309,+1.030,,qualified,best in Q1; Q1 1:47.309 (12); Q2 1:56.469 (7); Q3 1:53.290 (6); grid 6
+7,18,Pastor Maldonado,Williams F1 Team,Williams FW34,,1:46.449,+0.170,,qualified,best in Q1; Q1 1:46.449 (3); Q2 1:56.802 (8); Q3 1:53.539 (7); grid 7
+8,4,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-27,,1:47.433,+1.154,,qualified,best in Q1; Q1 1:47.433 (14); Q2 1:54.897 (1); Q3 1:53.543 (8); grid 8
+9,12,Nico Hülkenberg,Sahara Force India F1 Team,Force India VJM05,,1:46.334,+0.055,,qualified,best in Q1; Q1 1:46.334 (2); Q2 1:55.556 (2); Q3 1:54.382 (9); Nico Hülkenberg was given a five-place grid penalty for changing his gearbox.; grid 14
+10,10,Romain Grosjean,Lotus F1 Team,Lotus E20,,1:47.043,+0.764,,qualified,best in Q1; Q1 1:47.043 (8); Q2 1:56.388 (6); grid 9
+11,11,Paul di Resta,Sahara Force India F1 Team,Force India VJM05,,1:47.582,+1.303,,qualified,best in Q1; Q1 1:47.582 (15); Q2 1:57.009 (11); grid 10
+12,14,Kamui Kobayashi,Sauber F1 Team,Sauber C31,,1:46.649,+0.370,,qualified,best in Q1; Q1 1:46.649 (7); Q2 1:57.071 (12); Kamui Kobayashi was given a five-place grid penalty for causing an avoidable accident with Felipe Massa in Valencia.; grid 17
+13,8,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,,1:47.724,+1.445,,qualified,best in Q1; Q1 1:47.724 (17); Q2 1:57.108 (13); grid 11
+14,16,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR7,,1:47.266,+0.987,,qualified,best in Q1; Q1 1:47.266 (10); Q2 1:57.132 (14); grid 12
+15,19,Bruno Senna,Williams F1 Team,Williams FW34,,1:47.105,+0.826,,qualified,best in Q1; Q1 1:47.105 (9); Q2 1:57.426 (15); grid 13
+16,17,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR7,,1:47.705,+1.426,,qualified,best in Q1; Q1 1:47.705 (16); Q2 1:57.719 (16); Jean-Éric Vergne was given a ten-place grid penalty for causing an avoidable accident with Heikki Kovalainen in Valencia.; grid 23
+17,15,Sergio Pérez,Sauber F1 Team,Sauber C31,,1:46.494,+0.215,,qualified,best in Q1; Q1 1:46.494 (4); Q2 1:57.895 (17); grid 15
+18,3,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-27,,1:48.044,+1.765,,qualified,best in Q1; Q1 1:48.044 (18); grid 16
+19,21,Vitaly Petrov,Caterham F1 Team,Caterham CT01,,1:49.027,+2.748,,qualified,best in Q1; Q1 1:49.027 (19); grid 18
+20,20,Heikki Kovalainen,Caterham F1 Team,Caterham CT01,,1:49.477,+3.198,,qualified,best in Q1; Q1 1:49.477 (20); grid 19
+21,24,Timo Glock,Marussia F1 Team,Marussia MR01,,1:51.618,+5.339,,qualified,best in Q1; Q1 1:51.618 (21); grid 20
+22,22,Pedro de la Rosa,HRT Formula 1 Team,HRT F112,,1:52.742,+6.463,,qualified,best in Q1; Q1 1:52.742 (22); grid 21
+23,23,Narain Karthikeyan,HRT Formula 1 Team,HRT F112,,1:53.040,+6.761,,qualified,best in Q1; Q1 1:53.040 (23); grid 22
+24,25,Charles Pic,Marussia F1 Team,Marussia MR01,,1:54.143,+7.864,,qualified,"best in Q1; Q1 1:54.143 (24); Charles Pic failed to set a lap time within 107% of the fastest lap time set in Q1. His entry into the race depended on an injunction from the race stewards. He received a five-place grid penalty for changing his gearbox, before being given permission to enter the race by the stewards, leaving him twenty-fourth overall.; grid 24"

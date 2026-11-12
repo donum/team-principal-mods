@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,60,1:37:30.334,,1:34.302,classified,grid 2; 3 pit stops; 25 pts
+2,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,60,1:37:34.314,+3.980,1:34.626,classified,grid 4; 3 pit stops; 18 pts
+3,2,Mark Webber,Red Bull Racing,Red Bull RB7,60,1:37:40.122,+9.788,1:34.468,classified,grid 1; 3 pit stops; 15 pts
+4,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,60,1:38:18.255,+47.921,1:34.587,classified,grid 3; 3 pit stops; 12 pts
+5,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,60,1:38:22.586,+52.252,1:34.609,classified,grid 5; 3 pit stops; 10 pts
+6,14,Adrian Sutil,Force India F1 Team,Force India VJM04,60,1:38:56.542,+1:26.208,1:36.653,classified,grid 8; 2 pit stops; 8 pts
+7,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,59,,+1 lap,1:36.181,classified,grid 6; 3 pit stops; 6 pts
+8,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,59,,+1 lap,1:35.628,classified,grid 10; 3 pit stops; 4 pts
+9,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,59,,+1 lap,1:36.659,classified,grid 17; 2 pit stops; 2 pts
+10,10,Vitaly Petrov,Lotus Renault GP,Renault R31,59,,+1 lap,1:36.186,classified,grid 9; 2 pit stops; 1 pts
+11,17,Sergio Pérez,Sauber F1 Team,Sauber C30,59,,+1 lap,1:37.033,classified,grid 15; 2 pit stops; 0 pts
+12,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,59,,+1 lap,1:37.415,classified,grid 16; 2 pit stops; 0 pts
+13,15,Paul di Resta,Force India F1 Team,Force India VJM04,59,,+1 lap,1:36.715,classified,grid 12; 2 pit stops; 0 pts
+14,12,Pastor Maldonado,AT&T Williams,Williams FW33,59,,+1 lap,1:37.568,classified,grid 13; 2 pit stops; 0 pts
+15,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,59,,+1 lap,1:37.863,classified,grid 24; 2 pit stops; 0 pts
+16,20,Heikki Kovalainen,Team Lotus,Lotus T128,58,,+2 laps,1:39.050,classified,grid 18; 2 pit stops; 0 pts
+17,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,57,,+3 laps,1:39.982,classified,grid 19; 2 pit stops; 0 pts
+18,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,57,,+3 laps,1:39.787,classified,grid 21; 2 pit stops; 0 pts
+19,22,Daniel Ricciardo,HRT Formula 1 Team,HRT F111,57,,+3 laps,1:40.489,classified,grid 22; 2 pit stops; 0 pts
+20,21,Karun Chandhok,Team Lotus,Lotus T128,56,,+4 laps,1:40.435,classified,grid 20; 3 pit stops; 0 pts
+,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,37,,,1:40.683,DNF,Electrical; grid 23; 1 pit stop; 0 pts
+,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,35,,,1:36.258,DNF,Hydraulics; grid 7; 1 pit stop; 0 pts
+,11,Rubens Barrichello,AT&T Williams,Williams FW33,16,,,1:39.679,DNF,Oil leak (en.wiki: Engine); grid 14; 0 pit stops; 0 pts
+,9,Nick Heidfeld,Lotus Renault GP,Renault R31,9,,,1:39.452,DNF,Collision; grid 11; 0 pit stops; 0 pts

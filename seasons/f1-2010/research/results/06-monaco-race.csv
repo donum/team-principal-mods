@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,6,Mark Webber,Red Bull Racing,Red Bull RB6,78,1:50:13.355,,1:15.318,classified,grid 1; 25 pts
+2,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,78,1:50:13.803,+0.448,1:15.192,classified,grid 3; 18 pts
+3,11,Robert Kubica,Renault F1 Team,Renault R30,78,1:50:15.030,+1.675,1:15.353,classified,grid 2; 15 pts
+4,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,78,1:50:16.021,+2.666,1:15.503,classified,grid 4; 12 pts
+5,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,78,1:50:17.718,+4.363,1:16.219,classified,grid 5; 10 pts
+6,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,78,1:50:19.696,+6.341,1:15.905,classified,grid pit lane; 8 pts
+7,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,78,1:50:20.006,+6.651,1:15.959,classified,grid 6; 6 pts
+8,14,Adrian Sutil,Force India F1 Team,Force India VJM03,78,1:50:20.325,+6.970,1:15.963,classified,grid 12; 4 pts
+9,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,78,1:50:20.660,+7.305,1:16.142,classified,grid 10; 2 pts
+10,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,78,1:50:21.554,+8.199,1:16.493,classified,grid 13; 1 pts
+11,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,78,1:50:22.490,+9.135,1:16.381,classified,grid 17; 0 pts
+12,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,78,1:50:39.067,+25.712,1:15.580,classified,"grid 7; 0 pts; Michael Schumacher originally finished sixth, but received a 20-second penalty for passing Fernando Alonso on the last corner of the race under safety car conditions.; gap +25.712 as in en.wiki, includes the 20-second penalty; Jolpica gives +5.712"
+13,12,Vitaly Petrov,Renault F1 Team,Renault R30,73,,+5 laps,1:16.405,classified,"Brakes, classified as he completed 90% of the distance; grid 14; 0 pts; Vitaly Petrov, Karun Chandhok, and Jarno Trulli were all classified as they had completed 90% of the winner's race distance (rounded down to 70 laps)."
+14,20,Karun Chandhok,Hispania Racing F1 Team,Hispania F110,70,,+8 laps,1:19.553,classified,"Collision, classified as he completed 90% of the distance; grid 23; 0 pts"
+15,18,Jarno Trulli,Lotus Racing,Lotus T127,70,,+8 laps,1:19.340,classified,"Collision, classified as he completed 90% of the distance; grid 19; 0 pts"
+,19,Heikki Kovalainen,Lotus Racing,Lotus T127,58,,,1:18.401,DNF,Steering; grid 18; 0 pts
+,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,58,,,1:20.130,DNF,Hydraulics; grid 22; 0 pts
+,9,Rubens Barrichello,AT&T Williams,Williams FW32,30,,,1:19.074,DNF,Suspension (en.wiki: Accident); grid 9; 0 pts
+,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,26,,,1:18.775,DNF,Gearbox; grid 16; 0 pts
+,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,25,,,1:22.255,DNF,Wheel; grid 21; 0 pts
+,24,Timo Glock,Virgin Racing,Virgin VR-01,22,,,1:20.775,DNF,Track rod; grid 20; 0 pts
+,22,Pedro de la Rosa,BMW Sauber F1 Team,Sauber C29,21,,,1:19.270,DNF,Hydraulics; grid 15; 0 pts
+,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,2,,,2:14.285,DNF,Engine (en.wiki: Overheating); grid 8; 0 pts
+,10,Nico Hülkenberg,AT&T Williams,Williams FW32,0,,,,DNF,Front wing (en.wiki: Accident); grid 11; 0 pts

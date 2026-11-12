@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,6,Mark Webber,Red Bull Racing,Red Bull RB6,70,1:41:05.571,,1:22.651,classified,grid 2; 25 pts
+2,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,70,1:41:23.392,+17.821,1:23.195,classified,grid 3; 18 pts
+3,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,70,1:41:24.823,+19.252,1:22.362,classified,grid 1; 15 pts
+4,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,70,1:41:33.045,+27.474,1:23.329,classified,grid 4; 12 pts
+5,12,Vitaly Petrov,Renault F1 Team,Renault R30,70,1:42:18.763,+1:13.192,1:23.799,classified,grid 7; 10 pts
+6,10,Nico Hülkenberg,AT&T Williams,Williams FW32,70,1:42:22.294,+1:16.723,1:24.204,classified,grid 10; 8 pts
+7,22,Pedro de la Rosa,BMW Sauber F1 Team,Sauber C29,69,,+1 lap,1:24.342,classified,grid 9; 6 pts
+8,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,69,,+1 lap,1:24.205,classified,grid 11; 4 pts
+9,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,69,,+1 lap,1:24.282,classified,grid 23; 2 pts
+10,9,Rubens Barrichello,AT&T Williams,Williams FW32,69,,+1 lap,1:22.811,classified,grid 12; 1 pts
+11,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,69,,+1 lap,1:25.372,classified,grid 14; 0 pts
+12,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,69,,+1 lap,1:25.449,classified,grid 15; 0 pts
+13,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,69,,+1 lap,1:25.358,classified,grid 16; 0 pts
+14,19,Heikki Kovalainen,Lotus Racing,Lotus T127,67,,+3 laps,1:27.457,classified,grid 19; 0 pts
+15,18,Jarno Trulli,Lotus Racing,Lotus T127,67,,+3 laps,1:27.429,classified,grid 20; 0 pts
+16,24,Timo Glock,Virgin Racing,Virgin VR-01,67,,+3 laps,1:27.674,classified,grid 18; 0 pts
+17,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,67,,+3 laps,1:28.093,classified,grid 22; 0 pts
+18,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,66,,+4 laps,1:27.287,classified,grid 21; 0 pts
+19,20,Sakon Yamamoto,Hispania Racing F1 Team,Hispania F110,66,,+4 laps,1:29.278,classified,grid 24; 0 pts
+,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,23,,,1:26.258,DNF,Gearbox; grid 5; 0 pts
+,11,Robert Kubica,Renault F1 Team,Renault R30,23,,,1:26.825,DNF,Retired (en.wiki: Collision damage); grid 8; 0 pts
+,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,15,,,1:27.954,DNF,Wheel; grid 6; 0 pts
+,14,Adrian Sutil,Force India F1 Team,Force India VJM03,15,,,1:28.177,DNF,Collision; grid 13; 0 pts
+,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,1,,,,DNF,Engine; grid 17; 0 pts

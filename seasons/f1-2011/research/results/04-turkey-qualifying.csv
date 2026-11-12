@@ -1,0 +1,24 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,,1:25.049,+0.000,,qualified,best in Q3; Q1 1:27.039 (2); Q2 1:25.610 (1); Q3 1:25.049 (1); grid 1
+2,2,Mark Webber,Red Bull Racing,Red Bull RB7,,1:25.454,+0.405,,qualified,best in Q3; Q1 1:27.090 (3); Q2 1:26.075 (4); Q3 1:25.454 (2); grid 2
+3,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,,1:25.574,+0.525,,qualified,best in Q3; Q1 1:27.514 (10); Q2 1:25.801 (2); Q3 1:25.574 (3); grid 3
+4,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,,1:25.595,+0.546,,qualified,best in Q3; Q1 1:27.091 (4); Q2 1:26.066 (3); Q3 1:25.595 (4); grid 4
+5,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,,1:25.851,+0.802,,qualified,best in Q3; Q1 1:27.349 (5); Q2 1:26.152 (6); Q3 1:25.851 (5); grid 5
+6,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,,1:25.982,+0.933,,qualified,best in Q3; Q1 1:27.374 (6); Q2 1:26.485 (8); Q3 1:25.982 (6); grid 6
+7,10,Vitaly Petrov,Lotus Renault GP,Renault R31,,1:26.296,+1.247,,qualified,best in Q3; Q1 1:27.475 (9); Q2 1:26.654 (9); Q3 1:26.296 (7); grid 7
+8,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,,1:26.121,+1.072,,qualified,best in Q2; Q1 1:27.697 (13); Q2 1:26.121 (5); Q3 1:26.646 (8); grid 8
+9,9,Nick Heidfeld,Lotus Renault GP,Renault R31,,1:26.659,+1.610,,qualified,best in Q3; Q1 1:27.901 (15); Q2 1:26.740 (10); Q3 1:26.659 (9); grid 9
+10,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,,1:26.395,+1.346,,qualified,"best in Q2; Q1 1:27.013 (1); Q2 1:26.395 (7); Felipe Massa did not set a lap time in Q3, as she was saving her tires for the race.; grid 10"
+11,11,Rubens Barrichello,AT&T Williams,Williams FW33,,1:26.764,+1.715,,qualified,best in Q2; Q1 1:28.246 (17); Q2 1:26.764 (11); grid 11
+12,14,Adrian Sutil,Force India F1 Team,Force India VJM04,,1:27.027,+1.978,,qualified,best in Q2; Q1 1:27.392 (7); Q2 1:27.027 (12); grid 12
+13,15,Paul di Resta,Force India F1 Team,Force India VJM04,,1:27.145,+2.096,,qualified,best in Q2; Q1 1:27.625 (12); Q2 1:27.145 (13); grid 13
+14,12,Pastor Maldonado,AT&T Williams,Williams FW33,,1:27.236,+2.187,,qualified,best in Q2; Q1 1:27.396 (8); Q2 1:27.236 (14); grid 14
+15,17,Sergio Pérez,Sauber F1 Team,Sauber C30,,1:27.244,+2.195,,qualified,best in Q2; Q1 1:27.778 (14); Q2 1:27.244 (15); grid 15
+16,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,,1:27.255,+2.206,,qualified,best in Q2; Q1 1:27.620 (11); Q2 1:27.255 (16); grid 16
+17,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,,1:27.572,+2.523,,qualified,best in Q2; Q1 1:28.055 (16); Q2 1:27.572 (17); grid 17
+18,20,Heikki Kovalainen,Team Lotus,Lotus T128,,1:28.780,+3.731,,qualified,best in Q1; Q1 1:28.780 (18); grid 18
+19,21,Jarno Trulli,Team Lotus,Lotus T128,,1:29.673,+4.624,,qualified,best in Q1; Q1 1:29.673 (19); grid 19
+20,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,,1:30.445,+5.396,,qualified,"best in Q1; Q1 1:30.445 (20); Jérôme d'Ambrosio was given a five-place grid penalty, for ignoring yellow flags in the area of Pastor Maldonado's accident in the second free practice session.; grid 23"
+21,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,,1:30.692,+5.643,,qualified,best in Q1; Q1 1:30.692 (21); grid 20
+22,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,,1:30.813,+5.764,,qualified,best in Q1; Q1 1:30.813 (22); grid 21
+23,22,Narain Karthikeyan,HRT Formula 1 Team,HRT F111,,1:31.564,+6.515,,qualified,best in Q1; Q1 1:31.564 (23); grid 22

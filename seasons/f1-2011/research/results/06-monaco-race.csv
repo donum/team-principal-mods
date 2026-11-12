@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,78,2:09:38.373,,1:16.267,classified,grid 1; 1 pit stop; 25 pts
+2,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,78,2:09:39.511,+1.138,1:16.471,classified,grid 4; 2 pit stops; 18 pts
+3,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,78,2:09:40.751,+2.378,1:16.463,classified,grid 2; 3 pit stops; 15 pts
+4,2,Mark Webber,Red Bull Racing,Red Bull RB7,78,2:10:01.474,+23.101,1:16.234,classified,grid 3; 2 pit stops; 12 pts
+5,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,78,2:10:05.289,+26.916,1:18.308,classified,grid 12; 1 pit stop; 10 pts
+6,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,78,2:10:25.583,+47.210,1:17.847,classified,"grid 9; 3 pit stops; 8 pts; Lewis Hamilton was given a 20-second penalty post-race, for causing an avoidable collision with Pastor Maldonado, but he didn't lose any place after receiving it.; gap +47.210 as in en.wiki, includes the 20-second penalty; Jolpica gives +27.210"
+7,14,Adrian Sutil,Force India F1 Team,Force India VJM04,77,,+1 lap,1:18.872,classified,grid 14; 2 pit stops; 6 pts
+8,9,Nick Heidfeld,Lotus Renault GP,Renault R31,77,,+1 lap,1:17.857,classified,grid 15; 2 pit stops; 4 pts
+9,11,Rubens Barrichello,AT&T Williams,Williams FW33,77,,+1 lap,1:18.584,classified,grid 11; 2 pit stops; 2 pts
+10,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,77,,+1 lap,1:18.832,classified,grid 16; 2 pit stops; 1 pts
+11,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,76,,+2 laps,1:18.699,classified,grid 7; 3 pit stops; 0 pts
+12,15,Paul di Resta,Force India F1 Team,Force India VJM04,76,,+2 laps,1:18.724,classified,grid 13; 3 pit stops; 0 pts
+13,21,Jarno Trulli,Team Lotus,Lotus T128,76,,+2 laps,1:21.277,classified,grid 18; 2 pit stops; 0 pts
+14,20,Heikki Kovalainen,Team Lotus,Lotus T128,76,,+2 laps,1:20.678,classified,grid 17; 2 pit stops; 0 pts
+15,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,75,,+3 laps,1:21.391,classified,grid 21; 2 pit stops; 0 pts
+16,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,75,,+3 laps,1:21.566,classified,grid 23; 1 pit stop; 0 pts
+17,22,Narain Karthikeyan,HRT Formula 1 Team,HRT F111,74,,+4 laps,1:22.731,classified,grid 22; 2 pit stops; 0 pts
+18,12,Pastor Maldonado,AT&T Williams,Williams FW33,73,,+5 laps,1:18.904,classified,"Accident, classified as he completed 90% of the distance; grid 8; 2 pit stops; 0 pts; Pastor Maldonado crashed at Sainte Dévote on lap 73 after a collision with Lewis Hamilton, but he was classified as he had completed more than 90% of the winner's distance."
+,10,Vitaly Petrov,Lotus Renault GP,Renault R31,67,,,1:20.058,DNF,Collision; grid 10; 1 pit stop; 0 pts
+,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,66,,,1:18.608,DNF,Collision; grid 19; 2 pit stops; 0 pts
+,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,32,,,1:20.202,DNF,Accident (en.wiki: Collision); grid 6; 1 pit stop; 0 pts
+,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,32,,,1:19.801,DNF,Engine (en.wiki: Fire); grid 5; 1 pit stop; 0 pts
+,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,30,,,1:22.102,DNF,Suspension; grid 20; 1 pit stop; 0 pts
+,17,Sergio Pérez,Sauber F1 Team,Sauber C30,0,,,,DNS,Injury (en.wiki: Injured); did not start; 0 pts

@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,49,1:39:20.396,,1:58.287,classified,grid 3; 25 pts
+2,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,49,1:39:36.495,+16.099,1:59.732,classified,grid 2; 18 pts
+3,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,49,1:39:43.578,+23.182,1:59.560,classified,grid 4; 15 pts
+4,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,49,1:39:59.195,+38.799,2:00.218,classified,grid 1; 12 pts
+5,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,49,1:40:00.609,+40.213,2:00.236,classified,grid 5; 10 pts
+6,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,49,1:40:04.559,+44.163,2:00.204,classified,grid 7; 8 pts
+7,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,49,1:40:05.676,+45.280,1:59.970,classified,grid 8; 6 pts
+8,6,Mark Webber,Red Bull Racing,Red Bull RB6,49,1:40:06.756,+46.360,1:59.487,classified,grid 6; 4 pts
+9,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,49,1:40:13.404,+53.008,1:59.906,classified,grid 12; 2 pts
+10,9,Rubens Barrichello,AT&T Williams,Williams FW32,49,1:40:22.885,+1:02.489,1:59.833,classified,grid 11; 1 pts
+11,11,Robert Kubica,Renault F1 Team,Renault R30,49,1:40:29.489,+1:09.093,2:00.474,classified,grid 9; 0 pts
+12,14,Adrian Sutil,Force India F1 Team,Force India VJM03,49,1:40:43.354,+1:22.958,1:59.393,classified,grid 10; 0 pts
+13,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,49,1:40:53.052,+1:32.656,1:59.964,classified,grid 18; 0 pts
+14,10,Nico Hülkenberg,AT&T Williams,Williams FW32,48,,+1 lap,2:01.401,classified,grid 13; 0 pts
+15,19,Heikki Kovalainen,Lotus Racing,Lotus T127,47,,+2 laps,2:02.701,classified,grid 21; 0 pts
+16,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,46,,+3 laps,2:00.080,classified,"Electrical, classified as he completed 90% of the distance; grid 15; 0 pts"
+17,18,Jarno Trulli,Lotus Racing,Lotus T127,46,,+3 laps,2:02.930,classified,"Hydraulics, classified as he completed 90% of the distance; grid 20; 0 pts"
+,22,Pedro de la Rosa,BMW Sauber F1 Team,Sauber C29,28,,,2:01.650,DNF,Hydraulics; grid 14; 0 pts
+,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,17,,,2:09.127,DNF,Overheating (en.wiki: Airbox); grid pit lane; 0 pts
+,24,Timo Glock,Virgin Racing,Virgin VR-01,16,,,2:07.062,DNF,Gearbox; grid 19; 0 pts
+,12,Vitaly Petrov,Renault F1 Team,Renault R30,13,,,2:04.307,DNF,Suspension; grid 17; 0 pts
+,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,11,,,2:05.044,DNF,Hydraulics; grid 16; 0 pts
+,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,2,,,2:09.361,DNF,Hydraulics; grid 22; 0 pts
+,20,Karun Chandhok,Hispania Racing F1 Team,Hispania F110,1,,,,DNF,Accident; grid pit lane; 0 pts

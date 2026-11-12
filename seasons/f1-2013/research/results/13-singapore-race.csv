@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Infiniti Red Bull Racing,Red Bull RB9,61,1:59:13.132,,1:48.574,classified,grid 1; 2 pit stops; 25 pts
+2,3,Fernando Alonso,Scuderia Ferrari,Ferrari F138,61,1:59:45.759,+32.627,1:51.082,classified,grid 7; 2 pit stops; 18 pts
+3,7,Kimi Räikkönen,Lotus F1 Team,Lotus E21,61,1:59:57.052,+43.920,1:51.140,classified,grid 13; 2 pit stops; 15 pts
+4,9,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,61,2:00:04.287,+51.155,1:50.353,classified,grid 2; 2 pit stops; 12 pts
+5,10,Lewis Hamilton,Mercedes AMG Petronas F1 Team,Mercedes F1 W04,61,2:00:06.291,+53.159,1:49.916,classified,grid 5; 2 pit stops; 10 pts
+6,4,Felipe Massa,Scuderia Ferrari,Ferrari F138,61,2:00:17.009,+1:03.877,1:50.509,classified,grid 6; 3 pit stops; 8 pts
+7,5,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-28,61,2:00:36.486,+1:23.354,1:51.740,classified,grid 8; 2 pit stops; 6 pts
+8,6,Sergio Pérez,Vodafone McLaren Mercedes,McLaren MP4-28,61,2:00:36.952,+1:23.820,1:51.926,classified,grid 14; 2 pit stops; 4 pts
+9,11,Nico Hülkenberg,Sauber F1 Team,Sauber C32,61,2:00:37.393,+1:24.261,1:52.186,classified,grid 11; 2 pit stops; 2 pts
+10,15,Adrian Sutil,Sahara Force India F1 Team,Force India VJM06,61,2:00:37.800,+1:24.668,1:49.656,classified,grid 15; 3 pit stops; 1 pts; en.wiki gives +1:24.688
+11,16,Pastor Maldonado,Williams F1 Team,Williams FW35,61,2:00:41.611,+1:28.479,1:50.708,classified,grid 18; 3 pit stops; 0 pts
+12,12,Esteban Gutiérrez,Sauber F1 Team,Sauber C32,61,2:00:51.026,+1:37.894,1:52.007,classified,grid 10; 2 pit stops; 0 pts
+13,17,Valtteri Bottas,Williams F1 Team,Williams FW35,61,2:00:58.293,+1:45.161,1:51.706,classified,grid 16; 3 pit stops; 0 pts
+14,18,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR8,61,2:01:06.644,+1:53.512,1:50.328,classified,grid 12; 3 pit stops; 0 pts
+15,2,Mark Webber,Infiniti Red Bull Racing,Red Bull RB9,60,,+1 lap,1:49.783,classified,"Water pressure, classified as he completed 90% of the distance; grid 4; 2 pit stops; 0 pts; Mark Webber and Paul di Resta failed to finish the race but were classified as they completed over 90% of the race."
+16,21,Giedo van der Garde,Caterham F1 Team,Caterham CT03,60,,+1 lap,1:52.472,classified,grid 20; 3 pit stops; 0 pts
+17,23,Max Chilton,Marussia F1 Team,Marussia MR02,60,,+1 lap,1:53.041,classified,grid 22; 3 pit stops; 0 pts
+18,22,Jules Bianchi,Marussia F1 Team,Marussia MR02,60,,+1 lap,1:52.898,classified,grid 21; 4 pit stops; 0 pts
+19,20,Charles Pic,Caterham F1 Team,Caterham CT03,60,,+1 lap,1:50.990,classified,grid 19; 3 pit stops; 0 pts
+20,14,Paul di Resta,Sahara Force India F1 Team,Force India VJM06,54,,+7 laps,1:50.739,classified,"Accident, classified as he completed 90% of the distance; grid 17; 2 pit stops; 0 pts; Mark Webber and Paul di Resta failed to finish the race but were classified as they completed over 90% of the race."
+,8,Romain Grosjean,Lotus F1 Team,Lotus E21,37,,,1:51.097,DNF,Pneumatics; grid 3; 3 pit stops; 0 pts
+,19,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR8,23,,,1:53.052,DNF,Accident; grid 9; 1 pit stop; 0 pts

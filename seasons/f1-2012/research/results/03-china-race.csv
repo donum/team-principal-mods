@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,8,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,56,1:36:26.929,,1:40.967,classified,grid 1; 2 pit stops; 25 pts
+2,3,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-27,56,1:36:47.555,+20.626,1:40.422,classified,grid 5; 3 pit stops; 18 pts
+3,4,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-27,56,1:36:52.941,+26.012,1:40.530,classified,grid 7; 3 pit stops; 15 pts
+4,2,Mark Webber,Red Bull Racing,Red Bull RB8,56,1:36:54.853,+27.924,1:40.490,classified,grid 6; 3 pit stops; 12 pts
+5,1,Sebastian Vettel,Red Bull Racing,Red Bull RB8,56,1:36:57.412,+30.483,1:40.601,classified,grid 11; 2 pit stops; 10 pts
+6,10,Romain Grosjean,Lotus F1 Team,Lotus E20,56,1:36:58.420,+31.491,1:41.120,classified,grid 10; 2 pit stops; 8 pts
+7,19,Bruno Senna,Williams F1 Team,Williams FW34,56,1:37:01.526,+34.597,1:41.293,classified,grid 14; 2 pit stops; 6 pts
+8,18,Pastor Maldonado,Williams F1 Team,Williams FW34,56,1:37:02.572,+35.643,1:40.482,classified,grid 13; 2 pit stops; 4 pts
+9,5,Fernando Alonso,Scuderia Ferrari,Ferrari F2012,56,1:37:04.185,+37.256,1:41.152,classified,grid 9; 3 pit stops; 2 pts
+10,14,Kamui Kobayashi,Sauber F1 Team,Sauber C31,56,1:37:05.649,+38.720,1:39.960,classified,grid 3; 3 pit stops; 1 pts
+11,15,Sergio Pérez,Sauber F1 Team,Sauber C31,56,1:37:07.995,+41.066,1:41.071,classified,grid 8; 2 pit stops; 0 pts
+12,11,Paul di Resta,Sahara Force India F1 Team,Force India VJM05,56,1:37:09.202,+42.273,1:41.498,classified,grid 15; 2 pit stops; 0 pts
+13,6,Felipe Massa,Scuderia Ferrari,Ferrari F2012,56,1:37:09.708,+42.779,1:41.240,classified,grid 12; 2 pit stops; 0 pts
+14,9,Kimi Räikkönen,Lotus F1 Team,Lotus E20,56,1:37:17.502,+50.573,1:41.794,classified,grid 4; 2 pit stops; 0 pts
+15,12,Nico Hülkenberg,Sahara Force India F1 Team,Force India VJM05,56,1:37:18.142,+51.213,1:40.977,classified,grid 16; 2 pit stops; 0 pts
+16,17,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR7,56,1:37:18.685,+51.756,1:40.019,classified,"grid pit lane; 3 pit stops; 0 pts; Jean-Éric Vergne started from pit lane after his team carried out various changes to his car, contravening parc ferme regulations."
+17,16,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR7,56,1:37:30.085,+1:03.156,1:41.251,classified,grid 17; 2 pit stops; 0 pts
+18,21,Vitaly Petrov,Caterham F1 Team,Caterham CT01,55,,+1 lap,1:42.385,classified,grid 19; 2 pit stops; 0 pts
+19,24,Timo Glock,Marussia F1 Team,Marussia MR01,55,,+1 lap,1:42.748,classified,grid 20; 2 pit stops; 0 pts
+20,25,Charles Pic,Marussia F1 Team,Marussia MR01,55,,+1 lap,1:42.621,classified,grid 21; 3 pit stops; 0 pts
+21,22,Pedro de la Rosa,HRT Formula 1 Team,HRT F112,55,,+1 lap,1:43.610,classified,grid 22; 2 pit stops; 0 pts
+22,23,Narain Karthikeyan,HRT Formula 1 Team,HRT F112,54,,+2 laps,1:43.935,classified,grid 23; 2 pit stops; 0 pts
+23,20,Heikki Kovalainen,Caterham F1 Team,Caterham CT01,53,,+3 laps,1:41.190,classified,grid 18; 3 pit stops; 0 pts
+,7,Michael Schumacher,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,12,,,1:44.109,DNF,Wheel nut; grid 2; 1 pit stop; 0 pts

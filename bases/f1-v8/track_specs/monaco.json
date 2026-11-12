@@ -1,0 +1,109 @@
+{
+  "id": "monaco",
+  "name": "Circuit de Monaco",
+  "nationality": "monegasque",
+  "bbox": [
+    7.415,
+    43.73,
+    7.432,
+    43.742
+  ],
+  "length_km": 3.34,
+  "width_m": 9.0,
+  "speed_scale": 1.0,
+  "race_laps": 78,
+  "dnf_modifier": 1.2,
+  "overtaking_difficulty": 1.0,
+  "pit_lane_loss_s": 19.0,
+  "tyre_wear_mult": 0.8,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.8,
+  "pole_side": "right",
+  "drs_zones": [
+    {
+      "detection_progress": 0.8976,
+      "start_progress": 0.9376,
+      "end_progress": 0.0695
+    }
+  ],
+  "notes": "Circuit de Monaco (clockwise). Via route over OSM circuit relation 148194 (the streets and the 'Circuit de Monaco' pieces). Pit lane excluded. Traced 3226 m vs 3340 m, because the route follows the road centrelines through the tight corners. Start line on Boulevard Albert 1er. One DRS zone on the pit straight as in 2012. The sea is not drawn on the overview (OSM coastline is not used). Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Voie des stands"
+  ],
+  "route_relation": "148194",
+  "exclude_way_ids": [
+    "850261588",
+    "1388331347"
+  ],
+  "via": [
+    [
+      43.7347,
+      7.42133
+    ],
+    [
+      43.7369,
+      7.42151
+    ],
+    [
+      43.73753,
+      7.42519
+    ],
+    [
+      43.73935,
+      7.42722
+    ],
+    [
+      43.7406,
+      7.428
+    ],
+    [
+      43.74102,
+      7.42863
+    ],
+    [
+      43.74046,
+      7.42935
+    ],
+    [
+      43.74036,
+      7.4302
+    ],
+    [
+      43.73887,
+      7.42969
+    ],
+    [
+      43.73699,
+      7.4252
+    ],
+    [
+      43.73696,
+      7.42397
+    ],
+    [
+      43.73641,
+      7.42194
+    ],
+    [
+      43.73455,
+      7.42235
+    ],
+    [
+      43.73369,
+      7.42226
+    ],
+    [
+      43.73252,
+      7.42348
+    ],
+    [
+      43.73237,
+      7.42256
+    ]
+  ],
+  "start": [
+    43.7347,
+    7.42133
+  ],
+  "assemble_multipolygons": true
+}

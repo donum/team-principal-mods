@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,58,1:29:30.259,,1:29.844,classified,grid 1; 2 pit stops; 25 pts
+2,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,58,1:29:52.556,+22.297,1:30.314,classified,grid 2; 2 pit stops; 18 pts
+3,10,Vitaly Petrov,Lotus Renault GP,Renault R31,58,1:30:00.819,+30.560,1:30.064,classified,grid 6; 2 pit stops; 15 pts
+4,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,58,1:30:02.031,+31.772,1:29.487,classified,grid 5; 3 pit stops; 12 pts
+5,2,Mark Webber,Red Bull Racing,Red Bull RB7,58,1:30:08.430,+38.171,1:29.600,classified,grid 3; 3 pit stops; 10 pts
+6,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,58,1:30:24.563,+54.304,1:29.883,classified,grid 4; 3 pit stops; 8 pts
+7,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,58,1:30:55.445,+1:25.186,1:28.947,classified,grid 8; 3 pit stops; 6 pts
+8,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,57,,+1 lap,1:30.836,classified,grid 10; 2 pit stops; 4 pts
+9,14,Adrian Sutil,Force India F1 Team,Force India VJM04,57,,+1 lap,1:31.526,classified,grid 16; 2 pit stops; 2 pts
+10,15,Paul di Resta,Force India F1 Team,Force India VJM04,57,,+1 lap,1:31.941,classified,grid 14; 2 pit stops; 1 pts
+11,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,57,,+1 lap,1:30.467,classified,grid 12; 3 pit stops; 0 pts
+12,9,Nick Heidfeld,Lotus Renault GP,Renault R31,57,,+1 lap,1:32.377,classified,grid 18; 2 pit stops; 0 pts
+13,21,Jarno Trulli,Team Lotus,Lotus T128,56,,+2 laps,1:32.550,classified,grid 20; 2 pit stops; 0 pts
+14,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,54,,+4 laps,1:34.523,classified,grid 22; 2 pit stops; 0 pts
+,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,49,,,1:35.789,DNF,+9 Laps; grid 21; 1 pit stop; 0 pts; Timo Glock was not classified as he did not finish 90% of the race distance.
+,11,Rubens Barrichello,AT&T Williams,Williams FW33,48,,,1:31.404,DNF,Transmission; grid 17; 4 pit stops; 0 pts
+,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,22,,,1:33.503,DNF,Collision; grid 7; 1 pit stop; 0 pts
+,20,Heikki Kovalainen,Team Lotus,Lotus T128,19,,,1:34.918,DNF,Water leak; grid 19; 1 pit stop; 0 pts
+,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,19,,,1:35.319,DNF,Collision; grid 11; 2 pit stops; 0 pts
+,12,Pastor Maldonado,AT&T Williams,Williams FW33,9,,,1:34.102,DNF,Transmission; grid 15; 0 pit stops; 0 pts
+,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,58,,,1:30.384,DSQ,"Disqualified (en.wiki: Illegal rear wing (+1:16.872)); grid 9; 2 pit stops; 0 pts; Sergio Pérez and Kamui Kobayashi finished 7th and 8th, but were disqualified after the race as they were found to have illegal rear wings on their cars."
+,17,Sergio Pérez,Sauber F1 Team,Sauber C30,58,,,1:29.962,DSQ,"Disqualified (en.wiki: Illegal rear wing (+1:05.845)); grid 13; 1 pit stop; 0 pts; Sergio Pérez and Kamui Kobayashi finished 7th and 8th, but were disqualified after the race as they were found to have illegal rear wings on their cars."
+,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,0,,,,DNQ,Failed to reach 107% time
+,22,Narain Karthikeyan,HRT Formula 1 Team,HRT F111,0,,,,DNQ,Failed to reach 107% time

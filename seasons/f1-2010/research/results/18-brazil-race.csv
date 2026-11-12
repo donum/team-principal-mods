@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,71,1:33:11.803,,1:14.283,classified,grid 2; 25 pts
+2,6,Mark Webber,Red Bull Racing,Red Bull RB6,71,1:33:16.046,+4.243,1:14.047,classified,grid 3; 18 pts
+3,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,71,1:33:18.610,+6.807,1:13.855,classified,grid 5; 15 pts
+4,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,71,1:33:26.437,+14.634,1:13.851,classified,grid 4; 12 pts
+5,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,71,1:33:27.396,+15.593,1:13.932,classified,grid 11; 10 pts
+6,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,71,1:33:47.123,+35.320,1:14.184,classified,grid 13; 8 pts
+7,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,71,1:33:55.259,+43.456,1:15.219,classified,grid 8; 6 pts
+8,10,Nico Hülkenberg,AT&T Williams,Williams FW32,70,,+1 lap,1:14.985,classified,grid 1; 4 pts
+9,11,Robert Kubica,Renault F1 Team,Renault R30,70,,+1 lap,1:15.161,classified,grid 7; 2 pts
+10,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,70,,+1 lap,1:14.748,classified,grid 12; 1 pts
+11,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,70,,+1 lap,1:15.695,classified,grid 14; 0 pts
+12,14,Adrian Sutil,Force India F1 Team,Force India VJM03,70,,+1 lap,1:14.997,classified,grid 22; 0 pts
+13,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,70,,+1 lap,1:15.935,classified,grid 19; 0 pts
+14,9,Rubens Barrichello,AT&T Williams,Williams FW32,70,,+1 lap,1:15.227,classified,grid 6; 0 pts
+15,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,70,,+1 lap,1:15.330,classified,grid 9; 0 pts
+16,12,Vitaly Petrov,Renault F1 Team,Renault R30,70,,+1 lap,1:15.485,classified,grid 10; 0 pts
+17,22,Nick Heidfeld,BMW Sauber F1 Team,Sauber C29,70,,+1 lap,1:15.068,classified,grid 15; 0 pts
+18,19,Heikki Kovalainen,Lotus Racing,Lotus T127,69,,+2 laps,1:17.161,classified,grid 20; 0 pts
+19,18,Jarno Trulli,Lotus Racing,Lotus T127,69,,+2 laps,1:17.316,classified,grid 18; 0 pts
+20,24,Timo Glock,Virgin Racing,Virgin VR-01,69,,+2 laps,1:17.695,classified,grid 17; 0 pts
+21,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,69,,+2 laps,1:17.731,classified,grid 24; 0 pts
+22,20,Christian Klien,Hispania Racing F1 Team,Hispania F110,65,,+6 laps,1:17.690,classified,grid 23; 0 pts
+,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,62,,,1:16.767,DNF,+9 Laps; grid 21; 0 pts; Lucas di Grassi was not classified as he completed less than 90% of the race.
+,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,49,,,1:16.940,DNF,Accident; grid 16; 0 pts

@@ -1,0 +1,39 @@
+{
+  "id": "cota",
+  "name": "Circuit of the Americas",
+  "nationality": "american",
+  "bbox": [
+    -97.6505,
+    30.1212,
+    -97.625,
+    30.145
+  ],
+  "length_km": 5.516,
+  "width_m": 15.0,
+  "speed_scale": 1.0,
+  "race_laps": 56,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.5,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.05,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.6,
+  "pole_side": "left",
+  "drs_zones": {
+    "longest_straights": 1
+  },
+  "notes": "Circuit of the Americas (anticlockwise). Raceway loop over the members of OSM relation 6537729. Traced 5431 m vs 5516 m. Start line in the middle of the pit straight. One DRS zone on the back straight from Turn 11 to Turn 12 as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "loop_relation": "6537729",
+  "pit_way_names": [
+    "Pit Lane"
+  ],
+  "exclude_way_names": [
+    "Pit Lane",
+    "MotoGP Long Lap Penalty"
+  ],
+  "start": [
+    30.13189,
+    -97.63983
+  ],
+  "assemble_multipolygons": true
+}

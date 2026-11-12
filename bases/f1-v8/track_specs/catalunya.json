@@ -1,0 +1,73 @@
+{
+  "id": "catalunya",
+  "name": "Circuit de Catalunya",
+  "nationality": "spanish",
+  "bbox": [
+    2.2508,
+    41.5617,
+    2.2654,
+    41.5759
+  ],
+  "length_km": 4.655,
+  "width_m": 14.0,
+  "speed_scale": 1.0,
+  "race_laps": 66,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.75,
+  "pit_lane_loss_s": 21.0,
+  "tyre_wear_mult": 1.3,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.6,
+  "pole_side": "right",
+  "drs_zones": [
+    {
+      "detection_progress": 0.934,
+      "start_progress": 0.974,
+      "end_progress": 0.1733
+    }
+  ],
+  "notes": "Circuit de Catalunya, 2007 to 2020 layout (clockwise). Via route: the main GP way plus the final chicane (ways 1560896068 and 1560896067, from relation 2049529). OSM has the 2021 La Caixa (Turn 10). The tighter old hairpin is taken over ways 1057826347, 1560896064, 921317981 and 1560896060. They look like the old corner but are mapped for World RX, so its shape is approximate. Traced 4604 m vs 4655 m. Start line in the middle of the pit straight. One DRS zone on the pit straight as in 2012. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "pit_way_names": [
+    "Pit Lane"
+  ],
+  "route_way_ids": [
+    "831804327",
+    "1560896065",
+    "1057826347",
+    "1560896064",
+    "921317981",
+    "1560896060",
+    "1560896061",
+    "1560896063",
+    "1560896062",
+    "1560896068",
+    "1560896067"
+  ],
+  "via": [
+    [
+      41.57105,
+      2.26188
+    ],
+    [
+      41.56843,
+      2.25443
+    ],
+    [
+      41.57277,
+      2.26039
+    ],
+    [
+      41.57324,
+      2.2589
+    ],
+    [
+      41.574,
+      2.26194
+    ]
+  ],
+  "start": [
+    41.57105,
+    2.26188
+  ],
+  "assemble_multipolygons": true
+}

@@ -1,0 +1,49 @@
+{
+  "$comment": "Generator defaults for every F1 season 2010-2013 (tools/season_from_research.py merges this under a season's gen.json). F1 teams are tuned by hand per season (rating, profile, potential, staff, HQ, budget in the season's gen.json), so the points-based estimates of the DTM seasons are only a fallback. The make is the engine supplier.",
+  "template": "dtm-1991",
+  "rules": "own",
+  "series_label": "F1",
+  "make_from": "engine",
+  "makes": {"Renault": "Renault", "Ferrari": "Ferrari", "Mercedes": "Mercedes", "Cosworth": "Cosworth"},
+  "default_tyre": "Pirelli",
+  "rating_range": [42, 53],
+  "skill_range": [11, 18],
+  "economy": {"budget_per_rating": 5.0, "salary_min_m": 0.5, "salary_max_m": 30.0},
+  "mass_kg": {"Renault": 548.0, "Ferrari": 548.0, "Mercedes": 548.0, "Cosworth": 560.0},
+  "make_profiles": {"Renault": "neutral", "Ferrari": "neutral", "Mercedes": "neutral", "Cosworth": "neutral"},
+  "birth_years": true,
+  "profiles": {
+    "neutral": {}
+  },
+  "engines": {
+    "$comment": "The 2.4 V8s were frozen from 2007, so the gaps are small: Mercedes the strongest, Renault the weakest but the most frugal (and best for exhaust blowing), Cosworth well behind. mass_kg is the 95 kg minimum engine weight; the chassis minimum (chassis_minimum_weight f1_v8) is the rest of the 640 kg.",
+    "Renault": {"engine": "Renault RS27 2.4 V8", "factory": false, "power_rating": 57.0, "reliability_rating": 66.0,
+                "cost_m": 12, "annual_budget_m": 60, "capacity": 8, "active": true, "join_chance": 0.0, "leave_chance": 0.0,
+                "fuel_efficiency": 60.0, "mass_kg": 95.0, "nationality": "french", "passby_audio": "engine_passby_01"},
+    "Ferrari": {"engine": "Ferrari 056 2.4 V8", "factory": true, "power_rating": 58.5, "reliability_rating": 70.0,
+                "cost_m": 12, "annual_budget_m": 0, "capacity": 6, "active": true, "join_chance": 0.0, "leave_chance": 0.0,
+                "fuel_efficiency": 54.0, "mass_kg": 95.0, "nationality": "italian", "passby_audio": "engine_passby_02"},
+    "Mercedes": {"engine": "Mercedes FO 108Z 2.4 V8", "factory": true, "power_rating": 60.0, "reliability_rating": 70.0,
+                 "cost_m": 12, "annual_budget_m": 0, "capacity": 6, "active": true, "join_chance": 0.0, "leave_chance": 0.0,
+                 "fuel_efficiency": 56.0, "mass_kg": 95.0, "nationality": "german", "passby_audio": "engine_passby_04"},
+    "Cosworth": {"engine": "Cosworth CA2012 2.4 V8", "factory": false, "power_rating": 53.5, "reliability_rating": 63.0,
+                 "cost_m": 7, "annual_budget_m": 20, "capacity": 4, "active": true, "join_chance": 0.0, "leave_chance": 0.02,
+                 "fuel_efficiency": 52.0, "mass_kg": 95.0, "nationality": "british", "passby_audio": "engine_passby_05"}
+  },
+  "tyre_suppliers": {
+    "Pirelli": {
+      "$comment": "Sole supplier from 2011. Low temperature tolerance narrows every compound's working window (tyremodel.json), and low durability makes the cliff come early.",
+      "active": true, "join_chance": 0.0, "leave_chance": 0.0,
+      "prices": {"works": 0, "partner": 0, "customer": 0},
+      "nationality": "italian",
+      "lateral_grip": {"soft": 60.0, "medium": 58.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
+      "longitudinal_grip": {"soft": 60.0, "medium": 58.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
+      "durability": {"soft": 32.0, "medium": 38.0, "hard": 46.0, "intermediate": 48.0, "wet": 50.0},
+      "temperature_tolerance": {"soft": 32.0, "medium": 34.0, "hard": 36.0, "intermediate": 45.0, "wet": 45.0},
+      "trend": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
+      "development_preference": "grip"
+    }
+  },
+  "test_weeks": {"private": [3], "test": [6, 8, 9]}
+}

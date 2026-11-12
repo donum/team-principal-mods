@@ -5,7 +5,8 @@ Community season packs for
 published via the Steam Workshop.
 
 The first goal is **historic DTM** (Deutsche Tourenwagen-Meisterschaft) seasons,
-starting with **1991**.
+starting with **1991**. Formula 1 follows with the Vettel years, 2010 to 2013,
+starting with **2012**.
 
 | Season | Status | Folder |
 |---|---|---|
@@ -15,6 +16,8 @@ starting with **1991**.
 | DTM 2012 | 🚧 generated and installed, not yet played in-game | [`seasons/dtm-2012`](seasons/dtm-2012), on the era base [`bases/dtm-era4`](bases/dtm-era4) (2012–2018) |
 | DTM 2013 | 🚧 generated and playable, not yet tested in-game | [`seasons/dtm-2013`](seasons/dtm-2013), on the era base [`bases/dtm-era4`](bases/dtm-era4) (2012–2018) |
 | DTM 1984–2026 | 📚 research data ([season archive](tools/build_browser.py)) | `seasons/*/research` |
+| F1 2012 | 🚧 first Formula 1 pack: generated, tuned with the simulator, not yet played in-game | [`seasons/f1-2012`](seasons/f1-2012), on the era base [`bases/f1-v8`](bases/f1-v8) (2010–2013) |
+| F1 2010, 2011, 2013 | 📋 planned on the same base ([plan](docs/plans/F1_V8.md)) | `seasons/f1-20xx/research` |
 
 ## How it works
 

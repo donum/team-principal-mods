@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB8,57,1:35:10.990,,1:36.379,classified,grid 1; 3 pit stops; 25 pts
+2,9,Kimi Räikkönen,Lotus F1 Team,Lotus E20,57,1:35:14.323,+3.333,1:37.116,classified,grid 11; 3 pit stops; 18 pts
+3,10,Romain Grosjean,Lotus F1 Team,Lotus E20,57,1:35:21.184,+10.194,1:36.928,classified,grid 7; 3 pit stops; 15 pts
+4,2,Mark Webber,Red Bull Racing,Red Bull RB8,57,1:35:49.778,+38.788,1:37.437,classified,grid 3; 3 pit stops; 12 pts
+5,8,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,57,1:36:06.450,+55.460,1:38.080,classified,grid 5; 3 pit stops; 10 pts
+6,11,Paul di Resta,Sahara Force India F1 Team,Force India VJM05,57,1:36:08.533,+57.543,1:38.372,classified,grid 10; 2 pit stops; 8 pts
+7,5,Fernando Alonso,Scuderia Ferrari,Ferrari F2012,57,1:36:08.793,+57.803,1:38.203,classified,grid 9; 3 pit stops; 6 pts
+8,4,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-27,57,1:36:09.974,+58.984,1:37.733,classified,grid 2; 3 pit stops; 4 pts
+9,6,Felipe Massa,Scuderia Ferrari,Ferrari F2012,57,1:36:15.989,+1:04.999,1:38.123,classified,grid 14; 3 pit stops; 2 pts
+10,7,Michael Schumacher,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,57,1:36:22.480,+1:11.490,1:38.128,classified,grid 22; 3 pit stops; 1 pts
+11,15,Sergio Pérez,Sauber F1 Team,Sauber C31,57,1:36:23.692,+1:12.702,1:38.146,classified,grid 8; 3 pit stops; 0 pts
+12,12,Nico Hülkenberg,Sahara Force India F1 Team,Force India VJM05,57,1:36:27.529,+1:16.539,1:38.312,classified,grid 13; 3 pit stops; 0 pts
+13,14,Kamui Kobayashi,Sauber F1 Team,Sauber C31,57,1:36:41.324,+1:30.334,1:36.700,classified,grid 12; 3 pit stops; 0 pts
+14,17,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR7,57,1:36:44.713,+1:33.723,1:37.058,classified,grid 17; 3 pit stops; 0 pts
+15,16,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR7,56,,+1 lap,1:37.903,classified,grid 6; 3 pit stops; 0 pts
+16,21,Vitaly Petrov,Caterham F1 Team,Caterham CT01,56,,+1 lap,1:38.305,classified,grid 18; 3 pit stops; 0 pts
+17,20,Heikki Kovalainen,Caterham F1 Team,Caterham CT01,56,,+1 lap,1:38.441,classified,grid 16; 4 pit stops; 0 pts
+18,3,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-27,55,,+2 laps,1:38.046,classified,"Exhaust, classified as he completed 90% of the distance; grid 4; 4 pit stops; 0 pts"
+19,24,Timo Glock,Marussia F1 Team,Marussia MR01,55,,+2 laps,1:40.323,classified,grid 23; 3 pit stops; 0 pts
+20,22,Pedro de la Rosa,HRT Formula 1 Team,HRT F112,55,,+2 laps,1:40.237,classified,grid 20; 3 pit stops; 0 pts
+21,23,Narain Karthikeyan,HRT Formula 1 Team,HRT F112,55,,+2 laps,1:39.747,classified,grid 24; 4 pit stops; 0 pts
+22,19,Bruno Senna,Williams F1 Team,Williams FW34,54,,+3 laps,1:38.087,classified,"Vibrations, classified as he completed 90% of the distance; grid 15; 3 pit stops; 0 pts"
+,18,Pastor Maldonado,Williams F1 Team,Williams FW34,25,,,1:39.876,DNF,Puncture; grid 21; 2 pit stops; 0 pts
+,25,Charles Pic,Marussia F1 Team,Marussia MR01,24,,,1:41.519,DNF,Engine; grid 19; 1 pit stop; 0 pts

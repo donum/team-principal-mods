@@ -1,0 +1,35 @@
+{
+  "id": "montreal",
+  "name": "Circuit Gilles Villeneuve",
+  "nationality": "canadian",
+  "bbox": [
+    -73.5305,
+    45.4965,
+    -73.5215,
+    45.5082
+  ],
+  "length_km": 4.361,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 70,
+  "dnf_modifier": 1.1,
+  "overtaking_difficulty": 0.4,
+  "pit_lane_loss_s": 18.0,
+  "tyre_wear_mult": 0.85,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.1,
+  "pole_side": "left",
+  "drs_zones": [
+    {
+      "detection_progress": 0.6702,
+      "start_progress": 0.7902,
+      "end_progress": 0.9286
+    }
+  ],
+  "notes": "Circuit Gilles Villeneuve (clockwise). Raceway loop (one closed OSM way). Traced 4300 m vs 4361 m. Start line on the pit straight, about 40% of the way from the final chicane to Turn 1. One shorter DRS zone (about 600 m) from after the hairpin to the final chicane, as in 2012. The 2011 pit straight zone was dropped. The overview draws the island with its lagoons (assemble_multipolygons). The river itself is not drawn because its rings are not complete in the download. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "start": [
+    45.5015,
+    -73.5229
+  ],
+  "assemble_multipolygons": true
+}

@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,,1:35.585,+0.000,,qualified,best in Q3; Q1 1:37.123 (2); Q2 1:36.074 (2); Q3 1:35.585 (1); grid 1
+2,6,Mark Webber,Red Bull Racing,Red Bull RB6,,1:35.659,+0.074,,qualified,best in Q3; Q1 1:37.373 (4); Q2 1:36.039 (1); Q3 1:35.659 (2); grid 2
+3,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,,1:35.766,+0.181,,qualified,best in Q3; Q1 1:37.144 (3); Q2 1:36.287 (5); Q3 1:35.766 (3); grid 3
+4,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,,1:36.062,+0.477,,qualified,best in Q3; Q1 1:37.113 (1); Q2 1:36.197 (4); Q3 1:36.062 (4); grid 4
+5,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,,1:36.535,+0.950,,qualified,best in Q3; Q1 1:37.708 (7); Q2 1:36.791 (6); Q3 1:36.535 (5); grid 5
+6,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,,1:36.169,+0.584,,qualified,best in Q2; Q1 1:37.515 (5); Q2 1:36.169 (3); Q3 1:36.571 (6); grid 6
+7,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,,1:36.731,+1.146,,qualified,best in Q3; Q1 1:38.123 (10); Q2 1:37.064 (7); Q3 1:36.731 (7); grid 7
+8,11,Robert Kubica,Renault F1 Team,Renault R30,,1:36.824,+1.239,,qualified,best in Q3; Q1 1:37.703 (6); Q2 1:37.179 (9); Q3 1:36.824 (8); grid 8
+9,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,,1:36.950,+1.365,,qualified,best in Q3; Q1 1:37.980 (8); Q2 1:37.077 (8); Q3 1:36.950 (9); grid 9
+10,9,Rubens Barrichello,AT&T Williams,Williams FW32,,1:36.998,+1.413,,qualified,best in Q3; Q1 1:38.257 (13); Q2 1:37.511 (10); Q3 1:36.998 (10); grid 10
+11,10,Nico Hülkenberg,AT&T Williams,Williams FW32,,1:37.620,+2.035,,qualified,best in Q2; Q1 1:38.115 (9); Q2 1:37.620 (11); grid 11
+12,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,,1:37.643,+2.058,,qualified,best in Q2; Q1 1:38.429 (14); Q2 1:37.643 (12); grid 12
+13,22,Nick Heidfeld,BMW Sauber F1 Team,Sauber C29,,1:37.715,+2.130,,qualified,best in Q2; Q1 1:38.171 (11); Q2 1:37.715 (13); grid 13
+14,14,Adrian Sutil,Force India F1 Team,Force India VJM03,,1:37.783,+2.198,,qualified,best in Q2; Q1 1:38.572 (15); Q2 1:37.783 (14); grid 14
+15,12,Vitaly Petrov,Renault F1 Team,Renault R30,,1:37.799,+2.214,,qualified,best in Q2; Q1 1:38.174 (12); Q2 1:37.799 (15); Renault's Vitaly Petrov was given a retroactive five-place grid penalty for causing an avoidable accident with Williams's Nico Hülkenberg at the start of the .; grid 20
+16,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,,1:37.853,+2.268,,qualified,best in Q2; Q1 1:38.583 (16); Q2 1:37.853 (16); grid 15
+17,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,,1:38.594,+3.009,,qualified,best in Q2; Q1 1:38.621 (17); Q2 1:38.594 (17); grid 16
+18,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,,1:38.955,+3.370,,qualified,best in Q1; Q1 1:38.955 (18); grid 17
+19,18,Jarno Trulli,Lotus Racing,Lotus T127,,1:40.521,+4.936,,qualified,best in Q1; Q1 1:40.521 (19); grid 18
+20,24,Timo Glock,Virgin Racing,Virgin VR-01,,1:40.748,+5.163,,qualified,best in Q1; Q1 1:40.748 (20); grid 19
+21,19,Heikki Kovalainen,Lotus Racing,Lotus T127,,1:41.768,+6.183,,qualified,best in Q1; Q1 1:41.768 (21); grid 21
+22,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,,1:42.325,+6.740,,qualified,best in Q1; Q1 1:42.325 (22); grid 22
+23,20,Sakon Yamamoto,Hispania Racing F1 Team,Hispania F110,,1:42.444,+6.859,,qualified,best in Q1; Q1 1:42.444 (23); grid 23
+24,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,,1:43.283,+7.698,,qualified,best in Q1; Q1 1:43.283 (24); grid 24

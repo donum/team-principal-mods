@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,2,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-25,44,1:29:04.268,,1:49.069,classified,grid 2; 25 pts
+2,6,Mark Webber,Red Bull Racing,Red Bull RB6,44,1:29:05.839,+1.571,1:49.395,classified,grid 1; 18 pts
+3,11,Robert Kubica,Renault F1 Team,Renault R30,44,1:29:07.761,+3.493,1:49.807,classified,grid 3; 15 pts
+4,7,Felipe Massa,Scuderia Ferrari Marlboro,Ferrari F10,44,1:29:12.532,+8.264,1:50.111,classified,grid 6; 12 pts
+5,14,Adrian Sutil,Force India F1 Team,Force India VJM03,44,1:29:13.362,+9.094,1:50.477,classified,grid 8; 10 pts
+6,4,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W01,44,1:29:16.627,+12.359,1:51.688,classified,grid 14; 8 pts
+7,3,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W01,44,1:29:19.816,+15.548,1:51.914,classified,grid 21; 6 pts
+8,23,Kamui Kobayashi,BMW Sauber F1 Team,Sauber C29,44,1:29:20.946,+16.678,1:51.749,classified,grid 17; 4 pts
+9,12,Vitaly Petrov,Renault F1 Team,Renault R30,44,1:29:28.119,+23.851,1:51.175,classified,grid 23; 2 pts
+10,15,Vitantonio Liuzzi,Force India F1 Team,Force India VJM03,44,1:29:39.099,+34.831,1:52.267,classified,grid 12; 1 pts
+11,22,Pedro de la Rosa,BMW Sauber F1 Team,Sauber C29,44,1:29:40.287,+36.019,1:52.537,classified,grid 24; 0 pts
+12,16,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR5,44,1:29:44.163,+39.895,1:52.966,classified,grid 16; 0 pts
+13,17,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR5,44,1:29:53.725,+49.457,1:51.576,classified,grid 11; 0 pts; Jaime Alguersuari received a 20-second time penalty for being deemed to have illegally cut the Bus Stop chicane to pass another driver.
+14,10,Nico Hülkenberg,AT&T Williams,Williams FW32,43,,+1 lap,1:51.864,classified,grid 9; 0 pts
+15,5,Sebastian Vettel,Red Bull Racing,Red Bull RB6,43,,+1 lap,1:50.868,classified,grid 4; 0 pts
+16,19,Heikki Kovalainen,Lotus Racing,Lotus T127,43,,+1 lap,1:55.797,classified,grid 13; 0 pts
+17,25,Lucas di Grassi,Virgin Racing,Virgin VR-01,43,,+1 lap,1:55.705,classified,grid 22; 0 pts
+18,24,Timo Glock,Virgin Racing,Virgin VR-01,43,,+1 lap,1:55.268,classified,grid 20; 0 pts
+19,18,Jarno Trulli,Lotus Racing,Lotus T127,43,,+1 lap,1:55.103,classified,grid 15; 0 pts
+20,20,Sakon Yamamoto,Hispania Racing F1 Team,Hispania F110,42,,+2 laps,1:55.484,classified,grid 19; 0 pts
+,8,Fernando Alonso,Scuderia Ferrari Marlboro,Ferrari F10,37,,,1:51.374,DNF,Accident; grid 10; 0 pts
+,1,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-25,15,,,1:52.879,DNF,Collision; grid 5; 0 pts
+,21,Bruno Senna,Hispania Racing F1 Team,Hispania F110,5,,,2:20.201,DNF,Retired (en.wiki: Suspension); grid 18; 0 pts
+,9,Rubens Barrichello,AT&T Williams,Williams FW32,0,,,,DNF,Collision; grid 7; 0 pts

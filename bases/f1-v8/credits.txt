@@ -1,0 +1,9 @@
+Track maps and track geometry:
+  Map data (c) OpenStreetMap contributors, available under the
+  Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
+  Track outlines are today's layouts where the old ones are no longer mapped,
+  and may differ from the season's in detail.
+
+Real team, driver, engine and sponsor names are used for historical
+description only. Not affiliated with or endorsed by Formula 1, the FIA,
+the game's publisher, any team or any manufacturer.

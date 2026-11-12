@@ -1,0 +1,34 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Jenson Button,british,1980-01-19,Vodafone McLaren Mercedes,Woking,McLaren MP4-25,Mercedes FO 108X 2.4 V8,Bridgestone,1-19,reigning champion
+2,Lewis Hamilton,british,1985-01-07,Vodafone McLaren Mercedes,Woking,McLaren MP4-25,Mercedes FO 108X 2.4 V8,Bridgestone,1-19,
+3,Michael Schumacher,german,1969-01-03,Mercedes GP Petronas F1 Team,Brackley,Mercedes MGP W01,Mercedes FO 108X 2.4 V8,Bridgestone,1-19,returned to F1 after three years away
+4,Nico Rosberg,german,1985-06-27,Mercedes GP Petronas F1 Team,Brackley,Mercedes MGP W01,Mercedes FO 108X 2.4 V8,Bridgestone,1-19,
+5,Sebastian Vettel,german,1987-07-03,Red Bull Racing,Milton Keynes,Red Bull RB6,Renault RS27-2010 2.4 V8,Bridgestone,1-19,
+6,Mark Webber,australian,1976-08-27,Red Bull Racing,Milton Keynes,Red Bull RB6,Renault RS27-2010 2.4 V8,Bridgestone,1-19,
+7,Felipe Massa,brazilian,1981-04-25,Scuderia Ferrari Marlboro,Maranello,Ferrari F10,Ferrari Type 056 2.4 V8,Bridgestone,1-19,
+8,Fernando Alonso,spanish,1981-07-29,Scuderia Ferrari Marlboro,Maranello,Ferrari F10,Ferrari Type 056 2.4 V8,Bridgestone,1-19,
+9,Rubens Barrichello,brazilian,1972-05-23,AT&T Williams,Grove,Williams FW32,Cosworth CA2010 2.4 V8,Bridgestone,1-19,
+10,Nico Hülkenberg,german,1987-08-19,AT&T Williams,Grove,Williams FW32,Cosworth CA2010 2.4 V8,Bridgestone,1-19,
+11,Robert Kubica,polish,1984-12-07,Renault F1 Team,Enstone,Renault R30,Renault RS27-2010 2.4 V8,Bridgestone,1-19,
+12,Vitaly Petrov,russian,1984-09-08,Renault F1 Team,Enstone,Renault R30,Renault RS27-2010 2.4 V8,Bridgestone,1-19,
+14,Adrian Sutil,german,1983-01-11,Force India F1 Team,Silverstone,Force India VJM03,Mercedes FO 108X 2.4 V8,Bridgestone,1-19,
+15,Vitantonio Liuzzi,italian,1980-08-06,Force India F1 Team,Silverstone,Force India VJM03,Mercedes FO 108X 2.4 V8,Bridgestone,1-19,
+16,Sébastien Buemi,swiss,1988-10-31,Scuderia Toro Rosso,Faenza,Toro Rosso STR5,Ferrari Type 056 2.4 V8,Bridgestone,1-19,
+17,Jaime Alguersuari,spanish,1990-03-23,Scuderia Toro Rosso,Faenza,Toro Rosso STR5,Ferrari Type 056 2.4 V8,Bridgestone,1-19,
+18,Jarno Trulli,italian,1974-07-13,Lotus Racing,Hingham,Lotus T127,Cosworth CA2010 2.4 V8,Bridgestone,1-19,
+19,Heikki Kovalainen,finnish,1981-10-19,Lotus Racing,Hingham,Lotus T127,Cosworth CA2010 2.4 V8,Bridgestone,1-19,
+20,Karun Chandhok,indian,1984-01-19,Hispania Racing F1 Team,Murcia,Hispania F110,Cosworth CA2010 2.4 V8,Bridgestone,1-10,dropped after round 10
+20,Sakon Yamamoto,japanese,1982-07-09,Hispania Racing F1 Team,Murcia,Hispania F110,Cosworth CA2010 2.4 V8,Bridgestone,"11-14,16-17","drove Senna's car 21 at round 10 (Britain), then car 20 in rounds 11-14 and 16-17"
+20,Christian Klien,austrian,1983-02-07,Hispania Racing F1 Team,Murcia,Hispania F110,Cosworth CA2010 2.4 V8,Bridgestone,"15,18-19",drove car 20 in rounds 15 and 18-19
+21,Bruno Senna,brazilian,1983-10-15,Hispania Racing F1 Team,Murcia,Hispania F110,Cosworth CA2010 2.4 V8,Bridgestone,"1-9,11-19",
+21,Sakon Yamamoto,japanese,1982-07-09,Hispania Racing F1 Team,Murcia,Hispania F110,Cosworth CA2010 2.4 V8,Bridgestone,10,"drove Senna's car 21 at round 10 (Britain), then car 20 in rounds 11-14 and 16-17"
+22,Pedro de la Rosa,spanish,1971-02-24,BMW Sauber F1 Team,Hinwil,Sauber C29,Ferrari Type 056 2.4 V8,Bridgestone,1-14,replaced by Heidfeld from round 15 (Singapore)
+22,Nick Heidfeld,german,1977-05-10,BMW Sauber F1 Team,Hinwil,Sauber C29,Ferrari Type 056 2.4 V8,Bridgestone,15-19,replaced de la Rosa from round 15 (Singapore)
+23,Kamui Kobayashi,japanese,1986-09-13,BMW Sauber F1 Team,Hinwil,Sauber C29,Ferrari Type 056 2.4 V8,Bridgestone,1-19,
+24,Timo Glock,german,1982-03-18,Virgin Racing,Dinnington,Virgin VR-01,Cosworth CA2010 2.4 V8,Bridgestone,1-19,
+25,Lucas di Grassi,brazilian,1984-08-11,Virgin Racing,Dinnington,Virgin VR-01,Cosworth CA2010 2.4 V8,Bridgestone,1-19,
+,Paul di Resta,british,1986-04-16,Force India F1 Team,Silverstone,Force India VJM03,Mercedes FO 108X 2.4 V8,Bridgestone,"2-5,9-10,12,14",Friday practice only; Force India reserve driver; raced for Force India in 2011
+,Christian Klien,austrian,1983-02-07,Hispania Racing F1 Team,Murcia,Hispania F110,Cosworth CA2010 2.4 V8,Bridgestone,"5,9","Friday practice only; raced for HRT in rounds 15, 18-19"
+,Sakon Yamamoto,japanese,1982-07-09,Hispania Racing F1 Team,Murcia,Hispania F110,Cosworth CA2010 2.4 V8,Bridgestone,7,"Friday practice only; raced for HRT in rounds 10-14, 16-17"
+,Fairuz Fauzy,malaysian,1982-10-24,Lotus Racing,Hingham,Lotus T127,Cosworth CA2010 2.4 V8,Bridgestone,"3,10-11,15,19",Friday practice only; Lotus Racing reserve driver
+,Jérôme d'Ambrosio,belgian,1985-12-27,Virgin Racing,Dinnington,Virgin VR-01,Cosworth CA2010 2.4 V8,Bridgestone,15-18,Friday practice only; raced for Virgin in 2011

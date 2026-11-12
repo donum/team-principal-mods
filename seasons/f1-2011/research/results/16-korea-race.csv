@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB7,55,1:38:01.994,,1:39.605,classified,grid 2; 2 pit stops; 25 pts
+2,3,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-26,55,1:38:14.013,+12.019,1:40.459,classified,grid 1; 2 pit stops; 18 pts
+3,2,Mark Webber,Red Bull Racing,Red Bull RB7,55,1:38:14.471,+12.477,1:40.294,classified,grid 4; 2 pit stops; 15 pts
+4,4,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-26,55,1:38:16.688,+14.694,1:40.709,classified,grid 3; 2 pit stops; 12 pts
+5,5,Fernando Alonso,Scuderia Ferrari,Ferrari 150° Italia,55,1:38:17.683,+15.689,1:40.547,classified,grid 6; 2 pit stops; 10 pts
+6,6,Felipe Massa,Scuderia Ferrari,Ferrari 150° Italia,55,1:38:27.127,+25.133,1:40.541,classified,grid 5; 2 pit stops; 8 pts
+7,19,Jaime Alguersuari,Scuderia Toro Rosso,Toro Rosso STR6,55,1:38:51.532,+49.538,1:40.940,classified,grid 11; 2 pit stops; 6 pts
+8,8,Nico Rosberg,Mercedes GP Petronas F1 Team,Mercedes MGP W02,55,1:38:56.047,+54.053,1:41.770,classified,grid 7; 2 pit stops; 4 pts
+9,18,Sébastien Buemi,Scuderia Toro Rosso,Toro Rosso STR6,55,1:39:04.756,+1:02.762,1:40.537,classified,grid 13; 2 pit stops; 2 pts
+10,15,Paul di Resta,Force India F1 Team,Force India VJM04,55,1:39:10.596,+1:08.602,1:42.102,classified,grid 9; 2 pit stops; 1 pts; en.wiki gives +1:03.602
+11,14,Adrian Sutil,Force India F1 Team,Force India VJM04,55,1:39:13.223,+1:11.229,1:42.014,classified,grid 10; 2 pit stops; 0 pts
+12,11,Rubens Barrichello,AT&T Williams,Williams FW33,55,1:39:35.062,+1:33.068,1:42.371,classified,grid 18; 2 pit stops; 0 pts
+13,9,Bruno Senna,Lotus Renault GP,Renault R31,54,,+1 lap,1:42.549,classified,grid 15; 2 pit stops; 0 pts
+14,20,Heikki Kovalainen,Team Lotus,Lotus T128,54,,+1 lap,1:42.456,classified,grid 19; 2 pit stops; 0 pts
+15,16,Kamui Kobayashi,Sauber F1 Team,Sauber C30,54,,+1 lap,1:42.080,classified,grid 14; 3 pit stops; 0 pts
+16,17,Sergio Pérez,Sauber F1 Team,Sauber C30,54,,+1 lap,1:42.425,classified,grid 17; 3 pit stops; 0 pts
+17,21,Jarno Trulli,Team Lotus,Lotus T128,54,,+1 lap,1:43.009,classified,grid 20; 2 pit stops; 0 pts
+18,24,Timo Glock,Marussia Virgin Racing,Virgin MVR-02,54,,+1 lap,1:44.536,classified,grid 21; 2 pit stops; 0 pts
+19,22,Daniel Ricciardo,HRT Formula 1 Team,HRT F111,54,,+1 lap,1:44.870,classified,grid 24; 2 pit stops; 0 pts
+20,25,Jérôme d'Ambrosio,Marussia Virgin Racing,Virgin MVR-02,54,,+1 lap,1:44.746,classified,grid 22; 2 pit stops; 0 pts
+21,23,Vitantonio Liuzzi,HRT Formula 1 Team,HRT F111,52,,+3 laps,1:46.173,classified,grid 23; 3 pit stops; 0 pts
+,12,Pastor Maldonado,AT&T Williams,Williams FW33,30,,,1:44.689,DNF,Clutch; grid 16; 3 pit stops; 0 pts
+,10,Vitaly Petrov,Lotus Renault GP,Renault R31,16,,,1:45.469,DNF,Collision; grid 8; 1 pit stop; 0 pts
+,7,Michael Schumacher,Mercedes GP Petronas F1 Team,Mercedes MGP W02,15,,,1:45.327,DNF,Collision; grid 12; 1 pit stop; 0 pts

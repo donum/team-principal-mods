@@ -1,0 +1,89 @@
+{
+  "id": "yasmarina",
+  "name": "Yas Marina Circuit",
+  "nationality": "emirati",
+  "bbox": [
+    54.6003,
+    24.4617,
+    54.6166,
+    24.4829
+  ],
+  "length_km": 5.554,
+  "width_m": 15.0,
+  "speed_scale": 1.0,
+  "race_laps": 55,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.65,
+  "pit_lane_loss_s": 21.0,
+  "tyre_wear_mult": 0.9,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.05,
+  "pole_side": "left",
+  "drs_zones": [
+    {
+      "detection_progress": 0.2494,
+      "start_progress": 0.2894,
+      "end_progress": 0.4817
+    },
+    {
+      "detection_progress": 0.4802,
+      "start_progress": 0.5202,
+      "end_progress": 0.6729
+    }
+  ],
+  "notes": "Yas Marina Circuit, original 2009 to 2020 layout (anticlockwise). Via route over the oneway raceways. OSM has the 2021 layout, but the old Turn 5 and 6 chicane (way 188861944) and the tighter old Turn 7 hairpin (way 1011722701) are still mapped and are used. The old Turn 11 to 14 chicane and the tighter hotel corners are not mapped, so the 2021 banked curve is used there. Traced 5271 m vs 5554 m. Start line in the middle of the pit straight. Two DRS zones as in 2012: the back straight after the Turn 7 hairpin and the straight to Turn 11. Values from 2012 F1: race laps, pit lane loss and overtaking are approximate. tyre_wear_mult and the wet weather multiplier are first guesses and will be tuned. speed_scale is 1.0 until the lap time calibration against the 2012 pole. pole_side is the inside of the first corner (approximate).",
+  "route_ways": [
+    {
+      "highway": "raceway",
+      "oneway": "yes"
+    }
+  ],
+  "exclude_way_ids": [
+    "176695253",
+    "176695254",
+    "176695255",
+    "188471238",
+    "244292104",
+    "1268324116",
+    "244292102",
+    "1268324115",
+    "188337195",
+    "188337197",
+    "244294666",
+    "380408350",
+    "1573371745",
+    "188861946",
+    "188861937"
+  ],
+  "via": [
+    [
+      24.4698,
+      54.6052
+    ],
+    [
+      24.47586,
+      54.60558
+    ],
+    [
+      24.47781,
+      54.60531
+    ],
+    [
+      24.476,
+      54.6043
+    ],
+    [
+      24.46334,
+      54.60936
+    ],
+    [
+      24.46759,
+      54.60648
+    ]
+  ],
+  "start": [
+    24.4698,
+    54.6052
+  ],
+  "assemble_multipolygons": true
+}

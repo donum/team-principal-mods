@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,1,Sebastian Vettel,Red Bull Racing,Red Bull RB8,,1:32.422,+0.000,,qualified,best in Q3; Q1 1:34.308 (6); Q2 1:33.527 (8); Q3 1:32.422 (1); grid 1
+2,4,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-27,,1:32.520,+0.098,,qualified,best in Q3; Q1 1:34.813 (15); Q2 1:33.209 (1); Q3 1:32.520 (2); grid 2
+3,2,Mark Webber,Red Bull Racing,Red Bull RB8,,1:32.637,+0.215,,qualified,best in Q3; Q1 1:34.015 (3); Q2 1:33.311 (4); Q3 1:32.637 (3); grid 3
+4,3,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-27,,1:32.711,+0.289,,qualified,best in Q3; Q1 1:34.792 (14); Q2 1:33.416 (6); Q3 1:32.711 (4); grid 4
+5,8,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,,1:32.821,+0.399,,qualified,best in Q3; Q1 1:34.588 (10); Q2 1:33.219 (2); Q3 1:32.821 (5); grid 5
+6,16,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR7,,1:32.912,+0.490,,qualified,best in Q3; Q1 1:33.988 (2); Q2 1:33.556 (9); Q3 1:32.912 (6); grid 6
+7,10,Romain Grosjean,Lotus F1 Team,Lotus E20,,1:33.008,+0.586,,qualified,best in Q3; Q1 1:34.041 (4); Q2 1:33.246 (3); Q3 1:33.008 (7); grid 7
+8,15,Sergio Pérez,Sauber F1 Team,Sauber C31,,1:33.394,+0.972,,qualified,best in Q3; Q1 1:33.814 (1); Q2 1:33.660 (10); Q3 1:33.394 (8); grid 8
+9,5,Fernando Alonso,Scuderia Ferrari,Ferrari F2012,,1:33.403,+0.981,,qualified,best in Q2; Q1 1:34.760 (13); Q2 1:33.403 (5); Both Fernando Alonso and Paul di Resta did not complete a timed lap - only commencing exploratory laps (Alonso with the faster sector times). This was due to tactical reasons in regards to tyre preservation for the race.; grid 9
+10,11,Paul di Resta,Sahara Force India F1 Team,Force India VJM05,,1:33.510,+1.088,,qualified,best in Q2; Q1 1:36.624 (20); Q2 1:33.510 (7); en.wiki gives Q1 1:34.624; Both Fernando Alonso and Paul di Resta did not complete a timed lap - only commencing exploratory laps (Alonso with the faster sector times). This was due to tactical reasons in regards to tyre preservation for the race.; grid 10
+11,9,Kimi Räikkönen,Lotus F1 Team,Lotus E20,,1:33.789,+1.367,,qualified,best in Q2; Q1 1:34.552 (9); Q2 1:33.789 (11); grid 11
+12,14,Kamui Kobayashi,Sauber F1 Team,Sauber C31,,1:33.806,+1.384,,qualified,best in Q2; Q1 1:34.131 (5); Q2 1:33.806 (12); grid 12
+13,12,Nico Hülkenberg,Sahara Force India F1 Team,Force India VJM05,,1:33.807,+1.385,,qualified,best in Q2; Q1 1:34.601 (11); Q2 1:33.807 (13); grid 13
+14,6,Felipe Massa,Scuderia Ferrari,Ferrari F2012,,1:33.912,+1.490,,qualified,best in Q2; Q1 1:34.372 (7); Q2 1:33.912 (14); grid 14
+15,19,Bruno Senna,Williams F1 Team,Williams FW34,,1:34.017,+1.595,,qualified,best in Q2; Q1 1:34.466 (8); Q2 1:34.017 (15); grid 15
+16,20,Heikki Kovalainen,Caterham F1 Team,Caterham CT01,,1:34.852,+2.430,,qualified,best in Q1; Q1 1:34.852 (16); Q2 1:36.132 (16); grid 16
+17,18,Pastor Maldonado,Williams F1 Team,Williams FW34,,1:34.639,+2.217,,qualified,best in Q1; Q1 1:34.639 (12); Pastor Maldonado did not compete in Q2 due to a KERS problem.; Pastor Maldonado was given a five-place grid penalty for a gearbox change.; grid 21
+18,7,Michael Schumacher,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,,1:34.865,+2.443,,qualified,"best in Q1; Q1 1:34.865 (17); Michael Schumacher was also given a five-place grid penalty for a gearbox change. The penalty demoted him to twenty-second, moving Pastor Maldonado up one place.; grid 22"
+19,17,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR7,,1:35.014,+2.592,,qualified,best in Q1; Q1 1:35.014 (18); grid 17
+20,21,Vitaly Petrov,Caterham F1 Team,Caterham CT01,,1:35.823,+3.401,,qualified,best in Q1; Q1 1:35.823 (19); grid 18
+21,25,Charles Pic,Marussia F1 Team,Marussia MR01,,1:37.683,+5.261,,qualified,best in Q1; Q1 1:37.683 (21); grid 19
+22,22,Pedro de la Rosa,HRT Formula 1 Team,HRT F112,,1:37.883,+5.461,,qualified,best in Q1; Q1 1:37.883 (22); grid 20
+23,24,Timo Glock,Marussia F1 Team,Marussia MR01,,1:37.905,+5.483,,qualified,best in Q1; Q1 1:37.905 (23); grid 23
+24,23,Narain Karthikeyan,HRT Formula 1 Team,HRT F112,,1:38.314,+5.892,,qualified,best in Q1; Q1 1:38.314 (24); grid 24

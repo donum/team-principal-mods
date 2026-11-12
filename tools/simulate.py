@@ -214,6 +214,20 @@ def worker(args):
 
     races = open(sandbox / "races.jsonl", "a", encoding="utf-8")
     standings = open(sandbox / "standings.jsonl", "a", encoding="utf-8")
+    # The cars as they raced: one line per race with every team's ratings,
+    # so the report can show how the pecking order moves over a season.
+    cars = open(sandbox / "cars.jsonl", "a", encoding="utf-8")
+
+    def car_snapshot(race):
+        out = {}
+        teams = state.teams.items() if isinstance(state.teams, dict) else ((t.get("name"), t) for t in state.teams)
+        for name, t in teams:
+            if not isinstance(t, dict) or not t.get("active", True):
+                continue
+            row = {k: t.get(k) for k in ("team_pace", "braking", "acceleration", "tyre_management", "chassis_reliability")}
+            row.update({f"attr_{k}": v for k, v in (t.get("attr") or {}).items()})
+            out[name] = {k: round(float(v), 2) for k, v in row.items() if isinstance(v, (int, float))}
+        return {"season": race.get("season"), "week": race.get("week"), "track": race.get("track"), "teams": out}
     first_season = state.season_no
     seen_events = {r.get("event_id") for r in state.race_results}
     while state.season_no < first_season + args.seasons:
@@ -229,6 +243,11 @@ def worker(args):
                 seen_events.add(r.get("event_id"))
                 races.write(json.dumps(r, ensure_ascii=False) + "\n")
                 races.flush()
+                try:
+                    cars.write(json.dumps(car_snapshot(r), ensure_ascii=False) + "\n")
+                    cars.flush()
+                except Exception as err:  # a view only; never stop a run over it
+                    print(f"car snapshot failed: {err}", flush=True)
         if screens or time.time() - t > 5:
             print(f"season {season} week {week} {track or '-'}: {' > '.join(screens) or 'week'} "
                   f"({time.time() - t:.0f} s)", flush=True)
@@ -367,10 +386,85 @@ def report(out, season_dir=None):
         lines.append(f"| {d} | {rd.get(d, 0):.1f}% | {mean(sim_driver.get(d, [])):.1f}% | {wins[d] / n:.1f} |")
     lines += ["", f"Different winners per season: real {real_winners}, "
               f"sim {', '.join(map(str, distinct_winners))}.", ""]
+    lines += halves(seasons, real, n_rounds)
+    lines += development(out, n_rounds)
     text = "\n".join(lines)
     (out / "report.md").write_text(text, encoding="utf-8")
     print(text)
     print(f"\nreport: {out / 'report.md'}")
+
+
+def win_of(r):
+    return min(r["drivers"], key=lambda d: int(r["drivers"][d]) if str(r["drivers"][d]).isdigit() else 99)
+
+
+def halves(seasons, real, n_rounds):
+    """First half against second half: how many winners, who wins, which teams score.
+
+    A season that should open up and then close down (F1 2012: seven winners
+    in seven races, then Vettel) shows it here, real against simulated.
+    """
+    if n_rounds < 4:
+        return []
+    cut = n_rounds // 2
+    parts = [(f"Rounds 1-{cut}", range(1, cut + 1)), (f"Rounds {cut + 1}-{n_rounds}", range(cut + 1, n_rounds + 1))]
+    lines = ["## First half and second half", "",
+             "| Part | Real winners | Sim winners per season | Sim wins per season (top 4) | Sim points share (top 4 teams) |",
+             "|---|---|---|---|---|"]
+    n = len(seasons)
+    for label, rounds in parts:
+        real_w = [real[r]["winner"] for r in rounds if real.get(r, {}).get("winner")]
+        distinct, wins, team_pts = [], Counter(), Counter()
+        for _, _, races in seasons:
+            ws = set()
+            for r in races[rounds.start - 1:rounds.stop - 1]:
+                w = win_of(r)
+                ws.add(w)
+                wins[w] += 1
+                for d, p in r.get("awarded_points", {}).items():
+                    team_pts[r["driver_teams"].get(d, "?")] += p
+            distinct.append(len(ws))
+        total = sum(team_pts.values()) or 1
+        top_w = ", ".join(f"{d.split()[-1]} {c / n:.1f}" for d, c in wins.most_common(4))
+        top_t = ", ".join(f"{t} {100 * p / total:.0f}%" for t, p in team_pts.most_common(4))
+        real_names = ", ".join(dict.fromkeys(w.split()[-1] for w in real_w))
+        lines.append(f"| {label} | {len(set(real_w))} ({real_names}) | {', '.join(map(str, distinct))} | {top_w} | {top_t} |")
+    return lines + [""]
+
+
+def development(out, n_rounds):
+    """Each team's car rating (team_pace) at the first, middle and last race, mean over runs."""
+    snaps = defaultdict(lambda: defaultdict(list))  # team -> race index -> values
+    for run in sorted(Path(out).glob("run-*")):
+        f = run / "cars.jsonl"
+        if not f.exists():
+            continue
+        per_season = defaultdict(list)
+        for line in f.read_text(encoding="utf-8").splitlines():
+            row = json.loads(line)
+            per_season[row.get("season")].append(row)
+        for rows in per_season.values():
+            rows.sort(key=lambda r: r.get("week") or 0)
+            for i, row in enumerate(rows):
+                for team, vals in row["teams"].items():
+                    if "team_pace" in vals:
+                        snaps[team][i].append(vals["team_pace"])
+    if not snaps:
+        return []
+    marks = sorted({0, n_rounds // 2 - 1, n_rounds - 1})
+    lines = ["## Car development (team_pace after each race, mean of runs)", "",
+             "| Team | " + " | ".join(f"Round {m + 1}" for m in marks) + " | Change |",
+             "|---|" + "---|" * (len(marks) + 1)]
+    mean = lambda xs: sum(xs) / len(xs) if xs else None
+    rows = []
+    for team, by_race in snaps.items():
+        vals = [mean(by_race.get(m, [])) for m in marks]
+        rows.append((vals[-1] or 0, team, vals))
+    for _, team, vals in sorted(rows, reverse=True):
+        cells = " | ".join(f"{v:.1f}" if v is not None else "-" for v in vals)
+        change = f"{vals[-1] - vals[0]:+.1f}" if vals[0] is not None and vals[-1] is not None else "-"
+        lines.append(f"| {team} | {cells} | {change} |")
+    return lines + [""]
 
 
 def main():

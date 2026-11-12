@@ -1,0 +1,25 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,2,Mark Webber,Red Bull Racing,Red Bull RB8,78,1:46:06.557,,1:18.805,classified,grid 1; 1 pit stop; 25 pts
+2,8,Nico Rosberg,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,78,1:46:07.200,+0.643,1:18.977,classified,grid 2; 1 pit stop; 18 pts
+3,5,Fernando Alonso,Scuderia Ferrari,Ferrari F2012,78,1:46:07.504,+0.947,1:18.857,classified,grid 5; 1 pit stop; 15 pts
+4,1,Sebastian Vettel,Red Bull Racing,Red Bull RB8,78,1:46:07.900,+1.343,1:19.076,classified,grid 9; 1 pit stop; 12 pts
+5,4,Lewis Hamilton,Vodafone McLaren Mercedes,McLaren MP4-27,78,1:46:10.658,+4.101,1:18.806,classified,grid 3; 1 pit stop; 10 pts
+6,6,Felipe Massa,Scuderia Ferrari,Ferrari F2012,78,1:46:12.752,+6.195,1:19.101,classified,grid 7; 1 pit stop; 8 pts
+7,11,Paul di Resta,Sahara Force India F1 Team,Force India VJM05,78,1:46:48.094,+41.537,1:19.757,classified,grid 14; 1 pit stop; 6 pts
+8,12,Nico Hülkenberg,Sahara Force India F1 Team,Force India VJM05,78,1:46:49.119,+42.562,1:18.423,classified,grid 10; 1 pit stop; 4 pts
+9,9,Kimi Räikkönen,Lotus F1 Team,Lotus E20,78,1:46:50.593,+44.036,1:19.246,classified,grid 8; 1 pit stop; 2 pts
+10,19,Bruno Senna,Williams F1 Team,Williams FW34,78,1:46:51.073,+44.516,1:19.187,classified,grid 13; 1 pit stop; 1 pts
+11,15,Sergio Pérez,Sauber F1 Team,Sauber C31,77,,+1 lap,1:17.296,classified,grid 23; 2 pit stops; 0 pts
+12,17,Jean-Éric Vergne,Scuderia Toro Rosso,Toro Rosso STR7,77,,+1 lap,1:19.013,classified,grid 16; 2 pit stops; 0 pts
+13,20,Heikki Kovalainen,Caterham F1 Team,Caterham CT01,77,,+1 lap,1:19.305,classified,grid 17; 2 pit stops; 0 pts
+14,24,Timo Glock,Marussia F1 Team,Marussia MR01,77,,+1 lap,1:19.637,classified,grid 19; 2 pit stops; 0 pts
+15,23,Narain Karthikeyan,HRT Formula 1 Team,HRT F112,76,,+2 laps,1:20.286,classified,grid 22; 2 pit stops; 0 pts
+16,3,Jenson Button,Vodafone McLaren Mercedes,McLaren MP4-27,70,,+8 laps,1:19.923,classified,"Collision, classified as he completed 90% of the distance; grid 12; 1 pit stop; 0 pts"
+,16,Daniel Ricciardo,Scuderia Toro Rosso,Toro Rosso STR7,65,,,1:19.752,DNF,Retired (en.wiki: Steering); grid 15; 1 pit stop; 0 pts
+,25,Charles Pic,Marussia F1 Team,Marussia MR01,64,,,1:19.604,DNF,Retired (en.wiki: Electrical); grid 21; 1 pit stop; 0 pts
+,7,Michael Schumacher,Mercedes AMG Petronas F1 Team,Mercedes F1 W03,63,,,1:18.904,DNF,Fuel pressure; grid 6; 1 pit stop; 0 pts
+,21,Vitaly Petrov,Caterham F1 Team,Caterham CT01,15,,,1:20.825,DNF,Electrical; grid 18; 1 pit stop; 0 pts
+,14,Kamui Kobayashi,Sauber F1 Team,Sauber C31,5,,,1:25.480,DNF,Accident (en.wiki: Collision damage); grid 11; 1 pit stop; 0 pts
+,22,Pedro de la Rosa,HRT Formula 1 Team,HRT F112,0,,,,DNF,Accident (en.wiki: Collision); grid 20; 0 pit stops; 0 pts
+,18,Pastor Maldonado,Williams F1 Team,Williams FW34,0,,,,DNF,Accident (en.wiki: Collision); grid 24; 0 pit stops; 0 pts
+,10,Romain Grosjean,Lotus F1 Team,Lotus E20,0,,,,DNF,Accident (en.wiki: Collision); grid 4; 0 pit stops; 0 pts

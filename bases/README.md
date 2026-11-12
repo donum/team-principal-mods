@@ -9,6 +9,7 @@ only in this repository.
 
 ```
 bases/dtm-era4/          DTM 2012–2018: New DTM, 4.0 V8   ("era 4" in docs/ERAS.md)
+bases/f1-v8/             F1 2010–2013: 2.4 V8, Pirelli from 2011 (plan: docs/plans/F1_V8.md)
   base.json              shared build settings: base pack, constants, shared
                          tracks, and the "audio" section (private sounds)
   gen.json               generator defaults: rules, car profiles, engines, tyres,
