@@ -11,7 +11,8 @@ from the same race-tracks centreline the art's exact overlay is drawn from, in t
                                     race-tracks plan frame (dist/styles/plan/<track>/<layout>.json), which
                                     is the game frame (whole lap in the visible map area). px = (m - (x, y)) * 1044 / w
     "speed_scale": 1.0              lap-time calibration (tools/calibrate.py), replaces the spec's
-    "art": "..."                    where the image came from (provenance only)
+    "art": "..."                    where the image came from; empty = the image is not in this frame yet,
+                                    so a run without ids skips the track (it keeps its old file)
 
 Unlike osm_track.py there is no OSM trace and no fit into a box: the art decides the frame, so the
 cars run exactly on the drawn track. The start line is race-tracks lap 0 (the reviewed start/finish of
@@ -165,6 +166,9 @@ def main():
     root = race_tracks_root()
     for tid, c in cfg["tracks"].items():
         if a.ids and tid not in a.ids:
+            continue
+        if not a.ids and not a.calibrate and not c.get("art"):
+            print(f"  {tid}: no plan-frame art yet (\"art\" empty), keeps its old track file")
             continue
         if a.calibrate:
             calibrate(season, tid, c, root, Path(a.calibrate) / f"{tid}.json")

@@ -141,11 +141,24 @@ team logos and portraits. See [bases/README.md](../../bases/README.md).
 illustrations from the race-track-themes project (style
 `illustrated-realism`, variant `raceday`), one per venue at the game's
 1044×1080. They replace the base's plain OSM renders, and the 1991 map for
-the Norisring. Each is drawn on the same OSM geometry as our traces, and the
-racing lines sit on the drawn track at all nine venues. Hockenheim uses the
-round 10 image for both rounds. Revisions used: Brands Hatch r0004, Red Bull
-Ring r0005, Lausitzring r0005, Norisring r0004, Moscow r0004, Nürburgring
-r0005, Oschersleben r0004, Zandvoort r0005, Hockenheim r0004.
+the Norisring. Hockenheim uses one image for both rounds.
+
+Four venues use the branded 2013 batch (2026-11-12). ChatGPT Images painted
+these from the race-tracks plan, with real 2013 sponsor and team logos.
+They are in the race-tracks plan frame, so `tools/art_track.py` writes their
+track files from the race-tracks centreline (`track_art.json`). We overlaid
+that centreline on each image, and it stays on the drawn tarmac all the way
+round. Revisions used: Hockenheim round-01 r0011, Norisring r0006,
+Nürburgring r0007, Oschersleben r0006.
+
+The other five keep their older images and the base's traced track files.
+The racing lines sit on the drawn track there too. In the branded batch,
+ChatGPT moved or reshaped parts of these tracks, so the plan's racing line
+leaves the drawn tarmac. That happens at Brands Hatch, Moscow and
+Zandvoort, along the east section of the Lausitzring and on the Red Bull
+Ring's main straight. Pasting the exact overlay left a second track
+visible. Revisions used: Brands Hatch r0004, Red Bull Ring r0005,
+Lausitzring r0005, Moscow r0004, Zandvoort r0005.
 
 **Open questions:**
 - Moscow: 2.555 km (fan wiki) vs 2.661 km (racingyears). The traced short

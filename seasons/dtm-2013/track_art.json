@@ -1,5 +1,5 @@
 {
-  "note": "Track art and game lines share one frame, the race-tracks plan frame (whole lap in the visible map area): tools/art_track.py writes tracks/<id>.json from these. speed_scale keeps the reference lap of the previous osm_track.py file (tools/art_track.py --calibrate). Not generated yet (2026-11-10): the pack's images are still in the old frame. Run tools/art_track.py only together with art in the plan frame (race-track-themes tools/reframe_2013.py), or the cars leave the drawn track.",
+  "note": "Track art and game lines share one frame, the race-tracks plan frame (whole lap in the visible map area): tools/art_track.py writes tracks/<id>.json from these. speed_scale keeps the reference lap of the previous osm_track.py file (tools/art_track.py --calibrate). Tracks with \"art\" set use plan-frame art (2026-11-12: branded 2013 ChatGPT race-day images, checked by overlaying the race-tracks centreline). Tracks with \"art\" empty still have old-frame images and the base's osm_track.py file; tools/art_track.py skips them unless named, because with old-frame art the cars leave the drawn track.",
   "tracks": {
     "brandshatch": {
       "race_tracks": {
@@ -16,7 +16,7 @@
         "layout": "gp@2002"
       },
       "spec": "bases/dtm-era4/track_specs/hockenheim13.json",
-      "art": "",
+      "art": "race-track-themes/art/hockenheimring/gp@2002/2013/dtm/round-01/styles/illustrated-realism/variants/raceday/revisions/r0011/image.png",
       "speed_scale": 1.0882
     },
     "lausitzring": {
@@ -43,8 +43,8 @@
         "layout": "street@1972"
       },
       "spec": "seasons/dtm-1991/track_specs/norisring.json",
-      "art": "",
-      "speed_scale": 1.0676
+      "art": "race-track-themes/art/norisring/street@1972/2013/dtm/round-05/styles/illustrated-realism/variants/raceday/revisions/r0006/image.png",
+      "speed_scale": 0.9818
     },
     "nuerburgring13": {
       "race_tracks": {
@@ -52,7 +52,7 @@
         "layout": "sprint@2002"
       },
       "spec": "bases/dtm-era4/track_specs/nuerburgring13.json",
-      "art": "",
+      "art": "race-track-themes/art/nurburgring/sprint@2002/2013/dtm/round-07/styles/illustrated-realism/variants/raceday/revisions/r0007/image.png",
       "speed_scale": 0.9724
     },
     "oschersleben": {
@@ -61,7 +61,7 @@
         "layout": "gp@2007"
       },
       "spec": "bases/dtm-era4/track_specs/oschersleben.json",
-      "art": "",
+      "art": "race-track-themes/art/oschersleben/gp@2007/2013/dtm/round-08/styles/illustrated-realism/variants/raceday/revisions/r0006/image.png",
       "speed_scale": 1.0378
     },
     "redbullring": {
