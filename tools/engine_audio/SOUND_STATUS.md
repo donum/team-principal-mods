@@ -1,10 +1,10 @@
 # DTM 2013 sound status
 
-What the private audio overlay (`dtm-era4`, shared by every season on
+What the engine audio overlay (`dtm-era4`, shared by every season on
 `bases/dtm-era4`) changes in the installed `dtm2013` pack,
 compared with the vanilla audio it copies from `default26`. Checked against
 the installed pack on 2026-11-04, after the real starts and track bed went
-in, and on 2026-11-07 after the pit sets. The audio itself is private and never in git or `dist/`.
+in, and on 2026-11-07 after the pit sets. The audio itself is never in git; since 2026-11-12 it is baked into `dist/` and ships with the pack.
 
 ## Replaced
 

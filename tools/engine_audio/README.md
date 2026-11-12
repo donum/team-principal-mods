@@ -21,11 +21,16 @@ with Audi, BMW or Mercedes gets that make's clip, whatever the season.
 its base an `"audio"` section, then run the stages with
 `ENGINE_AUDIO_BASE=<base id>` and its own `ENGINE_AUDIO_DATA` folder.
 
-**Personal use only.** The source audio belongs to ITR / DTM. Audio, clips and
-caches live in `private/engine_audio/` (gitignored). Only code and the
-metadata overrides are committed. The overlay goes into the *installed* pack
-only, never into `dist/` or the Workshop. The installed pack gets a
-`assets/audio/PRIVATE_AUDIO_DO_NOT_UPLOAD.txt` marker while the overlay is on.
+**Release.** The source audio belongs to ITR / DTM and the fan videos'
+owners. We have the OK to ship the overlay (2026-11-12). Audio, clips and
+caches still live in `private/engine_audio/` (gitignored); only code and the
+metadata overrides are committed.
+
+- `"in_pack": true` in the base's `"audio"` section (set for `dtm-era4`):
+  `build_pack.py` bakes the overlay into `dist/` (`overlay.bake`: no backup,
+  no marker), so it ships with the Workshop pack.
+- Without it, the overlay goes onto the *installed* pack only, with an
+  `assets/audio/PRIVATE_AUDIO_DO_NOT_UPLOAD.txt` marker while it is on.
 
 Needs ffmpeg/ffprobe on PATH, numpy and scipy (`python -m pip install --user scipy`).
 The source folder defaults to `C:\Users\dan\Videos\yt\DTM`; set

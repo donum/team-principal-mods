@@ -746,6 +746,9 @@ def build(season: Path | None, game: Path, pack_folder: str | None = None) -> Pa
     out = OUT_ROOT / pack_folder
     media = Media(out / "media")
     applied = load_json(pack / "assets" / "audio" / OVERLAY_DIR / "applied.json", {}) or {}
+    if not applied and manifest.get("audio", {}).get("in_pack"):
+        # baked into the pack (build_pack.py, no backup state): read the overlay's own list
+        applied = load_json(AUDIO_DATA / "pack" / layers.audio_overlay(manifest) / "overlay.json", {}) or {}
     private = set(applied.get("files", []))
     private_audio = {f.split("assets/audio/", 1)[-1] for f in private}
 

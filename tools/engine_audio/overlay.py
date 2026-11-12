@@ -117,6 +117,16 @@ def apply(target: Path, overlay_id: str, pack: str | None = None) -> str:
     return f"private audio overlay {overlay_id} applied: {len(ov['files'])} files, {len(touched)} JSON files patched"
 
 
+def bake(target: Path, overlay_id: str) -> str:
+    """Apply the overlay for good: same files and JSON edits as apply(), but no
+    backup and no do-not-upload marker. For a pack that ships the sounds
+    (base.json "audio": {"in_pack": true}); build_pack.py bakes into dist/."""
+    msg = apply(target, overlay_id)
+    shutil.rmtree(target / STATE_DIR, ignore_errors=True)
+    (target / MARKER).unlink(missing_ok=True)
+    return msg.replace("private audio overlay", "engine audio").replace("applied", "baked in")
+
+
 def remove(target: Path, quiet: bool = False) -> str:
     state = target / STATE_DIR
     applied = state / "applied.json"

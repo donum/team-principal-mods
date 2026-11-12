@@ -37,23 +37,16 @@ Team dashboard backgrounds (assets/dashboard_bgs):
   Audi Sport Team Abt:
     AudiSportTeamAbt.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-24_Adrien_Tambay_(FRA),_Audi_Ultra_A5_(9262637109).jpg
     AudiSportTeamAbt2.jpg: Kevin McGill, CC BY-SA 2.0 - https://commons.wikimedia.org/wiki/File:Audi_RS5_DTM_(R17)_of_Abt_Sportsline_(10074924825).jpg
-    AudiSportTeamAbt3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   Audi Sport Team Abt Sportsline:
-    AudiSportTeamAbtSportsline.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-12_Jamie_Green_(GBR),_Audi_RS5_DTM_(9262680363).jpg
-    AudiSportTeamAbtSportsline2.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-12_Jamie_Green_(GBR),_Audi_RS5_DTM_(9262541583).jpg
     AudiSportTeamAbtSportsline3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   Audi Sport Team Phoenix:
     AudiSportTeamPhoenix.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-19_Mike_Rockenfeller_(GER),_Audi_RS5_DTM_(9262624637).jpg
     AudiSportTeamPhoenix2.jpg: Kevin McGill, CC BY-SA 2.0 - https://commons.wikimedia.org/wiki/File:Miguel_Molina_driving_an_Audi_A5_DTM_(R17)_at_2013_DTM_Zandvoort.jpg
-    AudiSportTeamPhoenix3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   Audi Sport Team Rosberg:
     AudiSportTeamRosberg.jpg: Kevin McGill, CC BY-SA 2.0 - https://commons.wikimedia.org/wiki/File:Audi_RS5_DTM_(R17)_of_Team_Rosberg_(10074952116).jpg
-    AudiSportTeamRosberg2.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-6_Filipe_Albuquerque,_Audi_RS5_DTM_(9265336734).jpg
-    AudiSportTeamRosberg3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   BMW Team MTEK:
     BMWTeamMTEK.jpg: Kevin McGill, CC BY-SA 2.0 - https://commons.wikimedia.org/wiki/File:BMW_M3_DTM_(E92)_of_MTEK_(10074878334).jpg
     BMWTeamMTEK2.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-21_Marco_Wittmann,_Ice_Watch_MTEK_BMW_M3_DTM_(9265296460).jpg
-    BMWTeamMTEK3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   BMW Team RBM:
     BMWTeamRBM.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-7_Augusto_Farfus,_BMW_M3_DTM_(9265357576).jpg
     BMWTeamRBM2.jpg: Kevin McGill, CC BY-SA 2.0 - https://commons.wikimedia.org/wiki/File:BMW_M3_DTM_(E92)_of_Racing_Bart_Mampaey_(10074992173).jpg
@@ -67,7 +60,6 @@ Team dashboard backgrounds (assets/dashboard_bgs):
     BMWTeamSchnitzer2.jpg: Kevin McGill, CC BY-SA 2.0 - https://commons.wikimedia.org/wiki/File:BMW_M3_DTM_(E92)_of_Schnitzer_Motorsport_(10074863004).jpg
     BMWTeamSchnitzer3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   Euronics AMG-Mercedes:
-    EuronicsAMGMercedes.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-3_Gary_Paffet,_Mercedes_AMG_C_(9262632175).jpg
     EuronicsAMGMercedes2.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-4_Roberto_Merhi,_Mercedes_AMG_C_(9262602891).jpg
     EuronicsAMGMercedes3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   STIHL AMG-Mercedes:
@@ -75,8 +67,6 @@ Team dashboard backgrounds (assets/dashboard_bgs):
     STIHLAMGMercedes2.jpg: Kevin McGill, CC BY-SA 2.0 - https://commons.wikimedia.org/wiki/File:AMG_Mercedes_C-Coup%C3%A9_DTM_(C204)_of_HWA_AG_(10075027033).jpg
     STIHLAMGMercedes3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
   stern AMG-Mercedes:
-    sternAMGMercedes.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-17_Daniel_Juncadella_(ESP),_Mercedes_AMG_C_(9262568287).jpg
-    sternAMGMercedes2.jpg: Mark Seymour, CC BY 2.0 - https://commons.wikimedia.org/wiki/File:DTM_Brands_Hatch_2013_-_-18_Pascal_Werhlein,_Mercedes_AMG_C_(9262692023).jpg
     sternAMGMercedes3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
 
 Main menu background (assets/title_bg.png):

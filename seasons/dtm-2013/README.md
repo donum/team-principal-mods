@@ -12,7 +12,7 @@ two-car teams, DRS, a mandatory option tyre and knockout qualifying.
 **Era base:** 2013 builds on [`bases/dtm-era4`](../../bases/dtm-era4) (`"base": "dtm-era4"`),
 which holds what every 2012–2018 season shares: the rules, the tyre and
 damage tuning, the traced tracks, the engine and tyre logos, the generator
-defaults and the private sounds. They were tuned on 2013. This folder keeps
+defaults and the engine sounds. They were tuned on 2013. This folder keeps
 only what is 2013's own: teams, drivers, sponsors, calendar, car images,
 team logos and portraits. See [bases/README.md](../../bases/README.md).
 
@@ -129,8 +129,8 @@ team logos and portraits. See [bases/README.md](../../bases/README.md).
     entry in `art/menu.json`. It has a free licence (`"in_pack": true`), so
     it ships in the pack and replaces the private BMW press photo, which
     `build_pack.py` no longer copies over it.
-  - Team dashboards: `assets/dashboard_bgs/`, three photos per team (33)
-    from the 2013 race weekends: Mark Seymour (CC BY 2.0), Kevin McGill
+  - Team dashboards: `assets/dashboard_bgs/`, 23 photos, one to three
+    per team, from the 2013 race weekends: Mark Seymour (CC BY 2.0), Kevin McGill
     (CC BY-SA 2.0) and Dennis de Wolde, InMotion Photos (used with
     permission, credit by name and a link). Each was extended to 16:9 and
     touched up with ChatGPT image editing (fences, watermarks and stray
@@ -138,7 +138,9 @@ team logos and portraits. See [bases/README.md](../../bases/README.md).
     leaves visible (below the info cards, right of the sidebar). JPEG at
     1672x941, the game's own size. The sources and every edit are listed
     in the image gallery outside the repo (`backgrounds-gpt/manifest.json`)
-    and per file in [credits.txt](credits.txt).
+    and per file in [credits.txt](credits.txt). Ten more are left out for
+    now: moving the car left a blurred band at the top and left, which the
+    week-advance screen shows. They are flagged "Redo" in the gallery.
 
 ## Tracks
 
@@ -160,22 +162,22 @@ illustrations from the race-track-themes project (style
 1044×1080. They replace the base's plain OSM renders, and the 1991 map for
 the Norisring. Hockenheim uses one image for both rounds.
 
-Four venues use the branded 2013 batch (2026-11-12). ChatGPT Images painted
-these from the race-tracks plan, with real 2013 sponsor and team logos.
-They are in the race-tracks plan frame, so `tools/art_track.py` writes their
-track files from the race-tracks centreline (`track_art.json`). We overlaid
-that centreline on each image, and it stays on the drawn tarmac all the way
-round. Revisions used: Hockenheim round-01 r0011, Norisring r0006,
-Nürburgring r0007, Oschersleben r0006.
+ChatGPT Images painted them from the race-tracks plan, with real 2013
+sponsor and team logos. race-track-themes' `tools/align_track_art.py` then
+aligned each one to the plan's racing line, so the drawn track lies on the
+line the cars drive. All nine are in the race-tracks plan frame, so
+`tools/art_track.py` writes every track file from the race-tracks
+centreline (`track_art.json`). The speed scales keep the reference laps of
+the earlier files, and `tools/map_check.py` finds no part of any lap off the
+drawn track. Revisions used (2026-11-12): Hockenheim round-01 r0014, Brands
+Hatch r0022, Red Bull Ring r0011, Lausitzring r0009, Norisring r0009, Moscow
+r0012, Nürburgring r0010, Oschersleben r0009, Zandvoort r0013.
 
-The other five keep their older images and the base's traced track files.
-The racing lines sit on the drawn track there too. In the branded batch,
-ChatGPT moved or reshaped parts of these tracks, so the plan's racing line
-leaves the drawn tarmac. That happens at Brands Hatch, Moscow and
-Zandvoort, along the east section of the Lausitzring and on the Red Bull
-Ring's main straight. Pasting the exact overlay left a second track
-visible. Revisions used: Brands Hatch r0004, Red Bull Ring r0005,
-Lausitzring r0005, Moscow r0004, Zandvoort r0005.
+Brands Hatch is our version, not 2013's. The team transporters stand in the
+infield south of the Cooper Straight (a spectator car park in 2013), with a
+small tunnel under the track. The Hockenheim image predates the newer art
+rules (no Aral arches, grey pit lane, pit-wall booths); a replacement is
+planned.
 
 **Open questions:**
 - Moscow: 2.555 km (fan wiki) vs 2.661 km (racingyears). The traced short

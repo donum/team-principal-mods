@@ -46,8 +46,9 @@
     }
   },
   "audio": {
-    "$comment": "Private engine sounds (tools/engine_audio, never in git or the Workshop), shared by every season on this base. recording_years: only recordings of these years' cars are used (the 2012-2013 Audi RS 5, BMW M3 and Mercedes C-Coupe). research_season: the entry list that tells which driver drove which make in the videos. key_prefix: start of the clip keys in the game's sound manifests.",
+    "$comment": "Engine sounds (tools/engine_audio; the audio stays out of git), shared by every season on this base. recording_years: only recordings of these years' cars are used (the 2012-2013 Audi RS 5, BMW M3 and Mercedes C-Coupe). research_season: the entry list that tells which driver drove which make in the videos. key_prefix: start of the clip keys in the game's sound manifests.",
     "overlay": "dtm-era4",
+    "in_pack": true,
     "recording_years": [
       2012,
       2013

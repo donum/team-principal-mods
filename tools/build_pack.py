@@ -563,6 +563,18 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
         lines.append("  Drivers without a free photo have a drawn helmet card.")
         with open(out / "credits.txt", "a", encoding="utf-8", newline="\n") as fh:
             fh.write("\n".join(lines) + "\n")
+    # Engine audio cleared for release (base.json "audio": {"in_pack": true}) is
+    # baked into dist/, so it ships with the pack. The files themselves stay in
+    # private/engine_audio (gitignored). See tools/engine_audio/README.md.
+    audio_in_pack = manifest.get("audio", {}).get("in_pack", False)
+    if audio_in_pack:
+        sys.path.insert(0, str(Path(__file__).with_name("engine_audio")))
+        import overlay
+        sound = layers.audio_overlay(manifest)
+        if overlay.overlay_for(sound):
+            print(overlay.bake(out, sound))
+        else:
+            sys.exit(f"audio in_pack, but no overlay built at private/engine_audio/pack/{sound}; run tools/engine_audio/package.py")
 
     errors, warnings = validate(out)
     for track_id, source in placeholders.items():
@@ -595,7 +607,7 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
         print(f"installed to {target} (select it in-game or via active_pack.json)")
         # Private engine audio (private/engine_audio, never in dist/ or git) goes
         # onto the installed copy only. See tools/engine_audio/README.md.
-        if private_audio:
+        if private_audio and not audio_in_pack:
             sys.path.insert(0, str(Path(__file__).with_name("engine_audio")))
             import overlay
             sound = layers.audio_overlay(manifest)
