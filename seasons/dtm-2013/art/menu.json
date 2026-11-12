@@ -1,14 +1,41 @@
 {
   "title_bg": {
-    "use": "hockenheim",
+    "use": "zandvoort",
     "photos": {
+      "zandvoort": {
+        "folder": "dtm-2013",
+        "file": "backgrounds-gpt/menu/title_bg_zandvoort.png",
+        "caption": "Zandvoort 2013: the DTM field in the first corners",
+        "rights": "Kevin McGill, CC BY-SA 2.0. Edited: fence removed, extended to 16:9, DTM wordmark added",
+        "page": "https://commons.wikimedia.org/wiki/File:DTM_Zandvoort,_2013_(10075032383).jpg",
+        "crop": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "grade": null,
+        "logo_shade": true,
+        "logo": {
+          "file": "art/title_logo.png",
+          "width": 560,
+          "right": 110,
+          "top": 80
+        },
+        "in_pack": true
+      },
       "hockenheim": {
         "folder": "dtm-2013",
         "file": "teams/BMW Team Schnitzer/press_bmw/on_track/P90120874_highRes_hockenheim-de-05th-m.jpg",
         "caption": "Hockenheim, 5 May 2013: Bruno Spengler (BMW Bank M3 DTM) and the field",
         "rights": "© BMW AG, copyright free for editorial use",
         "page": "https://newsroom.bmwgroup.com/global/media-library/?tab=image&q=dtm%202013",
-        "crop": [0.0, 0.0, 1.0, 1.0],
+        "crop": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
         "grade": "cinematic",
         "logo_shade": true
       },
@@ -18,7 +45,12 @@
         "caption": "Nürburgring, 18 August 2013: Spengler, Tomczyk, Werner and Glock (BMW M3 DTM)",
         "rights": "© BMW AG, copyright free for editorial use",
         "page": "https://newsroom.bmwgroup.com/global/media-library/?tab=image&q=dtm%202013",
-        "crop": [0.0, 0.0, 1.0, 1.0],
+        "crop": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
         "grade": "cinematic"
       }
     }

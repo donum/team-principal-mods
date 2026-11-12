@@ -15,11 +15,16 @@ one that is built.
                       "crop": [x0, y0, x1, y1],      # fractions of the photo
                       "grade": "cinematic" | null,   # contrast, light on the right
                       "logo_shade": true,            # darken behind the game logo
+                      "logo": {"file": "art/<png>", "width": 560, "right": 110, "top": 80},
+                                                     # optional overlay, top right
+                      "in_pack": true,               # free licence: ship it in the pack
                       "rights": "...", "page": "...", "caption": "..."}}}}
 
-The photos are not under a free licence, so the image goes to
-private/menu_art/<season>/title_bg.png (gitignored, never in dist/), and
-build_pack.py --install copies it onto the installed pack only.
+A photo with "in_pack": true has a free licence (or permission) and is written
+to <season>/assets/title_bg.png, so it ships in the pack. Any other photo is
+not free, so the image goes to private/menu_art/<season>/title_bg.png
+(gitignored, never in dist/), and build_pack.py --install copies it onto the
+installed pack only, unless the season has its own assets/title_bg.png.
 
 Usage:
     python tools/menu_art.py seasons/dtm-2013 [--source FOLDER]
@@ -99,7 +104,21 @@ def logo_shade(img: Image.Image) -> Image.Image:
     return Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
 
 
-def render(spec: dict, folder: Path) -> Image.Image:
+def overlay_logo(img: Image.Image, logo: Image.Image, width: int, right: int, top: int) -> Image.Image:
+    """Paste a logo (RGBA) at the top right with a soft drop shadow."""
+    logo = logo.resize((width, round(logo.height * width / logo.width)), Image.LANCZOS)
+    x, y = img.width - right - logo.width, top
+    pad = 42
+    shadow = Image.new("L", (logo.width + 2 * pad, logo.height + 2 * pad), 0)
+    shadow.paste(logo.split()[3].point(lambda v: v * 170 // 255), (pad, pad))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(14))
+    out = img.convert("RGBA")
+    out.paste(Image.new("RGBA", shadow.size, (0, 0, 0, 255)), (x - pad + 4, y - pad + 6), shadow)
+    out.alpha_composite(logo, (x, y))
+    return out.convert("RGB")
+
+
+def render(spec: dict, folder: Path, season: Path | None = None) -> Image.Image:
     photo = Image.open(folder / spec["file"]).convert("RGB")
     x0, y0, x1, y1 = spec.get("crop", [0, 0, 1, 1])
     pw, ph = photo.size
@@ -110,6 +129,10 @@ def render(spec: dict, folder: Path) -> Image.Image:
         img = cinematic(img)
     if spec.get("logo_shade"):
         img = logo_shade(img)
+    if spec.get("logo") and season is not None:
+        lg = spec["logo"]
+        img = overlay_logo(img, Image.open(season / lg["file"]).convert("RGBA"),
+                           lg.get("width", 560), lg.get("right", 110), lg.get("top", 80))
     return img
 
 
@@ -124,9 +147,9 @@ def main():
     folder = args.source or local.get("photo_folders", {}).get(spec.get("folder", season.name))
     if not folder:
         sys.exit('no photo folder: pass --source or set "photo_folders" in local.json')
-    out = private_title_bg(season)
+    out = season / "assets" / "title_bg.png" if spec.get("in_pack") else private_title_bg(season)
     out.parent.mkdir(parents=True, exist_ok=True)
-    render(spec, Path(folder)).save(out, optimize=True)
+    render(spec, Path(folder), season).save(out, optimize=True)
     print(f"wrote {out.relative_to(REPO)} ({SIZE[0]}x{SIZE[1]}, photo \"{load_json(season / 'art' / 'menu.json')['title_bg']['use']}\")")
 
 

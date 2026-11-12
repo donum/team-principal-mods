@@ -604,7 +604,10 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
                 print("  NOTE: this installed pack now holds private audio; do not upload it to the Workshop")
         # Private menu background (private/menu_art, never in dist/ or git; see
         # tools/menu_art.py) goes onto the installed copy only, like the audio.
-        if private_art:
+        own_title_bg = (season_dir / "assets" / "title_bg.png").exists()   # free, ships in the pack
+        if private_art and own_title_bg:
+            print("menu background: the pack's own assets/title_bg.png (no private overlay)")
+        if private_art and not own_title_bg:
             import menu_art
             title_bg = menu_art.private_title_bg(season_dir)
             if title_bg.exists():

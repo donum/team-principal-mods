@@ -122,6 +122,23 @@ team logos and portraits. See [bases/README.md](../../bases/README.md).
     (2.4 face widths, `FACE_SPAN` in `tools/portrait_art.py`). Wickens,
     Scheider and Priaulx only have tight close-ups, so their heads are
     larger. Joey Hand has a helmet card: no free photo shows him clearly.
+  - Main menu: `assets/title_bg.png`, the field at Zandvoort 2013 (Kevin
+    McGill, CC BY-SA 2.0; fence removed and extended to 16:9) with the
+    2000-2016 DTM wordmark (`art/title_logo.png`, public-domain text logo)
+    at the top right. Built by `tools/menu_art.py` from the `zandvoort`
+    entry in `art/menu.json`. It has a free licence (`"in_pack": true`), so
+    it ships in the pack and replaces the private BMW press photo, which
+    `build_pack.py` no longer copies over it.
+  - Team dashboards: `assets/dashboard_bgs/`, three photos per team (33)
+    from the 2013 race weekends: Mark Seymour (CC BY 2.0), Kevin McGill
+    (CC BY-SA 2.0) and Dennis de Wolde, InMotion Photos (used with
+    permission, credit by name and a link). Each was extended to 16:9 and
+    touched up with ChatGPT image editing (fences, watermarks and stray
+    text removed), then the car was moved into the strip the dashboard
+    leaves visible (below the info cards, right of the sidebar). JPEG at
+    1672x941, the game's own size. The sources and every edit are listed
+    in the image gallery outside the repo (`backgrounds-gpt/manifest.json`)
+    and per file in [credits.txt](credits.txt).
 
 ## Tracks
 
