@@ -207,7 +207,9 @@ rules to these items:
   pits for part of the race.
 - **Workaround:** tyre wear per track (`tyre_wear_mult`) is tuned so two
   stops is the fastest strategy. In season 5, 160 of 220 cars stopped twice;
-  the rest stopped between zero and seven times.
+  the rest stopped between zero and seven times. The balance is fine:
+  Norisring went from mostly three or four stops at 0.65 to mostly one at
+  0.50. Rain races always add tyre stops.
 - **Request:**
   - `mandatory_stops: N`, set **per race** of the weekend (2015: Saturday
     0, Sunday 1; 2025: Saturday 1, Sunday 2).
