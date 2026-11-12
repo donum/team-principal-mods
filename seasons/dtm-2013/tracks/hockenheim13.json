@@ -94,7 +94,7 @@
     {
       "type": "low",
       "length_pct": 0.32858707557502737,
-      "target_speed_kmh": 87.1
+      "target_speed_kmh": 87.0
     },
     {
       "type": "straight",
@@ -144,7 +144,7 @@
     {
       "type": "med",
       "length_pct": 0.9857612267250822,
-      "target_speed_kmh": 179.6
+      "target_speed_kmh": 179.5
     },
     {
       "type": "straight",
@@ -1440,7 +1440,7 @@
       "track": "hockenheimring",
       "layout": "gp@2002"
     },
-    "art": "race-track-themes/art/hockenheimring/gp@2002/2013/dtm/round-01/styles/illustrated-realism/variants/raceday/revisions/r0011/image.png",
+    "art": "race-track-themes/art/hockenheimring/gp@2002/2013/dtm/round-01/styles/illustrated-realism/variants/raceday/revisions/r0014/image.png",
     "viewBoxMetres": [
       -465.9,
       -756.6,
@@ -1449,7 +1449,7 @@
     ],
     "geometry_length_m": 4565,
     "notes": "Grand Prix circuit since 2002 (clockwise): Nordkurve, Parabolika, Spitzkehre, Mercedes-Tribuene, Motodrom. Raceway loop over the members of OSM relation 284588 (Hockenheimring Grand Prix Circuit); the 1932-2001 forest loop is only mapped as abandoned:highway=raceway and is not used. 42 laps at the opener, 41 at the finale; the spec uses 42. Traced 4517 m vs 4574 m.",
-    "speed_scale": 1.0882,
+    "speed_scale": 1.0881,
     "canvas_transform": {
       "metres": "race-tracks local (x east, y south)",
       "scale": 0.672593737920371,

@@ -44,7 +44,7 @@
     {
       "type": "straight",
       "length_pct": 12.48303934871099,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "low",
@@ -64,7 +64,7 @@
     {
       "type": "straight",
       "length_pct": 0.40705563093622793,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "low",
@@ -79,7 +79,7 @@
     {
       "type": "straight",
       "length_pct": 7.462686567164179,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "med",
@@ -94,7 +94,7 @@
     {
       "type": "straight",
       "length_pct": 8.819538670284938,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "med",
@@ -104,7 +104,7 @@
     {
       "type": "straight",
       "length_pct": 1.492537313432836,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "med",
@@ -114,7 +114,7 @@
     {
       "type": "straight",
       "length_pct": 1.8995929443690638,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "med",
@@ -124,7 +124,7 @@
     {
       "type": "straight",
       "length_pct": 0.40705563093622793,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "med",
@@ -139,7 +139,7 @@
     {
       "type": "straight",
       "length_pct": 4.2062415196743554,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "low",
@@ -149,7 +149,7 @@
     {
       "type": "straight",
       "length_pct": 0.40705563093622793,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "low",
@@ -164,7 +164,7 @@
     {
       "type": "straight",
       "length_pct": 0.8141112618724559,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "med",
@@ -174,7 +174,7 @@
     {
       "type": "straight",
       "length_pct": 14.654002713704207,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "low",
@@ -184,7 +184,7 @@
     {
       "type": "straight",
       "length_pct": 1.7639077340569878,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "low",
@@ -199,7 +199,7 @@
     {
       "type": "straight",
       "length_pct": 5.834464043419267,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "med",
@@ -214,7 +214,7 @@
     {
       "type": "straight",
       "length_pct": 4.07055630936228,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     },
     {
       "type": "low",
@@ -224,12 +224,12 @@
     {
       "type": "low",
       "length_pct": 1.492537313432836,
-      "target_speed_kmh": 114.2
+      "target_speed_kmh": 114.1
     },
     {
       "type": "straight",
       "length_pct": 7.055630936227951,
-      "target_speed_kmh": 384.0
+      "target_speed_kmh": 383.9
     }
   ],
   "points": [
@@ -1440,7 +1440,7 @@
       "track": "oschersleben",
       "layout": "gp@2007"
     },
-    "art": "race-track-themes/art/oschersleben/gp@2007/2013/dtm/round-08/styles/illustrated-realism/variants/raceday/revisions/r0006/image.png",
+    "art": "race-track-themes/art/oschersleben/gp@2007/2013/dtm/round-08/styles/illustrated-realism/variants/raceday/revisions/r0009/image.png",
     "viewBoxMetres": [
       -679.1,
       -542.2,
@@ -1449,7 +1449,7 @@
     ],
     "geometry_length_m": 3685,
     "notes": "Motorsport Arena Oschersleben (clockwise). Raceway loop over today's track. Start line placed on the pit straight. Traced 3626 m vs 3696 m.",
-    "speed_scale": 1.0378,
+    "speed_scale": 1.0377,
     "canvas_transform": {
       "metres": "race-tracks local (x east, y south)",
       "scale": 0.9522072236410069,
