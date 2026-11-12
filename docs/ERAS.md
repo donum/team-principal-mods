@@ -76,6 +76,10 @@ templates per era: an era base in [`bases/`](../bases/README.md) (era 4 is
 4. **Fill in the remaining seasons era by era**, reusing that era's car models, rule templates and tracks.
 
 Tracks needed across all eras are listed in the season archive's venue
-matrix. Modern venues such as Lausitzring, Oschersleben, Red Bull Ring,
+matrix. Its Tracks section (`tools/track_inventory.py`) has one card per
+venue: every race held there, the layouts by length, our generated tracks and
+the rounds that use them, results files, the race-tracks layout history and the
+photo research. Its "Build next" line names the most raced venues without a
+game track. Modern venues such as Lausitzring, Oschersleben, Red Bull Ring,
 Zandvoort, Brands Hatch and Assen still exist in OpenStreetMap, so the raceway
 loop mode of `tools/osm_track.py` will cover most of them.

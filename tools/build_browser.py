@@ -2,7 +2,9 @@
 
 Reads seasons/*/research/{calendar,entries,standings,standings_other}.csv and
 the season dossier (research/season.md, or the season README.md), and writes
-build/season-browser/index.html.
+build/season-browser/index.html. The Tracks section comes from
+tools/track_inventory.py: every venue, every race held there, and our track
+files, results and photo research for it.
 
 Usage:
     python tools/build_browser.py
@@ -11,7 +13,11 @@ Usage:
 import csv
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import track_inventory  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 OUT = REPO / "build" / "season-browser" / "index.html"
@@ -99,12 +105,13 @@ def main():
             "standings_other": read_csv(research / "standings_other.csv"),
             "dossier": md,
         })
-    data = json.dumps({"seasons": seasons, "fit": GAME_FIT}, ensure_ascii=False, separators=(",", ":"))
+    tracks = track_inventory.build()
+    data = json.dumps({"seasons": seasons, "fit": GAME_FIT, "tracks": tracks}, ensure_ascii=False, separators=(",", ":"))
     data = data.replace("</", "<\\/")
     html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/null", data)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html, encoding="utf-8", newline="\n")
-    print(f"wrote {OUT.relative_to(REPO)}: {len(seasons)} seasons, {len(html) // 1024} KB")
+    print(f"wrote {OUT.relative_to(REPO)}: {len(seasons)} seasons, {len(tracks)} venues, {len(html) // 1024} KB")
 
 
 if __name__ == "__main__":

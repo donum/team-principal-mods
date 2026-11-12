@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>DTM Season Archive</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,6 +105,44 @@ tr.top1 td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
 .matrix td.mark { text-align: center; font-family: var(--font-data); color: var(--accent); font-weight: 500; }
 .matrix th.yr-h { text-align: center; }
 .matrix td.vname { font-weight: 600; white-space: nowrap; }
+.matrix td.vname a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--muted); }
+
+/* Tracks */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); background: var(--sheet); color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.next { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; font-size: 13.5px; }
+.next b { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; margin-right: 4px; }
+.next a { color: var(--ink); }
+.venues-list { display: flex; flex-direction: column; gap: 8px; }
+details.venue { border: 1px solid var(--line); border-radius: 4px; background: var(--sheet); min-width: 0; }
+details.venue[open] { border-color: var(--muted); }
+details.venue > summary { list-style: none; cursor: pointer; padding: 10px 12px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: center; }
+details.venue > summary::-webkit-details-marker { display: none; }
+details.venue > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.vtitle { font-family: var(--font-display); font-weight: 700; font-size: 21px; text-transform: uppercase; letter-spacing: .02em; line-height: 1.1; }
+.vtitle small { font-family: var(--font-data); font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+.vmeta { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.vcount { font-family: var(--font-display); font-weight: 700; font-size: 26px; text-align: right; line-height: 1; font-variant-numeric: tabular-nums; }
+.vcount span { display: block; font-size: 11px; letter-spacing: .1em; color: var(--muted); font-weight: 600; }
+.badges { display: flex; flex-wrap: wrap; gap: 4px; grid-column: 1 / -1; }
+.badge { font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 1px 7px; border-radius: 3px; background: var(--chip); color: var(--muted); }
+.badge.on { background: color-mix(in srgb, var(--accent) 14%, var(--sheet)); color: var(--accent); }
+.vbody { padding: 4px 12px 14px; display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--line); }
+.vbody h4 { font-family: var(--font-display); font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 8px 0 0; }
+.vbody a { color: var(--accent); }
+.vbody .summary-text { color: var(--muted); max-width: 80ch; margin: 0; }
+.gtracks { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+.gtrack { border: 1px solid var(--line); border-radius: 4px; padding: 8px; display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; min-width: 0; }
+.gtrack img { width: 100%; aspect-ratio: 1044 / 1080; object-fit: cover; background: var(--paper); border-radius: 3px; }
+.gtrack .gid { font-family: var(--font-data); font-weight: 500; }
+.gtrack .links { display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.gtrack .used { color: var(--muted); }
+.thumbs { display: flex; gap: 6px; flex-wrap: wrap; }
+.thumbs img { height: 64px; border-radius: 3px; }
+.media-list { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 13.5px; }
+td.yr a { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--accent); text-decoration: none; }
+tr.hl td { background: color-mix(in srgb, var(--accent) 12%, transparent); }
 footer { color: var(--muted); font-size: 12.5px; }
 @media (prefers-reduced-motion: no-preference) { nav.years button, .tabs button { transition: border-color .15s, color .15s; } }
 </style>
@@ -115,6 +154,17 @@ footer { color: var(--muted); font-size: 12.5px; }
   </header>
   <nav class="years" id="years" aria-label="Seasons"></nav>
   <section class="sheet" id="sheet" aria-live="polite"></section>
+  <section class="sheet" id="tracks">
+    <div class="season-title"><h2>Tracks</h2></div>
+    <p class="lede">Every venue on a calendar since 1984: each race held there, how the layout changed, and what we already have for it in the repo (generated laps, maps, art, results) and in the photo research.</p>
+    <div class="next" id="build-next"></div>
+    <div class="toolbar">
+      <input id="track-filter" type="search" placeholder="Filter by venue, year, winner…" aria-label="Filter venues">
+      <div class="chips" id="track-chips"></div>
+      <span class="count" id="track-count"></span>
+    </div>
+    <div class="venues-list" id="venue-list"></div>
+  </section>
   <section class="sheet" id="fit">
     <div class="season-title"><h2>Closest to the game's rules</h2></div>
     <p class="lede">Periods ranked by how many of their sporting rules Team Principal can model natively. Top picks make the best showcase packs.</p>
@@ -133,7 +183,7 @@ const DATA = /*__DATA__*/null;
 const S = DATA.seasons;
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-let current = null, tab = "overview";
+let current = null, tab = "overview", hlRound = "";
 
 function surname(n) { const p = (n || "").split(",")[0].trim().split(" "); return p[p.length - 1] || "—"; }
 
@@ -155,9 +205,10 @@ function rounds(s) {
 
 function select(id, keepTab) {
   current = S.find(s => s.id === id) || S[S.length - 1];
-  if (!keepTab) tab = "overview";
+  if (!keepTab) { tab = "overview"; hlRound = ""; }
   try { localStorage.setItem("dtm-archive-season", current.id); } catch (e) {}
-  if (location.hash !== "#" + current.id) history.replaceState(null, "", "#" + current.id);
+  const h = "#" + current.id + (tab !== "overview" ? "/" + tab + (hlRound ? "/" + hlRound : "") : "");
+  if (location.hash !== h) history.replaceState(null, "", h);
   renderYears(); renderSheet();
 }
 
@@ -184,7 +235,7 @@ function renderSheet() {
     <div class="tabs" role="tablist">${tabs.map(([k, l, ok]) =>
       `<button type="button" role="tab" data-tab="${k}" aria-selected="${tab === k}" ${ok ? "" : "disabled"}>${l}</button>`).join("")}</div>
     <div id="panel"></div>`;
-  $("#sheet").querySelectorAll(".tabs button").forEach(b => b.onclick = () => { tab = b.dataset.tab; renderSheet(); });
+  $("#sheet").querySelectorAll(".tabs button").forEach(b => b.onclick = () => { tab = b.dataset.tab; hlRound = ""; select(current.id, true); });
   const panel = $("#panel");
   if (tab === "overview") panel.innerHTML = `<div class="dossier">${md(s.dossier) || '<p class="empty">No dossier yet.</p>'}</div>`;
   if (tab === "calendar") panel.appendChild(table(s.calendar));
@@ -213,7 +264,7 @@ function table(t, searchable) {
       const x = a[sortCol] ?? "", y = b[sortCol] ?? "", nx = parseFloat(x), ny = parseFloat(y);
       return (!isNaN(nx) && !isNaN(ny) ? nx - ny : x.localeCompare(y)) * dir; });
     wrap.innerHTML = `<table><thead><tr>${t.header.map((h, i) => `<th data-i="${i}" scope="col">${esc(h.replace(/_/g, " "))}${sortCol === i ? (dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead>
-      <tbody>${view.map(r => `<tr class="${r[0] === "1" ? "top1" : ""}">${t.header.map((h, i) =>
+      <tbody>${view.map(r => `<tr class="${r[0] === "1" ? "top1" : ""}${hlRound && t.header[0] === "round" && r[0] === hlRound ? " hl" : ""}">${t.header.map((h, i) =>
         `<td class="${h === "notes" ? "notes" : NUMERIC.test(h) ? "num" : ""}">${esc(r[i])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
     wrap.querySelectorAll("th").forEach(th => th.onclick = () => { const i = +th.dataset.i; dir = sortCol === i ? -dir : 1; sortCol = i; draw(); });
     const c = bar.querySelector(".count"); if (c) c.textContent = `${view.length} of ${rows.length}`;
@@ -262,19 +313,6 @@ function md(src) {
   return out;
 }
 
-const VENUES = [[/AVUS/i, "AVUS"], [/Alemannenring|Singen/i, "Alemannenring (Singen)"], [/Brno/i, "Brno"], [/Bologna/i, "Bologna"],
-  [/Zolder/i, "Zolder"], [/Diepholz/i, "Diepholz"], [/Donington/i, "Donington Park"], [/Erding/i, "Erding"], [/Estoril/i, "Estoril"],
-  [/Wunstorf/i, "Wunstorf"], [/Mainz/i, "Mainz-Finthen"], [/Helsinki/i, "Helsinki"], [/Hockenheim/i, "Hockenheim"],
-  [/Hungaroring/i, "Hungaroring"], [/Interlagos/i, "Interlagos"], [/Magny/i, "Magny-Cours"], [/Mugello/i, "Mugello"],
-  [/Norisring/i, "Norisring"], [/Salzburg/i, "Salzburgring"], [/Siegerland/i, "Siegerland"], [/Silverstone/i, "Silverstone"], [/Suzuka/i, "Suzuka"],
-  [/A1-Ring|Red Bull Ring|Spielberg/i, "Red Bull Ring (A1-Ring)"], [/Lausitz/i, "Lausitzring"], [/Oschersleben/i, "Oschersleben"],
-  [/Zandvoort/i, "Zandvoort"], [/Adria/i, "Adria"], [/Monza/i, "Monza"], [/Algarve|Portim/i, "Portimão"], [/Catalunya|Barcelona/i, "Barcelona"],
-  [/Spa/i, "Spa-Francorchamps"], [/Dijon/i, "Dijon-Prenois"], [/Istanbul/i, "Istanbul Park"], [/Misano/i, "Misano"],
-  [/Moscow|Moskau/i, "Moscow Raceway"], [/Assen/i, "Assen"], [/München|Munich/i, "Munich (Olympic Stadium)"], [/Sachsenring/i, "Sachsenring"]];
-function venueKey(v, layout, len) {
-  if (/N(ü|u|ue)rburgring/i.test(v)) return /Nordschleife/i.test(layout) || parseFloat(len) > 20 ? "Nürburgring Nordschleife" : "Nürburgring GP";
-  const hit = VENUES.find(([re]) => re.test(v)); return hit ? hit[1] : v.split(/\s+[–(-]/)[0].trim();
-}
 function renderFit() {
   $("#fit-table").innerHTML = `<table><thead><tr><th scope="col">#</th><th scope="col">Years</th><th scope="col">Fit</th><th scope="col">Supported</th><th scope="col">Missing in the game</th></tr></thead><tbody>${
     DATA.fit.map((f, i) => `<tr class="${i === 0 ? "top1" : ""}"><td class="num">${i + 1}</td><td class="fit-years">${esc(f.years)}</td>
@@ -283,24 +321,117 @@ function renderFit() {
 }
 
 function renderVenues() {
-  const years = S.map(s => s.year), map = new Map();
-  S.forEach(s => {
-    if (!s.calendar) return;
-    const h = s.calendar.header, vi = h.indexOf("venue"), li = h.indexOf("circuit_layout"), ki = h.indexOf("length_km");
-    s.calendar.rows.forEach(r => { const v = (r[vi] || "").trim(); if (!v) return;
-      const key = venueKey(v, r[li] || "", r[ki] || ""); if (!map.has(key)) map.set(key, {});
-      map.get(key)[s.year] = (map.get(key)[s.year] || 0) + 1; });
-  });
-  const venues = [...map.entries()].sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length || a[0].localeCompare(b[0]));
+  const years = S.map(s => s.year);
+  const venues = DATA.tracks.map(v => { const ys = {}; v.races.forEach(r => ys[r.year] = (ys[r.year] || 0) + 1); return [v, ys]; })
+    .sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length || a[0].key.localeCompare(b[0].key));
   $("#venue-table").innerHTML = `<table class="matrix"><thead><tr><th scope="col">Venue</th>${years.map(y => `<th class="yr-h" scope="col">'${String(y).slice(2)}</th>`).join("")}<th scope="col">Years</th></tr></thead>
-    <tbody>${venues.map(([v, ys]) => `<tr><td class="vname">${esc(v)}</td>${years.map(y => `<td class="mark">${ys[y] ? (ys[y] > 1 ? ys[y] + "×" : "●") : ""}</td>`).join("")}<td class="num">${Object.keys(ys).length}</td></tr>`).join("")}</tbody></table>`;
+    <tbody>${venues.map(([v, ys]) => `<tr><td class="vname"><a href="#track/${v.slug}">${esc(v.key)}</a></td>${years.map(y => `<td class="mark">${ys[y] ? (ys[y] > 1 ? ys[y] + "×" : "●") : ""}</td>`).join("")}<td class="num">${Object.keys(ys).length}</td></tr>`).join("")}</tbody></table>`;
 }
 
-let start = location.hash.slice(1);
-if (!S.find(s => s.id === start)) { try { start = localStorage.getItem("dtm-archive-season") || ""; } catch (e) { start = ""; } }
+/* Tracks: one card per venue. Repo paths are relative to the repo root; the page lives in build/season-browser/. */
+const T = DATA.tracks;
+const repoUrl = p => /^[a-z]+:/.test(p) ? p : "../../" + p.split("/").map(encodeURIComponent).join("/");
+const link = (p, label) => p ? `<a href="${esc(repoUrl(p))}" target="_blank" rel="noopener">${esc(label)}</a>` : "";
+const isDtmTrack = g => g.owner_kind === "season" || g.owner.startsWith("dtm");
+const span = ys => ys.length ? (ys[0] === ys[ys.length - 1] ? String(ys[0]) : `${ys[0]}–${ys[ys.length - 1]}`) : "";
+let trackFilter = "", trackChip = "all";
+const CHIPS = [["all", "All"], ["game", "Have a game track"], ["nogame", "No game track yet"], ["media", "Have photos"], ["history", "Layout history"]];
+function hasGame(v) { return v.game.some(isDtmTrack); }
+function chipOk(v) {
+  return trackChip === "all" || (trackChip === "game" && hasGame(v)) || (trackChip === "nogame" && !hasGame(v))
+    || (trackChip === "media" && v.media.length > 0) || (trackChip === "history" && !!v.history);
+}
+function badges(v) {
+  const dtm = v.game.filter(isDtmTrack), other = v.game.filter(g => !isDtmTrack(g));
+  const photos = v.media.reduce((n, m) => n + (m.count || 0), 0);
+  const results = v.races.filter(r => r.results.length).length;
+  const b = [];
+  b.push(dtm.length ? `<span class="badge on">Game track ×${dtm.length}</span>` : `<span class="badge">No game track</span>`);
+  if (other.length) b.push(`<span class="badge">${other.map(g => esc(g.owner)).join(", ")} track</span>`);
+  if (v.game.some(g => g.art)) b.push(`<span class="badge on">Art</span>`);
+  if (results) b.push(`<span class="badge on">Results ×${results}</span>`);
+  if (photos) b.push(`<span class="badge on">Photos ${photos}</span>`);
+  if (v.history) b.push(`<span class="badge on">Layout history</span>`);
+  return b.join("");
+}
+function usedLabel(u) { return u.map(x => `<a href="#${x.season}/calendar/${x.round}">${x.season.split("-")[1]} R${x.round}</a>`).join(", "); }
+function venueBody(v) {
+  const h = v.history, out = [];
+  if (h && h.summary) out.push(`<p class="summary-text">${esc(h.summary)}</p>`);
+  if (h) {
+    const wl = Object.entries(h.wikipedia || {}).map(([l, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">Wikipedia ${esc(l)}</a>`);
+    out.push(`<div class="chips" style="gap:12px">${[`<a href="${esc(h.link)}" target="_blank" rel="noopener">race-tracks: ${esc(h.id)}</a>`, ...wl].join("")}</div>`);
+  }
+  if (v.game.length) out.push(`<h4>Our tracks</h4><div class="gtracks">${v.game.map(g => `<div class="gtrack">
+      ${g.map ? `<a href="${esc(repoUrl(g.map))}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(repoUrl(g.map))}" alt="Map of ${esc(g.name)} (${esc(g.id)})"></a>` : ""}
+      <span class="gid">${esc(g.owner)}/${esc(g.id)}</span>
+      <span>${esc(g.name)}${g.length_km ? ` · ${esc(g.length_km)} km` : ""}</span>
+      <span class="links">${link(g.spec, "spec")}${link(g.lap, "lap")}${link(g.map, "map")}${g.art ? `<a href="${esc(g.art)}" target="_blank" rel="noopener">art</a>` : ""}</span>
+      ${g.art_layout ? `<span class="used">race-tracks ${esc(g.art_layout)}</span>` : ""}
+      <span class="used">${g.used_by.length ? "Used by " + usedLabel(g.used_by) : "Not on a pack calendar"}</span></div>`).join("")}</div>`);
+  out.push(`<h4>Layouts raced</h4><div class="tablewrap"><table><thead><tr><th scope="col">Length km</th><th scope="col">Years</th><th scope="col">Races</th><th scope="col">Called</th></tr></thead><tbody>${
+    v.layouts.map(l => `<tr><td class="num">${esc(l.length_km)}</td><td class="num">${esc(span(l.years))}</td><td class="num">${l.races}</td><td class="notes">${esc(l.names.join(" · "))}</td></tr>`).join("")}</tbody></table></div>`);
+  if (h && h.versions.length) out.push(`<h4>Layout history (race-tracks)</h4><div class="tablewrap"><table><thead><tr><th scope="col">Layout</th><th scope="col">Years</th><th scope="col">Length m</th><th scope="col">Changes</th></tr></thead><tbody>${
+    h.versions.map(x => `<tr><td>${esc(x.layout)} <span class="vmeta">${esc(x.id)}</span></td><td class="num">${esc(x.from ?? "")}${x.to !== x.from ? "–" + esc(x.to ?? "") : ""}</td><td class="num">${esc(x.length_m ?? "")}</td><td class="notes">${esc(x.changes)}</td></tr>`).join("")}</tbody></table></div>`);
+  const gameFor = r => v.game.filter(g => g.used_by.some(u => u.season === r.season && u.round === r.round));
+  out.push(`<h4>Races</h4><div class="tablewrap"><table><thead><tr><th scope="col">Year</th><th scope="col">Rd</th><th scope="col">Date</th><th scope="col">Event</th><th scope="col">Layout</th><th scope="col">km</th><th scope="col">Winners</th><th scope="col">In the repo</th></tr></thead><tbody>${
+    v.races.map(r => `<tr><td class="yr"><a href="#${r.season}/calendar/${esc(r.round)}">${r.year}</a></td><td class="num">${esc(r.round)}</td><td class="num">${esc(r.date)}</td>
+      <td>${esc(r.event)}</td><td class="notes">${esc(r.layout)}</td><td class="num">${esc(r.length_km)}</td><td>${esc(r.winners)}</td>
+      <td>${[...gameFor(r).map(g => link(g.lap || g.spec, "track " + g.id)), ...r.results.map(x => link(x.path, x.session))].join(" · ")}</td></tr>`).join("")}</tbody></table></div>`);
+  if (v.media.length) out.push(`<h4>Photos and media</h4><ul class="media-list">${v.media.map(m => `<li>
+      <b>${esc(m.kind)}</b> ${m.year ? esc(m.year) : ""} · ${m.count} ${m.kind === "Media sources" ? "items" : "photos"}
+      ${m.url ? ` · <a href="${esc(m.url)}" target="_blank" rel="noopener">${m.kind === "Photo gallery" ? "open gallery" : "source"}</a>` : ""}
+      ${m.local ? ` · <a href="${esc(m.local)}" target="_blank" rel="noopener">local copies</a>` : ""}
+      ${m.path ? ` · ${link(m.path, m.path.split("/").pop())}` : ""}
+      ${m.note ? `<span class="vmeta"> · ${esc(m.note)}</span>` : ""}
+      ${m.items ? `<div class="vmeta">${m.items.map(i => `<a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a>`).join(" · ")}</div>` : ""}
+      ${m.thumbs && m.thumbs.length ? `<div class="thumbs">${m.thumbs.map(t => `<img loading="lazy" src="${esc(t)}" alt="">`).join("")}</div>` : ""}</li>`).join("")}</ul>`);
+  return out.join("");
+}
+function renderTracks() {
+  const next = T.filter(v => !hasGame(v)).slice(0, 8);
+  $("#build-next").innerHTML = `<b>Build next</b>${next.map(v => `<a href="#track/${v.slug}">${esc(v.key)} (${v.races.length})</a>`).join(" · ")}`;
+  $("#track-chips").innerHTML = CHIPS.map(([k, l]) => `<button type="button" class="chip" data-k="${k}" aria-pressed="${trackChip === k}">${l}</button>`).join("");
+  $("#track-chips").querySelectorAll("button").forEach(b => b.onclick = () => { trackChip = b.dataset.k; renderTracks(); });
+  const q = trackFilter.toLowerCase();
+  const view = T.filter(v => chipOk(v) && (!q || [v.key, v.country, ...v.races.map(r => `${r.year} ${r.event} ${r.layout} ${r.winners}`)].join(" ").toLowerCase().includes(q)));
+  $("#track-count").textContent = `${view.length} of ${T.length} venues · ${T.reduce((n, v) => n + v.races.length, 0)} races`;
+  const open = new Set([...document.querySelectorAll("details.venue[open]")].map(d => d.dataset.slug));
+  $("#venue-list").innerHTML = view.map(v => `<details class="venue" id="track-${v.slug}" data-slug="${v.slug}" ${open.has(v.slug) ? "open" : ""}>
+    <summary><div><div class="vtitle">${esc(v.key)}<small>${esc(v.country)}</small></div>
+      <div class="vmeta">${esc(span(v.years))} · ${v.years.length} season${v.years.length > 1 ? "s" : ""} · ${v.layouts.length} layout${v.layouts.length > 1 ? "s" : ""}</div></div>
+      <div class="vcount">${v.races.length}<span>RACES</span></div><div class="badges">${badges(v)}</div></summary>
+    <div class="vbody"></div></details>`).join("");
+  $("#venue-list").querySelectorAll("details.venue").forEach(d => {
+    const fill = () => { const b = d.querySelector(".vbody"); if (d.open && !b.innerHTML) b.innerHTML = venueBody(T.find(v => v.slug === d.dataset.slug)); };
+    d.addEventListener("toggle", fill); fill();
+  });
+}
+function openTrack(slug) {
+  trackFilter = ""; trackChip = "all"; $("#track-filter").value = ""; renderTracks();
+  const d = document.getElementById("track-" + slug); if (!d) return;
+  d.open = true; d.scrollIntoView({ block: "start" });
+}
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (h.startsWith("track/")) { openTrack(h.slice(6)); return; }
+  const [id, t, r] = h.split("/");
+  if (!S.find(s => s.id === id)) return;
+  if (current && current.id === id && tab === (t || "overview") && hlRound === (r || "")) return;
+  tab = t || "overview"; hlRound = r || ""; select(id, true);
+  if (t) $("#sheet").scrollIntoView({ block: "start" });
+}
+
+let start = "";
+try { start = localStorage.getItem("dtm-archive-season") || ""; } catch (e) { start = ""; }
 if (!S.find(s => s.id === start)) start = (S.find(s => s.playable) || S[S.length - 1]).id;
+const startHash = location.hash;
 select(start);
 renderFit();
 renderVenues();
+$("#track-filter").oninput = e => { trackFilter = e.target.value.trim(); renderTracks(); };
+renderTracks();
+if (startHash) { history.replaceState(null, "", startHash); route(); }
+window.addEventListener("hashchange", route);
 $("#foot").textContent = `${S.length} seasons · Sources: touringcarracing.net, German and English Wikipedia, Wikidata and others listed per dossier · Unofficial community research.`;
 </script>
