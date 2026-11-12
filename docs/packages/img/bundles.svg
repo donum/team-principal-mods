@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" role="img" aria-label="Ten delivery bundles in three groups: quick wins, the core, and what builds on the core."><style>svg{--bg:#f2f4f7;--panel:#ffffff;--ink:#151a22;--muted:#5b6474;--line:#c9d0db;--accent:#1d4fd8;--accent-bg:#e3eaff;--fit:#127a43;--fit-bg:#e2f4ea;--apx:#9a5b00;--apx-bg:#fbefd9;--no:#b4232f;--no-bg:#fbe3e5;--c1:#1d4fd8;--c2:#0f7a8a;--c3:#6b4bc4;--c4:#5b6474;--std:#ffffff;--opt:#f2c230;--display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",Consolas,monospace}
+.pn{fill:var(--panel);stroke:var(--line);stroke-width:1.2}
+.pn-d{fill:var(--panel);stroke:var(--muted);stroke-width:1.2;stroke-dasharray:6 4}
+.pn-a{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.5}
+.h{fill:var(--ink);font-family:var(--display);font-weight:600;font-size:19px}
+.t{fill:var(--ink);font-family:var(--body);font-size:13.5px}
+.tm{fill:var(--muted);font-family:var(--body);font-size:13px}
+.tb{fill:var(--ink);font-family:var(--body);font-size:13.5px;font-weight:600}
+.c{fill:var(--ink);font-family:var(--mono);font-size:12px}
+.cm{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.ca{fill:var(--accent);font-family:var(--mono);font-size:12px;font-weight:600}
+.ta{fill:var(--accent);font-family:var(--body);font-size:13.5px;font-weight:600}
+.ar{stroke:var(--muted);stroke-width:1.5;fill:none}
+.ar-a{stroke:var(--accent);stroke-width:2;fill:none}
+.ah{fill:var(--muted)} .ah-a{fill:var(--accent)}
+.grid{stroke:var(--line);stroke-width:1}
+.fit{fill:var(--fit-bg);stroke:var(--fit);stroke-width:1.2} .fit-t{fill:var(--fit);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no{fill:var(--no-bg);stroke:var(--no);stroke-width:1.2} .no-t{fill:var(--no);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no-z{fill:var(--no-bg)}
+.apx{fill:var(--apx-bg);stroke:var(--apx);stroke-width:1.2} .apx-t{fill:var(--apx);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.std{fill:var(--std);stroke:var(--ink);stroke-width:1.2} .opt{fill:var(--opt);stroke:var(--ink);stroke-width:1.2}
+.s1{fill:var(--c1)} .s2{fill:var(--c2)} .s3{fill:var(--c3)} .s4{fill:var(--c4)}
+.st1{stroke:var(--c1)} .st2{stroke:var(--c2)} .st3{stroke:var(--c3)} .st4{stroke:var(--c4)}
+.wt{fill:#ffffff;font-family:var(--mono);font-size:11.5px;font-weight:600}
+.dot-on{fill:var(--fit)} .dot-off{fill:none;stroke:var(--muted);stroke-width:1.5}
+.dot-need{fill:var(--accent-bg);stroke:var(--accent);stroke-width:2}
+.dot-part{fill:var(--apx)}
+</style><defs><marker id="ah-bundles" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-bundles-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><rect x="0" y="0" width="960" height="470" fill="#f2f4f7"/><text x="20.0" y="24.0" class="cm" text-anchor="start" xml:space="preserve">Quick wins</text>
+<text x="340.0" y="24.0" class="cm" text-anchor="start" xml:space="preserve">The core</text>
+<text x="660.0" y="24.0" class="cm" text-anchor="start" xml:space="preserve">Builds on the core</text>
+<rect x="20.0" y="36.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="36.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">0 · Docs only</text>
+<text x="36.0" y="86.0" class="c" text-anchor="start" xml:space="preserve">D3, E4, E5, E10, E12</text>
+<text x="36.0" y="106.0" class="tm" text-anchor="start" xml:space="preserve">no code, answers only</text>
+<rect x="20.0" y="128.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="36.0" y="156.0" class="h" text-anchor="start" xml:space="preserve">1 · Oval rules for all</text>
+<text x="36.0" y="178.0" class="c" text-anchor="start" xml:space="preserve">A3, C1, B3</text>
+<text x="36.0" y="198.0" class="tm" text-anchor="start" xml:space="preserve">rolling start, 6 cars</text>
+<rect x="204.0" y="138.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="244.7" y="153.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="20.0" y="220.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="36.0" y="248.0" class="h" text-anchor="start" xml:space="preserve">8 · Pack infrastructure</text>
+<text x="36.0" y="270.0" class="c" text-anchor="start" xml:space="preserve">E1, E2, E3</text>
+<text x="36.0" y="290.0" class="tm" text-anchor="start" xml:space="preserve">overlays, validation</text>
+<rect x="340.0" y="36.0" width="280.0" height="80.0" rx="6" class="pn-a"/>
+<text x="356.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">2 · Rules engine</text>
+<text x="356.0" y="86.0" class="c" text-anchor="start" xml:space="preserve">B5 to B12</text>
+<text x="356.0" y="106.0" class="tm" text-anchor="start" xml:space="preserve">two stops, closed laps</text>
+<rect x="524.0" y="46.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="564.7" y="61.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="340.0" y="128.0" width="280.0" height="80.0" rx="6" class="pn-a"/>
+<text x="356.0" y="156.0" class="h" text-anchor="start" xml:space="preserve">3 · Weekend builder</text>
+<text x="356.0" y="178.0" class="c" text-anchor="start" xml:space="preserve">A1 to A6, C7</text>
+<text x="356.0" y="198.0" class="tm" text-anchor="start" xml:space="preserve">Q4, heats, sprint</text>
+<rect x="524.0" y="138.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="564.7" y="153.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="340.0" y="220.0" width="280.0" height="80.0" rx="6" class="pn-a"/>
+<text x="356.0" y="248.0" class="h" text-anchor="start" xml:space="preserve">4 · Entry model</text>
+<text x="356.0" y="270.0" class="c" text-anchor="start" xml:space="preserve">C1 to C8, B4, B9, E4</text>
+<text x="356.0" y="290.0" class="tm" text-anchor="start" xml:space="preserve">crews, guests, classes</text>
+<rect x="524.0" y="230.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="564.7" y="245.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="660.0" y="36.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">5 · Content as data</text>
+<text x="676.0" y="86.0" class="c" text-anchor="start" xml:space="preserve">D1, D8, D9, E13</text>
+<text x="676.0" y="106.0" class="tm" text-anchor="start" xml:space="preserve">Option tyre, splitter</text>
+<rect x="660.0" y="128.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="156.0" class="h" text-anchor="start" xml:space="preserve">6 · Dated world</text>
+<text x="676.0" y="178.0" class="c" text-anchor="start" xml:space="preserve">A4, B1, B2, C4, D4, D7</text>
+<text x="676.0" y="198.0" class="tm" text-anchor="start" xml:space="preserve">Audi -40 kg in week 23</text>
+<rect x="844.0" y="138.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="884.7" y="153.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="660.0" y="220.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="248.0" class="h" text-anchor="start" xml:space="preserve">7 · Closed-car physics</text>
+<text x="676.0" y="270.0" class="c" text-anchor="start" xml:space="preserve">D2, D3, D5, D6</text>
+<text x="676.0" y="290.0" class="tm" text-anchor="start" xml:space="preserve">480 hp, 1,110 kg</text>
+<rect x="844.0" y="230.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="884.7" y="245.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="660.0" y="312.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="340.0" class="h" text-anchor="start" xml:space="preserve">9 · Sound</text>
+<text x="676.0" y="362.0" class="c" text-anchor="start" xml:space="preserve">E8, E9, E11, E14</text>
+<text x="676.0" y="382.0" class="tm" text-anchor="start" xml:space="preserve">a BMW sounds like one</text>
+<line x1="302.0" y1="160.0" x2="336.0" y2="160.0" class="ar-a" marker-end="url(#ah-bundles-a)"/>
+<line x1="622.0" y1="160.0" x2="656.0" y2="160.0" class="ar-a" marker-end="url(#ah-bundles-a)"/>
+<text x="20.0" y="440.0" class="t" text-anchor="start" xml:space="preserve">Quick wins cost little. The core makes most later requests a new row instead of new code.</text>
+<text x="660.0" y="410.0" class="tm" text-anchor="start" xml:space="preserve">endurance tag: the endurance mode</text>
+<text x="660.0" y="428.0" class="tm" text-anchor="start" xml:space="preserve">needs this bundle anyway</text></svg>

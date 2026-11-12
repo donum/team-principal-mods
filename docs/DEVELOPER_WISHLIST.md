@@ -15,13 +15,20 @@ Whenever a pack hits something the game can't do, it goes in here (a new
 item, or the season added to an existing one), and in that pack's README
 under "Simplifications".
 
+The items are grouped into ten **feature packages** in
+[packages/](packages/README.md). Each package collects evidence, shows
+where items overlap, how they fit the existing options, and what the
+coming endurance mode needs. The README there proposes one shared way to
+build them all.
+
 | Season | Items |
 |---|---|
-| dtm-1990 | A1, B1, B2, D1, E1, E2 |
-| dtm-1991 | A1–A4, B1–B4, C1–C5, D1–D4, E1–E7 |
-| dtm-1992 | A1, B2, B3, C1, C2, D1, E1, E2 |
-| dtm-2012 | A5, B5, B7, C4, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E15 |
-| dtm-2013 | A3, A5, B5, B6, B7, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15 |
+| dtm-1990 | A1, A6, B1, B2, D1, D9, E1, E2 |
+| dtm-1991 | A1–A6, B1–B4, C1–C5, D1–D4, D9, E1–E7 |
+| dtm-1992 | A1, A6, B2, B3, C1, C2, D1, D9, E1, E2 |
+| dtm-2012 | A5, A6, B5, B7, B12, C4, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E15 |
+| dtm-2013 | A3, A5, A6, B5, B6, B7, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15 |
+| f1-2012 | D8, D10, D11, D12, E1, E2 |
 
 Seasons without a pack yet (research only) are covered for qualifying and
 race rules in [dtm_rules.html](dtm_rules.html), which maps every season's
@@ -29,12 +36,12 @@ rules to these items:
 
 | Seasons | Items |
 |---|---|
-| dtm-1984 to dtm-1989 | A1, A2, A3, A5, B1, B2, B3, B7, B9 |
-| dtm-1993 to itc-1996 | A1, A5, B2, B4, D2 |
-| dtm-2000 to dtm-2011 | A1, A2, A3, A5, B1, B2, B3, B5, B7, B8, B10, B11 |
-| dtm-2014 to dtm-2018 | A1, A3, B1, B5, B6, B7, B8, B9, B10 |
-| dtm-2019 to dtm-2020 | A1, A3, B4, B6, B7, B8 |
-| dtm-2021 to dtm-2026 | A3, B1, B2, B3, B4, B5, B7, B8, B9, B10, B11 |
+| dtm-1984 to dtm-1989 | A1, A2, A3, A5, A6, B1, B2, B3, B7, B9, D9 |
+| dtm-1993 to itc-1996 | A1, A5, A6, B2, B4, D2, D9 |
+| dtm-2000 to dtm-2011 | A1, A2, A3, A5, A6, B1, B2, B3, B5, B7, B8, B10, B11, B12 |
+| dtm-2014 to dtm-2018 | A1, A3, A6, B1, B5, B6, B7, B8, B9, B10, B12 |
+| dtm-2019 to dtm-2020 | A1, A3, A6, B4, B6, B7, B8, B12 |
+| dtm-2021 to dtm-2026 | A3, A6, B1, B2, B3, B4, B5, B7, B8, B9, B10, B11, B12 |
 
 ---
 
@@ -61,12 +68,26 @@ rules to these items:
 - **Request:** a session type `qualification_race`, with `direct_grid_slots`
   and `distance_km`.
 
-### A3. Configurable sessions and start · P2
-- **Needed by:** dtm-1991, dtm-2013 (the wet 2013 Nürburgring and final Hockenheim races were time-limited to 75 minutes).
-- **Request:** two qualifying sessions (best time counts), standing or
-  rolling start, red-flag and restart rules (Hockenheim 1991 heat 1 was
-  stopped for rain and shortened), and race distance in km or minutes
-  instead of `laps × lap_modifier`.
+### A3. Configurable sessions and race format · P2
+- **Needed by:** dtm-1986 (red-flag aggregate), dtm-1991, dtm-2000 to dtm-2002 (rolling starts, lap caps in qualifying), dtm-2003 to dtm-2011 (one-hour races), dtm-2013 (the wet Nürburgring and final Hockenheim races were time-limited to 75 minutes), dtm-2015 on (minutes plus one lap), dtm-2021 on (rolling two-abreast start).
+- **Today:** a race is `laps × lap_modifier` with a standing start.
+  `formula_red_flags` in `config.json` stops and restarts a race (up to 2
+  per race), but the result can't be an aggregate. The oval mode already
+  has a rolling two-abreast start (`oval_start_procedure`
+  `double_file_pace_lap`); formula packs can't use it.
+- **Request:**
+  - Race length as laps, km, **minutes plus one lap**, or whichever comes
+    first (F1: 305 km or two hours). Optional **safety-car laps added**
+    (DTM 2019, 2025: up to 2).
+  - Start type: standing, rolling single file, **rolling two abreast**
+    in a start corridor.
+  - Red flag: stop, restart, and the result as the **aggregate** of both
+    parts or shortened (Zolder 1986, Hockenheim 1991).
+  - Lap caps per qualifying session (`max_laps`: 12 in 2001 and 2002, 9 in
+    2003) and two sessions where the best time counts.
+  - Heats: gap between the races (15 or 30 minutes), a **repair window**
+    (22 minutes in 1995, 25 in 2001), and points per heat (half points
+    for the two-heat rounds of 1984 and 1985).
 
 ### A4. More than one event per week · P3
 - **Needed by:** dtm-1991.
@@ -85,6 +106,58 @@ rules to these items:
 - **Workaround:** the Q3 order is the grid.
 - **Request:** a qualifying stage with `cars`, `laps_each: 1` and
   `run_order: "reverse"`.
+
+### A6. Qualifying as a list of stages · P1
+- **Needed by:** every DTM season (each era had a different format), dtm-2012, dtm-2013 (Q1 to Q3 plus Q4).
+- **Today:** `qualifying_format` is `session_60` or a fixed Q1 to Q3
+  knockout with the game's own cut sizes. Pre-qualifying and the grid
+  limit are global constants. Every race gets its grid from the one
+  qualifying.
+- **Request:** a qualifying format as a list of stages. Each race of the
+  weekend names its grid source. Ship presets as `qualifying_format`
+  options so packs pick one. This one model covers A2, A5, B8 and the
+  grid part of A1.
+  - **Stage types:** `timed`, `knockout` (any number of parts),
+    `single_lap`, `elimination`, `qualification_race`, `prequalifying`,
+    `duel`.
+  - **Per stage:** minutes, `max_laps`, who runs (`all`, `top N`,
+    `bottom N`, a group), how many go on (`keep N`), where the others
+    start, `run_order` for single laps, car state (`fuel`, `parc_ferme`,
+    `start_tyre`), tyre limits (`new_sets_max`, `compound`), a 107% cut,
+    a points table. Any setting can differ per track.
+  - **Grid sources per race:** `qualifying`, a named session,
+    `previous_race` (with `retired_to_back`), `reverse_top_n`,
+    `reverse_drawn`, then grid penalties.
+- **Historic formats this has to cover:**
+
+  | Seasons | Format | Built from |
+  |---|---|---|
+  | DTM 1984 to 1988 | Timed practice sets the grid; 1.8 s off pole meant DNQ at Mainz 1988 | `timed`, grid limit |
+  | DTM 1989 | Timed, then a one-lap Top-Qualifying for the top 16 (top 20 at Zolder); the rest race for places 17 on | `timed`, `single_lap` (16), `qualification_race` |
+  | DTM 1990 to 1992 | About 16 go straight through; the rest run a 40 to 50 km qualification race (none at the Eifel, AVUS and Nordschleife) | `timed`, `qualification_race`, per-track switch |
+  | DTM 1991 | Two sessions set places 1 to 16 | `timed` with `sessions: 2, combine: best` |
+  | DTM 1988 to 1996 | Heat 2 grid is the heat 1 order, retirements at the back | `previous_race`, `retired_to_back` |
+  | DTM 1993 | Timed, then a top 10 shootout (top 15 at some rounds) | `timed`, `single_lap` with per-track `cars` |
+  | DTM 2001, 2002 | 45 min, 12 laps max; a 30 to 35 km qualifying race on Sunday sets the main grid, 3-2-1 points | `timed` with `max_laps`, `qualification_race` with points |
+  | DTM 2003 to 2005 | 20 min, 9 laps max, sets places 11 on; top 10 Superpole in reverse order | `timed`, `single_lap` (10, `reverse`) |
+  | DTM 2006 to 2008 | Three-part knockout, the slowest six drop out each part | `knockout` with `keep` |
+  | DTM 2009 to 2013 | Q1 14 to 16 min (top 14 to 16 go on), Q2 to 8 or 10, Q3 to 4, Q4 one timed lap each; parc fermé before Q4 | `knockout`, `single_lap` (4), `parc_ferme` |
+  | DTM 2014 | Q1 to Q3 knockout like F1 | `knockout` |
+  | DTM 2015 on | A 20 min session before each race; 3-2-1 points from 2018 | one `timed` per race, points table |
+  | DTM 2019 | At most 2 new sets in qualifying | `new_sets_max: 2` |
+  | F1 1950s to 1995 | Two sessions, best time counts, 26 starters | `timed` × 2, grid limit |
+  | F1 1988 to 1992 | Pre-qualifying, top 4 go on | `prequalifying` with `keep: 4` |
+  | F1 1996 to 2002 | One hour, 12 laps, 107% rule | `timed` with `max_laps`, cut |
+  | F1 2003, 2004 | One lap each, order from a first single-lap run; race fuel, parc fermé | `single_lap` × 2, `fuel: race` |
+  | F1 2005 | Aggregate of two single laps, then one lap in reverse order of the last race | `combine: aggregate`, `run_order: previous_race` |
+  | F1 2006 to 2009 | Knockout; Q3 on race fuel, fuel used given back | `knockout`, `fuel: race_with_credit` |
+  | F1 2010 to 2021 | Knockout; top 10 start on their best Q2 tyres (Q3 tyres to 2013) | `start_tyre` on a stage |
+  | F1 2016 (two races) | Slowest car out every 90 s | `elimination` |
+  | F1 2021 on | Sprint weekends: sprint grid from Friday qualifying or a Sprint Shootout; Grand Prix grid from the sprint (2021, 2022) or its own qualifying | two formats, two grid sources |
+  | F1 2023 | Hard in Q1, medium in Q2, soft in Q3 (two rounds) | `compound` per stage |
+
+- **Full brainstorm** (ranking, scalability, other series):
+  [packages/weekend-format.md](packages/weekend-format.md).
 
 ## B. Rules and balance of performance
 
@@ -126,16 +199,31 @@ rules to these items:
 - **Request:** a list of championships in data, each with its own events,
   points rules and eligible entries (e.g. `"privateer": true`).
 
-### B5. Mandatory pit stops · P1
-- **Needed by:** dtm-2013, dtm-2012 (two mandatory stops, each inside a pit window).
+### B5. Mandatory pit stops and pit windows · P1
+- **Needed by:** dtm-2001 to dtm-2026 (every season sets a stop count; most add a window), dtm-2012 (two stops, each inside a window), dtm-2013 (two stops, none in the first or last 3 laps).
 - **2013:** **two mandatory stops**, no pit window, but none in the first or
-  last 3 laps.
-- **Today:** no regulation can require a number of stops.
+  last 3 laps. Damage stops don't count.
+- **Today:** no regulation can require a number of stops or close the
+  pits for part of the race.
 - **Workaround:** tyre wear per track (`tyre_wear_mult`) is tuned so two
   stops is the fastest strategy. In season 5, 160 of 220 cars stopped twice;
   the rest stopped between zero and seven times.
-- **Request:** `mandatory_stops: 2` with `no_stop_first_laps` and
-  `no_stop_last_laps`.
+- **Request:**
+  - `mandatory_stops: N`, set **per race** of the weekend (2015: Saturday
+    0, Sunday 1; 2025: Saturday 1, Sunday 2).
+  - **Pit window closed for the first N and the last N laps:** a stop in
+    those laps doesn't count (`no_stop_first_laps: 3`,
+    `no_stop_last_laps: 3` in 2013).
+  - A window per stop, in laps, minutes or share of the race: the middle
+    third (2008, 2014), the 2nd and 3rd quarters (late 2008), minute 10 to
+    40 (2022), 20 to 40 (2023, 2024), and in 2025 on Sunday stop 1 in
+    minutes 10 to 20 and stop 2 in 39 to 45.
+  - What a counting stop needs: four tyres changed (2001 on), not a damage
+    stop (2013), not under safety car (2014, 2021, 2024) or FCY (2022);
+    or stops under safety car allowed (2022).
+  - `windows_off_if_wet` (2014).
+  - A penalty when the rule is broken. The AI plans its stops inside the
+    rules. B12 has the shared rule list.
 
 ### B6. DRS rules per session · P2
 - **Needed by:** dtm-2013.
@@ -199,6 +287,43 @@ rules to these items:
   safety car. The VSC stands in for the FCY.
 - **Request:** `pit_lane_closed_under_sc`, and a penalty-lap penalty type
   next to time penalties.
+
+### B12. Tyre and stop rules as data · P1
+- **Needed by:** dtm-1988 on (set limits), dtm-2001 on (stop rules), dtm-2012, dtm-2013 (two stops, option tyre once), dtm-2014 (option cap), dtm-2023 on (start on qualifying tyres).
+- **Today:** one tyre rule (`mandatory_compound_count`, on or off for the
+  whole season) and three allocation levels (12 sets at the lowest). No
+  stop, window, must-use or start-tyre rule.
+- **Request:** a list of rule rows checked after the race and read by the
+  AI strategy planner. Each row has a scope (race, weekend, season), who it
+  applies to (`all`, `top N` from qualifying, a class) and a penalty (time,
+  drive-through, disqualification, grid drop). Rows can differ per race of
+  the weekend. This one model covers B5, B7 and the counting part of B10.
+- **Historic rules this has to cover:**
+
+  | Rule | Historic use |
+  |---|---|
+  | `min_dry_compounds: N` | F1 2007 on (exists today) |
+  | `mandatory_stops: N` per race | DTM 2001, 2002 (1); 2003 to 2013 (2); 2014 to 2024 (1); 2015 and 2016 Saturday (0); 2025, 2026 Sunday (2); F1 Monaco 2025 (2) |
+  | `no_stop_first_laps`, `no_stop_last_laps` | DTM 2013 (3 and 3) |
+  | `stop_window` per stop (laps, minutes, share) | DTM 2008, 2012, 2014, 2022 to 2026 |
+  | `stop_counts_if` (four tyres, not damage, not under SC or FCY) | DTM 2001, 2013, 2014, 2021, 2022, 2024 |
+  | `windows_off_if_wet` | DTM 2014 |
+  | `no_tyre_change` | DTM 2016 Saturday; F1 2005 (one set for qualifying and race) |
+  | `must_use: X` (once or min laps) | DTM 2013 option set; IndyCar (2 laps each); BTCC (option in 1 of 3 races, weekend scope) |
+  | `max_share_on: X` | DTM 2014 (option for half the race at most) |
+  | `max_stint_laps` | F1 Qatar 2023 (18 laps) |
+  | `min_sets_used` | F1 Monaco 2025 (3 sets) |
+  | `sets_per_weekend`, per compound | DTM 1988 (10 tyres), 2000 (5 sets), 2005 (9), 2006 (7), 2015 (4 for two races), 2019 (7); DTM 2013 (1 option set per race); F1 (13) |
+  | `sets_per_race_day`, new sets per track | DTM 2022 (3), 2023 to 2026 (3 or 4 by track), plus a test pool in 2026 |
+  | `new_sets_max` in qualifying | DTM 2019 (2) |
+  | `discarded_set_lost` | DTM 2026 |
+  | `start_on_qualifying_tyre: top N` | F1 2010 to 2021 (10), DTM 2023 (5), DTM 2024 on (10) |
+  | `session_compound` | F1 2023 alternative allocation, F1 Sprint Shootout 2023 |
+  | `tyre_warmers: banned` | DTM 2003, 2017 |
+  | `rules_lapse_if_wet` | F1 compound rule, DTM 2014 window |
+  | `wet_start_tyre` | F1: full wets when the race starts behind the safety car |
+
+- **Full brainstorm:** [packages/tyres-and-stops.md](packages/tyres-and-stops.md).
 
 ## C. Entries, teams and drivers
 
@@ -423,6 +548,65 @@ rules to these items:
   - whether it is dry or wet,
   - how many there are: one, two or more dry compounds, with the screens
     showing only the ones the pack defines.
+
+### D9. Tyre suppliers beyond ratings · P2
+- **Needed by:** dtm-1984 to dtm-1995 (open tyre war), dtm-1990, dtm-1991, dtm-1992.
+- **Today:** a tyre war works: each team has a supplier with its own grip,
+  durability and temperature ratings per compound, which develop each
+  season. All suppliers share the same compound list and the same
+  physics curves.
+- **Request:** per-supplier overrides of any compound field (warm-up,
+  cliff, temperature window), grip by track temperature and in the wet,
+  a compound range per supplier with per-event nomination, a works-partner
+  performance gap, supply caps and control-tyre tenders, and the supplier
+  logo and sidewall colour on screens. Details in
+  [packages/tyres-and-stops.md](packages/tyres-and-stops.md), section 4.
+
+### D10. Tyre temperature window strength as data · P2
+- **Needed by:** f1-2012, f1-2011, f1-2013.
+- **Real world:** the 2011 to 2013 Pirellis worked in a narrow
+  temperature window. A car that could not switch them on (cold track,
+  low downforce) or that overheated them (hot track, rear-limited car)
+  lost a second a lap. This is why 2012 had seven winners in seven races.
+- **Today:** a tyre outside its `temp_window_c` loses grip at fixed rates
+  in the code: 0.005% per degree too cold and 0.025% per degree too hot
+  (`TyreModel.grip_multipliers`, floor 0.8). Ten degrees too cold costs
+  0.05% grip, so the window barely matters. The target temperature is the
+  ambient plus a fixed 70 °C plus the pressure setup, the same for every
+  car.
+- **Workaround:** the narrow, low windows in `bases/f1-v8/data/tyremodel.json`
+  only bite on hot days. The race-to-race shuffle comes from car profiles
+  that suit different tracks and a raised weekend variability (D11).
+- **Request:** per compound `cold_grip_loss_per_c` and
+  `hot_grip_loss_per_c` in `tyremodel.json`, and a car or team term in the
+  target temperature (rear downforce, a `tyre_heating` rating), so one car
+  can run in the window while another can't.
+
+### D11. Weekend variability per car, not only per driver · P2
+- **Needed by:** f1-2012, f1-2013.
+- **Today:** `WEEKEND_CORNERING_VARIABILITY_*` rolls one random cornering
+  offset per driver per weekend (uniform, plus or minus level × km/h per
+  level). Team-mates get separate rolls, so it reads as driver form, not
+  as a car that found or lost the window that weekend.
+- **Workaround:** the F1 2010 to 2013 packs raise the minimum level and the
+  step, so every weekend has a real shuffle.
+- **Request:** a second, per-team roll (`WEEKEND_CAR_VARIABILITY_*`), and a
+  way to scale both by round or by season phase, so a pack can open a
+  season up and let it settle later.
+
+### D12. Scripted in-season development · P3
+- **Needed by:** f1-2012, f1-2013 (Red Bull from mid-season), f1-2010.
+- **Real world:** some upgrades changed a season: Red Bull's exhaust and
+  floor upgrades from Valencia 2012, its Singapore 2013 package, the
+  tyre change after Silverstone 2013 that suited it.
+- **Today:** in-season development comes only from the AI's spending,
+  staff and facilities, and the current-package catch-up rules
+  (`CHASSIS_DEV_CURRENT_PACKAGE_CATCHUP_*`) slow a team that is ahead.
+- **Workaround:** Red Bull gets the most development headroom
+  (`chassis_starting_potential`), the best staff and facilities, so it
+  should pull away by itself; checked with `tools/simulate.py`.
+- **Request:** scripted events in data: from week N, a team's rating
+  changes by x, or a supplier's compound changes (2013's tyre swap).
 
 ## E. Modding and data format
 

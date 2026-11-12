@@ -1,0 +1,559 @@
+<title>Racing Rules as Data</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  /* Layout: one column of numbered figures, each a picture with three short takeaways. Same tokens as docs/dtm_rules.html. */
+  --bg:#f2f4f7;
+  --panel:#ffffff;
+  --ink:#151a22;
+  --muted:#5b6474;
+  --line:#c9d0db;
+  --accent:#1d4fd8;
+  --accent-bg:#e3eaff;
+  --fit:#127a43;
+  --fit-bg:#e2f4ea;
+  --apx:#9a5b00;
+  --apx-bg:#fbefd9;
+  --no:#b4232f;
+  --no-bg:#fbe3e5;
+  --c1:#1d4fd8;
+  --c2:#0f7a8a;
+  --c3:#6b4bc4;
+  --c4:#5b6474;
+  --std:#ffffff;
+  --opt:#f2c230;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1319;--panel:#171c24;--ink:#e7ebf1;--muted:#97a1b2;--line:#3a4250;--accent:#7ea2ff;--accent-bg:#1c2a4d;--fit:#5fd393;--fit-bg:#163325;--apx:#f0b44c;--apx-bg:#3a2b12;--no:#ff7b85;--no-bg:#3d1a1e;--c1:#7ea2ff;--c2:#4fc3d4;--c3:#b49cff;--c4:#97a1b2;--std:#e7ebf1;--opt:#f2c230; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1319;--panel:#171c24;--ink:#e7ebf1;--muted:#97a1b2;--line:#3a4250;--accent:#7ea2ff;--accent-bg:#1c2a4d;--fit:#5fd393;--fit-bg:#163325;--apx:#f0b44c;--apx-bg:#3a2b12;--no:#ff7b85;--no-bg:#3d1a1e;--c1:#7ea2ff;--c2:#4fc3d4;--c3:#b49cff;--c4:#97a1b2;--std:#e7ebf1;--opt:#f2c230; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1040px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:44px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
+h1{font-size:clamp(36px,6vw,56px);font-weight:700;line-height:1}
+h2{font-size:28px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+h2 .n{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lede{max-width:66ch;color:var(--muted);margin:12px 0 0;font-size:17px}
+header{display:grid;gap:4px;border-bottom:2px solid var(--ink);padding-bottom:20px}
+section{display:grid;gap:12px}
+section p.goal{margin:0;max-width:70ch}
+.fig{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px}
+.fig svg{display:block;width:100%;min-width:760px;height:auto}
+ul.take{margin:0;padding-left:20px;display:grid;gap:4px;max-width:75ch;color:var(--muted)}
+ul.take li::marker{color:var(--accent)}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:6px}
+code{font-family:var(--mono);font-size:.9em}
+
+.pn{fill:var(--panel);stroke:var(--line);stroke-width:1.2}
+.pn-d{fill:var(--panel);stroke:var(--muted);stroke-width:1.2;stroke-dasharray:6 4}
+.pn-a{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.5}
+.h{fill:var(--ink);font-family:var(--display);font-weight:600;font-size:19px}
+.t{fill:var(--ink);font-family:var(--body);font-size:13.5px}
+.tm{fill:var(--muted);font-family:var(--body);font-size:13px}
+.tb{fill:var(--ink);font-family:var(--body);font-size:13.5px;font-weight:600}
+.c{fill:var(--ink);font-family:var(--mono);font-size:12px}
+.cm{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.ca{fill:var(--accent);font-family:var(--mono);font-size:12px;font-weight:600}
+.ta{fill:var(--accent);font-family:var(--body);font-size:13.5px;font-weight:600}
+.ar{stroke:var(--muted);stroke-width:1.5;fill:none}
+.ar-a{stroke:var(--accent);stroke-width:2;fill:none}
+.ah{fill:var(--muted)} .ah-a{fill:var(--accent)}
+.grid{stroke:var(--line);stroke-width:1}
+.fit{fill:var(--fit-bg);stroke:var(--fit);stroke-width:1.2} .fit-t{fill:var(--fit);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no{fill:var(--no-bg);stroke:var(--no);stroke-width:1.2} .no-t{fill:var(--no);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no-z{fill:var(--no-bg)}
+.apx{fill:var(--apx-bg);stroke:var(--apx);stroke-width:1.2} .apx-t{fill:var(--apx);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.std{fill:var(--std);stroke:var(--ink);stroke-width:1.2} .opt{fill:var(--opt);stroke:var(--ink);stroke-width:1.2}
+.s1{fill:var(--c1)} .s2{fill:var(--c2)} .s3{fill:var(--c3)} .s4{fill:var(--c4)}
+.st1{stroke:var(--c1)} .st2{stroke:var(--c2)} .st3{stroke:var(--c3)} .st4{stroke:var(--c4)}
+.wt{fill:#ffffff;font-family:var(--mono);font-size:11.5px;font-weight:600}
+.dot-on{fill:var(--fit)} .dot-off{fill:none;stroke:var(--muted);stroke-width:1.5}
+.dot-need{fill:var(--accent-bg);stroke:var(--accent);stroke-width:2}
+.dot-part{fill:var(--apx)}
+</style>
+<div class="wrap">
+<header>
+<div class="eyebrow">Team Principal · feature requests from the DTM season packs</div>
+<h1>Racing rules as data</h1>
+<p class="lede">Our wish list has about fifty gaps. Most of them are parts of a few systems. These pictures show the idea with real examples from DTM and Formula 1: build each racing rule once, as data, and let every series and every game mode use it.</p>
+</header>
+<section id="big-picture"><h2><span class="n">01</span>The idea in one picture</h2><p class="goal">Build each racing rule once, as data. Every game mode uses the same blocks, and packs keep today&#x27;s file format.</p><div class="fig"><svg viewBox="0 0 960 470" role="img" aria-label="Three game modes use five shared building blocks, which read pack data in the existing format."><defs><marker id="ah-big-picture" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-big-picture-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><rect x="25.0" y="12.0" width="280.0" height="62.0" rx="6" class="pn"/>
+<text x="165.0" y="38.0" class="h" text-anchor="middle" xml:space="preserve">Formula mode</text>
+<text x="165.0" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">DTM, F1, touring cars</text>
+<line x1="165.0" y1="74.0" x2="165.0" y2="118.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="340.0" y="12.0" width="280.0" height="62.0" rx="6" class="pn"/>
+<text x="480.0" y="38.0" class="h" text-anchor="middle" xml:space="preserve">Oval mode</text>
+<text x="480.0" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">stock cars, IndyCar ovals</text>
+<line x1="480.0" y1="74.0" x2="480.0" y2="118.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="655.0" y="12.0" width="280.0" height="62.0" rx="6" class="pn-d"/>
+<text x="795.0" y="38.0" class="h" text-anchor="middle" xml:space="preserve">Endurance mode (coming)</text>
+<text x="795.0" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">Le Mans, WEC, GT racing</text>
+<line x1="795.0" y1="74.0" x2="795.0" y2="118.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<text x="182.0" y="112.0" class="cm" text-anchor="start" xml:space="preserve">Shared building blocks, built once</text>
+<rect x="25.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="39.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Weekend builder</text>
+<text x="39.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">Q1 to Q4, shootouts</text>
+<text x="39.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">heats, sprint races</text>
+<text x="39.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">grid from last race</text>
+<rect x="207.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="221.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Rules engine</text>
+<text x="221.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">two stops, pits closed</text>
+<text x="221.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">in laps 1 to 3</text>
+<text x="221.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">option tyre once</text>
+<rect x="389.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="403.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Entry model</text>
+<text x="403.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">crews, guests</text>
+<text x="403.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">classes, privateers</text>
+<text x="403.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">number, code, livery</text>
+<rect x="571.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="585.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Content as data</text>
+<text x="585.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">&quot;Option&quot; tyre, yellow</text>
+<text x="585.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">splitter, rear wing</text>
+<text x="585.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">supplier physics</text>
+<rect x="753.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="767.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Dated world</text>
+<text x="767.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">Audi -40 kg</text>
+<text x="767.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">from week 23</text>
+<text x="767.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">rain in October</text>
+<line x1="480.0" y1="242.0" x2="480.0" y2="300.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<text x="492.0" y="278.0" class="tm" text-anchor="start" xml:space="preserve">read</text>
+<text x="25.0" y="296.0" class="cm" text-anchor="start" xml:space="preserve">Pack data, in the format packs use today</text>
+<rect x="25.0" y="306.0" width="280.0" height="140.0" rx="6" class="pn"/>
+<text x="41.0" y="336.0" class="h" text-anchor="start" xml:space="preserve">regulations.json</text>
+<text x="41.0" y="364.0" class="t" text-anchor="start" xml:space="preserve">categories and options</text>
+<text x="41.0" y="386.0" class="t" text-anchor="start" xml:space="preserve">voting, scripted_changes</text>
+<text x="41.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">an option names a block</text>
+<line x1="307.0" y1="376.0" x2="338.0" y2="376.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="340.0" y="306.0" width="280.0" height="140.0" rx="6" class="pn"/>
+<text x="356.0" y="336.0" class="h" text-anchor="start" xml:space="preserve">Named blocks (new)</text>
+<text x="356.0" y="364.0" class="t" text-anchor="start" xml:space="preserve">qualifying stages</text>
+<text x="356.0" y="386.0" class="t" text-anchor="start" xml:space="preserve">rule rows, points schemes</text>
+<text x="356.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">balance rows</text>
+<line x1="622.0" y1="376.0" x2="653.0" y2="376.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="655.0" y="306.0" width="280.0" height="140.0" rx="6" class="pn"/>
+<text x="671.0" y="336.0" class="h" text-anchor="start" xml:space="preserve">Presets</text>
+<text x="671.0" y="364.0" class="t" text-anchor="start" xml:space="preserve">knockout, session_60 ...</text>
+<text x="671.0" y="386.0" class="t" text-anchor="start" xml:space="preserve">rewritten as blocks</text>
+<text x="671.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">old packs unchanged</text></svg></div><ul class="take"><li>Formula, oval and the coming endurance mode share five building blocks.</li><li>The blocks read the same regulation files packs use today, plus named blocks for bigger structures.</li><li>Today&#x27;s options become presets, so existing packs don&#x27;t change.</li></ul></section><section id="option-to-block"><h2><span class="n">02</span>How it fits today&#x27;s options</h2><p class="goal">A regulation option stays an option. It just names a block, the way the oval mode already keeps stage settings in config.json.</p><div class="fig"><svg viewBox="0 0 960 340" role="img" aria-label="A regulation option points to a named block by id; voting still switches options."><defs><marker id="ah-option-to-block" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-option-to-block-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><rect x="20.0" y="16.0" width="400.0" height="236.0" rx="6" class="pn"/>
+<text x="38.0" y="44.0" class="tb" text-anchor="start" xml:space="preserve">regulations.json (as today)</text>
+<text x="38.0" y="74.0" class="c" text-anchor="start" xml:space="preserve">{ &quot;key&quot;: &quot;qualifying_format&quot;,</text>
+<text x="38.0" y="95.0" class="c" text-anchor="start" xml:space="preserve">  &quot;default&quot;: &quot;dtm_2013&quot;,</text>
+<text x="38.0" y="116.0" class="c" text-anchor="start" xml:space="preserve">  &quot;options&quot;: [</text>
+<text x="38.0" y="137.0" class="c" text-anchor="start" xml:space="preserve">    { &quot;key&quot;: &quot;knockout&quot; },</text>
+<text x="38.0" y="158.0" class="c" text-anchor="start" xml:space="preserve">    { &quot;key&quot;: &quot;session_60&quot; },</text>
+<text x="38.0" y="179.0" class="c" text-anchor="start" xml:space="preserve">    { &quot;key&quot;: &quot;dtm_2013&quot;,</text>
+<text x="38.0" y="200.0" class="ca" text-anchor="start" xml:space="preserve">      &quot;qualifying&quot;: &quot;dtm_2013_q4&quot; }</text>
+<text x="38.0" y="221.0" class="c" text-anchor="start" xml:space="preserve">  ] }</text>
+<rect x="540.0" y="16.0" width="400.0" height="236.0" rx="6" class="pn"/>
+<text x="558.0" y="44.0" class="tb" text-anchor="start" xml:space="preserve">rulesets.json (new)</text>
+<text x="558.0" y="74.0" class="ca" text-anchor="start" xml:space="preserve">&quot;dtm_2013_q4&quot;: { &quot;stages&quot;: [</text>
+<text x="558.0" y="95.0" class="c" text-anchor="start" xml:space="preserve">  { &quot;type&quot;: &quot;knockout&quot;,</text>
+<text x="558.0" y="116.0" class="c" text-anchor="start" xml:space="preserve">    &quot;minutes&quot;: 16, &quot;keep&quot;: 16 },</text>
+<text x="558.0" y="137.0" class="c" text-anchor="start" xml:space="preserve">  { &quot;type&quot;: &quot;knockout&quot;, &quot;keep&quot;: 10 },</text>
+<text x="558.0" y="158.0" class="c" text-anchor="start" xml:space="preserve">  { &quot;type&quot;: &quot;knockout&quot;, &quot;keep&quot;: 4 },</text>
+<text x="558.0" y="179.0" class="c" text-anchor="start" xml:space="preserve">  { &quot;type&quot;: &quot;single_lap&quot;, &quot;cars&quot;: 4,</text>
+<text x="558.0" y="200.0" class="c" text-anchor="start" xml:space="preserve">    &quot;run_order&quot;: &quot;reverse&quot; } ] }</text>
+<line x1="422.0" y1="200.0" x2="538.0" y2="74.0" class="ar-a" marker-end="url(#ah-option-to-block-a)"/>
+<text x="492.0" y="174.0" class="ta" text-anchor="start" xml:space="preserve">by id</text>
+<rect x="20.0" y="272.0" width="300.0" height="52.0" rx="6" class="pn"/>
+<text x="170.0" y="303.0" class="t" text-anchor="middle" xml:space="preserve">Voting still switches options.</text>
+<rect x="330.0" y="272.0" width="300.0" height="52.0" rx="6" class="pn"/>
+<text x="480.0" y="303.0" class="t" text-anchor="middle" xml:space="preserve">Blocks never vote. They are data.</text>
+<rect x="640.0" y="272.0" width="300.0" height="52.0" rx="6" class="pn"/>
+<text x="790.0" y="303.0" class="t" text-anchor="middle" xml:space="preserve">No new field: today&#x27;s behaviour.</text></svg></div><ul class="take"><li>The governing body still votes between options, and scripted_changes still switch them.</li><li>The block holds the detail: here the four stages of DTM qualifying.</li><li>A pack that adds no new fields plays exactly as before.</li></ul></section><section id="qualifying-stages"><h2><span class="n">03</span>Qualifying as stages</h2><p class="goal">Every qualifying format we found in DTM and F1 is a short list of stages. Each stage takes cars in and sends some on.</p><div class="fig"><svg viewBox="0 0 960 470" role="img" aria-label="DTM 2012 qualifying as four stages that fill the grid, and other formats built from the same stages."><defs><marker id="ah-qualifying-stages" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-qualifying-stages-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><text x="20.0" y="22.0" class="cm" text-anchor="start" xml:space="preserve">Example: DTM 2012, 22 cars</text>
+<rect x="20.0" y="46.0" width="96.0" height="78.0" rx="6" class="pn"/>
+<text x="68.0" y="80.0" class="tb" text-anchor="middle" xml:space="preserve">22 cars</text>
+<text x="68.0" y="102.0" class="tm" text-anchor="middle" xml:space="preserve">entered</text>
+<line x1="116.0" y1="85.0" x2="138.0" y2="85.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="140.0" y="40.0" width="160.0" height="90.0" rx="6" class="pn"/>
+<text x="154.0" y="66.0" class="tb" text-anchor="start" xml:space="preserve">Q1 · 16 min</text>
+<text x="154.0" y="90.0" class="t" text-anchor="start" xml:space="preserve">all 22 run</text>
+<text x="154.0" y="112.0" class="t" text-anchor="start" xml:space="preserve">16 go on</text>
+<line x1="300.0" y1="85.0" x2="318.0" y2="85.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<line x1="220.0" y1="130.0" x2="220.0" y2="156.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="160.0" y="158.0" width="120.0" height="28.0" rx="5" class="s4"/>
+<text x="220.0" y="177.0" class="wt" text-anchor="middle" xml:space="preserve">P17 to P22</text>
+<rect x="320.0" y="40.0" width="160.0" height="90.0" rx="6" class="pn"/>
+<text x="334.0" y="66.0" class="tb" text-anchor="start" xml:space="preserve">Q2</text>
+<text x="334.0" y="90.0" class="t" text-anchor="start" xml:space="preserve">16 run</text>
+<text x="334.0" y="112.0" class="t" text-anchor="start" xml:space="preserve">10 go on</text>
+<line x1="480.0" y1="85.0" x2="498.0" y2="85.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<line x1="400.0" y1="130.0" x2="400.0" y2="156.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="340.0" y="158.0" width="120.0" height="28.0" rx="5" class="s3"/>
+<text x="400.0" y="177.0" class="wt" text-anchor="middle" xml:space="preserve">P11 to P16</text>
+<rect x="500.0" y="40.0" width="160.0" height="90.0" rx="6" class="pn"/>
+<text x="514.0" y="66.0" class="tb" text-anchor="start" xml:space="preserve">Q3</text>
+<text x="514.0" y="90.0" class="t" text-anchor="start" xml:space="preserve">10 run</text>
+<text x="514.0" y="112.0" class="t" text-anchor="start" xml:space="preserve">4 go on</text>
+<line x1="660.0" y1="85.0" x2="678.0" y2="85.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<line x1="580.0" y1="130.0" x2="580.0" y2="156.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="520.0" y="158.0" width="120.0" height="28.0" rx="5" class="s2"/>
+<text x="580.0" y="177.0" class="wt" text-anchor="middle" xml:space="preserve">P5 to P10</text>
+<rect x="680.0" y="40.0" width="160.0" height="90.0" rx="6" class="pn-a"/>
+<text x="694.0" y="66.0" class="tb" text-anchor="start" xml:space="preserve">Q4 · one lap each</text>
+<text x="694.0" y="90.0" class="t" text-anchor="start" xml:space="preserve">alone on track</text>
+<text x="694.0" y="112.0" class="t" text-anchor="start" xml:space="preserve">reverse order</text>
+<line x1="840.0" y1="85.0" x2="868.0" y2="85.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<line x1="760.0" y1="130.0" x2="760.0" y2="156.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="700.0" y="158.0" width="120.0" height="28.0" rx="5" class="s1"/>
+<text x="760.0" y="177.0" class="wt" text-anchor="middle" xml:space="preserve">P1 to P4</text>
+<text x="905.0" y="32.0" class="cm" text-anchor="middle" xml:space="preserve">grid</text>
+<rect x="870.0" y="40.0" width="70.0" height="28.0" rx="3" class="s1"/>
+<text x="905.0" y="58.0" class="wt" text-anchor="middle" xml:space="preserve">P1-4</text>
+<rect x="870.0" y="70.0" width="70.0" height="43.0" rx="3" class="s2"/>
+<text x="905.0" y="95.5" class="wt" text-anchor="middle" xml:space="preserve">P5-10</text>
+<rect x="870.0" y="115.0" width="70.0" height="43.0" rx="3" class="s3"/>
+<text x="905.0" y="140.5" class="wt" text-anchor="middle" xml:space="preserve">P11-16</text>
+<rect x="870.0" y="160.0" width="70.0" height="43.0" rx="3" class="s4"/>
+<text x="905.0" y="185.5" class="wt" text-anchor="middle" xml:space="preserve">P17-22</text>
+<line x1="20" y1="222" x2="940" y2="222" class="grid"/>
+<text x="20.0" y="248.0" class="cm" text-anchor="start" xml:space="preserve">Same stages, other formats</text>
+<text x="20.0" y="281.0" class="tb" text-anchor="start" xml:space="preserve">DTM 1991</text>
+<rect x="160.0" y="262.0" width="144.4" height="28.0" rx="5" class="pn"/>
+<text x="232.2" y="280.2" class="c" text-anchor="middle" xml:space="preserve">timed, 2 sessions</text>
+<line x1="307.4" y1="276.0" x2="331.4" y2="276.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="334.4" y="262.0" width="108.4" height="28.0" rx="5" class="pn-a"/>
+<text x="388.6" y="280.2" class="c" text-anchor="middle" xml:space="preserve">top 16 start</text>
+<text x="465.8" y="281.0" class="tm" text-anchor="middle" xml:space="preserve">|</text>
+<rect x="488.8" y="262.0" width="266.8" height="28.0" rx="5" class="pn"/>
+<text x="622.2" y="280.2" class="c" text-anchor="middle" xml:space="preserve">the rest: 50 km qualification race</text>
+<line x1="758.6" y1="276.0" x2="782.6" y2="276.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="785.6" y="262.0" width="65.2" height="28.0" rx="5" class="pn-a"/>
+<text x="818.2" y="280.2" class="c" text-anchor="middle" xml:space="preserve">P17 on</text>
+<text x="20.0" y="321.0" class="tb" text-anchor="start" xml:space="preserve">F1 2003</text>
+<rect x="160.0" y="302.0" width="94.0" height="28.0" rx="5" class="pn"/>
+<text x="207.0" y="320.2" class="c" text-anchor="middle" xml:space="preserve">single lap</text>
+<line x1="257.0" y1="316.0" x2="281.0" y2="316.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="284.0" y="302.0" width="151.6" height="28.0" rx="5" class="pn-a"/>
+<text x="359.8" y="320.2" class="c" text-anchor="middle" xml:space="preserve">sets the run order</text>
+<text x="458.6" y="321.0" class="tm" text-anchor="middle" xml:space="preserve">|</text>
+<rect x="481.6" y="302.0" width="173.2" height="28.0" rx="5" class="pn"/>
+<text x="568.2" y="320.2" class="c" text-anchor="middle" xml:space="preserve">single lap, race fuel</text>
+<line x1="657.8" y1="316.0" x2="681.8" y2="316.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="684.8" y="302.0" width="137.2" height="28.0" rx="5" class="pn-a"/>
+<text x="753.4" y="320.2" class="c" text-anchor="middle" xml:space="preserve">grid, parc fermé</text>
+<text x="20.0" y="361.0" class="tb" text-anchor="start" xml:space="preserve">DTM 2015 on</text>
+<rect x="160.0" y="342.0" width="115.6" height="28.0" rx="5" class="pn"/>
+<text x="217.8" y="360.2" class="c" text-anchor="middle" xml:space="preserve">timed, 20 min</text>
+<line x1="278.6" y1="356.0" x2="302.6" y2="356.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="305.6" y="342.0" width="101.2" height="28.0" rx="5" class="pn-a"/>
+<text x="356.2" y="360.2" class="c" text-anchor="middle" xml:space="preserve">race 1 grid</text>
+<text x="429.8" y="361.0" class="tm" text-anchor="middle" xml:space="preserve">|</text>
+<rect x="452.8" y="342.0" width="115.6" height="28.0" rx="5" class="pn"/>
+<text x="510.6" y="360.2" class="c" text-anchor="middle" xml:space="preserve">timed, 20 min</text>
+<line x1="571.4" y1="356.0" x2="595.4" y2="356.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="598.4" y="342.0" width="101.2" height="28.0" rx="5" class="pn-a"/>
+<text x="649.0" y="360.2" class="c" text-anchor="middle" xml:space="preserve">race 2 grid</text>
+<text x="20.0" y="401.0" class="tb" text-anchor="start" xml:space="preserve">F1 2021 sprint</text>
+<rect x="160.0" y="382.0" width="58.0" height="28.0" rx="5" class="pn"/>
+<text x="189.0" y="400.2" class="c" text-anchor="middle" xml:space="preserve">timed</text>
+<line x1="221.0" y1="396.0" x2="245.0" y2="396.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="248.0" y="382.0" width="101.2" height="28.0" rx="5" class="pn-a"/>
+<text x="298.6" y="400.2" class="c" text-anchor="middle" xml:space="preserve">sprint grid</text>
+<text x="372.2" y="401.0" class="tm" text-anchor="middle" xml:space="preserve">|</text>
+<rect x="395.2" y="382.0" width="115.6" height="28.0" rx="5" class="pn"/>
+<text x="453.0" y="400.2" class="c" text-anchor="middle" xml:space="preserve">sprint result</text>
+<line x1="513.8" y1="396.0" x2="537.8" y2="396.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="540.8" y="382.0" width="130.0" height="28.0" rx="5" class="pn-a"/>
+<text x="605.8" y="400.2" class="c" text-anchor="middle" xml:space="preserve">Grand Prix grid</text>
+<text x="20.0" y="441.0" class="tb" text-anchor="start" xml:space="preserve">F1 2016</text>
+<rect x="160.0" y="422.0" width="209.2" height="28.0" rx="5" class="pn"/>
+<text x="264.6" y="440.2" class="c" text-anchor="middle" xml:space="preserve">slowest car out every 90 s</text>
+<line x1="372.2" y1="436.0" x2="396.2" y2="436.0" class="ar" marker-end="url(#ah-qualifying-stages)"/>
+<rect x="399.2" y="422.0" width="50.8" height="28.0" rx="5" class="pn-a"/>
+<text x="424.6" y="440.2" class="c" text-anchor="middle" xml:space="preserve">grid</text></svg></div><ul class="take"><li>DTM 2012 needs one more stage than the game has: a single-lap Q4.</li><li>The same few stage types also build qualification races, one-lap qualifying, a session per race and sprint grids.</li><li>Presets mean most packs pick a format by name and never write a stage list.</li></ul></section><section id="race-rules"><h2><span class="n">04</span>Race rules as rows</h2><p class="goal">Each rule is one row. The game checks the rows after the race, and the AI reads the same rows to plan a legal race.</p><div class="fig"><svg viewBox="0 0 960 440" role="img" aria-label="A DTM 2013 race: two legal stops outside the closed laps, and a plan that breaks the rules."><defs><marker id="ah-race-rules" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-race-rules-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><text x="20.0" y="22.0" class="cm" text-anchor="start" xml:space="preserve">Example: DTM 2013 rules, a 40-lap race</text>
+<rect x="660.0" y="9.0" width="22.0" height="14.0" rx="3" class="std"/>
+<text x="688.0" y="21.0" class="tm" text-anchor="start" xml:space="preserve">standard</text>
+<rect x="760.0" y="9.0" width="22.0" height="14.0" rx="3" class="opt"/>
+<text x="788.0" y="21.0" class="tm" text-anchor="start" xml:space="preserve">option</text>
+<rect x="850.0" y="9.0" width="22.0" height="14.0" rx="3" class="no-z"/>
+<text x="878.0" y="21.0" class="tm" text-anchor="start" xml:space="preserve">closed</text>
+<rect x="150.0" y="44.0" width="58.5" height="200.0" rx="0" class="no-z"/>
+<rect x="871.5" y="44.0" width="58.5" height="200.0" rx="0" class="no-z"/>
+<text x="159.8" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">lap 1</text>
+<text x="335.2" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">10</text>
+<text x="530.2" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">20</text>
+<text x="725.2" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">30</text>
+<text x="920.2" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">40</text>
+<text x="179.2" y="238.0" class="no-t" text-anchor="middle" xml:space="preserve">laps 1-3</text>
+<text x="900.8" y="238.0" class="no-t" text-anchor="middle" xml:space="preserve">laps 38-40</text>
+<text x="20.0" y="124.0" class="tb" text-anchor="start" xml:space="preserve">Car A</text>
+<text x="20.0" y="142.0" class="tm" text-anchor="start" xml:space="preserve">legal plan</text>
+<rect x="150.0" y="112.0" width="273.0" height="26.0" rx="3" class="std"/>
+<rect x="423.0" y="112.0" width="253.5" height="26.0" rx="3" class="opt"/>
+<rect x="676.5" y="112.0" width="253.5" height="26.0" rx="3" class="std"/>
+<line x1="423.0" y1="94" x2="423.0" y2="144" class="ar" stroke-dasharray="3 3"/>
+<rect x="366.7" y="72.0" width="112.6" height="22.0" rx="4" class="pn-a"/>
+<text x="423.0" y="87.0" class="ca" text-anchor="middle" xml:space="preserve">stop 1, lap 14</text>
+<line x1="676.5" y1="94" x2="676.5" y2="144" class="ar" stroke-dasharray="3 3"/>
+<rect x="620.2" y="72.0" width="112.6" height="22.0" rx="4" class="pn-a"/>
+<text x="676.5" y="87.0" class="ca" text-anchor="middle" xml:space="preserve">stop 2, lap 27</text>
+<text x="20.0" y="208.0" class="tb" text-anchor="start" xml:space="preserve">Car B</text>
+<text x="20.0" y="226.0" class="tm" text-anchor="start" xml:space="preserve">breaks a rule</text>
+<rect x="150.0" y="196.0" width="390.0" height="26.0" rx="3" class="std"/>
+<rect x="540.0" y="196.0" width="351.0" height="26.0" rx="3" class="opt"/>
+<rect x="891.0" y="196.0" width="39.0" height="26.0" rx="3" class="std"/>
+<line x1="540.0" y1="178" x2="540.0" y2="228" class="ar" stroke-dasharray="3 3"/>
+<rect x="483.7" y="156.0" width="112.6" height="22.0" rx="4" class="pn-a"/>
+<text x="540.0" y="171.0" class="ca" text-anchor="middle" xml:space="preserve">stop 1, lap 20</text>
+<line x1="891.0" y1="178" x2="891.0" y2="228" class="ar" stroke-dasharray="3 3"/>
+<rect x="827.8" y="156.0" width="126.4" height="22.0" rx="4" class="no"/>
+<text x="891.0" y="171.0" class="no-t" text-anchor="middle" xml:space="preserve">lap 38: no count</text>
+<line x1="20" y1="262" x2="940" y2="262" class="grid"/>
+<text x="20.0" y="288.0" class="cm" text-anchor="start" xml:space="preserve">Rule rows (checked after the race)</text>
+<text x="470.0" y="288.0" class="cm" text-anchor="start" xml:space="preserve">Car A</text>
+<text x="720.0" y="288.0" class="cm" text-anchor="start" xml:space="preserve">Car B</text>
+<text x="20.0" y="317.0" class="c" text-anchor="start" xml:space="preserve">mandatory_stops: 2</text>
+<rect x="470.0" y="302.0" width="46.0" height="22.0" rx="4" class="fit"/>
+<text x="493.0" y="317.5" class="fit-t" text-anchor="middle" xml:space="preserve">pass</text>
+<text x="526.0" y="318.0" class="t" text-anchor="start" xml:space="preserve">2 stops</text>
+<rect x="720.0" y="302.0" width="46.0" height="22.0" rx="4" class="no"/>
+<text x="743.0" y="317.5" class="no-t" text-anchor="middle" xml:space="preserve">fail</text>
+<text x="776.0" y="318.0" class="t" text-anchor="start" xml:space="preserve">1 stop counts</text>
+<text x="20.0" y="347.0" class="c" text-anchor="start" xml:space="preserve">no_stop_first_laps: 3</text>
+<rect x="470.0" y="332.0" width="46.0" height="22.0" rx="4" class="fit"/>
+<text x="493.0" y="347.5" class="fit-t" text-anchor="middle" xml:space="preserve">pass</text>
+<text x="526.0" y="348.0" class="t" text-anchor="start" xml:space="preserve">none in laps 1-3</text>
+<rect x="720.0" y="332.0" width="46.0" height="22.0" rx="4" class="fit"/>
+<text x="743.0" y="347.5" class="fit-t" text-anchor="middle" xml:space="preserve">pass</text>
+<text x="776.0" y="348.0" class="t" text-anchor="start" xml:space="preserve">none in laps 1-3</text>
+<text x="20.0" y="377.0" class="c" text-anchor="start" xml:space="preserve">no_stop_last_laps: 3</text>
+<rect x="470.0" y="362.0" width="46.0" height="22.0" rx="4" class="fit"/>
+<text x="493.0" y="377.5" class="fit-t" text-anchor="middle" xml:space="preserve">pass</text>
+<text x="526.0" y="378.0" class="t" text-anchor="start" xml:space="preserve">none in laps 38-40</text>
+<rect x="720.0" y="362.0" width="46.0" height="22.0" rx="4" class="no"/>
+<text x="743.0" y="377.5" class="no-t" text-anchor="middle" xml:space="preserve">fail</text>
+<text x="776.0" y="378.0" class="t" text-anchor="start" xml:space="preserve">stop on lap 38</text>
+<text x="20.0" y="407.0" class="c" text-anchor="start" xml:space="preserve">must_use: option</text>
+<rect x="470.0" y="392.0" width="46.0" height="22.0" rx="4" class="fit"/>
+<text x="493.0" y="407.5" class="fit-t" text-anchor="middle" xml:space="preserve">pass</text>
+<text x="526.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">laps 15-27</text>
+<rect x="720.0" y="392.0" width="46.0" height="22.0" rx="4" class="fit"/>
+<text x="743.0" y="407.5" class="fit-t" text-anchor="middle" xml:space="preserve">pass</text>
+<text x="776.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">laps 21-38</text>
+<text x="470.0" y="432.0" class="ta" text-anchor="start" xml:space="preserve">classified</text>
+<text x="720.0" y="432.0" class="no-t" text-anchor="start" xml:space="preserve">penalty</text></svg></div><ul class="take"><li>DTM 2013: two stops, no stop in the first or last 3 laps, the option tyre used once.</li><li>Car B stops on lap 38. The pits are closed for counting stops then, so it has only one stop and gets a penalty.</li><li>Monaco 2025 is three rows too: two stops, three sets, two compounds.</li></ul></section><section id="scopes"><h2><span class="n">05</span>One lookup for every rule</h2><p class="goal">Any value can be set for the whole season and overridden for a session, a race, a track, a make or class, or one entry.</p><div class="fig"><svg viewBox="0 0 960 330" role="img" aria-label="One lookup for every rule: the most specific scope with a value wins."><defs><marker id="ah-scopes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-scopes-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><text x="20.0" y="46.0" class="cm" text-anchor="start" xml:space="preserve">Asked for</text>
+<text x="275.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Season</text>
+<text x="375.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Session</text>
+<text x="475.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Race</text>
+<text x="575.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Track</text>
+<text x="675.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Make or class</text>
+<text x="775.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Entry</text>
+<text x="895.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Answer</text>
+<line x1="230.0" y1="20.0" x2="820.0" y2="20.0" class="ar" marker-end="url(#ah-scopes)"/>
+<text x="525.0" y="14.0" class="tm" text-anchor="middle" xml:space="preserve">more specific wins</text>
+<text x="20.0" y="88.0" class="ca" text-anchor="start" xml:space="preserve">drs</text>
+<text x="20.0" y="108.0" class="tm" text-anchor="start" xml:space="preserve">DTM 2013, qualifying</text>
+<rect x="230.0" y="70.0" width="90.0" height="44.0" rx="5" class="pn"/>
+<text x="275.0" y="97.0" class="tm" text-anchor="middle" xml:space="preserve">on</text>
+<rect x="330.0" y="70.0" width="90.0" height="44.0" rx="5" class="pn-a"/>
+<text x="375.0" y="97.0" class="tb" text-anchor="middle" xml:space="preserve">off</text>
+<circle cx="475" cy="92" r="3" class="ah"/>
+<circle cx="575" cy="92" r="3" class="ah"/>
+<circle cx="675" cy="92" r="3" class="ah"/>
+<circle cx="775" cy="92" r="3" class="ah"/>
+<line x1="422.0" y1="92.0" x2="848.0" y2="92.0" class="ar-a" marker-end="url(#ah-scopes-a)"/>
+<rect x="850.0" y="70.0" width="90.0" height="44.0" rx="5" class="fit"/>
+<text x="895.0" y="97.0" class="fit-t" text-anchor="middle" xml:space="preserve">off</text>
+<text x="20.0" y="162.0" class="ca" text-anchor="start" xml:space="preserve">mandatory_stops</text>
+<text x="20.0" y="182.0" class="tm" text-anchor="start" xml:space="preserve">DTM 2025, Sunday race</text>
+<rect x="230.0" y="144.0" width="90.0" height="44.0" rx="5" class="pn"/>
+<text x="275.0" y="171.0" class="tm" text-anchor="middle" xml:space="preserve">1</text>
+<circle cx="375" cy="166" r="3" class="ah"/>
+<rect x="430.0" y="144.0" width="90.0" height="44.0" rx="5" class="pn-a"/>
+<text x="475.0" y="171.0" class="tb" text-anchor="middle" xml:space="preserve">Sunday: 2</text>
+<circle cx="575" cy="166" r="3" class="ah"/>
+<circle cx="675" cy="166" r="3" class="ah"/>
+<circle cx="775" cy="166" r="3" class="ah"/>
+<line x1="522.0" y1="166.0" x2="848.0" y2="166.0" class="ar-a" marker-end="url(#ah-scopes-a)"/>
+<rect x="850.0" y="144.0" width="90.0" height="44.0" rx="5" class="fit"/>
+<text x="895.0" y="171.0" class="fit-t" text-anchor="middle" xml:space="preserve">2</text>
+<text x="20.0" y="236.0" class="ca" text-anchor="start" xml:space="preserve">min_mass_kg</text>
+<text x="20.0" y="256.0" class="tm" text-anchor="start" xml:space="preserve">DTM 1991, an Audi</text>
+<rect x="230.0" y="218.0" width="90.0" height="44.0" rx="5" class="pn"/>
+<text x="275.0" y="245.0" class="tm" text-anchor="middle" xml:space="preserve">980</text>
+<circle cx="375" cy="240" r="3" class="ah"/>
+<circle cx="475" cy="240" r="3" class="ah"/>
+<circle cx="575" cy="240" r="3" class="ah"/>
+<rect x="630.0" y="218.0" width="90.0" height="44.0" rx="5" class="pn-a"/>
+<text x="675.0" y="245.0" class="tb" text-anchor="middle" xml:space="preserve">Audi: 1,290</text>
+<circle cx="775" cy="240" r="3" class="ah"/>
+<line x1="722.0" y1="240.0" x2="848.0" y2="240.0" class="ar-a" marker-end="url(#ah-scopes-a)"/>
+<rect x="850.0" y="218.0" width="90.0" height="44.0" rx="5" class="fit"/>
+<text x="895.0" y="245.0" class="fit-t" text-anchor="middle" xml:space="preserve">1,290</text>
+<text x="20.0" y="312.0" class="t" text-anchor="start" xml:space="preserve">One function serves every feature: rule(key, season, session, race, track, make, entry).</text></svg></div><ul class="take"><li>DRS on in the race but off in qualifying (DTM 2013).</li><li>One stop on Saturday, two on Sunday (DTM 2025).</li><li>A minimum weight per make (DTM 1991). Endurance BoP per class uses the same lookup.</li></ul></section><section id="entry-model"><h2><span class="n">06</span>The entry as the unit</h2><p class="goal">An entry is the car with its number, drivers, livery and tags. Many features read the same entry, so it is built once.</p><div class="fig"><svg viewBox="0 0 960 420" role="img" aria-label="An entry with tags; points, qualifying, balance, screens and pit stops all read the same entry."><defs><marker id="ah-entry-model" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-entry-model-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><rect x="325.0" y="20.0" width="310.0" height="196.0" rx="6" class="pn-a"/>
+<text x="343.0" y="48.0" class="tb" text-anchor="start" xml:space="preserve">Entry (DTM 1991 example)</text>
+<text x="343.0" y="74.0" class="cm" text-anchor="start" xml:space="preserve">number</text>
+<text x="420.0" y="74.0" class="c" text-anchor="start" xml:space="preserve">8</text>
+<text x="343.0" y="94.0" class="cm" text-anchor="start" xml:space="preserve">team</text>
+<text x="420.0" y="94.0" class="c" text-anchor="start" xml:space="preserve">AMG</text>
+<text x="343.0" y="114.0" class="cm" text-anchor="start" xml:space="preserve">car</text>
+<text x="420.0" y="114.0" class="c" text-anchor="start" xml:space="preserve">Mercedes 190E</text>
+<text x="343.0" y="134.0" class="cm" text-anchor="start" xml:space="preserve">drivers</text>
+<text x="420.0" y="134.0" class="c" text-anchor="start" xml:space="preserve">Klaus Ludwig</text>
+<text x="343.0" y="154.0" class="cm" text-anchor="start" xml:space="preserve">rounds</text>
+<text x="420.0" y="154.0" class="c" text-anchor="start" xml:space="preserve">all</text>
+<text x="343.0" y="174.0" class="cm" text-anchor="start" xml:space="preserve">livery</text>
+<text x="420.0" y="174.0" class="c" text-anchor="start" xml:space="preserve">König Pilsener black</text>
+<text x="343.0" y="194.0" class="cm" text-anchor="start" xml:space="preserve">tags</text>
+<text x="420.0" y="194.0" class="c" text-anchor="start" xml:space="preserve">works</text>
+<rect x="325.0" y="232.0" width="310.0" height="170.0" rx="6" class="pn-d"/>
+<text x="343.0" y="260.0" class="tb" text-anchor="start" xml:space="preserve">Entry (endurance example)</text>
+<text x="343.0" y="286.0" class="cm" text-anchor="start" xml:space="preserve">number</text>
+<text x="420.0" y="286.0" class="c" text-anchor="start" xml:space="preserve">23</text>
+<text x="343.0" y="306.0" class="cm" text-anchor="start" xml:space="preserve">drivers</text>
+<text x="420.0" y="306.0" class="c" text-anchor="start" xml:space="preserve">A, B and C</text>
+<text x="343.0" y="326.0" class="cm" text-anchor="start" xml:space="preserve">class</text>
+<text x="420.0" y="326.0" class="c" text-anchor="start" xml:space="preserve">GT3</text>
+<text x="343.0" y="346.0" class="cm" text-anchor="start" xml:space="preserve">tags</text>
+<text x="420.0" y="346.0" class="c" text-anchor="start" xml:space="preserve">pro_am</text>
+<text x="343.0" y="366.0" class="cm" text-anchor="start" xml:space="preserve">rules</text>
+<text x="420.0" y="366.0" class="c" text-anchor="start" xml:space="preserve">min drive time each</text>
+<text x="343.0" y="386.0" class="cm" text-anchor="start" xml:space="preserve">rounds</text>
+<text x="420.0" y="386.0" class="c" text-anchor="start" xml:space="preserve">Le Mans only</text>
+<rect x="20.0" y="36.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="36.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">Points</text>
+<text x="36.0" y="88.0" class="t" text-anchor="start" xml:space="preserve">who scores, which title</text>
+<text x="36.0" y="108.0" class="tm" text-anchor="start" xml:space="preserve">guests score nothing</text>
+<line x1="323.0" y1="210.0" x2="252.0" y2="82.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="20.0" y="164.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="36.0" y="192.0" class="h" text-anchor="start" xml:space="preserve">Qualifying</text>
+<text x="36.0" y="216.0" class="t" text-anchor="start" xml:space="preserve">groups and classes</text>
+<text x="36.0" y="236.0" class="tm" text-anchor="start" xml:space="preserve">Hyperpole per class</text>
+<line x1="323.0" y1="210.0" x2="252.0" y2="210.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="20.0" y="292.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="36.0" y="320.0" class="h" text-anchor="start" xml:space="preserve">Balance</text>
+<text x="36.0" y="344.0" class="t" text-anchor="start" xml:space="preserve">ballast and BoP</text>
+<text x="36.0" y="364.0" class="tm" text-anchor="start" xml:space="preserve">by make or class</text>
+<line x1="323.0" y1="210.0" x2="252.0" y2="338.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="710.0" y="36.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="726.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">Screens</text>
+<text x="726.0" y="88.0" class="t" text-anchor="start" xml:space="preserve">car image, portrait</text>
+<text x="726.0" y="108.0" class="tm" text-anchor="start" xml:space="preserve">timing code</text>
+<line x1="637.0" y1="210.0" x2="708.0" y2="82.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="710.0" y="164.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="726.0" y="192.0" class="h" text-anchor="start" xml:space="preserve">Pit stops</text>
+<text x="726.0" y="216.0" class="t" text-anchor="start" xml:space="preserve">driver change</text>
+<text x="726.0" y="236.0" class="tm" text-anchor="start" xml:space="preserve">as a stop service</text>
+<line x1="637.0" y1="210.0" x2="708.0" y2="210.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="710.0" y="292.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="726.0" y="320.0" class="h" text-anchor="start" xml:space="preserve">Junior seats</text>
+<text x="726.0" y="344.0" class="t" text-anchor="start" xml:space="preserve">who may take a seat</text>
+<text x="726.0" y="364.0" class="tm" text-anchor="start" xml:space="preserve">in feeder series</text>
+<line x1="637.0" y1="210.0" x2="708.0" y2="338.0" class="ar" marker-end="url(#ah-entry-model)"/></svg></div><ul class="take"><li>Tags decide who scores, which title they score in, and which balance rules apply.</li><li>A one-driver entry behaves like a car today. Crews of two to four drivers are the endurance case.</li><li>Per-entry liveries and timing codes come with it.</li></ul></section><section id="modes"><h2><span class="n">07</span>One feature, every mode</h2><p class="goal">Several things we asked for already exist in the oval mode. Shared settings give them to every mode, endurance included.</p><div class="fig"><svg viewBox="0 0 960 330" role="img" aria-label="Features that exist in one game mode today, and the shared setting each could become."><defs><marker id="ah-modes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-modes-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><text x="20.0" y="30.0" class="cm" text-anchor="start" xml:space="preserve">Feature</text>
+<text x="360.0" y="30.0" class="cm" text-anchor="middle" xml:space="preserve">Formula</text>
+<text x="470.0" y="30.0" class="cm" text-anchor="middle" xml:space="preserve">Oval</text>
+<text x="580.0" y="30.0" class="cm" text-anchor="middle" xml:space="preserve">Endurance</text>
+<text x="660.0" y="30.0" class="cm" text-anchor="start" xml:space="preserve">One shared setting</text>
+<line x1="20" y1="84" x2="940" y2="84" class="grid"/>
+<text x="20.0" y="71.0" class="t" text-anchor="start" xml:space="preserve">Rolling start</text>
+<circle cx="360" cy="66" r="8" class="dot-off"/>
+<circle cx="470" cy="66" r="8" class="dot-on"/>
+<circle cx="580" cy="66" r="8" class="dot-need"/>
+<text x="660.0" y="71.0" class="ca" text-anchor="start" xml:space="preserve">start_procedure</text>
+<line x1="20" y1="124" x2="940" y2="124" class="grid"/>
+<text x="20.0" y="111.0" class="t" text-anchor="start" xml:space="preserve">4 to 6 cars per team</text>
+<circle cx="360" cy="106" r="8" class="dot-off"/>
+<circle cx="470" cy="106" r="8" class="dot-on"/>
+<circle cx="580" cy="106" r="8" class="dot-need"/>
+<text x="660.0" y="111.0" class="ca" text-anchor="start" xml:space="preserve">team_entry_cap</text>
+<line x1="20" y1="164" x2="940" y2="164" class="grid"/>
+<text x="20.0" y="151.0" class="t" text-anchor="start" xml:space="preserve">Grid size as a rule</text>
+<circle cx="360" cy="146" r="8" class="dot-part"/>
+<circle cx="470" cy="146" r="8" class="dot-on"/>
+<circle cx="580" cy="146" r="8" class="dot-need"/>
+<text x="660.0" y="151.0" class="ca" text-anchor="start" xml:space="preserve">grid_limit</text>
+<line x1="20" y1="204" x2="940" y2="204" class="grid"/>
+<text x="20.0" y="191.0" class="t" text-anchor="start" xml:space="preserve">Points for part of a race</text>
+<circle cx="360" cy="186" r="8" class="dot-off"/>
+<circle cx="470" cy="186" r="8" class="dot-on"/>
+<circle cx="580" cy="186" r="8" class="dot-need"/>
+<text x="660.0" y="191.0" class="ca" text-anchor="start" xml:space="preserve">stage_racing</text>
+<line x1="20" y1="244" x2="940" y2="244" class="grid"/>
+<text x="20.0" y="231.0" class="t" text-anchor="start" xml:space="preserve">Playoffs</text>
+<circle cx="360" cy="226" r="8" class="dot-off"/>
+<circle cx="470" cy="226" r="8" class="dot-on"/>
+<circle cx="580" cy="226" r="8" class="dot-off"/>
+<text x="660.0" y="231.0" class="ca" text-anchor="start" xml:space="preserve">championship_format</text>
+<line x1="20" y1="284" x2="940" y2="284" class="grid"/>
+<text x="20.0" y="271.0" class="t" text-anchor="start" xml:space="preserve">Red flags</text>
+<circle cx="360" cy="266" r="8" class="dot-on"/>
+<circle cx="470" cy="266" r="8" class="dot-off"/>
+<circle cx="580" cy="266" r="8" class="dot-need"/>
+<text x="660.0" y="271.0" class="ca" text-anchor="start" xml:space="preserve">red_flags</text>
+<circle cx="28" cy="304" r="7" class="dot-on"/>
+<text x="42.0" y="309.0" class="tm" text-anchor="start" xml:space="preserve">has it today</text>
+<circle cx="169.12" cy="304" r="7" class="dot-part"/>
+<text x="183.1" y="309.0" class="tm" text-anchor="start" xml:space="preserve">partly (a constant)</text>
+<circle cx="357.56" cy="304" r="7" class="dot-off"/>
+<text x="371.6" y="309.0" class="tm" text-anchor="start" xml:space="preserve">not today</text>
+<circle cx="478.4" cy="304" r="7" class="dot-need"/>
+<text x="492.4" y="309.0" class="tm" text-anchor="start" xml:space="preserve">endurance will need it</text></svg></div><ul class="take"><li>Rolling starts, big entries, stage points and playoffs are already in the oval code.</li><li>Red flags are already in the formula code.</li><li>Each becomes one setting any pack can turn on.</li></ul></section><section id="bundles"><h2><span class="n">08</span>Ten delivery bundles</h2><p class="goal">The requests grouped by the work the developer would do. Quick wins first, then the core that makes everything else cheap.</p><div class="fig"><svg viewBox="0 0 960 470" role="img" aria-label="Ten delivery bundles in three groups: quick wins, the core, and what builds on the core."><defs><marker id="ah-bundles" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-bundles-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><text x="20.0" y="24.0" class="cm" text-anchor="start" xml:space="preserve">Quick wins</text>
+<text x="340.0" y="24.0" class="cm" text-anchor="start" xml:space="preserve">The core</text>
+<text x="660.0" y="24.0" class="cm" text-anchor="start" xml:space="preserve">Builds on the core</text>
+<rect x="20.0" y="36.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="36.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">0 · Docs only</text>
+<text x="36.0" y="86.0" class="c" text-anchor="start" xml:space="preserve">D3, E4, E5, E10, E12</text>
+<text x="36.0" y="106.0" class="tm" text-anchor="start" xml:space="preserve">no code, answers only</text>
+<rect x="20.0" y="128.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="36.0" y="156.0" class="h" text-anchor="start" xml:space="preserve">1 · Oval rules for all</text>
+<text x="36.0" y="178.0" class="c" text-anchor="start" xml:space="preserve">A3, C1, B3</text>
+<text x="36.0" y="198.0" class="tm" text-anchor="start" xml:space="preserve">rolling start, 6 cars</text>
+<rect x="204.0" y="138.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="244.7" y="153.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="20.0" y="220.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="36.0" y="248.0" class="h" text-anchor="start" xml:space="preserve">8 · Pack infrastructure</text>
+<text x="36.0" y="270.0" class="c" text-anchor="start" xml:space="preserve">E1, E2, E3</text>
+<text x="36.0" y="290.0" class="tm" text-anchor="start" xml:space="preserve">overlays, validation</text>
+<rect x="340.0" y="36.0" width="280.0" height="80.0" rx="6" class="pn-a"/>
+<text x="356.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">2 · Rules engine</text>
+<text x="356.0" y="86.0" class="c" text-anchor="start" xml:space="preserve">B5 to B12</text>
+<text x="356.0" y="106.0" class="tm" text-anchor="start" xml:space="preserve">two stops, closed laps</text>
+<rect x="524.0" y="46.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="564.7" y="61.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="340.0" y="128.0" width="280.0" height="80.0" rx="6" class="pn-a"/>
+<text x="356.0" y="156.0" class="h" text-anchor="start" xml:space="preserve">3 · Weekend builder</text>
+<text x="356.0" y="178.0" class="c" text-anchor="start" xml:space="preserve">A1 to A6, C7</text>
+<text x="356.0" y="198.0" class="tm" text-anchor="start" xml:space="preserve">Q4, heats, sprint</text>
+<rect x="524.0" y="138.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="564.7" y="153.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="340.0" y="220.0" width="280.0" height="80.0" rx="6" class="pn-a"/>
+<text x="356.0" y="248.0" class="h" text-anchor="start" xml:space="preserve">4 · Entry model</text>
+<text x="356.0" y="270.0" class="c" text-anchor="start" xml:space="preserve">C1 to C8, B4, B9, E4</text>
+<text x="356.0" y="290.0" class="tm" text-anchor="start" xml:space="preserve">crews, guests, classes</text>
+<rect x="524.0" y="230.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="564.7" y="245.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="660.0" y="36.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">5 · Content as data</text>
+<text x="676.0" y="86.0" class="c" text-anchor="start" xml:space="preserve">D1, D8, D9, E13</text>
+<text x="676.0" y="106.0" class="tm" text-anchor="start" xml:space="preserve">Option tyre, splitter</text>
+<rect x="660.0" y="128.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="156.0" class="h" text-anchor="start" xml:space="preserve">6 · Dated world</text>
+<text x="676.0" y="178.0" class="c" text-anchor="start" xml:space="preserve">A4, B1, B2, C4, D4, D7</text>
+<text x="676.0" y="198.0" class="tm" text-anchor="start" xml:space="preserve">Audi -40 kg in week 23</text>
+<rect x="844.0" y="138.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="884.7" y="153.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="660.0" y="220.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="248.0" class="h" text-anchor="start" xml:space="preserve">7 · Closed-car physics</text>
+<text x="676.0" y="270.0" class="c" text-anchor="start" xml:space="preserve">D2, D3, D5, D6</text>
+<text x="676.0" y="290.0" class="tm" text-anchor="start" xml:space="preserve">480 hp, 1,110 kg</text>
+<rect x="844.0" y="230.0" width="81.4" height="22.0" rx="5" class="dot-need"/>
+<text x="884.7" y="245.2" class="ca" text-anchor="middle" xml:space="preserve">endurance</text>
+<rect x="660.0" y="312.0" width="280.0" height="80.0" rx="6" class="pn"/>
+<text x="676.0" y="340.0" class="h" text-anchor="start" xml:space="preserve">9 · Sound</text>
+<text x="676.0" y="362.0" class="c" text-anchor="start" xml:space="preserve">E8, E9, E11, E14</text>
+<text x="676.0" y="382.0" class="tm" text-anchor="start" xml:space="preserve">a BMW sounds like one</text>
+<line x1="302.0" y1="160.0" x2="336.0" y2="160.0" class="ar-a" marker-end="url(#ah-bundles-a)"/>
+<line x1="622.0" y1="160.0" x2="656.0" y2="160.0" class="ar-a" marker-end="url(#ah-bundles-a)"/>
+<text x="20.0" y="440.0" class="t" text-anchor="start" xml:space="preserve">Quick wins cost little. The core makes most later requests a new row instead of new code.</text>
+<text x="660.0" y="410.0" class="tm" text-anchor="start" xml:space="preserve">endurance tag: the endurance mode</text>
+<text x="660.0" y="428.0" class="tm" text-anchor="start" xml:space="preserve">needs this bundle anyway</text></svg></div><ul class="take"><li>Bundles 0 and 1 cost little and help at once.</li><li>Bundles 2 to 4 are the core. Most later requests become new rows instead of new code.</li><li>Six bundles are work the endurance mode needs anyway.</li></ul></section>
+<footer>
+<div>Based on game version 0.99.6 (beta). DTM rules come from our season research; F1 and other-series facts are from memory and still being sourced.</div>
+<div>Details for each part are in the wish list (<code>docs/DEVELOPER_WISHLIST.md</code>) and the feature packages (<code>docs/packages/</code>) of the team-principal-mods repository.</div>
+</footer>
+</div>

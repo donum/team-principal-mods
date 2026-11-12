@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" role="img" aria-label="An entry with tags; points, qualifying, balance, screens and pit stops all read the same entry."><style>svg{--bg:#f2f4f7;--panel:#ffffff;--ink:#151a22;--muted:#5b6474;--line:#c9d0db;--accent:#1d4fd8;--accent-bg:#e3eaff;--fit:#127a43;--fit-bg:#e2f4ea;--apx:#9a5b00;--apx-bg:#fbefd9;--no:#b4232f;--no-bg:#fbe3e5;--c1:#1d4fd8;--c2:#0f7a8a;--c3:#6b4bc4;--c4:#5b6474;--std:#ffffff;--opt:#f2c230;--display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",Consolas,monospace}
+.pn{fill:var(--panel);stroke:var(--line);stroke-width:1.2}
+.pn-d{fill:var(--panel);stroke:var(--muted);stroke-width:1.2;stroke-dasharray:6 4}
+.pn-a{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.5}
+.h{fill:var(--ink);font-family:var(--display);font-weight:600;font-size:19px}
+.t{fill:var(--ink);font-family:var(--body);font-size:13.5px}
+.tm{fill:var(--muted);font-family:var(--body);font-size:13px}
+.tb{fill:var(--ink);font-family:var(--body);font-size:13.5px;font-weight:600}
+.c{fill:var(--ink);font-family:var(--mono);font-size:12px}
+.cm{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.ca{fill:var(--accent);font-family:var(--mono);font-size:12px;font-weight:600}
+.ta{fill:var(--accent);font-family:var(--body);font-size:13.5px;font-weight:600}
+.ar{stroke:var(--muted);stroke-width:1.5;fill:none}
+.ar-a{stroke:var(--accent);stroke-width:2;fill:none}
+.ah{fill:var(--muted)} .ah-a{fill:var(--accent)}
+.grid{stroke:var(--line);stroke-width:1}
+.fit{fill:var(--fit-bg);stroke:var(--fit);stroke-width:1.2} .fit-t{fill:var(--fit);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no{fill:var(--no-bg);stroke:var(--no);stroke-width:1.2} .no-t{fill:var(--no);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no-z{fill:var(--no-bg)}
+.apx{fill:var(--apx-bg);stroke:var(--apx);stroke-width:1.2} .apx-t{fill:var(--apx);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.std{fill:var(--std);stroke:var(--ink);stroke-width:1.2} .opt{fill:var(--opt);stroke:var(--ink);stroke-width:1.2}
+.s1{fill:var(--c1)} .s2{fill:var(--c2)} .s3{fill:var(--c3)} .s4{fill:var(--c4)}
+.st1{stroke:var(--c1)} .st2{stroke:var(--c2)} .st3{stroke:var(--c3)} .st4{stroke:var(--c4)}
+.wt{fill:#ffffff;font-family:var(--mono);font-size:11.5px;font-weight:600}
+.dot-on{fill:var(--fit)} .dot-off{fill:none;stroke:var(--muted);stroke-width:1.5}
+.dot-need{fill:var(--accent-bg);stroke:var(--accent);stroke-width:2}
+.dot-part{fill:var(--apx)}
+</style><defs><marker id="ah-entry-model" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-entry-model-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><rect x="0" y="0" width="960" height="420" fill="#f2f4f7"/><rect x="325.0" y="20.0" width="310.0" height="196.0" rx="6" class="pn-a"/>
+<text x="343.0" y="48.0" class="tb" text-anchor="start" xml:space="preserve">Entry (DTM 1991 example)</text>
+<text x="343.0" y="74.0" class="cm" text-anchor="start" xml:space="preserve">number</text>
+<text x="420.0" y="74.0" class="c" text-anchor="start" xml:space="preserve">8</text>
+<text x="343.0" y="94.0" class="cm" text-anchor="start" xml:space="preserve">team</text>
+<text x="420.0" y="94.0" class="c" text-anchor="start" xml:space="preserve">AMG</text>
+<text x="343.0" y="114.0" class="cm" text-anchor="start" xml:space="preserve">car</text>
+<text x="420.0" y="114.0" class="c" text-anchor="start" xml:space="preserve">Mercedes 190E</text>
+<text x="343.0" y="134.0" class="cm" text-anchor="start" xml:space="preserve">drivers</text>
+<text x="420.0" y="134.0" class="c" text-anchor="start" xml:space="preserve">Klaus Ludwig</text>
+<text x="343.0" y="154.0" class="cm" text-anchor="start" xml:space="preserve">rounds</text>
+<text x="420.0" y="154.0" class="c" text-anchor="start" xml:space="preserve">all</text>
+<text x="343.0" y="174.0" class="cm" text-anchor="start" xml:space="preserve">livery</text>
+<text x="420.0" y="174.0" class="c" text-anchor="start" xml:space="preserve">König Pilsener black</text>
+<text x="343.0" y="194.0" class="cm" text-anchor="start" xml:space="preserve">tags</text>
+<text x="420.0" y="194.0" class="c" text-anchor="start" xml:space="preserve">works</text>
+<rect x="325.0" y="232.0" width="310.0" height="170.0" rx="6" class="pn-d"/>
+<text x="343.0" y="260.0" class="tb" text-anchor="start" xml:space="preserve">Entry (endurance example)</text>
+<text x="343.0" y="286.0" class="cm" text-anchor="start" xml:space="preserve">number</text>
+<text x="420.0" y="286.0" class="c" text-anchor="start" xml:space="preserve">23</text>
+<text x="343.0" y="306.0" class="cm" text-anchor="start" xml:space="preserve">drivers</text>
+<text x="420.0" y="306.0" class="c" text-anchor="start" xml:space="preserve">A, B and C</text>
+<text x="343.0" y="326.0" class="cm" text-anchor="start" xml:space="preserve">class</text>
+<text x="420.0" y="326.0" class="c" text-anchor="start" xml:space="preserve">GT3</text>
+<text x="343.0" y="346.0" class="cm" text-anchor="start" xml:space="preserve">tags</text>
+<text x="420.0" y="346.0" class="c" text-anchor="start" xml:space="preserve">pro_am</text>
+<text x="343.0" y="366.0" class="cm" text-anchor="start" xml:space="preserve">rules</text>
+<text x="420.0" y="366.0" class="c" text-anchor="start" xml:space="preserve">min drive time each</text>
+<text x="343.0" y="386.0" class="cm" text-anchor="start" xml:space="preserve">rounds</text>
+<text x="420.0" y="386.0" class="c" text-anchor="start" xml:space="preserve">Le Mans only</text>
+<rect x="20.0" y="36.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="36.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">Points</text>
+<text x="36.0" y="88.0" class="t" text-anchor="start" xml:space="preserve">who scores, which title</text>
+<text x="36.0" y="108.0" class="tm" text-anchor="start" xml:space="preserve">guests score nothing</text>
+<line x1="323.0" y1="210.0" x2="252.0" y2="82.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="20.0" y="164.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="36.0" y="192.0" class="h" text-anchor="start" xml:space="preserve">Qualifying</text>
+<text x="36.0" y="216.0" class="t" text-anchor="start" xml:space="preserve">groups and classes</text>
+<text x="36.0" y="236.0" class="tm" text-anchor="start" xml:space="preserve">Hyperpole per class</text>
+<line x1="323.0" y1="210.0" x2="252.0" y2="210.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="20.0" y="292.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="36.0" y="320.0" class="h" text-anchor="start" xml:space="preserve">Balance</text>
+<text x="36.0" y="344.0" class="t" text-anchor="start" xml:space="preserve">ballast and BoP</text>
+<text x="36.0" y="364.0" class="tm" text-anchor="start" xml:space="preserve">by make or class</text>
+<line x1="323.0" y1="210.0" x2="252.0" y2="338.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="710.0" y="36.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="726.0" y="64.0" class="h" text-anchor="start" xml:space="preserve">Screens</text>
+<text x="726.0" y="88.0" class="t" text-anchor="start" xml:space="preserve">car image, portrait</text>
+<text x="726.0" y="108.0" class="tm" text-anchor="start" xml:space="preserve">timing code</text>
+<line x1="637.0" y1="210.0" x2="708.0" y2="82.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="710.0" y="164.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="726.0" y="192.0" class="h" text-anchor="start" xml:space="preserve">Pit stops</text>
+<text x="726.0" y="216.0" class="t" text-anchor="start" xml:space="preserve">driver change</text>
+<text x="726.0" y="236.0" class="tm" text-anchor="start" xml:space="preserve">as a stop service</text>
+<line x1="637.0" y1="210.0" x2="708.0" y2="210.0" class="ar" marker-end="url(#ah-entry-model)"/>
+<rect x="710.0" y="292.0" width="230.0" height="92.0" rx="6" class="pn"/>
+<text x="726.0" y="320.0" class="h" text-anchor="start" xml:space="preserve">Junior seats</text>
+<text x="726.0" y="344.0" class="t" text-anchor="start" xml:space="preserve">who may take a seat</text>
+<text x="726.0" y="364.0" class="tm" text-anchor="start" xml:space="preserve">in feeder series</text>
+<line x1="637.0" y1="210.0" x2="708.0" y2="338.0" class="ar" marker-end="url(#ah-entry-model)"/></svg>

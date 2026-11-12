@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" role="img" aria-label="Three game modes use five shared building blocks, which read pack data in the existing format."><style>svg{--bg:#f2f4f7;--panel:#ffffff;--ink:#151a22;--muted:#5b6474;--line:#c9d0db;--accent:#1d4fd8;--accent-bg:#e3eaff;--fit:#127a43;--fit-bg:#e2f4ea;--apx:#9a5b00;--apx-bg:#fbefd9;--no:#b4232f;--no-bg:#fbe3e5;--c1:#1d4fd8;--c2:#0f7a8a;--c3:#6b4bc4;--c4:#5b6474;--std:#ffffff;--opt:#f2c230;--display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",Consolas,monospace}
+.pn{fill:var(--panel);stroke:var(--line);stroke-width:1.2}
+.pn-d{fill:var(--panel);stroke:var(--muted);stroke-width:1.2;stroke-dasharray:6 4}
+.pn-a{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.5}
+.h{fill:var(--ink);font-family:var(--display);font-weight:600;font-size:19px}
+.t{fill:var(--ink);font-family:var(--body);font-size:13.5px}
+.tm{fill:var(--muted);font-family:var(--body);font-size:13px}
+.tb{fill:var(--ink);font-family:var(--body);font-size:13.5px;font-weight:600}
+.c{fill:var(--ink);font-family:var(--mono);font-size:12px}
+.cm{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.ca{fill:var(--accent);font-family:var(--mono);font-size:12px;font-weight:600}
+.ta{fill:var(--accent);font-family:var(--body);font-size:13.5px;font-weight:600}
+.ar{stroke:var(--muted);stroke-width:1.5;fill:none}
+.ar-a{stroke:var(--accent);stroke-width:2;fill:none}
+.ah{fill:var(--muted)} .ah-a{fill:var(--accent)}
+.grid{stroke:var(--line);stroke-width:1}
+.fit{fill:var(--fit-bg);stroke:var(--fit);stroke-width:1.2} .fit-t{fill:var(--fit);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no{fill:var(--no-bg);stroke:var(--no);stroke-width:1.2} .no-t{fill:var(--no);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no-z{fill:var(--no-bg)}
+.apx{fill:var(--apx-bg);stroke:var(--apx);stroke-width:1.2} .apx-t{fill:var(--apx);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.std{fill:var(--std);stroke:var(--ink);stroke-width:1.2} .opt{fill:var(--opt);stroke:var(--ink);stroke-width:1.2}
+.s1{fill:var(--c1)} .s2{fill:var(--c2)} .s3{fill:var(--c3)} .s4{fill:var(--c4)}
+.st1{stroke:var(--c1)} .st2{stroke:var(--c2)} .st3{stroke:var(--c3)} .st4{stroke:var(--c4)}
+.wt{fill:#ffffff;font-family:var(--mono);font-size:11.5px;font-weight:600}
+.dot-on{fill:var(--fit)} .dot-off{fill:none;stroke:var(--muted);stroke-width:1.5}
+.dot-need{fill:var(--accent-bg);stroke:var(--accent);stroke-width:2}
+.dot-part{fill:var(--apx)}
+</style><defs><marker id="ah-big-picture" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-big-picture-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><rect x="0" y="0" width="960" height="470" fill="#f2f4f7"/><rect x="25.0" y="12.0" width="280.0" height="62.0" rx="6" class="pn"/>
+<text x="165.0" y="38.0" class="h" text-anchor="middle" xml:space="preserve">Formula mode</text>
+<text x="165.0" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">DTM, F1, touring cars</text>
+<line x1="165.0" y1="74.0" x2="165.0" y2="118.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="340.0" y="12.0" width="280.0" height="62.0" rx="6" class="pn"/>
+<text x="480.0" y="38.0" class="h" text-anchor="middle" xml:space="preserve">Oval mode</text>
+<text x="480.0" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">stock cars, IndyCar ovals</text>
+<line x1="480.0" y1="74.0" x2="480.0" y2="118.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="655.0" y="12.0" width="280.0" height="62.0" rx="6" class="pn-d"/>
+<text x="795.0" y="38.0" class="h" text-anchor="middle" xml:space="preserve">Endurance mode (coming)</text>
+<text x="795.0" y="60.0" class="tm" text-anchor="middle" xml:space="preserve">Le Mans, WEC, GT racing</text>
+<line x1="795.0" y1="74.0" x2="795.0" y2="118.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<text x="182.0" y="112.0" class="cm" text-anchor="start" xml:space="preserve">Shared building blocks, built once</text>
+<rect x="25.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="39.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Weekend builder</text>
+<text x="39.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">Q1 to Q4, shootouts</text>
+<text x="39.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">heats, sprint races</text>
+<text x="39.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">grid from last race</text>
+<rect x="207.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="221.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Rules engine</text>
+<text x="221.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">two stops, pits closed</text>
+<text x="221.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">in laps 1 to 3</text>
+<text x="221.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">option tyre once</text>
+<rect x="389.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="403.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Entry model</text>
+<text x="403.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">crews, guests</text>
+<text x="403.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">classes, privateers</text>
+<text x="403.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">number, code, livery</text>
+<rect x="571.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="585.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Content as data</text>
+<text x="585.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">&quot;Option&quot; tyre, yellow</text>
+<text x="585.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">splitter, rear wing</text>
+<text x="585.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">supplier physics</text>
+<rect x="753.0" y="124.0" width="172.0" height="118.0" rx="6" class="pn-a"/>
+<text x="767.0" y="152.0" class="h" text-anchor="start" xml:space="preserve">Dated world</text>
+<text x="767.0" y="178.0" class="t" text-anchor="start" xml:space="preserve">Audi -40 kg</text>
+<text x="767.0" y="198.0" class="t" text-anchor="start" xml:space="preserve">from week 23</text>
+<text x="767.0" y="218.0" class="t" text-anchor="start" xml:space="preserve">rain in October</text>
+<line x1="480.0" y1="242.0" x2="480.0" y2="300.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<text x="492.0" y="278.0" class="tm" text-anchor="start" xml:space="preserve">read</text>
+<text x="25.0" y="296.0" class="cm" text-anchor="start" xml:space="preserve">Pack data, in the format packs use today</text>
+<rect x="25.0" y="306.0" width="280.0" height="140.0" rx="6" class="pn"/>
+<text x="41.0" y="336.0" class="h" text-anchor="start" xml:space="preserve">regulations.json</text>
+<text x="41.0" y="364.0" class="t" text-anchor="start" xml:space="preserve">categories and options</text>
+<text x="41.0" y="386.0" class="t" text-anchor="start" xml:space="preserve">voting, scripted_changes</text>
+<text x="41.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">an option names a block</text>
+<line x1="307.0" y1="376.0" x2="338.0" y2="376.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="340.0" y="306.0" width="280.0" height="140.0" rx="6" class="pn"/>
+<text x="356.0" y="336.0" class="h" text-anchor="start" xml:space="preserve">Named blocks (new)</text>
+<text x="356.0" y="364.0" class="t" text-anchor="start" xml:space="preserve">qualifying stages</text>
+<text x="356.0" y="386.0" class="t" text-anchor="start" xml:space="preserve">rule rows, points schemes</text>
+<text x="356.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">balance rows</text>
+<line x1="622.0" y1="376.0" x2="653.0" y2="376.0" class="ar" marker-end="url(#ah-big-picture)"/>
+<rect x="655.0" y="306.0" width="280.0" height="140.0" rx="6" class="pn"/>
+<text x="671.0" y="336.0" class="h" text-anchor="start" xml:space="preserve">Presets</text>
+<text x="671.0" y="364.0" class="t" text-anchor="start" xml:space="preserve">knockout, session_60 ...</text>
+<text x="671.0" y="386.0" class="t" text-anchor="start" xml:space="preserve">rewritten as blocks</text>
+<text x="671.0" y="408.0" class="t" text-anchor="start" xml:space="preserve">old packs unchanged</text></svg>

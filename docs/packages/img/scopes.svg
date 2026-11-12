@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="960" height="330" role="img" aria-label="One lookup for every rule: the most specific scope with a value wins."><style>svg{--bg:#f2f4f7;--panel:#ffffff;--ink:#151a22;--muted:#5b6474;--line:#c9d0db;--accent:#1d4fd8;--accent-bg:#e3eaff;--fit:#127a43;--fit-bg:#e2f4ea;--apx:#9a5b00;--apx-bg:#fbefd9;--no:#b4232f;--no-bg:#fbe3e5;--c1:#1d4fd8;--c2:#0f7a8a;--c3:#6b4bc4;--c4:#5b6474;--std:#ffffff;--opt:#f2c230;--display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",Consolas,monospace}
+.pn{fill:var(--panel);stroke:var(--line);stroke-width:1.2}
+.pn-d{fill:var(--panel);stroke:var(--muted);stroke-width:1.2;stroke-dasharray:6 4}
+.pn-a{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.5}
+.h{fill:var(--ink);font-family:var(--display);font-weight:600;font-size:19px}
+.t{fill:var(--ink);font-family:var(--body);font-size:13.5px}
+.tm{fill:var(--muted);font-family:var(--body);font-size:13px}
+.tb{fill:var(--ink);font-family:var(--body);font-size:13.5px;font-weight:600}
+.c{fill:var(--ink);font-family:var(--mono);font-size:12px}
+.cm{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.ca{fill:var(--accent);font-family:var(--mono);font-size:12px;font-weight:600}
+.ta{fill:var(--accent);font-family:var(--body);font-size:13.5px;font-weight:600}
+.ar{stroke:var(--muted);stroke-width:1.5;fill:none}
+.ar-a{stroke:var(--accent);stroke-width:2;fill:none}
+.ah{fill:var(--muted)} .ah-a{fill:var(--accent)}
+.grid{stroke:var(--line);stroke-width:1}
+.fit{fill:var(--fit-bg);stroke:var(--fit);stroke-width:1.2} .fit-t{fill:var(--fit);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no{fill:var(--no-bg);stroke:var(--no);stroke-width:1.2} .no-t{fill:var(--no);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.no-z{fill:var(--no-bg)}
+.apx{fill:var(--apx-bg);stroke:var(--apx);stroke-width:1.2} .apx-t{fill:var(--apx);font-family:var(--mono);font-size:11.5px;font-weight:600}
+.std{fill:var(--std);stroke:var(--ink);stroke-width:1.2} .opt{fill:var(--opt);stroke:var(--ink);stroke-width:1.2}
+.s1{fill:var(--c1)} .s2{fill:var(--c2)} .s3{fill:var(--c3)} .s4{fill:var(--c4)}
+.st1{stroke:var(--c1)} .st2{stroke:var(--c2)} .st3{stroke:var(--c3)} .st4{stroke:var(--c4)}
+.wt{fill:#ffffff;font-family:var(--mono);font-size:11.5px;font-weight:600}
+.dot-on{fill:var(--fit)} .dot-off{fill:none;stroke:var(--muted);stroke-width:1.5}
+.dot-need{fill:var(--accent-bg);stroke:var(--accent);stroke-width:2}
+.dot-part{fill:var(--apx)}
+</style><defs><marker id="ah-scopes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker><marker id="ah-scopes-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-a"/></marker></defs><rect x="0" y="0" width="960" height="330" fill="#f2f4f7"/><text x="20.0" y="46.0" class="cm" text-anchor="start" xml:space="preserve">Asked for</text>
+<text x="275.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Season</text>
+<text x="375.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Session</text>
+<text x="475.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Race</text>
+<text x="575.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Track</text>
+<text x="675.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Make or class</text>
+<text x="775.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Entry</text>
+<text x="895.0" y="46.0" class="cm" text-anchor="middle" xml:space="preserve">Answer</text>
+<line x1="230.0" y1="20.0" x2="820.0" y2="20.0" class="ar" marker-end="url(#ah-scopes)"/>
+<text x="525.0" y="14.0" class="tm" text-anchor="middle" xml:space="preserve">more specific wins</text>
+<text x="20.0" y="88.0" class="ca" text-anchor="start" xml:space="preserve">drs</text>
+<text x="20.0" y="108.0" class="tm" text-anchor="start" xml:space="preserve">DTM 2013, qualifying</text>
+<rect x="230.0" y="70.0" width="90.0" height="44.0" rx="5" class="pn"/>
+<text x="275.0" y="97.0" class="tm" text-anchor="middle" xml:space="preserve">on</text>
+<rect x="330.0" y="70.0" width="90.0" height="44.0" rx="5" class="pn-a"/>
+<text x="375.0" y="97.0" class="tb" text-anchor="middle" xml:space="preserve">off</text>
+<circle cx="475" cy="92" r="3" class="ah"/>
+<circle cx="575" cy="92" r="3" class="ah"/>
+<circle cx="675" cy="92" r="3" class="ah"/>
+<circle cx="775" cy="92" r="3" class="ah"/>
+<line x1="422.0" y1="92.0" x2="848.0" y2="92.0" class="ar-a" marker-end="url(#ah-scopes-a)"/>
+<rect x="850.0" y="70.0" width="90.0" height="44.0" rx="5" class="fit"/>
+<text x="895.0" y="97.0" class="fit-t" text-anchor="middle" xml:space="preserve">off</text>
+<text x="20.0" y="162.0" class="ca" text-anchor="start" xml:space="preserve">mandatory_stops</text>
+<text x="20.0" y="182.0" class="tm" text-anchor="start" xml:space="preserve">DTM 2025, Sunday race</text>
+<rect x="230.0" y="144.0" width="90.0" height="44.0" rx="5" class="pn"/>
+<text x="275.0" y="171.0" class="tm" text-anchor="middle" xml:space="preserve">1</text>
+<circle cx="375" cy="166" r="3" class="ah"/>
+<rect x="430.0" y="144.0" width="90.0" height="44.0" rx="5" class="pn-a"/>
+<text x="475.0" y="171.0" class="tb" text-anchor="middle" xml:space="preserve">Sunday: 2</text>
+<circle cx="575" cy="166" r="3" class="ah"/>
+<circle cx="675" cy="166" r="3" class="ah"/>
+<circle cx="775" cy="166" r="3" class="ah"/>
+<line x1="522.0" y1="166.0" x2="848.0" y2="166.0" class="ar-a" marker-end="url(#ah-scopes-a)"/>
+<rect x="850.0" y="144.0" width="90.0" height="44.0" rx="5" class="fit"/>
+<text x="895.0" y="171.0" class="fit-t" text-anchor="middle" xml:space="preserve">2</text>
+<text x="20.0" y="236.0" class="ca" text-anchor="start" xml:space="preserve">min_mass_kg</text>
+<text x="20.0" y="256.0" class="tm" text-anchor="start" xml:space="preserve">DTM 1991, an Audi</text>
+<rect x="230.0" y="218.0" width="90.0" height="44.0" rx="5" class="pn"/>
+<text x="275.0" y="245.0" class="tm" text-anchor="middle" xml:space="preserve">980</text>
+<circle cx="375" cy="240" r="3" class="ah"/>
+<circle cx="475" cy="240" r="3" class="ah"/>
+<circle cx="575" cy="240" r="3" class="ah"/>
+<rect x="630.0" y="218.0" width="90.0" height="44.0" rx="5" class="pn-a"/>
+<text x="675.0" y="245.0" class="tb" text-anchor="middle" xml:space="preserve">Audi: 1,290</text>
+<circle cx="775" cy="240" r="3" class="ah"/>
+<line x1="722.0" y1="240.0" x2="848.0" y2="240.0" class="ar-a" marker-end="url(#ah-scopes-a)"/>
+<rect x="850.0" y="218.0" width="90.0" height="44.0" rx="5" class="fit"/>
+<text x="895.0" y="245.0" class="fit-t" text-anchor="middle" xml:space="preserve">1,290</text>
+<text x="20.0" y="312.0" class="t" text-anchor="start" xml:space="preserve">One function serves every feature: rule(key, season, session, race, track, make, entry).</text></svg>
