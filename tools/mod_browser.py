@@ -30,6 +30,14 @@ build_pack.py --install and engine_audio/package.py --install rebuild it,
 so it stays in sync with the installed mod.
 
     python -I tools/mod_browser.py seasons/dtm-2013
+    python -I tools/mod_browser.py --pack workshop_3821496627
+    python -I tools/mod_browser.py --workshop      every installed Workshop pack
+
+A pack without a season source here (a Workshop download) is read from the
+installed folder alone: its title from workshop.json, and as its base the
+vanilla pack with the most identical files. Everything that differs from that
+base shows as the pack's own. private/mod_browser/index.html lists every
+browser built so far.
 """
 from __future__ import annotations
 
@@ -296,7 +304,7 @@ def data_patches(pack: Path, base: Path, season: Path) -> list[dict]:
 
 def build_drivers(pack, base, season, media, sources):
     year = start_year(pack)
-    portraits = layers.merged_json(season, "art/portraits.json")
+    portraits = layers.merged_json(season, "art/portraits.json") if season else {}
     teams = {t["name"]: t for t in load_json(pack / "teams.json", [])}
     out = []
     for d in load_json(pack / "drivers.json", []):
@@ -324,7 +332,7 @@ def build_teams(pack, base, season, manifest, media, sources):
     deals = {t["team"]: t.get("sponsors", []) for t in (load_json(pack / "starting_sponsors.json", {}) or {}).get("teams", [])}
     # other liveries kept in the season source for a future livery choice
     # (tools/car_drawings.py, art/liveries; not in the pack, wishlist E4)
-    liveries = (load_json(season / "art" / "liveries" / "liveries.json", {}) or {}).get("teams", {})
+    liveries = (load_json(season / "art" / "liveries" / "liveries.json", {}) or {}).get("teams", {}) if season else {}
     year = start_year(pack)
     out = []
     for t in load_json(pack / "teams.json", []):
@@ -487,7 +495,7 @@ def build_engines(pack, base, media):
 
 def build_tracks(pack, base, season, manifest, media):
     sched = load_json(pack / "schedule.json", []) or []
-    own = {name[:-5]: layers.layer_of(season, path) for name, path in layers.files(season, "tracks").items()}
+    own = {name[:-5]: layers.layer_of(season, path) for name, path in layers.files(season, "tracks").items()} if season else {}
     shared = manifest.get("shared_tracks", {})
     overrides = manifest.get("track_overrides", {})
     tracks = []
@@ -682,10 +690,57 @@ def build_candidates(media):
 
 # --------------------------------------------------------------------- main
 
-def build(season: Path, game: Path) -> Path:
-    manifest = layers.manifest(season)
+def closest_base(pack: Path, game: Path) -> tuple[str, int, int]:
+    """The vanilla pack (data/default*) sharing the most identical files with pack."""
+    files = [p for p in pack.rglob("*") if p.is_file()]
+    best = (None, -1, len(files))
+    for cand in sorted((game / "data").glob("default*")):
+        same = 0
+        for p in files:
+            b = cand / p.relative_to(pack)
+            if b.is_file() and b.stat().st_size == p.stat().st_size and sha1(b) == sha1(p):
+                same += 1
+        if same > best[1]:
+            best = (cand.name, same, len(files))
+    return best
+
+
+def steam_workshop(game: Path) -> Path:
+    """Steam's download folder for this game's Workshop items (steamapps/workshop/content/<app id>)."""
+    return game.parent.parent / "workshop" / "content" / "4340600"
+
+
+def pack_dir(pack_folder: str, game: Path) -> Path:
+    """data/<pack_folder>, else a Workshop item Steam downloaded but the game
+    has not copied into data/ yet (it does that when it starts)."""
+    installed = game / "data" / pack_folder
+    if installed.is_dir() or not pack_folder.startswith("workshop_"):
+        return installed
+    return steam_workshop(game) / pack_folder.removeprefix("workshop_")
+
+
+def pack_manifest(pack_folder: str, game: Path) -> tuple[dict, str]:
+    """A season-like manifest for an installed pack with no source here."""
+    pack = pack_dir(pack_folder, game)
+    meta = load_json(pack / "workshop.json", {}) or {}
+    base_name, same, total = closest_base(pack, game)
+    item = pack_folder.removeprefix("workshop_")
+    origin = (f"Workshop item {item}" if pack_folder.startswith("workshop_") else pack_folder) + \
+        f" (no source here; base picked by {same} of {total} files identical" + \
+        ("" if pack.parent == game / "data" else "; read from Steam's download, not yet installed by the game") + ")"
+    return {"pack_folder": pack_folder, "base_pack": base_name, "title": meta.get("title") or pack_folder,
+            "version": meta.get("version"), "series": meta.get("series"),
+            "workshop_item": item if pack_folder.startswith("workshop_") else None}, origin
+
+
+def build(season: Path | None, game: Path, pack_folder: str | None = None) -> Path:
+    if season is not None:
+        manifest = layers.manifest(season)
+        origin = " + ".join(layer.name for layer in layers.chain(season))
+    else:
+        manifest, origin = pack_manifest(pack_folder, game)
     pack_folder, base_name = manifest["pack_folder"], manifest["base_pack"]
-    pack, base = game / "data" / pack_folder, game / "data" / base_name
+    pack, base = pack_dir(pack_folder, game), game / "data" / base_name
     if not pack.is_dir():
         sys.exit(f"pack not installed: {pack} (run build_pack.py --install first)")
     out = OUT_ROOT / pack_folder
@@ -694,15 +749,16 @@ def build(season: Path, game: Path) -> Path:
     private = set(applied.get("files", []))
     private_audio = {f.split("assets/audio/", 1)[-1] for f in private}
 
-    data_files = layers.files(season, "data")
-    dsrc = field_sources(data_files.get("drivers.json", season / "data" / "drivers.json"), load_json(base / "drivers.json", []))
-    tsrc = field_sources(data_files.get("teams.json", season / "data" / "teams.json"), load_json(base / "teams.json", []))
+    data_files = layers.files(season, "data") if season else {}
+    none = Path("-")
+    dsrc = field_sources(data_files.get("drivers.json", none), load_json(base / "drivers.json", []))
+    tsrc = field_sources(data_files.get("teams.json", none), load_json(base / "teams.json", []))
     drivers, vanilla_drivers = build_drivers(pack, base, season, media, dsrc)
     teams, vanilla_teams = build_teams(pack, base, season, manifest, media, tsrc)
     engines, unit_rules, tyres = build_engines(pack, base, media)
     tracks, calendar = build_tracks(pack, base, season, manifest, media)
     juniors, licences = build_juniors(pack, base)
-    junior_of = {n: s["series_abbreviation"] + " · " + t["name"] for s in juniors for t in s["teams"] for n in t["drivers"]}
+    junior_of = {n: s["series_abbreviation"] + " · " + t["name"] for s in juniors for t in s.get("teams", []) for n in t.get("drivers", [])}
     drivers = [{**d, "junior": junior_of.get(d["name"])} for d in drivers]
     backgrounds = build_backgrounds(pack, base, game, media)
     sounds = build_sounds(pack, base, media, private_audio | private)
@@ -713,7 +769,8 @@ def build(season: Path, game: Path) -> Path:
     data = {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "pack": {"title": manifest["title"], "folder": pack_folder, "version": manifest.get("version"),
-                 "base": base_name, "season": " + ".join(layer.name for layer in layers.chain(season)),
+                 "base": base_name, "season": origin,
+                 "workshop_item": manifest.get("workshop_item"),
                  "series": manifest.get("series"),
                  "private_audio": bool(private)},
         "drivers": drivers, "vanilla_drivers": vanilla_drivers,
@@ -724,12 +781,12 @@ def build(season: Path, game: Path) -> Path:
         "tracks": tracks, "calendar": calendar, "backgrounds": backgrounds,
         "sounds": sounds, "candidates": candidates, "library_page": library_page,
         "files": files,
-        "data_patches": data_patches(pack, base, season),
+        "data_patches": data_patches(pack, base, season) if season else [],
         "constants": [{"name": k, "vanilla": bc.get(k), "mod": v} for k, v in pc.items() if bc.get(k) != v],
         "credits": (pack / "credits.txt").read_text(encoding="utf-8") if (pack / "credits.txt").exists() else "",
     }
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    short = re.split(r"\s+[-–]\s+", manifest["title"])[0]
+    short = re.sub(r"\s+mod$", "", re.split(r"\s+[-–]\s+", manifest["title"])[0], flags=re.I)
     page = (TEMPLATE.read_text(encoding="utf-8").replace("/*MOD_DATA*/null", blob)
             .replace("__PAGE_TITLE__", f"{short} Mod Browser".replace("&", "&amp;").replace("<", "&lt;")))
     out.mkdir(parents=True, exist_ok=True)
@@ -746,13 +803,40 @@ def build(season: Path, game: Path) -> Path:
     return out / "index.html"
 
 
+def write_index() -> Path:
+    """private/mod_browser/index.html: a link to every browser built so far."""
+    rows = []
+    for page in sorted(OUT_ROOT.glob("*/page.html")):
+        m = re.search(r"<title>(.*?)</title>", page.read_text(encoding="utf-8")[:20000])
+        title = m.group(1) if m else page.parent.name
+        rows.append(f'<li><a href="{page.parent.name}/index.html">{title}</a> <code>{page.parent.name}</code></li>')
+    out = OUT_ROOT / "index.html"
+    out.write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Mod browsers</title>'
+                   '<style>body{font:15px system-ui,sans-serif;margin:24px;line-height:1.7}code{color:#777}</style>'
+                   '</head><body><h1>Mod browsers</h1><ul>' + "".join(rows) + "</ul></body></html>\n", encoding="utf-8")
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("season", type=Path, nargs="?", default=REPO / "seasons" / "dtm-2013")
     ap.add_argument("--game", help="game folder (default: local.json game_path)")
+    ap.add_argument("--pack", action="append", default=[], help="installed pack folder with no season source (repeatable)")
+    ap.add_argument("--workshop", action="store_true", help="every installed data/workshop_* pack")
     args = ap.parse_args()
-    season = args.season if args.season.is_absolute() else REPO / args.season
-    build(season, game_path(args.game))
+    game = game_path(args.game)
+    packs = list(args.pack)
+    if args.workshop:
+        found = {p.name for p in (game / "data").glob("workshop_*") if p.is_dir()}
+        found |= {f"workshop_{p.name}" for p in steam_workshop(game).glob("*") if p.is_dir()}
+        packs += sorted(found)
+    if packs:
+        for folder in packs:
+            build(None, game, folder)
+    else:
+        season = args.season if args.season.is_absolute() else REPO / args.season
+        build(season, game)
+    print(f"index: {write_index()}")
     return 0
 
 
