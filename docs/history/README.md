@@ -1,6 +1,7 @@
 # Rules history
 
-How the racing rules of F1 (1950 to 2026) and DTM (1984 to 2026) changed,
+How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026) and IndyCar
+(1979 to 2026) changed,
 one topic per file. Each file has a table, its sources, and a Discord post
 that is ready to paste. The table image for Discord is in
 `docs/packages/img/png/<file name>.png`.
@@ -48,6 +49,19 @@ Made from the season research in `seasons/<id>/research/` and
 | 3 | Pit stops and tyres | [dtm-pit-stops-tyres.md](dtm-pit-stops-tyres.md) | 1,237 | 0 | draft |
 | 4 | Points | [dtm-points.md](dtm-points.md) | 1,095 | 0 | draft |
 | 5 | Weight balancing | [dtm-weight-balancing.md](dtm-weight-balancing.md) | 1,254 | 5 | draft |
+
+## IndyCar, 1979 to 2026
+
+CART (1979 to 2003), Champ Car World Series (2004 to 2007) and IRL /
+IndyCar (1996 to 2026). Qualifying and race format share one file because
+the sources were thin.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Points | [indycar-points.md](indycar-points.md) | 1,171 | 2 | draft |
+| 2 | Qualifying and race format | [indycar-qualifying-race.md](indycar-qualifying-race.md) | 1,167 | 11 | draft |
+| 3 | Pit stops, fuel and tyres | [indycar-pit-fuel-tyres.md](indycar-pit-fuel-tyres.md) | 1,123 | 4 | draft |
+| 4 | Cars, engines and push-to-pass | [indycar-cars-engines.md](indycar-cars-engines.md) | 1,117 | 2 | draft |
 
 ## Worth checking first
 
