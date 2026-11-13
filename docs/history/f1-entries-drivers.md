@@ -40,10 +40,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Two or three cars per team | Yes | `formula_team_entry_cap` |
 | More than three cars | No | C1 |
 | Privateers with bought cars | No | C4 |
-| Rookies in FP1 | Yes | `compulsory_reserve_sessions` |
-| Licence points from junior series | Partly | `driverslicense.json` |
-| Penalty points, race bans | No |  |
-| Numbers per driver | Partly | C3 |
+| Rookies or reserves in practice | Partly | `compulsory_reserve_sessions`: the reserve driver in N practice sessions a season, or a fine |
+| Licence points from junior series | Partly | `driverslicense.json`: 10 points needed for a race seat |
+| Penalty points, race bans | No | bans only for banned driver aids |
+| Numbers per driver | Partly | a number per driver, not per entry (C3) |
 | Guests for a few rounds | No | C2 |
 
 ## Sources

@@ -37,7 +37,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Rule | Game | How |
 |---|---|---|
 | Points table per race | Yes | `points_system` |
-| Points down to 15th or 18th | Partly | long tables not tested |
+| Points down to 15th or 18th | Yes | `points_system`, any length |
 | Drop results | No | B3 |
 | Half points | No | B3 |
 | Qualifying points 3-2-1 | Partly | pole point only (B8) |

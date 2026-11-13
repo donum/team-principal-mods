@@ -44,7 +44,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Engine makers, works and customers | Yes | `engines.json`, engine contracts |
 | Engine formula per era | Partly | ratings and `car_profile`, no engine size rules |
 | Two engine types side by side, own rules | No | B2 |
-| Parts per season, grid penalties | Yes | `seasonal_component_allocation_rule` |
+| Parts per season, grid penalties | Yes | `seasonal_component_allocation_rule`: engines and gearboxes, fixed 20 and 10 places |
 | Fuel limit per race | Partly | `formula_fuel_tank` |
 | Engine freeze | No | D7 |
 | Hybrid power | Yes | `ers_policy` |

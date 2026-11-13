@@ -42,14 +42,14 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 | Rule | Game | How |
 |---|---|---|
-| Points for every finisher | Partly | own points list, long tables not tested |
+| Points for every finisher | Yes | `points_system`, any length |
 | Pole point | Yes | `pole_point` |
-| Most laps led bonus | Partly | oval mode only |
+| Most laps led bonus | No | laps led are counted, but score nothing (B8) |
 | Leading a lap bonus | No | B8 |
 | Double points at one race | No | B3 |
 | Qualifying points at one event | No | B8 |
 | Points by race distance | No | B3 |
-| Stage points | Partly | oval mode only |
+| Stage points | Partly | oval packs only (`oval_stage_racing`) |
 
 ## Sources
 

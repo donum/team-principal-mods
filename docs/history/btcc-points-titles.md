@@ -23,7 +23,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 | Rule | Game | How |
 |---|---|---|
-| Points down to 15th | Partly | long tables not tested |
+| Points down to 15th | Yes | `points_system`, any length |
 | Pole and fastest lap points | Yes | `pole_point`, `fastest_lap_point` |
 | Leading a lap point | No | B8 |
 | Independents' titles | No | B4 |

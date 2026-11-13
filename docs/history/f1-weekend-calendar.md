@@ -46,7 +46,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Calendar per week, number of races | Yes | `schedule.json`, 52 weeks |
 | Test weeks | Yes | `schedule.json` test |
 | Two races on one weekend | No | A1, A4 |
-| Practice sessions, number and length | No | fixed by the game |
+| Practice sessions, number and length | No | one 60-minute session, fixed |
 | Real dates, Thursday or Saturday races | No | A4 |
 
 ## Sources

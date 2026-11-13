@@ -39,7 +39,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Rule | Game | How |
 |---|---|---|
 | Team orders during the race | Yes | built in |
-| Driver refuses, team mood | Partly | team-order tension between drivers |
+| Driver refuses, team mood | Partly | drivers never refuse, the one who yields loses mood |
 | Ban on team orders, fines | No |  |
 | Car handover, shared points | No | C8 |
 

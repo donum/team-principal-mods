@@ -44,7 +44,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Rule | Game | How |
 |---|---|---|
 | Refuelling allowed or banned | Yes | `formula_refueling` |
-| Fuel limit per race | Partly | `formula_fuel_tank` 60, 80 or 100 kg |
+| Fuel limit per race | Partly | `formula_fuel_tank` is a tank size, any value, only with refuelling |
 | Tyre-only stops | Yes | built in |
 | Must use both dry compounds | Yes | `formula_compound_usage` |
 | A set number of stops (Monaco 2025) | No | B5 |

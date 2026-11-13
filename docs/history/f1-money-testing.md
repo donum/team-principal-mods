@@ -41,9 +41,9 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 |---|---|---|
 | Prize money by position | Yes | `prize_money_distribution` |
 | Cost cap | No |  |
-| Testing limits | Yes | `private_testing_limits`, test weeks |
-| Wind tunnel time by position | Partly | wind tunnel is a factory level |
-| Fee for a new team | No |  |
+| Testing limits | Yes | `private_testing_limits` (laps), test weeks |
+| Wind tunnel time by position | No | the wind tunnel is only a factory level |
+| Fee for a new team | Partly | a fee per entry (`FORMULA_ENTRY_ADMIN_FEE_M`) |
 | Sponsors, budgets, salaries | Yes | built in |
 
 ## Sources

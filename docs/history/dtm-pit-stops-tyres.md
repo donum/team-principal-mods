@@ -45,7 +45,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Pit windows | No | B5 |
 | What counts as a stop | No | B10, B12 |
 | Option set that must be used | No | B7 |
-| Sets per weekend or race day | Partly | at least 12 sets (B7) |
+| Sets per weekend or race day | Partly | any number per weekend, not per race day (B7) |
 | Crew size, wheelguns, rear wheels first | No | B10 |
 | Start on qualifying tyres | No | B12 |
 

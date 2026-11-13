@@ -37,12 +37,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 | Rule | Game | How |
 |---|---|---|
-| One car at a time on ovals | Partly | oval mode qualifying |
+| One car at a time on ovals | Partly | oval packs: 4 hot laps, but several cars on track in live play |
 | Groups, then Fast Six on road courses | No | A6 |
 | Indy 500 shootouts and bumping | No | A5, A6 |
-| Rolling start | Partly | oval mode only (A3) |
-| Double-file restarts, wave-around | Partly | oval mode only |
-| Green-white-checker or late red flag | Partly | oval mode has green-white-checker |
+| Rolling start | Partly | oval packs only (A3) |
+| Double-file restarts, wave-around | Partly | oval packs only |
+| Green-white-checker or late red flag | Partly | oval packs have green-white-checker |
 | Two races in one weekend | No | A1 |
 
 ## Sources

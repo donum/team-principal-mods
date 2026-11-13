@@ -39,8 +39,8 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 | Rule | Game | How |
 |---|---|---|
-| DRS in zones, within 1 s | Yes | `drs_policy`, zones per track |
-| DRS only in the race, per session rules | No | B6 |
+| DRS in zones, within 1 s | Yes | `drs_policy`: from lap 3, within 1 s, off in the wet and under the safety car |
+| DRS only in the race, per session rules | No | DRS is also free in qualifying (B6) |
 | DRS uses per lap or race | No | B6 |
 | KERS and ERS | Yes | `ers_policy` |
 | Push-to-pass with a set number of uses | Partly | ERS spec stands in (B13) |

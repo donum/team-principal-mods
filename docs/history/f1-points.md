@@ -52,11 +52,11 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 | Rule | Game | How |
 |---|---|---|
-| Points per place, any table | Yes | `points_system` with its own points list |
+| Points per place, any table | Yes | `points_system` with its own points list, any length |
 | Pole point, fastest lap point | Yes | `pole_point`, `fastest_lap_point` |
 | Fastest lap point only inside the top 10 | No | B8 |
 | Best N results, split season | No | B3 |
-| Constructors' title | Yes | built in |
+| Constructors' title | Yes | built in, every car scores |
 | Only the best car of a make scores | No | B4 |
 | Shared drives, split points | No | one driver per car (C8) |
 | Half points or a scale for short races | No | B3 |

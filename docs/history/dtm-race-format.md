@@ -42,8 +42,8 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Two races or heats per round | Partly | each race as its own week (A1) |
 | Race length in laps | Yes | per track |
 | Minutes plus one lap | No | A3 |
-| Rolling start | Partly | oval mode only (A3) |
-| DRS | Partly | zones only, also in qualifying (B6) |
+| Rolling start | No | oval packs only (A3) |
+| DRS | Partly | zones only, also free in qualifying (B6) |
 | Push-to-pass | Partly | ERS spec stands in (B13) |
 | Full-course yellow | Partly | VSC stands in (B11) |
 | Pit lane closed under the safety car, penalty lap | No | B11 |

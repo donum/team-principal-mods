@@ -43,10 +43,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Rule | Game | How |
 |---|---|---|
 | Several tyre makers, tyre wars | Yes | `tyre_suppliers.json`, a supplier per team |
-| Own grip and wear per tyre maker | Partly | ratings only (D9) |
+| Own grip and wear per tyre maker | Partly | ratings per compound, wet included, no warm-up per maker (D9) |
 | Two dry compounds must be used | Yes | `formula_compound_usage` |
-| Sets per weekend | Partly | three levels, at least 12 sets (B7) |
-| Own compound names and colours (C1 to C5, option) | No | D8 |
+| Sets per weekend | Yes | `weekend_tyre_allocation`: any number of dry, inter and wet sets |
+| Own compound names and colours (C1 to C5, option) | Partly | names from `tyremodel.json`, colours fixed by the first letter (D8) |
 | One set for qualifying and race (2005) | No | B12 |
 | Top 10 start on their qualifying tyres | No | B12 |
 | Tyre warmer limits or bans | No | B12 |

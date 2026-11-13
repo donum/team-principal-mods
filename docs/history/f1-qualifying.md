@@ -43,11 +43,11 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 | Rule | Game | How |
 |---|---|---|
-| One timed session, best lap counts | Yes | `qualifying_format` session_60 |
-| Two sessions, best of both | Partly | one session only (A3) |
+| One timed session, best lap counts | Yes | `qualifying_format` session_60: 60 minutes, up to 4 runs |
+| Two sessions, best of both | No | one 60-minute session or the knockout only (A3) |
 | Knockout Q1 to Q3 | Yes | `knockout`: 18, 15 and 12 minutes, 10 cars in Q3, the rest cut half in Q1 and half in Q2 |
-| Pre-qualifying | Yes | `PREQUALIFYING_*` in constants.py |
-| 107% rule | Yes | built into qualifying |
+| Pre-qualifying | Yes | `PREQUALIFYING_*`: last year's top teams are protected, the fastest of the rest go through |
+| 107% rule | Yes | `config.json` `quali_107_rule`, with a practice-time exemption |
 | Grid size limit | Yes | `QUALI_GRID_LIMIT` |
 | Single-lap runs, aggregate, elimination | No | A5, A6 |
 | Race fuel or fuel credit in qualifying | No | A6 |

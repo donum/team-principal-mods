@@ -37,7 +37,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Rule | Game | How |
 |---|---|---|
 | Timed qualifying | Yes | `qualifying_format` session_60 |
-| Knockout | Partly | game cuts, no Q4 (A6) |
+| Knockout | Partly | F1 cuts only: always 10 in Q3, no Q4 (A6) |
 | Single-lap shootout (Top-Qualifying, Superpole, Q4) | No | A5 |
 | Qualification race | No | A2 |
 | Own qualifying per race | No | A1, A6 |

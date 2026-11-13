@@ -31,7 +31,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Rule | Game | How |
 |---|---|---|
 | Refuelling at every stop | Yes | `formula_refueling` |
-| Tank size | Partly | `formula_fuel_tank` 60, 80 or 100 kg |
+| Tank size | Yes | `formula_fuel_tank`: any size when refuelling is allowed |
 | Fuel type (methanol, ethanol) | No |  |
 | Primary and alternate tyres, both used | Partly | two-compound rule (B12) |
 | One tyre on ovals | Partly | oval mode |

@@ -30,8 +30,8 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 |---|---|---|
 | 6, 8 or 24-hour races | No | A3 |
 | Races by distance | Yes | laps per track |
-| Rolling start | Partly | oval mode only (A3) |
-| 70% rule, last lap rule | No | A3 |
+| Rolling start | No | oval packs only (A3) |
+| 70% rule, last lap rule | Partly | fixed at 90% of the winner's laps (A3) |
 | Points times race length | No | B3 |
 | Pole point | Yes | `pole_point` |
 | Titles per class | No | B4 |

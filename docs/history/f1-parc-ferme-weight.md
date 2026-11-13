@@ -41,11 +41,11 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 | Rule | Game | How |
 |---|---|---|
-| Setup frozen after qualifying | No | not modelled |
+| Setup frozen after qualifying | Yes | the setup is locked for the race, only tyre pressures on the grid |
 | Minimum weight | Yes | `chassis_minimum_weight` |
 | Weight change from a season | Yes | `scripted_changes` |
 | Driver weight, ballast | No | B1 |
-| Checks after the race, disqualification | Partly | only for banned driver aids |
+| Checks after the race, disqualification | Partly | only the tyre rule and banned driver aids |
 
 ## Sources
 

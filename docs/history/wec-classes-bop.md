@@ -31,7 +31,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 |---|---|---|
 | Several classes in one race | No | B4 |
 | Balance of performance | No | B2 |
-| Fuel formula (Group C) | Partly | `formula_fuel_tank` |
+| Fuel formula (Group C) | Partly | `formula_fuel_tank` tank size, no fuel limit per race |
 | Hybrid and non-hybrid side by side | Partly | `ers_policy` open development |
 | One minimum weight | Yes | `chassis_minimum_weight` |
 | Big fields (62 cars) | Partly | grid limit, at most 3 cars per team (C1) |

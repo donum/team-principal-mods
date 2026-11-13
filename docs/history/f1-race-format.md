@@ -50,10 +50,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | Race length in laps | Yes | `laps` x `lap_modifier` per track |
 | Time limit (2 hours) | No | A3 |
 | Standing start, two by two | Yes | built in |
-| Rolling start | Partly | oval mode only (A3) |
-| Red flag and restart | Partly | `formula_red_flags`, up to 2, no aggregate (A3) |
+| Rolling start | No | oval packs only (A3) |
+| Red flag and restart | Partly | `formula_red_flags`: up to 2, free tyre change, standing restart, no aggregate, not in simulated races (A3) |
 | Half points or a scale for short races | No | B3 |
-| Classification rules (90% distance) | No | A3 |
+| Classification rules (90% distance) | Yes | built in: 90% of the winner's laps |
 | Race distance per era (500 km, 305 km) | Partly | laps per track by hand |
 
 ## Sources

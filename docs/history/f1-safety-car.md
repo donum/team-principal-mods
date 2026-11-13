@@ -49,9 +49,9 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 | No safety car (early eras) | Yes | `safety_car_policy` none |
 | Safety car | Yes | `safety_car_policy` physical_only |
 | Virtual safety car | Yes | `safety_car_policy` all_types |
-| Red flag | Partly | `formula_red_flags`, up to 2 per race |
+| Red flag | Partly | `formula_red_flags`: up to 2, free tyre change, standing restart, live races only |
 | Pit lane closed under the safety car | No | B11 |
-| Lapped cars unlap, wave-around | Partly | oval mode only |
+| Lapped cars unlap, wave-around | Partly | oval packs only |
 | Full-course yellow, slow zones | Partly | VSC stands in (B11) |
 
 ## Sources

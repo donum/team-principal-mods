@@ -23,18 +23,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEVERS = {
     'A1': ('Several races per weekend', 'Weekend format', 'Partly', 'Heats, sprints, two or three races a round, each with its own points and grid.'),
     'A2': ('Qualification race', 'Weekend format', 'No', 'A short race for the cars outside the direct grid places.'),
-    'A3': ('Starts and race length', 'Weekend format', 'Partly', 'Rolling starts for formula packs, races by time (minutes plus one lap, 6 or 24 hours), laps added after the safety car.'),
+    'A3': ('Starts and race length', 'Weekend format', 'Partly', 'Rolling starts outside oval packs, races by time (minutes plus one lap, 6 or 24 hours), laps added after the safety car.'),
     'A5': ('Single-lap shootout', 'Weekend format', 'No', 'One timed lap each, alone on track: Superpole, Q4, Top-Qualifying, Fast Six.'),
-    'A6': ('Qualifying as stages', 'Weekend format', 'Partly', 'Any number of sessions and cuts, lap limits, race fuel, reverse or drawn grids.'),
+    'A6': ('Qualifying as stages', 'Weekend format', 'Partly', 'Any number of sessions and cuts, lap limits, race fuel, reverse or drawn grids. Today: one 60-minute session or an F1 knockout.'),
     'B5': ('Mandatory stops and windows', 'Tyres and stops', 'No', 'A set number of stops, pit windows, what counts as a stop.'),
-    'B7': ('Tyre allocation rules', 'Tyres and stops', 'Partly', 'Sets per weekend or race, a must-use tyre, at most N new sets in qualifying.'),
+    'B7': ('Tyre allocation rules', 'Tyres and stops', 'Partly', 'Sets per race or race day, a must-use tyre, at most N new sets in qualifying. Sets per weekend already work.'),
     'B10': ('Pit-stop procedure', 'Tyres and stops', 'No', 'Crew size, what may happen at the same time (fuel, tyres, driver).'),
     'B12': ('Tyre and stop rules as data', 'Tyres and stops', 'No', 'Start on qualifying tyres, no tyre changes, tyre warmer bans.'),
-    'D8': ('Own tyre compounds', 'Tyres and stops', 'No', 'Compound names and colours from the pack (C1 to C5, option, standard).'),
+    'D8': ('Own tyre compounds', 'Tyres and stops', 'Partly', 'Colours and allocation for any compound name. Names already come from the pack, colours follow the first letter.'),
     'D9': ('Tyre makers with own physics', 'Tyres and stops', 'Partly', 'Each tyre maker with its own warm-up, wear and wet grip.'),
     'B3': ('Points per race and drop results', 'Points and titles', 'No', 'Best N results, points per session, double points, points by race length.'),
     'B4': ('More titles and classes', 'Points and titles', 'No', 'Classes in one race, independents, best N cars per make, manufacturers only.'),
-    'B8': ('Bonus and qualifying points', 'Points and titles', 'Partly', 'Points for qualifying, leading a lap, most laps led, fastest lap in the top 10.'),
+    'B8': ('Bonus and qualifying points', 'Points and titles', 'Partly', 'Points for qualifying, leading a lap, most laps led, fastest lap in the top 10. Today: +1 for pole and fastest lap.'),
     'B9': ('Guests who score nothing', 'Points and titles', 'No', 'Guest drivers race but the points go to the next eligible driver.'),
     'B1': ('Success ballast', 'Balance and homologation', 'No', 'Kilos or less power for good results, per driver, make or position.'),
     'B2': ('Weights and BoP per make', 'Balance and homologation', 'No', 'Weight, restrictor or power per make, class or engine type, changed on a date.'),
@@ -51,7 +51,6 @@ LEVERS = {
     'N4': ('Active aero and overtake mode', 'Race control and aids', 'No', 'F1 2026: moving wings for all, extra energy for the chasing car.'),
     'D2': ('Drivetrain', 'Car model', 'No', 'Four-wheel drive with its own start and wet-weather strength.'),
     'N1': ('Cost cap and wind tunnel limits', 'Not in the wishlist yet', 'No', 'A spending cap and aero testing time by championship position.'),
-    'N2': ('Parc fermé', 'Not in the wishlist yet', 'No', 'The setup is frozen from qualifying to the race.'),
     'N3': ('Penalty points and race bans', 'Not in the wishlist yet', 'No', 'Licence penalty points, 12 points means a race ban.'),
     'N6': ('Team order ban', 'Not in the wishlist yet', 'No', 'Team orders banned, with fines when caught.'),
 }
@@ -94,7 +93,6 @@ NEEDS = {
   ('D9', '1977-1986', 'Tyre war Goodyear, Michelin, Pirelli.'),
   ('D9', '1989-1991', 'Goodyear and Pirelli.'),
   ('D9', '1997-2006', 'Tyre wars Goodyear, Bridgestone, Michelin.'),
-  ('B7', '2005-2026', 'Sets per weekend below the game\'s 12.'),
   ('D8', '2016-2026', 'Named compounds per race (C1 to C5, colours).'),
   ('B11', '2007-2008', 'Pit lane closed under the safety car.'),
   ('B3', '2014', 'Double points at the last race.'),
@@ -103,7 +101,6 @@ NEEDS = {
   ('B8', '2019-2024', 'Fastest lap point only inside the top 10.'),
   ('D7', '2007-2013', 'Engine freeze.'),
   ('D7', '2022-2025', 'Engine freeze.'),
-  ('N2', '2003-2026', 'Parc fermé from qualifying.'),
   ('N1', '2021-2026', 'Cost cap and wind tunnel time by position.'),
   ('N3', '2014-2026', 'Penalty points and race bans.'),
   ('N6', '2003-2010', 'Team orders banned.'),
@@ -179,6 +176,16 @@ NOTES = {
 }
 
 
+# DTM rules that only set a number of sets per weekend: the game does that
+# (weekend_tyre_allocation takes any number), so they need no lever.
+SETS_PER_WEEKEND = {
+    'No refuelling between the races. 10 tyres per weekend.',
+    'No stops. Dunlop control tyre, 5 sets per weekend.',
+    'Two mandatory stops, refuelling. 7 sets per weekend.',
+    '4 slick sets for both qualifyings and both races.',
+}
+
+
 def dtm_needs():
     """Per season: wishlist item and rule text for every rule the game can't do exactly."""
     out = {}
@@ -192,6 +199,8 @@ def dtm_needs():
         m2 = re.match(r' \[(\w+),"(\w+)","((?:[^"\\]|\\.)*)"', line)
         if cur and m2 and m2.group(2) != 'fit':
             g = re.findall(r'"([A-D]\d+)"\]', line)
+            if g and g[0] == 'B7' and m2.group(3) in SETS_PER_WEEKEND:
+                continue
             if g and g[0] in LEVERS:
                 text = re.sub(r'<[^>]+>', '', m2.group(3)).replace('\\"', '"')
                 out[cur].append((g[0], text))
