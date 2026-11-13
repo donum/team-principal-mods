@@ -81,6 +81,7 @@ main{display:grid;gap:20px;min-width:0}
 .gridwrap{overflow-x:auto}
 .grid{display:grid;grid-template-columns:84px repeat(78,minmax(8px,1fr));gap:2px;min-width:760px;align-items:center}
 .grid .rl{font:600 16px var(--display);letter-spacing:.03em;padding-right:6px}
+.rlink{background:none;border:0;padding:0;text-align:left;color:var(--accent);cursor:pointer;white-space:nowrap}
 .grid .tick{font:400 11px var(--mono);color:var(--muted);grid-row:1;white-space:nowrap}
 .cell{height:24px;border-radius:2px;border:0;padding:0;cursor:pointer;background:var(--none)}
 .cell.empty{background:transparent;border:1px dashed var(--line);cursor:default}
@@ -107,6 +108,69 @@ main{display:grid;gap:20px;min-width:0}
 .foot{font-size:12px;color:var(--muted);grid-column:1/-1;max-width:110ch}
 .shareonly{display:none}
 .share .shareonly{display:block}
+.view{display:grid;gap:20px;min-width:0}
+.view[hidden]{display:none}
+
+/* Navigation */
+.nav{grid-column:1/-1;display:grid;gap:8px}
+.navrow{display:flex;flex-wrap:wrap;gap:6px}
+.navrow button{padding:5px 11px}
+.navrow button.series{font:600 15px var(--display);letter-spacing:.03em}
+.rulesmode .page,.share .page{grid-template-columns:minmax(0,1fr)}
+.rulesmode #panel{display:none}
+.covonly{display:none}
+.covmode .covonly{display:flex}
+
+/* Rules history tables */
+.topic{display:grid;gap:12px}
+.topic h3{font:700 26px/1.05 var(--display);margin:0;letter-spacing:.01em}
+.topic h4{font:600 16px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:6px 0 0}
+.tablewrap{overflow-x:auto}
+table.rt{border-collapse:collapse;width:100%;font-size:14px}
+.rt th{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);background:var(--bg)}
+.rt td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;min-width:120px}
+.rt td:first-child{font-weight:600;white-space:nowrap;min-width:0}
+.rt code,.season code{font:12px var(--mono)}
+.q{color:var(--part);font-weight:600}
+.st{display:inline-block;font:600 12px var(--mono);padding:1px 8px;border-radius:4px;white-space:nowrap}
+.st-yes,.st-fit{color:var(--ok);background:var(--ok-soft)}
+.st-partly,.st-apx{color:var(--part);background:var(--part-soft)}
+.st-no{color:var(--miss);background:var(--miss-soft)}
+.src{font-size:13px;color:var(--muted);white-space:pre-line}
+.jump{display:flex;flex-wrap:wrap;gap:6px}
+.jump a{font:500 13px var(--body);color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+
+/* Series pages */
+.shead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end}
+.shead .big{font-size:72px}
+.mx{display:grid;gap:2px;align-items:center;min-width:600px}
+.mx .rl{font:500 12px var(--body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:8px}
+.mx .rl b{font:600 11px var(--mono);color:var(--muted);margin-right:6px}
+.mx .tick{font:400 10px var(--mono);color:var(--muted);white-space:nowrap}
+.mx .c{height:18px;border-radius:2px;border:0;padding:0;background:transparent}
+.mx .c.n{background:var(--miss);cursor:pointer}.mx .c.y{background:var(--ok);cursor:pointer}
+.seasons{display:grid;gap:8px}
+details.season{background:var(--surface);border:1px solid var(--line);border-radius:8px;scroll-margin-top:16px}
+details.season summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:10px 14px;cursor:pointer;list-style:none}
+details.season summary::-webkit-details-marker{display:none}
+details.season summary .yr{font:700 26px/1 var(--display);font-variant-numeric:tabular-nums;min-width:62px}
+details.season[open] summary{border-bottom:1px solid var(--line)}
+.sbody{display:grid;gap:14px;padding:12px 14px 16px}
+.rrow{display:grid;grid-template-columns:120px minmax(0,1.3fr) 112px minmax(0,1fr);gap:4px 12px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.rrow .cat{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.rrow .gm{color:var(--muted);font-size:13px}
+.era{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 12px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.era .cat{font:600 13px var(--body)}
+.era dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:2px 10px;margin:0}
+.era dt{font:500 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.era dd{margin:0}
+@media (max-width:760px){
+  .rrow{grid-template-columns:minmax(0,1fr) auto}
+  .rrow .cat{grid-column:1/-1}
+  .rrow .gm{grid-column:1/-1}
+  .era{grid-template-columns:minmax(0,1fr)}
+  .shead{grid-template-columns:minmax(0,1fr)}
+}
 @media (max-width:980px){
   .page{grid-template-columns:minmax(0,1fr)}
   #panel{position:static;max-height:none}
@@ -128,10 +192,17 @@ main{display:grid;gap:20px;min-width:0}
       <h1>Racing Rules Coverage</h1>
       <p class="lede">How many real seasons a Team Principal pack could run exactly as they were, depending on which game features ("levers") get built. Switch levers on and off to see what each one unlocks.</p>
     </div>
-    <div class="viewbtns" role="group" aria-label="View">
+    <div class="viewbtns covonly" role="group" aria-label="Coverage view">
       <button type="button" id="v-explore" aria-pressed="true">Explore</button>
       <button type="button" id="v-share" aria-pressed="false">Share view</button>
     </div>
+    <nav class="nav" aria-label="Pages">
+      <div class="navrow" role="group" aria-label="Views">
+        <button type="button" data-go="coverage">Coverage</button>
+        <button type="button" data-go="rules">Rules history</button>
+      </div>
+      <div class="navrow" role="group" aria-label="Series" id="seriesnav"></div>
+    </nav>
   </header>
 
   <aside id="panel" class="card" aria-label="Levers">
@@ -149,6 +220,9 @@ main{display:grid;gap:20px;min-width:0}
   </aside>
 
   <main>
+    <div id="view-rules" class="view" hidden></div>
+    <div id="view-series" class="view" hidden></div>
+    <div id="view-coverage" class="view">
     <section class="card score" aria-label="Summary">
       <div>
         <div class="eyebrow">Seasons playable as they were</div>
@@ -192,6 +266,7 @@ main{display:grid;gap:20px;min-width:0}
         <div class="rank" id="rank"></div>
       </section>
     </div>
+    </div>
   </main>
 
   <p class="foot">Needs per season: DTM from the rulebook research of every season (docs/dtm_rules.html), the other series from the rules history tables in docs/history. Only rules that shape every race weekend count; rare cases like half points or red-flag aggregates are left out. Game support as of Team Principal 0.99.5 and the 0.99.6 beta. "Partly" levers have a stand-in today that behaves differently, so they still count as missing. Lever IDs are items in docs/DEVELOPER_WISHLIST.md; IDs starting with N are not in the wishlist yet.</p>
@@ -199,6 +274,7 @@ main{display:grid;gap:20px;min-width:0}
 
 <script>
 const DATA = /*DATA*/null;
+let view = {name: 'coverage', series: 'F1', share: false};
 const L = Object.fromEntries(DATA.levers.map(l => [l.id, l]));
 const ALL = DATA.levers.map(l => l.id);
 const PRESETS = {
@@ -278,7 +354,7 @@ function renderGrid() {
   for (let y = Y0; y <= Y1; y++) if (y % 10 === 0) h +=`<span class="tick" style="grid-column:${y - Y0 + 2}">${y}</span>`;
   DATA.series.forEach((s, r) => {
     const by = Object.fromEntries(s.seasons.map(x => [x.y, x]));
-    h += `<span class="rl" style="grid-row:${r + 2}">${esc(s.name)}</span>`;
+    h += `<button type="button" class="rl rlink" style="grid-row:${r + 2}" data-series="${slug(s.name)}" title="Season by season for ${esc(s.name)}">${esc(s.name)}</button>`;
     for (let y = Y0; y <= Y1; y++) {
       const pos = `grid-row:${r + 2};grid-column:${y - Y0 + 2}`;
       const x = by[y];
@@ -291,6 +367,7 @@ function renderGrid() {
     }
   });
   g.innerHTML = h;
+  g.querySelectorAll('[data-series]').forEach(b => b.addEventListener('click', () => go(b.dataset.series)));
   g.querySelectorAll('button.cell').forEach(b => b.addEventListener('click', () => {
     sel = {series: b.dataset.s, y: +b.dataset.y}; renderGrid(); renderDetail();
   }));
@@ -340,7 +417,7 @@ function renderRank() {
     : '<p class="lede">Every lever is on.</p>';
 }
 
-function update() { save(); renderLevers(); renderScore(); renderGrid(); renderDetail(); renderRank(); markPreset(); }
+function update() { save(); renderLevers(); renderScore(); renderGrid(); renderDetail(); renderRank(); markPreset(); if (view.name === 'series') renderSeries(); }
 
 function markPreset() {
   document.querySelectorAll('[data-preset]').forEach(b => {
@@ -350,19 +427,160 @@ function markPreset() {
 }
 document.querySelectorAll('[data-preset]').forEach(b => b.addEventListener('click', () => { on = new Set(PRESETS[b.dataset.preset]); update(); }));
 
-// Share view: #share in the link opens it; the buttons switch it directly.
-function setView(share) {
-  document.documentElement.classList.toggle('share', share);
-  document.getElementById('v-share').setAttribute('aria-pressed', String(share));
-  document.getElementById('v-explore').setAttribute('aria-pressed', String(!share));
-  try {
-    if (share && location.hash !== '#share') history.replaceState(null, '', '#share');
-    if (!share && location.hash === '#share') history.replaceState(null, '', location.pathname + location.search);
-  } catch (e) {}
+/* ---------- Views: coverage, rules history, one page per series ----------
+   Routes are plain hash names: #coverage (default), #share, #rules, #rules-<series>,
+   #<series>. The buttons switch views directly, the hash only makes links shareable. */
+const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const BY_SLUG = Object.fromEntries(DATA.series.map(s => [slug(s.name), s.name]));
+
+function md(t) {
+  // The small Markdown subset used in the history tables.
+  if (t === 'Yes' || t === 'Partly' || t === 'No') return `<span class="st st-${t.toLowerCase()}">${t}</span>`;
+  return esc(t).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+    .replace(/\(\?\)/g, '<span class="q" title="not confirmed by the sources">(?)</span>');
 }
-document.getElementById('v-share').addEventListener('click', () => setView(true));
-document.getElementById('v-explore').addEventListener('click', () => setView(false));
-window.addEventListener('hashchange', () => setView(location.hash === '#share'));
-setView(location.hash === '#share');
+
+function tableHtml(t) {
+  return `<div class="tablewrap"><table class="rt"><thead><tr>${t.head.map(h => `<th>${md(h)}</th>`).join('')}</tr></thead><tbody>` +
+    t.rows.map(r => `<tr>${r.map(c => `<td>${md(c)}</td>`).join('')}</tr>`).join('') + '</tbody></table></div>';
+}
+
+function renderRules() {
+  const name = view.series, topics = DATA.history[name] || [];
+  const box = document.getElementById('view-rules');
+  box.innerHTML = `<section class="card" style="display:grid;gap:12px">
+      <div class="eyebrow">Rules history</div><h2>${esc(name)}</h2>
+      <p class="lede" style="font-size:14px">${esc((DATA.series.find(s => s.name === name) || {}).note || '')} Every topic as a cheat sheet, with what the game can do today at the end of each.</p>
+      <div class="jump">${topics.map((t, i) => `<a href="#rules-${slug(name)}" data-topic="${i}">${esc(t.title.replace(/,\s*\d{4}.*$/, ''))}</a>`).join('')}</div>
+      <div><button type="button" data-go="${slug(name)}">Season by season for ${esc(name)}</button></div>
+    </section>` +
+    topics.map((t, i) => `<section class="card topic" id="topic-${i}"><h3>${esc(t.title)}</h3>` +
+      t.tables.map(tb => (tb.heading && tb.heading !== 'Table' ? `<h4>${esc(tb.heading)}</h4>` : '') + tableHtml(tb)).join('') +
+      `<p class="src">${md(t.sources.replace(/\n {2,}/g, ' '))}</p><p class="src">File: docs/history/${esc(t.file)}</p></section>`).join('');
+  box.querySelectorAll('[data-topic]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); document.getElementById('topic-' + a.dataset.topic).scrollIntoView({behavior: 'smooth'});
+  }));
+  box.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go)));
+}
+
+function seriesRows(name, y) {
+  // Each topic's main-table row that covers year y.
+  return (DATA.history[name] || []).map(t => {
+    const tb = t.tables.find(x => x.heading === 'Table');
+    if (!tb) return null;
+    const i = tb.spans.findIndex(sp => sp && sp[0] <= y && y <= sp[1]);
+    const tt = t.title.replace(/,\s*\d{4}.*$/, '').replace(new RegExp('^' + name + '\\s*'), '');
+    return i < 0 ? null : {title: tt.charAt(0).toUpperCase() + tt.slice(1), head: tb.head, row: tb.rows[i]};
+  }).filter(Boolean);
+}
+
+function seasonBody(name, x) {
+  let h = '';
+  if (x.ids.length) {
+    h += '<div><div class="eyebrow" style="margin-bottom:4px">Levers this season needs</div>' + x.ids.map(id => {
+      const ok = on.has(id);
+      return `<div class="need"><span class="mark ${ok ? 'y' : 'n'}">${ok ? '✓' : '✗'}</span><div><b>${esc(L[id].label)}</b> <span class="chip">${id}</span><span>${esc(x.needs[id].join(' '))}</span></div></div>`;
+    }).join('') + '</div>';
+  } else h += '<p class="lede">Nothing missing: this season runs as it was with the game today.</p>';
+  if (name === 'DTM' && DATA.dtm_rulebook[x.y]) {
+    const lab = {fit: 'Works', apx: 'Stand-in', no: 'Not possible'}, cls = {fit: 'fit', apx: 'apx', no: 'no'};
+    h += '<div><div class="eyebrow" style="margin-bottom:4px">Rulebook (from the season research)</div>' +
+      DATA.dtm_rulebook[x.y].map(r => `<div class="rrow"><span class="cat">${esc(r[0])}</span><span>${esc(r[2])}</span><span><span class="st st-${cls[r[1]]}">${lab[r[1]] || r[1]}</span>${r[4] ? ` <span class="chip">${r[4]}</span>` : ''}</span><span class="gm">${esc(r[3])}</span></div>`).join('') + '</div>';
+  }
+  const rows = seriesRows(name, x.y);
+  if (rows.length) h += '<div><div class="eyebrow" style="margin-bottom:4px">Rules from the history tables</div>' + rows.map(r =>
+    `<div class="era"><span class="cat">${esc(r.title)}<br><small style="color:var(--muted);font-weight:400">${md(r.row[0])}</small></span><dl>` +
+    r.head.slice(1).map((hd, i) => r.row[i + 1] ? `<dt>${md(hd)}</dt><dd>${md(r.row[i + 1])}</dd>` : '').join('') + '</dl></div>').join('') + '</div>';
+  return h;
+}
+
+function renderSeries() {
+  const name = view.series, s = DATA.series.find(z => z.name === name);
+  const list = seasons.filter(x => x.series === name);
+  const f = list.filter(x => full(x, on)).length;
+  const need = {};
+  list.forEach(x => x.ids.forEach(id => { need[id] = (need[id] || 0) + 1; }));
+  const ids = ALL.filter(id => need[id]);
+  const cols = list.length;
+  let mx = `<div class="mx" style="grid-template-columns:230px repeat(${cols},minmax(7px,1fr))"><span></span>`;
+  list.forEach((x, i) => { mx += `<span class="tick" style="grid-row:1;grid-column:${i + 2}">${(x.y % 10 === 0 || i === 0) ? x.y : ''}</span>`; });
+  ids.forEach((id, r) => {
+    mx += `<span class="rl" style="grid-row:${r + 2}" title="${esc(L[id].about)}"><b>${id}</b>${esc(L[id].label)} · ${need[id]}</span>`;
+    list.forEach((x, i) => {
+      const n = x.ids.includes(id);
+      mx += n ? `<button type="button" class="c ${on.has(id) ? 'y' : 'n'}" style="grid-row:${r + 2};grid-column:${i + 2}" data-y="${x.y}" title="${x.y}: ${esc(L[id].label)}"></button>`
+              : `<span class="c" style="grid-row:${r + 2};grid-column:${i + 2}"></span>`;
+    });
+  });
+  mx += '</div>';
+  const box = document.getElementById('view-series');
+  box.innerHTML = `<section class="card shead">
+      <div><div class="eyebrow">Season by season</div><h2 style="font-size:34px">${esc(name)}</h2>
+      <p class="lede" style="font-size:14px">${esc(s.note)} ${cols} seasons. Levers from the panel apply here too.</p>
+      <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap"><button type="button" data-go="rules-${slug(name)}">Rules history for ${esc(name)}</button><button type="button" data-go="coverage">All series</button></div></div>
+      <div><div class="big">${Math.round(100 * f / cols)}<small>%</small></div><div class="bigsub">${f} of ${cols} seasons playable</div></div>
+    </section>
+    <section class="card"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:10px">
+      <h2>Gaps by season</h2><div class="legend"><span><i class="sw" style="background:var(--miss)"></i>needed, off</span><span><i class="sw" style="background:var(--ok)"></i>needed, switched on</span></div></div>
+      <div class="gridwrap">${mx}</div>
+      <p class="legend" style="margin:10px 0 0">Each row is a lever this series needs, with the number of seasons. Click a square to open that season.</p></section>
+    <section style="display:grid;gap:8px"><h2>Seasons</h2><div class="seasons">` +
+    list.map(x => {
+      const m = x.ids.filter(id => on.has(id)).length, okk = m === x.ids.length;
+      return `<details class="season" id="season-${slug(name)}-${x.y}" data-y="${x.y}"><summary><span class="yr">${name === 'Formula E' ? x.y + '-' + String(x.y + 1).slice(2) : x.y}</span>` +
+        `<span class="st ${okk ? 'st-yes' : 'st-no'}">${okk ? 'playable' : (x.ids.length - m) + ' missing'}</span>` +
+        `<span class="chips">${x.ids.map(id => `<span class="chip${on.has(id) ? ' on' : ''}" title="${esc(L[id].label)}">${id}</span>`).join('')}</span></summary><div class="sbody"></div></details>`;
+    }).join('') + '</div></section>';
+  box.querySelectorAll('details.season').forEach(d => d.addEventListener('toggle', () => {
+    if (d.open && !d.dataset.done) { d.dataset.done = '1'; d.querySelector('.sbody').innerHTML = seasonBody(name, list.find(x => x.y === +d.dataset.y)); }
+  }));
+  box.querySelectorAll('.mx button.c').forEach(b => b.addEventListener('click', () => {
+    const d = document.getElementById(`season-${slug(name)}-${b.dataset.y}`);
+    d.open = true; d.scrollIntoView({behavior: 'smooth'});
+  }));
+  box.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go)));
+}
+
+function render() {
+  const root = document.documentElement;
+  root.classList.toggle('share', view.name === 'coverage' && view.share);
+  root.classList.toggle('covmode', view.name === 'coverage');
+  root.classList.toggle('rulesmode', view.name === 'rules');
+  document.getElementById('view-coverage').hidden = view.name !== 'coverage';
+  document.getElementById('view-rules').hidden = view.name !== 'rules';
+  document.getElementById('view-series').hidden = view.name !== 'series';
+  document.getElementById('v-share').setAttribute('aria-pressed', String(view.share));
+  document.getElementById('v-explore').setAttribute('aria-pressed', String(!view.share));
+  document.querySelectorAll('[data-go]').forEach(b => {
+    const g = b.dataset.go;
+    if (b.closest('.nav')) b.setAttribute('aria-pressed', String(g === view.name || (view.name === 'series' && g === slug(view.series)) || (view.name === 'rules' && g === 'rules')));
+  });
+  if (view.name === 'rules') renderRules();
+  if (view.name === 'series') renderSeries();
+}
+
+function parse(hash) {
+  const h = (hash || '').replace(/^#/, '');
+  if (h === 'share') return {name: 'coverage', series: view.series, share: true};
+  if (h === 'rules') return {name: 'rules', series: view.series, share: false};
+  if (h.startsWith('rules-') && BY_SLUG[h.slice(6)]) return {name: 'rules', series: BY_SLUG[h.slice(6)], share: false};
+  if (BY_SLUG[h]) return {name: 'series', series: BY_SLUG[h], share: false};
+  return {name: 'coverage', series: view.series, share: false};
+}
+
+function go(name) {
+  view = parse('#' + name);
+  try { history.replaceState(null, '', name === 'coverage' ? location.pathname + location.search : '#' + name); } catch (e) {}
+  render();
+  window.scrollTo({top: 0});
+}
+
+document.getElementById('seriesnav').innerHTML = DATA.series.map(s => `<button type="button" class="series" data-go="${slug(s.name)}">${esc(s.name)}</button>`).join('');
+document.querySelectorAll('.nav [data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go === 'rules' ? 'rules-' + slug(view.series) : b.dataset.go)));
+document.getElementById('v-share').addEventListener('click', () => go('share'));
+document.getElementById('v-explore').addEventListener('click', () => go('coverage'));
+window.addEventListener('hashchange', () => { view = parse(location.hash); render(); });
+view = parse(location.hash);
 update();
+render();
 </script>

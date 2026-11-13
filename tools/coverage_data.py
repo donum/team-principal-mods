@@ -53,6 +53,7 @@ LEVERS = {
     'N1': ('Cost cap and wind tunnel limits', 'Not in the wishlist yet', 'No', 'A spending cap and aero testing time by championship position.'),
     'N3': ('Penalty points and race bans', 'Not in the wishlist yet', 'No', 'Licence penalty points, 12 points means a race ban.'),
     'N7': ('Playoff eliminations and playoff points', 'Not in the wishlist yet', 'No', 'Elimination rounds, a win to advance, playoff points carried into each round.'),
+    'N8': ('Energy limit per race', 'Not in the wishlist yet', 'No', 'A fixed amount of energy per race, energy taken off under the safety car.'),
     'N6': ('Team order ban', 'Not in the wishlist yet', 'No', 'Team orders banned, with fines when caught.'),
 }
 
@@ -166,6 +167,31 @@ NEEDS = {
   ('B8', '2024-2026', 'Qualifying points 3-2-1.'),
   ('B3', '2006-2017', 'More points for the Suzuka 1000 km.'),
  ],
+ 'IMSA': [
+  ('B4', '1971-2026', 'Several classes in one race, titles per class.'),
+  ('C8', '1971-2026', 'Two to five drivers per car.'),
+  ('A3', '1971-2026', 'Races by time (24, 12, 6 hours) and rolling starts.'),
+  ('B2', '1981-1993', 'Minimum weight by engine size, turbos heavier.'),
+  ('B2', '2014-2026', 'Balance of performance per class.'),
+  ('C9', '2014-2026', 'Different car types in one class (DP, LMP2, DPi, LMDh, LMH).'),
+  ('B3', '2014-2026', 'Endurance Cup points at set times during the race.'),
+  ('B8', '2021-2026', 'Points for qualifying.'),
+  ('A6', '2019-2026', 'In LMP2 only the Bronze driver qualifies.'),
+ ],
+ 'Formula E': [
+  ('N8', '2014-2025', 'A fixed amount of energy per race.'),
+  ('B13', '2014-2021', 'Fan Boost.'),
+  ('B13', '2018-2025', 'Attack Mode through a zone, with a time budget.'),
+  ('B10', '2014-2017', 'A car swap halfway through the race.'),
+  ('A3', '2018-2021', 'Races of 45 minutes plus one lap.'),
+  ('A3', '2022-2025', 'Laps added after the safety car.'),
+  ('A6', '2014-2025', 'Qualifying in groups, then a shootout or duels.'),
+  ('B8', '2014-2025', 'Pole worth 3 points, fastest lap only in the top 10.'),
+  ('B3', '2014', 'The worst round is dropped.'),
+  ('A1', '2014-2025', 'Two races on one weekend (double-headers).'),
+  ('B4', '2023-2025', 'Manufacturers title from the best two cars of each make.'),
+  ('B5', '2024-2025', 'Pit Boost: a mandatory charging stop.'),
+ ],
  'BTCC': [
   ('B4', '1958-1990', 'Classes by engine size, the title from class points.'),
   ('A1', '2000-2003', 'Two races per meeting.'),
@@ -191,6 +217,8 @@ SPANS = {
     'BTCC': '1958-2026',
     'NASCAR': '1949-2026',
     'Super GT': '1993-2026',
+    'IMSA': '1971-2026',
+    'Formula E': '2014-2025',
 }
 
 NOTES = {
@@ -201,6 +229,8 @@ NOTES = {
     'BTCC': 'British Saloon Car Championship, BTCC from 1987.',
     'NASCAR': 'NASCAR Cup Series, rated as an oval pack: stages, chase, charters, free pass and green-white-checker exist there.',
     'Super GT': 'JGTC 1993 to 2004, Super GT from 2005.',
+    'IMSA': 'IMSA GT 1971 to 1998, ALMS 1999 to 2013, WeatherTech from 2014, as one row.',
+    'Formula E': 'Seasons by their start year: 2014 is the 2014-15 season.',
 }
 
 
@@ -223,6 +253,94 @@ def dtm_needs():
     return out
 
 
+# History files: series key from the file name prefix.
+PREFIX = {'f1': 'F1', 'dtm': 'DTM', 'indycar': 'IndyCar', 'wec': 'Endurance', 'btcc': 'BTCC',
+          'nascar': 'NASCAR', 'supergt': 'Super GT', 'imsa': 'IMSA', 'fe': 'Formula E'}
+
+
+def year_span(cell):
+    """Years a table row covers, from its first cell ('1950 to 1953', '1970s to 1992',
+    '2005, rounds 1 to 6', 'Since 1939', '2014-15 to 2017-18'). None if unknown."""
+    t = cell.replace('(?)', '').strip()
+    ys = [int(x) for x in re.findall(r'\b(1[89]\d\d|20\d\d)(?=s\b|\b|-\d\d)', t)]
+    if not ys:
+        return None
+    a, b = ys[0], ys[-1]
+    if re.search(r'\b(1[89]\d0|20\d0)s$', t):
+        b = int(re.findall(r'(\d{4})s$', t)[0]) + 9
+    if t.lower().startswith('since'):
+        b = 2026
+    return [a, b]
+
+
+def md_tables(text):
+    """Every Markdown table before '## Sources', with the '## ' heading above it."""
+    out, heading, rows = [], '', None
+    for line in text.split('\n') + ['']:
+        if line.startswith('## Sources'):
+            break
+        if line.startswith('|'):
+            cells = [c.strip() for c in line.strip().strip('|').split('|')]
+            rows = rows or []
+            if not all(set(c) <= set('-: ') for c in cells):
+                rows.append(cells)
+            continue
+        if rows:
+            out.append({'heading': heading, 'head': rows[0], 'rows': rows[1:]})
+        rows = None
+        if line.startswith('## '):
+            heading = line[3:].strip()
+    return out
+
+
+def history():
+    """All docs/history topic files, grouped by series, in file order.
+    Rows of the main table carry their year span as a first element."""
+    hdir = os.path.join(ROOT, 'docs', 'history')
+    out = {}
+    for f in sorted(os.listdir(hdir)):
+        pre = f.split('-')[0]
+        if not f.endswith('.md') or pre not in PREFIX:
+            continue
+        text = open(os.path.join(hdir, f), encoding='utf-8').read()
+        title = next(l[2:].strip() for l in text.split('\n') if l.startswith('# '))
+        tables = md_tables(text)
+        for t in tables:
+            if t['heading'] == 'Table':
+                t['spans'] = [year_span(r[0]) for r in t['rows']]
+        sources = text.split('## Sources', 1)[1].split('## Discord post')[0].strip() if '## Sources' in text else ''
+        out.setdefault(PREFIX[pre], []).append({'file': f, 'title': title, 'tables': tables, 'sources': sources})
+    for v in out.values():
+        v.sort(key=topic_rank)
+    return out
+
+
+def topic_rank(t):
+    """Reading order: where the file is first linked in docs/history/README.md."""
+    index = open(os.path.join(ROOT, 'docs', 'history', 'README.md'), encoding='utf-8').read()
+    pos = index.find('(' + t['file'] + ')')
+    return pos if pos >= 0 else len(index)
+
+
+def dtm_rulebook():
+    """Every DTM rulebook row per season: category, status, rule, game, lever."""
+    cats = {'Q': 'Qualifying', 'R': 'Race', 'P': 'Pits and tyres', 'PT': 'Points', 'BL': 'Balance'}
+    out, cur = {}, None
+    for line in open(os.path.join(ROOT, 'docs', 'dtm_rules.html'), encoding='utf-8').read().split('\n'):
+        m = re.match(r'\{y:"(\d{4})"', line)
+        if m:
+            cur = int(m.group(1))
+            out.setdefault(cur, [])
+            continue
+        m2 = re.match(r' \[(\w+),"(\w+)","((?:[^"\\]|\\.)*)","((?:[^"\\]|\\.)*)"', line)
+        if cur and m2:
+            g = re.findall(r'"([A-D]\d+)"\]', line)
+            clean = lambda x: re.sub(r'<[^>]+>', '', x).replace('\\"', '"')
+            out[cur].append([cats.get(m2.group(1), m2.group(1)), m2.group(2), clean(m2.group(3)),
+                             clean(m2.group(4)), g[0] if g else ''])
+    return out
+
+
 def build():
     seasons = {}
     for series, span in SPANS.items():
@@ -239,6 +357,8 @@ def build():
     return {
         'levers': [{'id': k, 'label': v[0], 'package': v[1], 'today': v[2], 'about': v[3]} for k, v in LEVERS.items()],
         'packages': PACKAGES,
+        'history': history(),
+        'dtm_rulebook': {str(k): v for k, v in dtm_rulebook().items()},
         'series': [{'name': s, 'note': NOTES[s],
                     'seasons': [{'y': y, 'needs': {k: v for k, v in sorted(n.items())}}
                                 for y, n in sorted(seasons[s].items())]}

@@ -2,7 +2,8 @@
 
 How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026), IndyCar
 (1979 to 2026), endurance racing (1953 to 2026), the BTCC (1958 to 2026),
-NASCAR (1949 to 2026) and Super GT (1993 to 2026) changed,
+NASCAR (1949 to 2026), Super GT (1993 to 2026), IMSA (1971 to 2026) and
+Formula E (2014 to 2026) changed,
 one topic per file. Each file has a table, its sources, and a Discord post
 that is ready to paste. The table image for Discord is in
 `docs/packages/img/png/<file name>.png`.
@@ -20,20 +21,30 @@ Sources in each file, before posting.
 Every file ends with an **In the game today** table: for each rule,
 whether Team Principal (0.99.5 and the 0.99.6 beta) can do it (`Yes`), only
 with a stand-in (`Partly`) or not at all (`No`), with the item in
-`docs/DEVELOPER_WISHLIST.md`. Over all 33 files: 78 yes, 52 partly,
-120 no. Checked against the 0.99.6 beta game code.
+`docs/DEVELOPER_WISHLIST.md`. Over all 37 files: 83 yes, 57 partly,
+139 no. Checked against the 0.99.6 beta game code.
 
 Status: `draft` (not posted yet), `posted` (add the date and link),
 `answered`.
 
 ## Coverage explorer
 
-[coverage.html](coverage.html) shows, for every season of the seven series,
-which game features it needs (401 seasons), and how many seasons become playable as they
-were when you switch features on. Published as an artifact:
-https://claude.ai/artifact/W9A1EGxwUBCjp6AQSVXM3Z (add `#share` for the
-screenshot view). Rebuild with `python -I tools/coverage_data.py` after
-changing `tools/coverage_data.py` or `tools/coverage_template.html`.
+[coverage.html](coverage.html) is one self-contained page with three views:
+
+- **Coverage:** which game features each of the 469 seasons of the nine
+  series needs, and how many seasons become playable as they were when you
+  switch features on.
+- **Rules history:** every table below, per series, with what the game can
+  do today.
+- **A page per series:** a gap matrix like `docs/dtm_rules.html`, and every
+  season with its needs, its rules from the tables and, for DTM, the full
+  rulebook rows.
+
+Published as an artifact: https://claude.ai/artifact/W9A1EGxwUBCjp6AQSVXM3Z.
+Links to a view: `#share` (screenshot view), `#rules-f1`, `#dtm` and so on.
+The page rebuilds itself from these Markdown files: run
+`python -I tools/coverage_data.py` after changing a history file,
+`tools/coverage_data.py` or `tools/coverage_template.html`.
 
 ## F1, 1950 to 2026
 
@@ -114,6 +125,22 @@ the free pass and green-white-checker.
 |---|---|---|---|---|---|
 | 1 | Classes, balancing and tyres | [supergt-classes-balancing.md](supergt-classes-balancing.md) | 1,031 | 1 | draft |
 | 2 | Race format, drivers and points | [supergt-race-format-points.md](supergt-race-format-points.md) | 1,024 | 6 | draft |
+
+## IMSA, 1971 to 2026
+
+IMSA GT 1971 to 1998, ALMS 1999 to 2013, WeatherTech from 2014.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Classes and balancing | [imsa-classes-bop.md](imsa-classes-bop.md) | 962 | 5 | draft |
+| 2 | Race format, drivers and points | [imsa-race-format-points.md](imsa-race-format-points.md) | 1,029 | 5 | draft |
+
+## Formula E, 2014-15 to 2026-27
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Cars, energy and boosts | [fe-cars-energy.md](fe-cars-energy.md) | 1,037 | 1 | draft |
+| 2 | Race format, qualifying and points | [fe-race-format-points.md](fe-race-format-points.md) | 1,172 | 2 | draft |
 
 ## Worth checking first
 
