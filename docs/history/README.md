@@ -26,6 +26,15 @@ with a stand-in (`Partly`) or not at all (`No`), with the item in
 Status: `draft` (not posted yet), `posted` (add the date and link),
 `answered`.
 
+## Coverage explorer
+
+[coverage.html](coverage.html) shows, for every season of the five series,
+which game features it needs, and how many seasons become playable as they
+were when you switch features on. Published as an artifact:
+https://claude.ai/artifact/W9A1EGxwUBCjp6AQSVXM3Z (add `#share` for the
+screenshot view). Rebuild with `python -I tools/coverage_data.py` after
+changing `tools/coverage_data.py` or `tools/coverage_template.html`.
+
 ## F1, 1950 to 2026
 
 | # | Topic | File | Post length | Open | Status |
