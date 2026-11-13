@@ -14,14 +14,14 @@ conflicting. No DTM ran from 1997 to 1999.
 | Years | Races per round | Length | Start | Overtaking aids and race control |
 |---|---|---|---|---|
 | 1984 to 1987 | Mostly one race. Some rounds ran two heats with half points each (AVUS, Nürburgring, Hockenheim 1984, Erding and Diepholz 1985). | About 100 to 114 km. | Standing. | Zolder 1986: red flag, restart, result on aggregate. |
-| 1988 to 1992 | Two races or heats, about 15 minutes apart. | About 100 km each. | Standing (?). Heat 2 grid from the heat 1 order. | |
-| 1993 to 1996 | Two heats. | 95 to 104 km each. | Standing (?). | 1995: heats 30 minutes apart, 22 minutes for repairs. |
+| 1988 to 1992 | Two races or heats, about 15 minutes apart. | About 100 km each. | Not confirmed (?). Heat 2 grid from the heat 1 order. | |
+| 1993 to 1996 | Two heats. | 95 to 104 km each. | Not confirmed (?). | 1995: heats 30 minutes apart, 22 minutes for repairs (?). |
 | 2000 | Two races, equal points. | About 100 km or 40 minutes. | Rolling. | |
 | 2001 | Qualifying race plus main race. | 30 to 35 km, then about 100 km. | Rolling. | |
 | 2002 | Qualifying race plus main race. | Same. | Standing again. | |
 | 2003 to 2011 | One race. | About one hour, 150 to 200 km. | Standing. | 2007: pit stops limited under the safety car. 2010 and 2011: time limit, wet Brands Hatch 2011 stopped at 88 of 98 laps. |
 | 2012 | One race. | Set per track. | Standing. | |
-| 2013 | One race. | Set per track. Wet Nürburgring and the Hockenheim final limited to 75 minutes. | Standing. | DRS once per lap anywhere on track, within 2 s, race only, not in the first or last 3 laps. |
+| 2013 | One race. | Set per track. Wet Nürburgring and the Hockenheim final limited to 75 minutes (?). | Standing. | DRS once per lap anywhere on track, within 2 s, race only, not in the first or last 3 laps. |
 | 2014 | One race. | Set per track. | Standing. | DRS now to the end of the race. |
 | 2015 | Two races. | Saturday 40 min, Sunday 60 min, each plus one lap. | Standing. | DRS up to 3 times per lap, within 1 s. |
 | 2016 | Two races. | Same. | Standing. | DRS from lap 2 within 1 s, a number of uses per race by track length. |
@@ -55,13 +55,28 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
   `docs/dtm_rules.html`.
 - Gaps: heat 2 grids in 1984 and 1985, race lengths per track 2012 to
-  2014. Standing starts from 1988 to 1996 are not confirmed, marked `(?)`.
+  2014. The start type from 1988 to 1996 is not confirmed, marked `(?)`.
+  Bernd Schneider (DTM and ITC 1992 to 1996) said before the 2002 opener
+  that he had not done a standing start for more than ten years (crash.net
+  2002 Hockenheim preview). That points to rolling starts from 1992, but no
+  rule or race report was found.
 - Fact check: de.wikipedia DTM-Saison 2021 (rolling start in 2000 and
   2001, standing from 2002 to 2020), 2001, 2002, 2007 (stops limited under
   the safety car), 2019, 2023 and 2025. Brands Hatch 2011: Mercedes-Benz
   race report (88 laps). DRS 2013: touringcartimes. DRS 2015: crash.net and
   Autosport say within 1 s, an early touringcartimes report says 2 s.
   DRS 2016: Autosport.
+- Confirmation round: touringcarracing.net 1986 Zolder (red flag, restart),
+  1987 Hockenheim test event (two heats 15 minutes apart for 1988), 1988
+  Zolder (race 2 grid from the race 1 order, no refuelling between races).
+  en.wikipedia 2000 (two races, 40 minutes or 100 km, equal points) and
+  1996 ITC (race 2 grid from race 1). de.wikipedia 2001 (rolling start,
+  qualifying race about 35 km), 2002 (standing start), 2003, 2015 (40 and
+  60 min), 2016 (DRS), 2019, 2020 (en: +60 hp, DRS free), 2023 and 2025.
+  Motorsportweek Oct 2020 (two-by-two rolling start, ABS, traction control).
+  Autosport 2013 (DRS within 2 s, once per lap). Autosport and Autobild
+  2014 (DRS to the end). Red Bull Ring 2025 guide (55 min plus one lap,
+  penalty lap). Not found: the 1995 heat gap and the 75 minute limit in 2013.
 
 ## Discord post
 

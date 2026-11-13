@@ -19,7 +19,7 @@ before you rely on it.
 | 1967 to 1980 | 9-6-4-3-2-1 | None | Split season: best N from the first half plus best N from the second half (e.g. 1967: 5 of the first 6, 4 of the last 5) | Best car only until 1978. All cars from 1979. | The split changes every year with the calendar. 1975 Spain: first half points race, Lella Lombardi scored 0.5, still the only woman to score. |
 | 1981 to 1990 | 9-6-4-3-2-1 | None | Best 10 (1981), best 11 (1982 to 1990) | All cars | 1988: Prost scored 105 points, Senna 94. Only 11 results counted: Senna 90, Prost 87. Senna was champion. |
 | 1991 to 2002 | 10-6-4-3-2-1 | None | All results | All cars | A win is worth more than before. Australia 1991: 14 laps in the rain, half points. |
-| 2003 to 2009 | 10-8-6-5-4-3-2-1 (top 8) | None | All results | All cars | Second place gets closer to a win, so titles stay open longer. 2009: a medal system (most wins takes the title) was announced and then dropped. Malaysia 2009: half points. |
+| 2003 to 2009 | 10-8-6-5-4-3-2-1 (top 8) | None | All results | All cars | Second place gets closer to a win, so titles stay open longer. 2009: a rule that the driver with most wins takes the title was announced and then dropped before the first race. Malaysia 2009: half points. |
 | 2010 to 2018 | 25-18-15-12-10-8-6-4-2-1 (top 10) | None | All results | All cars | 2014: double points at the last race, Abu Dhabi. Used once. |
 | 2019 to 2020 | 25 to 1, top 10 | Fastest lap 1, only if in the top 10 | All results | Fastest lap point counts for the team too | Teams pit late for fresh tyres just for the point. |
 | 2021 | 25 to 1, top 10 | Fastest lap 1. Sprint 3-2-1. | All results | All cars | Spa 2021: no racing laps behind the safety car, still half points for the top 10. |
@@ -31,7 +31,7 @@ before you rely on it.
 | Years | Distance done | Points |
 |---|---|---|
 | 1975 to 1976 | under 30% / 30 to 60% / over 60% | none / half / full |
-| 1980 to 2021 | under 2 laps / 2 laps to 75% / over 75% | none / half / full |
+| 1977 (?) to 2021 | under 2 laps / 2 laps to 75% / over 75% | none / half / full |
 | 2022 on | under 2 laps | none |
 | 2022 on | 2 laps to 25% | top 5: 6-4-3-2-1 |
 | 2022 on | 25 to 50% | top 9: 13-10-8-6-5-4-3-2-1 |
@@ -75,7 +75,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Points systems page: half points from Spain 1975, under 2 laps rule
   "believed" from 1977 to 1980, fastest lap point for drivers and
   constructors in the top 10.
-- Tie-break and 2009 medal plan from general knowledge, not looked up.
+- Confirmation round: points systems page again (1975 to 1976 scale, two
+  laps rule "c. 1977", 2022 and 2023 scales, 1981 best 10), Wikipedia
+  "1981 Formula One season" (best ten results), "1958 German Grand Prix"
+  (F2 cars no points). Tie-break by wins, then 2nd places: 2026 sporting
+  regulations mirror, racingnews365.com, gpfans.com. 2009 most wins rule,
+  then deferred: autosport.com, autocar.co.uk.
 
 ## Discord post
 

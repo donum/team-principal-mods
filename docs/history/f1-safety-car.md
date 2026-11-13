@@ -12,17 +12,17 @@ before you rely on it.
 
 | Years | Safety car | Lapped cars and restarts | VSC and red flag | Quirks |
 |---|---|---|---|---|
-| 1950 to 1972 | None. Yellow flags only: slow down, no overtaking at that spot. | | Red flag stops the race (?). | A crash is cleared while the race goes on. |
-| 1973 to 1991 | Canada 1973: first safety car, a Porsche 914. Then only now and then, e.g. a Lamborghini Countach at Monaco 1981 to 1983. | | Red flag, restart, result on both parts added up. | Canada 1973: the safety car picked up the wrong car as leader. Part of the field lost a lap, and it took hours to find the winner. |
+| 1950 to 1972 | None. Yellow flags only: slow down, no overtaking at that spot. | | Red flag very rare. First stopped championship race: Canada 1971, mist, not restarted. | A crash is cleared while the race goes on. |
+| 1973 to 1991 | Canada 1973: first safety car, a Porsche 914. Then only now and then, e.g. a Lamborghini Countach at Monaco 1981 to 1983. | | Red flag, restart. After the first laps: result on both parts added up. | Canada 1973: the safety car picked up the wrong car as leader. Part of the field lost a lap, and it took hours to find the winner. |
 | 1992 to 1995 | Trials in France and Britain 1992. Official from 1993. A different car per season and track. | | | Imola 1994: the Opel Vectra was too slow to keep tyres warm and its brakes faded. Hungary 1995: the safety car hit Inoue, who was helping marshals. |
 | 1996 to 2006 | Mercedes from 1996. Bernd Mayländer drives it from 2000. | Lapped cars stay where they are. | | The safety car bunches the field, a free gap for anyone who stops. |
-| 2007 to 2008 | Pit lane closed as soon as the safety car comes out. Entering early: 10 s stop-go. Yellow light in the cockpit (?). | Lapped cars may move up a lap before the restart. | | Singapore 2008: Piquet crashed on purpose just after Alonso's early stop, to make a safety car help him. |
+| 2007 to 2008 | Pit lane closed as soon as the safety car comes out. Entering early: 10 s stop-go. Cockpit warning lights from 2007. | Lapped cars may move up a lap before the restart. | | Singapore 2008: Piquet crashed on purpose just after Alonso's early stop, to make a safety car help him. |
 | 2009 | Pit lane open again. Software sets a minimum lap time to the pits, so nobody races in. | Same. | | Red light at pit exit while the safety car passes. Passing it once meant disqualification (Montoya 2005, Fisichella and Massa 2007). |
 | 2010 to 2011 | Same. | Lapped cars may not unlap. | | Canada 2011: a red flag for rain made it the longest race, about 4 hours. |
 | 2012 to 2014 | Same. | Lapped cars may unlap again. The safety car waits until they have caught up. | | Restarts take several laps. |
 | 2015 to 2020 | Same. Mercedes AMG GT. | The safety car no longer waits for the lapped cars to catch up. | Virtual safety car from 2015, after Bianchi's crash at Suzuka 2014: everyone slows by about 35% and keeps a positive delta. First use: Monaco 2015. Standing restart after a red flag in the rules from mid 2018, first used at Monza 2020. | Mugello 2020: the leader went slow until late at a restart, cars behind crashed. |
 | 2021 | Aston Martin and Mercedes share the job. | Abu Dhabi: only the five lapped cars between Hamilton and Verstappen were let through, and the safety car came in a lap early. Verstappen passed on the last lap and won the title. | Spa: two laps behind the safety car, red flag on lap 3. Result after lap 1, half points. | The rule said "any" lapped cars. Was that all of them or only some? The FIA said later it was open to both readings. |
-| 2022 to 2026 | Same. | All lapped cars must unlap, a list on screen tells them. The safety car comes in one lap after the message. | Free tyre change and repairs under a red flag. | Japan 2022: a recovery crane was on track under the safety car in the rain. Australia 2023: three red flags, the race ended behind the safety car with the order from before the last restart. Monza 2024: the safety car crashed on Thursday. |
+| 2022 to 2026 | Same to 2025. Mercedes alone from 2026. | All lapped cars must unlap, a list on screen tells them. The safety car comes in one lap after the message. | Free tyre change and repairs under a red flag. | Japan 2022: a recovery crane was on track under the safety car in the rain. Australia 2023: three red flags, the race ended behind the safety car with the order from before the last restart. Monza 2024: the safety car crashed on Thursday. |
 
 ## Safety car or red flag?
 
@@ -37,7 +37,9 @@ before you rely on it.
 ## Rules across all years
 
 - Double waved yellow: be ready to stop, no overtaking.
-- Under the safety car nobody may overtake, until the first safety car line.
+- Under the safety car nobody may overtake. At the restart, passing was
+  allowed from the first safety car line, now only from the control line
+  (changed in 2019 (?)).
 - The leader's lap decides when a lapped car is "lapped".
 
 ## In the game today
@@ -67,7 +69,16 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   aggregate: 1981 and 1992 French GP.
 - Canada 2011, Mugello 2020, Japan 2022, Australia 2023 from general
   knowledge.
-- Not confirmed, marked `(?)`: red flags before 1973, the cockpit light.
+- Confirmation round: "Safety car" (Mercedes and Aston Martin 2021 to
+  2025), autosport.com, motorsport.com, the-race.com (Mercedes alone from
+  2026). Wikipedia "1971 Canadian Grand Prix" (first red flag), "2021
+  Belgian Grand Prix" (laps 1 and 2 behind the safety car, red flag on lap
+  3). Restart line moved to the control line: motorsport.com (Mugello 2020,
+  "a few years ago"); the year 2019 from one search summary only.
+- Open items check: "List of red-flagged Formula One races" and
+  formulaonehistory.com (Canada 1971 the first). Cockpit lights from 2007:
+  Wikipedia "2007 Formula One World Championship", autoracing1.com
+  (2007 rules).
 
 ## Discord post
 

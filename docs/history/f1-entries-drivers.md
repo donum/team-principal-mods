@@ -15,8 +15,8 @@ before you rely on it.
 |---|---|---|---|---|
 | 1950 to 1962 | No limit on cars per team. Works teams and privateers with bought cars side by side. Indy 500 entries count, F2 cars sometimes in the same race. | No licence. Two drivers can share one car and split the points (to 1957). | Set by each race organiser, a car can change number every race. | Rob Walker, a privateer, gave Cooper and Lotus their first wins. |
 | 1963 to 1972 | Usually two cars per team, a third for a guest driver. | No licence. | Still set per race. | BRM entered more than three cars in 1971 and 1972. |
-| 1973 to 1980 | Two cars normal, a third now and then. Privateers still buy cars from Lotus, Brabham and others. | No licence. | From 1974: fixed numbers per team for the whole season. Champion gets 1 and 2, the rest by last year's constructors' standings. | Tyrrell kept 3 and 4 for over 20 years, Ferrari had 27 and 28 from 1981. Reutemann drove a third Ferrari at Monza 1976, when Lauda came back. |
-| 1981 to 1984 | From 1981 every team must own the design of its own chassis. Spain 1981: the last privateer next to a works team. | Super licence from 1982. Drivers struck at Kyalami 1982 over the licence terms. | Fixed team numbers. | Privateers won 20 races, the last in 1970. |
+| 1973 to 1980 | Two cars normal, a third now and then. Privateers still buy cars from Lotus, Brabham and others. | No licence. | From 1974: fixed numbers per team. Champion gets 1 and 2, the others first by the 1973 constructors' standings, then each team keeps its numbers. | Tyrrell kept 3 and 4 for over 20 years, Ferrari had 27 and 28 from 1981. Reutemann drove a third Ferrari at Monza 1976, when Lauda came back. |
+| 1981 to 1984 | From 1981 every team must own the design of its own chassis. Spain 1981: the last privateer next to a works team. | FISA super licence from 1981. Drivers struck at Kyalami 1982 over new licence terms. | Fixed team numbers. | Privateers won about 20 races. Last true privateer win: Siffert in Rob Walker's Lotus, Britain 1968. Tyrrell won with a bought March in 1970. |
 | 1985 to 1995 | At most two cars per team from 1985. Renault's third car in Germany 1985 was the last. Up to 39 entries, pre-qualifying (to 1992). | Super licence. | Fixed team numbers. | Damon Hill raced as number 0 in 1993 and 1994, the champion had left the team. |
 | 1996 to 2013 | Two cars per team. Grid of 20 to 24 cars. | Super licence. Test and reserve drivers in Friday practice. | New numbers each year by last year's constructors' standings. Champion's team keeps 1 and 2. No 13. | Customer cars stay banned. Super Aguri and Toro Rosso ran cars close to Honda and Red Bull designs, which led to disputes. |
 | 2014 to 2021 | Two cars per team. 10 or 11 teams. | Penalty points from 2014: 12 in 12 months means a one-race ban. Changed after 2015: points system for the licence, at least 18 years old, 40 points over three seasons. | Each driver picks a number for the career, 2 to 99. Number 1 only for the champion. | Verstappen started at 17 in 2015, the reason for the age limit. Number 17 retired for Bianchi. |
@@ -58,9 +58,21 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   super licence rules), "Privateer (motorsport)" (20 wins, the last in
   1970, Spain 1981), "List of Formula One driver numbers" (Ferrari 27
   and 28). Williams F1 and Autosport (rookie FP1 count).
-- Conflict: the super licence page says 1984, the 1982 race page shows
-  it already existed in 1982. The privateer win table is unsourced on
-  Wikipedia. Some count 1968 (Siffert) as the last true privateer win.
+- Open items check: Motor Sport, March 1982, RacingNews365 and
+  Grandprix247 (the super licence form drivers refused to sign in 1982).
+  The 1984 date on the Wikipedia super licence page is not followed.
+- Super licence start: FIA Bulletin 152, October 1980 (1981 F1 World
+  Championship rules: all drivers must hold the FISA Super-licence) and
+  FIA Bulletin 154, December 1980 (Sporting Code Article 47). Motor Sport,
+  March 1982 and February 1999 (the licence already existed, the form
+  for 1982 was new). Forix 8W (the 1982 form tied a driver to his team).
+- Wikipedia "List of Formula One driver numbers" (1974 system, teams keep
+  their numbers, Tyrrell 3 and 4 to 1995).
+  Wikipedia "Rob Walker Racing Team" and "1968 British Grand Prix",
+  Motor Sport, May 2000 (Siffert 1968 the last true privateer win,
+  Tyrrell's March 1970 the exception).
+- Not settled: the exact number of privateer wins, the Wikipedia table
+  is unsourced.
 
 ## Discord post
 
@@ -69,9 +81,9 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 Part eleven of the rules history. The table is below. What stood out to me:
 
-- **Until 1981 anyone could buy a car and enter.** Privateers like Rob Walker raced next to the works teams and won 20 races. Since 1981 each team must own its chassis design.
+- **Until 1981 anyone could buy a car and enter.** Privateers like Rob Walker raced next to the works teams and won about 20 races. Since 1981 each team must own its chassis design.
 - **Cars per team:** no limit in the 1950s, usually two plus a guest car in the 1960s and 1970s, at most two since 1985.
-- **Super licence from 1982.** Since 2015 with an age limit (18) and points from junior series, after Verstappen started at 17. Penalty points since 2014: 12 means a race ban.
+- **Super licence from 1981.** Since 2015 with an age limit (18) and points from junior series, after Verstappen started at 17. Penalty points since 2014: 12 means a race ban.
 - **Numbers:** set per race until 1973, fixed per team from 1974, by standings from 1996, and since 2014 each driver picks one for the career.
 - **Rookies in FP1:** since 2022 each team must give young drivers a few Friday sessions.
 

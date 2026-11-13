@@ -14,15 +14,15 @@ before you rely on it.
 
 | Years | Practice | Qualifying and race days | Races per season | Quirks |
 |---|---|---|---|---|
-| 1950 to 1959 | Practice over two or three days, the fastest lap sets the grid (?). | Race on Sunday, some on other days (?). | 7 to 11. Indianapolis counts until 1960. | Few races, most in Europe. |
-| 1960 to 1969 | Practice sessions, some untimed (?). | | 8 to 12. | |
-| 1970 to 1979 | Untimed practice plus timed qualifying on Friday and Saturday (?). Sunday morning warm-up (?). | Monaco: practice on Thursday, Friday off (?). | 11 to 17. | More races outside Europe: South Africa, Brazil, Argentina, USA, Canada, Japan. |
-| 1980 to 1995 | Free practice Friday and Saturday morning, qualifying in the afternoon. Warm-up on Sunday morning (?). | South Africa 1985: the last race on a Saturday for almost 40 years. | 14 to 17, mostly 16. | A 16-race season for about ten years. |
-| 1996 to 2002 | Two free practice sessions Friday, two Saturday morning (?). Warm-up on Sunday until 2002 (?). | Qualifying Saturday, race Sunday. | 16 to 17. | |
+| 1950 to 1959 | Practice on one to three days, the fastest lap sets the grid. | Most races on Sunday, some on Saturday (Britain 1950). | 7 to 11. Indianapolis counts until 1960. | Few races, most in Europe. |
+| 1960 to 1969 | Practice over two or three days, every session timed and counted. | | 8 to 12. | |
+| 1970 to 1979 | Timed practice over two or three days. By 1980: untimed practice in the morning, timed qualifying in the afternoon, Friday and Saturday. | Monaco: practice starts on Thursday. | 11 to 17. | More races outside Europe: South Africa, Brazil, Argentina, USA, Canada, Japan. |
+| 1980 to 1995 | Free practice Friday and Saturday morning, qualifying in the afternoon. Warm-up on Sunday morning. | South Africa 1985: the last race on a Saturday for almost 40 years. | 14 to 17, mostly 16. | A 16-race season for about ten years. |
+| 1996 to 2002 | Two free practice sessions Friday, two of 45 minutes Saturday morning. Warm-up on Sunday until 2002. | Qualifying Saturday, race Sunday. | 16 to 17. | |
 | 2003 to 2005 | Friday practice, some teams run a third car on Friday (from 2004). | Qualifying on Friday and Saturday (2003), Saturday and Sunday morning (2005, first six races). | 16 to 19. | Asia and the Middle East join: Malaysia 1999, Bahrain and China 2004. |
-| 2006 to 2020 | Three sessions: FP1 and FP2 on Friday, 90 minutes each, FP3 on Saturday, 60 minutes. | Qualifying Saturday, race Sunday. Monaco: practice Thursday. | 17 to 21. 2020: 17 races after the pandemic changes. | Singapore 2008: first night race. Overnight curfews for team staff (?). 2020: two races in a row at the same track. |
+| 2006 to 2020 | Three sessions: FP1 and FP2 on Friday, 60 minutes each in 2006, 90 minutes from 2007. FP3 on Saturday, 60 minutes. | Qualifying Saturday, race Sunday. Monaco: practice Thursday. | 17 to 21. 2020: 17 races after the pandemic changes. | Singapore 2008: first night race. Overnight curfews for team staff from 2011. 2020: two races in a row at the same track. |
 | 2021 to 2022 | All three sessions 60 minutes. Sprint weekends: one session. | Monaco moves to the normal Friday start after 2021. | 22. | Sprint weekends change Friday and Saturday. |
-| 2023 to 2026 | Same. 2024: sprint weekends with one practice on Friday morning. | Las Vegas races on Saturday night (from 2023). | 22 to 24. 2026: 22, Bahrain and Saudi Arabia cancelled. | Three races in a row (triple-headers) happen often (?). FIA minimum: 8 races. |
+| 2023 to 2026 | Same. 2024: sprint weekends with one practice on Friday morning. | Las Vegas races on Saturday night (from 2023). | 22 to 24. 2026: 22, Bahrain and Saudi Arabia cancelled. | Three races in a row (triple-headers): two planned in 2023 (one run after Imola was cancelled), three in 2024. The first was in 2018. FIA minimum: 8 races. |
 
 ## Races per season
 
@@ -58,8 +58,24 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   minimum).
 - ESPN, Sky Sports, Autosport, March 2026 (Bahrain and Saudi Arabia
   cancelled, 22 races, no replacements).
-- Not confirmed, marked `(?)`: practice formats before 2006, the Sunday
-  warm-up, curfews, triple-headers.
+- Open items check: Wikipedia "1950 British Grand Prix" (qualifying on
+  Friday, race on Saturday). Motor Sport race database (1954 Belgian GP:
+  practice Friday and Saturday; 1970 Monaco: Thursday, Friday and
+  Saturday, all times count). Motor Sport, September 2004, Roebuck
+  (early 1970s: every session timed). Motor Sport 1980 race reports
+  (untimed morning, timed afternoon hour). Autosport warm-up reports
+  and "In praise of morning warm-up", Atlas F1 2003 preview (no Sunday
+  warm-up from 2003). Atlas F1 and newsonf1 2001 reports (two Friday
+  sessions, Saturday sessions of 45 minutes). Autosport and Dawn, 2010
+  (curfew from 2011). Autosport, GPblog and motorsport.com
+  (triple-headers 2018, 2023, 2024).
+- Confirmation round: Autosport, WMSC 2007 rules and other 2006
+  reports (Friday sessions from one hour to 90 minutes for 2007).
+  Autosport and motorsport.com, 2017 (2018 France, Austria, Britain the
+  first triple-header). Top Gear and GPfans, 2023 (two planned
+  triple-headers, Imola cancelled). The Drive and The Race (three in
+  2024). Wikipedia "Test driver" and Autosport (third cars in Friday
+  practice from 2004).
 - Not found: summer break, a race limit in the Concorde Agreement, season
   start and end dates.
 - Note: in years with cancelled races, the list may count planned or held
@@ -73,7 +89,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 Part thirteen and the last one of the rules history. The table is below. What stood out to me:
 
 - **Races per season:** 7 in 1950, about 16 for most of the 1980s and 1990s, 24 in 2024 and 2025, 22 in 2026. The picture has every year.
-- **Practice:** for a long time free practice plus timed qualifying on Friday and Saturday, three sessions since 2006 (90, 90, 60 minutes), all 60 minutes since 2021, and only one on sprint weekends.
+- **Practice:** for a long time free practice plus timed qualifying on Friday and Saturday, three sessions since 2006 (90, 90, 60 minutes from 2007), all 60 minutes since 2021, and only one on sprint weekends.
 - **Monaco** practised on Thursday until 2021.
 - **Not always Sunday:** South Africa 1985 was the last Saturday race until Las Vegas in 2023, a Saturday night race.
 - **Night races** since Singapore 2008.

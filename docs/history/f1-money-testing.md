@@ -13,14 +13,14 @@ before you rely on it.
 
 | Years | Money | Spending limits | Testing | Quirks |
 |---|---|---|---|---|
-| 1950 to 1973 | Each race organiser pays teams to start: start money and prize money per race (?). | None. | Free: test whenever and wherever you want. | Teams deal with every organiser on their own (?). |
+| 1950 to 1973 | Each race organiser pays teams to start: start money and prize money per race. | None. | Free: test whenever and wherever you want. | At first each team deals with each organiser. From 1964 the teams' association (F1CA) bargains for them, from 1973 Ecclestone signs the deals. |
 | 1974 to 1980 | FOCA founded in 1974 to sell the teams as one package. Ecclestone runs it from 1978. | None. | Free. | Fights between FOCA and the governing body (FISA) about rules and money. |
-| 1981 to 1996 | Concorde Agreement 1981: FOCA gets the TV rights, teams must start at every race. 1987: Ecclestone's company sells the TV rights and pays the prize money. | None. | Free. Big teams have their own test teams and tracks (?). | The TV money split changes with each Concorde Agreement (1987, 1992). |
-| 1997 to 2008 | New Concorde Agreements (1997, 1998), extensions to 2012. Commercial rights sold on, CVC from 2006. | None. | Free, but limited km or days by agreement in later years (?). | Teams test more km than they race. Ferrari has its own test tracks. |
-| 2009 to 2013 | Concorde Agreement 2009. | A cap for 2010 was planned and dropped. Resource Restriction Agreement between the teams instead (2009), no money limit. | In-season testing banned. Wind tunnel time cut. Only pre-season tests. 2012: one in-season test at Mugello. | Teams use straight-line "filming days" and simulators instead (?). Mugello 2012: teams said the test cost more than it helped. |
-| 2014 to 2020 | Deals per team (2013), Liberty Media buys F1 in 2017. | None. | Two-day tests after some races (from 2014). End-of-season young driver test dropped (?). Pre-season 8 days in 2019. | Small teams can't afford to test, big teams can. |
+| 1981 to 1996 | Concorde Agreement 1981: FOCA gets the TV rights, teams must start at every race. 1987: Ecclestone's company sells the TV rights and pays the prize money. | None. | Free. Ferrari tests at its own tracks: Fiorano (from 1972) and Mugello (from 1988). | The TV money split changes with each Concorde Agreement (1987, 1992). |
+| 1997 to 2008 | New Concorde Agreements (1997, 1998), extensions to 2012. Commercial rights sold on, CVC from 2006. | None. | Free until 2004. 2005: nine teams agree on 30 test days, Ferrari does not. 2007 and 2008: 30,000 km per team. | Teams test more km than they race. Ferrari has its own test tracks. |
+| 2009 to 2013 | Concorde Agreement 2009. | A cap for 2010 was planned and dropped. Resource Restriction Agreement between the teams instead (2009), no money limit. | In-season testing banned. Wind tunnel time cut. Only pre-season tests. 2012: one in-season test at Mugello. | Teams use straight-line aero tests and "filming days" instead. Mugello 2012: teams said the test cost more than it helped. |
+| 2014 to 2020 | Deals per team (2013), Liberty Media buys F1 in 2017. | None. | Two-day tests after some races (from 2014). These replace the young driver test. Pre-season 8 days in 2019. | Small teams can't afford to test, big teams can. |
 | 2021 to 2025 | Concorde Agreement 2021: new prize money split. A new team pays 200 million USD to the others. | Cost cap 145 million USD (2021), then lower (see below). Drivers, top three managers and marketing not counted. | Pre-season 3 days. Wind tunnel and CFD time by championship position: last place gets the most. From 2022: rookies must drive FP1 twice per team per season, four times from 2025. | 2021: Red Bull went slightly over the cap. Penalty: a 7 million USD fine and 10% less wind tunnel time for a year. |
-| 2026 | Concorde Agreement 2026 to 2030, signed by all 11 teams. Cadillac pays 450 million USD to join. | Cost cap 215 million USD, more costs now inside it. Engine makers: own cap, 130 million USD. | Three pre-season tests for the new cars, the first one private in Barcelona. | Williams missed the first test. |
+| 2026 | Concorde Agreement 2026 to 2030, signed by all 11 teams. Cadillac pays 450 million USD to join. | Cost cap 215 million USD, more costs now inside it. Engine makers: own cap, 190 million USD. | Three pre-season tests for the new cars, the first one private in Barcelona. | Williams missed the first test. |
 
 ## Cost cap by year
 
@@ -31,7 +31,7 @@ before you rely on it.
 | 2023 to 2025 | 135 million USD | plus race count and inflation adjustments |
 | 2026 | 215 million USD | more costs moved inside the cap |
 | Engines 2023 to 2025 | 95 million USD | |
-| Engines 2026 | 130 million USD | |
+| Engines 2026 | 190 million USD | from a maker's first race season, 148.5 million in the years before |
 
 ## In the game today
 
@@ -58,9 +58,29 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   dropped, Resource Restriction Agreement). Autosport and Motor Sport 2022
   (Red Bull fine and wind tunnel cut). Williams F1 and Autosport (rookie
   FP1 rule, two per team 2022 to 2024, four from 2025).
-- Not confirmed, marked `(?)`: start money, testing before 2009, filming
-  days, the end of the young driver test (it came back after Abu Dhabi
-  in later years).
+- Open items check: Motor Sport and Autosport (Ecclestone: start money
+  of about 1,000 GBP a car, agreed with each organiser), Forix 8W
+  timeline (F1CA 1964, organisers sign with Ecclestone for 1973).
+  Wikipedia "Fiorano Circuit" and "Mugello Circuit", Pirelli (Ferrari
+  tracks). Autosport 2005 (30-day deal, Ferrari out) and October 2006
+  (30,000 km for 2007), grandprix.com (30,000 km in the 2008 rules).
+  Autosport 2010 (straight-line aero days, Ferrari "filming" day at
+  Fiorano). Sky Sports and Autosport 2013 (the 2014 in-season tests
+  replace the young driver test). A post-season test in Abu Dhabi came
+  back in later years.
+- Confirmation round: Wikipedia "Concorde Agreement" (1981 TV rights and
+  start at every race, all agreement years, 200 million and 450 million
+  fees, 2026 to 2030 agreement signed by all 11 teams), Wikipedia
+  "Formula One Group" (FOCA 1974, Ecclestone chief executive 1978).
+- FIA 2026 Financial Regulations for Power Unit Manufacturers, Issue 5,
+  May 2026, Article E2.3 (190 million USD from a maker's first season,
+  148.5 million before). Formula1.com cost cap explainer (145, 140, 135
+  and 215 million; 190 million replaced the planned 130 million).
+  Motorsport.com and Sky Sports, July 2022 (3.1% raise for 2022).
+  Formula1.com and Racer, January 2026 (Williams missed the Barcelona
+  test).
+- Not settled: Forix says the F1CA was renamed FOCA in 1978, Wikipedia
+  dates FOCA to 1974.
 
 ## Discord post
 
@@ -71,7 +91,7 @@ Part ten of the rules history, the one closest to a manager game. The table is b
 
 - **Money first came from each race organiser.** From 1974 the teams sold themselves as one package (FOCA), from 1981 the TV rights were theirs. Every Concorde Agreement since then changed how the prize money is split.
 - **No spending limit until 2021.** A cap was planned for 2010 and dropped. Since 2021 there's a cost cap: 145 million USD, then lower, and 215 million from 2026 with more costs inside it. Engine makers have their own cap.
-- **Testing was free until 2008.** Then in-season testing was banned, wind tunnel time cut, and today there are only a few pre-season days.
+- **Testing was free until 2004.** Then limits by agreement (days, then km), from 2009 in-season testing was banned, wind tunnel time cut, and today there are only a few pre-season days.
 - **Wind tunnel time by championship position:** the last team gets the most.
 - **New teams pay to join:** 200 million USD (2021), Cadillac 450 million (2026).
 - **Rookies must drive in FP1** a few times per season (since 2022).

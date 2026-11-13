@@ -7,17 +7,17 @@ image is made with
 `python -I tools/history_table.py docs/history/indycar-qualifying-race.md`.
 
 `(?)` marks a detail that the sources we read did not confirm. The
-sources were thin for this topic, so many rows are marked.
+sources were thin for the early years.
 
 ## Table
 
 | Years | Road and street qualifying | Oval qualifying | Race | Quirks |
 |---|---|---|---|---|
-| 1979 to 1995 | Timed sessions on Friday and Saturday (?). | One car at a time, a few timed laps (?). | Rolling start behind the pace car. Laps or miles. | 1979: CART splits from USAC. The Indy 500 stays with USAC but pays CART points (1979, and from 1983; 1980 to 1982 (?)). |
-| 1996 to 2001 | Same (?). | One car at a time (?). | Rolling start. | 1996: the IRL starts, the Indy 500 reserves 25 of 33 places for IRL points leaders. |
+| 1979 to 1995 | Timed sessions, at some events in two groups (Miami 1985). Rules per year not found (?). | One car at a time. Michigan 1991: two timed laps. | Rolling start behind the pace car. Laps or miles. | 1979: CART splits from USAC. The Indy 500 stays with USAC. It pays CART points in 1979 and 1980, not in 1981 and 1982, and again from 1983. |
+| 1996 to 2001 | CART: a provisional session on Friday, the final session on Saturday. | IRL: one car at a time, two timed laps, the faster one counts. | Rolling start. | 1996: the IRL starts, the Indy 500 reserves 25 of 33 places for IRL points leaders. |
 | 2002 to 2003 | CART: qualifying in groups, a bonus point for the fastest in the slowest group. | | Rolling start. | |
 | 2004 to 2007 | Champ Car: qualifying in groups. | Few ovals left. | Timed races (all races in 2007), standing starts where safe (2007). | Champ Car became almost all road and street races. |
-| 2008 to 2021 | IndyCar: two groups, the top 6 of each go on, then a "Fast Six" for pole (from St. Petersburg 2008). | One car at a time, two laps averaged (?). | Rolling start. Double-file restarts from 2011 (at all tracks in 2011). | Texas 2011: two short races in one night. 2020: double-headers at Road America, Iowa, Gateway, Mid-Ohio and the Indianapolis road course. |
+| 2008 to 2021 | IndyCar: two groups, the top 6 of each go on, then a "Fast Six" for pole (from St. Petersburg 2008). | One car at a time, four laps averaged (2008), two laps averaged from Chicagoland 2010. | Rolling start. Double-file restarts from 2011 (at all tracks in 2011). | Texas 2011: two short races in one night. 2020: double-headers at Road America, Iowa, Gateway, Mid-Ohio and the Indianapolis road course. |
 | 2022 to 2026 | Same. | Same. | Rolling start. No green-white-checker: a race can finish under yellow. | Indianapolis can call a late red flag to get a green finish (used 2014, 2019, 2022, 2023, 2026). |
 
 ## Indianapolis 500 qualifying
@@ -61,19 +61,34 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   SCCA/CART season article (Indy 500 paid CART points in 1979 and 1983),
   2026 Indy 500 reports (late red flag), Champ Car points bonus for the
   slowest qualifying group (groups 2004 to 2007).
-- Not confirmed, marked `(?)`: road course qualifying before 2002, oval
-  run lengths, whether the Indy 500 paid CART points 1980 to 1982 (sources
-  conflict on 1981 and 1982).
+- Open items check: 1980 and 1981 Indianapolis 500 articles (CART points
+  in 1980, an invitational race without CART points in 1981 and 1982),
+  The Auto Channel 1999 (Mid-Ohio provisional pole on Friday, final
+  qualifying on Saturday), 1985 Beatrice Indy Challenge article (two
+  qualifying groups), 1991 Michigan 500 article (two qualifying laps),
+  motorsport.com, ESPN and Crash.net 1999 to 2002 (IRL pole on one lap,
+  "the first of two allowed laps"), 2006 Kansas Lottery Indy 300 article
+  (faster of two laps), Autosport 2010 (four laps averaged since 2008, two
+  from Chicagoland 2010), IndyCar rulebook 2026 (two laps, the total
+  counts), PlanetF1 and Sportskeeda (two-lap average).
+- Confirmation round: 1981, 1982 and 1983 CART season articles (Indy 500
+  non-championship in 1981 and 1982, CART points again in 1983), Autosport
+  2010 Chicagoland (two-lap average), IndyCar.com, RACER and The Checkered
+  Flag 2019 (Last Row Shootout), NBC Sports and the 1996 Indianapolis 500
+  article (25/8 rule), "Indianapolis 500" (four laps since 1939, late red
+  flags, 101 laps).
+- Not confirmed, marked `(?)`: CART road course qualifying rules before
+  1999.
 
 ## Discord post
 
 === post | IndyCar qualifying and race history | indycar-qualifying-race
 ## IndyCar qualifying and race format, 1979 to 2026
 
-Part two of the IndyCar rules history. The sources were thin here, so more is marked (?) than usual. What stood out to me:
+Part two of the IndyCar rules history. The sources were thin for the early years. What stood out to me:
 
 - **Road courses:** qualifying in groups, then the top 6 of each group go on, then a "Fast Six" for pole.
-- **Ovals:** one car at a time on track, averaged over a few laps. At Indianapolis four laps, and the 33 fastest start.
+- **Ovals:** one car at a time on track, over two laps (four laps averaged 2008 to 2010). At Indianapolis four laps, and the 33 fastest start.
 - **Indy 500 qualifying** changed a lot: bumping slower cars out over several days, a Fast Nine (2010 to 2021), now a Fast Twelve and Fast Six, with points for it.
 - **Rolling starts,** three abreast at Indianapolis. Champ Car tried standing starts and timed races.
 - **No green-white-checker:** a race can end under yellow, so Indianapolis sometimes uses a late red flag to get a green finish.

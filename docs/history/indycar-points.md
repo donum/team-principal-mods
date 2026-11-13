@@ -15,8 +15,8 @@ image is made with
 | 1979 to 1980 | CART | By race distance: 2 points per mile for the winner. 200-mile race: 400-320-280 down to 20 for 12th, then 10 down to 2 for every finisher. | None. | A 500-mile race pays more than two 200-mile races. |
 | 1981 to 1982 | CART | Same scale divided by 10: 20-16-14-12-10-8-6-5-4-3-2 for 11th, then 1 down to 20th, per 100 miles. 1982: 300-mile points for all races of 300 miles and more. | Pole 1 and most laps led 1, per 100 miles. | |
 | 1983 to 2003 | CART | 20-16-14-12-10-8-6-5-4-3-2-1, top 12, the same for every race. | Pole 1, most laps led 1. 2002 to 2003: also 1 for leading the slowest qualifying group. | |
-| 1996 to 1997 | IRL | 35-33-32-31 down to 1, every car scores. | 1997: pole 2, most laps led 1. | 1996: after Phoenix and Indianapolis, each total was multiplied by the races entered. Sharp and Calkins were co-champions, there was no tie-break. |
-| 1998 to 2003 | IRL | 50-40-35-32-30-28 down to 1 for 33rd. | Most laps led 2. Pole bonus 1998 to 2000 (3, 2 or 1 (?)). | Cars that did not start score from 1999. |
+| 1996 to 1997 | IRL | 35-33-32-31 down to 2 for 33rd, every car scores. 1997: 1 for 34th and 35th. | 1997: pole 2, most laps led 1. | 1996: after Phoenix and Indianapolis, each total was multiplied by the races entered. Sharp and Calkins were co-champions, there was no tie-break. |
+| 1998 to 2003 | IRL | 50-40-35-32-30-28 down to 1 for 33rd. | Most laps led 2. 1998 to 2000: the top three qualifiers 3, 2 and 1. | Cars that did not start score from 1999. |
 | 2004 to 2007 | Champ Car | 31-27-25-23-21 down to 1 for 20th. | Pole 1, fastest race lap 1, most positions gained 1, leading the slowest qualifying group 1. Leading a lap 1 (2004 to 2006). | The most bonus points of any era. |
 | 2004 to 2012 | IndyCar | 50-40-35 down to 13 for 17th, then 12 and 10 for the rest of the 33. | Most laps led 3 (2004 to 2008), then 2. Pole 1 from 2009. | Non-starters full points (2004 to 2005), then half. Texas 2011: two short races with half points each. |
 | 2013 to 2026 | IndyCar | 50-40-35 down to 5 for 25th, 5 for the rest. | Pole 1 (not at Indianapolis), leading a lap 1, most laps led 2. | Ties: most wins, then most 2nd places (2006 Hornish, 2015 Dixon). |
@@ -56,10 +56,19 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "List of American Championship car racing points scoring
   systems" (every table above, read in full), "IndyCar Series" (tie-break,
   1996 co-champions, via summary).
-- Not confirmed, marked `(?)`: the value of the 1998 to 2000 pole bonus
-  (the list gives "3 / 2 / 1" without saying which applies when).
+- Open items check: 1998 and 1999 Indy Racing League season articles
+  (pole 3, second qualifier 2, third qualifier 1, most laps led 2) and the
+  automobile.fandom 1998 season page (same values).
+- Conflict: the 1998 season article says non-starters scored full points;
+  the points list says non-starters scored from 1999. The table follows
+  the list.
 - Fact check: the points list read again in full (1981 to 1982 scale
   pays 1 point from 12th to 20th, the 1996 multiplier).
+- Confirmation round: the points list read again (IRL 1996 ends at 2
+  for 33rd, 1 for 34th and 35th in 1997, pole bonus at Indianapolis dropped
+  from 2010), IndyCar.com "Championship Points" (tie-break by wins, then
+  2nd places), IndyCar.com and Speedway Digest 2015 and Autosport 2006
+  (Dixon and Hornish titles on wins).
 - Not covered: Rookie of the Year rules, manufacturers' points.
 
 ## Discord post
@@ -70,7 +79,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 After F1 and DTM, here's American open-wheel racing (CART, Champ Car, IndyCar). The table is below. What stood out to me:
 
 - **Points by distance (1979 to 1982):** the winner got points per mile (2 per mile to 1980), so a 500-mile race paid much more than a short one.
-- **Every car scores** in the IRL and IndyCar: down to 1 point (1996 to 2003), 10 points (2004 to 2012), 5 points (since 2013).
+- **Every car scores** in the IRL and IndyCar: down to 1 or 2 points (1996 to 2003), 10 points (2004 to 2012), 5 points (since 2013).
 - **Bonus points everywhere:** pole, leading a lap, most laps led, and in Champ Car even fastest lap, most places gained and leading the slowest qualifying group.
 - **Double points:** the Indy 500 (2014 to 2022), all 500-mile races (2014), the finale (2015 to 2019).
 - **Points for Indianapolis qualifying,** changed almost every year: all 33 cars, the Fast Nine, the top 12, or none (2015).

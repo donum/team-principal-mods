@@ -12,12 +12,12 @@ is made with
 
 | Years | Top class | Other classes | How cars are balanced | Quirks |
 |---|---|---|---|---|
-| 1953 to 1961 | Sports cars. | GT. Both split by engine size. | Engine size classes. From 1958 sports cars limited to 3 L. | World Sportscar Championship for makes. Mille Miglia (to 1957), Targa Florio and Carrera Panamericana (1953, 1954) count. |
-| 1962 to 1971 | GT title, with a prototype title next to it. | GT under 1 L, under 2 L and over 2 L. From 1968: 5 L sports cars and 3 L prototypes. | Engine size. | The title name changes almost every few years. |
-| 1972 to 1981 | 3.0 L sports cars (to 1977), then Group 5 "special production" cars. | Group 4 GT. | Engine size. | Mid 1970s: the GTP class at Le Mans limits fuel instead of engine size (?). |
+| 1953 to 1961 | Sports cars. | GT. Both split by engine size. | Engine size classes. From 1958 sports cars limited to 3 L. | World Sportscar Championship for makes. Mille Miglia (to 1957), Carrera Panamericana (1953, 1954) and Targa Florio (from 1955) count. |
+| 1962 to 1971 | GT title, with a sports car cup (1962) and a prototype trophy (1963 to 1965) next to it. | GT under 1 L, under 2 L and over 2 L. From 1968: 5 L sports cars and 3 L prototypes. | Engine size. | The title name changes almost every few years. |
+| 1972 to 1981 | 3.0 L sports cars (to 1977), then Group 5 "special production" cars. | Group 4 GT. | Engine size. | 1975: Le Mans fuel rule, at least 20 laps between fuel stops. 1976: Le Mans adds its own GTP class (closed cars, at least 850 kg). |
 | 1982 to 1990 | Group C: closed prototypes, at least 800 kg, 100 L tank, five fuel stops per 1000 km. | Group C Junior / C2 (from 1983): 700 kg, 55 L tank. GT (1983 to 1984). | Fuel: about 600 L per 1000 km for C1, about 330 L for C2. Any engine. | A fuel formula instead of an engine formula. 1990: chicanes on the Mulsanne straight after 407 km/h in 1988. |
 | 1991 to 1992 | 3.5 L engines without turbo, 750 kg. | Older Group C cars, held back by weight and fuel (1991). Le Mans 1992 added classes for older and small cars. | Weight and fuel for the old cars. | The championship ends, 1993 is cancelled before the first race. |
-| 1994 to 2010 | Le Mans prototypes (LMP), with GT1 cars racing for the win in the 1990s. | GT1, GT2, later GTS. LMP675 for a short time. | Class rules, little balancing (?). | 1994: a Porsche 962 "road car" wins in GT1. 2005: GT3 rules bring the term "balance of performance". 2006: Audi diesel wins Le Mans. |
+| 1994 to 2010 | Le Mans prototypes (LMP), with GT1 cars racing for the win in the 1990s. | GT1 and GT2 (to 1998), GTS and GT (1999 to 2004), GT1 and GT2 again (2005 to 2010). LMP675 for a short time. | Class rules with air restrictors, boost and weight. The ACO changes them between diesel and petrol LMP1 (2009, 2010). | 1994: a Porsche 962 "road car" wins in GT1. 2005: GT3 rules bring the term "balance of performance". 2006: Audi diesel wins Le Mans. |
 | 2011 | LMP1. | LMP2, GTE (GT2 renamed). | The organisers may change GTE weight, engine or aero at any time. | GT1 dropped. |
 | 2012 to 2020 | LMP1, hybrid and non-hybrid side by side. | LMP2, GTE Pro, GTE Am. Four classes. | GTE: balance of performance. LMP1: "Equivalence of Technology" between hybrid and non-hybrid. | 2014: all LMP1 cars closed. 2017: LMP2 limited to four chassis makers, one engine. |
 | 2021 to 2023 | Hypercar: 1030 kg, 500 kW. LMDh cars allowed from 2023. Old LMP1 cars allowed in 2021 and 2022. | LMP2 (950 kg, less power), GTE Pro (to 2022), GTE Am (to 2023). | Balance of performance for Hypercars, the hybrid speed limit is set in the BoP table. | Cars built to two different rule sets (Le Mans Hypercar and LMDh) race for the same win. |
@@ -48,12 +48,26 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   World Sportscar Championship" (3 L prototypes from 1968, after the 7 L
   Fords of 1967), "2020 24 Hours of Le Mans" (59 entries), FIA LMP2
   technical updates 2021 to 2025 (LMP2 at 950 kg).
-- Not confirmed, marked `(?)`: balancing between 1994 and 2010, the
-  Le Mans GTP fuel rule.
+- Wikipedia, "1975 24 Hours of Le Mans" and Motor Sport, July 1975 (20 laps
+  between fuel stops), "1976 24 Hours of Le Mans" and motor.es history of
+  Le Mans 1975 to 1980 (the new GTP class).
+- Wikipedia, "1999 24 Hours of Le Mans" (GT1 and GT2 renamed GTP and GTS)
+  and "2005 24 Hours of Le Mans" (GTS and GT renamed GT1 and GT2).
+- Autosport, "ACO changes engine rules for 2009" and "ACO publishes 2010 Le
+  Mans rules", Autoblog 2009 (restrictor, boost and weight changes between
+  diesel and petrol).
+- Jalopnik and Motorsport Week (GTE Pro ended 2022, GTE Am 2023).
 - Conflict: the "World Sportscar Championship" overview puts the 5 L and
   3 L classes in 1966, the 1968 season article in 1968. The table uses 1968.
-- Conflicts: GT1 and GT2 years, GTE Pro and Am end years, the LMP2
-  engine size.
+- Conflict: one 1976 source says GTP cars had a fuel limit, others say all
+  fuel limits were dropped in 1976. The table leaves the fuel limit out.
+- Wikipedia, "1953" and "1962 World Sportscar Championship" (races,
+  1962 titles). Wikipedia, "1975" and "1976 24 Hours of Le Mans".
+- ACO 2012 announcement via 24h-lemans.com and Autosport, "ACO confirms
+  2014 LMP1 regulations" (closed LMP1 cars from 2014). Motorsport.com,
+  "Alpine WEC LMP1 car granted extra year of homologation" (old LMP1 cars
+  in 2021 and 2022).
+- Left out: the LMP2 engine size, the sources differ.
 
 ## Discord post
 

@@ -16,7 +16,7 @@ before you rely on it.
 | 1954 to 1960 | 2.5 L, or 0.75 L with supercharger (to 1957). Superchargers banned from 1958. | Aviation fuel from 1958. | No limits. | |
 | 1961 to 1965 | 1.5 L, no supercharger. | Pump fuel. | No limits. | Small engines, British teams with Coventry Climax win most races. |
 | 1966 to 1976 | 3.0 L, or 1.5 L with supercharger. Up to 12 cylinders from 1972. Even gas turbines and rotary engines allowed. | Commercial fuel. | No limits. | Cosworth DFV from 1967: a cheap customer V8 for everyone. Ford (Cosworth) wins 176 races in total. |
-| 1977 to 1985 | 3.0 L or 1.5 L turbo. Turbine, rotary, diesel and two-stroke banned in 1982. | | No limits. Turbo qualifying engines last a few laps (?). | Renault brings the turbo in 1977. By the end of 1985 everyone has one. |
+| 1977 to 1985 | 3.0 L or 1.5 L turbo. Turbine, rotary, diesel and two-stroke banned in 1982. | | No limits. Turbo qualifying engines last a few laps. | Renault brings the turbo in 1977. By the end of 1985 everyone has one. |
 | 1986 to 1988 | Turbo only in 1986. 1987: 3.5 L without turbo allowed again, turbo boost 4 bar. 1988: 2.5 bar. | Fuel tank for turbo cars cut, down to 150 L by 1988. | No limits. | Qualifying engines with about 1,400 hp (BMW 1986). McLaren-Honda 1988: 15 wins in 16 races. |
 | 1989 to 1994 | 3.5 L, no turbo. | Unleaded from 1992. | No limits. | V8, V10 and V12 side by side. |
 | 1995 to 1999 | 3.0 L. | | No limits. | |
@@ -24,7 +24,7 @@ before you rely on it.
 | 2006 to 2013 | 2.4 L V8. Engines frozen from 2007. Rev limit 19,000 (2007), 18,000 (2009). KERS from 2009. | 5.75% bio fuel from 2008. | Two races per engine (to 2008). 8 engines per season from 2009. Extra engine: 10 places back. | 2006: Toro Rosso still allowed a slowed V10. Same engines for seven years, the cars get the difference. |
 | 2014 to 2021 | 1.6 L V6 turbo hybrid. MGU-K 120 kW, MGU-H. Fuel flow at most 100 kg/h. | 100 kg per race, 110 kg from 2019. | Six parts counted separately. 5 power units in 2014, then fewer: 3 by 2018. Penalties per part, more than 15 places means the back of the grid. Development "tokens" 2015 to 2016. | Mercedes wins 8 constructors' titles in a row. McLaren-Honda 2015: grid penalties of 50 and 55 places at Spa. |
 | 2022 to 2025 | Same engines, frozen from 2022. Price for a customer team capped at 15 million euro a season. | At least 10% ethanol. | 3 engines, turbos, MGU-H and MGU-K (4 from 2024), 2 batteries and electronics per driver. 2025: gearbox penalties removed. | Grid penalties make some races a back-of-grid charge. Teams take penalties at tracks where passing is easy. |
-| 2026 | 1.6 L V6 turbo, no MGU-H. MGU-K 350 kW, engine 400 kW: about half electric. | 100% sustainable fuel. | Per driver: 4 engines, turbos and exhausts, 3 MGU-K, batteries and electronics. 2027 and 2028: the same (?). New makes get more. | Audi, Ford (with Red Bull), Honda and Cadillac (Ferrari engines for now). Renault leaves. |
+| 2026 | 1.6 L V6 turbo, no MGU-H. MGU-K 350 kW, engine 400 kW: about half electric. | 100% sustainable fuel. | Per driver: 4 engines, turbos and exhausts, 3 MGU-K, batteries and electronics. 2027 and 2028: the same. New makes get more. | Audi, Ford (with Red Bull), Honda and Cadillac (Ferrari engines for now). Renault leaves. |
 
 ## Gearboxes and other penalties
 
@@ -61,11 +61,20 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   rule changes (gearbox limits removed). Autosport (gearbox: 6 events to
   2021, pool of 4 from 2022). RacingNews365, July 2026 (extra part kept
   for 2027 and 2028).
-- Not confirmed, marked `(?)`: qualifying engines, the 2027 and 2028
-  allocation.
-- Open conflicts: rev limits per year. 2027 allocation: Wikipedia and an
-  older F1.com guide say 3 and 2, a later FIA decision (RacingNews365)
-  keeps 4 and 3.
+- Open items check: Driver61, GTspirit and Wikipedia "Formula One
+  engines" (turbo qualifying engines lasted a few laps). GPblog, July
+  2026, and RacingNews365 (2027 and 2028: 4 engines, turbos and exhausts,
+  3 MGU-K, batteries and electronics; this later FIA decision replaces
+  the older 3 and 2 plan in Wikipedia and the F1.com guide).
+  formula1-dictionary.net (rev limits 19,000 in 2007, 18,000 in 2009, as
+  Wikipedia; one Renault article dates the 18,000 limit to 2008).
+- Confirmation round: Wikipedia "Formula One engines" (supercharger
+  option to 1957, Avgas 1958, 12 cylinders 1972, turbine, Wankel, diesel
+  and two-stroke banned 1982, boost limits, V10 2000, 2007 freeze, 5.75%
+  bio fuel 2008, 2026 power figures). Formula1.com 2024 rule changes and
+  Mercedes W15 specification (4 ICE, turbos, MGU-H and MGU-K, 2 batteries
+  and electronics). Formula1.com cost cap guide (customer engine price
+  capped at 15 million euro).
 
 ## Discord post
 

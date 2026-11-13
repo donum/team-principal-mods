@@ -15,8 +15,8 @@ cautions, cars and entries). The table image is made with
 | 1981 to 1991 | Gen 3: wheelbase 110 in for the smaller road cars. | 358 cu in V8, carburettor. 1987: smaller carburettors at Talladega and Daytona after Allison's crash, restrictor plates there from 1988. | | Chrysler leaves after 1985. Four GM brands in 1991. |
 | 1992 to 2006 | Gen 4. 2003: one common template after "twisted" bodies. | Same, plates on superspeedways. | Goodyear, the only supplier since 1995. | Dodge back in 2001, Pontiac gone after 2004. |
 | 2007 to 2012 | Car of Tomorrow, full time from 2008. Rear wing to 2010. | Same. 2012: fuel injection replaces the carburettor. | Sunoco race fuel, E15 from 2011. | Toyota joins in 2007, Dodge leaves after 2012. |
-| 2013 to 2021 | Gen 6, 3,200 lb without driver and fuel (2013 sources: 3,300 lb). | 2019: tapered spacers replace plates. 2019 to 2021: 550 hp on big tracks, 750 hp on short tracks and road courses. | Goodyear, compounds set by NASCAR. Rain tyres on road courses from 2020. | 2016: charters, 36 safe places in a 40-car field. |
-| 2022 to 2026 | Next Gen: spec parts for everyone, one centre wheel nut, sequential gearbox, independent rear suspension. | 670 hp on most tracks, 510 hp on Daytona, Talladega and Atlanta (?). | Same. | Chevrolet, Ford, Toyota. Dodge back from 2027 with Kaulig. |
+| 2013 to 2021 | Gen 6, minimum weight down from 3,450 to 3,300 lb. | 2019: tapered spacers replace plates. 2019 to 2021: 550 hp on big tracks, 750 hp on short tracks and road courses. | Goodyear, compounds set by NASCAR. Rain tyres on road courses from 2020. | 2016: charters, 36 safe places in a 40-car field. |
+| 2022 to 2026 | Next Gen: spec parts for everyone, one centre wheel nut, sequential gearbox, independent rear suspension. | 670 hp on most tracks, 510 hp on Daytona, Talladega and Atlanta. 2026: 750 hp on road courses and ovals under 1.5 miles. | Same. | Chevrolet, Ford, Toyota. Dodge back from 2027 with Kaulig. |
 
 ## In the game today
 
@@ -41,11 +41,15 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta, as an oval pack. Yes:
   "Generation 6 (NASCAR)", "Next Gen (NASCAR)", "Restrictor plate"
   (1987 carburettors, plates from 1988), "Tire war" and 1995 season
   (Goodyear alone from 1995, exclusive deal 1997).
+- NASCAR.com, January 2013 (Gen 6 minimum weight 3,450 to 3,300 lb).
+  Racer and Jayski, January 2022 (510 hp at Daytona, Talladega and
+  Atlanta, 670 hp elsewhere). NASCAR.com and Jayski, October 2025 (750 hp
+  on road courses and ovals under 1.5 miles from 2026).
 - NASCAR.com and Racer, November 2026 (Dodge returns in 2027 with Kaulig).
 - Game support from the 0.99.6 oval code (pit crews, charters, entry cap,
   part-time agreements).
-- Conflict: Gen 6 weight, 3,200 lb without driver and fuel (Wikipedia)
-  or 3,300 lb (2013 launch reports).
+- Wikipedia's Gen 6 spec box gives 3,200 lb without driver and fuel.
+  The table uses the 2013 NASCAR figure.
 - Not found: crew size over the wall, team limits per owner.
 
 ## Discord post

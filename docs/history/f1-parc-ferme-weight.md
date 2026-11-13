@@ -13,7 +13,7 @@ before you rely on it.
 
 | Years | Parc fermé | What may change | Checks after the race | Quirks |
 |---|---|---|---|---|
-| 1950 to 2002 | None between qualifying and race. | Anything: a new setup for the race, a race engine, the spare car (?). | Weight and legality checks, more and more over the years (?). | Brabham and Williams 1982: water tanks "for brake cooling" were emptied in the race and refilled before weighing. Piquet and Rosberg were disqualified in Brazil. Tyrrell 1984: lead in the water tank, the whole season struck off. |
+| 1950 to 2002 | None between qualifying and race. | Anything: a new setup for the race, a race engine, the spare car. | Weight and legality checks after the race. | Brabham and Williams 1982: water tanks "for brake cooling" were emptied in the race and refilled before weighing. Piquet and Rosberg were disqualified in Brazil. Tyrrell 1984: lead in the water tank, the whole season struck off. |
 | 2003 to 2020 | From qualifying until the race. Cars in a closed area overnight. | Only small things: tyres, brake bleeding, front wing angle. Until 2009 most cars qualify on their race fuel. Weather change: the race director can allow setup changes. Big damage: repairs allowed. | Fuel sample of at least 1 litre, weight, parts. | Breaking parc fermé: start from the pit lane. Teams pick a setup for qualifying and race at once. Spain 2012: Hamilton's car had too little fuel for the sample after qualifying, he started last. |
 | 2021 to 2023 | Normal weekends as before, from qualifying. Sprint weekends: from Friday qualifying, after the only practice. | Same small things. | Same. Hungary 2021: Vettel disqualified, too little fuel for the sample. | USA 2023: Hamilton and Leclerc disqualified, the plank under the car was worn too much. |
 | 2024 to 2026 | Sprint weekends: two periods, from sprint qualifying to the sprint, then from qualifying to the race. | Setup may change once between the sprint and qualifying. | Same. Spa 2024: Russell won but was disqualified, the car was 1.5 kg too light. | Teams can fix a bad sprint setup before qualifying. |
@@ -24,10 +24,10 @@ before you rely on it.
 |---|---|---|
 | 1950 to 1960 | None | |
 | 1961 to 1965 | 450 kg | car without driver |
-| 1966 to 1971 | 500 kg, 530 kg from 1969 | |
+| 1966 to 1971 | 500 kg, 520 kg from March 1969, 530 kg from 1970 | each new safety part (roll bar, fire extinguisher, safety fuel tank) adds 10 kg |
 | 1972 to 1982 | 550 to 585 kg | |
 | 1983 to 1988 | 540 kg, 500 kg for cars without turbo in 1987 and 1988 | turbo and non-turbo cars side by side |
-| 1989 to 1994 | 500 to 505 kg, 515 kg with driver from mid 1994 | |
+| 1989 to 1994 | 500 to 505 kg | car without driver |
 | 1995 to 2008 | 595 to 605 kg | now car and driver together |
 | 2009 to 2010 | 605 kg, then 620 kg | heavier for KERS |
 | 2011 to 2013 | 640 kg (2011), 642 kg (2013) | KERS back |
@@ -60,9 +60,20 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   reports on Brazil 1982, Tyrrell 1984, Spain 2012, Hungary 2021, USA 2023,
   Spa 2024. Autosport and f1-fansite (2021 sprint parc fermé from Friday
   qualifying, normal weekends from leaving the pits for qualifying).
-- Not confirmed, marked `(?)`: what was allowed before 2003, checks
-  before 2003.
-- Conflict: the 530 kg step is 1969 in most sources, 1970 in one.
+- Open items check: Atlas F1, 2003 season preview (before 2003 a driver
+  could pick his car minutes before the race, three cars were checked,
+  Sunday warm-up). FIA statement January 2003 via grandprix.com and
+  motorsport.com (parc fermé stops cars built for qualifying only). The
+  1982 and 1984 cases above (weighing after the race).
+- 520 and 530 kg: FIA Year Book 1969, Appendix J (500 kg base; roll
+  bar and extinguisher from 1 March 1969, safety fuel tank from
+  1 January 1970, each adds 10 kg) and FIA Year Book 1970 (530 kg
+  including 30 kg for the safety measures). Motor Sport, June 1971
+  (530 kg until 550 kg on 1 January 1972).
+- 1994 and 1995: FIA Formula One Technical Regulations 1994 (505 kg,
+  car without driver) and 1995 (595 kg). Motor Sport, May 1995 (before
+  1995 the limit covered only the car). A 515 kg limit with driver in
+  mid 1994 was not found and is removed.
 
 ## Discord post
 

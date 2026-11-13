@@ -11,9 +11,9 @@ proof of concept for show events. The table image is made with
 
 | Years | Venue | Format | Cars | Quirks |
 |---|---|---|---|---|
-| 1988 to 1991 | Montlhéry (1988, for Henri Toivonen), then Nürburgring, Barcelona, Madrid. | The rally champions of 1979 to 1988 race each other head-to-head. | Group B and Group A rally cars: Audi Quattro S1, Peugeot 205 T16, Lancia Delta. | Kankkunen beats Salonen in the first final. |
+| 1988 to 1991 | Montlhéry (1988, for Henri Toivonen), then Nürburgring, Barcelona, Madrid. | 1988: the world rally champions of 1979 to 1988, timed runs on a rally stage. Head-to-head on a parallel track from 1989. | Group B and Group A rally cars: Audi Quattro S1, Peugeot 205 T16, Lancia Delta. | Kankkunen beats Salonen in the first final. |
 | 1992 to 2003 | Gran Canaria. | Head-to-head knockout. Nations' Cup for two-driver teams from 1999. | Rally cars. | Side events for rally masters and classic Porsche 911s. |
-| 2004 to 2012 | Stadiums: Stade de France, Wembley, Beijing's Bird's Nest, Düsseldorf, Bangkok. | A round robin (first year not found) (?), then the best eight in a knockout. The final is best of three runs. Two titles: Champion of Champions and the Nations' Cup. | Identical cars per run, chosen for each heat: ROC buggy, KTM X-Bow, Audi R8 LMS, Lamborghini, VW Scirocco, a EuroNASCAR Camaro (2010 to 2012). | Germany wins six Nations' Cups in a row. Kovalainen first non-rally winner (2004). 2013 cancelled (unrest in Bangkok). |
+| 2004 to 2012 | Stadiums: Stade de France, Wembley, Beijing's Bird's Nest, Düsseldorf, Bangkok. | Knockout only to 2008. From 2009 groups first, then the best eight in a knockout. The final is best of three runs. Two titles: Champion of Champions and the Nations' Cup. | Identical cars per run, chosen for each heat: ROC buggy, KTM X-Bow, Audi R8 LMS, Lamborghini, VW Scirocco, a EuroNASCAR Camaro (2010 to 2012). | Germany wins six Nations' Cups in a row. Kovalainen first non-rally winner (2004). 2013 cancelled (unrest in Bangkok). |
 | 2014 to 2020 | Barbados, London, Miami, Riyadh, Mexico City. 2020 held online. | Same, eROC for sim racers from 2018. | Same idea. | Riyadh 2018: the first international motorsport event in Saudi Arabia. |
 | 2022 to 2025 | Snow and ice at Piteå, Sweden (2022, 2023), Sydney (2025). | Same. | 2022: electric RX2e, Porsche Cayman GT4, Polaris side-by-sides, SuperCar Lites. 2025: KTM X-Bow, Toyota GR86, Subaru BRZ, SuperCar Lites. | No event in 2021, 2024 and 2026. 2027 planned for Wellington, New Zealand. |
 
@@ -40,10 +40,22 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia "Race of Champions" car table (EuroNASCAR 2010 to 2012,
   cars of 2022 and 2025), editions list (2021 COVID-19, 2024 land use at
   Piteå, 2026 none, 2027 Wellington).
-- Winners from 2018 are not used in the table. Sources read: 2019
-  Duval, 2022 Loeb, 2023 Ekström, 2025 Loeb (not cross-checked).
-- Not confirmed: prize money, the year the round robin began. Munich 2012
-  winners come from a summary of the season page.
+- Winners from 2018 are not used in the table. Cross-checked: 2018
+  Coulthard (Autosport, RACER), 2019 Benito Guerra, who beat Duval in
+  the final (RACER, Autosport; the earlier note "2019 Duval" was wrong),
+  2022 Loeb (RACER, Formula1.com), 2023 Ekström (RACER, Formula1.com),
+  2025 Loeb, his fifth (RACER, Speedcafe).
+- Group stage: Wikipedia "2004", "2006", "2007" and "2008 Race of
+  Champions" show knockout brackets only. "2009 Race of Champions" and a
+  2009 preview on carmag.co.za describe four groups, then the best
+  eight in a knockout.
+- Wikipedia, "1988 Race of Champions" (the only edition run as timed
+  single-car stages) and "1989 Race of Champions" (first parallel
+  track, head-to-head in identical cars); Goodwood and Motor Sport,
+  January 1989 (Audi Quattro S1, Peugeot 205 T16, Lancia Delta in
+  1988).
+- Not confirmed: prize money. Munich 2012 winners come from a summary
+  of the season page.
 
 ## Discord post
 

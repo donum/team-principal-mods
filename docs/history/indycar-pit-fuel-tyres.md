@@ -16,11 +16,11 @@ image is made with
 | 1996 | Methanol. | | Firestone and Goodyear in the IRL. | |
 | 1997 to 2003 | Methanol, later with colour added so flames can be seen in daylight (year (?)). | 35 US gallons (132 L). | Firestone and Goodyear (to 1999), Firestone alone from 2000. Own compounds per corner, new profile in 2003. | |
 | 2004 to 2005 | Methanol. | 30 gallons (114 L). | Firestone. | Fuel hose with a built-in vent from the mid 2000s. |
-| 2004 to 2007 | Champ Car: methanol (?). | | Bridgestone. Alternate tyres from Long Beach 2004, use rule (?). | |
+| 2004 to 2007 | Champ Car: methanol. | | Bridgestone. Softer option tyres with red sidewalls from Long Beach 2004. 2006: two sets per car, one stint on them in the race. | |
 | 2006 | 90% methanol, 10% ethanol. | 30 gallons (114 L). | Firestone. | |
 | 2007 to 2011 | "100% ethanol", really 98% ethanol and 2% petrol. | 22 gallons (83 L). | Firestone. Road courses: primary and alternate dry tyres (from 2009), plus rain tyres, no intermediates. | |
 | 2012 to 2022 | E85: 85% ethanol. | 18.5 gallons (70 L). | Same. Ovals: one tyre, different sizes left and right. | Single wheel nut, tyres premounted. A routine stop takes 6 to 10 seconds. |
-| 2020 to 2026 | | | | Seven crew over the wall, the seventh only cleans the aeroscreen (still in force after 2022 (?)). |
+| 2020 to 2026 | | | | Seven crew over the wall, the seventh only cleans the aeroscreen. 2026: this attendant may also hand the driver a drink. |
 | 2023 to 2026 | 100% ethanol-based fuel (Shell). | | Firestone (Bridgestone). | |
 | 2024 to 2026 | Hybrid: energy from braking (from Mid-Ohio 2024). | | | |
 
@@ -49,7 +49,20 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   Channel (Firestone back 1995, Goodyear out after 1999), Modern Tire
   Dealer and Firestone (alternates in IndyCar from 2009, first used at Long
   Beach 2004 in Champ Car), motorsport.com and RACER 2020 (aeroscreen
-  attendant; current rulebook not checked, so the 2026 end is assumed).
+  attendant).
+- Open items check: IndyCar rulebook 2026, rules 7.10.5.5 and 7.11.1.12
+  (six crew plus one aeroscreen and driver attendant), Panoz DP01 article
+  and a 2007 DP01 fact sheet on FerrariChat (Champ Car methanol),
+  motorsport.com 2006 Toronto Bridgestone preview (two sets of alternates,
+  one stint required), RaceFans 2008 (Champ Car made each driver use both
+  tyres), Bridgestone 2004 Long Beach preview (red sidewalls; via search
+  summary only).
+- Confirmation round: "IndyCar Series" (fuel by year, tank sizes, Goodyear
+  1996 to 1999, Firestone alone from 2000), "Pit stop" (Long Beach 1991,
+  seventh crew member from 2020, vent in the hose, 6 to 10 seconds).
+- Not confirmed, marked `(?)`: the year the colour additive came in. The
+  IndyCar Series article links the problem to the 1997 night races but
+  gives no year for the additive.
 - Not covered: pit lane closed under yellow, pit speed values, the rule to
   use both road course tyres, refuelling fires, CART fuel and tyres before
   1996.

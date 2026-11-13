@@ -13,7 +13,7 @@ table image is made with
 |---|---|---|---|---|
 | 2014-15 | Gen1: Spark chassis, 28 kWh battery, McLaren motor for all. | 150 kW in the race, 200 kW peak. | Fan Boost: fans vote, the top three get a 5-second power boost. | Two cars per driver, a car swap halfway. Michelin all-weather tyre. |
 | 2015-16 to 2017-18 | Gen1, teams build their own motor, inverter and gearbox. | 170 kW (2015-16), 180 kW (2017-18). | Fan Boost. | Car swap until 2017-18. |
-| 2018-19 to 2021-22 | Gen2: one car for the whole race, halo, about 52 kWh usable. | 200 kW, 220 kW in 2021-22, 250 kW peak. | Attack Mode from 2018-19: drive through a zone off the racing line for extra power (+25 kW, +35 kW, 250 kW). Fan Boost to 2021-22, the top five in the second half (from when ?). | Teams may buy a motor from another maker. 2019-20: 1 kWh taken off per minute under the safety car. |
+| 2018-19 to 2021-22 | Gen2: one car for the whole race, halo, 54 kWh battery. | 200 kW, 220 kW in 2021-22, 250 kW peak. | Attack Mode from 2018-19: drive through a zone off the racing line for extra power (+25 kW, +35 kW, 250 kW). Fan Boost to 2021-22, the top five from 2018-19, in the second half. | Teams may buy a motor from another maker. 2019-20: 1 kWh taken off per minute under the safety car. |
 | 2022-23 to 2023-24 | Gen3: 38.5 kWh usable, up to 600 kW regeneration. | 300 kW race, 350 kW qualifying and Attack Mode. | Attack Mode: 4 minutes in two activations, 8 minutes from Jakarta 2023. No Fan Boost. | Hankook tyres. A Manufacturers' Trophy in 2023-24, a world title from 2024-25. |
 | 2024-25 to 2025-26 | Gen3 Evo: all-wheel drive in Attack Mode, qualifying and starts. | 300 kW race, 350 kW peak (the front motor adds up to 50 kW). | Attack Mode, Pit Boost from Jeddah 2025: a 30-second stop at 600 kW for 3.85 kWh. | Lola, Yamaha join. 17 races in 2025-26. |
 | 2026-27 | Gen4: 55 kWh, permanent all-wheel drive. | 450 kW race, 600 kW qualifying and Attack Mode. | Attack Mode, Pit Boost. | Bridgestone tyres with a wet tyre. Not raced yet. |
@@ -43,10 +43,13 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - FIA Formula E, March 2024 and later (Manufacturers' Trophy, world title
   from season 11). Racer, June 2026 (2026-27 calendar, Pit Boost races,
   opener on 18 December 2026).
-- Conflicts: Gen2 battery 52, 54 or 56 kWh, Pit Boost 3.85 or 4 kWh.
-  The Wikipedia comparison table gives 400 kW for Gen3 Evo, the spec
-  sheets 350 kW. Fan Boost went from three drivers to five, the season
-  of the change was not found.
+- FIA, January 2025 (Pit Boost: 3.85 kWh, 30 seconds, 600 kW, from
+  Jeddah). Motorsport.com, 2018 (Gen2 battery 54 kWh). Crash.net, 2018,
+  and the Audi Formula E regulations page (Fan Boost for five drivers
+  from 2018-19, from the 22nd minute). Racer and The Race, April 2024
+  (Gen3 Evo 350 kW in qualifying and Attack Mode).
+- Not used: 56 kWh for Gen2 (Wikipedia lead, no citation), 400 kW for
+  Gen3 Evo (Wikipedia comparison table).
 
 ## Discord post
 

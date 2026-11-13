@@ -13,22 +13,22 @@ before you rely on it.
 
 | Years | Rule | Typical orders | Examples | Quirks |
 |---|---|---|---|---|
-| 1950 to 1957 | Allowed. A driver may hand his car to the team leader during the race, the points are shared. | Give up your car, let the leader win. | 1955 Aintree: Mercedes asked Fangio to let Moss win at home, Fangio finished under a second behind. Monza 1956: Collins handed his car to Fangio, who won the title. | The order could be "get out of your car". |
-| 1958 to 1980 | Allowed. Car swaps no longer score. | Let the team mate in the title fight pass. Hold position. | Mexico 1964: Bandini let Surtees through, Surtees won the title. Germany 1979: Regazzoni told not to attack Jones. | |
+| 1950 to 1957 | Allowed. A driver may hand his car to the team leader during the race, the points are shared. | Give up your car, let the leader win. | 1955 Aintree: Moss won at home, Fangio under a second behind. Whether Mercedes told Fangio to let him win is still disputed. Monza 1956: Collins handed his car to Fangio, who won the title. | The order could be "get out of your car". |
+| 1958 to 1980 | Allowed. Car swaps no longer score. | Let the team mate in the title fight pass. Hold position. | Mexico 1964: Bandini let Surtees through, Surtees won the title. Germany 1979: Regazzoni told not to attack Jones (?). | |
 | 1981 to 1996 | Allowed. | Same. Drivers start to refuse. | Brazil 1981: Reutemann ignored the order to let Jones pass, lost the title later by one point. France 1982: Arnoux did not let Prost pass. Imola 1982: Pironi passed Villeneuve against the team's plan. France 1992: Patrese waved Mansell through. | Refusing an order can split a team for the rest of the year. |
 | 1997 to 2002 | Allowed. | Swap places, hold up the rivals, start light to block. | Australia 1998: Coulthard let Häkkinen win, an agreement before the race. Germany 1999: Salo gave Irvine the win, his only chance of a win. Austria 2002: Barrichello let Schumacher win on the last lap. USA 2002: Schumacher let Barrichello win by 0.011 s. | Austria 2002: Schumacher put Barrichello on the top step. The FIA fined Ferrari and both drivers for the podium, not for the order. |
 | 2003 to 2010 | Banned: no team orders that change the race result. | Coded radio messages. | Singapore 2008: Renault ordered Piquet to crash, to bring out the safety car for Alonso. Germany 2010: "Fernando is faster than you", Massa let Alonso pass, Ferrari fined 100,000 USD, result kept. | Teams still gave orders, in code. The FIA said at the end of 2010 that the rule was not working. |
-| 2011 to 2026 | Allowed again, the rule is gone from the regulations. A deliberate crash is still punished (?). | Hold position, swap back, let the faster car through, grid tricks. | US 2012: Ferrari broke Massa's gearbox seal for a grid penalty, to put Alonso on the clean side. Malaysia 2013: Vettel ignored "Multi 21" and passed Webber. Hungary 2017: Bottas let Hamilton pass, Hamilton gave the place back. Russia 2018: Bottas gave up the win to Hamilton. Brazil 2022: Verstappen refused to give a place to Perez. Hungary 2024: Norris gave the win back to Piastri. Italy 2025: McLaren swapped Norris and Piastri after a slow stop, Norris won the title by 2 points. | Orders now happen on open radio, the fans hear them live. |
+| 2011 to 2026 | Allowed again, the rule is gone from the regulations. A deliberate crash still falls under the FIA's general rule against bringing the sport into disrepute. | Hold position, swap back, let the faster car through, grid tricks. | US 2012: Ferrari broke Massa's gearbox seal for a grid penalty, to put Alonso on the clean side. Malaysia 2013: Vettel ignored "Multi 21" and passed Webber. Hungary 2017: Bottas let Hamilton pass, Hamilton gave the place back. Russia 2018: Bottas gave up the win to Hamilton. Brazil 2022: Verstappen refused to give a place to Perez. Hungary 2024: Norris gave the win back to Piastri. Italy 2025: McLaren swapped Norris and Piastri after a slow stop, Norris won the title by 2 points. | Orders now happen on open radio, the fans hear them live. |
 
 ## What a team order can be
 
 | Order | Example |
 |---|---|
 | Let the team mate pass | Austria 2002, Germany 2010, Russia 2018 |
-| Hold position, don't attack | Germany 1979, Malaysia 2013, Australia 2019 |
+| Hold position, don't attack | Germany 1979 (?), Malaysia 2013, Australia 2019 |
 | Swap back after a pass | Hungary 2017, Hungary 2024 |
 | Hand over the car | 1950s, points shared |
-| Help the team mate on strategy | Japan 1997: Irvine started light to hold up the Williams cars |
+| Help the team mate on strategy | Japan 1997: Irvine ran light, let Schumacher pass and held up Villeneuve |
 | Take a penalty for the team mate | USA 2012: gearbox seal broken for a grid drop |
 | Crash on purpose | Singapore 2008, punished |
 
@@ -50,10 +50,22 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   Grand Prix" (radio quote, fine), "2013 Malaysian Grand Prix" (Vettel and
   Webber, via summary for "Multi 21").
 - Monza 1956 and Imola 1982 from the race articles and wide reporting.
-- Not confirmed, marked `(?)`: what general rule still covers a
-  deliberate crash after 2011.
-- Conflicts: how much of the 2002 fine was paid, and on which lap the
-  order came.
+- Confirmation round: Motor Sport, August 2025 and May 2003 (Aintree
+  1955: Fangio said there was no order, others say Neubauer asked him).
+  Wikipedia "1979 German Grand Prix" says Regazzoni was told to stay
+  behind, the Motor Sport race report of September 1979 does not mention
+  it. grandprix.com and Wikipedia "1997 Japanese Grand Prix" (Irvine on
+  a light fuel load, then blocking Villeneuve). Motor Sport, August 1992
+  (Patrese waved Mansell by). The Race and RacingNews365 (Norris 423,
+  Verstappen 421 in 2025).
+- Open items check: Adam Cooper and Motorsport Week, December 2010
+  (team orders rule deleted, Article 151c of the International Sporting
+  Code still covers acts that bring the sport into disrepute).
+  Autosport (World Council statement) and ESPN, June 2002 (fine of 1
+  million USD, half paid, half suspended for a year; the Wikipedia lead
+  says a third each, its body says half). Wikipedia race article and
+  Motor Sport (order on lap 63 of 71, "eight laps of war", Barrichello
+  gave way at the last corner).
 
 ## Discord post
 

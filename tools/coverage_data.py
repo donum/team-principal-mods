@@ -156,11 +156,11 @@ NEEDS = {
   ('A2', '1959-2026', 'Daytona 500 grid from the Duel races.'),
   ('A6', '2014-2026', 'Group and knockout qualifying, grids by formula.'),
   ('B2', '1988-2026', 'Restrictor plates or spacers: less power on superspeedways.'),
-  ('B4', '1958-2026', 'Rookie of the Year with its own rules.'),
+  ('B4', '1957-2026', 'Rookie of the Year with its own rules.'),
  ],
  'Super GT': [
-  ('B4', '1994-2026', 'Two classes in one race, titles per class.'),
-  ('B1', '1993-2026', 'Success ballast by results, then by championship points.'),
+  ('B4', '1993-2026', 'Two classes in one race, titles per class.'),
+  ('B1', '1994-2026', 'Success ballast by results, then by championship points.'),
   ('B2', '2010-2026', 'Balance of performance per race in GT300.'),
   ('C8', '1993-2026', 'Two drivers per car, at most two thirds each.'),
   ('B5', '1993-2026', 'Compulsory stop with a driver change.'),
@@ -222,8 +222,8 @@ NEEDS = {
   ('B3', '1977-2026', 'Points by class size, best results only.'),
   ('A3', '1977-2026', 'Races by time (4 and 6 hours), start in three groups.'),
   ('C8', '1977-2026', 'One to four drivers per car.'),
-  ('B11', '2015-2026', 'Code 60 zones.'),
-  ('B2', '2010-2026', 'Balance of performance for GT3 (SP9).'),
+  ('B11', '2014-2026', 'Code 60 zones.'),
+  ('B2', '2009-2026', 'Balance of performance for GT3 (SP9).'),
  ],
  'GT World Challenge': [
   ('B4', '1997-2026', 'Several classes in one race, by car (to 2011) or by driver rating.'),
@@ -233,7 +233,7 @@ NEEDS = {
   ('A1', '2010-2026', 'Two races per weekend (GT1, then the Sprint Cup).'),
   ('B5', '2010-2026', 'Mandatory stop or driver change window.'),
   ('A6', '2018-2026', 'Qualifying with each driver, the times added up.'),
-  ('B3', '2013-2026', 'Points during the Spa 24 Hours, two cups add up.'),
+  ('B3', '2014-2026', 'Points during the Spa 24 Hours, two cups add up.'),
   ('C1', '2016-2026', 'Up to six cars per team.'),
  ],
  'Dakar': [
@@ -253,7 +253,8 @@ NEEDS = {
   ('C9', '2024-2025', 'Electric and petrol cars together.'),
  ],
  'Race of Champions': [
-  ('N11', '1988-2025', 'Head-to-head knockout in identical cars.'),
+  ('N10', '1988', 'Timed runs on a rally stage.'),
+  ('N11', '1989-2025', 'Head-to-head knockout in identical cars.'),
   ('B4', '1999-2025', 'Nations Cup for two-driver teams.'),
  ],
  'BTCC': [

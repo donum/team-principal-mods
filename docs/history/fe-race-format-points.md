@@ -10,8 +10,8 @@ points). The table image is made with
 
 | Seasons | Race | Qualifying | Safety car | Points and titles |
 |---|---|---|---|---|
-| 2014-15 to 2017-18 | Set number of laps, a car swap halfway. Practice, qualifying and race on one day. | Four groups of five, Super Pole for the top five from 2015-16. Groups by lottery, by championship order from 2017-18. | | 25-18-15-12-10-8-6-4-2-1, pole 3, fastest lap 2 (first two seasons). 2014-15: the worst round is dropped. Drivers' and teams' titles. |
-| 2018-19 to 2020-21 | 45 minutes plus one lap. | Groups by championship order, then Super Pole. | 2019-20 and 2020-21: 1 kWh taken off per minute under safety car or full-course yellow. | Pole 3, fastest lap 1 (top 10 only). 2019-20 and 2020-21: 1 point for the fastest in the group stage. World Championship from 2020-21. |
+| 2014-15 to 2017-18 | Set number of laps, a car swap halfway. Practice, qualifying and race on one day. | Four groups of five, Super Pole for the top five from 2015-16. Groups by lottery, by championship order from 2017-18. | | 25-18-15-12-10-8-6-4-2-1, pole 3, fastest lap 2 (first two seasons), then 1, top 10 only from 2017-18. 2014-15: the worst round is dropped. Drivers' and teams' titles. |
+| 2018-19 to 2020-21 | 45 minutes plus one lap. | Groups by championship order, then Super Pole for the top six. | 2019-20 and 2020-21: 1 kWh taken off per minute under safety car or full-course yellow. | Pole 3, fastest lap 1 (top 10 only). 2019-20 and 2020-21: 1 point for the fastest in the group stage. World Championship from 2020-21. |
 | 2021-22 | 45 minutes plus time added: 45 seconds per minute of safety car in the first 40 minutes, at most 10 minutes. | Two groups by championship place (odd and even), the top four of each into duels: quarter-finals, semi-finals, final. | Time added instead of energy taken off. | Same. |
 | 2022-23 to 2025-26 | Laps again, more laps after the safety car. Double-headers at many venues. | Groups and duels. 2025-26: group sessions of 10 minutes. If the duels can't run (rain, time), the grid comes from the groups. | Laps added. | Same. Manufacturers' Trophy from 2023-24, a world title from 2024-25, from each make's best two cars. |
 
@@ -40,6 +40,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - FIA Formula E, March 2024 (Manufacturers' Trophy, best two cars) and
   2024 (world title from season 11). Reports from Shanghai and Berlin
   2025 (no duels, grid from the groups).
+- Autosport, Motorsport.com and FIA, 2018 (Super Pole six drivers from
+  2018-19, groups by championship order). Speedcafe and The Checkered
+  Flag, November 2017 (lottery ended in 2017-18). The Checkered Flag,
+  September 2017 (fastest lap point only in the top 10 from 2017-18).
+  FIA Formula E, October 2021 (added time rules). Racer and FIA, October
+  2025 (10-minute group sessions).
 - The source
   for "one lap added per four minutes of safety car" is marked as needing
   a citation, so it is left out.

@@ -30,7 +30,7 @@ NASCAR Cup Series from 2020. The table image is made with
 |---|---|
 | Owners' championship | per car, scored like the drivers, owner points also for drivers who can't score |
 | Manufacturers' championship | to 2013: 9-6-4-3-2-1 for the top six makes; from 2014 each make's best car |
-| Rookie of the Year | official from 1958 (?); from 2026 at most 12 earlier Cup starts, own points |
+| Rookie of the Year | first given in 1954, every year from 1957; from August 2026 at most 12 earlier Cup starts |
 | Regular season champion | from 2017, top of the points after race 26 |
 
 ## In the game today
@@ -54,14 +54,22 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta, as an oval pack. Yes:
 - Wikipedia, "List of NASCAR points scoring systems" (every scale, read in
   full), "The Chase (NASCAR)" (Chase and playoff formats), "NASCAR Cup
   Series" (owners' and manufacturers' titles, tie-break, 2011), "NASCAR
-  Rookie of the Year", "1992 NASCAR Winston Cup Series".
+  Rookie of the Year" (winners from 1954, none in 1955 and 1956),
+  "1992 NASCAR Winston Cup Series", "2004 NASCAR Nextel Cup Series".
+- Motorsport.com and Vindicator, January 2004 (Chase: top 10 and anyone
+  within 400 points of the leader after 26 races). Spade Racing ROTY
+  history (first award to Blackie Pitt in 1954).
 - NASCAR.com and Jayski, January 2026 (The Chase: top 16 by points,
   2,100 reset for the leader, no win-and-in). Fox Sports (reset scale).
 - Game support from the 0.99.6 oval code (stage racing, chase, oval
   championships, bonus points).
-- Not confirmed, marked `(?)`: Rookie of the Year official from 1958
-  (marked as needing a citation on Wikipedia). The 2004 Chase took the
-  top 10 and anyone within 400 points of the leader.
+- Fox Sports and AP, January 2026 (The Chase: top 16 after 26 races, 2,100
+  to 2,000, win 55). NBC Sports and NASCAR.com, January 2017 (lap-led
+  bonuses dropped for stage points). Racer and Jayski, August 2026 (Rookie
+  of the Year: at most 12 earlier Cup starts).
+- Wikipedia calls 1958 the first official award (no citation), but also
+  lists Ken Rush as the 1957 winner. The table gives the years with a
+  winner.
 
 ## Discord post
 

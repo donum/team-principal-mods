@@ -22,7 +22,7 @@ before you rely on it.
 | 2006 to 2007 | Knockout Q1/Q2/Q3 | 22 cars. Q1 and Q2 15 min, 6 out each. Top 10 in Q3. Unlimited laps. | Q3 cars start with race fuel and burn it off. Laps run in Q3 are paid back before the race ("fuel burn"). | Q3 was 20 min, cut to 15 from France 2006. Q3 was mostly slow laps to burn fuel. Monaco 2006: Schumacher stopped at Rascasse and was sent to the back. |
 | 2008 to 2009 | Knockout, race fuel in Q3 | Q1 20, Q2 15, Q3 10 min. 6 out each, 5 out each once Super Aguri left in May 2008 (20 cars). | Q3 on race fuel. No fuel added back. | Top 10 still on heavy fuel, so a car from 11th could start lighter. |
 | 2010 to 2013 | Knockout, low fuel | 24 cars, 7 out in Q1 and Q2 (2010 to 2012). 22 cars from 2013, 6 out. Q1 20, Q2 15, Q3 10 min. | Refuelling banned, so everyone runs light. Top 10 start on the tyres of their fastest Q3 lap. | 107% rule back from 2011, for Q1 only. HRT missed the cut in Australia 2011 and 2012. |
-| 2014 to 2015 | Knockout | Q1 18, Q2 15, Q3 12 min. 22 cars, 6 out (2014). 20 cars, 5 out (2015). | Top 10 start on the tyres of their fastest Q2 lap (new in 2014). Extra soft set for Q3. | 107% relaxed early in 2014 for the new engines (?). |
+| 2014 to 2015 | Knockout | Q1 18, Q2 15, Q3 12 min. 22 cars, 6 out (2014). 20 cars, 5 out (2015). | Top 10 start on the tyres of their fastest Q2 lap (new in 2014). Extra soft set for Q3. | Australia 2014: stewards said they would be lenient on the 107% rule with the new engines. Maldonado set no time and was allowed to start. |
 | 2016, rounds 1 and 2 | Elimination | Same three parts, but from a few minutes in, the slowest car drops out every 90 seconds. 8 cars in the final part. | Top 10 start on Q2 tyres. | Cars sat in the pits at the end, Q3 finished with nobody running. Dropped after Bahrain, knockout back from China. |
 | 2016 to 2021 | Knockout | 18/15/12 min. 22 cars in 2016 (6 out), then 20 cars (5 out). | Top 10 start on the tyres of their fastest Q2 lap. Extra soft set for Q3. | From 2018 the 107% rule does not apply in the wet. |
 | 2021 | Knockout plus sprint qualifying | 3 weekends: Friday qualifying sets the grid for a 100 km Saturday sprint, the sprint sets the race grid. | Friday session soft tyres only. | The sprint winner gets pole, not the fastest in qualifying. Points 3-2-1. |
@@ -67,7 +67,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - FIA 2014 race director briefing: Q1 18, Q3 12 min, top 10 on Q2 tyres and
   an extra Q3 set, all from 2014. 2023 Baku and Austria SQ3 tyre rule:
   autosport.com. 2026 sprint calendar: fia.com.
-- Still open: the 2014 107% relaxation.
+- 2014 107% rule: no rule change, the stewards were lenient in Australia
+  (autosport.com, motorsport.com, grandprix.com, March 2014).
+- Confirmation round: Wikipedia "Formula One race weekend" (pre-qualifying
+  on the last 12 months, 2021 soft tyres only, Norris Baku 2023, 2026 Q3 13
+  min, 2018 wet 107%), "History of Formula One regulations" (2006 Q3 cut).
+  2026 Q3 13 min also planetf1.com, f1i.com. Maldonado 2014: crash.net.
 
 ## Discord post
 

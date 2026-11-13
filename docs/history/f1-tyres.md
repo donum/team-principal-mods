@@ -13,11 +13,11 @@ before you rely on it.
 |---|---|---|---|---|
 | 1950 to 1958 | Pirelli, Firestone, Englebert, Continental, Avon, Dunlop. Firestone only at Indianapolis. | Treaded road-style tyres, cross-ply. | No limits. Change tyres whenever you want. | Several makes in one field, each team picks. |
 | 1959 to 1970 | Dunlop (alone 1960 to 1963), then Goodyear from 1964 and Firestone. | Nylon casings, lower and wider every year. | No limits. | Tyre war Goodyear vs Firestone from the mid 1960s. |
-| 1971 to 1976 | Goodyear and Firestone (Firestone to 1974), then Goodyear. | Slicks from the 1971 Spanish GP (Firestone). | No limits. Special qualifying tyres start to appear (?). | Slicks plus wings: grip jumps. |
-| 1977 to 1986 | Goodyear vs Michelin (1977 to 1984), Pirelli (1981 to 1986), Avon (1981 to 1982). | Radial tyres arrive with Michelin. Qualifying tyres that last one or two laps (?). | Few limits. Qualifying tyre sets limited per driver in the 1980s (?). | Three makes at once in the early 1980s. A team on the "wrong" tyre has no chance. |
-| 1987 to 1996 | Goodyear, with Pirelli again 1989 to 1991. Goodyear alone 1987 to 1988 and 1992 to 1996. | Rear tyres narrower from 1993 (18 to 15 inch rim width). Qualifying tyres end after 1991 (?). | Set limits per weekend (?). | Goodyear wins almost every race for ten years. |
-| 1997 to 1998 | Goodyear vs Bridgestone. Goodyear leaves after 1998. | 1998: grooved tyres, 3 grooves front, 4 rear, to cut grip. | Set limits per weekend (?). | Bridgestone wins the title in its second year. |
-| 1999 to 2000 | Bridgestone alone. | Four grooves front and rear. | Two compounds per race, team picks one (?). | |
+| 1971 to 1976 | Goodyear and Firestone (Firestone to 1974), then Goodyear. | Slicks from the 1971 Spanish GP (Firestone). | No limits. | Slicks plus wings: grip jumps. |
+| 1977 to 1986 | Goodyear vs Michelin (1977 to 1984), Pirelli (1981 to 1986), Avon (1981 to 1982). | Radial tyres arrive with Michelin. Qualifying tyres that last one or two flying laps. | Few limits. 1980: all tyres marked, two types to choose from. 1981: two marked sets per driver for each qualifying hour. | Three makes at once in the early 1980s. A team on the "wrong" tyre has no chance. |
+| 1987 to 1996 | Goodyear, with Pirelli again 1989 to 1991. Goodyear alone 1987 to 1988 and 1992 to 1996. | Rear tyres narrower from 1993 (18 to 15 inch rim width). Qualifying tyres end after 1991: Goodyear, alone from 1992, stops making them. | From 1993: seven sets per car for the race meeting. | Goodyear wins almost every race for ten years. |
+| 1997 to 1998 | Goodyear vs Bridgestone. Goodyear leaves after 1998. | 1998: grooved tyres, 3 grooves front, 4 rear, to cut grip. | Two dry types for practice, one picked before qualifying. 7 sets for qualifying, warm-up and race. | Bridgestone wins the title in its second year. |
+| 1999 to 2000 | Bridgestone alone. | Four grooves front and rear. | Same: two dry types, each driver picks one before qualifying. 7 sets for qualifying, warm-up and race. | |
 | 2001 to 2006 | Bridgestone vs Michelin. | Grooved. Each maker brings tyres made for each team. | 2005: one set for qualifying and the whole race, no changes unless damaged or wet. 2006: changes allowed again, 14 sets per weekend (7 dry). | USA 2005: Michelin tyres were unsafe in the banked turn. Michelin teams pulled out after the formation lap, only 6 cars raced. |
 | 2007 to 2008 | Bridgestone alone. | Grooved. Four dry compounds in the range, two per race. | Both dry compounds must be used in the race, unless it is wet. Softer tyre marked with a white stripe in a groove. | First race of 2007: the soft tyre had a small dot, nobody could see it. Japan 2008: green grooves for an environment campaign. |
 | 2009 to 2010 | Bridgestone alone. Leaves after 2010. | Slicks again. Soft tyre has green sidewalls. 2010: front 270 to 245 mm. | 2009: 14 sets. 2010: 11 sets. Top 10 start on their Q3 tyres (2010). | Refuelling banned in 2010, so tyres decide strategy. |
@@ -27,7 +27,7 @@ before you rely on it.
 | 2019 to 2021 | Pirelli alone. | Five dry compounds C1 to C5. Per race always called hard, medium, soft: white, yellow, red. | Three compounds per race, 13 sets. Top 10 start on Q2 tyres (to 2021). | A "soft" is a different tyre at every track. |
 | 2022 to 2024 | Pirelli alone. | 18-inch wheels, 720 mm. 2023: C0 added, 2024: dropped. | Free start tyre. 2023 Hungary and Monza: 11 sets, hard/medium/soft for Q1/Q2/Q3. Blanket temperatures limited, a ban was planned and dropped. | Low-profile tyres, cars look different. |
 | 2025 | Pirelli alone. | C6 added, C1 to C6. | Monaco: at least two stops (three sets) in the race. | The Monaco rule was dropped again for 2026. |
-| 2026 | Pirelli alone, contract to 2028 (?). | Narrower: 280 front, 375 rear. Five dry compounds C1 to C5, intermediate green, full wet blue. | Three dry compounds per race, at least two used unless it is wet. | |
+| 2026 | Pirelli alone, contract to 2028. | Narrower: 280 front, 375 rear. Five dry compounds C1 to C5, intermediate green, full wet blue. | Three dry compounds per race, at least two used unless it is wet. | |
 
 ## Rules across all years
 
@@ -64,10 +64,17 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   end of 1974 (1974 season article, Motor Sport). Monaco two-stop rule
   removed in the final 2026 rules (motorsport.com, f1i.com).
 - Silverstone 2013, minimum pressures and blankets from general knowledge.
-- Not confirmed, marked `(?)`: qualifying tyres (forum sources say the last
-  were in 1991), set limits before 2005.
-- Open conflict: Pirelli contract to 2028 (Wikipedia text) or 2027 (its
-  cited source).
+- Open items check: Motor Sport race reports, Belgium 1980 (tyres
+  marked, two types) and Netherlands and France 1981 (two marked sets per
+  qualifying hour, qualifiers for one or two flying laps). Motor Sport March
+  1992 (Goodyear drops qualifying tyres) and July 1994 (seven sets per race
+  meeting from 1993). Bridgestone technical regulations pages 1997 to 2000
+  (two dry types, choice before qualifying, 7 sets for qualifying and race).
+  Pirelli to 2028: the 2025 to 2027 deal had a one year option, taken up in
+  2026 (sportcal.com, european-rubber-journal.com, planetf1.com).
+- Confirmation round: "Formula One tyres" again (supplier years, 1993 rear
+  wheel 18 to 15 inch, 2007 dot then stripe, 2026 C1 to C5). Monaco
+  two-stop rule dropped for 2026: planetf1.com, autosport.com, the-race.com.
 
 ## Discord post
 

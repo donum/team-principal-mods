@@ -5,16 +5,16 @@ points). The table image is made with
 `python -I tools/history_table.py docs/history/imsa-race-format-points.md`.
 
 `(?)` marks a detail that the sources we read did not confirm. The sources
-had no points values, qualifying format or pit rules.
+had nothing on points or qualifying before 1999, and no pit rules.
 
 ## Table
 
 | Years | Races | Start and drivers | Qualifying | Points and titles |
 |---|---|---|---|---|
 | 1971 to 1998 | Daytona 24 h (6 h in 1972, none in 1974), Sebring 12 h, Watkins Glen 6 h (500 km or 3 h in some years), Road America 500 miles. | Rolling starts (Sebring from 1970, Daytona from 1971). Two to five drivers per car. | Not stated (?). | Titles per class. Not stated how points were given (?). |
-| 1999 to 2013 | ALMS: Sebring 12 h, Petit Le Mans 10 h or 1,000 miles, sprints of 2 h 45 or 4 h. | Rolling start. GT Pro and Am in one class with no driver limits (?). | Not stated (?). | Class champions and runners-up got Le Mans invitations. |
-| 2014 to 2020 | Daytona 24 h, Sebring 12 h, Watkins Glen 6 h, Petit Le Mans 10 h, sprints of 2 h 40. | Three to five drivers at Daytona. Amateurs must drive a set time (?). | Not stated (?). | Drivers', teams' and manufacturers' titles per class. North American Endurance Cup from 2014 (Michelin from 2019): points during the race, every 6 h at Daytona, every 4 h at Sebring. |
-| 2021 to 2026 | Same. Road America 6 h from 2026. | Driver ratings decide the line-ups: GTD needs a Bronze or Silver driver, LMP2 at most one Gold. | LMP2: only the Bronze driver qualifies. | Points for qualifying since 2021, worth 10% of the race points. Three champions get a Le Mans invitation (?). |
+| 1999 to 2013 | ALMS: Sebring 12 h, Petit Le Mans 10 h or 1,000 miles, sprints of 2 to 4 h. | Rolling start. No driver ratings yet (IMSA ratings from 2014). A driver must drive at least 45 minutes to score (2009 to 2011). | 1 point for class pole (2002). | Points per class: 25-21-19-17-15 and down (2002). 20-16-13-10-8-6-4-3-2-1 in short races, more in long races (2009 to 2011). Class champions and runners-up got Le Mans invitations. |
+| 2014 to 2020 | Daytona 24 h, Sebring 12 h, Watkins Glen 6 h, Petit Le Mans 10 h, sprints of 2 h 40. | Three to five drivers at Daytona. Pro-am drivers in PC and GTD must drive a minimum time. | One driver sets the time, another may start the race. | 35-32-30-28-26-25, then one point less per place. Drivers', teams' and manufacturers' titles per class. North American Endurance Cup from 2014 (Michelin from 2019): points during the race, every 6 h at Daytona, every 4 h at Sebring. |
+| 2021 to 2026 | Same. Road America 6 h from 2026. | Driver ratings decide the line-ups: GTD needs a Bronze or Silver driver, LMP2 at most one Gold. | LMP2: only the Bronze driver qualifies. | Race points times 10 since 2021 (350 for a win). Points for qualifying since 2021, worth 10% of the race points. Three Le Mans invitations a year, in 2025 for the GTP champions and the best Bronze drivers in LMP2 and GTD. |
 
 ## In the game today
 
@@ -41,18 +41,32 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Autosport, Racer, Sportscar365 2020 reports (qualifying points from
   2021). Sportscar365, Racer (Road America 6 h in 2026). Wikipedia "12 Hours
   of Sebring" (rolling start from 1970).
-- Not confirmed, marked `(?)`: the ALMS driver rule, which champions get a
-  Le Mans invitation.
-- Not found: race points values, qualifying format, pit and refuelling rules,
-  drive time limits, full-course yellow rules. The IMSA rulebook is the
-  next place to check.
+- Wikipedia, "2002", "2009" and "2011 American Le Mans Series" (points
+  scales, 45 minutes to score; the 2011 table cites the IMSA rulebook),
+  Speedsport Magazine, ALMS 2002 points (scale, 1 point for the fastest
+  qualifier). Racer, 2013 (IMSA driver ratings start in 2014).
+- Sportscar365, "IMSA releases 2014 TUSC rules", and Motorsport.com, 2014
+  sporting rules (points 35-32-30, qualifying and starting drivers).
+  Motorsport.com, "IMSA restructures points" (2020, points times 10 and
+  qualifying points from 2021).
+- Autoracing1 and Speedway Digest, Rolex 24 drive time penalties (2014,
+  2015) (minimum drive time for pro-am drivers).
+- Racer and Speedsport, IMSA and ACO alliance to 2032 (three Le Mans
+  invitations), Car Racing Reporter, 2025 Le Mans invitations.
+- Wikipedia, "2009", "2010" and "2011 American Le Mans Series" (45
+  minutes to score, 2011 scales by race length, race lengths of 2 h,
+  2 h 45, 4 h). Speedsport, "Road America IMSA round extends to six
+  hours". Motorsport.com and Sportscar365 (2014 points 35-32-30-28-26).
+- Not found, marked `(?)`: points and qualifying before 1999.
+- Not found: pit and refuelling rules, drive time limits, full-course
+  yellow rules. The IMSA rulebook is the next place to check.
 
 ## Discord post
 
 === post | IMSA race format history | imsa-race-format-points
 ## IMSA race format, drivers and points, 1971 to 2026
 
-Part two and the last of the IMSA rules history. The sources had no points values or pit rules, so this is mostly race lengths and line-ups. What stood out to me:
+Part two and the last of the IMSA rules history. The sources had no pit rules, so this is mostly race lengths, line-ups and points. What stood out to me:
 
 - **The big races are by time:** Daytona 24 hours, Sebring 12, Petit Le Mans 10 (or 1,000 miles, whichever came first, until 2013), Watkins Glen 6, sprints of 2 hours 40.
 - **Rolling starts** since 1970 at Sebring and 1971 at Daytona.

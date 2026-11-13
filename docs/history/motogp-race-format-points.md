@@ -10,11 +10,11 @@ points). The table image is made with
 
 | Years | Race | Qualifying and grid | Points | Quirks |
 |---|---|---|---|---|
-| 1949 to 1968 | One race per Grand Prix. | Not stated (?). | 1949: 10-8-7-6-5 and 1 for the fastest lap, best 3 count. 1950: 8-6-4-3-2-1, best 4. Then best 4 to 6. | 1954 Ulster GP not counted after rain shortened it. |
+| 1949 to 1968 | One race per Grand Prix. | Not stated (?). | 1949: 10-8-7-6-5 and 1 for the fastest lap, best 3 count. 1950 to 1968: 8-6-4-3-2-1, best 4 to 6. | 1954 Ulster GP not counted after rain shortened it. |
 | 1969 to 1987 | Same. Push starts until 1987. | Not stated (?). | 15-12-10-8-6-5-4-3-2-1. Best results only, in 1976 split by season half. All results count 1977 to 1987. | |
-| 1988 to 1992 | Same. Grid of 4 per row from 1990. | Not stated (?). | 20-17-15-13-11-10-9-8-7-6-5-4-3-2-1 (1988 to 1991). 1992: 20-15-12-10-8-6-4-3-2-1. | |
-| 1993 to 2004 | About 45 minutes, no stops. Rain: red flag, restart on wet tyres. | Not stated (?). Grid of 3 per row from 2004. | 25-20-16-13-11-10-9-8-7-6-5-4-3-2-1, top 15. | |
-| 2005 to 2012 | Flag-to-flag from 2005: riders swap to a second bike with wet tyres. | Qualifying tyres until 2008. | Same. | |
+| 1988 to 1992 | Same. Grid of 4 per row from 1990 (5 before). | Not stated (?). | 20-17-15-13-11-10-9-8-7-6-5-4-3-2-1 (1988 to 1991). 1992: 20-15-12-10-8-6-4-3-2-1. | |
+| 1993 to 2004 | About 45 minutes, no stops. Rain: red flag, restart on wet tyres. | By 2004 two sessions, Friday and Saturday. Earlier not stated (?). Grid of 3 per row from 2004. | 25-20-16-13-11-10-9-8-7-6-5-4-3-2-1, top 15. | |
+| 2005 to 2012 | Flag-to-flag from 2005: riders swap to a second bike with wet tyres. | One hour on Saturday from 2005. Qualifying tyres until 2008. | Same. | |
 | 2013 to 2022 | Same. Long lap penalty from 2019 for track limits. | Q1 and Q2: the top 10 from practice go straight to Q2, the best two of Q1 join them. | Same. Riders', constructors' and teams' titles. | Rookie rule dropped for 2013. |
 | 2023 to 2026 | Sprint race on Saturday, about half the distance. Main race Sunday. | Q1 and Q2, direct Q2 places from Friday practice. | Sprint: 12-9-7-6-5-4-3-2-1. Race as before. A race needs half its distance for full points. | 2023 Japan: red flag on lap 13 of 24, full points. 2027: separate sprint qualifying on Friday. |
 
@@ -41,8 +41,14 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   articles (Q1 and Q2, sprints, Japan 2023).
 - Motorsport Week and Visordown, 2023 Japanese GP (12 of 24 laps done,
   full points at half distance).
-- Not confirmed, marked `(?)`: qualifying before 2013. The points list
-  gives the best-results counts for 1951 to 1975 but not every scale.
+- Wikipedia 1960 and 1966 season articles (8-6-4-3-2-1 to sixth).
+- Roadracing World, 2005 Spanish GP (one hour replaces two sessions over
+  two days, MotoGP only), Crash.net 2012 (single one-hour session before
+  2013).
+- Grand Prix motorcycle racing chronology (grid five to four per row
+  1990, four to three 2004). MotoGP.com and The Race, October 2026 (sprint
+  qualifying on Friday from 2027).
+- Not confirmed, marked `(?)`: qualifying before the 2000s.
 
 ## Discord post
 

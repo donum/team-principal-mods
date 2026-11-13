@@ -14,23 +14,23 @@ conflicting. No DTM ran from 1997 to 1999.
 | Years | Mandatory stops | Fuel | Tyres | Stop rules |
 |---|---|---|---|---|
 | 1984 to 1987 | None. Stops only for damage or tyres. | | Open tyre war, each team picks its make. | |
-| 1988 to 1996 | None. | No refuelling between the two races (1988). | 10 tyres per weekend (1988). | Stops for tyres or damage only (1993). |
-| 2000 | None. | | Dunlop control tyre, 5 sets per weekend. | |
+| 1988 to 1996 | None. | No refuelling between the two races (1988). | 10 tyres per weekend (1988) (?). | Stops for tyres or damage only (1993) (?). |
+| 2000 | None. | | Dunlop control tyre, 5 sets per weekend (?). | |
 | 2001 to 2002 | One in the main race, all four tyres. | No refuelling. | Control tyre. | A 25-minute service window between the races for fuel, tyres and repairs (2001). |
-| 2003 to 2007 | Two, with tyre changes. | Refuelling from churns, 70 litre tank (2003). | 9 sets (2005), 7 sets (2006). Tyre warmers banned (2003). | |
-| 2008 | Two, both in the middle third of the race. From mid-season: in the 2nd and 3rd quarters. | Refuelling. | | |
+| 2003 to 2007 | Two, with tyre changes. | Refuelling from churns, 70 litre tank (2003) (?). | 9 sets (2005), 7 sets (2006). Tyre warmers banned (2003) (?). | |
+| 2008 | Two, both in the middle third of the race. From mid-season: in the 2nd and 3rd quarters (?). | Refuelling. | | |
 | 2009 to 2011 | Two. | Refuelling, last year 2011. | Hankook control slick and wet (2011). | |
 | 2012 | Two, each inside a window. | No refuelling, 120 litre tank. | | |
-| 2013 | Two, no window, none in the first or last 3 laps. | No refuelling. | One option set per race, every driver must use it. | Stops for damage don't count. |
-| 2014 | One, in the middle third of the race. | | Option tyre for at most half the distance. | Not under the safety car. No window in wet races (?). |
+| 2013 | Two, no window, none in the first or last 3 laps. | No refuelling. | One option set per race, every driver must use it. | Stops for damage don't count (?). |
+| 2014 | One, in the middle third of the race. | | Option tyre for at most half the distance. | Not under the safety car. From round 4 (Norisring) no window when the race is declared wet before the start. |
 | 2015 to 2016 | Saturday none, Sunday one. | | 4 slick sets for both qualifyings and both races. Option tyre gone. | |
 | 2017 to 2018 | One per race. | | | 8 mechanics, one wheelgun per side, tyre warmers banned. |
 | 2019 to 2020 | One per race. | | 7 slick sets, at most 2 new in qualifying. | Not under the safety car. |
 | 2021 | One, all four wheels. | | | A change under the safety car doesn't count. |
 | 2022 | One, between minute 10 and 40. | | 3 sets per race day. | Rear wheels first, 4 wheel mechanics. Stops under the safety car count now, but not under full-course yellow. |
-| 2023 | One, between minute 20 and 40. | | Pirelli, 3 or 4 new sets by track. The top 5 start on their qualifying tyres. | 6 crew, rear wheels first. A pit stop challenge award. |
+| 2023 | One, between minute 20 and 40. | | Pirelli, 3 or 4 new sets by track. The top 5 start on their qualifying tyres. | 6 crew (?), rear wheels first. A pit stop challenge award. |
 | 2024 | One, between minute 20 and 40. | | The top 10 start on their qualifying tyres. | A change under safety car or full-course yellow doesn't count. |
-| 2025 | Saturday one (minute 20 to 40). Sunday two (minute 10 to 25 and 39 to 45). | | 3 or 4 new sets, top 10 start on qualifying tyres. | |
+| 2025 | Saturday one (minute 20 to 40). Sunday two (minute 10 to 25 and 39 to 45). | | 3 or 4 new sets (?), top 10 start on qualifying tyres. | |
 | 2026 | As 2025. | | A race-day pool of 3 or 4 new sets per track, plus a test pool. A wheel that is thrown out leaves the allocation. | |
 
 ## In the game today
@@ -60,6 +60,24 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   Autobild 2014. 2025 Sunday first window: Red Bull Ring and de.wikipedia
   say minute 10 to 25, a Porsche preview says 10 to 20. 2022 window: the
   de.wikipedia page gives minute 11 to 40.
+- Confirmation round: touringcarracing.net 1988 Zolder (no refuelling
+  between races). Autosport 2005 cost cuts (two sets fewer, seven for
+  2006). crash.net and Autobild 2003 rules (refuelling new). touringcartimes
+  March 2008 (stops in the second third of the race). de.wikipedia 2012
+  (120 litres), 2017 (8 mechanics, one wheelgun per side, no tyre warmers),
+  2022 (rear wheels first, four wheel mechanics, safety car stops, FCY),
+  2024 and 2025 (Sunday windows 10 to 25 and 39 to 45). Audi 2019
+  regulations page (7 slick sets, at most 2 new in qualifying). auto123 2013
+  (no stops in the first or last 3 laps, one option set). Autobild 2014
+  (second third, half distance). Motorsport.com and Autosport 2022 (window
+  from minute 10 to 40), 2024 (top 10 rule, FCY and safety car), April 2026
+  (two tyre pools, 3 or 4 sets per track, discarded wheel rule). Red Bull
+  Ring 2025 guide. de.wikipedia 2023 regulations section and the DTM 2023
+  sporting regulations (Pit Stop Challenge title). Not found: 1988 tyre
+  count, 2000 set count, the 2003 tank and tyre warmer rule, the 2008
+  quarters, the 2013 damage rule, the 2023 crew size, the 2025 set count.
+- 2014 wet races: DTM commission decision of 4 June 2014 (motorsport.com,
+  mbpassion.de).
 
 ## Discord post
 

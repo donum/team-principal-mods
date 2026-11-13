@@ -16,9 +16,9 @@ image is made with
 | 1996 | IRL: 1992 to 1995 CART chassis by Lola and Reynard. | Turbo V8 at 45 inHg boost. Buick "stock block" V6 at 55 inHg. | None. | Two engine types with different boost. |
 | 1997 to 2002 | IRL: Dallara, G-Force, Riley & Scott (to 2000). | 4.0 L V8 without turbo, 10,000 rpm, about 650 hp. Oldsmobile (Chevrolet from 2002), Nissan/Infiniti. | None. | Cheaper "production-based" engines. |
 | 2000 to 2005 | Panoz bought G-Force (2002). New makers need approval from 2003. | 3.5 L, then 3.0 L from the 2004 Indy 500 after crashes. Toyota and Honda come over from CART (2003). | None. | |
-| 2004 to 2007 | Champ Car: Lola (2004 to 2006), Panoz DP01 (2007). | Ford-Cosworth 2.65 L turbo V8, about 750 hp, leased to all teams. | Push-to-pass from 2004: about 50 hp for a set time per race. | 2008: the IRL buys Champ Car's assets for 6 million USD and the series merge. |
+| 2004 to 2007 | Champ Car: Lola (2004 to 2006), Panoz DP01 (2007). | Ford-Cosworth 2.65 L turbo V8, about 750 hp, leased to all teams. | Push-to-pass from 2004: about 50 hp, 60 s per race in total. | 2008: the IRL buys Champ Car's assets for 6 million USD, plus 2 million to each of the two owners, and the series merge. |
 | 2006 to 2011 | IndyCar: Dallara only from about 2008. | Honda alone. 3.5 L from 2007, 10,300 rpm, about 650 hp, 1,200 miles between rebuilds. | Push-to-pass from mid-2009: 10,500 rpm, about 690 hp. | A full engine lease cost 935,000 USD per car (2010). |
-| 2012 to 2014 | Dallara DW12, safety cell price capped. | 2.2 L twin-turbo V6: Chevrolet, Honda (single turbo to 2013), Lotus (2012 only). 12,000 rpm. Boost 1.3 to 1.6 bar by track. | Push-to-pass: about 60 hp for 6 to 200 s per race by track (from Toronto 2012). | |
+| 2012 to 2014 | Dallara DW12, safety cell price capped. | 2.2 L twin-turbo V6: Chevrolet, Honda (single turbo to 2013), Lotus (2012 only). 12,000 rpm. Boost 1.3 to 1.6 bar by track. | Push-to-pass from Toronto 2012: more boost and 200 rpm. 2013: 10 uses of 15 or 20 s per race by track. | |
 | 2015 to 2017 | DW12 with aero kits by Chevrolet and Honda. Frozen 2017. | Same. | Same. | Two makers, two looks. |
 | 2018 to 2019 | DW12 with one universal aero kit for all. Front protection from Indy 2019. | Same. | Same. | |
 | 2020 to 2023 | DW12 with aeroscreen. | Chevrolet and Honda. | Same. | |
@@ -48,8 +48,21 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   USD for Champ Car's assets, plus 2 million each to the two owners; one
   later report says about 10 million in total), "1968 Indianapolis 500" (first win
   for a turbo engine).
-- Conflicts: push-to-pass power, 50 or 60 hp. Merger price, 6 or 10
-  million USD depending on what is counted.
+- Open items check: Crash.net 2004 and "Ford-Cosworth Indy V8 engine"
+  (Champ Car push-to-pass about 50 hp, 750 to 800 hp, 60 s per race),
+  IndyCar.com 2013 (push-to-pass 21.7 to 23.2 psi, 200 rpm, 10 pushes of
+  15 or 20 s), ESPN 2012 (Toronto: 150 to 160 kPa), "Champ Car World
+  Series" (6 million USD plus 2 million each to Forsythe and Kalkhoven for
+  a non-compete; the 10 million total counts all three payments).
+- Confirmation round: "IndyCar Series" (1996 boost, 1997 4.0 L, 3.0 L from
+  the 2004 Indy 500, Honda alone 2006 to 2011, Honda single turbo 2012 to
+  2013, Panoz bought G Force 2002, IR-28 delay), Autosport and the AP 2012
+  (Lotus 2012 only), Crash.net and Autosport 2004 (Champ Car push-to-pass
+  50 hp, 60 s). The 2010 lease price (935,000 USD) and the 1,200 miles
+  were found only in the "Honda Indy V8" article.
+- Sources differ on the IndyCar push-to-pass gain from 2012: about 25 hp
+  (ESPN, Toronto 2012), 50 hp ("Dallara DW12"), 60 hp ("IndyCar Series").
+  The table gives the boost and time rules instead.
 
 ## Discord post
 

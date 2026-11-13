@@ -10,12 +10,12 @@ The table image is made with
 
 | Years | Event | Retirements | Points | Titles |
 |---|---|---|---|---|
-| 1973 to 1978 | Special stages against the clock, joined by road sections. 8 to 13 rallies a year. | Out is out. | Makes only: 20-15-12-10-8-6-4-3-2-1, best car of each make (1973). Later by overall and group place (?). | Manufacturers from 1973, an FIA Cup for drivers in 1977 and 1978. |
+| 1973 to 1978 | Special stages against the clock, joined by road sections. 8 to 13 rallies a year. | Out is out. | Makes only: 20-15-12-10-8-6-4-3-2-1, best car of each make, to 1976. From 1977 by overall and group place, top 10 only. | Manufacturers from 1973, an FIA Cup for drivers in 1977 and 1978. |
 | 1979 to 2003 | Same. 8 to 14 rallies (8 in 1995). | Out is out. | Drivers: 20-15-12-10-8-6-4-3-2-1 to 1996, 10-6-4-3-2-1 from 1997, 10-8-6-5-4-3-2-1 from 2003. Makes: own scales. | Drivers' title from 1979, co-drivers recorded from 1982 (?). |
 | 2004 to 2010 | Same. 12 to 16 rallies. | Restart the next day after retiring ("SuperRally", later "Rally 2"), with a time penalty, first tried in 2004. | 10-8-6-5-4-3-2-1 to 2009. Top 10: 25-18-15-12-10-8-6-4-2-1 from 2010. | |
-| 2011 to 2016 | Same. 13 rallies. Shakedown Thursday. | Same. | Plus the Power Stage at the end: 3-2-1. | Makes score from their best two nominated crews. |
-| 2017 to 2023 | Same. Since 2021 one surface per rally. 7 rallies in 2020. | Same, "restart after retirement" from 2019. Only crews that restarted can score. | Power Stage 5-4-3-2-1. Makes score Power Stage points from 2021. | |
-| 2024 | 15 to 30 stages, at most 350 km of stages, 13 rallies. | Same. | Saturday night standings: 18-15-13-10-8-6-4-3-2-1 (if the crew finishes). Sunday stages: 7 down to 1. Power Stage 5 down to 1. Most per rally: 30. | Drivers' and makes' champions differ in 2018, 2019, 2020 and 2024. |
+| 2011 to 2016 | Same. 13 rallies. Shakedown Thursday. | Same. | Plus the Power Stage at the end: 3-2-1. | Makes score from their two nominated crews. |
+| 2017 to 2023 | Same. Since 2021 one surface per rally. 7 rallies in 2020. | Same, "restart after retirement" from 2019. Only crews that restarted can score. | Power Stage 5-4-3-2-1. Makes score Power Stage points from 2021. | Makes nominate up to three crews, the best two score (2017). |
+| 2024 | 15 to 30 stages, at most 350 km of stages, 13 rallies. | Same. | Saturday night standings: 18-15-13-10-8-6-4-3-2-1 (if the crew finishes). Sunday stages: 7 down to 1. Power Stage 5 down to 1. Most per rally: 30. | Since 2017, drivers' and makes' champions differ in 2018, 2019, 2020 and 2024. |
 | 2025 to 2026 | Same. | Same. | Final result again: 25-17-15-12-10-8-6-4-2-1. Sunday stages 5 down to 1. Power Stage 5 down to 1. Most per rally: 35. | |
 
 ## In the game today
@@ -40,11 +40,19 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia season articles 1973, 1979, 2010, 2025 and 2026 (points
   scales, rally counts), DirtFish (SuperRally first tried at the 2004
   Acropolis Rally, before that a retirement ended the rally).
-- Not confirmed, marked `(?)`: makes' points 1974 to 1978, co-drivers'
-  records, running order rules.
+- Wikipedia season articles 1975, 1976, 1977 and 1978 (makes' points).
+- Wikipedia, "List of World Rally Championship Co-Drivers' champions"
+  (first title officially recorded in 1982, from the FIA yearbooks; its
+  talk page says there is no official source).
+- Not confirmed, marked `(?)`: co-drivers' records. Not found: running
+  order rules before today's priority groups.
 - Crash.net and GrandPrix.com, 2002 (10-6-4-3-2-1 replaced by
   10-8-6-5-4-3-2-1 for 2003).
 - Scales: 25-18-15 from 2010 to 2023, 25-17-15 from 2025.
+- Juwra standings 1996 and 1997 (20 down to 1 in 1996, 10-6-4-3-2-1 in
+  1997). Speedcafe 2025 (2024 and 2025 scales, 35 at most). Autosport and
+  Rallysportmag 2016 and 2018 (three nominated crews, best two score, from
+  2017; before that two cars scored). Wikipedia manufacturers' champions.
 
 ## Discord post
 

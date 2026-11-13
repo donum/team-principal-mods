@@ -36,6 +36,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   (Green and Schumacher won the team relay over Tambay and Scheider,
   Ekström beat Green in the final). Not found: cars, qualifying, prize
   money.
+- Confirmation round: en.wikipedia 2011 and 2012 seasons (dates, formats,
+  winners, no points, whole grid) and Olympiastadion (Munich) (Race of
+  Champions style, ended in 2013). The reason for the end has only this
+  one source.
 
 ## Discord post
 

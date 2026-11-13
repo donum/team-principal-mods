@@ -12,12 +12,12 @@ is made with
 
 | Years | Races | Start and qualifying | Finish and classification | Titles and points |
 |---|---|---|---|---|
-| 1953 to 1962 | Le Mans 24 h, Sebring 12 h, 1000 km races, Mille Miglia, Targa Florio, Carrera Panamericana. | Le Mans start: drivers run across the track to their cars. Cars lined up by engine size. | Le Mans: the most distance from the starting spot wins. | Manufacturers' title only. Points per place (?). |
+| 1953 to 1962 | Le Mans 24 h, Sebring 12 h, 1000 km races, Mille Miglia, Targa Florio, Carrera Panamericana. | Le Mans start: drivers run across the track to their cars. Cars lined up by engine size. | Le Mans: the most distance from the starting spot wins. | Manufacturers' title only. 8-6-4-3-2-1 for the best car of each make, only the best results count. 1962: 9-6-4-3-2-1 per class. |
 | 1963 to 1969 | Same kinds of races. | Le Mans start, grid by qualifying times from 1963. | Same. | Titles per GT class and for prototypes. |
 | 1969 to 1970 | | 1969: Ickx walked to his car in protest, strapped in, and still won. 1970: drivers already strapped in, engines started at the flag. | | |
 | 1971 to 1981 | Le Mans not in the championship 1975 to 1979. | Rolling start behind the safety car. | From 1971: most distance at the end of the last lap, measured from the line. | Makes titles. Drivers' title from 1981. |
 | 1982 to 1992 | Mostly 500 or 1000 km, about 3 or 6 hours. Le Mans out in 1989 and 1990. | Rolling start. | | Manufacturers to 1984, then teams from 1985. Drivers' title. |
-| 1993 to 2011 | No world championship. Le Mans on its own, ILMC from 2010. | Pre-qualifying test day to 2000. Practice and qualifying Wednesday and Thursday. | | |
+| 1993 to 2011 | No world championship. Le Mans on its own, ILMC from 2010. | Pre-qualifying test day to 1999. Practice and qualifying Wednesday and Thursday. | | |
 | 2012 to 2019 | WEC: 6-hour races, Le Mans 24 h, some 4 and 8 hours, Sebring 1000 miles (2019). All timed. | Qualifying with the times of two drivers averaged (not at Le Mans). | Classified: the car must finish the last lap within a set lap time, and cover 70% of the overall winner's distance. | Top 10 score on a scale (25 for a win), 11th and lower half a point. Le Mans double (1.5 times in 2018 and 2019), 8 and 10 hours about 1.5 times. |
 | 2014 to 2026 | | | Slow zones at Le Mans and full-course yellow from 2014. Safety cars. | GTE drivers' and makes' world titles 2017 to 2022, cups before. |
 | 2020 to 2026 | Le Mans moved to September (2020) and August (2021). 2026: 8 rounds, Le Mans plus 6-hour races and Qatar 1812 km (2024, 2025). | Hyperpole: a shootout for pole (Le Mans 2020, all rounds from 2021). Pole is worth 1 point. | Points need 70% of the winner's distance and two laps under green (2021). | World titles for the top class drivers and makes (and GTE Pro to 2022), cups for the other classes. |
@@ -50,7 +50,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   averaged, 2014 full-course yellow, 2017 GT world titles), ACO and
   Autosport (Hyperpole from Le Mans 2020, all rounds 2021), Motorsport.com
   (double points at Le Mans since 2012, 1.5 times in 2018 and 2019).
-- Not confirmed, marked `(?)`: points per place before 2012.
+- Wikipedia, "1953", "1958" and "1962 World Sportscar Championship" (points
+  per place, best car per make, best results only), Supercars.net, "The
+  1953 Championship".
+- Motorsport.com, "Pre-qualifying bump day" and Autosport, Le Mans 2000
+  preview (last pre-qualifying in 1999, entries by invitation from 2000).
+- Autosport, "Le Mans 24 Hours to be worth 1.5x WEC points in 2018".
 
 ## Discord post
 

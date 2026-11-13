@@ -11,11 +11,11 @@ before you rely on it.
 
 | Years | Why cars stop | Fuel | Pit lane, safety car, penalties | Quirks |
 |---|---|---|---|---|
-| 1950 to 1960s | Rarely. Damage, worn tyres, or a driver change. Most cars run the whole race without a stop. | Refuelling allowed, but cars start with enough fuel. | No speed limit, no safety car. | Until 1957 a driver can take over a team mate's car and the points are shared. A stop can take a minute or more (?). |
+| 1950 to 1960s | Rarely. Damage, worn tyres, or a driver change. Most cars run the whole race without a stop. | Refuelling allowed, but cars start with enough fuel. | No speed limit, no safety car. | Until 1957 a driver can take over a team mate's car and the points are shared. Germany 1957: Fangio's stop for fuel and rear wheels took 52 s, long even then. |
 | 1970s to 1981 | Tyres only when damaged or for rain. | Refuelling allowed, nobody plans it. | First safety car in 1973 (Canada, a Porsche 914). Not used again for years. | A stop is a loss, so teams build tyres and cars to last the race. |
 | 1982 to 1983 | Brabham plans a stop for fuel and tyres: start light on soft tyres, stop halfway. First done in Austria 1982. | Refuelling allowed until 1983. | No speed limit. | Brabham's idea works, others copy it, then refuelling is banned. |
 | 1984 to 1993 | Tyres. Soft tyres plus one stop can beat running non-stop. | No refuelling. Fuel limit per race: 220 L (1984), 195 L (1986), 150 L for turbos (1988). | Safety car official from 1993. No pit speed limit yet. | Portugal 1989: Mansell reversed in the pit lane and was disqualified. Portugal 1991: a wheel came off as he left the box. |
-| 1994 to 2004 | Fuel and tyres. One, two or three stops, chosen by strategy. | Refuelling back from 1994, over 12 litres per second. Stops last 6 to 12 seconds. | Pit lane speed limit after Imola 1994, where a loose wheel hurt mechanics. Stop-go and drive-through penalties (start year (?)). | Hockenheim 1994: fire at Verstappen's Benetton stop. A fire extinguisher man became standard. France 2004: Schumacher won with four stops. |
+| 1994 to 2004 | Fuel and tyres. One, two or three stops, chosen by strategy. | Refuelling back from 1994, over 12 litres per second. Stops last 6 to 12 seconds. | Pit lane speed limit after Imola 1994, where a loose wheel hurt mechanics. Stop-go penalties in use by 1994: Schumacher served one late at Silverstone and was disqualified. Drive-through start year (?). | Hockenheim 1994: fire at Verstappen's Benetton stop. A fire extinguisher man became standard. France 2004: Schumacher won with four stops. |
 | 2005 | Fuel only. | Refuelling. | Tyres may not be changed, unless damaged or wet. | One set of tyres for qualifying and the race. |
 | 2006 | Fuel and tyres. | Refuelling. | Same as 2004. | |
 | 2007 to 2008 | Fuel and tyres. Both dry compounds must be used. | Refuelling. | Pit lane closed as soon as the safety car comes out. Entering early: 10 s stop-go. | Cars low on fuel got a penalty for a stop they had to make. Singapore 2008: Piquet crashed on purpose just after Alonso's early stop. Massa drove off with the fuel hose still on. |
@@ -28,11 +28,11 @@ before you rely on it.
 
 ## Rules across all years
 
-- Under a red flag, teams may work on the car and change tyres in the pit
-  lane (?).
+- Under a red flag, teams may change tyres and repair the car. Monaco
+  2011: Vettel won on fresh tyres fitted during the stop.
 - A typical crew today: four wheel gunners, eight tyre carriers, front and
   rear jack men, two stabilisers, front wing men and a fire extinguisher
-  man (?). One crew for both cars, so a "double stack" makes the second car
+  man. One crew for both cars, so a "double stack" makes the second car
   wait.
 - Driving through the pit lane costs between about 15 and 30 seconds
   depending on the track. That loss is why stops are a strategy at all.
@@ -66,9 +66,18 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   "Safety car" (10 s stop-go, no low fuel exception). FIA and racer.com,
   July 2013 (helmets, 80 km/h after Germany 2013). Monaco two-stop rule
   removed for 2026 (motorsport.com, f1i.com).
-- Brabham 1982 and the 5 s penalty from general knowledge.
-- Not confirmed, marked `(?)`: 1950s stop times, penalty start years, red
-  flag work, a fire extinguisher man in today's crew.
+- Brabham 1982 and the 5 s penalty from general knowledge. Confirmation
+  round: Wikipedia "1982 Austrian Grand Prix" and Motor Sport September
+  1982 (first planned stop in Austria, earlier tries at Brands Hatch and
+  Hockenheim). "History of Formula One regulations" (fuel limits, 2026
+  3000 MJ/h). Fangio 1957: 52 s (Motor Sport) and over 56 s (other
+  accounts) both found.
+- Open items check: Motor Sport, September 1957 report (Fangio 52 s),
+  other accounts say 56 to 58 s. Wikipedia "1994 British Grand Prix"
+  (five second stop-go). Monaco 2011 red flag: racefans.net, crash.net,
+  grandprix.com. Fire extinguisher man: Wikipedia "Pit stop", gpfans.com.
+- Not confirmed, marked `(?)`: when the drive-through penalty started
+  (forum posts say 1991, fan videos say Malaysia 2002).
 
 ## Discord post
 

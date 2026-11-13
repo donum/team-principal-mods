@@ -11,11 +11,11 @@ had little on navigation and penalty rules.
 
 | Years | Route | Stages | Rules | Quirks |
 |---|---|---|---|---|
-| 1979 to 1991 | Paris to Dakar, through Algiers (to 1988), Tunis (1989), Tripoli (1990, 1991). About 10,000 km. | Long stages, up to 800 or 900 km a day. | Lowest total time, penalties included, wins each class. | 1986: founder Thierry Sabine dies in a helicopter crash. 603 starters in 1988. |
+| 1979 to 1991 | Paris to Dakar, through Algiers (to 1988), Tunis (1989), Tripoli (1990, 1991). 10,000 to 15,000 km. | Long stages, some over 900 km a day (1,656 km in 1986). | Lowest total time, penalties included, wins each class. | 1986: founder Thierry Sabine dies in a helicopter crash. 603 starters in 1988. |
 | 1992 to 2007 | Cape Town (1992), back to Paris (1994), Granada, Dakar to Cairo (2000), starts in Arras, Marseille, Clermont-Ferrand, Barcelona, Lisbon. | Same. | GPS used for the first time in 1992. 2001: an hour's penalty for unsporting conduct decides the car class. | 688 starters in 2005, a record. |
 | 2008 | Cancelled after threats in Mauritania. | | | A substitute in Hungary and Romania counts as the official 2008 edition. |
-| 2009 to 2019 | South America: Argentina, Chile, Bolivia, Peru, Paraguay (2017). 2019 only Peru. | Same. | Same (?). | |
-| 2020 to 2026 | Saudi Arabia. | 2024: a prologue and 12 stages, about 5,000 km of stages, a "48-hour chrono" stage with a night stop in the desert. | Part of the World Rally-Raid Championship from 2022. From 2020 a crew that drops out of a stage may rejoin as "Dakar Experience". In 2024 they stay in the results with a heavy time penalty, one restart only. | 2027: Portugal to Morocco as a one-off (announced October 2026), back to Saudi Arabia in 2028. |
+| 2009 to 2019 | South America: Argentina, Chile, Bolivia, Peru, Paraguay (2017). 2019 only Peru. | Same. | Same: lowest total time, penalties included. | |
+| 2020 to 2026 | Saudi Arabia. | 2024: a prologue and 12 stages, about 5,000 km of stages, a "48-hour chrono" stage with a night stop in the desert. | Part of the World Rally-Raid Championship from 2022. From 2020 a crew that drops out of a stage may rejoin as "Dakar Experience". In 2024 they get a time penalty (2 hours per missed stage for bikes) and do not count as finishers. RallyGP bikes may not restart. | 2027: Portugal to Morocco as a one-off (announced October 2026), back to Saudi Arabia in 2028. |
 
 ## In the game today
 
@@ -43,8 +43,21 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Not found: navigation rules in detail, rest day rules. FIA 2024
   regulations: missing 40 percent of the waypoints in a stage counts as
   a retirement (The Checkered Flag, December 2023).
-- Conflict: the 2024 Wikipedia page says there was no Dakar Experience
-  that year, The Checkered Flag describes it for 2024.
+- ASO, "Rally Dakar 2024 Supplementary Regulations" (FIM, bikes and
+  quads), art. 11.15 and 11.16: a stage penalty of 2 hours for a missed
+  stage, no restart for RallyGP, more than 3 stage penalties means
+  disqualification, riders who miss part of the route are "Dakar
+  Experience", not finishers. This settles the 2024 conflict: the
+  Wikipedia note "no Dakar Experience category" does not match the
+  regulations.
+- Confirmation round: Red Bull, "The toughest Dakar Rally" and
+  Motor1 Spain, "40 años de historia del Dakar" (1986: 15,000 km,
+  five stages over 900 km, Kiffa to Saint-Louis 1,656 km); old
+  Wikipedia route list on academickids.com (Paris-Alger-Dakar to
+  1988, Tunis 1989, Tripoli 1990 and 1991); Al Jazeera and RACER,
+  30 October 2026 (2027 route, Saudi Arabia in 2028).
+- Wikipedia, "2015 Dakar Rally" (overall standings by time, time
+  penalties, for example for an engine change).
 
 ## Discord post
 
