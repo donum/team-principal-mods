@@ -2,8 +2,9 @@
 
 How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026), IndyCar
 (1979 to 2026), endurance racing (1953 to 2026), the BTCC (1958 to 2026),
-NASCAR (1949 to 2026), Super GT (1993 to 2026), IMSA (1971 to 2026) and
-Formula E (2014 to 2026) changed,
+NASCAR (1949 to 2026), Super GT (1993 to 2026), IMSA (1971 to 2026),
+Formula E (2014 to 2026), MotoGP (1949 to 2026), the WRC (1973 to 2026), the
+NLS (1977 to 2026) and GT World Challenge (1997 to 2026) changed,
 one topic per file. Each file has a table, its sources, and a Discord post
 that is ready to paste. The table image for Discord is in
 `docs/packages/img/png/<file name>.png`.
@@ -21,8 +22,8 @@ Sources in each file, before posting.
 Every file ends with an **In the game today** table: for each rule,
 whether Team Principal (0.99.5 and the 0.99.6 beta) can do it (`Yes`), only
 with a stand-in (`Partly`) or not at all (`No`), with the item in
-`docs/DEVELOPER_WISHLIST.md`. Over all 37 files: 83 yes, 57 partly,
-139 no. Checked against the 0.99.6 beta game code.
+`docs/DEVELOPER_WISHLIST.md`. Over all 45 files: 91 yes, 62 partly,
+177 no. Checked against the 0.99.6 beta game code.
 
 Status: `draft` (not posted yet), `posted` (add the date and link),
 `answered`.
@@ -31,7 +32,7 @@ Status: `draft` (not posted yet), `posted` (add the date and link),
 
 [coverage.html](coverage.html) is one self-contained page with three views:
 
-- **Coverage:** which game features each of the 469 seasons of the nine
+- **Coverage:** which game features each season of the thirteen
   series needs, and how many seasons become playable as they were when you
   switch features on.
 - **Rules history:** every table below, per series, with what the game can
@@ -141,6 +142,43 @@ IMSA GT 1971 to 1998, ALMS 1999 to 2013, WeatherTech from 2014.
 |---|---|---|---|---|---|
 | 1 | Cars, energy and boosts | [fe-cars-energy.md](fe-cars-energy.md) | 1,037 | 1 | draft |
 | 2 | Race format, qualifying and points | [fe-race-format-points.md](fe-race-format-points.md) | 1,172 | 2 | draft |
+
+## MotoGP, 1949 to 2026
+
+The premier class: 500cc to 2001, MotoGP from 2002. The game models cars, so
+this shows which rules carry over.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Bikes, engines and tyres | [motogp-bikes-tyres.md](motogp-bikes-tyres.md) | 987 | 3 | draft |
+| 2 | Race format, qualifying and points | [motogp-race-format-points.md](motogp-race-format-points.md) | 918 | 5 | draft |
+
+## WRC, 1973 to 2026
+
+Stage rallies, the series furthest from the game.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Cars, classes and tyres | [wrc-cars-classes.md](wrc-cars-classes.md) | 954 | 4 | draft |
+| 2 | Event format and points | [wrc-format-points.md](wrc-format-points.md) | 1,002 | 5 | draft |
+
+## NLS, 1977 to 2026
+
+Nordschleife endurance races: Veedol, BFGoodrich, VLN, NLS.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Classes and points | [nls-classes-points.md](nls-classes-points.md) | 893 | 5 | draft |
+| 2 | Race format, drivers and safety | [nls-race-format.md](nls-race-format.md) | 920 | 3 | draft |
+
+## GT World Challenge, 1997 to 2026
+
+FIA GT, GT1, Blancpain, GT World Challenge Europe.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Classes and balancing | [gtwc-classes-bop.md](gtwc-classes-bop.md) | 782 | 2 | draft |
+| 2 | Race format and points | [gtwc-race-format-points.md](gtwc-race-format-points.md) | 976 | 7 | draft |
 
 ## Worth checking first
 

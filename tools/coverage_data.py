@@ -54,6 +54,8 @@ LEVERS = {
     'N3': ('Penalty points and race bans', 'Not in the wishlist yet', 'No', 'Licence penalty points, 12 points means a race ban.'),
     'N7': ('Playoff eliminations and playoff points', 'Not in the wishlist yet', 'No', 'Elimination rounds, a win to advance, playoff points carried into each round.'),
     'N8': ('Energy limit per race', 'Not in the wishlist yet', 'No', 'A fixed amount of energy per race, energy taken off under the safety car.'),
+    'N9': ('Motorcycles', 'Not in the wishlist yet', 'No', 'Bike physics and riders instead of cars.'),
+    'N10': ('Rally stages', 'Not in the wishlist yet', 'No', 'Stages on closed roads, one car at a time against the clock, overall time, restart after retiring.'),
     'N6': ('Team order ban', 'Not in the wishlist yet', 'No', 'Team orders banned, with fines when caught.'),
 }
 
@@ -192,6 +194,45 @@ NEEDS = {
   ('B4', '2023-2025', 'Manufacturers title from the best two cars of each make.'),
   ('B5', '2024-2025', 'Pit Boost: a mandatory charging stop.'),
  ],
+ 'MotoGP': [
+  ('N9', '1949-2026', 'Motorcycles and riders.'),
+  ('B3', '1949-1976', 'Only the best results count.'),
+  ('B2', '2002-2011', 'Minimum weight by number of cylinders.'),
+  ('B2', '2012-2026', 'Concessions and different rules for cheaper entries (CRT, Open class).'),
+  ('B10', '2005-2026', 'Flag-to-flag: swap to a second bike in the rain.'),
+  ('A6', '2013-2026', 'Q1 and Q2, the top 10 from practice go straight to Q2.'),
+  ('B11', '2019-2026', 'Long lap penalty for track limits.'),
+  ('A1', '2023-2026', 'Sprint race on Saturday with its own points.'),
+ ],
+ 'WRC': [
+  ('N10', '1973-2026', 'Special stages against the clock, one car at a time.'),
+  ('C8', '1973-2026', 'Driver and co-driver.'),
+  ('B4', '1973-2026', 'Several classes in one rally, makes score from nominated crews.'),
+  ('B2', '1982-1986', 'Group B weight by engine size, turbos counted 1.4 times.'),
+  ('B2', '1997-2021', 'Restrictor and weight rules by class.'),
+  ('B8', '2011-2026', 'Power Stage bonus points.'),
+  ('B3', '2024-2026', 'Points for Saturday standings and Sunday stages.'),
+  ('B13', '2022-2024', 'Hybrid boost, settings chosen per stage.'),
+ ],
+ 'NLS': [
+  ('B4', '1977-2026', 'Many classes in one race, the title from class results.'),
+  ('B3', '1977-2026', 'Points by class size, best results only.'),
+  ('A3', '1977-2026', 'Races by time (4 and 6 hours), start in three groups.'),
+  ('C8', '1977-2026', 'One to four drivers per car.'),
+  ('B11', '2015-2026', 'Code 60 zones.'),
+  ('B2', '2010-2026', 'Balance of performance for GT3 (SP9).'),
+ ],
+ 'GT World Challenge': [
+  ('B4', '1997-2026', 'Several classes in one race, by car (to 2011) or by driver rating.'),
+  ('C8', '1997-2026', 'Two to four drivers per car.'),
+  ('A3', '1997-2026', 'Races by time (2, 3, 6 and 24 hours).'),
+  ('B2', '2011-2026', 'Balance of performance for GT3.'),
+  ('A1', '2010-2026', 'Two races per weekend (GT1, then the Sprint Cup).'),
+  ('B5', '2010-2026', 'Mandatory stop or driver change window.'),
+  ('A6', '2018-2026', 'Qualifying with each driver, the times added up.'),
+  ('B3', '2013-2026', 'Points during the Spa 24 Hours, two cups add up.'),
+  ('C1', '2016-2026', 'Up to six cars per team.'),
+ ],
  'BTCC': [
   ('B4', '1958-1990', 'Classes by engine size, the title from class points.'),
   ('A1', '2000-2003', 'Two races per meeting.'),
@@ -219,6 +260,10 @@ SPANS = {
     'Super GT': '1993-2026',
     'IMSA': '1971-2026',
     'Formula E': '2014-2025',
+    'MotoGP': '1949-2026',
+    'WRC': '1973-2026',
+    'NLS': '1977-2026',
+    'GT World Challenge': '1997-2026',
 }
 
 NOTES = {
@@ -231,6 +276,10 @@ NOTES = {
     'Super GT': 'JGTC 1993 to 2004, Super GT from 2005.',
     'IMSA': 'IMSA GT 1971 to 1998, ALMS 1999 to 2013, WeatherTech from 2014, as one row.',
     'Formula E': 'Seasons by their start year: 2014 is the 2014-15 season.',
+    'MotoGP': 'The premier class: 500cc 1949 to 2001, MotoGP from 2002.',
+    'WRC': 'World Rally Championship, stage rallies.',
+    'NLS': 'Nordschleife endurance series: Veedol, BFGoodrich, VLN, NLS from 2020.',
+    'GT World Challenge': 'FIA GT 1997 to 2009, GT1 2010 to 2012, Blancpain, GT World Challenge Europe.',
 }
 
 
@@ -255,7 +304,8 @@ def dtm_needs():
 
 # History files: series key from the file name prefix.
 PREFIX = {'f1': 'F1', 'dtm': 'DTM', 'indycar': 'IndyCar', 'wec': 'Endurance', 'btcc': 'BTCC',
-          'nascar': 'NASCAR', 'supergt': 'Super GT', 'imsa': 'IMSA', 'fe': 'Formula E'}
+          'nascar': 'NASCAR', 'supergt': 'Super GT', 'imsa': 'IMSA', 'fe': 'Formula E',
+          'motogp': 'MotoGP', 'wrc': 'WRC', 'nls': 'NLS', 'gtwc': 'GT World Challenge'}
 
 
 def year_span(cell):
