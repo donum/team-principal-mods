@@ -139,7 +139,7 @@ const GAPS={
  B4:["More classifications","Manufacturer scores from the best car or best N cars, privateer and Class 2 cups, rookie award, team totals of the best two cars.","Only the game's drivers' and constructors' titles."],
  B5:["Mandatory stops and pit windows","Set number of stops (one or two), stops only between given minutes or race thirds, no stops on first and last laps.","The two-compound rule forces one stop in the dry; tyre wear is tuned for the rest."],
  B6:["DRS and push-to-pass rules","DRS anywhere, a set number of uses per lap or race, a gap limit, banned in the last laps, race only.","DRS is on or off for the whole weekend, in zones. Push-to-pass maps to spec ERS."],
- B7:["Tyre allocation rules","3 to 9 sets per weekend, one option set that must be used, an option distance cap, top 5 or 10 must start on qualifying tyres, tyre warmer bans.","Weekend allocation of 12 or 15 dry sets, or unlimited; two-compound rule."],
+ B7:["Tyre allocation rules","3 to 9 sets per weekend, one option set that must be used, an option distance cap, top 5 or 10 must start on qualifying tyres, tyre warmer bans.","Any number of sets per weekend (<code>weekend_tyre_allocation</code>); two-compound rule."],
  B8:["Qualifying points","3-2-1 for the top three in qualifying (2017 on) or in the qualifying race (2001, 2002). Fastest-lap point only inside the top 10 (2022).","The game has a single +1 pole point and an unconditional fastest-lap point."],
  B9:["Non-scoring guest entries","Guests and foreign drivers (1984) raced but scored nothing; drivers behind them moved up.","None. Every entry scores."],
  B10:["Pit-stop procedure","Crew size limits, one wheelgun per side, rear wheels first, a service window between heats, no stop under safety car counts.","None. The game's stop time model is the same for every series."],
@@ -154,21 +154,21 @@ const S=[
  [R,"fit","Mostly one sprint of about 100 km, standing start.","Laps via <code>lap_modifier</code>"],
  [R,"apx","AVUS, Nürburgring and Hockenheim ran two heats with half points each.","One race at full distance","A1"],
  [P,"fit","No pit stops. Open tyre war.","Compound rule off, tyre suppliers per team"],
- [PT,"apx","20-18-16-15 down to 1 for the top 18.","Custom <code>points_system</code> table; 18 places untested",""],
+ [PT,"fit","20-18-16-15 down to 1 for the top 18.","Custom <code>points_system</code> table, any length"],
  [PT,"no","Two drop results.","Every result counts","B3"],
  [PT,"no","Only German drivers score. Guests drop out of the points order.","Every entry scores","B9"],
  [BL,"no","Minimum weight and rim width by displacement (750 to 1425 kg), plus ONS handicaps.","Baked into team car mass","B2"]]},
 {y:"1985",e:1,t:"DPM, Group A",r:[
  [Q,"fit","Timed practice sets the grid.","session_60"],
  [R,"apx","About 100 km sprints. Erding and Diepholz ran two heats with half points.","One race per round","A1"],
- [PT,"apx","20 down to 1 for the top 18. Foreign drivers now score.","Custom table, 18 places untested"],
+ [PT,"fit","20 down to 1 for the top 18. Foreign drivers now score.","Custom table, any length"],
  [PT,"no","One drop result.","Every result counts","B3"],
  [BL,"no","Displacement weights, +70 kg for multi-valve engines. ONS changed weights mid-season at Diepholz.","One weight per team for the season","B2"]]},
 {y:"1986",e:1,t:"DTM, Group A",r:[
  [Q,"fit","Timed practice sets the grid.","session_60"],
  [R,"fit","One race of 100 to 114 km per event, full points.","Laps via lap_modifier"],
  [R,"no","Zolder I was red-flagged and restarted, result on aggregate.","No red-flag aggregate","A3"],
- [PT,"apx","20 down to 1 for the top 18.","Custom table, 18 places untested"],
+ [PT,"fit","20 down to 1 for the top 18.","Custom table, any length"],
  [PT,"no","One drop result (best 8 of 9).","Every result counts","B3"],
  [BL,"no","Turbo cars (Volvo 240T, Sierra) at 1400 kg.","Team car mass","B2"]]},
 {y:"1987",e:1,t:"DTM, Group A",r:[
@@ -180,7 +180,7 @@ const S=[
 {y:"1988",e:1,t:"DTM, Group A",r:[
  [Q,"fit","Qualifying sets the grid for race 1. Tight cut: 1.8 s off pole meant DNQ at Mainz.","session_60, <code>QUALI_GRID_LIMIT</code>"],
  [R,"no","Two races of about 100 km, 15 minutes apart. Race 2 grid is the race 1 finishing order.","Two weeks at one track at best; grid comes from qualifying","A1"],
- [P,"apx","No refuelling between the races. 10 tyres per weekend.","<code>weekend_tyre_allocation</code> strict is 12 sets","B7"],
+ [P,"fit","No refuelling between the races. 10 tyres per weekend.","<code>weekend_tyre_allocation</code> option with its own set count"],
  [PT,"no","20 down to 1 for the top 18, four drop results.","Drops not possible","B3"],
  [BL,"no","Sierra restrictor cut from 43.5 to 38 mm after round 1, then to 36 mm. Weight penalties.","One engine rating for the season","B2"]]},
 {y:"1989",e:1,t:"DTM, Group A",r:[
@@ -239,7 +239,7 @@ const S=[
  [Q,"fit","Qualifying sets the race 1 grid.","session_60"],
  [R,"no","Two races of about 100 km or 40 minutes, 15 minutes apart, equal points. Race 2 grid rule unknown.","One race per week","A1"],
  [R,"no","Rolling starts.","Standing starts only","A3"],
- [P,"apx","No stops. Dunlop control tyre, 5 sets per weekend.","Single supplier; fewest sets is 12","B7"],
+ [P,"fit","No stops. Dunlop control tyre, 5 sets per weekend.","Single supplier; <code>weekend_tyre_allocation</code> with 5 sets"],
  [PT,"fit","20-15-12-10-8-6-4-3-2-1 per race.","Custom table"]]},
 {y:"2001",e:3,t:"DTM",r:[
  [Q,"apx","45 minutes, at most 12 laps per driver.","session_60 has no lap cap","A3"],
@@ -276,9 +276,9 @@ const S=[
  [BL,"no","Brand handicap: winning make +10 kg, third make −10 kg, at most ±20 kg, current cars only.","None","B1"],
  [BL,"no","New cars 1050 kg, year-old cars 1035 kg.","One minimum weight","B2"]]},
 {y:"2006",e:3,t:"DTM",r:[
- [Q,"apx","New three-part knockout, the slowest six drop out after each part.","Game knockout; it sets the cut sizes"],
+ [Q,"apx","New three-part knockout, the slowest six drop out after each part.","Game knockout: always 10 in Q3, the rest split evenly"],
  [R,"apx","One race of about one hour.","Laps from lap times","A3"],
- [P,"apx","Two mandatory stops, refuelling. 7 sets per weekend.","Tyre wear; 12 sets minimum","B7"],
+ [P,"apx","Two mandatory stops, refuelling. 7 sets per weekend.","Tyre wear for the stops; 7 sets via <code>weekend_tyre_allocation</code>","B5"],
  [BL,"no","Make handicap ±10 kg per round, max ±20 kg.","None","B1"]]},
 {y:"2007",e:3,t:"DTM",r:[
  [Q,"apx","Three-part knockout.","Game knockout"],
@@ -307,7 +307,7 @@ const S=[
  [P,"apx","Two stops, refuelling (last year). Hankook control slick and wet.","Tyre wear; single supplier","B5"],
  [PT,"fit","10-8-6-5-4-3-2-1.","Custom table"]]},
 {y:"2012",e:4,t:"DTM",r:[
- [Q,"apx","Q1 16 min, 22 to 16 cars. Q2 to 10, Q3 to 4.","Game knockout; cut sizes are its own"],
+ [Q,"apx","Q1 16 min, 22 to 16 cars. Q2 to 10, Q3 to 4.","Game knockout: always 10 in Q3, no Q4"],
  [Q,"no","Q4: the last four run one timed lap each.","Q3 order is the grid (pack dtm-2012)","A5"],
  [R,"fit","One race, standing start, no refuelling (120 litre tank).","Laps; <code>formula_refueling</code> banned"],
  [P,"no","Two mandatory stops, each inside a pit window.","Tyre wear tuned for two stops","B5"],
@@ -316,7 +316,7 @@ const S=[
  [Q,"no","Q1 to Q3 knockout plus the last Q4 single-lap shootout.","Q3 order is the grid","A5"],
  [R,"apx","One race. Wet Nürburgring and final Hockenheim limited to 75 minutes.","Lap count","A3"],
  [P,"apx","Two stops, no window, none in the first or last 3 laps. Damage stops don't count.","Tyre wear: 160 of 220 cars stopped twice in a test season","B5"],
- [P,"apx","One option tyre set per race, which every driver must use.","Two-compound rule, no set limit","B7"],
+ [P,"apx","One option tyre set per race, which every driver must use.","Two-compound rule; any set count, but no must-use tyre","B7"],
  [R,"apx","DRS once per lap anywhere, within 2 s, race only, not first or last 3 laps.","<code>drs_policy</code> on, one zone, also in qualifying","B6"],
  [PT,"fit","25-18-15-12-10-8-6-4-2-1.","modern_top10"]]},
 {y:"2014",e:4,t:"DTM",r:[
@@ -330,7 +330,7 @@ const S=[
  [Q,"apx","A separate 20-minute session before each race.","One 60-minute session per week; two weeks give two sessions"],
  [R,"apx","Two races: Saturday 40 min, Sunday 60 min, each plus one lap. Equal points.","Two weeks at one track, laps from lap times","A1"],
  [P,"apx","Saturday no stop, Sunday one stop. Option tyre dropped.","Compound rule per race isn't possible: one setting for the season","B5"],
- [P,"no","4 slick sets for both qualifyings and both races.","12 sets minimum","B7"],
+ [P,"fit","4 slick sets for both qualifyings and both races.","<code>weekend_tyre_allocation</code> with 4 dry sets"],
  [R,"no","DRS up to 3 times per lap, within 1 s, anywhere.","DRS zones","B6"],
  [BL,"no","Performance weights per driver from round 3 (1105 to 1140 kg).","None","B1"]]},
 {y:"2016",e:4,t:"DTM",r:[
@@ -352,7 +352,7 @@ const S=[
 {y:"2019",e:5,t:"DTM",r:[
  [Q,"apx","Separate qualifying per race, 3-2-1 points.","Session per week; pole point only","B8"],
  [R,"apx","Round 1 on fixed laps (about 58 min), then 55 min plus one lap, up to 2 safety-car laps added.","Two weeks per round, laps","A3"],
- [P,"apx","One stop per race, not under safety car. 7 slick sets, at most 2 new in qualifying.","Compound rule; 12 sets minimum","B7"],
+ [P,"apx","One stop per race, not under safety car. 7 slick sets, at most 2 new in qualifying.","Compound rule; 7 sets via allocation, no limit on new sets in qualifying","B7"],
  [R,"apx","Push-to-pass +30 hp, up to 12 times per race.","<code>ers_policy</code> spec","B6"],
  [R,"no","DRS within 3 s. In the last 5 laps everyone but the leader may use it.","DRS zones","B6"],
  [PT,"no","Manufacturers score from their best 4 cars per race.","All cars count","B4"]]},
@@ -372,7 +372,7 @@ const S=[
 {y:"2022",e:6,t:"DTM, GT3",r:[
  [Q,"apx","20 minutes per race, 3-2-1 points.","Pole point only","B8"],
  [P,"no","Stop between minute 10 and 40, rear wheels first, 4 wheel mechanics. Stops under safety car now count.","No window, same stop model","B5"],
- [P,"apx","3 tyre sets per race day.","12 sets minimum","B7"],
+ [P,"apx","3 tyre sets per race day.","Sets per weekend only, not per race day","B7"],
  [R,"apx","Full-course yellow at 60 km/h. A stop under FCY doesn't count.","Virtual safety car (<code>safety_car_policy</code> all_types)","B11"],
  [PT,"apx","Fastest lap +1, only for a top-10 finisher.","Fastest-lap point for anyone","B8"],
  [BL,"no","Success ballast 25, 15 and 5 kg.","None","B1"]]},
@@ -380,8 +380,8 @@ const S=[
  [Q,"apx","Two 20-minute qualifyings, one per race, 3-2-1 points.","Pole point only","B8"],
  [R,"no","Two races of 60 min plus one lap, rolling start in a start corridor.","Standing start, laps","A3"],
  [P,"no","Stop between minute 20 and 40, 6 crew, rear wheels first. Pit stop challenge award.","No window","B5"],
- [P,"no","3 or 4 new Pirelli sets by track. The top 5 start on their qualifying tyres.","12 sets minimum","B7"],
- [PT,"apx","Top 15 score 25-20-16-13-11-10-9-8-7-6-5-4-3-2-1.","Custom table; 15 places untested"],
+ [P,"no","3 or 4 new Pirelli sets by track. The top 5 start on their qualifying tyres.","Sets per weekend, not per track; no start-tyre rule","B7"],
+ [PT,"fit","Top 15 score 25-20-16-13-11-10-9-8-7-6-5-4-3-2-1.","Custom table, any length"],
  [PT,"no","Half points for a race stopped before 75%.","None","B3"],
  [R,"no","Penalty lap of about 5 s for minor offences.","Time penalties only","B11"],
  [BL,"no","Success ballast 20, 10 and 5 kg in races only, not qualifying. Drivers ballasted to 85 kg.","None","B1"]]},
@@ -395,14 +395,14 @@ const S=[
  [Q,"apx","Two 20-minute qualifyings, 3-2-1 points.","Pole point only","B8"],
  [R,"apx","55 min plus one lap, up to 2 safety-car laps added.","Laps from lap times","A3"],
  [P,"no","Saturday one stop (minute 20 to 40). Sunday two stops (minute 10 to 20 and 39 to 45).","No count or window rules","B5"],
- [P,"no","3 or 4 new sets, top 10 start on qualifying tyres.","12 sets minimum","B7"],
+ [P,"no","3 or 4 new sets, top 10 start on qualifying tyres.","Sets per weekend; no start-tyre rule","B7"],
  [PT,"no","Rookie of the Year with its own points.","None","B4"],
  [BL,"no","Success ballast 20, 10 and 5 kg. BoP per event.","None","B1"]]},
 {y:"2026",e:6,t:"DTM, GT3",r:[
  [Q,"apx","Two 20-minute qualifyings, 3-2-1 points.","Pole point only","B8"],
  [P,"no","Saturday one stop, Sunday two (as 2025).","No count or window rules","B5"],
- [P,"no","Race-day pool of 3 or 4 new sets per track, plus a test pool. A discarded wheel leaves the allocation.","Weekend allocation of 12 or 15 sets","B7"],
- [PT,"apx","Top 15 score 25 down to 1.","Custom table, 15 places untested"],
+ [P,"no","Race-day pool of 3 or 4 new sets per track, plus a test pool. A discarded wheel leaves the allocation.","Sets per weekend only","B7"],
+ [PT,"fit","Top 15 score 25 down to 1.","Custom table, any length"],
  [BL,"no","Success ballast and BoP assumed unchanged.","None","B1"]]}
 ];
 

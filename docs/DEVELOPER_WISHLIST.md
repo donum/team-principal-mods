@@ -110,7 +110,8 @@ rules to these items:
 ### A6. Qualifying as a list of stages · P1
 - **Needed by:** every DTM season (each era had a different format), dtm-2012, dtm-2013 (Q1 to Q3 plus Q4).
 - **Today:** `qualifying_format` is `session_60` or a fixed Q1 to Q3
-  knockout with the game's own cut sizes. Pre-qualifying and the grid
+  knockout cut like F1 (10 cars in Q3, the rest split evenly over Q1 and
+  Q2; 18, 15 and 12 minutes; none of it configurable). Pre-qualifying and the grid
   limit are global constants. Every race gets its grid from the one
   qualifying.
 - **Request:** a qualifying format as a list of stages. Each race of the
@@ -246,18 +247,20 @@ rules to these items:
 - **2013 look:** the tyres were called **standard** (white sidewall) and
   **option** (yellow sidewall). There was no medium.
 - **Today:** `formula_compound_usage` asks for two different dry compounds,
-  with no limit on sets. The weekend allocation screen always lists soft,
+  and `weekend_tyre_allocation` sets any number of dry, inter and wet sets
+  per weekend (in the option payload). The weekend allocation screen always lists soft,
   medium and hard, even when `tyremodel.json` sets the medium to null:
   `DRY_COMPOUNDS` is fixed in `managers/weekend_tyre_allocation.py` and in
-  the screen. The presets also hand out medium sets. Compound names and
-  colours (red, yellow, white) are fixed in the screens' code.
+  the screen. The presets also hand out medium sets. Compound labels are
+  the `tyremodel.json` keys in title case; colours follow the first letter
+  (S red, M yellow, H white).
 - **Workaround:** the two-compound rule. The player sets the medium to 0 by
   hand each weekend.
 - **Request:** a set limit per compound and race, and "must use compound X"
   as a rule. Take the dry compounds for the allocation screen and presets
   from `tyremodel.json` (see D8 for names and colours).
 - **Other seasons:** 3 to 9 sets per weekend (2000 to 2006, 2015, 2019,
-  2022 on; the game's lowest allocation is 12), a cap of half the race
+  2022 on; per weekend this works today, per race or race day it doesn't), a cap of half the race
   distance on the option (2014), the top 5 or top 10 must start on their
   qualifying tyres (2023 on), tyre warmer bans (2003, 2017).
 
@@ -293,7 +296,7 @@ rules to these items:
 ### B12. Tyre and stop rules as data · P1
 - **Needed by:** dtm-1988 on (set limits), dtm-2001 on (stop rules), dtm-2012, dtm-2013 (two stops, option tyre once), dtm-2014 (option cap), dtm-2023 on (start on qualifying tyres).
 - **Today:** one tyre rule (`mandatory_compound_count`, on or off for the
-  whole season) and three allocation levels (12 sets at the lowest). No
+  whole season) and allocation options with any number of sets per weekend. No
   stop, window, must-use or start-tyre rule.
 - **Request:** a list of rule rows checked after the race and read by the
   AI strategy planner. Each row has a scope (race, weekend, season), who it
@@ -332,7 +335,8 @@ rules to these items:
 ### C1. More than 3 cars per team · P1
 - **Needed by:** dtm-1991, dtm-1992 (AMG ran 4 cars; Lohr is a reserve).
 - **1991:** AMG ran **4 cars**, and some teams went up to 5.
-- **Today:** `formula_team_entry_cap` stops at `three`.
+- **Today:** `formula_team_entry_cap` stops at `three`, and a team's
+  `entry_count` above 3 is cut to 3 (`team_entry_count`, 0.99.6 code).
 - **Workaround:** Kreutzpointner (AMG #87) is a reserve driver.
 - **Request:** allow 4–6 entries.
 
@@ -538,8 +542,8 @@ rules to these items:
   intermediate and wet. A pack can tune their grip, wear and temperature
   in `tyremodel.json` and set the medium to null, but the allocation
   screen, the presets, the strategy tools and the race screens still use
-  the fixed list. Names (SOFT, MEDIUM, HARD) and colours (red, yellow,
-  white) are fixed in the code.
+  the fixed list. Labels are the `tyremodel.json` keys in title case,
+  but colours follow the first letter (S red, M yellow, H white).
 - **Workaround:** soft stands in for the option and hard for the standard
   tyre. The option shows as a red "SOFT".
 - **Request:** compounds defined in `tyremodel.json`, each with

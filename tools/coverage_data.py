@@ -176,16 +176,6 @@ NOTES = {
 }
 
 
-# DTM rules that only set a number of sets per weekend: the game does that
-# (weekend_tyre_allocation takes any number), so they need no lever.
-SETS_PER_WEEKEND = {
-    'No refuelling between the races. 10 tyres per weekend.',
-    'No stops. Dunlop control tyre, 5 sets per weekend.',
-    'Two mandatory stops, refuelling. 7 sets per weekend.',
-    '4 slick sets for both qualifyings and both races.',
-}
-
-
 def dtm_needs():
     """Per season: wishlist item and rule text for every rule the game can't do exactly."""
     out = {}
@@ -199,8 +189,6 @@ def dtm_needs():
         m2 = re.match(r' \[(\w+),"(\w+)","((?:[^"\\]|\\.)*)"', line)
         if cur and m2 and m2.group(2) != 'fit':
             g = re.findall(r'"([A-D]\d+)"\]', line)
-            if g and g[0] == 'B7' and m2.group(3) in SETS_PER_WEEKEND:
-                continue
             if g and g[0] in LEVERS:
                 text = re.sub(r'<[^>]+>', '', m2.group(3)).replace('\\"', '"')
                 out[cur].append((g[0], text))

@@ -93,13 +93,15 @@ that older packs don't have.
 
 | Need (DTM 1991) | Mechanism | Status |
 |---|---|---|
-| DTM points table per race | `points_system` option with a custom `points` array, plus `POINTS_TOP10` in `constants.py` | ✅ data / 🧪 custom key |
+| DTM points table per race | `points_system` option with a custom `points` array, plus `POINTS_TOP10` in `constants.py` | ✅ data, any length (checked in the 0.99.6 code) |
 | No DRS, no ERS | `drs_policy: disabled`, `ers_policy: disabled` | ✅ |
 | No refuelling | `formula_refueling: banned` | ✅ |
 | Grid speed of heavy Group A saloons | `car_profile` option with corner/accel/braking/drag multipliers (custom "touring" option) | ✅ data / 🧪 custom key |
 | Minimum weight | `chassis_minimum_weight` option `min_car_mass_kg` (1991 base ~1,000+ kg, varies by displacement) | ✅ data |
-| Multi-car teams (AMG and Zakspeed ran 3+ cars) | `formula_team_entry_cap` (`one`/`two`/`three`), `formula_team_entry_requirement` `variable`, team `entry_count` | ✅ up to 3; more than 3 ❓ |
+| Multi-car teams (AMG and Zakspeed ran 3+ cars) | `formula_team_entry_cap` (`one`/`two`/`three`), `formula_team_entry_requirement` `variable`, team `entry_count` | ✅ up to 3; more than 3 ❌ (`entry_count` is cut to 3) |
 | Grid size of ~30 cars | `QUALI_GRID_LIMIT`, `PREQUALIFYING_*` in `constants.py` | ✅ |
+| 107% rule | `config.json` `quali_107_rule` (`enabled`, `percent`); off when `enabled` is missing | ✅ (code) |
+| Tyre sets per weekend | `weekend_tyre_allocation` option payload: `dry_sets_per_driver` (any number, null = unlimited), `intermediate_sets_per_driver`, `wet_sets_per_driver`. The allocation screen only knows soft, medium and hard. | ✅ (code) |
 | Rule evolution over seasons | `change_control.mode` (`voting`), `scripted_changes` list | ✅ structure / 🧪 scripted format |
 
 ## 3a. New in 0.99.6
@@ -154,7 +156,8 @@ it hasn't been seen in a game yet.
 1. Does a pack in `data/<custom>` load when `active_pack.json` names it?
 2. Are custom option keys in `regulations.json` (e.g. `dtm_1991`) accepted?
 3. Can the same track appear in two consecutive weeks (heat 1 and heat 2)?
-4. Does `entry_count` above 3 work when `formula_team_entry_cap` is `three`?
+4. ~~Does `entry_count` above 3 work?~~ No: the 0.99.6 code cuts it to 3
+   (`team_entry_count`).
 5. Does relabelling `car_parts.json` parts carry through to the UI? Not
    everywhere: the race event log writes "FRONT WING DAMAGE" and "changed
    front wing" (seen in a 2013 race). The Factory and Parts Warehouse
