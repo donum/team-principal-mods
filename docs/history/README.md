@@ -1,7 +1,7 @@
 # Rules history
 
-How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026) and IndyCar
-(1979 to 2026) changed,
+How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026), IndyCar
+(1979 to 2026) and endurance racing (1953 to 2026) changed,
 one topic per file. Each file has a table, its sources, and a Discord post
 that is ready to paste. The table image for Discord is in
 `docs/packages/img/png/<file name>.png`.
@@ -62,6 +62,16 @@ the sources were thin.
 | 2 | Qualifying and race format | [indycar-qualifying-race.md](indycar-qualifying-race.md) | 1,167 | 11 | draft |
 | 3 | Pit stops, fuel and tyres | [indycar-pit-fuel-tyres.md](indycar-pit-fuel-tyres.md) | 1,123 | 4 | draft |
 | 4 | Cars, engines and push-to-pass | [indycar-cars-engines.md](indycar-cars-engines.md) | 1,117 | 2 | draft |
+
+## Endurance: World Sportscar Championship, Le Mans and WEC, 1953 to 2026
+
+Three topics, because the sources were thin on pit stops and points.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Classes and balance of performance | [wec-classes-bop.md](wec-classes-bop.md) | 1,153 | 1 | draft |
+| 2 | Drivers, crews and pit stops | [wec-drivers-pit-stops.md](wec-drivers-pit-stops.md) | 1,148 | 5 | draft |
+| 3 | Race format and points | [wec-race-format-points.md](wec-race-format-points.md) | 1,133 | 6 | draft |
 
 ## Worth checking first
 
