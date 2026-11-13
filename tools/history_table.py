@@ -1,6 +1,6 @@
 """Render the table of a docs/history/*.md file as a PNG for Discord.
 
-Reads the first Markdown table under '## Table' and writes
+Reads every Markdown table before "## Sources" and writes
 docs/packages/img/png/<file stem>.png. '(?)' marks unconfirmed details and
 is shown in amber. Uses headless Edge like tools/discord_posts.py.
 
@@ -25,7 +25,9 @@ body{margin:0;background:#f8f9fa;font:15px/1.4 'Segoe UI',sans-serif;color:#2125
 .wrap{padding:28px 32px}
 .kicker{font:14px Consolas,monospace;letter-spacing:.08em;color:#646a73;margin-bottom:6px}
 h1{font-size:28px;margin:0 0 18px}
+h2{font-size:20px;margin:26px 0 10px}
 table{border-collapse:collapse;width:100%;background:#fff}
+table+h2+table{width:auto;min-width:50%}
 th{font:13px Consolas,monospace;letter-spacing:.06em;text-transform:uppercase;color:#646a73;
    text-align:left;padding:10px 12px;border-bottom:2px solid #ced4da;background:#f1f3f5}
 td{padding:9px 12px;border-bottom:1px solid #e1e5e9;vertical-align:top}
@@ -46,29 +48,43 @@ def inline(text):
 
 
 def parse(path):
+    """Title plus every table before '## Sources', each with its '## ' heading."""
     lines = open(path, encoding='utf-8').read().split('\n')
     title = next(l[2:].strip() for l in lines if l.startswith('# '))
-    start = lines.index('## Table')
-    rows = []
-    for line in lines[start + 1:]:
+    tables, heading, rows = [], '', None
+    for line in lines + ['']:
+        if line.startswith('## Sources'):
+            break
         if line.startswith('|'):
             cells = [c.strip() for c in line.strip().strip('|').split('|')]
+            if rows is None:
+                rows = []
             if not all(set(c) <= set('-: ') for c in cells):
                 rows.append(cells)
-        elif rows:
-            break
-    return title, rows[0], rows[1:]
+            continue
+        if rows:
+            tables.append((heading, rows[0], rows[1:]))
+        rows = None
+        if line.startswith('## '):
+            heading = line[3:].strip()
+    return title, tables
+
+
+def table_html(heading, head, body, first):
+    cap = '' if first else f'<h2>{escape(heading)}</h2>'
+    return (cap + '<table><tr>' + ''.join(f'<th>{escape(h)}</th>' for h in head) + '</tr>'
+            + ''.join('<tr>' + ''.join(f'<td>{inline(c)}</td>' for c in r) + '</tr>' for r in body)
+            + '</table>')
 
 
 def render(path):
-    title, head, body = parse(path)
+    title, tables = parse(path)
     stem = os.path.splitext(os.path.basename(path))[0]
     html = (f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="wrap">'
-            f'<div class="kicker">RULES HISTORY</div><h1>{escape(title)}</h1><table><tr>'
-            + ''.join(f'<th>{escape(h)}</th>' for h in head) + '</tr>'
-            + ''.join('<tr>' + ''.join(f'<td>{inline(c)}</td>' for c in r) + '</tr>' for r in body)
-            + '</table><div class="foot"><span class="q">(?)</span> not confirmed by the sources we read. '
-            'Sources: Wikipedia race weekend, 107% rule, tyres and season articles.</div></div></body></html>')
+            f'<div class="kicker">RULES HISTORY</div><h1>{escape(title)}</h1>'
+            + ''.join(table_html(*t, first=(i == 0)) for i, t in enumerate(tables))
+            + '<div class="foot"><span class="q">(?)</span> not confirmed by the sources we read. '
+            f'Sources and notes: docs/history/{stem}.md</div></div></body></html>')
     os.makedirs(PNG, exist_ok=True)
     tmp = os.path.join(PNG, stem + '.tmp.html')
     out = os.path.join(PNG, stem + '.png')
