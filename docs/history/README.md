@@ -1,7 +1,8 @@
 # Rules history
 
 How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026), IndyCar
-(1979 to 2026) and endurance racing (1953 to 2026) changed,
+(1979 to 2026), endurance racing (1953 to 2026) and the BTCC (1958 to 2026)
+changed,
 one topic per file. Each file has a table, its sources, and a Discord post
 that is ready to paste. The table image for Discord is in
 `docs/packages/img/png/<file name>.png`.
@@ -72,6 +73,14 @@ Three topics, because the sources were thin on pit stops and points.
 | 1 | Classes and balance of performance | [wec-classes-bop.md](wec-classes-bop.md) | 1,153 | 1 | draft |
 | 2 | Drivers, crews and pit stops | [wec-drivers-pit-stops.md](wec-drivers-pit-stops.md) | 1,148 | 5 | draft |
 | 3 | Race format and points | [wec-race-format-points.md](wec-race-format-points.md) | 1,133 | 6 | draft |
+
+## BTCC, 1958 to 2026
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Weekend format | [btcc-weekend-format.md](btcc-weekend-format.md) | 1,126 | 4 | draft |
+| 2 | Points and titles | [btcc-points-titles.md](btcc-points-titles.md) | 1,110 | 3 | draft |
+| 3 | Cars, classes and balancing | [btcc-cars-balancing.md](btcc-cars-balancing.md) | 1,190 | 7 | draft |
 
 ## Worth checking first
 
