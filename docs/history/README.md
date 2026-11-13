@@ -1,8 +1,8 @@
 # Rules history
 
 How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026), IndyCar
-(1979 to 2026), endurance racing (1953 to 2026) and the BTCC (1958 to 2026)
-changed,
+(1979 to 2026), endurance racing (1953 to 2026), the BTCC (1958 to 2026),
+NASCAR (1949 to 2026) and Super GT (1993 to 2026) changed,
 one topic per file. Each file has a table, its sources, and a Discord post
 that is ready to paste. The table image for Discord is in
 `docs/packages/img/png/<file name>.png`.
@@ -20,16 +20,16 @@ Sources in each file, before posting.
 Every file ends with an **In the game today** table: for each rule,
 whether Team Principal (0.99.5 and the 0.99.6 beta) can do it (`Yes`), only
 with a stand-in (`Partly`) or not at all (`No`), with the item in
-`docs/DEVELOPER_WISHLIST.md`. Over all 28 files: 58 yes, 45 partly,
-102 no. Checked against the 0.99.6 beta game code.
+`docs/DEVELOPER_WISHLIST.md`. Over all 33 files: 78 yes, 52 partly,
+120 no. Checked against the 0.99.6 beta game code.
 
 Status: `draft` (not posted yet), `posted` (add the date and link),
 `answered`.
 
 ## Coverage explorer
 
-[coverage.html](coverage.html) shows, for every season of the five series,
-which game features it needs, and how many seasons become playable as they
+[coverage.html](coverage.html) shows, for every season of the seven series,
+which game features it needs (401 seasons), and how many seasons become playable as they
 were when you switch features on. Published as an artifact:
 https://claude.ai/artifact/W9A1EGxwUBCjp6AQSVXM3Z (add `#share` for the
 screenshot view). Rebuild with `python -I tools/coverage_data.py` after
@@ -96,6 +96,24 @@ Three topics, because the sources were thin on pit stops and points.
 | 1 | Weekend format | [btcc-weekend-format.md](btcc-weekend-format.md) | 1,210 | 4 | draft |
 | 2 | Points and titles | [btcc-points-titles.md](btcc-points-titles.md) | 1,194 | 3 | draft |
 | 3 | Cars, classes and balancing | [btcc-cars-balancing.md](btcc-cars-balancing.md) | 1,274 | 7 | draft |
+
+## NASCAR Cup, 1949 to 2026
+
+Rated as an oval pack: the oval mode already has stages, a chase, charters,
+the free pass and green-white-checker.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Points and playoffs | [nascar-points-playoffs.md](nascar-points-playoffs.md) | 1,118 | 2 | draft |
+| 2 | Race format, qualifying and cautions | [nascar-race-format.md](nascar-race-format.md) | 1,104 | 4 | draft |
+| 3 | Cars, engines and entries | [nascar-cars-entries.md](nascar-cars-entries.md) | 953 | 3 | draft |
+
+## Super GT and JGTC, 1993 to 2026
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Classes, balancing and tyres | [supergt-classes-balancing.md](supergt-classes-balancing.md) | 1,031 | 1 | draft |
+| 2 | Race format, drivers and points | [supergt-race-format-points.md](supergt-race-format-points.md) | 1,024 | 6 | draft |
 
 ## Worth checking first
 

@@ -79,7 +79,7 @@ main{display:grid;gap:20px;min-width:0}
 
 /* Season grid */
 .gridwrap{overflow-x:auto}
-.grid{display:grid;grid-template-columns:84px repeat(77,minmax(8px,1fr));gap:2px;min-width:760px;align-items:center}
+.grid{display:grid;grid-template-columns:84px repeat(78,minmax(8px,1fr));gap:2px;min-width:760px;align-items:center}
 .grid .rl{font:600 16px var(--display);letter-spacing:.03em;padding-right:6px}
 .grid .tick{font:400 11px var(--mono);color:var(--muted);grid-row:1;white-space:nowrap}
 .cell{height:24px;border-radius:2px;border:0;padding:0;cursor:pointer;background:var(--none)}
@@ -124,7 +124,7 @@ main{display:grid;gap:20px;min-width:0}
 <div class="page">
   <header class="top">
     <div>
-      <div class="eyebrow" id="eyebrow">Team Principal modding · 5 series</div>
+      <div class="eyebrow" id="eyebrow">Team Principal modding</div>
       <h1>Racing Rules Coverage</h1>
       <p class="lede">How many real seasons a Team Principal pack could run exactly as they were, depending on which game features ("levers") get built. Switch levers on and off to see what each one unlocks.</p>
     </div>
@@ -207,7 +207,7 @@ const PRESETS = {
   core: ['A1', 'A2', 'A3', 'A5', 'A6', 'B5', 'B7', 'B10', 'B12', 'C1', 'C2', 'C8', 'C9'],
   all: ALL,
 };
-const Y0 = 1950, Y1 = 2026;
+const Y0 = 1949, Y1 = 2026;
 const seasons = DATA.series.flatMap(s => s.seasons.map(x => ({series: s.name, y: x.y, needs: x.needs, ids: Object.keys(x.needs)})));
 const TOTAL = seasons.length;
 

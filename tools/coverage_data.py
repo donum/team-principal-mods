@@ -52,6 +52,7 @@ LEVERS = {
     'D2': ('Drivetrain', 'Car model', 'No', 'Four-wheel drive with its own start and wet-weather strength.'),
     'N1': ('Cost cap and wind tunnel limits', 'Not in the wishlist yet', 'No', 'A spending cap and aero testing time by championship position.'),
     'N3': ('Penalty points and race bans', 'Not in the wishlist yet', 'No', 'Licence penalty points, 12 points means a race ban.'),
+    'N7': ('Playoff eliminations and playoff points', 'Not in the wishlist yet', 'No', 'Elimination rounds, a win to advance, playoff points carried into each round.'),
     'N6': ('Team order ban', 'Not in the wishlist yet', 'No', 'Team orders banned, with fines when caught.'),
 }
 
@@ -142,6 +143,29 @@ NEEDS = {
   ('A6', '2020-2026', 'Hyperpole.'),
   ('B11', '2014-2026', 'Slow zones and full-course yellow.'),
  ],
+ 'NASCAR': [
+  ('B3', '1949-1974', 'Points by prize money, race length or laps.'),
+  ('B8', '1975-2016', 'Bonus points for leading a lap and most laps led.'),
+  ('N7', '2007-2013', 'Chase seeding with bonus points per win.'),
+  ('N7', '2014-2025', 'Elimination rounds, a win advances, playoff points.'),
+  ('A2', '1959-2026', 'Daytona 500 grid from the Duel races.'),
+  ('A6', '2014-2026', 'Group and knockout qualifying, grids by formula.'),
+  ('B2', '1988-2026', 'Restrictor plates or spacers: less power on superspeedways.'),
+  ('B4', '1958-2026', 'Rookie of the Year with its own rules.'),
+ ],
+ 'Super GT': [
+  ('B4', '1994-2026', 'Two classes in one race, titles per class.'),
+  ('B1', '1993-2026', 'Success ballast by results, then by championship points.'),
+  ('B2', '2011-2026', 'Balance of performance per race in GT300.'),
+  ('C8', '1993-2026', 'Two drivers per car, at most two thirds each.'),
+  ('B5', '1993-2026', 'Compulsory stop with a driver change.'),
+  ('D9', '1993-2026', 'Tyre war: Bridgestone, Michelin, Yokohama, Dunlop.'),
+  ('A6', '2024-2026', 'Qualifying times of both drivers added up.'),
+  ('B12', '2024-2026', 'Start on the qualifying tyres.'),
+  ('A3', '2024-2026', 'Three-hour races.'),
+  ('B8', '2024-2026', 'Qualifying points 3-2-1.'),
+  ('B3', '2006-2017', 'More points for the Suzuka 1000 km.'),
+ ],
  'BTCC': [
   ('B4', '1958-1990', 'Classes by engine size, the title from class points.'),
   ('A1', '2000-2003', 'Two races per meeting.'),
@@ -165,6 +189,8 @@ SPANS = {
     'IndyCar': '1979-2026',
     'Endurance': '1953-1992,2012-2026',
     'BTCC': '1958-2026',
+    'NASCAR': '1949-2026',
+    'Super GT': '1993-2026',
 }
 
 NOTES = {
@@ -173,6 +199,8 @@ NOTES = {
     'IndyCar': 'CART 1979 to 2003, Champ Car to 2007, IRL and IndyCar from 1996, as one row.',
     'Endurance': 'World Sportscar Championship 1953 to 1992 and WEC from 2012. No world title from 1993 to 2011.',
     'BTCC': 'British Saloon Car Championship, BTCC from 1987.',
+    'NASCAR': 'NASCAR Cup Series, rated as an oval pack: stages, chase, charters, free pass and green-white-checker exist there.',
+    'Super GT': 'JGTC 1993 to 2004, Super GT from 2005.',
 }
 
 
