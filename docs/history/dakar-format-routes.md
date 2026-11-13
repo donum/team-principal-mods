@@ -1,0 +1,58 @@
+# Dakar format and routes, 1979 to 2026
+
+Part of the Dakar rules history (classes and vehicles, format and routes).
+The table image is made with
+`python -I tools/history_table.py docs/history/dakar-format-routes.md`.
+
+`(?)` marks a detail that the sources we read did not confirm. The sources
+had little on navigation and penalty rules.
+
+## Table
+
+| Years | Route | Stages | Rules | Quirks |
+|---|---|---|---|---|
+| 1979 to 1991 | Paris to Dakar, through Algiers (1982 to 1988), Tunis (1989), Tripoli (1990, 1991). About 10,000 km. | Long stages, up to 800 or 900 km a day. | Fastest total time wins each class (?). | 1986: founder Thierry Sabine dies in a helicopter crash. 603 starters in 1988. |
+| 1992 to 2007 | Cape Town (1992), back to Paris (1994), Granada, Dakar to Cairo (2000), starts in Arras, Marseille, Clermont-Ferrand, Barcelona, Lisbon. | Same. | GPS used for the first time in 1992. 2001: an hour's penalty for unsporting conduct decides the car class. | 688 starters in 2005, a record. |
+| 2008 | Cancelled after threats in Mauritania. | | | A substitute in Hungary and Romania counts as the official 2008 edition. |
+| 2009 to 2019 | South America: Argentina, Chile, Bolivia, Peru. 2019 only Peru. | Same. | Same (?). | |
+| 2020 to 2026 | Saudi Arabia. | 2024: a prologue and 12 stages, about 5,000 km of stages, a "48-hour chrono" stage with a night stop in the desert. | Part of the World Rally-Raid Championship from 2022. From 2024 a car that fails to finish a stage may start the next with a time penalty. | 2027: Portugal to Morocco as a one-off. |
+
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Two weeks of stages, total time | No | N10 |
+| Navigation with a road book | No | N10 |
+| Restart after a missed stage with a penalty | No | N10 |
+| Points in a world championship of several raids | Partly | `points_system` for the season, not per stage |
+
+## Sources
+
+- Wikipedia, "Dakar Rally" (routes, history, safety, 2008), "2024 Dakar
+  Rally" (stages, 48-hour stage, restart rule), "World Rally-Raid
+  Championship".
+- Not found: navigation rules, penalties for missed waypoints, rest day
+  rules, the "Dakar Experience" for retired crews.
+- Conflict: the article says the rally began in 1978, its history says
+  1979.
+
+## Discord post
+
+=== post | Dakar format history | dakar-format-routes
+## Dakar format and routes, 1979 to 2026
+
+Part two and the last of the Dakar rules history. The table is below. What stood out to me:
+
+- **Three continents:** Paris to Dakar (1979 to 2007), South America (2009 to 2019), Saudi Arabia (from 2020), Portugal to Morocco in 2027.
+- **Cancelled in 2008** after threats in Mauritania.
+- **Two weeks, thousands of kilometres:** in 2024 a prologue, 12 stages and a 48-hour stage with a night in the desert.
+- **Navigation is part of the race:** GPS first used in 1992, a road book ever since.
+- **Since 2024 a car that fails a stage can continue** with a time penalty.
+
+For the game this is a different sport: no circuit, no wheel-to-wheel racing, total time over two weeks. I added it to show where the rule system ends, not as a pack idea.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
+
+That's the Dakar series. Mistakes? Tell me!

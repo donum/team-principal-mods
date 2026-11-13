@@ -4,7 +4,9 @@ How the racing rules of F1 (1950 to 2026), DTM (1984 to 2026), IndyCar
 (1979 to 2026), endurance racing (1953 to 2026), the BTCC (1958 to 2026),
 NASCAR (1949 to 2026), Super GT (1993 to 2026), IMSA (1971 to 2026),
 Formula E (2014 to 2026), MotoGP (1949 to 2026), the WRC (1973 to 2026), the
-NLS (1977 to 2026) and GT World Challenge (1997 to 2026) changed,
+NLS (1977 to 2026), GT World Challenge (1997 to 2026), the Dakar (1979 to
+2026), World Rallycross (2014 to 2025) and the Race of Champions (1988 to
+2025) changed,
 one topic per file. Each file has a table, its sources, and a Discord post
 that is ready to paste. The table image for Discord is in
 `docs/packages/img/png/<file name>.png`.
@@ -22,8 +24,8 @@ Sources in each file, before posting.
 Every file ends with an **In the game today** table: for each rule,
 whether Team Principal (0.99.5 and the 0.99.6 beta) can do it (`Yes`), only
 with a stand-in (`Partly`) or not at all (`No`), with the item in
-`docs/DEVELOPER_WISHLIST.md`. Over all 45 files: 91 yes, 62 partly,
-177 no. Checked against the 0.99.6 beta game code.
+`docs/DEVELOPER_WISHLIST.md`. Over all 50 files: 93 yes, 63 partly,
+197 no. Checked against the 0.99.6 beta game code.
 
 Status: `draft` (not posted yet), `posted` (add the date and link),
 `answered`.
@@ -32,7 +34,7 @@ Status: `draft` (not posted yet), `posted` (add the date and link),
 
 [coverage.html](coverage.html) is one self-contained page with three views:
 
-- **Coverage:** which game features each season of the thirteen
+- **Coverage:** which game features each season of the sixteen
   series needs, and how many seasons become playable as they were when you
   switch features on.
 - **Rules history:** every table below, per series, with what the game can
@@ -77,6 +79,7 @@ Made from the season research in `seasons/<id>/research/` and
 | 3 | Pit stops and tyres | [dtm-pit-stops-tyres.md](dtm-pit-stops-tyres.md) | 1,321 | 0 | draft |
 | 4 | Points | [dtm-points.md](dtm-points.md) | 1,179 | 0 | draft |
 | 5 | Weight balancing | [dtm-weight-balancing.md](dtm-weight-balancing.md) | 1,338 | 5 | draft |
+| 6 | Munich stadium show event | [dtm-munich-show.md](dtm-munich-show.md) | 588 | 1 | draft |
 
 ## IndyCar, 1979 to 2026
 
@@ -179,6 +182,33 @@ FIA GT, GT1, Blancpain, GT World Challenge Europe.
 |---|---|---|---|---|---|
 | 1 | Classes and balancing | [gtwc-classes-bop.md](gtwc-classes-bop.md) | 782 | 2 | draft |
 | 2 | Race format and points | [gtwc-race-format-points.md](gtwc-race-format-points.md) | 976 | 7 | draft |
+
+## Dakar, 1979 to 2026
+
+Rally raid: bikes, cars and trucks over two weeks. Shows where the rule
+system ends.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Classes and vehicles | [dakar-classes-vehicles.md](dakar-classes-vehicles.md) | 930 | 2 | draft |
+| 2 | Format and routes | [dakar-format-routes.md](dakar-format-routes.md) | 911 | 2 | draft |
+
+## World Rallycross, 2014 to 2025
+
+Heats, semi-finals and a final on tarmac and gravel.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Format and cars | [wrx-format-cars.md](wrx-format-cars.md) | 829 | 3 | draft |
+
+## Race of Champions, 1988 to 2025
+
+A yearly show event in identical cars, as a proof of concept for
+one-off events. See also the DTM Munich topic.
+
+| # | Topic | File | Post length | Open | Status |
+|---|---|---|---|---|---|
+| 1 | Format, venues and cars | [roc-format.md](roc-format.md) | 969 | 0 | draft |
 
 ## Worth checking first
 

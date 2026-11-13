@@ -56,6 +56,8 @@ LEVERS = {
     'N8': ('Energy limit per race', 'Not in the wishlist yet', 'No', 'A fixed amount of energy per race, energy taken off under the safety car.'),
     'N9': ('Motorcycles', 'Not in the wishlist yet', 'No', 'Bike physics and riders instead of cars.'),
     'N10': ('Rally stages', 'Not in the wishlist yet', 'No', 'Stages on closed roads, one car at a time against the clock, overall time, restart after retiring.'),
+    'N11': ('Head-to-head knockout events', 'Not in the wishlist yet', 'No', 'Show events outside the championship: two cars at a time, a bracket, identical cars.'),
+    'N12': ('Joker lap and mixed surfaces', 'Not in the wishlist yet', 'No', 'A longer route every driver must take once, tarmac and gravel in one lap.'),
     'N6': ('Team order ban', 'Not in the wishlist yet', 'No', 'Team orders banned, with fines when caught.'),
 }
 
@@ -233,6 +235,25 @@ NEEDS = {
   ('B3', '2013-2026', 'Points during the Spa 24 Hours, two cups add up.'),
   ('C1', '2016-2026', 'Up to six cars per team.'),
  ],
+ 'Dakar': [
+  ('N10', '1979-2026', 'Two weeks of stages against the clock, navigation, total time.'),
+  ('N9', '1979-2026', 'Motorbikes in the same event.'),
+  ('B4', '1979-2026', 'Bikes, cars and trucks with their own results, classes within each.'),
+  ('C8', '1979-2026', 'Crews of two (cars) or three (trucks).'),
+  ('B2', '2005-2026', 'Classes by engine size, drive and fuel.'),
+  ('B10', '2005-2026', 'Unassisted riders who service their own bikes (?).'),
+ ],
+ 'Rallycross': [
+  ('A1', '2014-2025', 'Heats, semi-finals and a final in one event.'),
+  ('A6', '2014-2025', 'Qualifying by intermediate points over four heats.'),
+  ('B3', '2014-2025', 'Points for heats, semi-finals and the final.'),
+  ('N12', '2014-2025', 'Joker lap, tarmac and gravel.'),
+  ('C9', '2024-2025', 'Electric and petrol cars together.'),
+ ],
+ 'Race of Champions': [
+  ('N11', '1988-2025', 'Head-to-head knockout in identical cars.'),
+  ('B4', '1999-2025', 'Nations Cup for two-driver teams.'),
+ ],
  'BTCC': [
   ('B4', '1958-1990', 'Classes by engine size, the title from class points.'),
   ('A1', '2000-2003', 'Two races per meeting.'),
@@ -264,6 +285,9 @@ SPANS = {
     'WRC': '1973-2026',
     'NLS': '1977-2026',
     'GT World Challenge': '1997-2026',
+    'Dakar': '1979-2007,2009-2026',
+    'Rallycross': '2014-2025',
+    'Race of Champions': '1988-2012,2014-2015,2017-2020,2022-2023,2025',
 }
 
 NOTES = {
@@ -280,6 +304,9 @@ NOTES = {
     'WRC': 'World Rally Championship, stage rallies.',
     'NLS': 'Nordschleife endurance series: Veedol, BFGoodrich, VLN, NLS from 2020.',
     'GT World Challenge': 'FIA GT 1997 to 2009, GT1 2010 to 2012, Blancpain, GT World Challenge Europe.',
+    'Dakar': 'Rally raid with bikes, cars and trucks. Cancelled in 2008.',
+    'Rallycross': 'FIA World Rallycross Championship 2014 to 2025.',
+    'Race of Champions': 'A yearly one-off show event, as a proof of concept. Years without an event are left out.',
 }
 
 
@@ -305,7 +332,8 @@ def dtm_needs():
 # History files: series key from the file name prefix.
 PREFIX = {'f1': 'F1', 'dtm': 'DTM', 'indycar': 'IndyCar', 'wec': 'Endurance', 'btcc': 'BTCC',
           'nascar': 'NASCAR', 'supergt': 'Super GT', 'imsa': 'IMSA', 'fe': 'Formula E',
-          'motogp': 'MotoGP', 'wrc': 'WRC', 'nls': 'NLS', 'gtwc': 'GT World Challenge'}
+          'motogp': 'MotoGP', 'wrc': 'WRC', 'nls': 'NLS', 'gtwc': 'GT World Challenge',
+          'dakar': 'Dakar', 'wrx': 'Rallycross', 'roc': 'Race of Champions'}
 
 
 def year_span(cell):
