@@ -820,6 +820,19 @@ rules to these items:
     the number and the timing code (C6).
   - Cars and portraits on the results podium.
 
+### E16. Track art styles the player picks · P3
+- **Needed by:** dtm-2013 (and every later season with illustrated art).
+- **Why:** the dtm-2013 race-day art is AI-made. Some players don't want
+  AI art. The map-style images from OpenStreetMap still exist in
+  `bases/dtm-era4`, in the same frame.
+- **Today:** one image per track, `assets/tracks/<id>.png`.
+- **Request:** an optional `track_art` block in the pack: named styles,
+  each a folder with an optional `ai` flag, plus a default. The player
+  picks a style in the settings, for one pack or all packs. A missing style
+  falls back to the default; a pack without the block works as today.
+- **Mockup:** `docs/packages/img/png/track-art-styles.png` (Hockenheim in
+  map, illustrated and lines-only style).
+
 ---
 
 *Kept up to date as we find more. Collected while building
