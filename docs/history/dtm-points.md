@@ -17,7 +17,7 @@ conflicting. No DTM ran from 1997 to 1999.
 | 1985 | 20 down to 1, top 18. Half points per heat at Erding and Diepholz. | | One drop result. | Foreign drivers now score. |
 | 1986 to 1987 | 20 down to 1, top 18. | | One drop result (best 8 of 9 in 1986). | 1987: guest Ludwig won round 7 and scored nothing. |
 | 1988 to 1989 | 20 down to 1, top 18, per race. | | Four drop results. | |
-| 1990 to 1996 | 20-15-12-10-8-6-4-3-2-1 per heat. | | All results count (?). | 1991: teams', manufacturers' (best car per make) and privateer titles (?). 1993: manufacturers score with their best car only, a Class 2 cup (?). 1995: DTM and ITC were separate titles with the same cars. |
+| 1990 to 1996 | 20-15-12-10-8-6-4-3-2-1 per heat. | | All results count (?). | 1991: extra ITR cup, teams' and manufacturers' scores. Brno and Donington counted only for these, not the DTM title. 1993: manufacturers score with their best car only, a Class 2 cup (?). 1995: DTM and ITC were separate titles with the same cars. |
 | 2000 | 20-15-12-10-8-6-4-3-2-1 per race. | | All. | |
 | 2001 | Main race 20-15-12-10-8-6-4-3-2-1. | Qualifying race 3-2-1. | All. | |
 | 2002 | Main race 10-6-4-3-2-1. | Qualifying race 3-2-1. | All. | |

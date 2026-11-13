@@ -108,7 +108,7 @@ Part five and the last of the DTM rules history, and the one F1 doesn't have. Th
 
 - **Weights by engine size (1984 to 1986),** 750 to 1425 kg, then by model: BMW M3 1000 kg, Sierra 1350 kg, Audi V8 up to 1300 kg.
 - **Changes during the season:** after set rounds, for one track (Audi +80 kg for Diepholz 1990), or restrictor cuts for the Sierra turbo.
-- **Success ballast in many forms:** per driver up to 100 kg (1990), up to 50 kg with newcomers starting at the maximum (1991), per make (2005, 2006), per car generation (2007, 2008), per make or driver as "performance weights" (2014 to 2017), and since 2021 per finishing place for the next race.
+- **Success ballast in many forms:** per driver up to 100 kg (1990), up to 50 kg with newcomers starting at the maximum (1991 (?)), per make (2005, 2006), per car generation (2007, 2008), per make or driver as "performance weights" (2014 to 2017), and since 2021 per finishing place for the next race.
 - **Different weights per car generation** when year-old cars raced (2004 to 2009).
 - **GT3 since 2021:** balance of performance per track plus success ballast, and drivers ballasted to 85 kg.
 

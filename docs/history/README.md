@@ -77,8 +77,8 @@ Made from the season research in `seasons/<id>/research/` and
 | 1 | Qualifying | [dtm-qualifying.md](dtm-qualifying.md) | 1,126 | 1 | draft |
 | 2 | Race format | [dtm-race-format.md](dtm-race-format.md) | 1,225 | 4 | draft |
 | 3 | Pit stops and tyres | [dtm-pit-stops-tyres.md](dtm-pit-stops-tyres.md) | 1,331 | 9 | draft |
-| 4 | Points | [dtm-points.md](dtm-points.md) | 1,091 | 7 | draft |
-| 5 | Weight balancing | [dtm-weight-balancing.md](dtm-weight-balancing.md) | 1,338 | 7 | draft |
+| 4 | Points | [dtm-points.md](dtm-points.md) | 1,091 | 6 | draft |
+| 5 | Weight balancing | [dtm-weight-balancing.md](dtm-weight-balancing.md) | 1,342 | 7 | draft |
 | 6 | Munich stadium show event | [dtm-munich-show.md](dtm-munich-show.md) | 588 | 0 | draft |
 
 ## IndyCar, 1979 to 2026
