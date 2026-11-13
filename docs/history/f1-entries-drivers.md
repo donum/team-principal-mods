@@ -31,6 +31,21 @@ before you rely on it.
 | Formula 3 | 30, 25, 20, 15, 12, 9, 7, 5, 3, 2 |
 | Needed | at least 40 over the last three seasons |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Two or three cars per team | Yes | `formula_team_entry_cap` |
+| More than three cars | No | C1 |
+| Privateers with bought cars | No | C4 |
+| Rookies in FP1 | Yes | `compulsory_reserve_sessions` |
+| Licence points from junior series | Partly | `driverslicense.json` |
+| Penalty points, race bans | No |  |
+| Numbers per driver | Partly | C3 |
+| Guests for a few rounds | No | C2 |
+
 ## Sources
 
 - Wikipedia, "FIA Super Licence" (1984 start, 2015 change, age, points,
@@ -57,5 +72,7 @@ Part eleven of the rules history. The table is below. What stood out to me:
 - **Rookies in FP1:** since 2022 each team must give young drivers a few Friday sessions.
 
 For the game this is the entry model from my earlier post: an entry is a car with a number, its drivers and the rounds it runs. Plus a few rules: cars per team, guest or third cars, privateers with a bought chassis, how numbers are given out, and a licence check. In DTM the same model covers guest drivers, privateer teams and the 1990s four-car teams.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

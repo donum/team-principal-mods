@@ -32,6 +32,17 @@ before you rely on it.
 | Take a penalty for the team mate | USA 2012: gearbox seal broken for a grid drop |
 | Crash on purpose | Singapore 2008, punished |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Team orders during the race | Yes | built in |
+| Driver refuses, team mood | Partly | team-order tension between drivers |
+| Ban on team orders, fines | No |  |
+| Car handover, shared points | No | C8 |
+
 ## Sources
 
 - Wikipedia, "Team orders" (almost every example, the 2003 ban, the end
@@ -57,5 +68,7 @@ Part twelve of the rules history, maybe the most team-boss one. The table is bel
 - **Since 2011 allowed again,** and now on open radio: Multi 21 (2013), Bottas in Russia (2018), McLaren's swaps (2024, 2025).
 
 For the game this is a team boss decision during the race: order a swap, hold position, swap back, or leave them racing. Drivers can follow or refuse, and that changes their mood. Plus a season setting: orders allowed, banned (with a fine if caught), or the 1950s car handover. That would also fit DTM, where each make ran 6 to 8 cars.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

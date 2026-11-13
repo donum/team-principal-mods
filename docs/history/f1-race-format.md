@@ -41,6 +41,21 @@ before you rely on it.
 - Race distance: the fewest laps that are more than 305 km (Monaco 260 km).
   If the 2 hours are up, the leader finishes the lap and the race ends.
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Race length in laps | Yes | `laps` x `lap_modifier` per track |
+| Time limit (2 hours) | No | A3 |
+| Standing start, two by two | Yes | built in |
+| Rolling start | Partly | oval mode only (A3) |
+| Red flag and restart | Partly | `formula_red_flags`, up to 2, no aggregate (A3) |
+| Half points or a scale for short races | No | B3 |
+| Classification rules (90% distance) | No | A3 |
+| Race distance per era (500 km, 305 km) | Partly | laps per track by hand |
+
 ## Sources
 
 - Wikipedia, "Formula One race weekend" (race distance, time limit, start
@@ -69,5 +84,7 @@ Part five of the rules history (after qualifying, points, tyres and pit stops). 
 - **The start procedure** is a fixed countdown: 40 minutes, 30, 10, 5, 1, formation lap, lights.
 
 For the game this is: race length in km, laps or time, whatever comes first. Start type (standing, rolling, behind the safety car). What happens after a red flag (restart order, aggregate, clock). A minimum distance to be classified. The same settings cover DTM: rolling starts in 2000, 2001 and from 2021, races of minutes plus one lap, and the 1986 Zolder aggregate.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

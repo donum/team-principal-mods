@@ -17,6 +17,12 @@ python -I tools/history_table.py docs/history/f1-qualifying.md
 number of `(?)` in the tables. Check them, and the conflicts listed under
 Sources in each file, before posting.
 
+Every file ends with an **In the game today** table: for each rule,
+whether Team Principal (0.99.5 and the 0.99.6 beta) can do it (`Yes`), only
+with a stand-in (`Partly`) or not at all (`No`), with the item in
+`docs/DEVELOPER_WISHLIST.md`. Over all 28 files: 51 yes, 53 partly,
+101 no.
+
 Status: `draft` (not posted yet), `posted` (add the date and link),
 `answered`.
 

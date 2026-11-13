@@ -22,6 +22,21 @@ is made with
 | 2014 to 2026 | | | Slow zones at Le Mans from 2014 (?). Safety cars, full-course yellow (?). | GTE drivers' and makes' titles from 2017. |
 | 2020 to 2026 | Le Mans moved to September (2020) and August (2021). 2026: 8 rounds, Le Mans plus 6-hour races and Qatar 1812 km (2024, 2025). | Hyperpole: a top-class shootout for pole (from 2020 (?)). Pole is worth 1 point. | Points need 70% of the winner's distance and two laps under green (2021). | World titles for Hypercar drivers and makes, cups for the other classes. |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| 6, 8 or 24-hour races | No | A3 |
+| Races by distance | Yes | laps per track |
+| Rolling start | Partly | oval mode only (A3) |
+| 70% rule, last lap rule | No | A3 |
+| Points times race length | No | B3 |
+| Pole point | Yes | `pole_point` |
+| Titles per class | No | B4 |
+| Slow zones, full-course yellow | Partly | VSC stands in (B11) |
+
 ## Sources
 
 - Wikipedia, "24 Hours of Le Mans" (Le Mans start, 1969, rolling start
@@ -49,5 +64,7 @@ Part three and the last of the endurance rules history. The table is below. What
 - **WEC points by race length:** about 1.5 times for 8 and 10 hours, double for Le Mans, half a point for 11th and lower.
 
 For the game: races by time (6, 8, 10, 24 hours) or by distance (1000 km, 1812 km), a classification rule (last lap, distance share), points multiplied by race length, and results per class. The time-based race length is already in my weekend builder post, so endurance would fit the same system.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 That's the endurance series. Mistakes? Tell me!

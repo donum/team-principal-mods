@@ -33,6 +33,23 @@ conflicting. No DTM ran from 1997 to 1999.
 | 2023 to 2024 | Two races. | 60 min plus one lap. | Rolling, in a marked start corridor. | Penalty lap of about 5 s for small offences. |
 | 2025 to 2026 | Two races. | 55 min plus one lap, up to 2 safety car laps added. | Rolling. | |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Two races or heats per round | Partly | each race as its own week (A1) |
+| Race length in laps | Yes | per track |
+| Minutes plus one lap | No | A3 |
+| Rolling start | Partly | oval mode only (A3) |
+| DRS | Partly | zones only, also in qualifying (B6) |
+| Push-to-pass | Partly | ERS spec stands in (B13) |
+| Full-course yellow | Partly | VSC stands in (B11) |
+| Pit lane closed under the safety car, penalty lap | No | B11 |
+| Laps added after the safety car | No | A3 |
+| Red flag with aggregate result | No | A3 |
+
 ## Sources
 
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
@@ -56,5 +73,7 @@ Part two of the DTM rules history. The table is below. What stood out to me:
 - **Race control:** pit lane closed under the safety car (2007), full-course yellow (2022), penalty lap (2023).
 
 For the game: a race length in laps, time or both, start type, a grid rule for the second race, and an overtaking aid with uses per lap or race, a gap and a lap window. That's the same list as for F1.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

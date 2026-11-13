@@ -30,6 +30,21 @@ conflicting. No DTM ran from 1997 to 1999.
 | 2022 | 25 down to 1. | Qualifying 3-2-1. Fastest lap +1, only for a top-10 finisher. | All. | |
 | 2023 to 2026 | 25-20-16-13-11-10-9-8-7-6-5-4-3-2-1, top 15. | Qualifying 3-2-1. | All. | Half points for a race stopped before 75% (2023). Rookie of the Year with its own points (2025). |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Points table per race | Yes | `points_system` |
+| Points down to 15th or 18th | Partly | long tables not tested |
+| Drop results | No | B3 |
+| Half points | No | B3 |
+| Qualifying points 3-2-1 | Partly | pole point only (B8) |
+| Fastest lap point only inside the top 10 | No | B8 |
+| Guests score nothing | No | B9 |
+| Teams, makes from best N cars, privateers, rookies | No | B4 |
+
 ## Sources
 
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
@@ -53,5 +68,7 @@ Part four of the DTM rules history. The table is below. What stood out to me:
 - **Top 15 score** since 2023 (25-20-16 down to 1).
 
 For the game this means points tables per session (race, qualifying, qualifying race), drop results, rules for half points, non-scoring guests, and extra titles with a "best N cars" rule. Most of this is in my earlier points post for F1 too.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

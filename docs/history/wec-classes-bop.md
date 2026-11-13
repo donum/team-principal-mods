@@ -23,6 +23,19 @@ is made with
 | 2021 to 2023 | Hypercar: 1030 kg, 500 kW. LMDh cars allowed from 2023. Old LMP1 cars allowed in 2021 and 2022. | LMP2 (950 kg, less power), GTE Pro (to 2022), GTE Am (to 2023). | Balance of performance for Hypercars, the hybrid speed limit is set in the BoP table. | Cars built to two different rule sets (Le Mans Hypercar and LMDh) race for the same win. |
 | 2024 to 2026 | Hypercar. | LMGT3 (GT3 cars with a kit). LMP2 only at Le Mans, at least 15 places. | BoP for Hypercar and LMGT3. | Le Mans: 62 cars since 2019, three classes. |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Several classes in one race | No | B4 |
+| Balance of performance | No | B2 |
+| Fuel formula (Group C) | Partly | `formula_fuel_tank` |
+| Hybrid and non-hybrid side by side | Partly | `ers_policy` open development |
+| One minimum weight | Yes | `chassis_minimum_weight` |
+| Big fields (62 cars) | Partly | grid limit, at most 3 cars per team (C1) |
+
 ## Sources
 
 - Wikipedia, "World Sportscar Championship" (classes and names by era,
@@ -49,5 +62,7 @@ Part one of the endurance rules history (World Sportscar Championship, Le Mans, 
 - **Classes in one race:** two to four, today Hypercar, LMGT3 and at Le Mans LMP2. 62 cars at Le Mans.
 
 For the game this is: classes in one race with their own results, a rule set per class (weight, power, fuel or energy), and a BoP that changes per track. The same thing as DTM's weights per make, just bigger.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

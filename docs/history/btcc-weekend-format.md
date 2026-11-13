@@ -20,6 +20,20 @@ sources had little on the years before 2000.
 | 2006 to 2013 | Three. | 30 minutes, sets the race 1 grid. | Race 2: race 1 order. Race 3: places 6 to 12 of race 2 reversed, by a ball draw. | |
 | 2014 to 2026 | Three, 16 to 25 laps each. | Two practice sessions, then 30 minutes of qualifying. | Same, the draw is made by the 10th-place finisher of race 2. | Three laps added if three or more laps run behind the safety car. |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Three races per meeting | Partly | each race as its own week (A1) |
+| Race 2 grid from race 1 | No | A1 |
+| Reversed grid by a draw | No | A6 |
+| Race length in laps | Yes | per track |
+| Laps added after the safety car | No | A3 |
+| Classes with a staggered start | No | A3, B4 |
+| Mandatory stop | No | B5 |
+
 ## Sources
 
 - Wikipedia, "British Touring Car Championship" (race and grid rules,
@@ -47,5 +61,7 @@ After F1, DTM, IndyCar and endurance racing, here's the BTCC. The table is below
 - **Races are lap-based** (16 to 25 laps) with three laps added after a long safety car.
 
 For the game: three races per meeting, a grid rule per race (finishing order, partial reverse, a random draw), classes with staggered starts, and laps added after the safety car. The weekend builder from my first post would need "random draw" as a grid option.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

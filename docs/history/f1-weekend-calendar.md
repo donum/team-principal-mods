@@ -37,6 +37,18 @@ before you rely on it.
 | 2010s | 19, 19, 20, 19, 19, 19, 21, 20, 21, 21 |
 | 2020 to 2026 | 17, 22, 22, 22, 24, 24, 23 (2026 so far) |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Calendar per week, number of races | Yes | `schedule.json`, 52 weeks |
+| Test weeks | Yes | `schedule.json` test |
+| Two races on one weekend | No | A1, A4 |
+| Practice sessions, number and length | No | fixed by the game |
+| Real dates, Thursday or Saturday races | No | A4 |
+
 ## Sources
 
 - Wikipedia, "Formula One race weekend" (three sessions since 2006,
@@ -66,5 +78,7 @@ Part thirteen and the last one of the rules history. The table is below. What st
 - **Night races** since Singapore 2008.
 
 For the game this is: a weekend as a list of sessions (from my weekend builder post), each with a day, a length and a type (practice, qualifying, sprint, race). Plus a calendar with dates per round, so double-headers and Thursday starts work. With that, a 1950 weekend with long practice days, a 1990s Friday and Saturday qualifying, and a 2026 sprint weekend are all the same system. DTM fits too: two races per weekend since 2015.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 That's the whole series, 13 topics. If you spot a mistake anywhere, tell me!

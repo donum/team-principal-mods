@@ -46,6 +46,23 @@ before you rely on it.
 - The dropped results rule ended after 1990. Since 1991 every result
   counts.
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Points per place, any table | Yes | `points_system` with its own points list |
+| Pole point, fastest lap point | Yes | `pole_point`, `fastest_lap_point` |
+| Fastest lap point only inside the top 10 | No | B8 |
+| Best N results, split season | No | B3 |
+| Constructors' title | Yes | built in |
+| Only the best car of a make scores | No | B4 |
+| Shared drives, split points | No | one driver per car (C8) |
+| Half points or a scale for short races | No | B3 |
+| Double points at one race | No | B3 |
+| Sprint points | No | one race per week (A1) |
+
 ## Sources
 
 - Wikipedia, "List of Formula One World Championship points scoring
@@ -71,5 +88,7 @@ Part two of the rules history (after qualifying). The table is below. What stood
 - **Shortened races:** half points, and since 2022 a scale in four steps. Japan 2022 still got full points because of a gap in the rules.
 
 For the game this is mostly a points table per championship and per session (race, sprint), plus a few rules: best N results (also split by season half), fastest lap point with a condition, shared drives, a scale for shortened races, a multiplier for one race. With those, every season since 1950 works, and DTM too.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Next up: tyres. Mistakes? Tell me!

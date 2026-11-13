@@ -33,6 +33,22 @@ conflicting. No DTM ran from 1997 to 1999.
 | 2025 | Saturday one (minute 20 to 40). Sunday two (minute 10 to 20 and 39 to 45). | | 3 or 4 new sets, top 10 start on qualifying tyres. | |
 | 2026 | As 2025. | | A race-day pool of 3 or 4 new sets per track, plus a test pool. A wheel that is thrown out leaves the allocation. | |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Refuelling allowed or banned | Yes | `formula_refueling` |
+| Open tyre war, control tyre | Yes | `tyre_suppliers.json` |
+| A set number of stops | No | tyre wear tuned instead (B5) |
+| Pit windows | No | B5 |
+| What counts as a stop | No | B10, B12 |
+| Option set that must be used | No | B7 |
+| Sets per weekend or race day | Partly | at least 12 sets (B7) |
+| Crew size, wheelguns, rear wheels first | No | B10 |
+| Start on qualifying tyres | No | B12 |
+
 ## Sources
 
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
@@ -54,5 +70,7 @@ Part three of the DTM rules history. The table is below. What stood out to me:
 - **Crew rules:** 8 mechanics and one wheelgun per side (2017), rear wheels first (2022).
 
 For the game: mandatory stops per race, windows in minutes, laps or share of the race, what counts as a stop, set allocations per weekend or race day, a must-use tyre, and the start-on-qualifying-tyre rule for the top N. This is the rules engine from my earlier posts, with DTM rows.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

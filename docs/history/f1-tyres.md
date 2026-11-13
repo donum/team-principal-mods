@@ -36,6 +36,22 @@ before you rely on it.
 - One supplier for everyone since 2007. Before that, tyre wars decided
   titles: 1998 Bridgestone, 2005 Michelin.
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Several tyre makers, tyre wars | Yes | `tyre_suppliers.json`, a supplier per team |
+| Own grip and wear per tyre maker | Partly | ratings only (D9) |
+| Two dry compounds must be used | Yes | `formula_compound_usage` |
+| Sets per weekend | Partly | three levels, at least 12 sets (B7) |
+| Own compound names and colours (C1 to C5, option) | No | D8 |
+| One set for qualifying and race (2005) | No | B12 |
+| Top 10 start on their qualifying tyres | No | B12 |
+| Tyre warmer limits or bans | No | B12 |
+| Wet and intermediate tyres | Yes | weather and wet tyres built in |
+
 ## Sources
 
 - Wikipedia, "Formula One tyres" (supplier table, groove and size rules,
@@ -62,5 +78,7 @@ Part three of the rules history (after qualifying and points). The table is belo
 - **Names vs compounds:** since 2019 "soft" just means the softest of the three brought to that track (C1 to C5/C6).
 
 For the game this is: a compound range per season, which compounds come to each race, sets per weekend (who picks them), must-use rules (both compounds, a minimum number of stops like Monaco 2025, top 10 start tyre), and tyre makers with their own grip and wear. Most of these already fit the rules-as-rows idea from my earlier posts.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Last one: pit stops. Mistakes? Tell me!

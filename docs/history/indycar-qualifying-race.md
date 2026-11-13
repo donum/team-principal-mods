@@ -31,6 +31,20 @@ sources were thin for this topic, so many rows are marked.
 | 2019 on | Cars outside the 33 run a last chance session (?) |
 | Rain | A race is official after more than half the distance (101 laps) |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| One car at a time on ovals | Partly | oval mode qualifying |
+| Groups, then Fast Six on road courses | No | A6 |
+| Indy 500 shootouts and bumping | No | A5, A6 |
+| Rolling start | Partly | oval mode only (A3) |
+| Double-file restarts, wave-around | Partly | oval mode only |
+| Green-white-checker or late red flag | Partly | oval mode has green-white-checker |
+| Two races in one weekend | No | A1 |
+
 ## Sources
 
 - Wikipedia, "Indianapolis 500" (four laps, 33 cars, late red flags, no
@@ -58,5 +72,7 @@ Part two of the IndyCar rules history. The sources were thin here, so more is ma
 - **Two races in one weekend or night:** Texas 2011, double-headers in 2020.
 
 For the game: single-car qualifying on ovals (the oval mode has this), groups plus knockout on road courses, a shootout at one special event, and race control rules like "red flag near the end instead of finishing under yellow". All of this fits the weekend builder idea.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

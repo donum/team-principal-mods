@@ -24,6 +24,20 @@ image is made with
 | 2023 to 2026 | 100% ethanol-based fuel (Shell). | | Firestone (Bridgestone). | |
 | 2024 to 2026 | Hybrid: energy from braking (from Mid-Ohio 2024). | | | |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Refuelling at every stop | Yes | `formula_refueling` |
+| Tank size | Partly | `formula_fuel_tank` 60, 80 or 100 kg |
+| Fuel type (methanol, ethanol) | No |  |
+| Primary and alternate tyres, both used | Partly | two-compound rule (B12) |
+| One tyre on ovals | Partly | oval mode |
+| Crew over the wall | No | B10 |
+| Hybrid | Partly | `ers_policy` |
+
 ## Sources
 
 - Wikipedia, "IndyCar Series" (fuel types and years, tank sizes, tyre
@@ -49,5 +63,7 @@ Part three of the IndyCar rules history. The table is below. What stood out to m
 - **Hybrid** since mid-2024.
 
 For the game: refuelling as part of a stop (F1 had it 1994 to 2009 too), a tank size and fuel type per era so fuel saving matters, and crew size per stop. The rules engine from my earlier posts already covers the tyre rules.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

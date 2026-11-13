@@ -21,6 +21,19 @@ sources had almost nothing on ballast and tyres.
 | 2014 to 2021 | NGTC only. FIA name TCN-1 from 2014. | One class. | Success ballast by championship position (?). Engines with a short over-boost. | Goodyear sole supplier (start year (?)). Hard, medium, soft and wet. A softer tyre must be used once per meeting (?). |
 | 2022 to 2026 | NGTC with a hybrid unit (?). | One class. | Hybrid deployment used for balancing instead of ballast (?). | 2025: sustainable fuel for all. |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Success ballast | No | B1 |
+| Two car types in one class | No | C9 |
+| Common parts, leased engine | Partly | level ratings by hand |
+| Hybrid limited for the leaders | No | B1, B13 |
+| One tyre maker | Yes | `tyre_suppliers.json` |
+| Softer tyre once per meeting | No | B12 |
+
 ## Sources
 
 - Wikipedia, "British Touring Car Championship" (regulations by era,
@@ -48,5 +61,7 @@ Part three and the last of the BTCC rules history. The sources were thin on ball
 - **Success ballast:** 40, 30 and 20 kg for the top three of each race (2000). Later ballast by points, and the hybrid is used for balancing today (both not confirmed).
 
 For the game: car types or generations in one class with their own weights, common parts, success ballast per race or per championship position, and a hybrid boost that is limited for the leaders. It's the same balancing rule as DTM and GT3: "if X, add Y to Z".
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 That's the BTCC series. Mistakes? Tell me!

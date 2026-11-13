@@ -30,6 +30,21 @@ conflicting. No DTM ran from 1997 to 1999.
 | 2017 to 2022 | One per race, with points | Separate qualifying per race. | Own qualifying. | The top 3 in each qualifying score 3-2-1 points. |
 | 2023 to 2026 | Two 20-minute sessions | One qualifying per race, 3-2-1 points. | Own qualifying. | The top 5 (2023), then the top 10 (from 2024) start on the tyres they qualified on. |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Timed qualifying | Yes | `qualifying_format` session_60 |
+| Knockout | Partly | game cuts, no Q4 (A6) |
+| Single-lap shootout (Top-Qualifying, Superpole, Q4) | No | A5 |
+| Qualification race | No | A2 |
+| Own qualifying per race | No | A1, A6 |
+| Race 2 grid from race 1 | No | A1 |
+| Qualifying points 3-2-1 | Partly | pole point only (B8) |
+| Top 5 or 10 start on qualifying tyres | No | B12 |
+
 ## Sources
 
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
@@ -54,5 +69,7 @@ After the F1 series, here's DTM. All of it comes from the research for my season
 - **The second race** used the first race's finishing order for a long time.
 
 Almost every format here is in the F1 table too, just in a different order. A list of stages (timed, knockout, single lap, qualification race) with points per stage and a grid rule per race covers both series.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

@@ -33,6 +33,19 @@ before you rely on it.
 | Engines 2023 to 2025 | 95 million USD | |
 | Engines 2026 | 130 million USD | |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Prize money by position | Yes | `prize_money_distribution` |
+| Cost cap | No |  |
+| Testing limits | Yes | `private_testing_limits`, test weeks |
+| Wind tunnel time by position | Partly | wind tunnel is a factory level |
+| Fee for a new team | No |  |
+| Sponsors, budgets, salaries | Yes | built in |
+
 ## Sources
 
 - Wikipedia, "Concorde Agreement" (every agreement, 200 million fee,
@@ -60,5 +73,7 @@ Part ten of the rules history, the one closest to a manager game. The table is b
 - **Rookies must drive in FP1** a few times per season (since 2022).
 
 For the game this is the team boss part: prize money per position, a cost cap with what counts and what doesn't, a penalty for breaking it, testing days, and development time that depends on the standings. The game already has a budget, so most of this would be settings per season.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

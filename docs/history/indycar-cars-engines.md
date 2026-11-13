@@ -24,6 +24,19 @@ image is made with
 | 2020 to 2023 | DW12 with aeroscreen. | Chevrolet and Honda. | Same. | |
 | 2024 to 2026 | DW12. New car delayed from 2027 to 2028. | Same plus hybrid (about 60 hp, from Mid-Ohio 2024). | 150 to 200 s per race on road courses, at most 20 s per use. | The DW12 races for more than 14 seasons. |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| One chassis for everyone | Partly | teams build their own, ratings can be set level |
+| Buying a chassis from a maker | No | C4 |
+| Engine makers | Yes | `engines.json` |
+| Boost per track type | No |  |
+| Push-to-pass as seconds per race | Partly | ERS spec stands in (B13) |
+| Aero kits per maker | No | C9 |
+
 ## Sources
 
 - Wikipedia, "IndyCar Series" (chassis and engines from 1996, boost,
@@ -49,5 +62,7 @@ Part four and the last of the IndyCar rules history. The table is below. What st
 - **Two rival series** from 1996 to 2007, merged in 2008.
 
 For the game: a spec chassis vs an open chassis market, engine makers per team, boost or power per track type, and push-to-pass as a budget in seconds. DTM's push-to-pass counted uses per race, so the setting should allow both.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 That's the IndyCar series. Mistakes? Tell me!

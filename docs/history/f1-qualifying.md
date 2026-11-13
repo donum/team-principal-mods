@@ -37,6 +37,23 @@ before you rely on it.
 - Grid of two cars per row, staggered. Older grids had 4-3-4 or 3-2-3 rows (?).
 - No championship points for pole, ever. (Sprint points are for the sprint.)
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| One timed session, best lap counts | Yes | `qualifying_format` session_60 |
+| Two sessions, best of both | Partly | one session only (A3) |
+| Knockout Q1 to Q3 | Partly | `knockout`, but with the game's own cuts (A6) |
+| Pre-qualifying | Yes | `PREQUALIFYING_*` in constants.py |
+| 107% rule | Yes | built into qualifying |
+| Grid size limit | Yes | `QUALI_GRID_LIMIT` |
+| Single-lap runs, aggregate, elimination | No | A5, A6 |
+| Race fuel or fuel credit in qualifying | No | A6 |
+| Top 10 start on their qualifying tyres | No | B12 |
+| Sprint weekends | No | one race per week (A1) |
+
 ## Sources
 
 - Wikipedia, "Formula One race weekend" (qualifying, sprint and
@@ -64,5 +81,7 @@ Hey! While building the qualifying stages idea I went through every F1 qualifyin
 Fun ones: three drivers with the exact same pole time (Jerez 1997), and in 2021 the sprint winner got pole, not the fastest in qualifying.
 
 Almost all of these are a short list of stages: timed, knockout, single lap, aggregate, elimination. Plus a few settings per stage: fuel, tyres, lap limit, 107%. That's why I think the stage list from my earlier post would cover all of F1's history, not only DTM.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Next up: points, tyres and pit stops. If you spot a mistake in the table, tell me!

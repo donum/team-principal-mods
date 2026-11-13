@@ -43,6 +43,20 @@ conflicting. No DTM ran from 1997 to 1999.
 | 2023 to 2025 | Drivers ballasted to 85 kg (2023). | 20, 10 and 5 kg, races only, not in qualifying. | BoP per event. | |
 | 2026 | | Assumed unchanged (?). | BoP assumed unchanged (?). | |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| One minimum weight | Yes | `chassis_minimum_weight` |
+| Weight per make, model or generation | Partly | baked into team car mass (B2, C9) |
+| Success ballast | No | B1 |
+| Changes during the season | No | B2 |
+| Restrictors, aero changes per make | No | B2 |
+| Four-wheel drive | Partly | ratings only (D2) |
+| BoP per track | No | B2 |
+
 ## Sources
 
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
@@ -64,5 +78,7 @@ Part five and the last of the DTM rules history, and the one F1 doesn't have. Th
 - **GT3 since 2021:** balance of performance per track plus success ballast, and drivers ballasted to 85 kg.
 
 For the game this is a weight per make, model, generation or class, changes on a date or before a track, and ballast by result per driver, make or place. One rule type covers all of it: "if X happens, add Y kg to Z, up to a maximum". That would also cover BoP for the endurance mode.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 That's the whole DTM series. Mistakes? Tell me!

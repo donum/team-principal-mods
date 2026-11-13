@@ -40,6 +40,20 @@ before you rely on it.
 - Under the safety car nobody may overtake, until the first safety car line.
 - The leader's lap decides when a lapped car is "lapped".
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| No safety car (early eras) | Yes | `safety_car_policy` none |
+| Safety car | Yes | `safety_car_policy` physical_only |
+| Virtual safety car | Yes | `safety_car_policy` all_types |
+| Red flag | Partly | `formula_red_flags`, up to 2 per race |
+| Pit lane closed under the safety car | No | B11 |
+| Lapped cars unlap, wave-around | Partly | oval mode only |
+| Full-course yellow, slow zones | Partly | VSC stands in (B11) |
+
 ## Sources
 
 - Wikipedia, "Safety car" (F1 history, procedure, VSC, cars, incidents),
@@ -63,5 +77,7 @@ Part six of the rules history. The table is below. What stood out to me:
 - **Red flag:** the clock stops, tyres can be changed for free, standing restart.
 
 A small table in the picture compares safety car, VSC and red flag. That's really what the game would need. For each one: does the clock run, do the gaps stay, how cheap is a pit stop, how does the restart work, what happens to lapped cars, and whether the pit lane is open. With those settings, every F1 era and the DTM rules (full course yellow, safety car laps added to the race in 2019 and 2025) fit.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Next up: DRS. Mistakes? Tell me!

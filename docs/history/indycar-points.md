@@ -36,6 +36,21 @@ image is made with
 | 2018 to 2021 | Indy qualifying: 9 down to 1 for the Fast Nine |
 | 2022 on | Indy qualifying: 12 down to 1 for the top 12 |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Points for every finisher | Partly | own points list, long tables not tested |
+| Pole point | Yes | `pole_point` |
+| Most laps led bonus | Partly | oval mode only |
+| Leading a lap bonus | No | B8 |
+| Double points at one race | No | B3 |
+| Qualifying points at one event | No | B8 |
+| Points by race distance | No | B3 |
+| Stage points | Partly | oval mode only |
+
 ## Sources
 
 - Wikipedia, "List of American Championship car racing points scoring
@@ -60,5 +75,7 @@ After F1 and DTM, here's American open-wheel racing (CART, Champ Car, IndyCar). 
 - **1996:** two co-champions, because there was no tie-break.
 
 For the game this means points per finishing place for every car, bonus points with conditions, a multiplier per race, points for a qualifying session at one event, and a tie-break rule. The oval mode has some of this already, so it could become a shared setting for all modes.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

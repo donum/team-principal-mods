@@ -35,6 +35,18 @@ before you rely on it.
 | 2022 to 2025 | 798 kg, 800 kg in 2025 (?) | ground effect cars, 18-inch wheels |
 | 2026 | 768 kg (?), Wikipedia says 724 kg | first big drop in weight |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Setup frozen after qualifying | No | not modelled |
+| Minimum weight | Yes | `chassis_minimum_weight` |
+| Weight change from a season | Yes | `scripted_changes` |
+| Driver weight, ballast | No | B1 |
+| Checks after the race, disqualification | Partly | only for banned driver aids |
+
 ## Sources
 
 - Wikipedia, "Parc fermé" (rules since 2003, allowed work, exceptions,
@@ -63,5 +75,7 @@ Part nine of the rules history. The table is below. What stood out to me:
 - **Cheating with weight:** water tanks for "brake cooling" in 1982, lead in the water in 1984.
 
 For the game this is: when the setup is frozen (none, after qualifying, after FP3, two periods on sprint weekends), what may still change, the penalty for breaking it, and a minimum weight per era. A minimum weight per make or class would also cover DTM: the 1991 weights per make and success ballast.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!

@@ -35,6 +35,20 @@ before you rely on it.
 | Work in parc fermé (chassis, suspension, bodywork) | start from the pit lane |
 | Extra engine part | grid places at the first race it is used |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Engine makers, works and customers | Yes | `engines.json`, engine contracts |
+| Engine formula per era | Partly | ratings and `car_profile`, no engine size rules |
+| Two engine types side by side, own rules | No | B2 |
+| Parts per season, grid penalties | Yes | `seasonal_component_allocation_rule` |
+| Fuel limit per race | Partly | `formula_fuel_tank` |
+| Engine freeze | No | D7 |
+| Hybrid power | Yes | `ers_policy` |
+
 ## Sources
 
 - Wikipedia, "Formula One engines" (formula per era, rev limits, freezes,
@@ -60,5 +74,7 @@ Part eight of the rules history. The table is below. What stood out to me:
 - **Freezes and price caps:** 2007 and 2022 engine freezes, 15 million euro per engine.
 
 For the game this is: engine rules per era (size, turbo yes or no, two classes side by side), a fuel limit per race, how many of each part a driver gets per season, and the grid penalty for an extra one. The same settings cover DTM: the 1990s engines per make with their own weight, and the engine freeze and homologation in 2012 and 2013.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Next up: anything you'd like to see? Mistakes? Tell me!

@@ -37,10 +37,17 @@ tr:nth-child(even) td{background:#fafbfc}
 code{font:13px Consolas,monospace}
 .q{color:#b45309;font-weight:600}
 .foot{margin-top:12px;color:#646a73;font-size:13px}
+.st{display:inline-block;font:600 13px Consolas,monospace;padding:1px 8px;border-radius:4px}
+.st-yes{color:#127a43;background:#e2f4ea}.st-partly{color:#9a5b00;background:#fbefd9}.st-no{color:#b4232f;background:#fbe3e5}
 """
+
+# Game support words in the "In the game today" table, shown as coloured chips.
+STATUS = {'Yes': 'st-yes', 'Partly': 'st-partly', 'No': 'st-no'}
 
 
 def inline(text):
+    if text in STATUS:
+        return f'<span class="st {STATUS[text]}">{text}</span>'
     text = escape(text)
     text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
     text = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', text)
@@ -84,7 +91,7 @@ def render(path):
             f'<div class="kicker">RULES HISTORY</div><h1>{escape(title)}</h1>'
             + ''.join(table_html(*t, first=(i == 0)) for i, t in enumerate(tables))
             + '<div class="foot"><span class="q">(?)</span> not confirmed by the sources we read. '
-            f'Sources and notes: docs/history/{stem}.md</div></div></body></html>')
+            f'Sources and notes: docs/history/{stem}.md. Game support: Team Principal 0.99.5 and the 0.99.6 beta; IDs such as A1 are items in docs/DEVELOPER_WISHLIST.md.</div></div></body></html>')
     os.makedirs(PNG, exist_ok=True)
     tmp = os.path.join(PNG, stem + '.tmp.html')
     out = os.path.join(PNG, stem + '.png')

@@ -37,6 +37,23 @@ before you rely on it.
 - Driving through the pit lane costs between about 15 and 30 seconds
   depending on the track. That loss is why stops are a strategy at all.
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Refuelling allowed or banned | Yes | `formula_refueling` |
+| Fuel limit per race | Partly | `formula_fuel_tank` 60, 80 or 100 kg |
+| Tyre-only stops | Yes | built in |
+| Must use both dry compounds | Yes | `formula_compound_usage` |
+| A set number of stops (Monaco 2025) | No | B5 |
+| Pit lane closed under the safety car | No | B11 |
+| Cheaper stops under safety car or VSC | Yes | `safety_car_policy` |
+| One crew for both cars | Yes | `pitstops.double_stack_enabled` |
+| Crew size, stop procedure | No | B10 |
+| Driver change at a stop | No | C8 |
+
 ## Sources
 
 - Wikipedia, "Pit stop" (refuelling years, stop times, crew, fires,
@@ -63,5 +80,7 @@ Last part of the rules history (after qualifying, points and tyres). The table i
 - **Must-stop rules:** both dry compounds since 2007, two stops at Monaco in 2025.
 
 For the game this is: why a car has to stop (fuel, tyre rule, minimum stops), what is allowed during a stop (fuel, tyres, driver change), pit lane loss per track, pit lane closed or open under the safety car, cheap stops under SC/VSC, and penalties served at a stop. In DTM the same blocks cover the pit windows, the two mandatory stops in 2013 and the 2025 rules.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 That's the whole series: qualifying, points, tyres, pit stops. If you spot a mistake, tell me!

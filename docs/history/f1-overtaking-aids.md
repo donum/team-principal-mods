@@ -33,6 +33,19 @@ before you rely on it.
 | Closes | button released or brakes |
 | Effect | about 10 to 12 km/h at the end of the zone (FIA), others say 4 to 5 |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| DRS in zones, within 1 s | Yes | `drs_policy`, zones per track |
+| DRS only in the race, per session rules | No | B6 |
+| DRS uses per lap or race | No | B6 |
+| KERS and ERS | Yes | `ers_policy` |
+| Push-to-pass with a set number of uses | Partly | ERS spec stands in (B13) |
+| Active aero, overtake mode (2026) | No |  |
+
 ## Sources
 
 - Wikipedia, "Drag reduction system" (rules, zones, 2024 change, end in
@@ -58,5 +71,7 @@ Part seven of the rules history. The table is below. What stood out to me:
 - **2026:** every car flattens its wings on the straights. The help for the chasing car is now extra electric energy (overtake mode), again within 1 s.
 
 The DRS rules fit in a small table (in the picture). For the game this is: an aid with a condition (gap at a point), where it works (zones per track), when it works (lap, after a restart, weather), which sessions, and how much it helps. DTM fits the same settings: DRS from 2013 in the race only, and later push-to-pass with a number of uses per race. A boost button with a limited number of uses is the same idea as KERS.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Next up: engines and grid penalties. Mistakes? Tell me!

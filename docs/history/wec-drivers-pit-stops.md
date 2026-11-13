@@ -19,6 +19,19 @@ is made with
 | 2017 to 2022 | Three. A crew of two can still finish (two drivers did all 24 hours in 2014). | Same. From 2017: if it is 32 °C or hotter, at most 80 minutes in a row and 30 minutes rest. | FIA ratings since 2015: Platinum, Gold, Silver, Bronze. Bronze only for drivers who started racing at 30 or older. | Same. |
 | 2023 to 2026 | Three. | Same. | 2023: many Silver drivers moved up to Gold. Bronze drivers may not race in Hypercar. LMGT3 needs amateur drivers in the crew (?). | Same. |
 
+## In the game today
+
+Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data. Partly: a stand-in that behaves differently. No: not possible today. IDs such as A1 are items in `docs/DEVELOPER_WISHLIST.md`.
+
+| Rule | Game | How |
+|---|---|---|
+| Two or three drivers per car | No | C8 |
+| Drive time limits | No | C8 |
+| Driver ratings (Platinum to Bronze) | No | C8 |
+| Driver change at a stop | No | C8 |
+| Refuelling | Yes | `formula_refueling` |
+| Le Mans pit rules (engine off, no work while refuelling) | No | B10 |
+
 ## Sources
 
 - Wikipedia, "24 Hours of Le Mans" (crews, solo attempts, drive time
@@ -43,5 +56,7 @@ Part two of the endurance rules history. The table is below. What stood out to m
 - **Le Mans pit rules:** engine off while refuelling, nobody works on the car during refuelling, but the driver may change. Oil and water could only be topped up after about an hour.
 
 This is the entry model from my earlier post at its hardest: one car, three drivers, each with a rating, a minimum and maximum drive time, and a class that needs a certain mix of ratings. Plus pit rules that say what can happen at the same time (fuel, tyres, driver). The game would need that for the endurance mode anyway.
+
+The last table in the picture shows what the game can do today: yes, partly or no.
 
 Mistakes? Tell me!
