@@ -45,7 +45,7 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 |---|---|---|
 | One timed session, best lap counts | Yes | `qualifying_format` session_60 |
 | Two sessions, best of both | Partly | one session only (A3) |
-| Knockout Q1 to Q3 | Partly | `knockout`, but with the game's own cuts (A6) |
+| Knockout Q1 to Q3 | Yes | `knockout`: 18, 15 and 12 minutes, 10 cars in Q3, the rest cut half in Q1 and half in Q2 |
 | Pre-qualifying | Yes | `PREQUALIFYING_*` in constants.py |
 | 107% rule | Yes | built into qualifying |
 | Grid size limit | Yes | `QUALI_GRID_LIMIT` |

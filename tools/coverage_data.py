@@ -79,7 +79,6 @@ NEEDS = {
   ('A6', '1996-2002', 'One hour with a 12-lap limit.'),
   ('A5', '2003-2005', 'One lap each, alone on track.'),
   ('A6', '2003-2009', 'Qualifying on race fuel, fuel credit in Q3.'),
-  ('A6', '2010-2026', 'Knockout cuts by grid size (6+6, 7+7, 5+5).'),
   ('B12', '2005', 'One set of tyres for qualifying and race.'),
   ('B12', '2010-2021', 'Top 10 start on their qualifying tyres.'),
   ('C8', '1950-1957', 'Shared drives, points split.'),

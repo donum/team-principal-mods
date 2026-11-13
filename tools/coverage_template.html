@@ -303,7 +303,8 @@ function renderDetail() {
   const body = x.ids.length ? x.ids.map(id => {
     const ok = on.has(id);
     return `<div class="need"><span class="mark ${ok ? 'y' : 'n'}" aria-label="${ok ? 'covered' : 'missing'}">${ok ? '✓' : '✗'}</span>
-      <div><b>${esc(L[id].label)}</b> <span class="chip">${id}</span><span>${esc(x.needs[id].join(' '))}</span></div></div>`;
+      <div><b>${esc(L[id].label)}</b> <span class="chip">${id}</span><span>${esc(x.needs[id].join(' '))}</span>
+      <span>Game today: ${L[id].today === 'No' ? 'not possible.' : 'only a stand-in.'} The lever adds: ${esc(L[id].about)}</span></div></div>`;
   }).join('') : '<p class="lede">Nothing missing: this season runs as it was with the game today.</p>';
   document.getElementById('detail').innerHTML =
     `<div class="eyebrow">Selected season</div><h3>${esc(x.series)} ${x.y}</h3>
