@@ -30,19 +30,19 @@ Status: `draft` (not posted yet), `posted` (add the date and link),
 
 | # | Topic | File | Post length | Open | Status |
 |---|---|---|---|---|---|
-| 1 | Qualifying | [f1-qualifying.md](f1-qualifying.md) | 1,324 | 10 | draft |
-| 2 | Points | [f1-points.md](f1-points.md) | 1,286 | 7 | draft |
-| 3 | Tyres | [f1-tyres.md](f1-tyres.md) | 1,227 | 12 | draft |
-| 4 | Pit stops | [f1-pit-stops.md](f1-pit-stops.md) | 1,310 | 12 | draft |
-| 5 | Race format and starts | [f1-race-format.md](f1-race-format.md) | 1,262 | 16 | draft |
-| 6 | Safety car and red flags | [f1-safety-car.md](f1-safety-car.md) | 1,137 | 11 | draft |
-| 7 | Overtaking aids | [f1-overtaking-aids.md](f1-overtaking-aids.md) | 1,168 | 8 | draft |
-| 8 | Engines and grid penalties | [f1-engines.md](f1-engines.md) | 1,181 | 11 | draft |
-| 9 | Parc fermé and minimum weight | [f1-parc-ferme-weight.md](f1-parc-ferme-weight.md) | 1,198 | 21 | draft |
-| 10 | Money and testing | [f1-money-testing.md](f1-money-testing.md) | 1,262 | 12 | draft |
-| 11 | Entries and drivers | [f1-entries-drivers.md](f1-entries-drivers.md) | 1,198 | 4 | draft |
-| 12 | Team orders | [f1-team-orders.md](f1-team-orders.md) | 1,142 | 3 | draft |
-| 13 | Weekend schedule and calendar | [f1-weekend-calendar.md](f1-weekend-calendar.md) | 1,178 | 14 | draft |
+| 1 | Qualifying | [f1-qualifying.md](f1-qualifying.md) | 1,408 | 10 | draft |
+| 2 | Points | [f1-points.md](f1-points.md) | 1,370 | 7 | draft |
+| 3 | Tyres | [f1-tyres.md](f1-tyres.md) | 1,311 | 12 | draft |
+| 4 | Pit stops | [f1-pit-stops.md](f1-pit-stops.md) | 1,394 | 12 | draft |
+| 5 | Race format and starts | [f1-race-format.md](f1-race-format.md) | 1,346 | 16 | draft |
+| 6 | Safety car and red flags | [f1-safety-car.md](f1-safety-car.md) | 1,221 | 11 | draft |
+| 7 | Overtaking aids | [f1-overtaking-aids.md](f1-overtaking-aids.md) | 1,252 | 8 | draft |
+| 8 | Engines and grid penalties | [f1-engines.md](f1-engines.md) | 1,265 | 11 | draft |
+| 9 | Parc fermé and minimum weight | [f1-parc-ferme-weight.md](f1-parc-ferme-weight.md) | 1,282 | 21 | draft |
+| 10 | Money and testing | [f1-money-testing.md](f1-money-testing.md) | 1,346 | 12 | draft |
+| 11 | Entries and drivers | [f1-entries-drivers.md](f1-entries-drivers.md) | 1,282 | 4 | draft |
+| 12 | Team orders | [f1-team-orders.md](f1-team-orders.md) | 1,226 | 3 | draft |
+| 13 | Weekend schedule and calendar | [f1-weekend-calendar.md](f1-weekend-calendar.md) | 1,262 | 14 | draft |
 
 ## DTM, 1984 to 2026
 
@@ -51,11 +51,11 @@ Made from the season research in `seasons/<id>/research/` and
 
 | # | Topic | File | Post length | Open | Status |
 |---|---|---|---|---|---|
-| 1 | Qualifying | [dtm-qualifying.md](dtm-qualifying.md) | 1,052 | 3 | draft |
-| 2 | Race format | [dtm-race-format.md](dtm-race-format.md) | 1,139 | 9 | draft |
-| 3 | Pit stops and tyres | [dtm-pit-stops-tyres.md](dtm-pit-stops-tyres.md) | 1,237 | 0 | draft |
-| 4 | Points | [dtm-points.md](dtm-points.md) | 1,095 | 0 | draft |
-| 5 | Weight balancing | [dtm-weight-balancing.md](dtm-weight-balancing.md) | 1,254 | 5 | draft |
+| 1 | Qualifying | [dtm-qualifying.md](dtm-qualifying.md) | 1,136 | 3 | draft |
+| 2 | Race format | [dtm-race-format.md](dtm-race-format.md) | 1,223 | 9 | draft |
+| 3 | Pit stops and tyres | [dtm-pit-stops-tyres.md](dtm-pit-stops-tyres.md) | 1,321 | 0 | draft |
+| 4 | Points | [dtm-points.md](dtm-points.md) | 1,179 | 0 | draft |
+| 5 | Weight balancing | [dtm-weight-balancing.md](dtm-weight-balancing.md) | 1,338 | 5 | draft |
 
 ## IndyCar, 1979 to 2026
 
@@ -65,10 +65,10 @@ the sources were thin.
 
 | # | Topic | File | Post length | Open | Status |
 |---|---|---|---|---|---|
-| 1 | Points | [indycar-points.md](indycar-points.md) | 1,171 | 2 | draft |
-| 2 | Qualifying and race format | [indycar-qualifying-race.md](indycar-qualifying-race.md) | 1,167 | 11 | draft |
-| 3 | Pit stops, fuel and tyres | [indycar-pit-fuel-tyres.md](indycar-pit-fuel-tyres.md) | 1,123 | 4 | draft |
-| 4 | Cars, engines and push-to-pass | [indycar-cars-engines.md](indycar-cars-engines.md) | 1,117 | 2 | draft |
+| 1 | Points | [indycar-points.md](indycar-points.md) | 1,255 | 2 | draft |
+| 2 | Qualifying and race format | [indycar-qualifying-race.md](indycar-qualifying-race.md) | 1,251 | 11 | draft |
+| 3 | Pit stops, fuel and tyres | [indycar-pit-fuel-tyres.md](indycar-pit-fuel-tyres.md) | 1,207 | 4 | draft |
+| 4 | Cars, engines and push-to-pass | [indycar-cars-engines.md](indycar-cars-engines.md) | 1,201 | 2 | draft |
 
 ## Endurance: World Sportscar Championship, Le Mans and WEC, 1953 to 2026
 
@@ -76,17 +76,17 @@ Three topics, because the sources were thin on pit stops and points.
 
 | # | Topic | File | Post length | Open | Status |
 |---|---|---|---|---|---|
-| 1 | Classes and balance of performance | [wec-classes-bop.md](wec-classes-bop.md) | 1,153 | 1 | draft |
-| 2 | Drivers, crews and pit stops | [wec-drivers-pit-stops.md](wec-drivers-pit-stops.md) | 1,148 | 5 | draft |
-| 3 | Race format and points | [wec-race-format-points.md](wec-race-format-points.md) | 1,133 | 6 | draft |
+| 1 | Classes and balance of performance | [wec-classes-bop.md](wec-classes-bop.md) | 1,237 | 1 | draft |
+| 2 | Drivers, crews and pit stops | [wec-drivers-pit-stops.md](wec-drivers-pit-stops.md) | 1,232 | 5 | draft |
+| 3 | Race format and points | [wec-race-format-points.md](wec-race-format-points.md) | 1,217 | 6 | draft |
 
 ## BTCC, 1958 to 2026
 
 | # | Topic | File | Post length | Open | Status |
 |---|---|---|---|---|---|
-| 1 | Weekend format | [btcc-weekend-format.md](btcc-weekend-format.md) | 1,126 | 4 | draft |
-| 2 | Points and titles | [btcc-points-titles.md](btcc-points-titles.md) | 1,110 | 3 | draft |
-| 3 | Cars, classes and balancing | [btcc-cars-balancing.md](btcc-cars-balancing.md) | 1,190 | 7 | draft |
+| 1 | Weekend format | [btcc-weekend-format.md](btcc-weekend-format.md) | 1,210 | 4 | draft |
+| 2 | Points and titles | [btcc-points-titles.md](btcc-points-titles.md) | 1,194 | 3 | draft |
+| 3 | Cars, classes and balancing | [btcc-cars-balancing.md](btcc-cars-balancing.md) | 1,274 | 7 | draft |
 
 ## Worth checking first
 
