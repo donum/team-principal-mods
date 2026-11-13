@@ -14,12 +14,12 @@ before you rely on it.
 |---|---|---|---|---|
 | 1950 to 1967 | None. Slipstream only. | Follow close on a straight, pull out at the end. | | Cars have no wings, so following close costs little grip (?). |
 | 1968 to 1969 | Movable high wings (Lotus and others). | Wings on tall struts on the suspension, some the driver could flatten on the straights. | Banned in 1969 after crashes in Spain: wings fixed to the body, no moving parts, a height limit. | The ban came in the middle of the Monaco weekend. "No moving aero parts" stays the rule for 40 years. |
-| 1970 to 2008 | None. | | Moving aero parts banned. Fan car 1978: Brabham ran once and won, then it was withdrawn (?). | Wings and ground effect make following hard. Overtaking becomes rare (?). |
+| 1970 to 2008 | None. | | Moving aero parts banned. Fan car 1978: Brabham ran once and won, then it was withdrawn. | Wings and ground effect make following hard. Overtaking becomes rare (?). |
 | 2009 | Adjustable front wing flap. KERS. | Flap: driver changes the angle by up to 6 degrees, at most twice per lap. KERS: about 60 kW for about 6.7 s per lap, by button. | KERS optional. Used by Ferrari, McLaren, Renault and BMW. Renault and BMW stopped during the year. | Hungary 2009: Hamilton, first win with KERS. Belgium 2009: Räikkönen passed with KERS boost. |
 | 2010 | F-duct (McLaren, then others). No KERS. | The driver covers a hole in the cockpit with his leg. Air stalls the rear wing, about 10 km/h more on straights. | KERS still allowed, teams agree not to use it. | Legal because no part moves. Red Bull protested, the FIA said OK. |
-| 2011 to 2013 | DRS. KERS again. | Rear wing flap opens up to 85 mm in a zone, if within 1 s of the car ahead at the detection point. | From lap 3, and 2 laps after a safety car restart. Off in the wet. Free use in practice and qualifying until 2012, zones only from 2013 (?). F-duct banned, front wing flap gone (?). | Montreal and Valencia 2011: two zones in a row, the car passed in the first can re-pass in the second. Minimum weight up 20 kg for KERS. |
-| 2014 to 2021 | DRS. ERS doubles to 120 kW. | Same DRS. Electric power used all lap, a "boost" button helps attack and defence (?). | 2018 to 2019: some tracks get a third zone. | "DRS trains": a line of cars all within 1 s, each with DRS, nobody can pass (?). |
-| 2022 to 2025 | DRS. | Same. Ground effect cars to make following easier (?). | From 2024: DRS from lap 2 and 1 lap after a restart. Up to 4 zones (Melbourne, Singapore). | Zones were changed after the FIA found DRS too easy at some tracks. DRS ends after 2025: Button was the first user in 2011, Antonelli the last. |
+| 2011 to 2013 | DRS. KERS again. | Rear wing flap opens in a zone (85 mm from 2019, 20 mm less before), if within 1 s of the car ahead at the detection point. | From lap 3, and 2 laps after a safety car restart. Off in the wet. Free use in practice and qualifying until 2012, zones only from 2013. F-duct banned, front wing flap gone. | Montreal and Valencia 2011: two zones in a row, the car passed in the first can re-pass in the second (?). Minimum weight up 20 kg for KERS. |
+| 2014 to 2021 | DRS. ERS doubles to 120 kW. | Same DRS. Electric power used all lap, a "boost" button helps attack and defence (?). | 2018 to 2019: some tracks get a third zone. | "DRS trains": a line of cars all within 1 s, each with DRS, nobody can pass. |
+| 2022 to 2025 | DRS. | Same. Ground effect cars to make following easier. | From 2024: DRS from lap 2 and 1 lap after a restart. Up to 4 zones (Melbourne, Singapore). | Zones were changed after the FIA found DRS too easy at some tracks. DRS ends after 2025: Button was the first user in 2011, Antonelli the last. |
 | 2026 | Active aero and overtake mode. | All cars: front and rear wings flatten on straights ("straight-line mode") and close for corners. Overtake mode: extra electric energy within 1 s of the car ahead. | Electric power up to 350 kW, engine 400 kW. Monaco: active aero off. | Every car opens its wings, not only the chaser. The extra energy is now the overtaking help. |
 
 ## DRS rules in short (2011 to 2025)
@@ -53,9 +53,14 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   system" (2009 users, 2010 pause, 2011 return, 2014 doubling), "McLaren
   MP4-25" (F-duct), season articles 1969, 2009, 2011 and 2026 (via
   summaries).
+- Fact check: "History of Formula One regulations" (adjustable front wing
+  banned 2011, DRS 20 mm larger in 2019), its source titles (free DRS use
+  banned in practice and qualifying for 2013). Monaco 2026 without active
+  aero: the-race.com, crash.net.
+- Fan car, DRS trains and ground effect intent from general knowledge.
 - Not confirmed, marked `(?)`: grip loss from following before wings,
-  the 1978 fan car, overtaking numbers, the 2013 qualifying change, when the
-  front flap ended, DRS trains, ERS boost button, ground effect intent.
+  overtaking numbers, ERS boost button, separate detection points in
+  Montreal and Valencia 2011.
 - Open conflict: DRS speed gain, 4 to 5, 10 to 12 or 15 km/h.
 
 ## Discord post

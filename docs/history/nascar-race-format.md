@@ -14,17 +14,17 @@ had little on qualifying outside the Daytona 500.
 | 1949 to 1958 | Laps or miles, ovals of every size, some road and beach courses. | Timed laps, one car at a time (?). | Cars race back to the line when the yellow comes out (?). | 1954: first road course, Linden Airport. |
 | 1959 to 2002 | Daytona 500 from 1959. Coca-Cola 600 the longest race. | Daytona: front row from timed laps, the rest from two Duel races (100 miles, 125 from 1969). | A race can finish under yellow. | 1974: Daytona 500 cut to 450 miles in the oil crisis. From 1963 at least one road course a year. |
 | 2003 to 2008 | Same. | Daytona Duels 150 miles from 2005. Top 35 in owner points locked in (2005 to 2012). | Late 2003: no racing back to the line under yellow, the first lapped car gets a lap back (free pass, "lucky dog"). From 2004: green-white-checker, one attempt. | The free pass came after Mears nearly hit a stalled car while racing back to the line. |
-| 2009 to 2016 | Same. | From 2013: 36 by speed, 6 by owner points, 1 for a past champion. 2016: 40 cars, 36 charters. | Double-file restarts from June 2009, free pass for the whole race, wave-around for lapped cars. From 2010 up to three green-white-checker tries. 2016: an overtime line. | |
-| 2017 to 2023 | Three stages (four at the 600), each of the first two ends under caution. | Group and knockout qualifying in the 2010s, grids by formula in 2020 and 2021 (?). | Overtime with unlimited tries from August 2017. | Stage cautions became part of the race. |
-| 2024 to 2026 | Same. 30 ovals and 6 road courses (2025). | Group qualifying with a final round (?). | Overtime: a one-lap restart if two laps remain after the time limit (2024). | Rain tyres on road courses since 2020. |
+| 2009 to 2016 | Same. | From 2013: 36 by speed, 6 by owner points, 1 for a past champion. 2016: 40 cars, 36 charters. | Double-file restarts from June 2009, free pass for the whole race (before: not in the last 10 laps), wave-around for lapped cars. From 2010 up to three green-white-checker tries. 2016: overtime, an overtime line, unlimited tries. | |
+| 2017 to 2023 | Three stages (four at the 600), each of the first two ends under caution. | Knockout qualifying 2014 to 2018, group qualifying 2019, grids mostly by formula in 2020 and 2021. | From August 2017 the overtime line is the start-finish line again, tries still unlimited. | Stage cautions became part of the race. |
+| 2024 to 2026 | Same. 30 ovals and 6 road courses (2025). | Two groups, the top five of each into a final round (from 2022). | Overtime: a one-lap restart if two laps remain after the time limit (2024). | Rain tyres on road courses since 2020. |
 
 ## Daytona 500 grid
 
 | Places | How |
 |---|---|
-| 1 and 2 | timed laps on Wednesday (since 2021) |
-| 3 to 39 | the two Duel races on Thursday, top 35 in owner points (later charters) safe |
-| 40 to 43 | fastest times of those not yet in, one for a past champion |
+| 1 and 2 | timed laps, on the Wednesday before the race since 2021 (before: a week earlier) |
+| 3 onwards | the two Duel races on Thursday, top 35 in owner points safe (2005 to 2012), charters safe from 2016 |
+| last places | 43-car era: places 40 to 43 by time, one for a past champion. From 2016: four open cars, the two fastest in timed laps and the best open car in each Duel |
 
 ## In the game today
 
@@ -48,14 +48,16 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta, as an oval pack. Yes:
   charters, road courses, rain tyres, free pass history), "Daytona 500"
   (qualifying procedure, Duels, distances), "Green–white–checker finish"
   (attempts and overtime by year), "Free pass (NASCAR)" (free pass,
-  wave-around, double-file restarts 2009).
+  wave-around, double-file restarts 2009), "Restrictor plate".
+- NASCAR.com and Fox Sports, 2025 (Daytona 500 open cars: two by time,
+  one per Duel).
 - Game support from the 0.99.6 oval code (start procedure, stage racing,
   lucky lapper, green-white-checker, last-lap caution, oval qualifying,
   charters).
-- Not confirmed, marked `(?)`: early qualifying and caution rules, group
-  qualifying years, 2020 and 2021 grids, the current qualifying format.
-- Conflict: the green-white-checker page also says unlimited tries began
-  in 2016.
+- Not confirmed, marked `(?)`: early qualifying and caution rules.
+- The green-white-checker page dates unlimited tries to 2016 (with the
+  overtime line) and the line's move back to the start-finish line to
+  August 2017.
 
 ## Discord post
 
@@ -65,10 +67,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta, as an oval pack. Yes:
 Part two of the NASCAR rules history. The table is below. What stood out to me:
 
 - **Racing back to the line under yellow** was allowed until late 2003. A near miss with a stalled car brought the free pass ("lucky dog").
-- **Green-white-checker from 2004:** one try, then up to three (2010), an overtime line (2016), unlimited tries (2017).
+- **Green-white-checker from 2004:** one try, then up to three (2010), an overtime line with unlimited tries (2016), the line back at the start-finish line (2017).
 - **Double-file restarts and the wave-around** from 2009.
 - **Stages since 2017,** each of the first two ends under caution and pays points.
-- **The Daytona 500 grid:** front row from timed laps, most of the field from two Duel races, the last places by speed and a past champion.
+- **The Daytona 500 grid:** front row from timed laps, most of the field from two Duel races, the last places by speed (and a past champion in the 43-car era).
 - **Who gets in:** top 35 in owner points (2005 to 2012), then charters (36 of 40 places from 2016).
 
 The oval mode covers most of this already: rolling and double-file starts, stages, the lucky lapper, wave-arounds, green-white-checker and charters. The gaps are the Duel races and group or knockout qualifying.

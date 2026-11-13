@@ -12,9 +12,9 @@ to 2019, NLS from 2020. The table image is made with
 
 | Years | Classes | Balancing | Points | Champions |
 |---|---|---|---|---|
-| 1977 to 1998 | Many classes by engine size, from small hatchbacks up. | Classes by engine size. | Per class, by class size (?). | Small cars win: Simca Rallye, Audi 50, Fiat 127, Golf GTI, Opel Kadett, Citroën AX. |
-| 1999 to 2008 | Same, plus big GT cars. | Same. | Same (?). | 1999: Chrysler Viper. Otherwise small BMW and Opel cars. |
-| 2009 to 2019 | V classes (production cars), SP1 to SP8 by engine size, SP9 (GT3), SP10 (GT4), SP-Pro, SP-X, Cup classes, H (historic). 33 classes in 2009. | SP9 balance of performance from 2010 (?). | Per class: 10 x (starters + 0.5 - place) / starters. A win in a full class is worth almost 10, a win alone 5. Best 7 of 9 races. | The cheap small classes win the title, they score the most. |
+| 1977 to 1998 | Many classes by engine size, from small hatchbacks up. | Classes by engine size. | Per class, by class size (?). | Mostly small cars: Simca Rallye, Audi 50, Fiat 127, Golf GTI, Opel Kadett, Citroën AX. BMW M3 in 1994, 1995 and 1998. |
+| 1999 to 2008 | Same, plus big GT cars. | Same. | Same (?). | 1999: Chrysler Viper. Otherwise small BMW, Opel and Suzuki cars. |
+| 2009 to 2019 | V classes (production cars), SP1 to SP8 by engine size, SP9 (GT3), SP10 (GT4), SP-Pro, SP-X, Cup classes, H (historic). 33 classes in 2009 (?). | SP9 balance of performance from 2010 (?). | Per class: 10 x (starters + 0.5 - place) / starters. A win in a full class is worth almost 10, a win alone 5. Two results dropped, best 7 of 9 when nine races run. | The cheap small classes win the title, they score the most. |
 | 2020 to 2026 | Same groups, plus TCR, AT (alternative fuels), Cup 2 (Porsche Carrera Cup), Cup 3, Cup 5 (BMW M2 CS), Cup X. About 22 classes. | GT3 BoP (?). | Same formula (?). A separate Speed Trophy for the overall results. | Production cars won the drivers' title four years running to 2023. |
 
 ## In the game today
@@ -34,9 +34,11 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia (English and German), "Nürburgring Langstrecken-Serie" (names,
   classes, points formula, discards, champions 1977 to 2009), "24 Hours of
   Nürburgring" (SP9 and SP10 from 2009).
-- Not confirmed, marked `(?)`: points before 2009, BoP rules in NLS, car
-  champions after 2009 (the sources disagree).
-- Conflict: VLN name from 2009 or 2010.
+- German Wikipedia champions list 1977 to 2024 (BMW M3 titles, 2000
+  Suzuki Swift), drop rule (best 7 of 9, one drop if a race is cancelled).
+- Not confirmed, marked `(?)`: points before 2009, BoP rules in NLS, the
+  2009 class count.
+- Conflict: VLN name from 2009 or 2010 (German Wikipedia: 2010).
 
 ## Discord post
 

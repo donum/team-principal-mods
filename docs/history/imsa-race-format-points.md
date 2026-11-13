@@ -12,9 +12,9 @@ had no points values, qualifying format or pit rules.
 | Years | Races | Start and drivers | Qualifying | Points and titles |
 |---|---|---|---|---|
 | 1971 to 1998 | Daytona 24 h (6 h in 1972, none in 1974), Sebring 12 h, Watkins Glen 6 h (500 km or 3 h in some years), Road America 500 miles. | Rolling starts (Sebring from 1970, Daytona from 1971). Two to five drivers per car. | Not stated (?). | Titles per class. Not stated how points were given (?). |
-| 1999 to 2013 | ALMS: Sebring 12 h, Petit Le Mans 10 h or 1,000 miles, sprints of 2 h 45 or 4 h. | Rolling start. GT Pro and Am in one class with no driver limits. | Not stated (?). | Class champions and runners-up got Le Mans invitations. |
+| 1999 to 2013 | ALMS: Sebring 12 h, Petit Le Mans 10 h or 1,000 miles, sprints of 2 h 45 or 4 h. | Rolling start. GT Pro and Am in one class with no driver limits (?). | Not stated (?). | Class champions and runners-up got Le Mans invitations. |
 | 2014 to 2020 | Daytona 24 h, Sebring 12 h, Watkins Glen 6 h, Petit Le Mans 10 h, sprints of 2 h 40. | Three to five drivers at Daytona. Amateurs must drive a set time (?). | Not stated (?). | Drivers', teams' and manufacturers' titles per class. North American Endurance Cup from 2014 (Michelin from 2019): points during the race, every 6 h at Daytona, every 4 h at Sebring. |
-| 2021 to 2026 | Same. Road America 6 h from 2026. | Driver ratings decide the line-ups: GTD needs a Bronze or Silver driver, LMP2 at most one Gold. | LMP2: only the Bronze driver qualifies. | Points for qualifying since 2021. Three champions get a Le Mans invitation. |
+| 2021 to 2026 | Same. Road America 6 h from 2026. | Driver ratings decide the line-ups: GTD needs a Bronze or Silver driver, LMP2 at most one Gold. | LMP2: only the Bronze driver qualifies. | Points for qualifying since 2021, worth 10% of the race points. Three champions get a Le Mans invitation (?). |
 
 ## In the game today
 
@@ -38,7 +38,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   "6 Hours of Watkins Glen", "Petit Le Mans", "SportsCar Endurance Grand
   Prix" (race lengths, starts), "List of IMSA SportsCar Championship
   champions" (Endurance Cup points times).
-- Not found: points values, qualifying format, pit and refuelling rules,
+- Autosport, Racer, Sportscar365 2020 reports (qualifying points from
+  2021). Sportscar365, Racer (Road America 6 h in 2026). Wikipedia "12 Hours
+  of Sebring" (rolling start from 1970).
+- Not confirmed, marked `(?)`: the ALMS driver rule, which champions get a
+  Le Mans invitation.
+- Not found: race points values, qualifying format, pit and refuelling rules,
   drive time limits, full-course yellow rules. The IMSA rulebook is the
   next place to check.
 

@@ -13,10 +13,10 @@ The table image is made with
 | 1973 to 1981 | Groups 1 to 4: Alpine A110, Lancia Stratos, Fiat 131 Abarth, Ford Escort, Talbot Sunbeam Lotus. | Not stated (?). | Not stated (?). | Four-wheel drive allowed from 1979. Drivers' title from 1979. |
 | 1982 to 1986 | Group B: 200 road cars needed, few limits. Audi Quattro, Lancia 037, Peugeot 205 T16, Lancia Delta S4. | Weight by engine size, from 580 kg (1,000 cc) to 1,300 kg, turbo engines count 1.4 times. No boost limit, over 500 hp by 1986. | Width by engine size. | 1986: spectators killed in Portugal, Toivonen and Cresto killed in Corsica. Group B banned from 1987. |
 | 1987 to 1996 | Group A: Lancia Delta wins six makes' titles in a row, then Toyota, Subaru, Mitsubishi. | 2.0 L, about 300 hp (?). | Not stated (?). | Group N in a production car cup. |
-| 1997 to 2010 | World Rally Car: 2.0 L turbo, four-wheel drive, built on a road car. | 34 mm restrictor, about 300 hp, 1,230 kg. 2006: active differentials and water injection banned, one engine for two rallies. | Pirelli alone 2008 to 2010. | |
-| 2011 to 2016 | World Rally Car 1.6 L turbo. | 33 mm restrictor, 1,200 kg, 1,350 kg with crew (1,360 from 2013). | Michelin alone 2011 to 2020. | Volkswagen four titles in a row. |
-| 2017 to 2021 | Wider World Rally Cars with more aero. | 36 mm restrictor, up to 380 hp. | Michelin, Pirelli from 2021. | One surface type per rally from 2021. |
-| 2022 to 2024 | Rally1 hybrid: tube frame, the old 1.6 L engine, a 100 kW electric boost. | Hybrid adds 84 kg. Driver picks boost settings before each stage. | Pirelli, at most 28 tyres per rally (2023). | Electric only on road sections where the organiser says. |
+| 1997 to 2010 | World Rally Car: 2.0 L turbo, four-wheel drive, built on a road car. | 34 mm restrictor, about 300 hp, 1,230 kg. 2006: mechanical front and rear differentials, active suspension and water injection banned, one engine for two rallies. | Pirelli alone 2008 to 2010. | |
+| 2011 to 2016 | World Rally Car 1.6 L turbo. | 33 mm restrictor, 1,200 kg, 1,350 kg with crew (1,360 from 2013). | Michelin, DMACK for a few crews. | Volkswagen four titles in a row. |
+| 2017 to 2021 | Wider World Rally Cars with more aero. | 36 mm restrictor, up to 380 hp. | Michelin (Evans wins on DMACK in 2017), Pirelli alone from 2021. | One surface type per rally from 2021. |
+| 2022 to 2024 | Rally1 hybrid: tube frame, the old 1.6 L engine, a 100 kW electric boost. | Hybrid adds 84 kg. Driver picks boost settings before each stage. | Pirelli, at most 28 tyres per rally (2023) (?). | Electric only on road sections where the organiser says. |
 | 2025 to 2026 | Rally1 without the hybrid. | Same engine. | Hankook alone. | Hybrid dropped because damaged units cost too much. 2027: new rules on a standard FIA chassis. |
 
 ## Classes in one rally
@@ -48,7 +48,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "World Rally Championship" (eras, classes, nominations,
   tyres), "Group B" (weight and tyre table, 1986), "World Rally Car"
   (restrictors, weights, 2006 rules), "Rally1" (hybrid, 2025, 2027).
-- Not confirmed, marked `(?)`: car rules before 1982, Group A limits.
+- Wikipedia, "2025 World Rally Championship" (Hankook, hybrid dropped),
+  "DMACK World Rally Team" and Autosport (DMACK tyres, Evans win 2017).
+- Not confirmed, marked `(?)`: car rules before 1982, Group A limits, the
+  2023 tyre limit.
 - Conflict: World Rally Car power from 2017 (230 to 280 kW, or 300 to
   380 hp).
 

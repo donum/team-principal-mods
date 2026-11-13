@@ -12,15 +12,15 @@ image is made with
 
 | Years | Fuel | Tank | Tyres | Pit stops |
 |---|---|---|---|---|
-| 1979 to 1995 | Methanol, the standard since the 1964 Indy 500 fire. | | Goodyear, Firestone back in CART later (?). | Refuelling with a gravity hose. 1991: pit lane speed limits after a crash at Long Beach. |
+| 1979 to 1995 | Methanol, the standard since the 1964 Indy 500 fire. | | Goodyear, Firestone back from 1995. | Refuelling with a gravity hose. 1991: pit lane speed limits after a crash at Long Beach. |
 | 1996 | Methanol. | | Firestone and Goodyear in the IRL. | |
-| 1997 to 2003 | Methanol, with colour added so flames can be seen at night. | 35 US gallons (132 L). | Firestone and Goodyear (to 1999), Firestone alone from 2000. Own compounds per corner, new profile in 2003. | |
+| 1997 to 2003 | Methanol, later with colour added so flames can be seen in daylight (year (?)). | 35 US gallons (132 L). | Firestone and Goodyear (to 1999), Firestone alone from 2000. Own compounds per corner, new profile in 2003. | |
 | 2004 to 2005 | Methanol. | 30 gallons (114 L). | Firestone. | Fuel hose with a built-in vent from the mid 2000s. |
-| 2004 to 2007 | Champ Car: methanol (?). | | Bridgestone sponsor. Special tyres for a set part of the race (?). | |
-| 2006 | 90% methanol, 10% ethanol. | | Firestone. | |
-| 2007 to 2011 | "100% ethanol", really 98% ethanol and 2% petrol. | 22 gallons (83 L). | Firestone. Road courses: primary and alternate dry tyres (start year (?)), plus rain tyres, no intermediates. | |
+| 2004 to 2007 | Champ Car: methanol (?). | | Bridgestone. Alternate tyres from Long Beach 2004, use rule (?). | |
+| 2006 | 90% methanol, 10% ethanol. | 30 gallons (114 L). | Firestone. | |
+| 2007 to 2011 | "100% ethanol", really 98% ethanol and 2% petrol. | 22 gallons (83 L). | Firestone. Road courses: primary and alternate dry tyres (from 2009), plus rain tyres, no intermediates. | |
 | 2012 to 2022 | E85: 85% ethanol. | 18.5 gallons (70 L). | Same. Ovals: one tyre, different sizes left and right. | Single wheel nut, tyres premounted. A routine stop takes 6 to 10 seconds. |
-| 2020 to 2022 | E85. | | | Seven crew over the wall, the seventh only cleans the aeroscreen. |
+| 2020 to 2026 | | | | Seven crew over the wall, the seventh only cleans the aeroscreen (still in force after 2022 (?)). |
 | 2023 to 2026 | 100% ethanol-based fuel (Shell). | | Firestone (Bridgestone). | |
 | 2024 to 2026 | Hybrid: energy from braking (from Mid-Ohio 2024). | | | |
 
@@ -44,6 +44,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   suppliers and specs, hybrid), "Pit stop" (IndyCar stop procedure, crew
   of seven, 1991 speed limit), "Champ Car World Series", "Dallara DW12"
   (hybrid at Mid-Ohio 2024).
+- Fact check: Wikipedia "IndyCar Series" (tank 30 gallons 2004 to 2006,
+  colour additive for daylight, year not given), Speedcenter and The Auto
+  Channel (Firestone back 1995, Goodyear out after 1999), Modern Tire
+  Dealer and Firestone (alternates in IndyCar from 2009, first used at Long
+  Beach 2004 in Champ Car), motorsport.com and RACER 2020 (aeroscreen
+  attendant; current rulebook not checked, so the 2026 end is assumed).
 - Not covered: pit lane closed under yellow, pit speed values, the rule to
   use both road course tyres, refuelling fires, CART fuel and tyres before
   1996.

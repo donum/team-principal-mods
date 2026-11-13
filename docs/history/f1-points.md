@@ -12,16 +12,16 @@ before you rely on it.
 | Years | Race points | Extra points | Results that count | Constructors | Quirks |
 |---|---|---|---|---|---|
 | 1950 to 1953 | 8-6-4-3-2 (top 5) | Fastest lap 1 | Best 4 | No title yet | Shared drives: the points are split equally, however many laps each driver did. The Indianapolis 500 counts for drivers until 1960. |
-| 1954 to 1957 | 8-6-4-3-2 | Fastest lap 1 | Best 5 (?) | No title yet | British GP 1954: seven drivers set the same fastest lap and got 1/7 point each. A driver who shared two cars only got his best finish. |
+| 1954 to 1957 | 8-6-4-3-2 | Fastest lap 1 | Best 5 | No title yet | British GP 1954: seven drivers set the same fastest lap and got 1/7 point each. A driver who shared two cars only got his best finish. |
 | 1958 to 1959 | 8-6-4-3-2 | Fastest lap 1 | Best 6 (1958), best 5 (1959) | New in 1958. Only the best car of each make scores, privateers included. | Shared drives no longer score. Formula 2 cars in the German GP get no points. Indy 500 points go to drivers only. |
 | 1960 | 8-6-4-3-2-1 (top 6) | None | Best 6 | Best car only | Fastest lap point gone. |
-| 1961 to 1966 | 9-6-4-3-2-1 | None | Best 5 or 6, changes almost every year | Best car only. 1961: constructors still 8 for a win. | 1964: Graham Hill scored more points in total, but Surtees was champion after the dropped results (?). |
-| 1967 to 1980 | 9-6-4-3-2-1 | None | Split season: best N from the first half plus best N from the second half (e.g. 1967: 5 of the first 6, 4 of the last 5) | Best car only until 1978. All cars from 1979 (?). | The split changes every year with the calendar. 1975 Spain: first half points race, Lella Lombardi scored 0.5, still the only woman to score. |
-| 1981 to 1990 | 9-6-4-3-2-1 | None | Best 11 (1981 maybe best 10 (?)) | All cars | 1988: Prost scored 105 points, Senna 94. Only 11 results counted: Senna 90, Prost 87. Senna was champion. |
+| 1961 to 1966 | 9-6-4-3-2-1 | None | Best 5 (1961, 1962, 1966), best 6 (1963 to 1965) | Best car only. 1961: constructors still 8 for a win. | 1964: Graham Hill scored more points in total, but Surtees was champion after the dropped results (Hill 41, 39 counted, Surtees 40). |
+| 1967 to 1980 | 9-6-4-3-2-1 | None | Split season: best N from the first half plus best N from the second half (e.g. 1967: 5 of the first 6, 4 of the last 5) | Best car only until 1978. All cars from 1979. | The split changes every year with the calendar. 1975 Spain: first half points race, Lella Lombardi scored 0.5, still the only woman to score. |
+| 1981 to 1990 | 9-6-4-3-2-1 | None | Best 10 (1981), best 11 (1982 to 1990) | All cars | 1988: Prost scored 105 points, Senna 94. Only 11 results counted: Senna 90, Prost 87. Senna was champion. |
 | 1991 to 2002 | 10-6-4-3-2-1 | None | All results | All cars | A win is worth more than before. Australia 1991: 14 laps in the rain, half points. |
-| 2003 to 2009 | 10-8-6-5-4-3-2-1 (top 8) | None | All results | All cars | Second place gets closer to a win, so titles stay open longer. 2009: a medal system (most wins takes the title) was announced and then dropped (?). Malaysia 2009: half points. |
+| 2003 to 2009 | 10-8-6-5-4-3-2-1 (top 8) | None | All results | All cars | Second place gets closer to a win, so titles stay open longer. 2009: a medal system (most wins takes the title) was announced and then dropped. Malaysia 2009: half points. |
 | 2010 to 2018 | 25-18-15-12-10-8-6-4-2-1 (top 10) | None | All results | All cars | 2014: double points at the last race, Abu Dhabi. Used once. |
-| 2019 to 2020 | 25 to 1, top 10 | Fastest lap 1, only if in the top 10 | All results | Fastest lap point counts for the team too (?) | Teams pit late for fresh tyres just for the point. |
+| 2019 to 2020 | 25 to 1, top 10 | Fastest lap 1, only if in the top 10 | All results | Fastest lap point counts for the team too | Teams pit late for fresh tyres just for the point. |
 | 2021 | 25 to 1, top 10 | Fastest lap 1. Sprint 3-2-1. | All results | All cars | Spa 2021: no racing laps behind the safety car, still half points for the top 10. |
 | 2022 to 2024 | 25 to 1, top 10 | Fastest lap 1. Sprint 8-7-6-5-4-3-2-1. | All results | All cars | Shortened races get a sliding scale (below). Japan 2022: 28 of 53 laps, but full points because of a gap in the rules, and Verstappen won the title that day. Fixed for 2023. |
 | 2025 to 2026 | 25 to 1, top 10 | Sprint 8 to 1. No fastest lap point. | All results | All cars | Fastest lap point dropped. |
@@ -42,7 +42,7 @@ before you rely on it.
 
 - Points are only for race positions. Never for pole or laps led.
 - Same points: the driver with more wins is ahead, then more 2nd places,
-  and so on (?).
+  and so on.
 - The dropped results rule ended after 1990. Since 1991 every result
   counts.
 
@@ -68,10 +68,14 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "List of Formula One World Championship points scoring
   systems" (read in full, but the table columns did not come through
   cleanly for some years).
-- Filled from general knowledge, marked `(?)` where unsure: the 1954 to
-  1957 count, 1964 and 1988 title stories (1988 is well known), the 1979
-  constructors change (the page says "up until 1979"), 1981 best 10 or 11,
-  the tie-break rule, the 2009 medal plan.
+- Fact check: Wikipedia season articles 1955 (best 5, shared drives), 1961
+  (best 5, constructors 8 for a win, best car only), 1962 and 1966 (best 5),
+  1964 (best 6, Hill 39 of 41), 1979 (all cars score for constructors for
+  the first time), 1981 (best 10), 1982 (best 11).
+- Points systems page: half points from Spain 1975, under 2 laps rule
+  "believed" from 1977 to 1980, fastest lap point for drivers and
+  constructors in the top 10.
+- Tie-break and 2009 medal plan from general knowledge, not looked up.
 
 ## Discord post
 

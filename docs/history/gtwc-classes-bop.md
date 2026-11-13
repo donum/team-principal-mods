@@ -13,8 +13,8 @@ from 2019 or 2020. The table image is made with
 
 | Years | Series | Cars and classes | Balancing | Quirks |
 |---|---|---|---|---|
-| 1997 to 2009 | FIA GT Championship | GT1 and GT2, N-GT from 2000, GT3 created for 2006. | Not stated (?). | Spa 24 Hours part of the series 2001 to 2009. Titles for drivers, teams and makes in each class. |
-| 2010 to 2012 | FIA GT1 World Championship | GT1 cars (2010, 2011), GT3 only in 2012. | Not stated (?). | |
+| 1997 to 2009 | FIA GT Championship | GT1 and GT2, N-GT from 2000, GT3 created for 2006 in its own series. | Weight penalties, extra limits on the Maserati MC12. | Spa 24 Hours part of the series 2001 to 2009. Titles for drivers, teams and makes in each class. |
+| 2010 to 2012 | FIA GT1 World Championship | GT1 cars (2010, 2011), GT3 only in 2012. | Weight and restrictor balancing, ballast for winners (to 2011). | |
 | 2011 to 2015 | Blancpain Endurance Series, Sprint Series from 2013 | GT3 (plus GT4 and Supersport in 2011). Pro, Pro-Am and Gentlemen classes. | "Extensive performance balancing and handicap weights" (2011, 2012). | Michelin tyres, Pirelli from 2013. |
 | 2016 to 2022 | Blancpain GT Series, then GT World Challenge Europe | GT3 only. Pro, Silver (from 2018), Pro-Am, Am. | Balance of performance for GT3. | One to six cars per team. |
 | 2023 to 2026 | GT World Challenge Europe | Pro, Gold, Silver, Bronze by FIA driver rating. Pro-Am ended after 2023 (only at Spa). | BoP. | The Bronze Cup winner gets a Le Mans entry. |
@@ -34,8 +34,11 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 - Wikipedia, "GT World Challenge Europe", "FIA GT Championship", "FIA GT1
   World Championship", "GT World Challenge Europe Endurance Cup" and
-  "Sprint Cup" (classes, names, years, Le Mans entry).
-- Not confirmed, marked `(?)`: balancing before 2011, BoP per track.
+  "Sprint Cup" (classes, names, years, Le Mans entry, Michelin 2011 and
+  2012, Pirelli from 2013), FIA GT1 World Championship balancing and
+  ballast. 2024 Spa reports (Pro-Am class still run at Spa).
+- Not found: BoP per track. FIA GT Championship balancing is only
+  described as weight penalties and MC12 limits.
 - Conflicts: when the Blancpain name ended (2018 or 2019), when the Am Cup
   ended (2018 or 2020), when the sprint series began (2013 or 2014).
 

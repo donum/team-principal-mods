@@ -13,22 +13,22 @@ sources were thin for this topic, so many rows are marked.
 
 | Years | Road and street qualifying | Oval qualifying | Race | Quirks |
 |---|---|---|---|---|
-| 1979 to 1995 | Timed sessions on Friday and Saturday (?). | One car at a time, a few timed laps (?). | Rolling start behind the pace car. Laps or miles. | 1979: CART splits from USAC. The Indy 500 stays with USAC but pays CART points (1983 on). |
+| 1979 to 1995 | Timed sessions on Friday and Saturday (?). | One car at a time, a few timed laps (?). | Rolling start behind the pace car. Laps or miles. | 1979: CART splits from USAC. The Indy 500 stays with USAC but pays CART points (1979, and from 1983; 1980 to 1982 (?)). |
 | 1996 to 2001 | Same (?). | One car at a time (?). | Rolling start. | 1996: the IRL starts, the Indy 500 reserves 25 of 33 places for IRL points leaders. |
 | 2002 to 2003 | CART: qualifying in groups, a bonus point for the fastest in the slowest group. | | Rolling start. | |
-| 2004 to 2007 | Champ Car: qualifying in groups (?). | Few ovals left. | Some timed races (?), standing starts tried (2007 ?). | Champ Car became almost all road and street races. |
-| 2008 to 2021 | IndyCar: two groups, the top 6 of each go on, then a "Fast Six" for pole (?). | One car at a time, two laps averaged (?). | Rolling start. Double-file restarts on short ovals (2011). | Texas 2011: two short races in one night. 2020: double-headers at Road America, Iowa, Mid-Ohio and Gateway. |
+| 2004 to 2007 | Champ Car: qualifying in groups. | Few ovals left. | Timed races (all races in 2007), standing starts where safe (2007). | Champ Car became almost all road and street races. |
+| 2008 to 2021 | IndyCar: two groups, the top 6 of each go on, then a "Fast Six" for pole (from St. Petersburg 2008). | One car at a time, two laps averaged (?). | Rolling start. Double-file restarts from 2011 (at all tracks in 2011). | Texas 2011: two short races in one night. 2020: double-headers at Road America, Iowa, Gateway, Mid-Ohio and the Indianapolis road course. |
 | 2022 to 2026 | Same. | Same. | Rolling start. No green-white-checker: a race can finish under yellow. | Indianapolis can call a late red flag to get a green finish (used 2014, 2019, 2022, 2023, 2026). |
 
 ## Indianapolis 500 qualifying
 
 | Years | Format |
 |---|---|
-| Since 1939 (?) | Four timed laps (10 miles) per run, 33 starters in 11 rows of three |
-| 1979 to 2009 | Several days of qualifying, slower cars could be bumped from the 33 (?) |
+| Since 1939 | Four timed laps (10 miles) per run, 33 starters in 11 rows of three |
+| 1979 to 2009 | Several days of qualifying, slower cars could be bumped from the 33 (bumping also in later formats) |
 | 2010 to 2021 | Fast Nine shootout for pole (points for it from 2010) |
 | 2022 on | Fast Twelve, then Fast Six for pole |
-| 2019 on | Cars outside the 33 run a last chance session (?) |
+| 2019 on | Cars outside the top 30 run a last chance session for the last row |
 | Rain | A race is official after more than half the distance (101 laps) |
 
 ## In the game today
@@ -53,9 +53,17 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   starts, no years), "IndyCar Series" (2020 double-headers, via summary),
   "List of American Championship car racing points scoring systems"
   (CART groups 2002 to 2003, Indy Fast Nine and top 12 years, Texas 2011).
-- Not confirmed, marked `(?)`: road course qualifying before 2002 and the
-  start year of the Fast Six, oval run lengths, Champ Car timed races and
-  standing start years, bumping years, last chance qualifying.
+- Fact check: Racecar.com and Eurosport 2008 (knockout format from St.
+  Petersburg 2008; a single-car Fast Six existed from 2005 or 2006),
+  motorsport.com and AP 2011 to 2012 (double-file restarts at all venues
+  in 2011, dropped at Indianapolis, Texas and Fontana for 2012), 2007 Champ
+  Car season article (all races timed, standing starts where safe), 1979
+  SCCA/CART season article (Indy 500 paid CART points in 1979 and 1983),
+  2026 Indy 500 reports (late red flag), Champ Car points bonus for the
+  slowest qualifying group (groups 2004 to 2007).
+- Not confirmed, marked `(?)`: road course qualifying before 2002, oval
+  run lengths, whether the Indy 500 paid CART points 1980 to 1982 (sources
+  conflict on 1981 and 1982).
 
 ## Discord post
 

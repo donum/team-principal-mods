@@ -11,8 +11,8 @@ middle of the season, in the style of the Race of Champions (see
 
 | Years | Event | Format | Winners | Quirks |
 |---|---|---|---|---|
-| 2011 | Munich Olympic Stadium, 16 and 17 July. No points. | Saturday: races between the makes. Sunday: knockout races. The whole DTM field took part. | Mortara (Saturday), Spengler (Sunday). | The DTM's first stadium event. Called a Race of Champions-style event. |
-| 2012 | Same place, 14 and 15 July. No points. | Saturday: relay races. Sunday: knockout races. | Green and Ralf Schumacher (relay), Ekström (knockout) (?). | |
+| 2011 | Munich Olympic Stadium, 16 and 17 July. No points. | Saturday: "race of marques", Audi against Mercedes. Sunday: knockout races. The whole DTM field took part. | Mortara (Saturday), Spengler (Sunday). | The DTM's first stadium event. Called a Race of Champions-style event. |
+| 2012 | Same place, 14 and 15 July. No points. | Saturday: relay races. Sunday: knockout races. | Green and Ralf Schumacher (team relay), Ekström (individual knockout). | |
 | 2013 | Dropped. | | | It could not be turned into a points event. |
 
 ## In the game today
@@ -31,8 +31,11 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "2011 Deutsche Tourenwagen Masters season" and "2012 ..."
   (dates, non-championship, 2011 winners), "Olympiastadion (Munich)" (the
   end in 2013).
-- Not confirmed, marked `(?)`: the 2012 winners (from a summary of the
-  season page). Not found: cars, qualifying, prize money.
+- de.wikipedia DTM-Saison 2011 and 2012 (winner per day), Audi press
+  release 2011 (race of marques), Autosport and Motorsport.com 2012
+  (Green and Schumacher won the team relay over Tambay and Scheider,
+  Ekström beat Green in the final). Not found: cars, qualifying, prize
+  money.
 
 ## Discord post
 

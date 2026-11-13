@@ -10,11 +10,11 @@ format and points). The table image is made with
 
 | Years | Races | Drivers and stops | Qualifying | Points and titles |
 |---|---|---|---|---|
-| 1997 to 2006 | At least 500 km or at most 3 hours, plus the Spa 24 Hours, Istanbul 2 hours, Mil Milhas. | Driver changes (?). | Not stated (?). | Per class (?). |
-| 2007 to 2009 | At most 2 hours, plus Spa 24 Hours. | Same (?). | Not stated (?). | Per class (?). |
+| 1997 to 2006 | At least 500 km or at most 3 hours, plus the Spa 24 Hours and a 2-hour race at Istanbul. | Driver changes (?). | Not stated (?). | Per class, top 6 score (top 8 from 2003). Spa: points also at 6 and 12 hours (2002 to 2008). |
+| 2007 to 2009 | At most 2 hours, plus Spa 24 Hours. | Same (?). | Not stated (?). | Per class, top 8. |
 | 2010 to 2012 | Two one-hour races per weekend: a qualifying race and a main race. | Each car must change tyres and drivers at least once. | Three-part knockout. | Top 3 of the qualifying race and top 10 of the main race score. |
 | 2013 to 2019 | Endurance: 3 or 6 hours, Spa 24 Hours. Sprint: two one-hour races per weekend. | Endurance: three drivers, a fourth at Spa for non-Pro cars. Sprint: two drivers, a driver change in a set window. | From 2018: three parts, one per driver, the times added up. | Sprint and Endurance points add up to the overall titles. Spa pays the most, with points during the race. |
-| 2020 to 2026 | Same, five Endurance and five Sprint rounds. | Same. Pro cars at most three drivers at Spa. | 2025: split qualifying groups for the Sprint Cup, 2026 for the Endurance Cup. | Overall, Sprint and Endurance titles, cups per class. Points at the 6 and 12-hour marks at Spa (?). |
+| 2020 to 2026 | Same, five Endurance and five Sprint rounds. | Same. Pro cars at most three drivers at Spa. | 2025: split qualifying groups for the Sprint Cup, 2026 for the Endurance Cup. | Overall, Sprint and Endurance titles, cups per class. Points at the 6 and 12-hour marks at Spa. |
 
 ## In the game today
 
@@ -34,10 +34,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "GT World Challenge Europe" (formats, drivers, qualifying,
   titles), "FIA GT Championship" (race lengths 1997 to 2009), "FIA GT1
   World Championship" (2010 to 2012 format), "Sprint Cup" (driver change),
-  "24 Hours of Spa".
-- Not found: points scales, minimum drive times, minimum pit stop times.
-- Not confirmed, marked `(?)`: FIA GT driver change rules and points, the
-  Spa 6-hour points mark.
+  "24 Hours of Spa", "List of FIA GT Champions" (top 6, top 8 from 2003,
+  Spa 6 and 12-hour points 2002 to 2008), 2020 GTWC Europe season and 2025
+  Spa reports (points at 6, 12 and 24 hours).
+- Not found: GTWC points scales, minimum drive times, minimum pit stop
+  times. The Mil Milhas was planned as a 2007 round, not confirmed as run.
+- Not confirmed, marked `(?)`: FIA GT driver change rules and qualifying.
 
 ## Discord post
 

@@ -13,8 +13,8 @@ conflicting. No DTM ran from 1997 to 1999.
 
 | Years | Race points | Extra points | Results that count | Other titles and quirks |
 |---|---|---|---|---|
-| 1984 | 20-18-16-15 down to 1, top 18. Half points per heat at two-heat rounds. | | Two drop results. | Only German drivers score. Guests drop out of the order. |
-| 1985 | 20 down to 1, top 18. | | One drop result. | Foreign drivers now score. |
+| 1984 | 20-18-16-15 down to 1, top 18. Half points per heat at two-heat rounds. | | Two drop results. | Guest starters don't score, drivers behind move up. Some sources say only German licence holders scored (?). |
+| 1985 | 20 down to 1, top 18. Half points per heat at Erding and Diepholz. | | One drop result. | Foreign drivers now score. |
 | 1986 to 1987 | 20 down to 1, top 18. | | One drop result (best 8 of 9 in 1986). | 1987: guest Ludwig won round 7 and scored nothing. |
 | 1988 to 1989 | 20 down to 1, top 18, per race. | | Four drop results. | |
 | 1990 to 1996 | 20-15-12-10-8-6-4-3-2-1 per heat. | | All results count. | 1991: teams', manufacturers' (best car per make) and privateer titles. 1993: a Class 2 cup. 1995: DTM and ITC were separate titles with the same cars. |
@@ -50,7 +50,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
   `docs/dtm_rules.html`.
 - Gaps: drop result counts per year are in the season files, the exact
-  table for 1985 to 1989 (20 down to 1) is listed only as a range.
+  table for 1985 to 1989 (20 down to 1) is listed only as a range. It is
+  the 1984 scale: 20-18-16-15 down to 1.
+- Fact check: de.wikipedia DTM-Saison 1984 to 1991, 2000 to 2003, 2007
+  (Lausitz half points), 2020 to 2024. en.wikipedia 2018 (wildcards don't
+  score). 1984: de.wikipedia says guests could not score, but Swiss driver
+  Walter Brun has points, so the "German drivers only" rule is unclear.
 
 ## Discord post
 
@@ -59,9 +64,9 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 Part four of the DTM rules history. The table is below. What stood out to me:
 
-- **Only German drivers scored in 1984.** Guests dropped out of the points order. In 1987 a guest won a race and scored nothing.
-- **Drop results until 1989:** one, two, then four.
-- **Half points per heat** at some 1984 rounds, half points at Lausitz 2007, and half points for a race stopped before 75% since 2023.
+- **Guest starters scored nothing in 1984.** They dropped out of the points order. In 1987 a guest won a race and scored nothing.
+- **Drop results until 1989:** two, then one, then four.
+- **Half points per heat** at some 1984 and 1985 rounds, half points at Lausitz 2007, and half points for a race stopped before 75% since 2023.
 - **Points for qualifying:** 3-2-1 in the qualifying race (2001, 2002), and 3-2-1 for the top 3 in qualifying since 2017.
 - **Fastest lap point** only for a top-10 finisher (2022).
 - **Other titles:** teams, manufacturers from the best car, best 3 or best 4 cars, privateers, a Class 2 cup, rookies. 2020: a three-car team scores from its best two.

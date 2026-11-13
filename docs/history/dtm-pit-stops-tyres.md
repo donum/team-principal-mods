@@ -22,7 +22,7 @@ conflicting. No DTM ran from 1997 to 1999.
 | 2009 to 2011 | Two. | Refuelling, last year 2011. | Hankook control slick and wet (2011). | |
 | 2012 | Two, each inside a window. | No refuelling, 120 litre tank. | | |
 | 2013 | Two, no window, none in the first or last 3 laps. | No refuelling. | One option set per race, every driver must use it. | Stops for damage don't count. |
-| 2014 | One, in the middle third of the race. | | Option tyre for at most half the distance. | Not under the safety car. No window in wet races. |
+| 2014 | One, in the middle third of the race. | | Option tyre for at most half the distance. | Not under the safety car. No window in wet races (?). |
 | 2015 to 2016 | Saturday none, Sunday one. | | 4 slick sets for both qualifyings and both races. Option tyre gone. | |
 | 2017 to 2018 | One per race. | | | 8 mechanics, one wheelgun per side, tyre warmers banned. |
 | 2019 to 2020 | One per race. | | 7 slick sets, at most 2 new in qualifying. | Not under the safety car. |
@@ -30,7 +30,7 @@ conflicting. No DTM ran from 1997 to 1999.
 | 2022 | One, between minute 10 and 40. | | 3 sets per race day. | Rear wheels first, 4 wheel mechanics. Stops under the safety car count now, but not under full-course yellow. |
 | 2023 | One, between minute 20 and 40. | | Pirelli, 3 or 4 new sets by track. The top 5 start on their qualifying tyres. | 6 crew, rear wheels first. A pit stop challenge award. |
 | 2024 | One, between minute 20 and 40. | | The top 10 start on their qualifying tyres. | A change under safety car or full-course yellow doesn't count. |
-| 2025 | Saturday one (minute 20 to 40). Sunday two (minute 10 to 20 and 39 to 45). | | 3 or 4 new sets, top 10 start on qualifying tyres. | |
+| 2025 | Saturday one (minute 20 to 40). Sunday two (minute 10 to 25 and 39 to 45). | | 3 or 4 new sets, top 10 start on qualifying tyres. | |
 | 2026 | As 2025. | | A race-day pool of 3 or 4 new sets per track, plus a test pool. A wheel that is thrown out leaves the allocation. | |
 
 ## In the game today
@@ -54,6 +54,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - `seasons/dtm-<year>/research/season.md` for every season, summed up in
   `docs/dtm_rules.html`.
 - Gaps: tyre suppliers and set counts are not listed for every year.
+- Fact check: de.wikipedia DTM-Saison 2001 (one stop, four tyres, 25
+  minutes between races), 2003 (two stops), 2012 (120 litres), 2022, 2023,
+  2024 and 2025. touringcartimes 2013 and 2015 (4 sets), Autosport and
+  Autobild 2014. 2025 Sunday first window: Red Bull Ring and de.wikipedia
+  say minute 10 to 25, a Porsche preview says 10 to 20. 2022 window: the
+  de.wikipedia page gives minute 11 to 40.
 
 ## Discord post
 
@@ -62,9 +68,9 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 Part three of the DTM rules history. The table is below. What stood out to me:
 
-- **No stops until 2000.** An open tyre war in the 1980s, then a control tyre.
+- **No mandatory stops until 2001.** An open tyre war in the 1980s, then a control tyre.
 - **Stop count changes all the time:** one (2001), two with refuelling (2003 to 2011), two without (2012, 2013), one (2014), none on Saturday and one on Sunday (2015), one per race (2017), and since 2025 one on Saturday and two on Sunday.
-- **Pit windows in many forms:** the middle third of the race, the 2nd and 3rd quarters, minute 10 to 40, minute 20 to 40, or two windows (10 to 20 and 39 to 45).
+- **Pit windows in many forms:** the middle third of the race, the 2nd and 3rd quarters, minute 10 to 40, minute 20 to 40, or two windows (10 to 25 and 39 to 45).
 - **What counts as a stop:** not under the safety car, not for damage, all four wheels, later also not under full-course yellow.
 - **Option tyre (2013, 2014):** one set per race that everyone must use, then at most half the distance on it.
 - **Crew rules:** 8 mechanics and one wheelgun per side (2017), rear wheels first (2022).

@@ -18,9 +18,9 @@ is made with
 | 1971 to 1981 | Le Mans not in the championship 1975 to 1979. | Rolling start behind the safety car. | From 1971: most distance at the end of the last lap, measured from the line. | Makes titles. Drivers' title from 1981. |
 | 1982 to 1992 | Mostly 500 or 1000 km, about 3 or 6 hours. Le Mans out in 1989 and 1990. | Rolling start. | | Manufacturers to 1984, then teams from 1985. Drivers' title. |
 | 1993 to 2011 | No world championship. Le Mans on its own, ILMC from 2010. | Pre-qualifying test day to 2000. Practice and qualifying Wednesday and Thursday. | | |
-| 2012 to 2019 | WEC: 6-hour races, Le Mans 24 h, some 4 and 8 hours, Sebring 1000 miles (2019). All timed. | Qualifying with the times of two drivers averaged (?). | Classified: the car must finish the last lap within a set lap time, and cover 70% of the overall winner's distance. | Top 10 score on a scale (25 for a win (?)), 11th and lower half a point. Le Mans about double, 8 and 10 hours about 1.5 times. |
-| 2014 to 2026 | | | Slow zones at Le Mans from 2014 (?). Safety cars, full-course yellow (?). | GTE drivers' and makes' titles from 2017. |
-| 2020 to 2026 | Le Mans moved to September (2020) and August (2021). 2026: 8 rounds, Le Mans plus 6-hour races and Qatar 1812 km (2024, 2025). | Hyperpole: a top-class shootout for pole (from 2020 (?)). Pole is worth 1 point. | Points need 70% of the winner's distance and two laps under green (2021). | World titles for Hypercar drivers and makes, cups for the other classes. |
+| 2012 to 2019 | WEC: 6-hour races, Le Mans 24 h, some 4 and 8 hours, Sebring 1000 miles (2019). All timed. | Qualifying with the times of two drivers averaged (not at Le Mans). | Classified: the car must finish the last lap within a set lap time, and cover 70% of the overall winner's distance. | Top 10 score on a scale (25 for a win), 11th and lower half a point. Le Mans double (1.5 times in 2018 and 2019), 8 and 10 hours about 1.5 times. |
+| 2014 to 2026 | | | Slow zones at Le Mans and full-course yellow from 2014. Safety cars. | GTE drivers' and makes' world titles 2017 to 2022, cups before. |
+| 2020 to 2026 | Le Mans moved to September (2020) and August (2021). 2026: 8 rounds, Le Mans plus 6-hour races and Qatar 1812 km (2024, 2025). | Hyperpole: a shootout for pole (Le Mans 2020, all rounds from 2021). Pole is worth 1 point. | Points need 70% of the winner's distance and two laps under green (2021). | World titles for the top class drivers and makes (and GTE Pro to 2022), cups for the other classes. |
 
 ## In the game today
 
@@ -46,9 +46,11 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   Championship" (races, points multipliers, half points, 2026 calendar),
   2012 and 2021 WEC season articles (timed races, 2021 pole point and
   green laps).
-- Not confirmed, marked `(?)`: points per place before 2012 and the WEC
-  scale, averaged qualifying times, Hyperpole year, slow zones, full-course
-  yellow, safety car rules.
+- FIA and fiawec.com news (2012 qualifying with two drivers' times
+  averaged, 2014 full-course yellow, 2017 GT world titles), ACO and
+  Autosport (Hyperpole from Le Mans 2020, all rounds 2021), Motorsport.com
+  (double points at Le Mans since 2012, 1.5 times in 2018 and 2019).
+- Not confirmed, marked `(?)`: points per place before 2012.
 
 ## Discord post
 

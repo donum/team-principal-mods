@@ -10,7 +10,7 @@ points). The table image is made with
 
 | Years | Race | Qualifying and grid | Points | Quirks |
 |---|---|---|---|---|
-| 1949 to 1968 | One race per Grand Prix. | Not stated (?). | 1949: 10-8-7-6-5 and 1 for the fastest lap, best 3 count. 1950: 8-6-4-3-2-1, best 4. Then best results by number of rounds (?). | 1954 Ulster GP not counted after rain shortened it. |
+| 1949 to 1968 | One race per Grand Prix. | Not stated (?). | 1949: 10-8-7-6-5 and 1 for the fastest lap, best 3 count. 1950: 8-6-4-3-2-1, best 4. Then best 4 to 6. | 1954 Ulster GP not counted after rain shortened it. |
 | 1969 to 1987 | Same. Push starts until 1987. | Not stated (?). | 15-12-10-8-6-5-4-3-2-1. Best results only, in 1976 split by season half. All results count 1977 to 1987. | |
 | 1988 to 1992 | Same. Grid of 4 per row from 1990. | Not stated (?). | 20-17-15-13-11-10-9-8-7-6-5-4-3-2-1 (1988 to 1991). 1992: 20-15-12-10-8-6-4-3-2-1. | |
 | 1993 to 2004 | About 45 minutes, no stops. Rain: red flag, restart on wet tyres. | Not stated (?). Grid of 3 per row from 2004. | 25-20-16-13-11-10-9-8-7-6-5-4-3-2-1, top 15. | |
@@ -39,8 +39,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   scale and best-result rule, read in full), "Grand Prix motorcycle racing"
   (event format, flag-to-flag, red flags, chronology), 2013 and 2023 season
   articles (Q1 and Q2, sprints, Japan 2023).
-- Not confirmed, marked `(?)`: points scales 1951 to 1968 and 1970 to
-  1975, qualifying before 2013.
+- Motorsport Week and Visordown, 2023 Japanese GP (12 of 24 laps done,
+  full points at half distance).
+- Not confirmed, marked `(?)`: qualifying before 2013. The points list
+  gives the best-results counts for 1951 to 1975 but not every scale.
 
 ## Discord post
 

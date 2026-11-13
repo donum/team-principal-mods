@@ -11,8 +11,8 @@ had no pit stop or qualifying rules.
 | Years | Races | Start and drivers | Safety | Quirks |
 |---|---|---|---|---|
 | 1977 to 1992 | Races of 3.5 to 6 hours, a 250-mile race. One day, on Saturday. | One to three drivers per car (?). | | A marshal died in 1977. |
-| 1993 to 2014 | Mostly 4 hours, one 6-hour race from 1993. Ten races until 2016. Nordschleife plus the GP track's short loop, 24.358 km. | Three start groups a few minutes apart after a warm-up lap behind safety cars. 4-hour races: one driver alone or up to three. 6-hour race: two to four. | Double yellow: 120 km/h. No safety car in the race (?). | 1998: Jack Brabham raced aged 72. |
-| 2015 to 2019 | Nine races, eight of 4 hours. | Same. From 2015 drivers need the DMSB Permit Nordschleife (A or B by class) (?). | Code 60: 60 km/h in a zone. 2015: after a GT3 car flew over the fence and killed a spectator, speed limits at three places, lifted in 2016. | |
+| 1993 to 2014 | Mostly 4 hours, one 6-hour race from 1993. Ten races until 2016. Nordschleife plus the GP track's short loop, 24.358 km. | Three start groups a few minutes apart after a warm-up lap behind safety cars. 4-hour races: one driver alone or up to three. 6-hour race: two to four. | Double yellow: 120 km/h. No safety car in the race. | 1998: Jack Brabham raced aged 72. |
+| 2015 to 2019 | Ten races to 2016, then nine, eight of 4 hours. | Same. From 2015 drivers need the DMSB Permit Nordschleife, A or B by class from 2016. | Code 60: 60 km/h in a zone. 2015: after a GT3 car flew over the fence and killed a spectator, speed limits at three places, lifted in 2016. | |
 | 2020 to 2026 | Renamed NLS. 2024: eight races, 2025: ten, including the 24-hour qualifiers and NLS Light. Qualifying 08:30, race at 12:00. | Same. | Code 60 and double yellow. | 2026: a driver died after an oil trail caused a multi-car crash. Special races with red wigs (NLS-6) and ham prizes (NLS-9). |
 
 ## In the game today
@@ -35,8 +35,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   quirks), "24 Hours of Nürburgring" (2015 speed limits, the permit).
 - Not found: pit stop rules, qualifying format, BoP rules. The NLS website
   is the next place to check.
-- Not confirmed, marked `(?)`: drivers per car before 1993, the permit for
-  NLS (the source is about the 24-hour race).
+- VLN/NLS website (2014, 2015) and DMSB (December 2015): the permit is
+  needed in VLN from 2015, grades A and B from 2016.
+- German Wikipedia: ten races until 2016, then nine.
+- Not confirmed, marked `(?)`: drivers per car before 1993.
 
 ## Discord post
 

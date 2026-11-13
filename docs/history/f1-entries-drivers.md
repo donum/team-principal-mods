@@ -15,12 +15,12 @@ before you rely on it.
 |---|---|---|---|---|
 | 1950 to 1962 | No limit on cars per team. Works teams and privateers with bought cars side by side. Indy 500 entries count, F2 cars sometimes in the same race. | No licence. Two drivers can share one car and split the points (to 1957). | Set by each race organiser, a car can change number every race. | Rob Walker, a privateer, gave Cooper and Lotus their first wins. |
 | 1963 to 1972 | Usually two cars per team, a third for a guest driver. | No licence. | Still set per race. | BRM entered more than three cars in 1971 and 1972. |
-| 1973 to 1980 | Two cars normal, a third now and then. Privateers still buy cars from Lotus, Brabham and others. | No licence. | From 1974: fixed numbers per team for the whole season. Champion gets 1 and 2, the rest by last year's constructors' standings. | Ferrari kept 11 and 12, Tyrrell 3 and 4 for over 20 years. Lauda came back with a third Ferrari at Monza 1976. |
-| 1981 to 1984 | From 1981 every team must own the design of its own chassis. Spain 1981: the last privateer next to a works team. | Super licence from 1984. Drivers struck at Kyalami 1982 over the licence terms (?). | Fixed team numbers. | Privateers won 20 races from 1950 to 1981. |
+| 1973 to 1980 | Two cars normal, a third now and then. Privateers still buy cars from Lotus, Brabham and others. | No licence. | From 1974: fixed numbers per team for the whole season. Champion gets 1 and 2, the rest by last year's constructors' standings. | Tyrrell kept 3 and 4 for over 20 years, Ferrari had 27 and 28 from 1981. Reutemann drove a third Ferrari at Monza 1976, when Lauda came back. |
+| 1981 to 1984 | From 1981 every team must own the design of its own chassis. Spain 1981: the last privateer next to a works team. | Super licence from 1982. Drivers struck at Kyalami 1982 over the licence terms. | Fixed team numbers. | Privateers won 20 races, the last in 1970. |
 | 1985 to 1995 | At most two cars per team from 1985. Renault's third car in Germany 1985 was the last. Up to 39 entries, pre-qualifying (to 1992). | Super licence. | Fixed team numbers. | Damon Hill raced as number 0 in 1993 and 1994, the champion had left the team. |
-| 1996 to 2013 | Two cars per team. Grid of 20 to 24 cars. | Super licence. Test and reserve drivers in Friday practice (?). | New numbers each year by last year's constructors' standings. Champion's team keeps 1 and 2. No 13. | Customer cars stay banned. Super Aguri and Toro Rosso ran cars close to Honda and Red Bull designs, which led to disputes (?). |
+| 1996 to 2013 | Two cars per team. Grid of 20 to 24 cars. | Super licence. Test and reserve drivers in Friday practice. | New numbers each year by last year's constructors' standings. Champion's team keeps 1 and 2. No 13. | Customer cars stay banned. Super Aguri and Toro Rosso ran cars close to Honda and Red Bull designs, which led to disputes. |
 | 2014 to 2021 | Two cars per team. 10 or 11 teams. | Penalty points from 2014: 12 in 12 months means a one-race ban. Changed after 2015: points system for the licence, at least 18 years old, 40 points over three seasons. | Each driver picks a number for the career, 2 to 99. Number 1 only for the champion. | Verstappen started at 17 in 2015, the reason for the age limit. Number 17 retired for Bianchi. |
-| 2022 to 2025 | Two cars per team. New teams pay 200 million USD. | Rookies must drive in FP1, twice per car per season (?). Free practice licence from 2019. | Same. A number frees up after two seasons without racing. | Magnussen 2024: the only one-race ban so far for penalty points. |
+| 2022 to 2025 | Two cars per team. New teams pay 200 million USD. | Rookies must drive in FP1, once per car per season, twice per car from 2025. Free practice licence from 2019. | Same. A number frees up after two seasons without racing. | Magnussen 2024: the only one-race ban so far for penalty points. |
 | 2026 | 11 teams, 22 cars: Audi and Cadillac new. | Same. | Drivers may ask to change their number: Verstappen moved from 33 to 3. | |
 
 ## Super licence points (examples)
@@ -54,9 +54,13 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
   of Formula One driver numbers" (every number era, 0, 13, 17, 2026
   changes). From earlier research: 200 million fee, pre-qualifying, the
   rookie FP1 rule.
-- Not confirmed, marked `(?)`: Kyalami 1982, Friday test drivers, the
-  customer car disputes, the exact rookie FP1 count.
-- Note: the super licence page says 1984, not 1982.
+- Wikipedia "1982 South African Grand Prix" (strike over the new
+  super licence rules), "Privateer (motorsport)" (20 wins, the last in
+  1970, Spain 1981), "List of Formula One driver numbers" (Ferrari 27
+  and 28). Williams F1 and Autosport (rookie FP1 count).
+- Conflict: the super licence page says 1984, the 1982 race page shows
+  it already existed in 1982. The privateer win table is unsourced on
+  Wikipedia. Some count 1968 (Siffert) as the last true privateer win.
 
 ## Discord post
 
@@ -67,7 +71,7 @@ Part eleven of the rules history. The table is below. What stood out to me:
 
 - **Until 1981 anyone could buy a car and enter.** Privateers like Rob Walker raced next to the works teams and won 20 races. Since 1981 each team must own its chassis design.
 - **Cars per team:** no limit in the 1950s, usually two plus a guest car in the 1960s and 1970s, at most two since 1985.
-- **Super licence from 1984.** Since 2015 with an age limit (18) and points from junior series, after Verstappen started at 17. Penalty points since 2014: 12 means a race ban.
+- **Super licence from 1982.** Since 2015 with an age limit (18) and points from junior series, after Verstappen started at 17. Penalty points since 2014: 12 means a race ban.
 - **Numbers:** set per race until 1973, fixed per team from 1974, by standings from 1996, and since 2014 each driver picks one for the career.
 - **Rookies in FP1:** since 2022 each team must give young drivers a few Friday sessions.
 

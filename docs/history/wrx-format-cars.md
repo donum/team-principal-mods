@@ -13,8 +13,8 @@ gravel tracks. The table image is made with
 |---|---|---|---|---|
 | 1973 to 2013 | European championship: from 1976 under FIA rules, Group 5, then Group A and Group B cars. | Classes split by drive and car group (Division 1 and 2). | Not stated (?). | Group B cars moved to rallycross from 1987. |
 | 2014 to 2021 | Two-day events. Four qualifying heats of 4 laps, 3 to 5 cars each, one joker lap per race. The top 12 go to two semi-finals of 6 laps, the top 3 of each to the final. | Supercar (RX1 from 2021): 2.0 L turbo, four-wheel drive, about 600 hp, 1,300 kg, 45 mm restrictor. RX Lites, then RX2. | Heats: 16 down to 1. Semi-final: 6 down to 1. Final: 8-5-4-3-2-1. The final's winner does not always score the most. | Solberg champion 2014, 2015. Kristoffersson from 2017, eight titles in all. |
-| 2022 to 2023 | Same idea. | RX1e: electric, two motors, 680 hp (from August 2022). RX2e. | 20-16-13 down to 1 for 15 places (?). | All-electric series. |
-| 2024 to 2025 | Same. | RX1e and RX1 (petrol on sustainable fuel) race together. | 2025: 25-20-17 down to 1 for 18 places, plus 3-2-1 per heat (?). | World RX cancelled after 2025, replaced by the European championship for 2026. |
+| 2022 to 2023 | New format: a one-lap SuperPole, heats ranked by time, a progression race, two semi-finals (top 2 and the best third to the final). At most 5 cars per race. | RX1e: electric, two motors, 680 hp (from August 2022). RX2e. | Per event: 20-16-13 down to 1 for the top 15. | All-electric series. |
+| 2024 to 2025 | Same idea. | RX1e and RX1 (petrol on sustainable fuel (?)) race together. | 2024 as 2022. 2025: 25-20-17 down to 1 for 18 places in the final, plus 3-2-1 for the heat ranking (?). | World RX cancelled after 2025, replaced by the European championship for 2026. |
 
 ## In the game today
 
@@ -33,9 +33,15 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "FIA World Rallycross Championship" (format, points tables,
   classes, electric switch, champions), "FIA European Rallycross
   Championship" (history), "Rallycross" (joker lap, surfaces).
-- Not confirmed, marked `(?)`: European points, what the 2022 to 2025
-  points rows apply to.
-- Conflict: RX1e from 2021 or from August 2022.
+- Wikipedia, "2022 FIA World Rallycross Championship" (new format,
+  RX1e debut at Hell, Norway, 13 and 14 August 2022), "FIA European
+  Rallycross Championship" (FIA cup from 1976, Group B in 1987).
+- Search summaries of 2022 reports: points to the top 15 of each event
+  (a maximum of 40 after two rounds).
+- Not confirmed, marked `(?)`: European points, the 2025 heat ranking
+  bonus, the fuel used by the 2024 petrol cars.
+- Resolved: RX1e from August 2022 (the name RX1 for the Supercar class
+  dates from 2021).
 
 ## Discord post
 
@@ -44,9 +50,9 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 
 Rallycross: short races on tracks of tarmac and gravel. The table is below. What stood out to me:
 
-- **An event is a tournament:** four qualifying heats, two semi-finals, a final, all in one weekend.
+- **An event is a tournament:** qualifying heats, semi-finals and a final, all in one weekend.
 - **The joker lap:** every driver must take a longer route once per race, so strategy matters even in a 4-lap race.
-- **Points for every round of the event,** so the final's winner doesn't always score the most.
+- **Points for every round of the event (2014 to 2021),** so the final's winner didn't always score the most.
 - **Electric from 2022,** then petrol and electric cars together (2024, 2025).
 - **Kristoffersson: eight titles.**
 

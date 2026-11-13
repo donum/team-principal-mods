@@ -13,9 +13,9 @@ proof of concept for show events. The table image is made with
 |---|---|---|---|---|
 | 1988 to 1991 | Montlhéry (1988, for Henri Toivonen), then Nürburgring, Barcelona, Madrid. | The rally champions of 1979 to 1988 race each other head-to-head. | Group B and Group A rally cars: Audi Quattro S1, Peugeot 205 T16, Lancia Delta. | Kankkunen beats Salonen in the first final. |
 | 1992 to 2003 | Gran Canaria. | Head-to-head knockout. Nations' Cup for two-driver teams from 1999. | Rally cars. | Side events for rally masters and classic Porsche 911s. |
-| 2004 to 2012 | Stadiums: Stade de France, Wembley, Beijing's Bird's Nest, Düsseldorf, Bangkok. | A round robin, then the best eight in a knockout. The final is best of three runs. Two titles: Champion of Champions and the Nations' Cup. | Identical cars per run, chosen for each heat: ROC buggy, KTM X-Bow, Audi R8 LMS, Lamborghini, VW Scirocco, a NASCAR stock car (2012). | Germany wins six Nations' Cups in a row. Kovalainen first non-rally winner (2004). 2013 cancelled (unrest in Bangkok). |
+| 2004 to 2012 | Stadiums: Stade de France, Wembley, Beijing's Bird's Nest, Düsseldorf, Bangkok. | A round robin (first year not found) (?), then the best eight in a knockout. The final is best of three runs. Two titles: Champion of Champions and the Nations' Cup. | Identical cars per run, chosen for each heat: ROC buggy, KTM X-Bow, Audi R8 LMS, Lamborghini, VW Scirocco, a EuroNASCAR Camaro (2010 to 2012). | Germany wins six Nations' Cups in a row. Kovalainen first non-rally winner (2004). 2013 cancelled (unrest in Bangkok). |
 | 2014 to 2020 | Barbados, London, Miami, Riyadh, Mexico City. 2020 held online. | Same, eROC for sim racers from 2018. | Same idea. | Riyadh 2018: the first international motorsport event in Saudi Arabia. |
-| 2022 to 2025 | Snow and ice at Piteå, Sweden (2022, 2023), Sydney (2025). | Same. | Electric RX2e, Porsche Cayman GT4, Polaris side-by-sides, SuperCar Lites. | No event in 2021, 2024 and 2026. |
+| 2022 to 2025 | Snow and ice at Piteå, Sweden (2022, 2023), Sydney (2025). | Same. | 2022: electric RX2e, Porsche Cayman GT4, Polaris side-by-sides, SuperCar Lites. 2025: KTM X-Bow, Toyota GR86, Subaru BRZ, SuperCar Lites. | No event in 2021, 2024 and 2026. 2027 planned for Wellington, New Zealand. |
 
 The DTM's own version, the Munich Olympic Stadium races of 2011 and 2012,
 is in `dtm-munich-show.md`.
@@ -37,7 +37,12 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "Race of Champions" (history, format, venues, cars, winners
   to 2017), "2011 Deutsche Tourenwagen Masters season" and "2012 ..."
   (Munich events), "Olympiastadion (Munich)" (why it ended).
-- Not confirmed: individual winners from 2018, prize money. Munich 2012
+- Wikipedia "Race of Champions" car table (EuroNASCAR 2010 to 2012,
+  cars of 2022 and 2025), editions list (2021 COVID-19, 2024 land use at
+  Piteå, 2026 none, 2027 Wellington).
+- Winners from 2018 are not used in the table. Sources read: 2019
+  Duval, 2022 Loeb, 2023 Ekström, 2025 Loeb (not cross-checked).
+- Not confirmed: prize money, the year the round robin began. Munich 2012
   winners come from a summary of the season page.
 
 ## Discord post

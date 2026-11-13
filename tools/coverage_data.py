@@ -161,7 +161,7 @@ NEEDS = {
  'Super GT': [
   ('B4', '1994-2026', 'Two classes in one race, titles per class.'),
   ('B1', '1993-2026', 'Success ballast by results, then by championship points.'),
-  ('B2', '2011-2026', 'Balance of performance per race in GT300.'),
+  ('B2', '2010-2026', 'Balance of performance per race in GT300.'),
   ('C8', '1993-2026', 'Two drivers per car, at most two thirds each.'),
   ('B5', '1993-2026', 'Compulsory stop with a driver change.'),
   ('D9', '1993-2026', 'Tyre war: Bridgestone, Michelin, Yokohama, Dunlop.'),
@@ -213,7 +213,8 @@ NEEDS = {
   ('B2', '1982-1986', 'Group B weight by engine size, turbos counted 1.4 times.'),
   ('B2', '1997-2021', 'Restrictor and weight rules by class.'),
   ('B8', '2011-2026', 'Power Stage bonus points.'),
-  ('B3', '2024-2026', 'Points for Saturday standings and Sunday stages.'),
+  ('B3', '2024', 'Points for Saturday standings and Sunday stages.'),
+  ('B3', '2025-2026', 'Extra points for the Sunday stages.'),
   ('B13', '2022-2024', 'Hybrid boost, settings chosen per stage.'),
  ],
  'NLS': [
@@ -245,8 +246,9 @@ NEEDS = {
  ],
  'Rallycross': [
   ('A1', '2014-2025', 'Heats, semi-finals and a final in one event.'),
-  ('A6', '2014-2025', 'Qualifying by intermediate points over four heats.'),
-  ('B3', '2014-2025', 'Points for heats, semi-finals and the final.'),
+  ('A6', '2014-2021', 'Qualifying by intermediate points over four heats.'),
+  ('A6', '2022-2025', 'One-lap SuperPole, heats by time, a progression race.'),
+  ('B3', '2014-2021', 'Points for heats, semi-finals and the final.'),
   ('N12', '2014-2025', 'Joker lap, tarmac and gravel.'),
   ('C9', '2024-2025', 'Electric and petrol cars together.'),
  ],
@@ -264,9 +266,10 @@ NEEDS = {
   ('B4', '2000-2003', 'Production class with its own title.'),
   ('B5', '1998-2001', 'One mandatory two-tyre stop.'),
   ('B3', '2000', 'Best 20 of 24 results.'),
-  ('B1', '2000-2026', 'Success ballast.'),
+  ('B1', '2000-2021', 'Success ballast.'),
   ('C9', '2004-2010', 'BTC Touring and Super 2000 cars in one class.'),
-  ('B13', '2022-2026', 'Hybrid boost, limited for the leaders.'),
+  ('B13', '2022-2024', 'Hybrid boost, limited for the leaders.'),
+  ('B13', '2025-2026', 'Turbo boost, limited for the leaders.'),
   ('A3', '2014-2026', 'Laps added after a long safety car.'),
  ],
 }

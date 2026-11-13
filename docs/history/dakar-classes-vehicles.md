@@ -11,8 +11,8 @@ stages. The table image is made with
 
 | Years | Bikes and quads | Cars | Trucks and others | Quirks |
 |---|---|---|---|---|
-| 1979 to 1988 | Motorbikes from 1979 (Yamaha XT500 wins the first). | Cars from 1979 (a Range Rover wins), Porsche 1984, then Peugeot and Mitsubishi. | Trucks a separate category from 1980. | Open to almost anything with wheels. 1988: Vatanen's Peugeot stolen from the service area, he is disqualified. |
-| 1989 to 2004 | Bikes. | T1 improved cross-country cars, T2 production cars (?). | No trucks in 1989 after a DAF crew member died in 1988. T4.3 support trucks from 1998. | 2001: Kleinschmidt is the first woman to win (cars). |
+| 1979 to 1988 | Motorbikes from 1979 (Yamaha XT500 wins the first). | Cars from 1979 (a Range Rover is the best car, all vehicles in one ranking that year), Porsche 1984, then Peugeot and Mitsubishi. | Trucks a separate category from 1980. | Open to almost anything with wheels. 1988: Vatanen's Peugeot stolen from the service area, he is disqualified. |
+| 1989 to 2004 | Bikes. | T1 improved cross-country cars, T2 production cars (?). | No trucks in 1989 after a DAF crew member died in 1988. T4.3 support trucks from 1998 (?). | 2001: Kleinschmidt is the first woman to win (cars). |
 | 2005 to 2016 | 2005: twin-cylinder bikes limited to 450cc. From 2011 all bikes 450cc. Quads their own class from 2009 (2WD up to 750cc, 4WD up to 900cc). | T1 by fuel and drive (2WD buggies, 4WD), T2 production. | Trucks T4.1 to T4.3. | Kamaz dominates the trucks. |
 | 2017 to 2021 | Bikes (RallyGP, Rally2), quads. | Same. | UTVs from 2017, split into T3 light prototypes and T4 side-by-sides in 2021 (sources differ on years). Dakar Classic from 2021 for older cars and trucks, scored on regularity. | Unassisted bikes (Malle Moto, now "Original by Motul"): no outside help, the riders service their own bikes. |
 | 2022 to 2026 | Bikes. Quads dropped for 2025. | T1 "Ultimate" (T1.1 4WD including the larger T1+, T1.2 2WD, T1.U electric or hybrid), T2 "Stock". Audi RS Q e-tron (electric drive) wins 2024. | T3 "Challenger", T4 SSV, T5 trucks. Mission 1000 for alternative energy from 2024. | Classic cut-off moved to 2005 cars for 2025. Balancing between 2WD and 4WD and for the Audi not stated (?). |
@@ -34,8 +34,10 @@ Game support in Team Principal 0.99.5 and the 0.99.6 beta. Yes: set in pack data
 - Wikipedia, "Dakar Rally" (categories, classes, quads, UTVs, Classic,
   Mission 1000, unassisted class, winners), "World Rally-Raid
   Championship" (T1 to T5 names), "Group T1", "Group T3", "Group T4".
-- Not found: balancing rules, air restrictors, tyre rules. The FIA
-  regulations are the next place to check.
+- "1979 Paris-Dakar Rally" (one ranking for all vehicles in 1979).
+- Not found: balancing rules, air restrictors, tyre rules, the first
+  year of T4.3 support trucks (2021 rule summaries list it, 1998 not
+  confirmed). The FIA regulations are the next place to check.
 - Conflict: UTV and T3/T4 years (2017 and 2021, or 2019, 2020 and 2025).
 
 ## Discord post
