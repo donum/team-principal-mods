@@ -1,19 +1,18 @@
 <title>Racing Rules Coverage</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a timing-screen board. Lever panel on the left, scoreboard, season grid,
-   season detail and "best next levers" on the right. Share view drops the panel. */
+   season detail and "best next levers" on the right. Share view drops the panel.
+   Self-contained: no web fonts or other downloads, only fonts already on the system
+   (Bahnschrift and Segoe UI on Windows, the system faces elsewhere). */
 :root{
   --bg:#eef1f5; --surface:#ffffff; --ink:#151a22; --muted:#5b6474; --line:#d8dde6;
   --accent:#2453c4; --accent-ink:#ffffff; --board:#f2c230;
   --ok:#1d8a4f; --part:#d58a00; --miss:#c5443b; --none:#e4e8ee;
   --ok-soft:#dff3e7; --part-soft:#fbefd6; --miss-soft:#fbe2df;
-  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
-  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",Consolas,monospace;
+  --display:"Bahnschrift SemiCondensed","Bahnschrift","Roboto Condensed","Helvetica Neue","Arial Narrow",Arial,sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Cascadia Mono",Consolas,"SF Mono",Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0f1319; --surface:#171c25; --ink:#e8ecf2; --muted:#98a2b3; --line:#2a313d;
