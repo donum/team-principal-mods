@@ -28,11 +28,11 @@ build them all.
 | dtm-1990 | A1, A6, B1, B2, D1, D9, E1, E2 |
 | dtm-1991 | A1–A6, B1–B4, C1–C5, D1–D4, D9, E1–E7 |
 | dtm-1992 | A1, A6, B2, B3, C1, C2, D1, D9, E1, E2 |
-| dtm-2012 | A3, A5, A6, B5, B7, B12, C4, C6, C7, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E13, E15, E18 |
+| dtm-2012 | A3, A5, A6, B5, B7, B12, C4, C6, C7, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E13, E15, E18, E20 |
 | dtm-2003 | A5, A6, B4, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2006 | A6, B1, B2, B5, B7, B10, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
-| dtm-2013 | A3, A5, A6, B5, B6, B7, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18 |
+| dtm-2013 | A3, A5, A6, B5, B6, B7, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20 |
 | dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18 |
 | dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
@@ -764,7 +764,10 @@ rules to these items:
 - **Request:** an optional per-track override, for example a
   `tracks.<track id>` block in `session_layers.json` (and the race and
   session manifests) that names other files for that venue, falling back
-  to the pack-wide set.
+  to the pack-wide set. This also allows a track announcer in the local
+  language.
+- **Post:** `docs/requests/ambience-per-track.md` (with the drive-by
+  pools of E11).
 
 ### E10. Documented start-sound timing · P3
 - **Needed by:** dtm-2013.
@@ -890,9 +893,13 @@ rules to these items:
   each falling back to a more general one and
   finally to today's screen. Used on the loading screens, the choice
   screens, a short card between sessions, the grid and the results.
+  Two new screens: a start of the weekend (track, round, three-day
+  weather, Start weekend) and an end of the weekend (your team's result
+  and points, picture by outcome).
   Optional: an archive image per track with a year and a caption.
 - **Mockup:** `docs/requests/img/weekend-images/` (19 screens, 2013
-  season). Request text in `docs/requests/weekend-images.md`.
+  season) and `docs/requests/img/weekend-journey/` (a full weekend).
+  Request text in `docs/requests/weekend-images.md`.
 
 ### E18. Separate team logo and team icon · P3
 - **Needed by:** dtm-2012, dtm-2013 (maker emblems as team icons,
@@ -912,6 +919,61 @@ rules to these items:
   (small and square, for tables, standings, timing and lists). With only a
   logo, the game uses it for both, as today, so existing packs keep
   working.
+
+### E19. Weekend images per team · P3
+- **Needed by:** dtm-2013 (and every season with team photos).
+- **Why:** the player follows one team all season. A photo of their own
+  cars at this track says "this is my weekend" far more than a general
+  track photo. Teams also have their own photos: the pit crew, the
+  garage, their cars on the grid. Packs often have such photos with the
+  team's permission.
+- **Today:** no images on the weekend screens (E17). The dashboard has one
+  background photo per pack, the same for every team.
+- **Request:** let a team override the weekend images of E17. The game
+  looks for a picture in this order:
+  1. the player's team, this track, this session
+  2. the player's team, this session (any track)
+  3. this track, this session (E17)
+  4. the pack, this session (E17)
+  5. today's screen without a picture
+  The same works for the start of the weekend, the result pictures (win,
+  podium, points, no points, retired) and the dashboard background. Each
+  entry can hold several pictures; the game picks one at random. A team
+  without its own pictures sees the pack's pictures, so nothing changes
+  for packs that don't use it.
+
+  ```json
+  "weekend_images": {
+    "race": ["race.jpg"],
+    "nuerburgring13": { "race": ["nbr_start.jpg"] },
+    "teams": {
+      "bmw_mtek": {
+        "dashboard": ["mtek_garage.jpg"],
+        "race": ["mtek_grid.jpg"],
+        "nuerburgring13": { "qualifying": ["mtek_nbr_quali.jpg"] },
+        "results": { "win": ["mtek_win.jpg"], "retired": ["mtek_garage.jpg"] }
+      }
+    }
+  }
+  ```
+- **Mockup:** `docs/requests/img/weekend-journey/` (BMW Team MTEK at the
+  Nürburgring). The qualifying screens there show Wittmann's MTEK car;
+  with this item a pack could show it to MTEK players only and a neutral
+  track photo to everyone else.
+
+### E20. Dashboard images in random order · P3
+- **Needed by:** dtm-2013, dtm-2012 (every pack with several dashboard
+  images).
+- **Why:** a pack or team set has several dashboard pictures, but the
+  player mostly sees the first one. It gets dull over a long career.
+- **Today:** the dashboard moves through `dashboard_bg<N>.png` (and the
+  team sets in `assets/dashboard_bgs/`) in number order, always starting
+  with image 1.
+- **Workaround:** put the favourite picture in slot 1.
+- **Request:** an optional setting, for example
+  `"dashboard_order": "random"`, that starts at a random image or
+  shuffles the set. Without it the order stays as today.
+- **Post:** `docs/requests/dashboard-random-order.md`.
 
 ---
 

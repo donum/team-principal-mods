@@ -2,42 +2,26 @@
 
 - **Status:** draft, not posted
 - **Wishlist:** E17
-- **Attach:** pick from `img/weekend-images/` (suggested: 01, 02, 13, 05, 07, 10)
-- **Length:** about 1,500 characters (Discord limit 2,000)
+- **Attach:** from `img/weekend-journey/`: 01g, 02, 06, 11a, 12, 14a, 14c (7 images)
+- **Length:** about 1,000 characters (Discord limit 2,000)
 
 ---
 
 ## Feature request: pictures for the race weekend
 
-Hey! One more from the DTM packs, this time about the race weekend.
+Hey! One more from the DTM packs, about the race weekend.
 
-The team dashboard already shows a photo behind the panels, and it makes a big difference. The weekend itself has no pictures: the loading screens are a progress bar on black, Simulate / Take Part are two grey boxes, and the results are tables only.
+The dashboard already shows a photo, and it makes a big difference. The weekend itself has none: practice, qualifying and the race are grey boxes and tables.
 
-So my idea: **a pack can add images to the weekend, and the game picks the one that fits.**
+My idea: **a pack can add pictures to the weekend screens.**
 
-- **Session screens:** practice, qualifying and race show a picture of the track, with the session, track, weather and track outline. The same screen is used to choose and while simulating. The game already knows all of these.
-- **Between sessions:** a short card from the result, for example "Rockenfeller takes pole", with portrait and car.
-- **Results for your team:** the picture follows how your team did: win, podium, points, no points or retired.
-- **Optional archive:** an older picture of the track with the year and a caption.
+- **Practice, qualifying, starting grid, race:** a photo behind each screen. Buttons, progress bar and tables stay as they are.
+- **New: start of the weekend.** One screen when the race week begins: track, round, weather for the three days, and "Start weekend".
+- **New: end of the weekend.** One screen after the race with your team's result and points. The picture follows the outcome: win, podium, points, no points or retired.
 
-Each picture falls back: the track's picture for that session, then one pack picture for that session, then today's screen without a picture. Packs without images look exactly as today.
+A pack gives one picture per session, and can add one per track. Several pictures per slot, the game picks one. No picture means today's screen, so old packs don't change.
 
-```json
-"weekend_images": {
-  "practice": ["practice.jpg"],
-  "qualifying": ["qualifying.jpg"],
-  "race": ["race.jpg"],
-  "nuerburgring13": {
-    "practice": ["nbr_practice.jpg"],
-    "qualifying": ["nbr_quali.jpg"],
-    "race": ["nbr_start.jpg"],
-    "archive": [{ "file": "nbr_1987.jpg", "year": 1987, "caption": "..." }]
-  },
-  "results": { "win": ["win.jpg"], "no_points": ["meh.jpg"], "retired": ["garage.jpg"] }
-}
-```
-
-Mock-ups for the 2013 season are attached. What do you think?
+Mock-ups from our 2013 pack are attached (BMW Team MTEK at the Nürburgring). What do you think?
 
 ---
 
