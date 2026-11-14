@@ -1,9 +1,9 @@
-# Weekend images: track, session, result and weather
+# Weekend images: track, session and result
 
 - **Status:** draft, not posted
 - **Wishlist:** E17
-- **Attach:** pick from `img/weekend-images/` (suggested: 01, 02, 05, 07, 10)
-- **Length:** about 1,600 characters (Discord limit 2,000)
+- **Attach:** pick from `img/weekend-images/` (suggested: 01, 02, 13, 05, 07, 10)
+- **Length:** about 1,500 characters (Discord limit 2,000)
 
 ---
 
@@ -16,7 +16,6 @@ The team dashboard already shows a photo behind the panels, and it makes a big d
 So my idea: **a pack can add images to the weekend, and the game picks the one that fits.**
 
 - **Loading cards:** practice, qualifying and race load over a picture of the track, with the session, round, weather and track outline. The game already knows all of these.
-- **Weather:** a wet session picks the track's "wet" picture. If there is none, the dry one is used.
 - **Between sessions:** a short card from the result, for example "Rockenfeller takes pole", with portrait and car.
 - **Results for your team:** the picture follows how your team did: win, podium, points, no points or retired.
 - **Optional archive:** an older picture of the track with the year and a caption.
@@ -27,7 +26,7 @@ Each image falls back to a more general one: track and session, then track, then
 "weekend_images": {
   "nuerburgring13": {
     "practice": ["nbr_practice.jpg"],
-    "qualifying": { "dry": ["nbr_quali.jpg"], "wet": ["nbr_quali_wet.jpg"] },
+    "qualifying": ["nbr_quali.jpg"],
     "race": ["nbr_start.jpg"],
     "archive": [{ "file": "nbr_1987.jpg", "year": 1987, "caption": "..." }]
   },
@@ -35,7 +34,7 @@ Each image falls back to a more general one: track and session, then track, then
 }
 ```
 
-Mock-ups for the Nürburgring 2013 are attached. What do you think?
+Mock-ups for the 2013 season are attached. What do you think?
 
 ---
 
@@ -48,7 +47,7 @@ explain each screen and are not part of the design.
 | File | Proposal | Shows |
 |---|---|---|
 | `01-loading-practice.jpg` | 1 Loading cards | Practice loading over a track photo, title block and weather, track outline bottom right |
-| `02-loading-qualifying-wet.jpg` | 1 Loading cards | Same card with the wet picture and rain chip |
+| `02-loading-qualifying.jpg` | 1 Loading cards | Qualifying card. Same layout; a wet session shows only in the weather chip |
 | `03-race-choice.jpg` | 1 Loading cards | Simulate / Watch over the dimmed start photo, forecast strip |
 | `04-week-loading.jpg` | 1 Loading cards | Week advance before a race week, with the pack's track art and a three-day forecast |
 | `05-between-sessions.jpg` | 2 Weekend in three acts | Qualifying card: pole, top three, where your cars start |
@@ -58,6 +57,7 @@ explain each screen and are not part of the design.
 | `09-results-retired.jpg` | 2 Weekend in three acts | Played as Phoenix: "retired" picture, from the pack-wide set |
 | `10-archive-loading.jpg` | 3 Track archive | Race loading with a 1987 picture, year and caption |
 | `11-archive-story.jpg` | 3 Track archive | Winner card with a 2006 photo of Spengler at the same track |
+| `12` to `19-loading-<track>.jpg` | 1 Loading cards | The same card at the other eight 2013 tracks, practice or qualifying |
 
 The source page is in the session scratchpad and not kept; the screens are
 simple HTML over the photos and can be rebuilt.
@@ -79,7 +79,8 @@ https://claude.ai/artifact/6cjkA3ucBe1gM5gB3WPemN (private).
 
 | Screen | Picture | Source and licence |
 |---|---|---|
-| 01, 02, 03, 05, 06, 07, 08, 11 | Nürburgring 2013 race weekend | BMW Group press photos (P90131866, P90131935, P90131940, P90131946, P90131947, P90131948, P90131950, P90131865), `Pictures/mods/dtm-2013/teams/*/press_bmw` |
+| 01, 02, 03, 05, 06, 07, 08, 11 | Nürburgring 2013 race weekend | BMW Group press photos (P90131860, P90131866, P90131935, P90131940, P90131947, P90131948, P90131950, P90131865), `Pictures/mods/dtm-2013/teams/*/press_bmw` |
+| 12 to 19 | The other 2013 tracks | Hockenheim, Brands Hatch: Flickr CC (Hockenheimring May 8715506906; Brands Hatch 9265350692). Norisring: BMW press P90128281. Zandvoort: Dennis de Wolde (permission). Red Bull Ring (Motor VS Motor), Lausitzring (elJenso), Moscow (Andrey Velichko), Oschersleben (n0rmili): `ask_permission` folders, mock-up only |
 | 09 | MTEK pit stop, Hockenheim 2013, greyscale | BMW Group press photo P90119239 |
 | 04 | Nürburgring race-day art | Our own pack art, `seasons/dtm-2013/assets/tracks/nuerburgring13.png` |
 | 10 | BMW M3, Nürburgring 1987 | Frame from an RTL TV recording (`dtm-1987/livery_pack/_video_candidates`). Mock-up only, not for a pack |

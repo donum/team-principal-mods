@@ -876,7 +876,7 @@ rules to these items:
 - **Mockup:** `docs/packages/img/png/track-art-styles.png` (Hockenheim in
   map, illustrated and lines-only style).
 
-### E17. Weekend images per track, session, result and weather · P3
+### E17. Weekend images per track, session and result · P3
 - **Needed by:** dtm-2013 (and every season with track photos).
 - **Why:** the race weekend is the heart of the game, but its screens are
   plain: the loading screens are a bar on black, the Simulate / Take Part
@@ -886,13 +886,13 @@ rules to these items:
   background photo. Weather, round and results are known but not shown
   with a picture.
 - **Request:** optional images in the pack, picked by track, session,
-  result of the player's team (win, podium, points, no points, retired)
-  and weather (wet, night), each falling back to a more general one and
+  result of the player's team (win, podium, points, no points, retired),
+  each falling back to a more general one and
   finally to today's screen. Used on the loading screens, the choice
   screens, a short card between sessions, the grid and the results.
   Optional: an archive image per track with a year and a caption.
-- **Mockup:** `docs/requests/img/weekend-images/` (11 screens, Nürburgring
-  2013). Request text in `docs/requests/weekend-images.md`.
+- **Mockup:** `docs/requests/img/weekend-images/` (19 screens, 2013
+  season). Request text in `docs/requests/weekend-images.md`.
 
 ---
 
