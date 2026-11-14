@@ -1,0 +1,29 @@
+number,driver,nationality,birth_date,entrant,team_base,chassis,engine,rounds,notes
+1,Guanyu Zhou,chinese,1999-05-30,Prema Theodore Racing,"Grisignano di Zocco, Italy",Dallara F317,Mercedes,1-10,2 wins; Ferrari Driver Academy; dob en.wiki + de.wiki
+4,Mick Schumacher,german,1999-03-22,Prema Theodore Racing,"Grisignano di Zocco, Italy",Dallara F317,Mercedes,1-10,Champion; 8 wins; second F3 season; dob en.wiki + de.wiki (driverdb shows 1999-03-25)
+7,Ralf Aron,estonian,1998-03-21,Prema Theodore Racing,"Grisignano di Zocco, Italy",Dallara F317,Mercedes,1-10,4 wins incl. Pau race 3; back at Prema after a year at Hitech; dob en.wiki + driverdb
+8,Marcus Armstrong,new_zealander,2000-07-29,Prema Theodore Racing,"Grisignano di Zocco, Italy",Dallara F317,Mercedes,1-10,Rookie; 1 win; Ferrari Driver Academy; New Zealander on an Italian licence (entered as ITA); dob en.wiki + driverdb
+10,Robert Shwartzman,russian,1999-09-16,Prema Theodore Racing,"Grisignano di Zocco, Italy",Dallara F317,Mercedes,1-10,Rookie champion; 2 wins; Ferrari Driver Academy; dob en.wiki + driverdb
+3,Sebastián Fernández,spanish,2000-07-12,Motopark,"Oschersleben, Germany",Dallara F317,Volkswagen,1-10,Rookie; Venezuelan-Spanish on a Spanish licence (formel3guide lists VEN); dob en.wiki + driverdb
+13,Fabio Scherer,swiss,1999-06-13,Motopark,"Oschersleben, Germany",Dallara F317,Volkswagen,1-10,Rookie; later Audi DTM 2020; dob en.wiki + driverdb
+23,Jonathan Aberdein,south_african,1998-02-14,Motopark,"Oschersleben, Germany",Dallara F317,Volkswagen,1-10,Rookie; Audi DTM rookie test 2017; later DTM 2019-2020; dob en.wiki + driverdb
+27,Dan Ticktum,british,1999-06-08,Motopark,"Oschersleben, Germany",Dallara F317,Volkswagen,1-10,Runner-up; 4 wins; Red Bull junior; 2017 Macau GP winner; dob en.wiki + driverdb
+33,Marino Sato,japanese,1999-05-12,Motopark,"Oschersleben, Germany",Dallara F317,Volkswagen,1-10,Japanese on a San Marino licence (entered as SMR); dob en.wiki + driverdb
+44,Jüri Vips,estonian,2000-08-10,Motopark,"Oschersleben, Germany",Dallara F317,Volkswagen,1-10,Rookie; 4 wins; 2017 ADAC F4 champion; dob en.wiki + driverdb
+5,Petru Florescu,romanian,1999-01-04,Fortec Motorsports,"Daventry, United Kingdom",Dallara F317,Mercedes,2-6,Rookie; started rounds 2-6 and withdrew at round 7 (en.wiki entry table says 2-7; de.wiki says 2-8); dob en.wiki + driverdb
+9,Jehan Daruvala,indian,1998-10-01,Carlin,"Farnham, United Kingdom",Dallara F317,Volkswagen,1-10,1 win; dob en.wiki + driverdb
+11,Sacha Fenestraz,french,1999-07-28,Carlin,"Farnham, United Kingdom",Dallara F317,Volkswagen,1-10,Rookie; 1 win; 2017 Eurocup Formula Renault 2.0 champion; French-Argentine; dob en.wiki + driverdb
+16,Nikita Troitskiy,russian,1999-04-16,Carlin,"Farnham, United Kingdom",Dallara F317,Volkswagen,1-10,Rookie; 1 win; dob en.wiki only (no second source found)
+17,Devlin DeFrancesco,canadian,2000-01-17,Carlin,"Farnham, United Kingdom",Dallara F317,Volkswagen,1-2,Entered rounds 1-4; withdrew at rounds 3-4 and left; dob en.wiki + driverdb
+17,Julian Hanses,german,1997-08-31,Carlin,"Farnham, United Kingdom",Dallara F317,Volkswagen,9-10,Took over DeFrancesco's car; earlier ma-con #18; dob en.wiki + de.wiki
+24,Ameya Vaidyanathan,indian,1996-07-29,Carlin,"Farnham, United Kingdom",Dallara F317,Volkswagen,1-10,Rookie; British licence at rounds 1-3; dob en.wiki + driverdb
+62,Ferdinand Habsburg,austrian,1997-06-21,Carlin,"Farnham, United Kingdom",Dallara F317,Volkswagen,1-10,Later DTM 2019 (Aston Martin) and 2020 (Audi); dob en.wiki + driverdb
+12,Artem Petrov,russian,2000-01-14,Van Amersfoort Racing,"Zeewolde, Netherlands",Dallara F317,Mercedes,1-10,Rookie; dob en.wiki + driverdb
+15,Keyvan Andres,iranian,2000-03-08,Van Amersfoort Racing,"Zeewolde, Netherlands",Dallara F317,Mercedes,1-10,Full name Keyvan Andres Soori; German-Iranian on an Iranian licence (formel3guide lists GER); dob en.wiki + driverdb
+25,Sophia Flörsch,german,2000-12-01,Van Amersfoort Racing,"Zeewolde, Netherlands",Dallara F317,Mercedes,4-10,Rookie; joined from ADAC F4 at round 4; later Audi DTM 2021 (Abt); dob en.wiki + driverdb
+30,Frederik Vesti,danish,2002-01-13,Van Amersfoort Racing,"Zeewolde, Netherlands",Dallara F317,Mercedes,10,Guest entry; ineligible for points; dob en.wiki + driverdb
+18,Julian Hanses,german,1997-08-31,ma-con,Germany,Dallara F317,Volkswagen,1-5,Rookie; single-car team; entered round 6 but withdrew (en.wiki entry table says 1-6; de.wiki says 1-5); same driver as Carlin #17
+39,Álex Palou,spanish,1997-04-01,Hitech Bullfrog GP,"Silverstone, United Kingdom",Dallara F317,Mercedes,1-10,No wins; dob en.wiki + driverdb
+65,Enaam Ahmed,british,2000-02-04,Hitech Bullfrog GP,"Silverstone, United Kingdom",Dallara F317,Mercedes,1-10,Rookie; 2 wins; 2017 BRDC British F3 champion; races for Pakistan since 2022; dob en.wiki + driverdb
+66,Charles Leong,macanese,2001-09-12,Hitech Bullfrog GP,"Silverstone, United Kingdom",Dallara F317,Mercedes,6,Rookie; one-off; full name Hon Chio Leong; dob en.wiki + zh.wiki
+77,Ben Hingeley,british,1997-05-30,Hitech Bullfrog GP,"Silverstone, United Kingdom",Dallara F317,Mercedes,1-10,Rookie; no Wikipedia page; dob driverdb + FIA results database (via search snippet)

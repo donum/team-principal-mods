@@ -1,10 +1,18 @@
 {
-  "$comment": "Inputs for tools/season_from_research.py: maps the 2018 entrants to pack teams, colours and tracks. Rules, car profiles, engines, tyres and the engine sounds come from the era base (bases/dtm-era4); 2018 changes only what is set here and in patches/regulations.json (one qualifying per race, two races per round). Colours are first estimates from the team's usual colours, not yet checked against 2018 photos.",
+  "$comment": "Inputs for tools/season_from_research.py: maps the 2018 entrants to pack teams, colours and tracks. Rules, car profiles, engines, tyres and the engine sounds come from the era base (bases/dtm-era4); 2018 changes only what is set here and in patches/regulations.json (one qualifying per race, two races per round). One dry tyre (tyre_suppliers: the soft gets the hard's values, as in 2012; data/tyremodel.json). Colours are first estimates from the team's usual colours, not yet checked against 2018 photos.",
   "base": "dtm-era4",
   "year": 2018,
   "title": "DTM 2018 - Deutsche Tourenwagen Masters",
   "races_per_round": 2,
   "mass_kg": {"Audi": 970.0, "BMW": 970.0, "Mercedes-Benz": 970.0},
+  "tyre_suppliers": {
+    "Hankook": {
+      "lateral_grip": {"soft": 54.0},
+      "longitudinal_grip": {"soft": 54.0},
+      "durability": {"soft": 60.0},
+      "temperature_tolerance": {"soft": 54.0}
+    }
+  },
   "teams": {
     "Mercedes-AMG Motorsport PETRONAS": {"previous_position": 3, "color": [0, 161, 155], "secondary": [192, 192, 197], "works": true,
                                          "history": "One of three HWA AG teams from Affalterbach. HWA builds and runs the Mercedes DTM cars. 2018 is the last DTM season for Mercedes."},
@@ -14,7 +22,7 @@
                                                    "history": "The third HWA AG team, entered with the SILBERPFEIL Energy drink."},
     "Audi Sport Team Rosberg": {"previous_position": 1, "color": [125, 12, 25], "secondary": [195, 195, 200], "works": true,
                                 "history": "Keke Rosberg's team from Neustadt an der Weinstraße. Has raced Audis since 2006. René Rast won the 2017 title with the team."},
-    "Audi Sport Team Abt Sportsline": {"previous_position": 2, "color": [25, 40, 95], "secondary": [215, 25, 50], "works": true,
+    "Audi Sport Team Abt Sportsline": {"previous_position": 2, "entrants": ["Audi Sport Team Abt Sportsline", "Audi Sport Team Abt"], "color": [25, 40, 95], "secondary": [215, 25, 50], "works": true,
                                        "history": "Hans-Jürgen Abt's team from Kempten. Has run Audis in the DTM since 2000."},
     "Audi Sport Team Phoenix": {"previous_position": 7, "color": [185, 205, 20], "secondary": [0, 100, 60], "works": true,
                                 "history": "Founded by Ernst Moser. Based in Meuspath, next to the Nürburgring. Has run Audis in the DTM since 2006."},
@@ -34,9 +42,9 @@
              "6": "brandshatch_gp", "7": "misano", "8": "nuerburgring13", "9": "redbullring", "10": "hockenheim13"},
   "shared_tracks": {"hungaroring": "f1-v8"},
   "track_overrides": {
-    "$comment": "2018 race laps per race (55 min + 1 lap, research/calendar.csv), the same for both races of a round (the longer one where they differ; Lausitz race 1 ran only 21 laps, reason not known). The Hungaroring is the F1 base's track: speed_mult 1.09 is the ratio between the DTM and F1 Hockenheim tracks (same layout), a first guess until simulated. Lausitzring GP, Brands Hatch GP and Misano are the base's own tracks, traced for 2018 with speed_scale 1.0 (uncalibrated).",
+    "$comment": "2018 race laps per race (55 min + 1 lap, research/calendar.csv), the same for both races of a round (the longer one where they differ; Lausitz race 1 ran only 21 laps after a red flag, as the clock ran on). The Hungaroring is the F1 base's track: speed_mult 1.09 is the ratio between the DTM and F1 Hockenheim tracks (same layout), a first guess until simulated. Lausitzring GP, Brands Hatch GP and Misano are the base's own tracks (Lausitz 4.570 km per the 2018 timing sheets; the base keeps en.wiki's 4.345 km for 2020), traced for 2018 with speed_scale 1.0 (uncalibrated).",
     "hockenheim13": {"race_laps": 36},
-    "lausitzring_gp": {"race_laps": 34},
+    "lausitzring_gp": {"race_laps": 34, "length_km": 4.57},
     "hungaroring": {"race_laps": 34, "speed_mult": 1.09},
     "norisring": {"race_laps": 68},
     "zandvoort": {"race_laps": 35},
@@ -44,5 +52,56 @@
     "misano": {"race_laps": 32},
     "nuerburgring13": {"race_laps": 40},
     "redbullring": {"race_laps": 40}
+  },
+  "juniors": {
+    "$comment": "Feeder series from research/juniors/<id>_*.csv (tools/season_from_research.py juniors()), as in 2013. The game runs one race per series and week, so a weekend counts as one race. skill_range and quality_range set the ratings from the 2018 points; licence_start gives the starting licence points (x share of the champion's points). Carrera Cup and TCR Germany raced at ADAC GT Masters weekends in 2018, ADAC F4 at both GT Masters and DTM weekends, F3 at seven DTM weekends.",
+    "licences": true,
+    "free_agents": {
+      "$comment": "Hand-rated free agents from research/juniors/free_agents.csv (DTM skills run 11-18): six of the eight suggested there. Kept few: the game favours free agents.",
+      "Robert Kubica": {"skill": 14, "talent": 78},
+      "Maxime Martin": {"skill": 14, "talent": 72},
+      "Tom Blomqvist": {"skill": 13, "talent": 78},
+      "Maro Engel": {"skill": 13, "talent": 70},
+      "Kelvin van der Linde": {"skill": 13, "talent": 80},
+      "Sheldon van der Linde": {"skill": 12, "talent": 82}
+    },
+    "venues": {
+      "Hockenheimring": "hockenheim13", "Lausitzring": "lausitzring_gp", "Hungaroring": "hungaroring",
+      "Norisring": "norisring", "Circuit Park Zandvoort": "zandvoort", "Misano World Circuit Marco Simoncelli": "misano",
+      "Nürburgring": "nuerburgring13", "Nürburgring (Sprint circuit)": "nuerburgring13", "Nürburgring (GP circuit)": "nuerburgring13",
+      "Red Bull Ring": "redbullring", "Motorsport Arena Oschersleben": "oschersleben", "Circuit de Pau-Ville": "pau",
+      "Circuit de Spa-Francorchamps": "spa", "Silverstone Circuit": "silverstone", "Sachsenring": "sachsenring",
+      "Autodrom Most": "most"
+    },
+    "series": [
+      {
+        "id": "f3_euro", "name": "FIA Formula 3 European Championship", "abbreviation": "F3EU", "tier": 2,
+        "description": "The European Formula 3 championship, in its last season. Dallara cars with Mercedes, Volkswagen and other engines. It races at most DTM weekends.",
+        "min_age": 16, "max_age": 26, "drivers_per_team": 4, "dnf_rate": 6,
+        "points": [25, 18, 15, 12, 10, 8, 6, 4, 2, 1], "licence_points": [10, 10, 8, 6, 4, 3, 2, 1],
+        "skill_range": [8, 14], "quality_range": [4, 10], "licence_start": 10, "talent_age": 21, "talent_cap": 90
+      },
+      {
+        "id": "carrera_cup", "name": "Porsche Carrera Cup Deutschland", "abbreviation": "PCCD", "tier": 2,
+        "description": "A one-make cup with the Porsche 911 GT3 Cup. It races at ADAC GT Masters weekends. Young professionals race here on their way to GT and touring car seats.",
+        "min_age": 17, "max_age": 28, "drivers_per_team": 3, "dnf_rate": 5,
+        "points": [25, 20, 16, 13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], "licence_points": [8, 6, 5, 4, 3, 2, 1],
+        "skill_range": [7, 13], "quality_range": [3, 8], "licence_start": 8, "talent_age": 24, "talent_cap": 84
+      },
+      {
+        "id": "tcr_germany", "name": "ADAC TCR Germany", "abbreviation": "TCR", "tier": 3,
+        "description": "Touring cars built to the TCR rules from several makes. It races at ADAC GT Masters weekends.",
+        "min_age": 17, "max_age": 28, "drivers_per_team": 3, "dnf_rate": 6,
+        "points": [40, 36, 32, 29, 26, 23, 20, 18, 16, 14, 12, 10, 8, 7, 6, 5, 4, 3, 2, 1], "licence_points": [3, 2, 1],
+        "skill_range": [6, 11], "quality_range": [2, 6], "licence_start": 3, "talent_age": 24, "talent_cap": 78
+      },
+      {
+        "id": "adac_f4", "name": "ADAC Formula 4", "abbreviation": "F4", "tier": 4,
+        "description": "A single-seater series for teenagers stepping up from karting. All drivers use the same Tatuus car with an Abarth engine. It races at ADAC GT Masters and DTM weekends.",
+        "min_age": 15, "max_age": 20, "drivers_per_team": 4, "dnf_rate": 8,
+        "points": [25, 18, 15, 12, 10, 8, 6, 4, 2, 1], "licence_points": [4, 3, 2, 1],
+        "skill_range": [6, 10], "quality_range": [2, 7], "licence_start": 3, "talent_age": 17, "talent_cap": 88
+      }
+    ]
   }
 }

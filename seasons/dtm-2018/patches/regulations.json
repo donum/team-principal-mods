@@ -1,7 +1,14 @@
 {
-  "$comment": "DTM 2018 changes over the era base (bases/dtm-era4, tuned on 2013). Since 2017 every race has its own qualifying session, which the game can only run as one open session. The top three in qualifying scored 3-2-1 points; the game can only give pole a single point (wish list B8). The game week holds one race, so each round is two weeks (gen.json races_per_round, wish list A1 and A4).",
+  "$comment": "DTM 2018 changes over the era base (bases/dtm-era4, tuned on 2013). Since 2017 every race has its own qualifying session, which the game can only run as one open session. The top three in qualifying scored 3-2-1 points; the game can only give pole a single point (wish list B8). The game week holds one race, so each round is two weeks (gen.json races_per_round, wish list A1 and A4). One dry slick compound since 2017, so the two-compound rule is off (data/tyremodel.json keeps the soft as a copy of the hard, as in 2012).",
   "categories": {
-    "qualifying_format": { "default": "session_60" },
-    "pole_point": { "default": "enabled" }
+    "qualifying_format": {
+      "default": "session_60"
+    },
+    "pole_point": {
+      "default": "enabled"
+    },
+    "formula_compound_usage": {
+      "default": "disabled"
+    }
   }
 }

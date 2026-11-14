@@ -37,12 +37,13 @@
     "hungaroring": "f1-v8"
   },
   "track_overrides": {
-    "$comment": "2018 race laps per race (55 min + 1 lap, research/calendar.csv), the same for both races of a round (the longer one where they differ; Lausitz race 1 ran only 21 laps, reason not known). The Hungaroring is the F1 base's track: speed_mult 1.09 is the ratio between the DTM and F1 Hockenheim tracks (same layout), a first guess until simulated. Lausitzring GP, Brands Hatch GP and Misano are the base's own tracks, traced for 2018 with speed_scale 1.0 (uncalibrated).",
+    "$comment": "2018 race laps per race (55 min + 1 lap, research/calendar.csv), the same for both races of a round (the longer one where they differ; Lausitz race 1 ran only 21 laps after a red flag, as the clock ran on). The Hungaroring is the F1 base's track: speed_mult 1.09 is the ratio between the DTM and F1 Hockenheim tracks (same layout), a first guess until simulated. Lausitzring GP, Brands Hatch GP and Misano are the base's own tracks (Lausitz 4.570 km per the 2018 timing sheets; the base keeps en.wiki's 4.345 km for 2020), traced for 2018 with speed_scale 1.0 (uncalibrated).",
     "hockenheim13": {
       "race_laps": 36
     },
     "lausitzring_gp": {
-      "race_laps": 34
+      "race_laps": 34,
+      "length_km": 4.57
     },
     "hungaroring": {
       "race_laps": 34,

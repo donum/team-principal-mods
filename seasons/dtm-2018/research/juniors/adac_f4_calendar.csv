@@ -1,0 +1,8 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2018-04-14,2018-04-15,Motorsport Arena Oschersleben,DEU,3,ADAC GT Masters,event 13-15 April (official calendar); R1 R2 14 Apr; R3 15 Apr; Zendeli won R1 and R2; Caldwell won R3
+2,2018-05-05,2018-05-06,Hockenheimring,DEU,3,DTM,event 4-6 May (official calendar: "mit DTM"); R1 R2 5 May; R3 6 May; Zendeli won R1 and R2; Wishofer won R3
+3,2018-05-19,2018-05-20,Lausitzring,DEU,3,DTM,event 18-20 May (official calendar: "mit DTM"); R1 R2 19 May; R3 20 May; Lawson won R1 and R3; Zendeli won R2
+4,2018-06-09,2018-06-10,Red Bull Ring,AUT,3,ADAC GT Masters,event 8-10 June; R1 R2 9 Jun; R3 10 Jun; Fittipaldi won R1; Zendeli R2; Lawson R3
+5,2018-07-21,2018-07-22,Hockenheimring,DEU,2,Formula One German Grand Prix,event 20-22 July (official calendar: "mit Formel 1"); R1 21 Jul; R2 22 Jul; only two races; added to the calendar on 26 March 2018; first FIA F4 race on a European F1 weekend (en.wikipedia); Vesti won R1; Zendeli R2
+6,2018-08-04,2018-08-05,Nürburgring,DEU,3,ADAC GT Masters,event 3-5 August; R1 R2 4 Aug; R3 5 Aug; Zendeli won R1 and clinched the title after R3; Vesti won R2; Krütten won R3
+7,2018-09-22,2018-09-23,Hockenheimring,DEU,3,ADAC GT Masters,event 21-23 September; R1 R2 22 Sep; R3 23 Sep; Weerts won R1; Zendeli won R2 and R3; de.wikipedia gives 29 September as the season end (wrong)

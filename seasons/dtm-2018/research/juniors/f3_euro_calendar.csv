@@ -1,0 +1,11 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2018-05-12,2018-05-13,Circuit de Pau-Ville,FRA,3,Pau Grand Prix (stand-alone),Race 1 Saturday; races 2-3 Sunday. Race 3 red-flagged in rain after 11 laps and under 25 minutes; half points
+2,2018-06-02,2018-06-03,Hungaroring,HUN,3,DTM,Race 1 Saturday; races 2-3 Sunday
+3,2018-06-23,2018-06-24,Norisring,DEU,3,DTM,Race 1 Saturday; races 2-3 Sunday
+4,2018-07-14,2018-07-15,Circuit Park Zandvoort,NLD,3,DTM,Races 1-2 Saturday; race 3 Sunday
+5,2018-07-27,2018-07-28,Circuit de Spa-Francorchamps,BEL,3,Blancpain GT Series Endurance Cup,24 Hours of Spa weekend; races 1-2 Friday; race 3 Saturday
+6,2018-08-18,2018-08-19,Silverstone Circuit,GBR,3,FIA WEC,6 Hours of Silverstone; races 1-2 Saturday; race 3 Sunday
+7,2018-08-25,2018-08-26,Misano World Circuit Marco Simoncelli,ITA,3,DTM,New venue; replaced Monza. Race 1 Saturday; races 2-3 Sunday
+8,2018-09-08,2018-09-09,Nürburgring,DEU,3,DTM,Race 1 Saturday; races 2-3 Sunday
+9,2018-09-22,2018-09-23,Red Bull Ring,AUT,3,DTM,Race 1 Saturday; races 2-3 Sunday
+10,2018-10-13,2018-10-14,Hockenheimring,DEU,3,DTM,DTM finale; races 1-2 Saturday; race 3 Sunday. Last race of the series before the merger with GP3

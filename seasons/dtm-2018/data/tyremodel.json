@@ -1,0 +1,28 @@
+{
+  "$comment": "DTM 2018 Hankook tyres: one dry slick compound, as in 2017 (the option tyre ended after 2016; research/season.md). The game's code can't be checked for a single dry compound, so the soft stays in the file as an exact copy of the hard (same grip and wear) and no car starts on it, as in 2012. The two-compound rule is off (patches/regulations.json). There was no medium, so it is removed (null). Wishlist B7. Wear stays at the base hard's 0.018: in the 2012 simulator most cars then stopped once, which matches the one mandatory stop of 2018 (wishlist B5). Not yet simulated for 2018.",
+  "$merge_base": true,
+  "default_compound": "hard",
+  "mandatory_compound_count": 1,
+  "start_probabilities": {
+    "soft": 0.0,
+    "medium": null,
+    "hard": 0.95,
+    "intermediate": 0.04,
+    "wet": 0.01
+  },
+  "compounds": {
+    "soft": {
+      "lat_grip_base": 1.002,
+      "long_grip_base": 1.002,
+      "wear_rate_base": 0.018,
+      "wear_cliff_onset_pct": 65
+    },
+    "medium": null,
+    "hard": {
+      "lat_grip_base": 1.002,
+      "long_grip_base": 1.002,
+      "wear_rate_base": 0.018,
+      "wear_cliff_onset_pct": 65
+    }
+  }
+}

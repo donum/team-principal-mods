@@ -1,0 +1,8 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2018-04-14,2018-04-15,Motorsport Arena Oschersleben,DEU,2,ADAC GT Masters round 1,dates are race days (Sat/Sun); Ammermüller won both
+2,2018-06-09,2018-06-10,Red Bull Ring,AUT,2,ADAC GT Masters round 3,Preining won both; Carrera Cup skipped ADAC GT Masters round 2 at Most; guest entries from Martinet by Alméras and Lechner Racing Middle East
+3,2018-08-04,2018-08-05,Nürburgring (Sprint circuit),DEU,2,ADAC GT Masters round 4,"Preining won both; joint grid with Porsche Carrera Cup Scandinavia (44 cars); layout per en.wikipedia only, unverified"
+4,2018-08-11,2018-08-12,Nürburgring (GP circuit),DEU,2,AvD Oldtimer Grand Prix,winners van Lagen and Preining; first Carrera Cup appearance at the Oldtimer Grand Prix; not an ADAC GT Masters round
+5,2018-08-18,2018-08-19,Circuit Park Zandvoort,NLD,2,ADAC GT Masters round 5,"winners Preining and van Lagen; race 1 stopped before 50% distance, so no points for drivers or teams"
+6,2018-09-08,2018-09-09,Sachsenring,DEU,2,ADAC GT Masters round 6,Preining won both
+7,2018-09-22,2018-09-23,Hockenheimring,DEU,2,ADAC GT Masters round 7,Preining won both and clinched the title in race 13

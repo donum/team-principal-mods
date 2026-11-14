@@ -1,6 +1,6 @@
 # Backlog: DTM 2018 pack
 
-Everything still open for the 2018 pack, as of 13 November 2026. Game limits
+Everything still open for the 2018 pack, as of 14 November 2026. Game limits
 are in [DEVELOPER_WISHLIST.md](../DEVELOPER_WISHLIST.md), not here. Era-wide
 items (per-track values, audio, art rules) are in the
 [2013 backlog](DTM2013_BACKLOG.md) and apply to 2018 too, since it builds on
@@ -17,7 +17,7 @@ in-game or simulated yet.
 
 | Venue | Today | To do |
 |---|---|---|
-| Lausitzring GP, 4.345 km (round 2) | traced into the base (`lausitzring_gp`): 4,504 m, +3.7% | Confirm the 2018 layout and length (Turn 1 and the back section); calibrate `speed_scale`. 2020 uses it too. |
+| Lausitzring GP, 4.570 km (round 2, official timing sheets) | traced into the base (`lausitzring_gp`): 4,504 m, −1.4%; 2018 sets `length_km` 4.57 | Calibrate `speed_scale`. 2020 uses the track too and still has en.wiki's 4.345 km: check 2020's timing sheets. |
 | Brands Hatch GP, 3.916 km (round 6) | traced into the base (`brandshatch_gp`): 3,864 m | Calibrate `speed_scale` and `tyre_wear_mult` (first guess 0.9). Check the DRS zone: the tool put it on the longest traced straight (progress 0.41 to 0.56), which may not be where the DTM had it. |
 | Misano, 4.226 km (round 7, night race) | traced into the base (`misano`): 4,171 m, start placed by hand | Calibrate `speed_scale`. |
 | Hungaroring (round 3) | F1 base track, `speed_mult` 1.09 | Check the lap time in a simulated season. |
@@ -39,10 +39,10 @@ as for 2013.
 
 ## 3. Rules to check · P2
 
-- Tyres: did 2018 still have the option tyre with the mandatory use of both
-  compounds? The pack keeps the base's 2013 rules until a source says.
-- DRS: the number of uses per race (wish list B6).
-- Weight: 1,115 kg including the driver is from en.wiki; confirm.
+- Done (14 November 2026): one dry slick, no option tyre (as 2012:
+  `data/tyremodel.json`, two-compound rule off); DRS on 12 laps per race
+  (wish list B6); 1,115 kg confirmed. Simulate to check one stop per race.
+- Still open: tyre sets per car per weekend in 2018.
 
 ## 4. Art · P3
 
@@ -50,8 +50,13 @@ as for 2013.
   placeholders with `tools/car_art.py` (needs C63 and M4 outlines).
 - Team list icons: maker emblems from the base, like 2013 (`art/logos.json`
   with `"team_tiles": "maker"`, `tools/logo_art.py seasons/dtm-2018`).
-- Portraits: `tools/portrait_art.py` (Commons has the 2018 field well
-  covered from the 2018 and 2019 Hockenheim and Zandvoort rounds).
+- Portraits: done for the 21 DTM drivers (`art/portraits.json`, all
+  pinned). Commons has little from 2018: six are from 2018 events, the rest
+  from 2014 to 2024. Philipp Eng has a helmet card: his only 2018 photo
+  (`Peng2018.jpg`) looks like a BMW press photo uploaded as own work.
+  Better 2018 photos would come from InMotion (Dennis de Wolde, Zandvoort
+  2018) if he allows portrait crops. Feeder drivers come from Wikidata
+  automatically, with helmet cards where Commons has nothing.
 - Main menu and team dashboards: see "Backgrounds" below.
 - Colours in `gen.json` are first estimates; check them against 2018 photos.
 
@@ -137,8 +142,10 @@ Drafts tab for 2012.
 
 - Sponsors per team (`sponsors` in `gen.json`, as in 2013): PETRONAS,
   REMUS, SILBERPFEIL Energy, Schaeffler, Shell, Deutsche Post, ZF and others.
-- Feeder series (`juniors` in `gen.json`): F3 European Championship,
-  Porsche Carrera Cup Deutschland, ADAC Formula 4.
+- Feeder series: done (F3 European, Carrera Cup Deutschland, TCR Germany,
+  ADAC F4, plus six free agents; see the README). Open: Carrera Cup points
+  scale is reconstructed, and a few birth dates have one source only (see
+  each `research/juniors/*.md`).
 - Sounds: the base's overlay comes from 2012 and 2013 cars. The 2018
   engines were the same V8s, so it stays; 2018 recordings could replace it
   later.
