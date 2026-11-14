@@ -28,6 +28,11 @@ MIN_SCORE = 0.6
 GAP = 4.0                        # seconds between kept hits (one per scene)
 
 
+def vname(path):
+    """Output folder name; Windows drops trailing dots and spaces from folder names."""
+    return path.stem[:80].rstrip(" .")
+
+
 def probe(path):
     out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
                           "stream=width,height:format=duration", "-of", "csv=p=0:s=,", str(path)],
@@ -69,7 +74,7 @@ def sharpness(img, box):
 def scan(model, path, out, step):
     w, h, dur = probe(path)
     sx = w / SMALL_W
-    vdir = out / path.stem[:80]
+    vdir = out / vname(path)
     vdir.mkdir(parents=True, exist_ok=True)
     rows, last = [], -1e9
     for t, small in frames(path, step, w, h):
@@ -128,7 +133,7 @@ def main():
     torch.set_num_threads(a.threads)
     model = torchvision.models.detection.fasterrcnn_mobilenet_v3_large_fpn(weights="DEFAULT").eval()
     for v in a.videos:
-        if (a.out / v.stem[:80] / "candidates.csv").exists():
+        if (a.out / vname(v) / "candidates.csv").exists():
             print("skip (done):", v.name)
             continue
         print("scan:", v.name, flush=True)

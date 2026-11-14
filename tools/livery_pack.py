@@ -1,6 +1,6 @@
 """Assemble a livery reference pack (raw material for a livery artist) for one season.
 
-Inputs, all under <Pictures>/mods/dtm-<year>/livery_pack/:
+Inputs, all under <Pictures>/mods/<series>-<year>/livery_pack/ (a bare year means dtm-<year>):
   labels.csv   one row per kept image:
                source   path of a video candidate (relative to _video_candidates/)
                         or of a photo (relative to <Pictures>/mods/dtm-<year>/teams/)
@@ -19,7 +19,7 @@ renamed <quality>_<view>_<source>.jpg, a livery.md per car and a README.md with
 the coverage table (which cars still miss a side). Video frames get their
 broadcast timestamp in the name so they can be re-grabbed.
 
-    python tools/livery_pack.py 2018 [--pictures C:/Users/dan/Pictures/mods]
+    python tools/livery_pack.py 2018|dtm-1987|btcc-1991 [--pictures C:/Users/dan/Pictures/mods]
 """
 import argparse, csv, re, shutil, sys
 from collections import defaultdict
@@ -38,10 +38,21 @@ def main():
     ap.add_argument("year")
     ap.add_argument("--pictures", type=Path, default=Path.home() / "Pictures" / "mods")
     a = ap.parse_args()
-    root = a.pictures / f"dtm-{a.year}"
+    key = a.year if "-" in a.year else f"dtm-{a.year}"
+    series, a.year = key.split("-")
+    root = a.pictures / key
     pack = root / "livery_pack"
     cand = pack / "_video_candidates"
-    entries = {r["number"]: r for r in csv.DictReader(open(REPO / f"seasons/dtm-{a.year}/research/entries.csv", encoding="utf-8"))}
+    entries = {}                                # one car number can have several drivers (BTCC): join them
+    for r in csv.DictReader(open(REPO / f"seasons/{key}/research/entries.csv", encoding="utf-8")):
+        if not r["number"].strip():
+            continue
+        if r["number"] in entries:
+            if r["driver"] in entries[r["number"]]["driver"].split(" / "):
+                continue                        # same driver, other car model
+            entries[r["number"]]["driver"] += " / " + r["driver"]
+        else:
+            entries[r["number"]] = dict(r)
     liv = {}
     if (pack / "liveries.csv").exists():
         liv = {r["number"]: r for r in csv.DictReader(open(pack / "liveries.csv", encoding="utf-8"))}
@@ -83,7 +94,7 @@ def main():
                 vid = Path((cand / Path(src).parent / "source.txt").read_text(encoding="utf-8").strip()).stem
                 ev = re.sub(r"\s*\(Multicam\).*|^\d+ - ", "", vid)
                 tag = f"tv_{slug(ev)}_{p.stem.replace('_crop', '')}"
-                rights = "TV broadcast frame (DTM / ITR), private reference only"
+                rights = "TV broadcast frame, private reference only"
             if not p.exists():
                 print("missing:", p)
                 continue
@@ -92,7 +103,7 @@ def main():
             have[r["view"]].append(r["quality"])
             lines.append(f"| {r['quality']} | {r['view']} | `{name}` | {r.get('note', '')} | {rights} |")
         e, l = entries.get(num, {}), liv.get(num, {})
-        md = [f"# #{num} {e.get('driver', '')} ({e.get('entrant', '')}, {e.get('car', '')}) - DTM {a.year}", ""]
+        md = [f"# #{num} {e.get('driver', '')} ({e.get('entrant', '')}, {e.get('car', '')}) - {series.upper()} {a.year}", ""]
         if l:
             md += [f"- **Base colours:** {l.get('base_colors', '')}", f"- **Main sponsor:** {l.get('main_sponsor', '')}",
                    f"- **Layout:** {l.get('layout_notes', '')}", ""]
@@ -103,7 +114,7 @@ def main():
     def cell(h, v):
         q = sorted(h.get(v, []))
         return q[0] if q else "-"
-    md = [f"# DTM {a.year} livery reference pack", "",
+    md = [f"# {series.upper()} {a.year} livery reference pack", "",
           "Raw material for side-view livery drawings in the style of the DTM 2012/2013 sheets.",
           "One folder per car. File names: `<quality>_<view>_<source>`; quality A = draw from it,",
           "B = usable, C = colours only. left/right = the car's own side.", "",

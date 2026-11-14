@@ -1,14 +1,14 @@
-"""Livery status page: which DTM cars have a final livery drawing, which have only a
+"""Livery status page: which DTM/BTCC cars have a final livery drawing, which have only a
 generated stand-in, and how much reference material (photos, TV frames) we have.
 
-Reads, for every seasons/dtm-*/ in the repo:
+Reads, for every seasons/dtm-*/ and btcc-*/ in the repo:
   research/entries.csv        the cars (number, driver, entrant, car)
   art/drawings.json           FINAL: artist drawings (e.g. Pappydhorn12), per car
   assets/Cars/*.png           GENERATED: one image per team when there is no drawing
-and from the picture store (default ~/Pictures/mods/dtm-<year>/):
+and from the picture store (default ~/Pictures/mods/<series>-<year>/):
   livery_pack/labels.csv      labelled reference images per car and view
   teams/**                    raw photos per team (not yet labelled)
-and from the video store (default ~/Videos/yt/DTM/<year>/): number of videos.
+and from the video store (default ~/Videos/yt/<SERIES>/<year>/): number of videos.
 
 Writes one self-contained HTML page (default ~/Pictures/mods/livery_status.html).
 tools/livery_pack.py calls this after every pack build, so the page stays current;
@@ -37,7 +37,7 @@ def best(rows, views):
 
 
 def season(year_dir, pics, vids):
-    y = year_dir.name.split("-")[1]
+    series, y = year_dir.name.split("-")[0], year_dir.name.split("-")[1]
     ent = year_dir / "research" / "entries.csv"
     if not ent.exists():
         return None
@@ -62,7 +62,7 @@ def season(year_dir, pics, vids):
         for sheet, s in json.load(open(dj, encoding="utf-8")).get("sheets", {}).items():
             for n in s.get("cars", []):
                 sheet_team[str(n)] = s.get("team", "")
-    pdir = pics / f"dtm-{y}"
+    pdir = pics / year_dir.name
     labels = defaultdict(list)
     lab = pdir / "livery_pack" / "labels.csv"
     if lab.exists():
@@ -73,7 +73,7 @@ def season(year_dir, pics, vids):
         for f in (pdir / "teams").rglob("*"):
             if f.suffix.lower() in IMG and "_not_suitable" not in f.parts:
                 raw[f.relative_to(pdir / "teams").parts[0]] += 1
-    vdir = vids / y
+    vdir = vids / series.upper() / y
     nvid = sum(1 for f in vdir.rglob("*") if f.suffix.lower() in VID) if vdir.exists() else 0
     rows = []
     for c in cars:
@@ -102,7 +102,7 @@ def season(year_dir, pics, vids):
                      "front": best(lr, ("front", "front-left", "front-right")),
                      "rear": best(lr, ("rear", "rear-left", "rear-right")), "nref": len(lr),
                      "teamraw": raw.get(c.get("entrant", ""), 0)})
-    return {"year": y, "rows": rows, "artist": artist, "raw": sum(raw.values()), "videos": nvid,
+    return {"year": y, "key": year_dir.name, "label": f"{series.upper()} {y}", "rows": rows, "artist": artist, "raw": sum(raw.values()), "videos": nvid,
             "pack": (pdir / "livery_pack" / "README.md").exists(), "packdir": pdir / "livery_pack"}
 
 
@@ -149,7 +149,7 @@ def page(seasons, out):
         rd = sum(r["status"] != "final" and ready(r) for r in rs)
         one = sum(r["status"] != "final" and not ready(r) and bool(r["left"] or r["right"]) for r in rs)
         pct = round(100 * f / len(rs)) if rs else 0
-        summary.append(f"<tr><td><a href='#y{s['year']}'>{s['year']}</a></td><td>{len(rs)}</td>"
+        summary.append(f"<tr><td><a href='#{s['key']}'>{s['label']}</a></td><td>{len(rs)}</td>"
                        f"<td class='num'>{f or ''}</td><td class='num'>{g or ''}</td><td class='num'>{rd or ''}</td>"
                        f"<td class='num'>{one or ''}</td><td class='num'>{s['raw'] or ''}</td><td class='num'>{s['videos'] or ''}</td>"
                        f"<td><div class='bar'><span style='width:{pct}%'></span></div></td></tr>")
@@ -178,14 +178,14 @@ def page(seasons, out):
                 body.append(f"<tr class='pics'><td></td><td colspan='10'><div class='strip'>{''.join(pics)}</div></td></tr>")
         link = f" · <a href='{e(os.path.relpath(s['packdir'], out.parent).replace(os.sep, '/'))}/README.md'>pack</a>" if s["pack"] else ""
         art = f" · drawings by {e(s['artist'])}" if s["artist"] else ""
-        details.append(f"<details id='y{s['year']}'{open_}><summary>DTM {s['year']} <small>{len(rs)} cars{art}"
+        details.append(f"<details id='{s['key']}'{open_}><summary>{s['label']} <small>{len(rs)} cars{art}"
                        f" · {s['raw']} raw photos · {s['videos']} videos{link}</small></summary>"
                        "<table class='cars'><thead><tr><th>#</th><th>Driver</th><th>Team</th><th>Car</th><th>Livery</th>"
                        "<th>Left</th><th>Right</th><th>Front</th><th>Rear</th><th>Refs</th><th>Team photos</th></tr></thead>"
                        f"<tbody>{''.join(body)}</tbody></table></details>")
     now = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>DTM Livery Status</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Livery Status</title>
 <style>
 :root{{--bg:#fafaf9;--fg:#1c1c1a;--mute:#6b6b66;--line:#e4e4e0;--card:#fff;--final:#1f7a4d;--gen:#a56a00;--none:#b42318;
 --qa:#1f7a4d;--qb:#4a8f2a;--qc:#a56a00;--acc:#2f5dab}}
@@ -218,7 +218,7 @@ tr.pics td{{border-bottom:1px solid var(--line);padding:2px 8px 10px;white-space
 background:rgba(0,0,0,.72);color:#fff;border-top-right-radius:6px}}
 .strip i.qA{{color:#6ee7a8}} .strip i.qB{{color:#c3e88d}} .strip i.qC{{color:#ffcb6b}}
 </style></head><body><main>
-<h1>DTM Livery Status</h1>
+<h1>DTM &amp; BTCC Livery Status</h1>
 <p class="sub">Generated {now} from the mod repo, the picture store and the video store. Re-run <code>python tools/livery_status.py</code>; pack builds update it automatically.</p>
 <div class="kpis">
 <div class="kpi"><b>{tot['cars']}</b><span>cars (all seasons)</span></div>
@@ -241,13 +241,13 @@ background:rgba(0,0,0,.72);color:#fff;border-top-right-radius:6px}}
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--pictures", type=Path, default=Path.home() / "Pictures" / "mods")
-    ap.add_argument("--videos", type=Path, default=Path.home() / "Videos" / "yt" / "DTM")
+    ap.add_argument("--videos", type=Path, default=Path.home() / "Videos" / "yt")
     ap.add_argument("--out", type=Path, default=None)
     a = ap.parse_args(argv)
     out = a.out or a.pictures / "livery_status.html"
     global THUMBS
     THUMBS = out.parent / "_status_thumbs"
-    seasons = [s for d in sorted((REPO / "seasons").glob("dtm-*")) if (s := season(d, a.pictures, a.videos))]
+    seasons = [s for d in sorted((REPO / "seasons").glob("dtm-*")) + sorted((REPO / "seasons").glob("btcc-*")) if (s := season(d, a.pictures, a.videos))]
     page(seasons, out)
     print("status page:", out)
 
