@@ -1,0 +1,400 @@
+<title>Sound Inventory</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: the same timing-board look as the coverage page. Series and year buttons on top,
+   a generations board for the series, then the chosen year: its sound slots, and the
+   recordings of that year's cars. Fonts: system faces only (Bahnschrift, Segoe UI, Cascadia Mono). */
+:root{
+  --bg:#eef1f5; --surface:#ffffff; --ink:#151a22; --muted:#5b6474; --line:#d8dde6;
+  --accent:#2453c4; --accent-ink:#ffffff;
+  --own:#1d8a4f; --shared:#b87400; --stock:#6b7586; --silent:#c5443b;
+  --own-soft:#dff3e7; --shared-soft:#fbefd6; --stock-soft:#e7eaef; --silent-soft:#fbe2df;
+  --display:"Bahnschrift SemiCondensed","Bahnschrift","Roboto Condensed","Helvetica Neue","Arial Narrow",Arial,sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Cascadia Mono",Consolas,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1319; --surface:#171c25; --ink:#e8ecf2; --muted:#98a2b3; --line:#2a313d;
+  --accent:#7ea2ff; --accent-ink:#0f1319;
+  --own:#43c27b; --shared:#f0a830; --stock:#9aa4b4; --silent:#ff7a6e;
+  --own-soft:#163525; --shared-soft:#3a2c12; --stock-soft:#232a35; --silent-soft:#3d1c1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1319; --surface:#171c25; --ink:#e8ecf2; --muted:#98a2b3; --line:#2a313d;
+  --accent:#7ea2ff; --accent-ink:#0f1319;
+  --own:#43c27b; --shared:#f0a830; --stock:#9aa4b4; --silent:#ff7a6e;
+  --own-soft:#163525; --shared-soft:#3a2c12; --stock-soft:#232a35; --silent-soft:#3d1c1a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+.page{max-width:1240px;margin:0 auto;padding-block:24px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:20px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(34px,4.6vw,52px)/1 var(--display);margin:4px 0 6px;letter-spacing:.01em;text-wrap:balance}
+h2{font:600 22px/1.1 var(--display);margin:0;letter-spacing:.02em;text-transform:uppercase;text-wrap:balance}
+h3{font:600 16px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0}
+.lede{margin:0;color:var(--muted);max-width:72ch}
+button{font:500 14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 11px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;min-width:0;display:grid;gap:12px}
+code,.mono{font:12px var(--mono)}
+
+/* Navigation */
+.nav{display:grid;gap:10px}
+.navrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.navrow button.series{font:600 15px var(--display);letter-spacing:.03em}
+.eras{display:flex;flex-wrap:wrap;gap:10px 18px}
+.era{display:grid;gap:4px}
+.era .lab{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.era .yrs{display:flex;flex-wrap:wrap;gap:4px}
+.yr{font:600 14px var(--display);letter-spacing:.03em;font-variant-numeric:tabular-nums;padding:4px 9px}
+.yr.rec{border-style:dashed;color:var(--muted)}
+.yr.rec[aria-pressed="true"]{color:var(--accent-ink)}
+.keyrow{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);align-items:center}
+.keyrow .demo{display:inline-block;width:26px;height:16px;border:1px solid var(--line);border-radius:4px;vertical-align:-3px;margin-right:6px;background:var(--surface)}
+.keyrow .demo.rec{border-style:dashed}
+
+/* Status pills */
+.st{display:inline-block;font:600 12px var(--mono);padding:1px 8px;border-radius:4px;white-space:nowrap}
+.st-own{color:var(--own);background:var(--own-soft)}
+.st-shared{color:var(--shared);background:var(--shared-soft)}
+.st-stock{color:var(--stock);background:var(--stock-soft)}
+.st-silent{color:var(--silent);background:var(--silent-soft)}
+
+/* Generations board */
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);background:var(--bg);white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.pick{cursor:pointer}
+tr.pick:hover td{background:var(--bg)}
+tr.sel td{background:var(--bg)}
+tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
+.board td:first-child{font:600 16px var(--display);letter-spacing:.03em;white-space:nowrap}
+.board td small{display:block;font:400 11px var(--mono);color:var(--muted);letter-spacing:0}
+
+/* Year detail */
+.yhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:end}
+.yhead h2{font:700 34px/1 var(--display);text-transform:none;letter-spacing:.01em}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:600}
+.note{font-size:14px;color:var(--muted);max-width:80ch;margin:0}
+.slots td:nth-child(1){font-weight:600;white-space:nowrap}
+.slots td:nth-child(2){white-space:nowrap}
+.src{font-size:13px;color:var(--muted);min-width:240px}
+.src .vid{font:12px var(--mono)}
+.grouprow td{background:var(--bg);font:600 13px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 10px}
+.stocklist{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:2px 9px;background:var(--bg);white-space:nowrap}
+
+/* Recordings */
+.sum{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px}
+.sum span{white-space:nowrap}
+.sum b{font:600 20px var(--display);font-variant-numeric:tabular-nums;margin-right:4px}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font:600 15px var(--display);letter-spacing:.04em;text-transform:uppercase;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+summary .mono{color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400}
+.recs td{font-size:13px}
+.recs td.t{min-width:220px}
+.recs td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-family:var(--mono);font-size:12px}
+.recs .why{display:block;font-size:12px;color:var(--muted)}
+.near{display:flex;flex-wrap:wrap;gap:6px}
+.near button{font:500 13px var(--body)}
+.near button b{font-family:var(--display);font-size:15px;margin-right:3px}
+.empty{color:var(--muted);font-size:14px;margin:0}
+.foot{font-size:12px;color:var(--muted);max-width:110ch;margin:0}
+@media (max-width:560px){.yhead h2{font-size:28px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="page">
+  <header>
+    <div class="eyebrow">Team Principal mods · engine and track sounds</div>
+    <h1>Sound Inventory</h1>
+    <p class="lede">Where every sound in each pack comes from, and which recordings we hold for each year's cars. "Own year" means recordings of that season's cars. "Shared" means the pack plays another year's cars. "Stock" is the game's own clip.</p>
+  </header>
+
+  <nav class="card nav" aria-label="Series and year">
+    <div class="navrow" role="group" aria-label="Series" id="seriesnav"></div>
+    <div class="eras" id="yearnav"></div>
+    <div class="keyrow">
+      <span><span class="demo"></span>pack built</span>
+      <span><span class="demo rec"></span>recordings only, no pack yet</span>
+    </div>
+  </nav>
+
+  <section class="card" aria-labelledby="board-h">
+    <h2 id="board-h">Packs and their sounds</h2>
+    <div class="tablewrap"><table class="board" id="board"></table></div>
+  </section>
+
+  <section class="card" id="year" aria-live="polite"></section>
+  <section class="card" id="recs"></section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+
+const TYPES = {
+  spectator: "Fan recordings", onboard: "Onboard laps", onboard_bestof: "Onboard best-of",
+  taxi: "Race taxi", trackview: "Archive laps", broadcast: "TV broadcasts", highlights: "Highlight shows"
+};
+const TYPE_NOTE = {
+  spectator: "Filmed from the stands and the pit lane. No commentary, so this is what the starts, the track loop and the pit lane are made from.",
+  onboard: "One flying lap each, clean engine. The pass-bys are made from these.",
+  broadcast: "Commentary nearly all the way through. Only a few pass-bys come out clean.",
+  highlights: "Commentary over most of every show.",
+  trackview: "Manufacturer laps from the German archive. Mixed engine sounds, so packaging skips them."
+};
+const GROUPS = [
+  ["passby", "Pass-bys"], ["start", "Start"], ["pit", "Pit lane"], ["cars", "Track loop"], ["crowd", "Crowd"]
+];
+const REC = Object.fromEntries(DATA.recordings.map(r => [r.id, r]));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const yt = id => `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`;
+const recYear = id => (REC[id] || {}).year;
+
+let state = {series: "dtm", year: 2013};
+try {
+  const h = location.hash.match(/^#([a-z0-9]+)-(\d{4}|unknown)$/);
+  if (h) state = {series: h[1], year: h[2] === "unknown" ? null : +h[2]};
+} catch (e) {}
+
+function seasonsOf(series) { return DATA.seasons.filter(s => s.series === series); }
+function recsOf(series, year) {
+  return series === "dtm" ? DATA.recordings.filter(r => r.year === year) : [];
+}
+function eraOf(series, year) {
+  return DATA.eras.find(e => e.series === series && e.from <= year && year <= e.to);
+}
+
+/* ---------- status of one slot ---------- */
+function status(season, years) {
+  // years: car years of the sources; empty means stock
+  if (!years.length) return {cls: "stock", text: "Stock"};
+  const ys = [...new Set(years.filter(y => y))].sort();
+  if (ys.length && ys.every(y => y === season.year)) return {cls: "own", text: "Own year"};
+  if (ys.includes(season.year)) return {cls: "own", text: `Own year + ${ys.filter(y => y !== season.year).join(", ")}`};
+  return {cls: "shared", text: `${ys.join(", ")} cars`};
+}
+const pill = s => `<span class="st st-${s.cls}">${esc(s.text)}</span>`;
+
+function passbyFor(season, make) {
+  const sl = season.slots;
+  if (!sl) return null;
+  const k = Object.keys(sl.passby).find(m => make.startsWith(m));
+  return k ? sl.passby[k] : null;
+}
+
+/* Summary per group for the board. */
+function groupStatus(season, g) {
+  const sl = season.slots;
+  if (!sl) return {cls: "stock", text: "Stock"};
+  let years = [];
+  if (g === "passby") years = season.makes.map(m => passbyFor(season, m)).filter(Boolean).map(p => recYear(p.vid));
+  if (g === "start") years = [...sl.grid_idle, ...sl.grid_launch].map(c => recYear(c.vid));
+  if (g === "pit") years = [...sl.pit_exit, ...sl.pit_wheelguns].map(c => recYear(c.vid));
+  if (g === "cars") years = sl.cars.map(c => recYear(c.vid));
+  if (g === "crowd") return sl.crowd.length ? {cls: "own", text: "Crowd only"} : {cls: "stock", text: "Stock"};
+  return status(season, years.filter(y => y !== undefined));
+}
+
+/* ---------- navigation ---------- */
+function renderNav() {
+  const series = [...new Set([...DATA.seasons.map(s => s.series)])];
+  document.getElementById("seriesnav").innerHTML = series.map(s =>
+    `<button type="button" class="series" data-series="${s}" aria-pressed="${s === state.series}">${esc(DATA.series[s] || s.toUpperCase())}</button>`).join("");
+
+  const built = new Set(seasonsOf(state.series).map(s => s.year));
+  const recYears = new Set(state.series === "dtm" ? DATA.recordings.map(r => r.year).filter(y => y) : []);
+  const years = [...new Set([...built, ...recYears])].sort((a, b) => a - b);
+  const byEra = [];
+  for (const y of years) {
+    const e = eraOf(state.series, y);
+    const label = e ? e.label : "Other";
+    let grp = byEra.find(g => g.label === label);
+    if (!grp) byEra.push(grp = {label, years: []});
+    grp.years.push(y);
+  }
+  let html = byEra.map(g => `<div class="era"><span class="lab">${esc(g.label)}</span><div class="yrs">${
+    g.years.map(y => `<button type="button" class="yr${built.has(y) ? "" : " rec"}" data-year="${y}" aria-pressed="${y === state.year}" title="${built.has(y) ? "Pack built" : "Recordings only, no pack yet"}">${y}</button>`).join("")
+  }</div></div>`).join("");
+  const unknown = state.series === "dtm" ? DATA.recordings.filter(r => r.year == null).length : 0;
+  if (unknown) html += `<div class="era"><span class="lab">Car year unknown</span><div class="yrs"><button type="button" class="yr rec" data-year="unknown" aria-pressed="${state.year === null}">?</button></div></div>`;
+  document.getElementById("yearnav").innerHTML = html;
+}
+
+/* ---------- board ---------- */
+function renderBoard() {
+  const rows = seasonsOf(state.series);
+  document.getElementById("board").innerHTML =
+    `<thead><tr><th>Pack</th><th>Sound set</th>${GROUPS.map(g => `<th>${g[1]}</th>`).join("")}</tr></thead><tbody>` +
+    rows.map(s => `<tr class="pick${s.year === state.year ? " sel" : ""}" data-year="${s.year}" tabindex="0">
+      <td>${s.year}<small>${esc(s.era)}</small></td>
+      <td class="mono">${s.overlay ? esc(s.overlay) : s.planned_overlay ? `${esc(s.planned_overlay)} <span class="st st-stock">empty</span>` : "game's own"}</td>
+      ${GROUPS.map(g => `<td>${pill(groupStatus(s, g[0]))}</td>`).join("")}
+    </tr>`).join("") + "</tbody>";
+}
+
+/* ---------- one year ---------- */
+function srcCell(c, extra) {
+  if (!c || !c.vid) return `<span class="src">${esc((c && c.note) || "Game's stock clip")}</span>`;
+  const r = REC[c.vid] || {};
+  const at = c.at != null ? ` at ${c.at.toFixed(1)} s` : "";
+  const secs = c.secs != null ? ` · ${Math.round(c.secs)} s used` : "";
+  return `<div class="src"><a href="${yt(c.vid)}" target="_blank" rel="noopener">${esc(r.title || c.vid)}</a>
+    <span class="vid">${esc(c.vid)}${at}${secs}</span>${extra ? ` · ${esc(extra)}` : ""}${c.note && c.note !== r.title ? `<br>${esc(c.note)}` : ""}</div>`;
+}
+function countBy(list, f) { const m = {}; list.forEach(x => { const k = f(x); m[k] = (m[k] || 0) + 1; }); return m; }
+
+function renderYear() {
+  const el = document.getElementById("year");
+  if (state.year === null) { el.innerHTML = `<h2>Car year unknown</h2><p class="note">These recordings have no year in the title and none set by hand (UPLOAD_YEARS in tools/engine_audio/common.py). Give them a year and they join a pack's pool.</p>`; return; }
+  const s = seasonsOf(state.series).find(x => x.year === state.year);
+  const era = eraOf(state.series, state.year);
+  const name = `${DATA.series[state.series] || state.series.toUpperCase()} ${state.year}`;
+  if (!s) {
+    const packs = seasonsOf(state.series).filter(x => era && era.from <= x.year && x.year <= era.to).map(x => x.year);
+    el.innerHTML = `<div class="yhead"><h2>${name}</h2><div class="facts"><span>${esc(era ? era.label : "")}</span></div></div>
+      <p class="note">No pack for ${state.year} yet. ${packs.length ? `These recordings are the same generation as the ${packs.join(", ")} pack${packs.length > 1 ? "s" : ""} and could go into ${packs.length > 1 ? "them" : "it"}, where the cars sounded alike.` : "No pack of this generation is built yet."}</p>`;
+    return;
+  }
+  const sl = s.slots;
+  let set;
+  if (sl) {
+    const mother = s.mother ? +s.mother.split("-")[1] : null;
+    set = mother === s.year
+      ? `This is the mother season of the <code>${esc(s.overlay)}</code> set: recordings of ${s.recording_years.join(" and ")} cars. Every pack on <code>${esc(s.base)}</code> plays it.`
+      : `Plays the <code>${esc(s.overlay)}</code> set of its era base, made for ${mother} from recordings of ${s.recording_years.join(" and ")} cars.`;
+  } else if (s.planned_overlay) {
+    set = `The era base has a sound set (<code>${esc(s.planned_overlay)}</code>, made for ${esc(s.mother)}), but nothing is recorded for it yet, so the pack keeps the game's own sounds.`;
+  } else {
+    set = "No sound set for this generation yet. The pack keeps the game's own sounds; each make is given one of the five stock pass-bys.";
+  }
+
+  const rows = [];
+  const group = t => rows.push(`<tr class="grouprow"><td colspan="4">${t}</td></tr>`);
+  group("Pass-bys at the finish line");
+  for (const m of s.makes) {
+    const p = passbyFor(s, m);
+    rows.push(p
+      ? `<tr><td>${esc(m)}</td><td><code>${esc(p.key)}</code></td><td>${pill(status(s, [recYear(p.vid)]))}</td><td>${srcCell(p, "onboard, moved past a listener at 220 km/h")}</td></tr>`
+      : `<tr><td>${esc(m)}</td><td><code>${esc(s.stock_passby[m] || "random")}</code></td><td>${pill({cls: "stock", text: "Stock"})}</td><td>${srcCell(null)}</td></tr>`);
+  }
+  if (sl && sl.tv.length) {
+    rows.push(`<tr><td>TV pass-bys</td><td><code>${sl.tv.length} clips</code></td><td>${pill({cls: "silent", text: "Not heard"})}</td><td><span class="src">In the random bank, which only untagged makes use. Every make here is tagged.</span></td></tr>`);
+  }
+  const multi = (label, list, stockLabel) => {
+    if (!sl || !list.length) { rows.push(`<tr><td>${label}</td><td><code>${stockLabel}</code></td><td>${pill({cls: "stock", text: "Stock"})}</td><td>${srcCell(null)}</td></tr>`); return; }
+    const vids = [...new Set(list.map(c => c.vid).filter(Boolean))];
+    const st = status(s, list.map(c => c.vid ? recYear(c.vid) : null).filter(y => y !== null && y !== undefined));
+    const stock = list.filter(c => !c.vid).length;
+    const srcs = vids.map(v => srcCell({vid: v, note: ""}, `${list.filter(c => c.vid === v).length} of ${list.length}`)).join("");
+    rows.push(`<tr><td>${label}</td><td><code>${list.length} ${list.length > 1 ? "clips" : "clip"}</code></td><td>${pill(stock === list.length ? {cls: "stock", text: "Stock, re-levelled"} : st)}</td><td>${srcs || `<span class="src">${esc(list[0].note)}</span>`}</td></tr>`);
+  };
+  group("Start");
+  multi("Grid idle", sl ? sl.grid_idle : [], "grid_idle_01, 02");
+  multi("Launch", sl ? sl.grid_launch : [], "grid_launch_01, 02");
+  group("Pit lane");
+  multi("Pit exit", sl ? sl.pit_exit : [], "pit_exit_01 to 04");
+  multi("Wheelguns", sl ? sl.pit_wheelguns : [], "pit_wheelguns_01 to 04");
+  multi("Fire-up", sl ? sl.pit_fireup : [], "pit_fireup_01 to 04");
+  group("Track sound");
+  if (sl && sl.cars.length) {
+    rows.push(`<tr><td>Track loop</td><td><code>cars_on_track</code></td><td>${pill(status(s, sl.cars.map(c => recYear(c.vid))))}</td><td>
+      <span class="src">A 393 s loop of shots from ${sl.cars.length} recordings, joined with crossfades. Heard all session, also in fast mode.</span>${sl.cars.map(c => srcCell(c)).join("")}</td></tr>`);
+  } else rows.push(`<tr><td>Track loop</td><td><code>cars_on_track</code></td><td>${pill({cls: "stock", text: "Stock"})}</td><td><span class="src">The game's 393 s loop.</span></td></tr>`);
+  if (sl && sl.crowd.length) {
+    rows.push(`<tr><td>Crowd</td><td><code>crowd</code></td><td>${pill({cls: "own", text: "Crowd only"})}</td><td>${srcCell(sl.crowd[0], "no engines heard, so the year does not matter")}</td></tr>`);
+  } else rows.push(`<tr><td>Crowd</td><td><code>crowd</code></td><td>${pill({cls: "stock", text: "Stock"})}</td><td>${srcCell(null)}</td></tr>`);
+
+  el.innerHTML = `<div class="yhead"><h2>${name}</h2><div class="facts">
+      <span>${esc(s.era)}</span><span>Base <b>${esc(s.base || "none")}</b></span><span>Makes <b>${s.makes.length}</b></span></div></div>
+    <p class="note">${set}</p>
+    <div class="tablewrap"><table class="slots"><thead><tr><th>Slot</th><th>Clips</th><th>Cars from</th><th>Source</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>
+    <div><h3>Always the game's own</h3></div>
+    <div class="stocklist">${Object.values(DATA.stock).map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div>`;
+}
+
+/* ---------- recordings of the year's cars ---------- */
+function recStatus(r) {
+  if (r.uses.length) return `<span class="st st-own">In a pack</span><span class="why">${esc(r.uses.join(", "))}</span>`;
+  if (r.exclude) return `<span class="st st-silent">Left out</span><span class="why">${esc(r.exclude)}</span>`;
+  if (r.candidates) return `<span class="st st-shared">Cut to listen</span><span class="why">${r.candidates} clip${r.candidates > 1 ? "s" : ""} in pilot/</span>`;
+  return `<span class="st st-stock">Spare</span>`;
+}
+function renderRecs() {
+  const el = document.getElementById("recs");
+  if (state.series !== "dtm") {
+    el.innerHTML = `<h2>Recordings</h2><p class="empty">No recordings collected for ${esc(DATA.series[state.series] || state.series)} yet.</p>`;
+    return;
+  }
+  const list = recsOf(state.series, state.year);
+  const yLabel = state.year === null ? "of unknown year" : `of ${state.year} cars`;
+  const era = state.year !== null && eraOf(state.series, state.year);
+  // Same generation, other years: what else could feed this pack.
+  const near = era ? [...new Set(DATA.recordings.map(r => r.year))]
+      .filter(y => y && y !== state.year && era.from <= y && y <= era.to).sort() : [];
+  const nearHtml = near.length ? `<div><h3>Same generation, other years</h3></div><div class="near">${near.map(y => {
+      const rs = DATA.recordings.filter(r => r.year === y);
+      return `<button type="button" data-year="${y}"><b>${y}</b> ${rs.length} recordings, ${Math.round(rs.reduce((a, r) => a + r.min, 0))} min</button>`;
+    }).join("")}</div>` : "";
+  const starts = DATA.start_candidates.filter(c => c.year === state.year);
+  if (!list.length) {
+    el.innerHTML = `<h2>Recordings ${yLabel}</h2><p class="empty">None collected yet.</p>${nearHtml}`;
+    return;
+  }
+  const used = list.filter(r => r.uses.length).length;
+  const spare = list.filter(r => !r.uses.length && !r.exclude).length;
+  const mins = Math.round(list.reduce((a, r) => a + r.min, 0));
+  const types = Object.keys(TYPES).filter(t => list.some(r => r.type === t));
+  el.innerHTML = `<h2>Recordings ${yLabel}</h2>
+    <div class="sum"><span><b>${list.length}</b>recordings</span><span><b>${mins}</b>minutes</span><span><b>${used}</b>in a pack</span><span><b>${spare}</b>spare</span></div>
+    ${starts.length ? `<p class="note">Starts cut to listen to: ${starts.map(c => `<code>${esc(c.name)}</code>`).join(", ")}.</p>` : ""}
+    ${types.map(t => {
+      const rs = list.filter(r => r.type === t);
+      const u = rs.filter(r => r.uses.length).length;
+      return `<details${t === "spectator" ? " open" : ""}><summary>${TYPES[t]} <span class="mono">${rs.length} · ${Math.round(rs.reduce((a, r) => a + r.min, 0))} min · ${u} in a pack</span></summary>
+        ${TYPE_NOTE[t] ? `<p class="note">${TYPE_NOTE[t]}</p>` : ""}
+        <div class="tablewrap"><table class="recs"><thead><tr><th>Recording</th><th>Track</th><th>Make</th><th>Min</th><th>Status</th></tr></thead><tbody>
+        ${rs.map(r => `<tr><td class="t"><a href="${yt(r.id)}" target="_blank" rel="noopener">${esc(r.title)}</a><span class="why mono">${esc(r.id)}${r.driver ? " · " + esc(r.driver) : ""}</span></td>
+          <td>${esc(r.track.replace(/_/g, " "))}</td><td>${esc(r.make.replace(/^_/, "") || "mixed")}</td><td class="n">${r.min.toFixed(1)}</td><td>${recStatus(r)}</td></tr>`).join("")}
+        </tbody></table></div></details>`;
+    }).join("")}
+    ${nearHtml}`;
+}
+
+function render() {
+  renderNav(); renderBoard(); renderYear(); renderRecs();
+  const total = DATA.recordings.length, used = DATA.recordings.filter(r => r.uses.length).length;
+  document.getElementById("foot").textContent =
+    `Built ${DATA.built} by tools/sound_inventory.py from the era bases' audio settings, the private sound overlays and the recording library (${total} recordings with engine sound, ${used} in a pack). Car years: the onboard, TV and archive playlists are the 2013 season; fan recordings take the year in their title, else the upload year set by hand. Pass-bys use the make's own clip when the pack tags it; the game cannot vary the track loop or crowd per track (wish list E9).`;
+}
+
+function go(series, year) {
+  state = {series, year};
+  try { history.replaceState(null, "", `#${series}-${year === null ? "unknown" : year}`); } catch (e) {}
+  render();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-series],[data-year]");
+  if (!b) return;
+  if (b.dataset.series) {
+    const ys = seasonsOf(b.dataset.series).map(s => s.year);
+    go(b.dataset.series, ys.includes(state.year) ? state.year : ys[ys.length - 1]);
+  } else go(state.series, b.dataset.year === "unknown" ? null : +b.dataset.year);
+});
+document.addEventListener("keydown", e => {
+  const tr = e.target.closest && e.target.closest("tr.pick");
+  if (tr && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); go(state.series, +tr.dataset.year); }
+});
+window.addEventListener("hashchange", () => {
+  const h = location.hash.match(/^#([a-z0-9]+)-(\d{4}|unknown)$/);
+  if (h) { state = {series: h[1], year: h[2] === "unknown" ? null : +h[2]}; render(); }
+});
+render();
+</script>
