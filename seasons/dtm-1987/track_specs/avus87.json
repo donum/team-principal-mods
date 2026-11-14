@@ -1,0 +1,94 @@
+{
+  "id": "avus87",
+  "name": "AVUS",
+  "nationality": "german",
+  "bbox": [
+    13.235,
+    52.468,
+    13.275,
+    52.5
+  ],
+  "bbox_tiles": [
+    [
+      13.262,
+      52.494,
+      13.282,
+      52.505
+    ]
+  ],
+  "length_km": 8.11,
+  "width_m": 14.0,
+  "speed_scale": 0.98,
+  "race_laps": 13,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.35,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 0.48,
+  "fuel_consumption": 1.25,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_ways": [
+    {
+      "name": [
+        "AVUS",
+        "AVUS Nordkurve"
+      ]
+    }
+  ],
+  "exclude_way_ids": [
+    "35357724",
+    "1216705596",
+    "4388956",
+    "8788062",
+    "24756982",
+    "1370509801",
+    "1370509807"
+  ],
+  "bridges": [
+    [
+      [
+        52.4733,
+        13.24159
+      ],
+      [
+        52.4733,
+        13.24185
+      ]
+    ]
+  ],
+  "start": [
+    52.4994,
+    13.2735
+  ],
+  "via": [
+    [
+      52.4994,
+      13.2735
+    ],
+    [
+      52.48389,
+      13.25381
+    ],
+    [
+      52.4733,
+      13.24159
+    ],
+    [
+      52.4733,
+      13.24185
+    ],
+    [
+      52.48275,
+      13.2526
+    ],
+    [
+      52.4988,
+      13.2733
+    ],
+    [
+      52.5004,
+      13.2752
+    ]
+  ],
+  "notes": "1987 AVUS long circuit (8.110 km, anticlockwise on the A115 carriageways): the same start, carriageways and flat Nordkurve as the 1989-91 track (seasons/dtm-1991), with the south turn across the central reservation about 1.5 km further south (52.4733 N, by the Hüttenweg junction area). The Nordkurve banking had been removed in 1967. The exact south-turn position is undocumented: it is placed where the lap measures about 8.11 km (bridged). No chicane modelled. speed_scale copied from the 1991 AVUS, uncalibrated for 1987."
+}

@@ -141,6 +141,20 @@ team logos and portraits. See [bases/README.md](../../bases/README.md).
     and per file in [credits.txt](credits.txt). Ten more are left out for
     now: moving the car left a blurred band at the top and left, which the
     week-advance screen shows. They are flagged "Redo" in the gallery.
+  - Oschersleben start, for every team: the field in the first corners,
+    15 September 2013, seen from the stands (Jörg / Spieler Family, used
+    with permission, credit by name and a link). Every team gets it as
+    `<team>4.jpg`; slots 1 to 3 stay for the team's own photos. Built from
+    the Flickr original (IMG_7144, 3903x1281): 16:9 crop at full height
+    from 28% of the width, Lanczos to 1672x941, unsharp mask before
+    (r 2.0, 60%) and after (r 0.8, 70%) the resize, contrast 1.07, colour
+    1.08. Three more shots from the same start are in the gallery
+    (`teams/_series/permission_spieler/`), left out for now.
+  - Spectator dashboard: `assets/dashboard_bg.png` to `dashboard_bg12.png`,
+    one livery per team (PNG copies of team backgrounds) and the
+    Oschersleben photo as number 4. List in [credits.txt](credits.txt).
+    The game shows this set when there is no player team, and they replace
+    the vanilla pictures. Copy a team file again when it is redone.
 
 ## Tracks
 
@@ -156,28 +170,24 @@ team logos and portraits. See [bases/README.md](../../bases/README.md).
 | Oschersleben | 3.696 km | Raceway loop | 3,626 m (−1.9%) |
 | Zandvoort | 4.307 km | Raceway loop over today's (post-2020) layout | 4,205 m (−2.4%) |
 
-**Track maps.** The overview images in `assets/tracks/` are race-day
-illustrations from the race-track-themes project (style
-`illustrated-realism`, variant `raceday`), one per venue at the game's
-1044×1080. They replace the base's plain OSM renders, and the 1991 map for
-the Norisring. Hockenheim uses one image for both rounds.
+**Track maps.** The overview images in `assets/tracks/` are clean
+empty-venue illustrations from the race-track-themes project (style
+`illustrated-realism`, stage C1: a quiet weekday, no people, no logos), one
+per venue at the game's 1044×1080. Hockenheim uses one image for both rounds.
 
-ChatGPT Images painted them from the race-tracks plan, with real 2013
-sponsor and team logos. race-track-themes' `tools/align_track_art.py` then
-aligned each one to the plan's racing line, so the drawn track lies on the
-line the cars drive. All nine are in the race-tracks plan frame, so
-`tools/art_track.py` writes every track file from the race-tracks
-centreline (`track_art.json`). The speed scales keep the reference laps of
-the earlier files, and `tools/map_check.py` finds no part of any lap off the
-drawn track. Revisions used (2026-11-12): Hockenheim round-01 r0014, Brands
-Hatch r0022, Red Bull Ring r0011, Lausitzring r0009, Norisring r0009, Moscow
-r0012, Nürburgring r0010, Oschersleben r0009, Zandvoort r0013.
-
-Brands Hatch is our version, not 2013's. The team transporters stand in the
-infield south of the Cooper Straight (a spectator car park in 2013), with a
-small tunnel under the track. The Hockenheim image predates the newer art
-rules (no Aral arches, grey pit lane, pit-wall booths); a replacement is
-planned.
+ChatGPT Images painted them with one generic prompt for every track
+(race-track-themes `prompts/stages/c1-venue.txt`) from the race-tracks
+`plan-natural` plan: every surface in its natural colour, the pit lane in
+track asphalt with the traced pit-entry and pit-exit paint. race-track-themes'
+`tools/align_track_art.py` aligned each image to the plan's racing line, and
+`tools/line_overlay.py` then drew the white lines (track edges, pit-lane edges,
+pit paint) crisp and smooth on top. All nine are in the race-tracks plan
+frame, so `tools/art_track.py` writes every track file from the race-tracks
+centreline (`track_art.json`); the speed scales keep the reference laps, and
+`tools/map_check.py` finds no part of any lap off the drawn track. Revisions
+used (2026-11-13, `final.png`): Hockenheim round-01 r0027, Brands Hatch r0032,
+Red Bull Ring r0014, Lausitzring r0010, Norisring r0010, Moscow r0013,
+Nürburgring r0011, Oschersleben r0010, Zandvoort r0014.
 
 **Open questions:**
 - Moscow: 2.555 km (fan wiki) vs 2.661 km (racingyears). The traced short
@@ -287,7 +297,7 @@ brackets).
 - **Cheating and espionage:** 2013 had no such cases. AI teams fit banned
   aids at a fifth of the vanilla rate, and only one espionage operation per
   season is possible across the grid.
-- **Language:** team texts are English only. The game has no language setting, so a German version would need a second pack (E13).
+- **Language:** team texts are English only. The game is translated into seven languages, but a pack cannot add its own translations yet, so our texts show in English (E13).
 
 ## Lap times
 

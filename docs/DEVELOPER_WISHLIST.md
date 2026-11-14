@@ -1,7 +1,8 @@
 # Wish List for the Team Principal Developer
 
 These are feature requests from building historically accurate DTM season
-packs: 1990–1992 (Group A), 2012 and 2013. Each item lists the real-world need,
+packs: 1987 and 1990–1992 (Group A), 2003, 2006 and 2010 (V8 Masters),
+2012, 2013 and 2018 (Class One V8) and 2020 (Class One turbo). Each item lists the real-world need,
 what the game can't do today, our current workaround, and what would solve
 it. **Needed by** names the season packs (`seasons/dtm-*`) that would use
 it. Findings are based on game version 0.99.5, rechecked against the
@@ -23,11 +24,17 @@ build them all.
 
 | Season | Items |
 |---|---|
+| dtm-1987 | B1, B2, B3, B9, C2, C3, C9, D1, D9, E1, E2 |
 | dtm-1990 | A1, A6, B1, B2, D1, D9, E1, E2 |
 | dtm-1991 | A1–A6, B1–B4, C1–C5, D1–D4, D9, E1–E7 |
 | dtm-1992 | A1, A6, B2, B3, C1, C2, D1, D9, E1, E2 |
-| dtm-2012 | A5, A6, B5, B7, B12, C4, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E15 |
+| dtm-2012 | A3, A5, A6, B5, B7, B12, C4, C6, C7, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E13, E15 |
+| dtm-2003 | A5, A6, B4, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
+| dtm-2006 | A6, B1, B2, B5, B7, B10, C2, C4, D1, D3, D7, E1, E2, E8 |
+| dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2013 | A3, A5, A6, B5, B6, B7, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15 |
+| dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2 |
+| dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
 
 Seasons without a pack yet (research only) are covered for qualifying and
@@ -48,7 +55,7 @@ rules to these items:
 ## A. Race weekend format
 
 ### A1. Several races per weekend (heats) · P1
-- **Needed by:** dtm-1990, dtm-1991, dtm-1992 (each runs one race per round at heat distance).
+- **Needed by:** dtm-1990, dtm-1991, dtm-1992 (each runs one race per round at heat distance), dtm-2018 and dtm-2020 (two races a weekend; each race is its own game week, which stretches the calendar on back-to-back weekends), btcc-1991 (two races at Donington and Brands Hatch; each takes its own week).
 - **1991:** every DTM round had **two heats of about 100 km**, both with full
   points. The heat-2 grid was the heat-1 finishing order.
 - **Today:** one race per scheduled week.
@@ -69,7 +76,7 @@ rules to these items:
   and `distance_km`.
 
 ### A3. Configurable sessions and race format · P2
-- **Needed by:** dtm-1986 (red-flag aggregate), dtm-1991, dtm-2000 to dtm-2002 (rolling starts, lap caps in qualifying), dtm-2003 to dtm-2011 (one-hour races), dtm-2013 (the wet Nürburgring and final Hockenheim races were time-limited to 75 minutes), dtm-2015 on (minutes plus one lap), dtm-2021 on (rolling two-abreast start).
+- **Needed by:** dtm-1986 (red-flag aggregate), dtm-1991, dtm-2000 to dtm-2002 (rolling starts, lap caps in qualifying), dtm-2003 to dtm-2011 (one-hour races), dtm-2012 (the Norisring, wet at the start, and Zandvoort, with showers and two safety cars, were stopped at the 75-minute limit), dtm-2013 (the wet Nürburgring and final Hockenheim races were time-limited to 75 minutes), dtm-2015 on (minutes plus one lap), dtm-2021 on (rolling two-abreast start), dtm-2010, dtm-2020.
 - **Today:** a race is `laps × lap_modifier` with a standing start.
   `formula_red_flags` in `config.json` stops and restarts a race (up to 2
   per race), but the result can't be an aggregate. The oval mode already
@@ -90,7 +97,7 @@ rules to these items:
     for the two-heat rounds of 1984 and 1985).
 
 ### A4. More than one event per week · P3
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, dtm-2018, dtm-2020 (a round's second race moves to the next week).
 - **1991:** two rounds were on consecutive weekends (Nürburgring 8 Sep,
   Singen 15 Sep).
 - **Today:** that works, but a double-header at one venue on one weekend
@@ -99,7 +106,7 @@ rules to these items:
   (day of year).
 
 ### A5. Single-lap shootout (Q4) · P2
-- **Needed by:** dtm-2013, dtm-2012 (the top 4 also had a single-lap shootout).
+- **Needed by:** dtm-2013, dtm-2012 (the top 4 also had a single-lap shootout), dtm-2003, dtm-2010.
 - **2013:** the four fastest from Q3 ran one timed lap each, alone on the
   track, for the first two rows.
 - **Today:** the game's knockout stops at Q3.
@@ -108,7 +115,7 @@ rules to these items:
   `run_order: "reverse"`.
 
 ### A6. Qualifying as a list of stages · P1
-- **Needed by:** every DTM season (each era had a different format), dtm-2012, dtm-2013 (Q1 to Q3 plus Q4).
+- **Needed by:** every DTM season (each era had a different format), dtm-2012, dtm-2013 (Q1 to Q3 plus Q4), dtm-2003, dtm-2006, dtm-2010, dtm-2018.
 - **Today:** `qualifying_format` is `session_60` or a fixed Q1 to Q3
   knockout cut like F1 (10 cars in Q3, the rest split evenly over Q1 and
   Q2; 18, 15 and 12 minutes; none of it configurable). Pre-qualifying and the grid
@@ -163,7 +170,7 @@ rules to these items:
 ## B. Rules and balance of performance
 
 ### B1. Success ballast · P1
-- **Needed by:** dtm-1990 (up to 100 kg), dtm-1991.
+- **Needed by:** dtm-1990 (up to 100 kg), dtm-1991, dtm-1987, dtm-2006.
 - **1991:** weight penalties of up to **50 kg**, given for good results and
   removed for poor ones. Drivers new to the series started on the maximum.
 - **Today:** not possible.
@@ -171,7 +178,7 @@ rules to these items:
   maximum, a removal rule, and a value for newcomers.
 
 ### B2. Mid-season balance changes on a date · P1
-- **Needed by:** dtm-1990 (Audi's 80 kg at Diepholz; the Mercedes 190E Evo II from the Nordschleife round), dtm-1991, dtm-1992 (BMW's bigger splitter and wing from the Nordschleife round).
+- **Needed by:** dtm-1990 (Audi's 80 kg at Diepholz; the Mercedes 190E Evo II from the Nordschleife round), dtm-1991, dtm-1992 (BMW's bigger splitter and wing from the Nordschleife round), dtm-1987 (M3 +100 kg after round 2, Sierra -100 kg then +50 kg, Volvo and Alfa -50 kg, Mercedes -50 kg), dtm-2006.
 - **1991:**
   - Audi had **40 kg removed from Wunstorf** onwards.
   - Opel could remove **50 kg after Hockenheim**.
@@ -186,13 +193,13 @@ rules to these items:
   - Minimum weight per engine or car model.
 
 ### B3. Points table per race, drop scores · P2
-- **Needed by:** dtm-1991, dtm-1992 (drop scores).
+- **Needed by:** dtm-1991, dtm-1992 (drop scores), dtm-1987 (points to 18th place, one drop result), btcc-1991 (the real totals don't fit a plain 20-15-12 scale; drop scores and fastest-lap points are likely but unconfirmed).
 - **Request:** points tables per session (heat 1 and heat 2 can differ),
   qualification-race points, and drop scores (Streichresultate, used in
   1992).
 
 ### B4. More classifications · P2
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, dtm-2003, dtm-2020.
 - **1991:** besides the drivers' title there were a **teams'** and a
   **manufacturers'** title (only the best car of each make scored), the
   **ITR Fahrerpokal** (DTM plus the non-championship Brno and Donington
@@ -201,7 +208,7 @@ rules to these items:
   points rules and eligible entries (e.g. `"privateer": true`).
 
 ### B5. Mandatory pit stops and pit windows · P1
-- **Needed by:** dtm-2001 to dtm-2026 (every season sets a stop count; most add a window), dtm-2012 (two stops, each inside a window), dtm-2013 (two stops, none in the first or last 3 laps).
+- **Needed by:** dtm-2001 to dtm-2026 (every season sets a stop count; most add a window), dtm-2012 (two stops, each inside a window), dtm-2013 (two stops, none in the first or last 3 laps), dtm-2003, dtm-2006, dtm-2010, dtm-2018, dtm-2020.
 - **2013:** **two mandatory stops**, no pit window, but none in the first or
   last 3 laps. Damage stops don't count.
 - **Today:** no regulation can require a number of stops or close the
@@ -229,7 +236,7 @@ rules to these items:
     rules. B12 has the shared rule list.
 
 ### B6. DRS rules per session · P2
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2018, dtm-2020.
 - **2013:** DRS in the **race only**, free use once per lap anywhere on the
   track, and not in the last 3 laps.
 - **Today:** `drs_policy` is on or off for the whole weekend, so qualifying
@@ -241,7 +248,7 @@ rules to these items:
   activation budget instead of zones, and `disable_last_laps`.
 
 ### B7. Tyre allocation rules · P2
-- **Needed by:** dtm-2013, dtm-2012 (one dry tyre for the whole season; the pack keeps the soft as a copy of the hard, since the game's need for a soft can't be checked).
+- **Needed by:** dtm-2013, dtm-2012 (one dry tyre for the whole season; the pack keeps the soft as a copy of the hard, since the game's need for a soft can't be checked), dtm-2003, dtm-2006, dtm-2010.
 - **2013:** the Hankook hard was the standard tyre, plus **one set of the
   option (soft) per race**, which every driver had to use.
 - **2013 look:** the tyres were called **standard** (white sidewall) and
@@ -265,7 +272,7 @@ rules to these items:
   qualifying tyres (2023 on), tyre warmer bans (2003, 2017).
 
 ### B8. Qualifying points · P2
-- **Needed by:** dtm-2001, dtm-2002 (3-2-1 for the qualifying race), dtm-2017 to dtm-2026 (3-2-1 for the top three in qualifying), dtm-2022 (fastest-lap point only for a top-10 finisher).
+- **Needed by:** dtm-2001, dtm-2002 (3-2-1 for the qualifying race), dtm-2017 to dtm-2026 (3-2-1 for the top three in qualifying), dtm-2022 (fastest-lap point only for a top-10 finisher), dtm-2018, dtm-2020.
 - **Today:** `pole_point` gives +1 to pole only, and `fastest_lap_point`
   gives +1 to the fastest-lap holder wherever they finish.
 - **Workaround:** pole point on, which gives 1 point instead of 3 and
@@ -280,7 +287,7 @@ rules to these items:
   are classified, but the points go to the next eligible drivers.
 
 ### B10. Pit-stop procedure rules · P3
-- **Needed by:** dtm-2001 (25-minute service window between the races), dtm-2017 (8 mechanics, one wheelgun per side), dtm-2021 (a stop under safety car doesn't count), dtm-2022 to dtm-2026 (rear wheels first, 4 to 6 crew).
+- **Needed by:** dtm-2001 (25-minute service window between the races), dtm-2017 (8 mechanics, one wheelgun per side), dtm-2021 (a stop under safety car doesn't count), dtm-2022 to dtm-2026 (rear wheels first, 4 to 6 crew), dtm-2006.
 - **Today:** one stop-time model for every pack; no setting for crew size
   or what counts as the mandatory stop.
 - **Request:** `pitstops.crew_size` or a base stop time per pack, and rules
@@ -294,7 +301,7 @@ rules to these items:
   next to time penalties.
 
 ### B12. Tyre and stop rules as data · P1
-- **Needed by:** dtm-1988 on (set limits), dtm-2001 on (stop rules), dtm-2012, dtm-2013 (two stops, option tyre once), dtm-2014 (option cap), dtm-2023 on (start on qualifying tyres).
+- **Needed by:** dtm-1988 on (set limits), dtm-2001 on (stop rules), dtm-2012, dtm-2013 (two stops, option tyre once), dtm-2014 (option cap), dtm-2023 on (start on qualifying tyres), dtm-2020.
 - **Today:** one tyre rule (`mandatory_compound_count`, on or off for the
   whole season) and allocation options with any number of sets per weekend. No
   stop, window, must-use or start-tyre rule.
@@ -330,10 +337,21 @@ rules to these items:
 
 - **Full brainstorm:** [packages/tyres-and-stops.md](packages/tyres-and-stops.md).
 
+### B13. Push-to-pass boost · P2
+- **Needed by:** dtm-2020 (and dtm-2019).
+- **2019 and 2020:** push-to-pass gave a fixed extra power for a few
+  seconds, a set number of times per race (30 hp in 2019, 60 hp in 2020,
+  with more fuel flow while it is used). There was no harvesting.
+- **Today:** the game has ERS (`ers_policy`), which harvests and deploys
+  energy. It has no fixed boost with a use count.
+- **Workaround:** `ers_policy: spec`, so every car has the same system.
+- **Request:** a boost option as data: extra power, duration, uses per race,
+  and whether it is allowed in qualifying or the last laps.
+
 ## C. Entries, teams and drivers
 
 ### C1. More than 3 cars per team · P1
-- **Needed by:** dtm-1991, dtm-1992 (AMG ran 4 cars; Lohr is a reserve).
+- **Needed by:** dtm-1991, dtm-1992 (AMG ran 4 cars; Lohr is a reserve), dtm-2020.
 - **1991:** AMG ran **4 cars**, and some teams went up to 5.
 - **Today:** `formula_team_entry_cap` stops at `three`, and a team's
   `entry_count` above 3 is cut to 3 (`team_entry_count`, 0.99.6 code).
@@ -341,7 +359,7 @@ rules to these items:
 - **Request:** allow 4–6 entries.
 
 ### C2. Entry lists per round (part-timers and guests) · P1
-- **Needed by:** dtm-1991, dtm-1992 (Audi withdrew after round 6; in the game it races all season).
+- **Needed by:** dtm-1991, dtm-1992 (Audi withdrew after round 6; in the game it races all season), dtm-1987, dtm-2003, dtm-2006, dtm-2010.
 - **1991:**
   - Michael Schumacher drove 2 rounds for Zakspeed.
   - Walter Röhrl drove 1 round for SMS.
@@ -352,7 +370,7 @@ rules to these items:
   so AI teams follow history in season 1.
 
 ### C3. Car numbers per entry and fixed numbers · P2
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, dtm-1987.
 - **1991:** numbers went to the entry, like Ludwig #8 and Stuck #1, not
   per-team pairs.
 - **Today:** numbers work, but reserves and guests can't keep their real
@@ -360,7 +378,7 @@ rules to these items:
 - **Request:** a `number` on the contract, including for reserves.
 
 ### C4. Customer cars and homologation · P2
-- **Needed by:** dtm-1991, dtm-2013 (chassis and aero were homologated and largely frozen; in the game teams develop at different rates, and in season 5 the gap between the fastest and slowest car grew from 3.6 to 4.3 rating points), dtm-2012.
+- **Needed by:** dtm-1991, dtm-2013 (chassis and aero were homologated and largely frozen; in the game teams develop at different rates, and in season 5 the gap between the fastest and slowest car grew from 3.6 to 4.3 rating points), dtm-2012, dtm-2003, dtm-2006, dtm-2010 (year-old cars beside new ones; modelled with lower ratings and potential), dtm-2020.
 - **1991:** privateers bought homologated cars (Evo models) from BMW,
   Mercedes and Opel. Chassis development was mostly the manufacturer's job,
   not the team's.
@@ -377,7 +395,7 @@ rules to these items:
 - **Request:** expose these in JSON (see E2).
 
 ### C6. Driver timing codes · P3
-- **Needed by:** dtm-2013.
+- **Needed by:** dtm-2013, dtm-2012 (codes in `seasons/dtm-2012/research/spotter_guide.csv`).
 - **2013:** every driver had a three-letter code on the timing screens and
   on the car (SPE, WER, PAF; Scheider was TSC, not SCH).
 - **Today:** `drivers.json` has no field for it.
@@ -387,7 +405,7 @@ rules to these items:
   results.
 
 ### C7. Feeder series with real race weekends · P2
-- **Needed by:** dtm-2013 (five real feeder series in `junior_series.json`).
+- **Needed by:** dtm-2013 (five real feeder series in `junior_series.json`), dtm-2012 (the same five slots: F3 Euro Series and Formel Masters with 3 races a weekend, the others 2 or 3).
 - **2013:** FIA F3 Europe and ADAC Formel Masters ran 3 races per weekend,
   German F3, the Carrera Cup and the DTC 2. The DTC scored two classes
   separately. German F3 gave points for pole and
@@ -429,10 +447,21 @@ rules to these items:
     the faster driver the start and the finish, give the better wet driver
     the rain stint.
 
+### C9. Several car models per make · P2
+- **Needed by:** dtm-1987 (and the other Group A years).
+- **1987:** BMW raced the M3 and the 635 CSi side by side, and Ford the
+  Sierra XR4Ti and later the RS500. König, Reuter, Winkelhock and Hahne
+  changed car model during the season.
+- **Today:** one engine per make, and a team races one car all year.
+- **Workaround:** a second engine supplier key (`BMW 635`) with its own
+  engine, weight and profile. The changes during the season aren't modelled.
+- **Request:** a car model per entry, with its own engine, weight and
+  profile, that can change from a given round.
+
 ## D. Cars and simulation
 
 ### D1. Touring-car part set · P1
-- **Needed by:** dtm-1990, dtm-1991, dtm-1992, dtm-2013, dtm-2012.
+- **Needed by:** dtm-1990, dtm-1991, dtm-1992, dtm-2013, dtm-2012, dtm-1987, dtm-2003, dtm-2006, dtm-2010, dtm-2018, dtm-2020.
 - **Today:** the parts are open-wheel ones (front and rear wing, underfloor,
   diffuser, sidepods), plus ERS and DRS.
 - **Request:** data-defined part categories with labels and effects, so a
@@ -464,7 +493,7 @@ rules to these items:
   traction, wet performance and tyre wear.
 
 ### D3. Documented lap-time controls · P1
-- **Needed by:** dtm-1991, dtm-2013 (we fitted lap times by running the game's physics model offline), dtm-2012.
+- **Needed by:** dtm-1991, dtm-2013 (we fitted lap times by running the game's physics model offline), dtm-2012, dtm-2003, dtm-2006, dtm-2010, dtm-2018, dtm-2020.
 - **What we found:**
   - `lap_modifier` sets the **number of laps**: race laps = `options.laps`
     × `lap_modifier`.
@@ -518,7 +547,7 @@ rules to these items:
   part.
 
 ### D7. Development freeze and homologation · P2
-- **Needed by:** dtm-2013, dtm-2012.
+- **Needed by:** dtm-2013, dtm-2012, dtm-2003, dtm-2006, dtm-2010.
 - **Real world:** 2013 DTM cars were homologated before the season, and
   aero development was largely frozen during it. Teams built spares to
   replace crash damage, not new designs.
@@ -556,7 +585,7 @@ rules to these items:
     showing only the ones the pack defines.
 
 ### D9. Tyre suppliers beyond ratings · P2
-- **Needed by:** dtm-1984 to dtm-1995 (open tyre war), dtm-1990, dtm-1991, dtm-1992.
+- **Needed by:** dtm-1984 to dtm-1995 (open tyre war), dtm-1990, dtm-1991, dtm-1992, dtm-1987.
 - **Today:** a tyre war works: each team has a supplier with its own grip,
   durability and temperature ratings per compound, which develop each
   season. All suppliers share the same compound list and the same
@@ -711,7 +740,7 @@ rules to these items:
   - A real date for each schedule week, for news and emails.
 
 ### E8. Engine sounds per supplier beyond pass-bys · P3
-- **Needed by:** dtm-2013, dtm-2012.
+- **Needed by:** dtm-2013, dtm-2012, dtm-2003, dtm-2006, dtm-2010.
 - **2013:** three V8s with clearly different voices (Audi RS 5, BMW M3,
   Mercedes C-Coupé).
 - **Today:** only pass-bys can be tagged per supplier (`passby_audio` in
@@ -786,16 +815,26 @@ rules to these items:
 
 ### E13. Translated pack texts · P3
 - **Needed by:** all packs (German first: the DTM is a German series).
-- **Today:** the game has no language setting. Pack texts are one string
-  each, for example `team_histories.json` maps a team name to one text.
-  A German version would have to be a second pack.
+- **Today (since 11 Nov 2026):** the game has a language setting with
+  seven languages (en, de, fr, es, it, pt-BR, ru). The texts live in
+  `ui/assets/locales/<lang>.json`, one flat file per language with about
+  12,800 keys. Vanilla pack texts are in there too, under `text.pack.*`
+  keys (rules, radio, nationality, team_prose and a few more), for example
+  `text.pack.radio.damn_we_mistimed_that_75cc5d402`. Each key is a slug of
+  the English text plus a hash, so the game seems to look a text up by its
+  English wording. A pack text that matches vanilla word for word is
+  probably translated. Our own texts stay in English. No pack has a locale
+  file, no pack field refers to a text key, and `MODDING_GUIDE.md` does not
+  mention languages. Not tested in-game.
 - **Workaround:** English texts only. `tools/translatable_strings.py`
   lists a pack's own in-game texts in `seasons/<season>/translations.csv`
   (DTM 2013: 51 strings, mostly team histories, rule descriptions and
   radio messages), ready for a translator.
-- **Request:** an optional language map per text, for example
-  `{"en": "...", "de": "..."}` in `team_histories.json`, with a game
-  language setting that picks the matching text and falls back to English.
+- **Request:** let a pack ship its own locale files, for example
+  `<pack>/locales/de.json` in the same key format as the game's, merged
+  over the game's files and falling back to English. Also document how a
+  `text.pack.*` key is made from the English text, so a tool can write the
+  keys for our texts.
 
 ### E14. Pit-entry sound · P3
 - **Needed by:** dtm-2013.

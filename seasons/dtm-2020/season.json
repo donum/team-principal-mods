@@ -1,0 +1,67 @@
+{
+  "base": "dtm-era5",
+  "title": "DTM 2020 - Deutsche Tourenwagen Masters",
+  "pack_folder": "dtm2020",
+  "version": "0.1",
+  "constants": {
+    "SEASON_START_YEAR": 2020
+  },
+  "team_clones": {
+    "Audi Sport Team Abt Sportsline": "Red Boar",
+    "Audi Sport Team Rosberg": "Mercurion",
+    "Audi Sport Team Phoenix": "McMean",
+    "BMW Team RMG": "Scuderia Rossa",
+    "BMW Team RBM": "Ashton Darting",
+    "BMW Team RMR": "French Blue",
+    "Audi Sport Team WRT": "Willens Racing",
+    "Orlen Team ART": "Hossden GP"
+  },
+  "staff": {
+    "seed": 2020,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "Audi Sport Team Abt Sportsline": 16,
+      "Audi Sport Team Rosberg": 13,
+      "Audi Sport Team Phoenix": 9,
+      "BMW Team RMG": 8,
+      "BMW Team RBM": 7,
+      "BMW Team RMR": 6,
+      "Audi Sport Team WRT": 6,
+      "Orlen Team ART": 5
+    }
+  },
+  "shared_tracks": {
+    "spa": "f1-v8",
+    "nuerburgring": "f1-v8"
+  },
+  "track_overrides": {
+    "$comment": "2020 race laps (research/calendar.csv), one value per track for both races of a round. Spa and the Nürburgring Grand Prix circuit are the F1 base's tracks: speed_mult 1.09 is the ratio between the DTM and F1 Hockenheim tracks (same layout), a first guess until simulated. Assen and Zolder (zolder20, today's layout) are traced in bases/dtm-era5; dtm-1991's zolder is the Group A track and stays apart.",
+    "spa": {
+      "race_laps": 26,
+      "speed_mult": 1.09
+    },
+    "lausitzring": {
+      "race_laps": 43
+    },
+    "lausitzring_gp": {
+      "race_laps": 34
+    },
+    "assen": {
+      "race_laps": 36
+    },
+    "nuerburgring": {
+      "race_laps": 31,
+      "speed_mult": 1.09
+    },
+    "nuerburgring13": {
+      "race_laps": 40
+    },
+    "zolder20": {
+      "race_laps": 41
+    },
+    "hockenheim13": {
+      "race_laps": 37
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$comment": "Era base for the 2019-2020 DTM (Class One, 2.0 turbo four-cylinder: Audi RS 5 Turbo, BMW M4 Turbo, Aston Martin Vantage in 2019). It builds on bases/dtm-era4 (\"base\": \"dtm-era4\", tools/layers.py): the Class One chassis carried over, so the traced tracks, tyre model, damage, car parts and Hankook art come from there. This base changes the engines, the rules and the sounds. 2020 is its mother season: the first season built on it.",
+  "base": "dtm-era4",
+  "title": "DTM 2019-2020 (era base)",
+  "audio": {
+    "$comment": "No turbo engine recordings yet: the packs keep the game's vanilla sounds. The era4 V8 sounds are not used (in_pack false). When recordings are collected, they are made from 2020 cars (recording_years) with the 2020 entry list (research_season), so 2019 inherits them. See docs/plans/DTM2020_BACKLOG.md.",
+    "overlay": "dtm-era5",
+    "in_pack": false,
+    "recording_years": [2020],
+    "research_season": "dtm-2020",
+    "key_prefix": "dtm20"
+  }
+}

@@ -38,15 +38,45 @@
     }
   },
   "track_overrides": {
-    "$comment": "2012 race distances (research/calendar.csv) where they differ from the base's 2013 ones. Hockenheim keeps 42 laps (the finale); the opener ran 40.",
+    "$comment": "2012 race distances (research/calendar.csv) where they differ from the base's 2013 ones. Hockenheim keeps 42 laps (the finale); the opener ran 40. speed_mult fits the 2012 poles (research/results) from simulated seasons; 2012 cars were mostly 1-3% slower than 2013's. The Norisring includes the base's 1.29. tyre_wear_mult replaces the base's, which was tuned for 2013's soft-plus-hard stints: with one dry tyre these values make two stops the normal strategy.",
     "brandshatch": {
-      "race_laps": 97
+      "race_laps": 97,
+      "speed_mult": 1.008,
+      "tyre_wear_mult": 0.46
     },
     "norisring": {
-      "race_laps": 78
+      "race_laps": 78,
+      "speed_mult": 1.233,
+      "tyre_wear_mult": 0.75
     },
     "zandvoort": {
-      "race_laps": 43
+      "race_laps": 43,
+      "speed_mult": 0.976,
+      "tyre_wear_mult": 1.45
+    },
+    "hockenheim13": {
+      "speed_mult": 1.001,
+      "tyre_wear_mult": 1.5
+    },
+    "lausitzring": {
+      "speed_mult": 0.966,
+      "tyre_wear_mult": 1.1
+    },
+    "redbullring": {
+      "speed_mult": 0.984,
+      "tyre_wear_mult": 1.35
+    },
+    "nuerburgring13": {
+      "speed_mult": 0.989,
+      "tyre_wear_mult": 1.3
+    },
+    "oschersleben": {
+      "speed_mult": 0.988,
+      "tyre_wear_mult": 1.18
+    },
+    "valencia": {
+      "speed_mult": 1.026,
+      "tyre_wear_mult": 1.3
     }
   },
   "sponsors": {
@@ -150,17 +180,26 @@
       "Yahoo!": {
         "industry": "Technology",
         "nationality": "american"
+      },
+      "auto TEST": {
+        "industry": "Telecom",
+        "nationality": "german"
+      },
+      "Samsung": {
+        "industry": "Technology",
+        "nationality": "south korean"
       }
     },
     "teams": {
       "BMW Team RMG": [
         "BMW M Performance",
         "Exide",
-        "Allgeier"
+        "Samsung"
       ],
       "Audi Sport Team Abt Sportsline": [
         "Red Bull",
-        "Deutsche Post"
+        "Deutsche Post",
+        "auto TEST"
       ],
       "AMG-Mercedes": [
         "Petronas",

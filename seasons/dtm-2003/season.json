@@ -1,0 +1,62 @@
+{
+  "base": "dtm-era3",
+  "title": "DTM 2003 - Deutsche Tourenwagen Masters",
+  "pack_folder": "dtm2003",
+  "version": "0.1",
+  "constants": {
+    "SEASON_START_YEAR": 2003
+  },
+  "team_clones": {
+    "Vodafone AMG-Mercedes": "Red Boar",
+    "AMG-Mercedes": "Mercurion",
+    "PlayStation 2 Red Bull Abt-Audi": "McMean",
+    "Hasseröder Abt-Audi": "Audex",
+    "OPC Team Phoenix": "Scuderia Rossa",
+    "OPC Team Holzer": "Ashton Darting",
+    "Service 24h AMG-Mercedes": "French Blue",
+    "OPC Euroteam": "Alpha Bison",
+    "S line Audi Junior Team": "Willens Racing",
+    "Original-Teile AMG-Mercedes": "Hossden GP"
+  },
+  "staff": {
+    "seed": 2003,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "Vodafone AMG-Mercedes": 16,
+      "AMG-Mercedes": 13,
+      "PlayStation 2 Red Bull Abt-Audi": 8,
+      "Hasseröder Abt-Audi": 8,
+      "OPC Team Phoenix": 8,
+      "OPC Team Holzer": 5,
+      "Service 24h AMG-Mercedes": 4,
+      "OPC Euroteam": 4,
+      "S line Audi Junior Team": 4,
+      "Original-Teile AMG-Mercedes": 4
+    }
+  },
+  "track_overrides": {
+    "$comment": "2003 race laps (research/calendar.csv, mostly derived from distance and lap length). tyre_wear_mult is the base's 2012 value scaled by 2012 laps / 2003 laps, so a stint keeps the same share of the race and two stops stay the normal strategy. Not yet simulated.",
+    "hockenheim13": {
+      "race_laps": 37,
+      "tyre_wear_mult": 1.7
+    },
+    "nuerburgring13": {
+      "race_laps": 41,
+      "tyre_wear_mult": 1.55
+    },
+    "norisring": {
+      "race_laps": 72,
+      "tyre_wear_mult": 0.81
+    },
+    "redbullring": {
+      "race_laps": 40,
+      "tyre_wear_mult": 1.59,
+      "name": "A1-Ring"
+    },
+    "zandvoort": {
+      "race_laps": 36,
+      "tyre_wear_mult": 1.73
+    }
+  }
+}

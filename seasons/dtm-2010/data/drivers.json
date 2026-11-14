@@ -1,0 +1,591 @@
+{
+  "$comment": "DTM 2010 drivers, generated from research/entries.csv and standings.csv. Skills and talent are estimates from championship points; part-timers are reserves.",
+  "$template": {
+    "index": 0,
+    "override": {
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      }
+    },
+    "drop": [
+      "contract"
+    ],
+    "drop_if_absent": [
+      "team",
+      "number"
+    ]
+  },
+  "records": [
+    {
+      "name": "Gary Paffett",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Salzgitter/Mercedes-Benz Bank AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 2.38,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 28,
+      "talent": 91,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "british",
+      "birth_year": 1981,
+      "team": "Salzgitter/Mercedes-Benz Bank AMG-Mercedes",
+      "number": 3
+    },
+    {
+      "name": "Bruno Spengler",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Salzgitter/Mercedes-Benz Bank AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 2.35,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 91,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "canadian",
+      "birth_year": 1983,
+      "team": "Salzgitter/Mercedes-Benz Bank AMG-Mercedes",
+      "number": 4
+    },
+    {
+      "name": "Paul di Resta",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Laureus AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 2.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 23,
+      "talent": 92,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "british",
+      "birth_year": 1986,
+      "team": "Laureus AMG-Mercedes",
+      "number": 7
+    },
+    {
+      "name": "Ralf Schumacher",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Laureus AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 0.39,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 34,
+      "talent": 65,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1975,
+      "team": "Laureus AMG-Mercedes",
+      "number": 8
+    },
+    {
+      "name": "Timo Scheider",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 17,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt",
+        "length_weeks": 52,
+        "salary_m": 1.94,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 87,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "german",
+      "birth_year": 1978,
+      "team": "Audi Sport Team Abt",
+      "number": 1
+    },
+    {
+      "name": "Oliver Jarvis",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt",
+        "length_weeks": 52,
+        "salary_m": 0.86,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 74,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1984,
+      "team": "Audi Sport Team Abt",
+      "number": 2
+    },
+    {
+      "name": "Mattias Ekström",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 1.38,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 81,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "swedish",
+      "birth_year": 1978,
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 5
+    },
+    {
+      "name": "Martin Tomczyk",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 0.92,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 28,
+      "talent": 75,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1981,
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 6
+    },
+    {
+      "name": "Mike Rockenfeller",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 0.98,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 76,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1983,
+      "team": "Audi Sport Team Phoenix",
+      "number": 10
+    },
+    {
+      "name": "Alexandre Prémat",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 0.67,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 71,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1982,
+      "team": "Audi Sport Team Phoenix",
+      "number": 9
+    },
+    {
+      "name": "Darryl O'Young",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 0.3,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 29,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "chinese",
+      "birth_year": 1980,
+      "reserve_number": 9
+    },
+    {
+      "name": "Miguel Molina",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Rookie Team Abt",
+        "length_weeks": 52,
+        "salary_m": 0.76,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 21,
+      "talent": 73,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "spanish",
+      "birth_year": 1989,
+      "team": "Audi Sport Rookie Team Abt",
+      "number": 18
+    },
+    {
+      "name": "Jamie Green",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "TV Spielfilm/Junge Sterne AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 1.29,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1982,
+      "team": "TV Spielfilm/Junge Sterne AMG-Mercedes",
+      "number": 11
+    },
+    {
+      "name": "Susie Stoddart",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "TV Spielfilm/Junge Sterne AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 0.42,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 27,
+      "talent": 66,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1982,
+      "team": "TV Spielfilm/Junge Sterne AMG-Mercedes",
+      "number": 12
+    },
+    {
+      "name": "Congfu Cheng",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "TV Spielfilm/Junge Sterne AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 0.3,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 25,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "chinese",
+      "birth_year": 1984,
+      "team": "TV Spielfilm/Junge Sterne AMG-Mercedes",
+      "number": 21
+    },
+    {
+      "name": "Markus Winkelhock",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 0.52,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 29,
+      "talent": 68,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1980,
+      "team": "Audi Sport Team Rosberg",
+      "number": 14
+    },
+    {
+      "name": "Katherine Legge",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 10,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 0.3,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 29,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1980,
+      "team": "Audi Sport Team Rosberg",
+      "number": 15
+    },
+    {
+      "name": "Maro Engel",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Deutsche Post/GQ AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 0.39,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 24,
+      "talent": 65,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1985,
+      "team": "Deutsche Post/GQ AMG-Mercedes",
+      "number": 16
+    },
+    {
+      "name": "David Coulthard",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Deutsche Post/GQ AMG-Mercedes",
+        "length_weeks": 52,
+        "salary_m": 0.33,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 38,
+      "talent": 58,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "british",
+      "birth_year": 1971,
+      "team": "Deutsche Post/GQ AMG-Mercedes",
+      "number": 17
+    }
+  ]
+}

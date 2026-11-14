@@ -1,0 +1,9 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2012-04-28,2012-04-29,Hockenheimring,DEU,3,DTM,DTM season opener; also FIA F3 European round 1
+2,2012-05-19,2012-05-20,Brands Hatch,GBR,3,DTM,Replaced the Lausitzring round (calendar cut to 8 rounds on 2 April 2012); also FIA round 3
+3,2012-06-02,2012-06-03,Red Bull Ring,AUT,3,DTM,Also FIA round 4
+4,2012-06-30,2012-07-01,Norisring,DEU,3,DTM,"Shared with British F3, so many guest cars; race 1 had no official winner after Juncadella was disqualified and no one was moved up; race 3 red-flagged after half distance in heavy rain, half points; also FIA round 5"
+5,2012-08-18,2012-08-19,Nürburgring,DEU,3,DTM,Also FIA round 7
+6,2012-08-25,2012-08-26,Circuit Park Zandvoort,NLD,3,DTM,Race 2 gave half points (only 5 laps run in the time limit); also FIA round 8
+7,2012-09-29,2012-09-30,Circuit Ricardo Tormo,ESP,3,DTM,Valencia; also FIA round 9
+8,2012-10-20,2012-10-21,Hockenheimring,DEU,3,DTM,DTM finale; Juncadella clinched both titles; also FIA round 10

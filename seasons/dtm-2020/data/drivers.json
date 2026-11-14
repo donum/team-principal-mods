@@ -1,0 +1,531 @@
+{
+  "$comment": "DTM 2020 drivers, generated from research/entries.csv and standings.csv. Skills and talent are estimates from championship points; part-timers are reserves.",
+  "$template": {
+    "index": 0,
+    "override": {
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      }
+    },
+    "drop": [
+      "contract"
+    ],
+    "drop_if_absent": [
+      "team",
+      "number"
+    ]
+  },
+  "records": [
+    {
+      "name": "Nico Müller",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 2.36,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 28,
+      "talent": 91,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "swiss",
+      "birth_year": 1992,
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 51
+    },
+    {
+      "name": "Robin Frijns",
+      "cornering": 17,
+      "braking": 17,
+      "consistency": 16,
+      "smoothness": 17,
+      "control": 17,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 2.04,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 28,
+      "talent": 88,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "dutch",
+      "birth_year": 1991,
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 4
+    },
+    {
+      "name": "René Rast",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 2.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 33,
+      "talent": 92,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "german",
+      "birth_year": 1986,
+      "team": "Audi Sport Team Rosberg",
+      "number": 33
+    },
+    {
+      "name": "Jamie Green",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 0.91,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 37,
+      "talent": 72,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1982,
+      "team": "Audi Sport Team Rosberg",
+      "number": 53
+    },
+    {
+      "name": "Mike Rockenfeller",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 1.17,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 36,
+      "talent": 76,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1983,
+      "team": "Audi Sport Team Phoenix",
+      "number": 99
+    },
+    {
+      "name": "Loïc Duval",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 0.97,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 37,
+      "talent": 73,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1982,
+      "team": "Audi Sport Team Phoenix",
+      "number": 28
+    },
+    {
+      "name": "Benoît Tréluyer",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 12,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 0.3,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 43,
+      "talent": 55,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "french",
+      "birth_year": 1976,
+      "reserve_number": 19
+    },
+    {
+      "name": "Timo Glock",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMG",
+        "length_weeks": 52,
+        "salary_m": 1.05,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 37,
+      "talent": 74,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1982,
+      "team": "BMW Team RMG",
+      "number": 16
+    },
+    {
+      "name": "Marco Wittmann",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMG",
+        "length_weeks": 52,
+        "salary_m": 0.89,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 30,
+      "talent": 75,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1989,
+      "team": "BMW Team RMG",
+      "number": 11
+    },
+    {
+      "name": "Sheldon van der Linde",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RBM",
+        "length_weeks": 52,
+        "salary_m": 0.97,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 20,
+      "talent": 76,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1999,
+      "team": "BMW Team RBM",
+      "number": 31
+    },
+    {
+      "name": "Philipp Eng",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RBM",
+        "length_weeks": 52,
+        "salary_m": 0.6,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 30,
+      "talent": 70,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "austrian",
+      "birth_year": 1990,
+      "team": "BMW Team RBM",
+      "number": 25
+    },
+    {
+      "name": "Jonathan Aberdein",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMR",
+        "length_weeks": 52,
+        "salary_m": 0.69,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 22,
+      "talent": 71,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1998,
+      "team": "BMW Team RMR",
+      "number": 27
+    },
+    {
+      "name": "Lucas Auer",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMR",
+        "length_weeks": 52,
+        "salary_m": 0.62,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 25,
+      "talent": 70,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "austrian",
+      "birth_year": 1994,
+      "team": "BMW Team RMR",
+      "number": 22
+    },
+    {
+      "name": "Ferdinand von Habsburg",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team WRT",
+        "length_weeks": 52,
+        "salary_m": 0.72,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 22,
+      "talent": 72,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "austrian",
+      "birth_year": 1997,
+      "team": "Audi Sport Team WRT",
+      "number": 62
+    },
+    {
+      "name": "Harrison Newey",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team WRT",
+        "length_weeks": 52,
+        "salary_m": 0.47,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 21,
+      "talent": 67,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1998,
+      "team": "Audi Sport Team WRT",
+      "number": 10
+    },
+    {
+      "name": "Fabio Scherer",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team WRT",
+        "length_weeks": 52,
+        "salary_m": 0.42,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 20,
+      "talent": 66,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "swiss",
+      "birth_year": 1999,
+      "team": "Audi Sport Team WRT",
+      "number": 13
+    },
+    {
+      "name": "Robert Kubica",
+      "cornering": 12,
+      "braking": 12,
+      "consistency": 11,
+      "smoothness": 12,
+      "control": 12,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Orlen Team ART",
+        "length_weeks": 52,
+        "salary_m": 0.42,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 35,
+      "talent": 65,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1984,
+      "team": "Orlen Team ART",
+      "number": 8
+    }
+  ]
+}

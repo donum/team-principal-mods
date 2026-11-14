@@ -1,0 +1,115 @@
+{
+  "title": "DTM 1987 - Deutsche Tourenwagen-Meisterschaft",
+  "pack_folder": "dtm1987",
+  "version": "0.1",
+  "series": "formula",
+  "base_pack": "default26",
+  "no_title_sponsors": true,
+  "constants": {
+    "SEASON_START_YEAR": 1987,
+    "POINTS_TOP10": [
+      20,
+      18,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9
+    ],
+    "QUALI_GRID_LIMIT": 40,
+    "QUALI_MIN_ENTRANTS": 20,
+    "PREQUALIFYING_TRIGGER_CARS": 45,
+    "PREQUALIFYING_FIELD_LIMIT": 45,
+    "DRIVER_RETIREMENT_MIN_AGE": 40,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 50
+  },
+  "team_clones": {
+    "Zakspeed BMW Team": "Red Boar",
+    "Ford Ringshausen Motorsport": "Red Boar",
+    "BMW Isert": "Mercurion",
+    "Vogelsang Automobile": "Mercurion",
+    "IPS Motorsport": "McMean",
+    "Kamei Crew": "Audex",
+    "AC München": "Audex",
+    "AMG Marko RSM": "Scuderia Rossa",
+    "Private entries": "Scuderia Rossa",
+    "Wolf Racing": "Ashton Darting",
+    "Ford-Grab Motorsport": "French Blue",
+    "Alpina": "French Blue",
+    "Gubin-Sport": "Alpha Bison",
+    "Autotechnik Nickel": "Alpha Bison",
+    "Müller-Bräu Team": "Willens Racing",
+    "Sachs Sporting": "Hossden GP",
+    "Autohaus Wollstadt": "Hossden GP",
+    "Format Fahrzeugteile": "Cadylacky Motors"
+  },
+  "staff": {
+    "seed": 1987,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "Zakspeed BMW Team": 16,
+      "Ford Ringshausen Motorsport": 16,
+      "BMW Isert": 15,
+      "Vogelsang Automobile": 14,
+      "IPS Motorsport": 12,
+      "Kamei Crew": 12,
+      "AC München": 11,
+      "AMG Marko RSM": 11,
+      "Private entries": 11,
+      "Wolf Racing": 10,
+      "Ford-Grab Motorsport": 9,
+      "Alpina": 8,
+      "Gubin-Sport": 7,
+      "Autotechnik Nickel": 7,
+      "Müller-Bräu Team": 6,
+      "Sachs Sporting": 5,
+      "Autohaus Wollstadt": 5,
+      "Format Fahrzeugteile": 5
+    }
+  },
+  "shared_tracks": {
+    "hockenheim_short": "dtm-1992",
+    "zolder": "dtm-1991",
+    "nuerburgring": "dtm-1991",
+    "mainzfinthen": "dtm-1990",
+    "norisring": "dtm-1991",
+    "wunstorf": "dtm-1991",
+    "diepholz": "dtm-1991"
+  },
+  "track_overrides": {
+    "$comment": "1987 race laps (research/calendar.csv). Both Nürburgring rounds use 25 laps (round 7 ran 23). avus87 and salzburgring are this season's own traces (track_specs/), uncalibrated.",
+    "hockenheim_short": {
+      "race_laps": 40
+    },
+    "zolder": {
+      "length_km": 4.184,
+      "race_laps": 24
+    },
+    "nuerburgring": {
+      "race_laps": 25
+    },
+    "avus87": {
+      "race_laps": 13
+    },
+    "mainzfinthen": {
+      "race_laps": 45
+    },
+    "norisring": {
+      "race_laps": 44
+    },
+    "wunstorf": {
+      "race_laps": 20
+    },
+    "diepholz": {
+      "length_km": 2.6,
+      "race_laps": 40
+    },
+    "salzburgring": {
+      "race_laps": 25
+    }
+  }
+}

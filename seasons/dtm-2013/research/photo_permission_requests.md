@@ -22,7 +22,7 @@ the full-size file: the gallery holds 1024 px previews only.
 | Parts Boutique | 1 | Phoenix | sent 2026-11-10 |
 | portugalmotorsport | 1 | Rosberg | sent 2026-11-10 |
 | Antonius Quell | 2 (Motodrom panorama from the stands, team trucks) | menu background, `_series` | not sent, found 2026-11-12 |
-| Spieler Family | 4 (Oschersleben start, seen from the stands) | menu background, `_series` | not sent, found 2026-11-12 |
+| Spieler Family (Jörg) | 4 (Oschersleben start, seen from the stands) | every team's dashboard, spectator set, maybe menu | **granted 2026-11-12**, see below |
 | Zangl Harald | 4 (Red Bull Ring, cars seen from the stands) | menu background, `_series` | not sent, found 2026-11-12 |
 | imago: Thomas Melzer / "mspb Jerri Andre" | 34 | all 12 teams | not sent, see the imago section at the end |
 | Dennis de Wolde, inmotion-photos.com | any DTM photo on his site (64 from 2013) | all 12 teams, see `inmotion_photos.md` | **granted 2026-11-11**, see below |
@@ -43,6 +43,27 @@ dennis@inmotion-photos.com:
   otherwise).
 - The photos are saved locally and sorted by team in `inmotion_photos.md`.
 - Keep the original email. It is the only record of the permission.
+
+**Spieler Family (Jörg).** Flickr message reply on 12 November 2026, to the
+Oschersleben request below:
+
+> natürlich geht das. Wenn Du magst, kannst Du später Screenshots schicken
+
+- Covers: the four Oschersleben start photos listed in the request
+  (9873267756, 9873202075, 9873226764, 9873290176).
+- Conditions: none beyond what the request offered: credit by name with a link
+  to https://www.flickr.com/people/spieler/, in `credits.txt` and on the
+  Workshop page.
+- In the pack since 12 November 2026: IMG_7144 (9873267756) on every
+  team's dashboard (`<team>4.jpg`) and in the spectator set. The other
+  three are left out for now. The Flickr originals were enough
+  (1023 to 1427 px tall), saved in the gallery under
+  `teams/_series/permission_spieler/`.
+- Not asked yet: the name for the credit ("Jörg / Spieler Family" until he
+  says otherwise).
+- Follow-up: he'd like screenshots once the menu is done. Send them to
+  info@spieler-internet.de.
+- Keep the Flickr message. It is the only record of the permission.
 
 **Not covered here:** the six BMW press photos (MTEK and Schnitzer pit stops,
 the BMW Welt presentation shots used as BMW HQ). BMW marks them free for

@@ -1,0 +1,28 @@
+{
+  "$comment": "DTM 2000-2011 Dunlop control tyre: one dry tyre (Hankook and its option tyre came in 2011 and 2013). The soft stays in the file as an exact copy of the hard and no car starts on it, as in the 2012 pack; the two-compound rule is off (patches/regulations.json). No medium (null). Wishlist B7. Wear 0.03 as in 2012, where two stops became the normal strategy in the simulator; the era had two mandatory stops (wishlist B5). Not yet simulated for era-3 race lengths.",
+  "$merge_base": true,
+  "default_compound": "hard",
+  "mandatory_compound_count": 1,
+  "start_probabilities": {
+    "soft": 0.0,
+    "medium": null,
+    "hard": 0.95,
+    "intermediate": 0.04,
+    "wet": 0.01
+  },
+  "compounds": {
+    "soft": {
+      "lat_grip_base": 1.0,
+      "long_grip_base": 1.0,
+      "wear_rate_base": 0.03,
+      "wear_cliff_onset_pct": 65
+    },
+    "medium": null,
+    "hard": {
+      "lat_grip_base": 1.0,
+      "long_grip_base": 1.0,
+      "wear_rate_base": 0.03,
+      "wear_cliff_onset_pct": 65
+    }
+  }
+}

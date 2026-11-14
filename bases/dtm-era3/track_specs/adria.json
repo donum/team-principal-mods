@@ -1,0 +1,21 @@
+{
+  "id": "adria",
+  "name": "Adria International Raceway",
+  "nationality": "italian",
+  "bbox": [12.135, 45.038, 12.160, 45.052],
+  "length_km": 2.702,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 47,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.65,
+  "pit_lane_loss_s": 18.0,
+  "tyre_wear_mult": 0.95,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "exclude_way_ids": ["99835357", "798432703", "798432704", "1092277630", "1092277631", "1092277632"],
+  "pit_way_names": ["Pit Lane"],
+  "drs_zones": [],
+  "notes": "Adria International Raceway, the full circuit as one closed raceway way (1092277633). The short link ways (chicane variants), the pit lane and the karting track are left out. DTM 2003 and 2010. speed_scale 1.0 is uncalibrated; race_laps and tyre_wear_mult are 2003's (2010 sets its own in gen.json)."
+}

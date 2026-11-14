@@ -1,0 +1,22 @@
+{
+  "id": "lemans",
+  "name": "Le Mans Bugatti",
+  "nationality": "french",
+  "bbox": [0.195, 47.945, 0.235, 47.965],
+  "length_km": 4.180,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 39,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.53,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.1,
+  "pole_side": "left",
+  "loop_relation": "2725877",
+  "exclude_way_names": ["Pit Lane", "Pit Entry", "Pit Exit", "Safety Car Pit Entry", "Moto Pit Exit", "MotoGP Long lap penalty", "Porsche Center", "Porsche center"],
+  "pit_way_names": ["Pit Lane"],
+  "drs_zones": [],
+  "notes": "Bugatti circuit (clockwise): Dunlop curve and chicane, La Chapelle, Musée, Garage Vert, Chemin aux Boeufs, the Garage Bleu S, Raccordement. Raceway loop over the members of OSM relation 2725877, without the pit and MotoGP long-lap ways. DTM 2006. speed_scale 1.0 is uncalibrated."
+}

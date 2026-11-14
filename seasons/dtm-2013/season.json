@@ -3,6 +3,7 @@
   "title": "DTM 2013 - Deutsche Tourenwagen Masters",
   "pack_folder": "dtm2013",
   "version": "0.1",
+  "vanilla_music": false,
   "constants": {
     "SEASON_START_YEAR": 2013
   },

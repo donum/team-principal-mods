@@ -1,0 +1,75 @@
+{
+  "$comment": "Generator defaults for every season of the 2000-2011 DTM (tools/season_from_research.py merges this under a season's gen.json): the era-3 rules, car profiles, the three 4.0 V8 engines and the Dunlop control tyre. Set up on 2003 (the mother template); a season changes what differs in its own gen.json, e.g. make_profiles for the later Audi A4 and C-Klasse. All values are first estimates, not yet simulated.",
+  "template": "dtm-1991",
+  "rules": "own",
+  "default_tyre": "Dunlop",
+  "rating_range": [53, 57.5],
+  "team_rating_from": "average",
+  "skill_range": [11, 18],
+  "economy": {"budget_per_rating": 1.6, "salary_min_m": 0.3, "salary_max_m": 2.5},
+  "mass_kg": {"Audi": 935.0, "Mercedes-Benz": 935.0, "Opel": 935.0},
+  "make_profiles": {"Audi": "abt_audi_tt_r", "Mercedes-Benz": "amg_clk_dtm", "Opel": "opel_astra_v8"},
+  "birth_years": true,
+  "chassis": {
+    "$comment": "Chassis names (game 0.99.6+): each make's car per year of the era. Abt ran the TT-R from 2000 to 2003, Audi's works A4 came in 2004. Mercedes: CLK until 2003, C-Klasse W203 from 2004 and W204 from 2007. Opel: Astra V8 Coupe until 2003, Vectra GTS V8 in 2004 and 2005.",
+    "Audi": {"prefix": "A4/", "names": {"2000": "Abt-Audi TT-R", "2001": "Abt-Audi TT-R", "2002": "Abt-Audi TT-R", "2003": "Abt-Audi TT-R",
+                                       "2004": "A4 DTM", "2005": "A4 DTM", "2006": "A4 DTM", "2007": "A4 DTM", "2008": "A4 DTM",
+                                       "2009": "A4 DTM", "2010": "A4 DTM", "2011": "A4 DTM"}},
+    "Mercedes-Benz": {"prefix": "C/", "names": {"2000": "AMG-Mercedes CLK", "2001": "AMG-Mercedes CLK", "2002": "AMG-Mercedes CLK", "2003": "AMG-Mercedes CLK",
+                                               "2004": "AMG-Mercedes C-Klasse", "2005": "AMG-Mercedes C-Klasse", "2006": "AMG-Mercedes C-Klasse",
+                                               "2007": "AMG-Mercedes C-Klasse", "2008": "AMG-Mercedes C-Klasse", "2009": "AMG-Mercedes C-Klasse",
+                                               "2010": "AMG-Mercedes C-Klasse", "2011": "AMG-Mercedes C-Klasse"}},
+    "Opel": {"prefix": "V8/", "names": {"2000": "Astra V8 Coupé", "2001": "Astra V8 Coupé", "2002": "Astra V8 Coupé", "2003": "Astra V8 Coupé",
+                                       "2004": "Vectra GTS V8", "2005": "Vectra GTS V8"}}
+  },
+  "profiles": {
+    "$comment": "Car character deltas, small as in era 4 (the makes were close; ratings carry most of the gap). TT-R: short wheelbase, strong in slow corners. CLK and C-Klasse: strong at high speed. Astra: weaker on tyres. Later A4: balanced.",
+    "abt_audi_tt_r": {"acceleration": 0, "straight": 0, "slow": 1, "med": 0, "high": -1, "braking": 1,
+                      "tyre_management": 0, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
+    "audi_a4_dtm": {"acceleration": 0, "straight": 0, "slow": 1, "med": 1, "high": 0, "braking": 0,
+                    "tyre_management": 1, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
+    "amg_clk_dtm": {"acceleration": 0, "straight": 1, "slow": 0, "med": 0, "high": 1, "braking": 0,
+                    "tyre_management": 0, "chassis_reliability": 1, "aero_efficiency_rating": 1, "dirty_air_sensitivity": 0},
+    "amg_c_klasse_dtm": {"acceleration": 0, "straight": 1, "slow": 0, "med": 0, "high": 1, "braking": 0,
+                         "tyre_management": 0, "chassis_reliability": 1, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
+    "opel_astra_v8": {"acceleration": 0, "straight": 0, "slow": 0, "med": 0, "high": 0, "braking": 0,
+                      "tyre_management": -1, "chassis_reliability": 0, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
+    "opel_vectra_gts_v8": {"acceleration": 0, "straight": 1, "slow": -1, "med": 0, "high": 0, "braking": 0,
+                           "tyre_management": -1, "chassis_reliability": 0, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0}
+  },
+  "engines": {
+    "$comment": "4.0 V8s, 90 degrees, two 28 mm restrictors: about 460 to 470 hp (2003 sources). Slightly below era 4's 480 to 500 hp. mass_kg as in era 4.",
+    "Audi": {"engine": "Audi 4.0 V8", "factory": false, "power_rating": 56.5, "reliability_rating": 68.0,
+             "cost_m": 6, "annual_budget_m": 50, "capacity": 6, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
+             "fuel_efficiency": 54.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_03"},
+    "Mercedes-Benz": {"engine": "Mercedes-Benz 4.0 V8", "factory": false, "power_rating": 57.0, "reliability_rating": 69.0,
+                      "cost_m": 6, "annual_budget_m": 55, "capacity": 8, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
+                      "fuel_efficiency": 54.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_04"},
+    "Opel": {"engine": "Opel 4.0 V8", "factory": false, "power_rating": 56.0, "reliability_rating": 66.0,
+             "cost_m": 6, "annual_budget_m": 45, "capacity": 6, "active": true, "join_chance": 0.0, "leave_chance": 0.05,
+             "fuel_efficiency": 53.0, "mass_kg": 145.0, "nationality": "german", "passby_audio": "engine_passby_01"}
+  },
+  "tyre_suppliers": {
+    "Dunlop": {
+      "active": true, "join_chance": 0.0, "leave_chance": 0.0,
+      "prices": {"works": 0, "partner": 0, "customer": 0},
+      "nationality": "british",
+      "lateral_grip": {"soft": 54.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
+      "longitudinal_grip": {"soft": 54.0, "hard": 54.0, "intermediate": 50.0, "wet": 52.0},
+      "durability": {"soft": 60.0, "hard": 60.0, "intermediate": 55.0, "wet": 55.0},
+      "temperature_tolerance": {"soft": 54.0, "hard": 54.0, "intermediate": 50.0, "wet": 50.0},
+      "trend": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
+      "variance": {"lateral_grip": 0.0, "longitudinal_grip": 0.0, "durability": 0.0, "temperature_tolerance": 0.0},
+      "development_preference": "endurance"
+    }
+  },
+  "tyre_development": {
+    "$comment": "One dry Dunlop tyre for the whole era: the soft is a copy of the hard (data/tyremodel.json), kept in the programmes as in the 2012 pack, and the medium is dropped.",
+    "programs": {
+      "cornering_grip": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
+      "traction_braking": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
+      "durability": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}},
+      "thermal_stability": {"compounds": ["soft", "hard", "intermediate", "wet"], "required_compounds": ["soft", "hard"], "compound_weights": {"medium": null}}
+    }
+  }
+}

@@ -360,8 +360,9 @@ def place_tracks(season_dir, out, manifest):
     """
     tracks_dir = out / "tracks"
     art_dir = out / "assets" / "tracks"
-    needed = set(load_json(out / "schedule.json")) - SCHEDULE_KEYWORDS
-    needed |= {spec["from"] for spec in manifest.get("track_placeholders", {}).values()}
+    raced = set(load_json(out / "schedule.json")) - SCHEDULE_KEYWORDS
+    sources = {spec["from"] for key, spec in manifest.get("track_placeholders", {}).items() if not key.startswith("$")}
+    needed = raced | sources
     keep = set()
     for track in layers.files(season_dir, "tracks").values():
         if layers.layer_of(season_dir, track) != season_dir.resolve() and track.stem not in needed:
@@ -378,7 +379,23 @@ def place_tracks(season_dir, out, manifest):
         shutil.copy2(src / "tracks" / f"{track_id}.json", tracks_dir / f"{track_id}.json")
         shutil.copy2(src / "assets" / "tracks" / f"{track_id}.png", art_dir / f"{track_id}.png")
         keep.add(track_id)
+    placeholders = {}
+    for track_id, spec in manifest.get("track_placeholders", {}).items():
+        if track_id.startswith("$") or track_id in keep:
+            continue
+        data = load_json(tracks_dir / f"{spec['from']}.json")
+        data.update(spec.get("override", {}))
+        dump_json(tracks_dir / f"{track_id}.json", data)
+        art = art_dir / f"{spec['from']}.png"
+        if art.exists():
+            shutil.copy2(art, art_dir / f"{track_id}.png")
+        placeholders[track_id] = spec["from"]
+        keep.add(track_id)
+    # After the placeholders, so a placeholder takes its source's file as it
+    # was and gets its own overrides (race_laps, speed_mult) on top.
     for track_id, over in manifest.get("track_overrides", {}).items():
+        if track_id.startswith("$"):
+            continue
         path = tracks_dir / f"{track_id}.json"
         if not path.exists():
             continue
@@ -389,18 +406,10 @@ def place_tracks(season_dir, out, manifest):
             sector["target_speed_kmh"] = round(sector["target_speed_kmh"] * over["speed_mult"], 1)
         data.update({k: v for k, v in over.items() if k not in ("race_laps", "speed_mult")})
         dump_json(path, data)
-    placeholders = {}
-    for track_id, spec in manifest.get("track_placeholders", {}).items():
-        if track_id in keep:
-            continue
-        data = load_json(tracks_dir / f"{spec['from']}.json")
-        data.update(spec.get("override", {}))
-        dump_json(tracks_dir / f"{track_id}.json", data)
-        art = art_dir / f"{spec['from']}.png"
-        if art.exists():
-            shutil.copy2(art, art_dir / f"{track_id}.png")
-        placeholders[track_id] = spec["from"]
-        keep.add(track_id)
+    # A placeholder's source track leaves again unless the season races it
+    # (or it is the season's own track, which always ships).
+    own = {p.stem for p in (season_dir / "tracks").glob("*.json")}
+    keep -= sources - raced - own
     keep.add("testtrack")
     for track in tracks_dir.glob("*.json"):
         if track.stem not in keep:
@@ -520,19 +529,26 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
 
     placeholders = place_tracks(season_dir, out, manifest)
 
+    # "vanilla_music": false drops the base pack's menu tracks, so the game
+    # plays only the season's own assets/audio/music (it plays every file there).
+    if manifest.get("vanilla_music", True) is False:
+        music = art_root / "audio" / "music"
+        if not any((layer / "assets" / "audio" / "music").glob("*") for layer in chain):
+            sys.exit("vanilla_music is false, but no layer ships assets/audio/music")
+        shutil.rmtree(music, ignore_errors=True)
     for layer in chain:
         if (layer / "assets").is_dir():
             shutil.copytree(layer / "assets", art_root, dirs_exist_ok=True)
+    # A placeholder of one of our own tracks only finds its image now (before the source's image may go below).
+    for track_id, source in placeholders.items():
+        art = art_root / "tracks" / f"{source}.png"
+        if art.exists() and not (art_root / "tracks" / f"{track_id}.png").exists():
+            shutil.copy2(art, art_root / "tracks" / f"{track_id}.png")
     # A base's track images for venues this season doesn't race.
     for layer in chain[:-1]:
         for art in (layer / "assets" / "tracks").glob("*.png"):
             if not (out / "tracks" / f"{art.stem}.json").exists() and art.stem not in placeholders:
                 (art_root / "tracks" / art.name).unlink(missing_ok=True)
-    # A placeholder of one of our own tracks only finds its image now.
-    for track_id, source in placeholders.items():
-        art = art_root / "tracks" / f"{source}.png"
-        if art.exists() and not (art_root / "tracks" / f"{track_id}.png").exists():
-            shutil.copy2(art, art_root / "tracks" / f"{track_id}.png")
 
     dump_json(out / "workshop.json", {
         "schema_version": 1,

@@ -1,0 +1,14 @@
+BTCC 1991 - British Touring Car Championship
+Unofficial community season pack for Team Principal: A Racing Manager.
+
+Created by Daniel Raude - Team Principal Mods
+Content licensed CC BY-NC-SA 4.0. Tooling MIT.
+
+Season research sources: en Wikipedia ("1991 British Touring Car Championship").
+See seasons/btcc-1991/research/season.md in the project repository for details.
+
+Track maps and track geometry:
+  Map data (c) OpenStreetMap contributors, available under the
+  Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
+  Brands Hatch Indy is today's layout. The other circuits are placeholders
+  that reuse other tracks' geometry until they are traced.

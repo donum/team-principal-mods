@@ -1,0 +1,24 @@
+{
+  "$merge_base": true,
+  "$comment": "Touring-car contact: a DTM car shrugs off a tap that would break an F1 front wing, and a damaged front end is driven home rather than swapped at a stop. Lap-one pile-ups never break the front wing (the game would swap it at the next stop), and contact damages parts half as much as vanilla. How the game repairs damage at a stop is not data (wishlist D6).",
+  "incidents": {
+    "lap_one_cascade_outcomes": {
+      "time_loss": 0.65,
+      "front_wing": 0.0,
+      "spin": 0.25,
+      "retire": 0.1
+    },
+    "minor_contact_part_damage_fraction": 0.1,
+    "single_car_contact_part_damage_fraction": 0.12,
+    "spin_contact_part_damage_fraction": 0.05,
+    "punctures": {
+      "$comment": "Game 0.99.6+. Off in vanilla. The game's default rates (about 1 to 3 per season across the grid); a DTM car leans hard on its tyres and runs wheel-to-wheel, so contact punctures are a little likelier than in F1.",
+      "enabled": true,
+      "contact_prob": 0.04
+    }
+  },
+  "pitstops": {
+    "$comment": "Game 0.99.6+: team-mates share one pit crew, and a second car queues. Kept on (the game's default): later DTM rules banned team-mates from double-stacking under the safety car, which only matters with a shared crew. Not confirmed for 2013.",
+    "double_stack_enabled": true
+  }
+}

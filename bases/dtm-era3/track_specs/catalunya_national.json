@@ -1,0 +1,23 @@
+{
+  "id": "catalunya_national",
+  "name": "Circuit de Catalunya (National)",
+  "nationality": "spanish",
+  "bbox": [2.248, 41.563, 2.270, 41.576],
+  "length_km": 2.949,
+  "width_m": 12.0,
+  "speed_scale": 1.0,
+  "race_laps": 58,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.65,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.1,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 0.8,
+  "pole_side": "left",
+  "route_ways": [{"highway": "raceway", "oneway": "yes"}],
+  "exclude_way_ids": ["178416729", "178416733", "33742214", "921317988", "235224639"],
+  "via": [[41.5700, 2.2598], [41.5664, 2.2578], [41.5690, 2.2563], [41.5713, 2.2578], [41.5746, 2.2614], [41.5725, 2.2627]],
+  "start": [41.5705, 2.2604],
+  "drs_zones": [],
+  "notes": "National circuit as raced by the DTM in 2006 (clockwise): down the pit straight, Elf and Renault (turns 1 and 2), then the short link (way 114293333) onto the return section up to La Caixa and the stadium section back to the straight. Routed with via points over the oneway raceway ways, pit lane excluded. The stadium section follows today's OSM ways; its 2006 form may differ in detail. speed_scale 1.0 is uncalibrated."
+}

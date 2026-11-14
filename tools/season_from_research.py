@@ -38,6 +38,10 @@ Seasons outside the Group A era override the template's rules in gen.json:
 * "skill_range" [low, high] spreads driver skills (default [10, 18]);
 * "track_placeholders" {id: {"from": track, "override": {...}}} copy a track
   under a new id, e.g. a second visit to a venue with its own rain chance;
+* "races_per_round": 2 gives each round one game week per race (two races
+  a weekend, from 2015); a round in "tracks" may also be a list of track
+  ids, one per race. Later races move to the next free week;
+* entries.csv "rounds" may be "all", or ranges joined by "," or ";";
 * "economy": "budget_per_rating", "salary_min_m", "salary_max_m";
 * a team's "previous_position" sets its previous_constructor_position (the
   year before's teams' standing); without it, the team's rank this season;
@@ -113,7 +117,9 @@ def read_csv(p):
 
 def rounds_of(spec, total):
     out = set()
-    for part in (spec or "").replace(" ", "").split(","):
+    if (spec or "").strip().lower() == "all":
+        return set(range(1, total + 1))
+    for part in (spec or "").replace(" ", "").replace(";", ",").split(","):
         m = re.fullmatch(r"(\d+)(?:-(\d+))?", part)
         if m:
             lo, hi = int(m.group(1)), int(m.group(2) or m.group(1))
@@ -324,13 +330,20 @@ def main():
     for kind, weeks in tests.items():
         for w in weeks:
             schedule[w - 1] = kind
+    # A round with several races (two from 2015) gets one game week per race:
+    # "tracks": {"1": ["hockenheim13", "hockenheim13_r2"]}, or "races_per_round": 2
+    # to repeat a single id. The game runs one race per week (wish list A1, A4).
     track_map = gen["tracks"]
+    per_round = gen.get("races_per_round", 1)
     for r in calendar:
         week = (datetime.date.fromisoformat(r["date"]) - datetime.date(year, 1, 1)).days // 7 + 1
-        tid = track_map[r["round"]]
-        while schedule[week - 1] is not None:
-            week += 1
-        schedule[week - 1] = tid
+        tids = track_map[r["round"]]
+        for tid in tids if isinstance(tids, list) else [tids] * per_round:
+            while schedule[week - 1] is not None:
+                week += 1
+            if week > 52:
+                raise SystemExit(f"round {r['round']}: no free week left in the year")
+            schedule[week - 1] = tid
     dump_json(out_data / "schedule.json", schedule)
 
     # ---- season.json
@@ -343,7 +356,8 @@ def main():
         gen_tracks = own
     else:
         manifest = copy.deepcopy(load_json(tmpl / "season.json"))
-        manifest.update({"title": title, "pack_folder": f"dtm{year}", "version": "0.1", "team_clones": clones})
+        manifest.update({"title": title, "pack_folder": gen.get("pack_folder", f"dtm{year}"), "version": "0.1",
+                         "team_clones": clones})
         manifest["constants"]["SEASON_START_YEAR"] = year
         manifest["constants"].update(gen.get("constants", {}))
         gen_tracks = {"shared_tracks": {}, "track_overrides": {}, **gen}

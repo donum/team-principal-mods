@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,21,Edoardo Mortara,Audi Sport Team Rosberg [Team Rosberg],Audi A5 DTM,,1:25.847,+0.063,,qualified,best in Q2; Q1 1:26.179 (7th); Q2 1:25.847 (5th); Q3 1:25.858 (2nd); Q4 1:26.171 (1st); grid 1
+2,11,Gary Paffett,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:25.784,+0.000,,qualified,best in Q2; Q1 1:26.101 (4th); Q2 1:25.784 (1st); Q3 1:25.916 (4th); Q4 1:26.292 (2nd); grid 2
+3,3,Mattias Ekström,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi A5 DTM,,1:25.801,+0.017,,qualified,best in Q3; Q1 1:26.174 (6th); Q2 1:26.017 (9th); Q3 1:25.801 (1st); Q4 1:26.319 (3rd); grid 3
+4,1,Martin Tomczyk,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,1:25.794,+0.010,,qualified,best in Q2; Q1 1:26.028 (2nd); Q2 1:25.794 (2nd); Q3 1:25.874 (3rd); Q4 1:26.408 (4th); grid 4
+5,2,Joey Hand,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,1:25.927,+0.143,,qualified,best in Q3; Q1 1:26.389 (15th); Q2 1:25.946 (6th); Q3 1:25.927 (5th); grid 5
+6,7,Bruno Spengler,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,1:25.963,+0.179,,qualified,best in Q3; Q1 1:26.329 (12th); Q2 1:26.068 (10th); Q3 1:25.963 (6th); grid 6
+7,5,Jamie Green,AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:25.825,+0.041,,qualified,best in Q2; Q1 1:25.850 (1st); Q2 1:25.825 (4th); Q3 1:26.022 (7th); grid 7
+8,22,Filipe Albuquerque,Audi Sport Team Rosberg [Team Rosberg],Audi A5 DTM,,1:25.994,+0.210,,qualified,best in Q2; Q1 1:26.128 (5th); Q2 1:25.994 (8th); Q3 1:26.294 (8th); grid 8
+9,8,Dirk Werner,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,1:25.818,+0.034,,qualified,best in Q2; Q1 1:26.281 (9th); Q2 1:25.818 (3rd); Q3 1:26.309 (9th); grid 9
+10,6,Ralf Schumacher,AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:25.964,+0.180,,qualified,best in Q2; Q1 1:26.298 (11th); Q2 1:25.964 (7th); Q3 1:26.340 (10th); grid 10
+11,16,Augusto Farfus,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,1:26.068,+0.284,,qualified,best in Q2; Q1 1:26.566 (16th); Q2 1:26.068 (11th); grid 11
+12,10,Miguel Molina,Audi Sport Team Phoenix [Phoenix Racing],Audi A5 DTM,,1:26.099,+0.315,,qualified,best in Q1; Q1 1:26.099 (3rd); Q2 1:26.251 (12th); grid 12
+13,9,Mike Rockenfeller,Audi Sport Team Phoenix [Phoenix Racing],Audi A5 DTM,,1:26.232,+0.448,,qualified,best in Q1; Q1 1:26.232 (8th); Q2 1:26.274 (13th); grid 13
+14,12,Christian Vietoris,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,1:26.320,+0.536,,qualified,best in Q2; Q1 1:26.355 (13th); Q2 1:26.320 (14th); grid 14
+15,18,Adrien Tambay,Audi Sport Team Abt [Abt Sportsline],Audi A5 DTM,,1:26.384,+0.600,,qualified,best in Q1; Q1 1:26.384 (14th); Q2 1:26.449 (15th); grid 15
+16,4,Timo Scheider,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi A5 DTM,,1:26.291,+0.507,,qualified,best in Q1; Q1 1:26.291 (10th); Q2 1:26.519 (16th); grid 16
+17,23,Roberto Merhi,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],DTM AMG Mercedes C-Coupé,,1:26.605,+0.821,,qualified,best in Q1; Q1 1:26.605 (17th); grid 17
+18,15,Andy Priaulx,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,1:26.620,+0.836,,qualified,best in Q1; Q1 1:26.620 (18th); grid 18
+19,20,Robert Wickens,DHL Paket/Stern AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,1:26.725,+0.941,,qualified,best in Q1; Q1 1:26.725 (19th); grid 19
+20,24,Susie Wolff,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],DTM AMG Mercedes C-Coupé,,1:26.914,+1.130,,qualified,best in Q1; Q1 1:26.914 (20th); grid 20
+21,17,Rahel Frey,Audi Sport Team Abt [Abt Sportsline],Audi A5 DTM,,1:27.057,+1.273,,qualified,best in Q1; Q1 1:27.057 (21st); grid 21
+22,19,David Coulthard,DHL Paket/Stern AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,1:27.117,+1.333,,qualified,best in Q1; Q1 1:27.117 (22nd); grid 22

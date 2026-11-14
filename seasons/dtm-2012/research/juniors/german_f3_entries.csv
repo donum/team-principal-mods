@@ -1,0 +1,26 @@
+number,driver,nationality,birth_date,entrant,team_base,chassis,engine,rounds,notes
+1,René Binder,austrian,1992-01-01,Van Amersfoort Racing,"Huizen, Netherlands",Dallara F308/006,Volkswagen Power Engine,1-9,Cup class; born Innsbruck
+2,Lucas Auer,austrian,1994-09-11,Van Amersfoort Racing,"Huizen, Netherlands",Dallara F308/007,Volkswagen Power Engine,1-9,Cup class; rookie; runner-up and SONAX Rookie-Pokal winner; nephew of Gerhard Berger; later DTM driver (Mercedes from 2015)
+3,Dennis van de Laar,dutch,1994-02-03,Van Amersfoort Racing,"Huizen, Netherlands",Dallara F308/011,Volkswagen Power Engine,"1-3,5-9",Cup class; rookie; missed Spa (round 4) where Abt used car F308/011
+5,Daniel Abt,german,1992-12-03,Van Amersfoort Racing,"Huizen, Netherlands",Dallara F308/011,Volkswagen Power Engine,4,Cup class; guest start at Spa in the car of van de Laar; son of Hans-Jürgen Abt (Abt Sportsline runs Audi DTM cars)
+9,Luca Stolz,german,1995-07-29,Performance Racing,Sweden,Dallara F310/002,Volkswagen Power Engine,5-9,Cup class; rookie (in SONAX Rookie-Pokal table); moved up from TROPHY class (#63 HS Engineering rounds 1-4); took over the car of Bryant-Meisner; later DTM driver (Mercedes 2021-2024)
+10,John Bryant-Meisner,swedish,1994-09-21,Performance Racing,Sweden,Dallara F310/002,Volkswagen Power Engine,1,Cup class; rookie; injured after round 1 and missed the rest of the season
+11,Yannick Mettler,swiss,1989-10-26,Performance Racing,Sweden,Dallara F308/020,Volkswagen Power Engine,1-9,Cup class; born Luzern
+25,Mitchell Gilbert,australian,1994-05-10,Performance Racing,Sweden,Dallara F308/092,Volkswagen Power Engine,1-9,Cup class; rookie; born Kuala Lumpur (Malaysia); en.wikipedia gives birth year 1995
+14,Jimmy Eriksson,swedish,1991-03-14,Lotus (Motopark),"Oschersleben, Germany",Dallara F308/099,Volkswagen Power Engine,1-9,Cup class; champion; born Tomelilla
+15,Artem Markelov,russian,1994-09-10,Lotus (Motopark),"Oschersleben, Germany",Dallara F311/002,Volkswagen Power Engine,1-9,Cup class; rookie
+16,Kimiya Sato,japanese,1989-10-05,Lotus (Motopark),"Oschersleben, Germany",Dallara F308/098,Volkswagen Power Engine,1-9,Cup class; born Kobe; de.wikipedia writes Satō
+17,Sheban Siddiqi,british,1988-03-27,Lotus (Motopark),"Oschersleben, Germany",Dallara F308/096,Volkswagen Power Engine,1-9,Cup class; rookie; born Bangalore (India)
+18,Michela Cerruti,italian,1987-02-18,EuroInternational,Italy,Dallara F308/057,Volkswagen Power Engine,6-9,Cup class; born Rome; only woman in the field
+19,Tom Blomqvist,british,1993-11-30,EuroInternational,Italy,Dallara F311/001,Volkswagen Power Engine,"2-4,6,8",Cup class; skipped rounds 1 5 7 and 9; later BMW DTM driver (2015-2017)
+20,Alon Day,israeli,1991-11-04,EuroInternational,Italy,Dallara F311/001,Volkswagen Power Engine,9,Cup class; #27 ADM Motorsport (Dallara F308/072) rounds 5-8; then #20 EuroInternational (car F311/001 of Blomqvist) round 9
+27,Alon Day,israeli,1991-11-04,ADM Motorsport,Italy,Dallara F308/072,Volkswagen Power Engine,5-8,Cup class; see #20 EuroInternational for round 9
+28,Zoël Amberg,swiss,1992-09-25,ADM Motorsport,Italy,Dallara F308/029,Volkswagen Power Engine,6,Cup class; entered at Red Bull Ring but did not start any of the 3 races (DNS); born Schachen
+52,Luca Iannaccone,italian,1965-05-22,Rhino's Leipert Motorsport,Germany,Dallara F304/012,Opel,"1-7,9",TROPHY class; withdrew from round 8 (Nürburgring); spelt Iannacone in official results
+54,Jordi Weckx,belgian,1979-03-19,APEX Engineering,Belgium,Dallara F305/034,Opel (OPC-Challenge),1-8,TROPHY class; also team chief of APEX; en.wikipedia entry list says All but he has no Hockenheim results; de.wikipedia gives chassis F307
+58,Dominik Kocher,swiss,1991-10-11,Rennsport Rössler,Germany,Dallara F306/016,Opel (OPC-Challenge),"1-4,6-9",TROPHY class; birth date single source (formel3guide); born Locarno; official Hockenheim result lists the car as F307
+63,Luca Stolz,german,1995-07-29,HS Engineering,Austria,Dallara F305/037,Volkswagen,1-4,TROPHY class; rookie; then moved up to Cup class (#9 Performance Racing rounds 5-9)
+66,André Rudersdorf,german,1995-09-09,ma-con,Germany,Dallara F305/030,Volkswagen,"1-4,6-8",TROPHY class; rookie; Trophy champion; born Hadamar
+68,Michael Aberer,austrian,1971-11-29,Michael Aberer,Austria,Dallara F306/034,Volkswagen,9,TROPHY class; guest driver not eligible for points (en.wikipedia); de.wikipedia gives car #69 and scores him; born Stuttgart; de.wikipedia (2013 page) gives Swiss nationality
+72,Maximilian Hackl,german,1992-11-01,Franz Wöss Racing,Austria,Dallara F305/062,Opel (OPC-Challenge),6,TROPHY class; rookie (in SONAX Rookie-Pokal table); born Dachau
+78,Sylvain Warnecke,french,1979-12-30,Franz Wöss Racing,Austria,Dallara F302/033,Opel,6,TROPHY class; birth date single source (formel3guide); born Haguenau

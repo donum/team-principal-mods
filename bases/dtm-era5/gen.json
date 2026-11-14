@@ -1,0 +1,14 @@
+{
+  "$comment": "Generator defaults for the 2019-2020 DTM, merged over bases/dtm-era4/gen.json (tools/layers.py gen_config). Only the engines, weights and chassis names differ from era 4: the rules, car profiles and the Hankook tyre carry over. Engine power and mass are first estimates, not calibrated.",
+  "mass_kg": {"Audi": 980.0, "BMW": 980.0, "Aston Martin": 980.0},
+  "chassis": {
+    "$comment": "Each make's real car per year of the era.",
+    "Audi": {"prefix": "RS5T/", "names": {"2019": "RS 5 Turbo DTM", "2020": "RS 5 Turbo DTM"}},
+    "BMW": {"prefix": "M4T/", "names": {"2019": "M4 Turbo DTM", "2020": "M4 Turbo DTM"}}
+  },
+  "engines": {
+    "$comment": "2.0 litre turbo four-cylinders, about 610 hp plus push-to-pass. mass_kg plus the car's mass_kg gives the 1,070 kg minimum with driver and fuel. passby_audio stays the era4 choice until turbo sounds exist.",
+    "Audi": {"engine": "Audi RC8 2.0 TFSI", "power_rating": 60.0, "reliability_rating": 70.0, "fuel_efficiency": 60.0, "mass_kg": 90.0},
+    "BMW": {"engine": "BMW P48 Turbo", "power_rating": 59.0, "reliability_rating": 70.0, "fuel_efficiency": 60.0, "mass_kg": 90.0}
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$comment": "DTM 2020 over bases/dtm-era5. Audi Sport Team WRT ran three cars, so teams may enter three (wish list C1 covers more). The game week holds one race, so each round is two weeks (gen.json races_per_round, wish list A1 and A4).",
+  "categories": {
+    "formula_team_entry_cap": { "default": "three" }
+  }
+}

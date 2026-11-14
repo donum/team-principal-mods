@@ -1,0 +1,77 @@
+{
+  "note": "Same frame and tools as seasons/dtm-2013/track_art.json. The eight venues 2012 shares with 2013 are copies of the 2013 race-day images and track files (same layouts, same speed_scale; the images show 2013 branding). Valencia keeps the base's OSM file and map until it has its own art.",
+  "tracks": {
+    "brandshatch": {
+      "race_tracks": {
+        "track": "brands-hatch",
+        "layout": "indy@2003"
+      },
+      "spec": "bases/dtm-era4/track_specs/brandshatch.json",
+      "art": "race-track-themes/art/brands-hatch/indy@2003/2013/dtm/round-02/styles/illustrated-realism/variants/raceday/revisions/r0022/image.png",
+      "speed_scale": 0.9837
+    },
+    "hockenheim13": {
+      "race_tracks": {
+        "track": "hockenheimring",
+        "layout": "gp@2002"
+      },
+      "spec": "bases/dtm-era4/track_specs/hockenheim13.json",
+      "art": "race-track-themes/art/hockenheimring/gp@2002/2013/dtm/round-01/styles/illustrated-realism/variants/raceday/revisions/r0014/image.png",
+      "speed_scale": 1.0881
+    },
+    "lausitzring": {
+      "race_tracks": {
+        "track": "lausitzring",
+        "layout": "sprint@2008"
+      },
+      "spec": "bases/dtm-era4/track_specs/lausitzring.json",
+      "art": "race-track-themes/art/lausitzring/sprint@2008/2013/dtm/round-04/styles/illustrated-realism/variants/raceday/revisions/r0009/image.png",
+      "speed_scale": 0.9935
+    },
+    "norisring": {
+      "race_tracks": {
+        "track": "norisring",
+        "layout": "street@1972"
+      },
+      "spec": "seasons/dtm-1991/track_specs/norisring.json",
+      "art": "race-track-themes/art/norisring/street@1972/2013/dtm/round-05/styles/illustrated-realism/variants/raceday/revisions/r0009/image.png",
+      "speed_scale": 0.9818
+    },
+    "nuerburgring13": {
+      "race_tracks": {
+        "track": "nurburgring",
+        "layout": "sprint@2002"
+      },
+      "spec": "bases/dtm-era4/track_specs/nuerburgring13.json",
+      "art": "race-track-themes/art/nurburgring/sprint@2002/2013/dtm/round-07/styles/illustrated-realism/variants/raceday/revisions/r0010/image.png",
+      "speed_scale": 0.9724
+    },
+    "oschersleben": {
+      "race_tracks": {
+        "track": "oschersleben",
+        "layout": "gp@2007"
+      },
+      "spec": "bases/dtm-era4/track_specs/oschersleben.json",
+      "art": "race-track-themes/art/oschersleben/gp@2007/2013/dtm/round-08/styles/illustrated-realism/variants/raceday/revisions/r0009/image.png",
+      "speed_scale": 1.0377
+    },
+    "redbullring": {
+      "race_tracks": {
+        "track": "red-bull-ring",
+        "layout": "gp@2011"
+      },
+      "spec": "bases/dtm-era4/track_specs/redbullring.json",
+      "art": "race-track-themes/art/red-bull-ring/gp@2011/2013/dtm/round-03/styles/illustrated-realism/variants/raceday/revisions/r0011/image.png",
+      "speed_scale": 1.0662
+    },
+    "zandvoort": {
+      "race_tracks": {
+        "track": "zandvoort",
+        "layout": "gp@1999"
+      },
+      "spec": "bases/dtm-era4/track_specs/zandvoort.json",
+      "art": "race-track-themes/art/zandvoort/gp@1999/2013/dtm/round-09/styles/illustrated-realism/variants/raceday/revisions/r0013/image.png",
+      "speed_scale": 1.011
+    }
+  }
+}

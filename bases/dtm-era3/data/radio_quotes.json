@@ -1,0 +1,26 @@
+{
+  "$merge_base": true,
+  "$comment": "Touring-car damage calls: the front end is the splitter and bodywork, and the driver carries the damage on rather than coming in for a new nose.",
+  "quotes": {
+    "race_wing_damage": [
+      "The splitter's damaged. I've lost front grip.",
+      "Something's hanging off the front. I'll live with it.",
+      "The front bumper is loose, but the car still steers.",
+      "I'm understeering everywhere now. The splitter's gone.",
+      "Bodywork damage at the front. I'll keep pushing.",
+      "The front end took a hit. Balance is off, but I can carry on.",
+      "There's a flick missing. I can feel it in the fast corners.",
+      "Front aero is hurt. Tell me if the gap behind is safe."
+    ],
+    "race_contact": [
+      "{opponent} punted me. Is the car okay?",
+      "Contact! The car feels okay for now.",
+      "He leant on me in that corner.",
+      "Big hit. Have a look at the splitter and the underbody.",
+      "Something feels bent after that. Watch the data.",
+      "Door to door. That's touring cars.",
+      "We touched. I'm still in it.",
+      "Rubbing on the exit. No harm done, I think."
+    ]
+  }
+}

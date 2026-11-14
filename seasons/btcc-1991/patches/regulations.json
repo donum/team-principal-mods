@@ -1,0 +1,55 @@
+{
+  "categories": {
+    "points_system": {
+      "add_options": [
+        {
+          "key": "btcc_1991",
+          "name": "BTCC 1991",
+          "points": [20, 15, 12, 10, 8, 6, 4, 3, 2, 1],
+          "summary": "Points to the top ten of each race (20-15-12-10-8-6-4-3-2-1).",
+          "description": "Each race pays points to the top ten. The real 1991 totals do not match this scale exactly, so extra rules are still unknown."
+        }
+      ],
+      "default": "btcc_1991"
+    },
+    "car_profile": {
+      "add_options": [
+        {
+          "key": "super_touring_1991",
+          "name": "Super Touring 1991",
+          "corner_speed_multiplier": 0.76,
+          "acceleration_multiplier": 0.55,
+          "braking_multiplier": 0.6,
+          "drag_multiplier": 1.35,
+          "summary": "Two-litre production saloons with about 270 hp.",
+          "description": "The first Super Touring cars. They are slower than Group A cars on the straights. Calibrate against 1991 BTCC qualifying times."
+        }
+      ],
+      "default": "super_touring_1991"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "super_touring_1991",
+          "name": "Super Touring 1991",
+          "min_car_mass_kg": 950.0,
+          "summary": "One weight limit for every two-litre car (first estimate).",
+          "description": "Team car masses carry the per-model weight. The exact 1991 limit is not yet sourced."
+        }
+      ],
+      "default": "super_touring_1991"
+    },
+    "drs_policy": { "default": "disabled" },
+    "ers_policy": { "default": "disabled" },
+    "formula_refueling": { "default": "banned" },
+    "formula_compound_usage": { "default": "disabled" },
+    "formula_team_entry_cap": { "default": "three" },
+    "formula_team_entry_requirement": { "default": "variable" },
+    "pole_point": { "default": "disabled" },
+    "fastest_lap_point": { "default": "disabled" },
+    "qualifying_format": { "default": "session_60" },
+    "driver_aid_restrictions": { "default": "full_prohibition" },
+    "weekend_tyre_allocation": { "default": "unlimited" },
+    "reliability_profile": { "default": "meddling_reliability" }
+  }
+}

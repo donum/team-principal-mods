@@ -1,0 +1,645 @@
+{
+  "$comment": "DTM 2018 drivers, generated from research/entries.csv and standings.csv. Skills and talent are estimates from championship points; part-timers are reserves.",
+  "$template": {
+    "index": 0,
+    "override": {
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      }
+    },
+    "drop": [
+      "contract"
+    ],
+    "drop_if_absent": [
+      "team",
+      "number"
+    ]
+  },
+  "records": [
+    {
+      "name": "Gary Paffett",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Mercedes-AMG Motorsport PETRONAS",
+        "length_weeks": 52,
+        "salary_m": 2.5,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 36,
+      "talent": 90,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_veteran",
+      "nationality": "british",
+      "birth_year": 1981,
+      "team": "Mercedes-AMG Motorsport PETRONAS",
+      "number": 2
+    },
+    {
+      "name": "Pascal Wehrlein",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Mercedes-AMG Motorsport PETRONAS",
+        "length_weeks": 52,
+        "salary_m": 1.23,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 23,
+      "talent": 79,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1994,
+      "team": "Mercedes-AMG Motorsport PETRONAS",
+      "number": 94
+    },
+    {
+      "name": "Paul di Resta",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Mercedes-AMG Motorsport REMUS",
+        "length_weeks": 52,
+        "salary_m": 2.31,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 90,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "british",
+      "birth_year": 1986,
+      "team": "Mercedes-AMG Motorsport REMUS",
+      "number": 3
+    },
+    {
+      "name": "Daniel Juncadella",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Mercedes-AMG Motorsport REMUS",
+        "length_weeks": 52,
+        "salary_m": 0.83,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 74,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "spanish",
+      "birth_year": 1991,
+      "team": "Mercedes-AMG Motorsport REMUS",
+      "number": 23
+    },
+    {
+      "name": "Sébastien Ogier",
+      "cornering": 11,
+      "braking": 11,
+      "consistency": 11,
+      "smoothness": 11,
+      "control": 11,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Mercedes-AMG Motorsport REMUS",
+        "length_weeks": 52,
+        "salary_m": 0.3,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 34,
+      "talent": 60,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1983,
+      "reserve_number": 17
+    },
+    {
+      "name": "René Rast",
+      "cornering": 18,
+      "braking": 18,
+      "consistency": 17,
+      "smoothness": 18,
+      "control": 18,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 2.47,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 92,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "german",
+      "birth_year": 1986,
+      "team": "Audi Sport Team Rosberg",
+      "number": 33
+    },
+    {
+      "name": "Jamie Green",
+      "cornering": 13,
+      "braking": 13,
+      "consistency": 12,
+      "smoothness": 13,
+      "control": 13,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Rosberg",
+        "length_weeks": 52,
+        "salary_m": 0.53,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 35,
+      "talent": 67,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "british",
+      "birth_year": 1982,
+      "team": "Audi Sport Team Rosberg",
+      "number": 53
+    },
+    {
+      "name": "Edoardo Mortara",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "SILBERPFEIL Energy Mercedes-AMG Motorsport",
+        "length_weeks": 52,
+        "salary_m": 1.51,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 31,
+      "talent": 82,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "italian",
+      "birth_year": 1987,
+      "team": "SILBERPFEIL Energy Mercedes-AMG Motorsport",
+      "number": 48
+    },
+    {
+      "name": "Lucas Auer",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "SILBERPFEIL Energy Mercedes-AMG Motorsport",
+        "length_weeks": 52,
+        "salary_m": 1.34,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 23,
+      "talent": 80,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "austrian",
+      "birth_year": 1994,
+      "team": "SILBERPFEIL Energy Mercedes-AMG Motorsport",
+      "number": 22
+    },
+    {
+      "name": "Timo Glock",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMR",
+        "length_weeks": 52,
+        "salary_m": 1.54,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 35,
+      "talent": 82,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1982,
+      "team": "BMW Team RMR",
+      "number": 16
+    },
+    {
+      "name": "Philipp Eng",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMR",
+        "length_weeks": 52,
+        "salary_m": 1.18,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 28,
+      "talent": 78,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "austrian",
+      "birth_year": 1990,
+      "team": "BMW Team RMR",
+      "number": 25
+    },
+    {
+      "name": "Alex Zanardi",
+      "cornering": 10,
+      "braking": 10,
+      "consistency": 10,
+      "smoothness": 10,
+      "control": 10,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMR",
+        "length_weeks": 52,
+        "salary_m": 0.3,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 51,
+      "talent": 55,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "italian",
+      "birth_year": 1966,
+      "reserve_number": 12
+    },
+    {
+      "name": "Marco Wittmann",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 15,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMG",
+        "length_weeks": 52,
+        "salary_m": 1.71,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 28,
+      "talent": 85,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "top_racer",
+      "nationality": "german",
+      "birth_year": 1989,
+      "team": "BMW Team RMG",
+      "number": 11
+    },
+    {
+      "name": "Augusto Farfus",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RMG",
+        "length_weeks": 52,
+        "salary_m": 0.78,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 34,
+      "talent": 73,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "brazilian",
+      "birth_year": 1983,
+      "team": "BMW Team RMG",
+      "number": 15
+    },
+    {
+      "name": "Nico Müller",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 1.13,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 78,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "swiss",
+      "birth_year": 1992,
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 51
+    },
+    {
+      "name": "Robin Frijns",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 1.02,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 26,
+      "talent": 76,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "dutch",
+      "birth_year": 1991,
+      "team": "Audi Sport Team Abt Sportsline",
+      "number": 4
+    },
+    {
+      "name": "Mattias Ekström",
+      "cornering": 16,
+      "braking": 16,
+      "consistency": 16,
+      "smoothness": 16,
+      "control": 16,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Abt Sportsline",
+        "length_weeks": 52,
+        "salary_m": 0.3,
+        "start_week": 1,
+        "role": "reserve"
+      },
+      "age": 39,
+      "talent": 55,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "reliable_veteran",
+      "nationality": "swedish",
+      "birth_year": 1978,
+      "reserve_number": 5
+    },
+    {
+      "name": "Bruno Spengler",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RBM",
+        "length_weeks": 52,
+        "salary_m": 1.03,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 34,
+      "talent": 77,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "canadian",
+      "birth_year": 1983,
+      "team": "BMW Team RBM",
+      "number": 7
+    },
+    {
+      "name": "Joel Eriksson",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "BMW Team RBM",
+        "length_weeks": 52,
+        "salary_m": 0.92,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 19,
+      "talent": 75,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "swedish",
+      "birth_year": 1998,
+      "team": "BMW Team RBM",
+      "number": 47
+    },
+    {
+      "name": "Mike Rockenfeller",
+      "cornering": 15,
+      "braking": 15,
+      "consistency": 14,
+      "smoothness": 15,
+      "control": 15,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 1.05,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 34,
+      "talent": 77,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "german",
+      "birth_year": 1983,
+      "team": "Audi Sport Team Phoenix",
+      "number": 99
+    },
+    {
+      "name": "Loïc Duval",
+      "cornering": 14,
+      "braking": 14,
+      "consistency": 13,
+      "smoothness": 14,
+      "control": 14,
+      "balance_preference": 55,
+      "traction_preference": 50,
+      "contract": {
+        "team": "Audi Sport Team Phoenix",
+        "length_weeks": 52,
+        "salary_m": 0.77,
+        "start_week": 1,
+        "role": "main",
+        "status": "equal",
+        "priority": "equal"
+      },
+      "age": 35,
+      "talent": 72,
+      "traits": [],
+      "personalities": [
+        "loyal"
+      ],
+      "career_stage": "racer",
+      "nationality": "french",
+      "birth_year": 1982,
+      "team": "Audi Sport Team Phoenix",
+      "number": 28
+    }
+  ]
+}

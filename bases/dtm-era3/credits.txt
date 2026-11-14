@@ -1,0 +1,19 @@
+Era base DTM 2000-2011 (bases/dtm-era3), shared by the 2003, 2006 and 2010 packs:
+
+Track geometry (shared from the 2012-2018 base and the 1991 pack):
+  Map data (c) OpenStreetMap contributors, available under the
+  Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
+  Track outlines are today's layouts and may differ from the season's in detail.
+
+Maker logos (assets/engines), from Wikimedia Commons:
+  Audi chrome rings ("Audi Logo 1995", public domain), without the wordmark.
+  Mercedes-Benz star ("Mercedes-Logo.svg") by Khaled, CC BY-SA 4.0 -
+  https://commons.wikimedia.org/wiki/File:Mercedes-Logo.svg
+  All trademarks belong to their owners.
+
+Engine sounds: the game's own (vanilla) sounds. Era-3 recordings are not
+collected yet.
+
+Real team, driver, manufacturer and sponsor names are used for historical
+description only. Not affiliated with or endorsed by the DTM, ITR, the game's
+publisher or any manufacturer.

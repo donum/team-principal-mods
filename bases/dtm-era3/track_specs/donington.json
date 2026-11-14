@@ -1,0 +1,22 @@
+{
+  "id": "donington",
+  "name": "Donington Park",
+  "nationality": "british",
+  "bbox": [-1.392, 52.822, -1.365, 52.836],
+  "length_km": 4.023,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 36,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.73,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "left",
+  "loop_relation": "51165",
+  "exclude_way_names": ["Pit Lane", "Old GP pit entry"],
+  "pit_way_names": ["Pit Lane"],
+  "drs_zones": [],
+  "notes": "Grand Prix circuit with the Melbourne Loop (clockwise): Redgate, Hollywood, Craner Curves, Old Hairpin, Starkey's, McLeans, Coppice, Fogarty's, Melbourne Loop, Goddards. Raceway loop over the members of OSM relation 51165. DTM 2003. speed_scale 1.0 is uncalibrated."
+}

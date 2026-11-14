@@ -69,6 +69,29 @@ Team dashboard backgrounds (assets/dashboard_bgs):
   stern AMG-Mercedes:
     sternAMGMercedes3.jpg: Dennis de Wolde (InMotion Photos), used with permission - https://www.inmotion-photos.com
 
+Oschersleben start, every team and spectators (assets/dashboard_bgs/<team>4.jpg, dashboard_bg4.png):
+  The field in the first corners at Oschersleben, 15 September 2013, seen
+  from the stands. Photo by Jörg / Spieler Family, used with permission; it
+  keeps its copyright and is not covered by the pack's licence. Cropped to
+  16:9, resized, light sharpening and contrast.
+  https://www.flickr.com/photos/spieler/9873267756/
+
+Spectator dashboard backgrounds (assets/dashboard_bg*.png):
+  Eleven PNG copies of the team backgrounds above, one per team, credits as
+  listed there, plus the Oschersleben photo.
+    dashboard_bg.png: AudiSportTeamPhoenix.jpg
+    dashboard_bg2.png: BMWTeamSchnitzer.jpg
+    dashboard_bg3.png: EuronicsAMGMercedes3.jpg
+    dashboard_bg4.png: Oschersleben start (above)
+    dashboard_bg5.png: AudiSportTeamAbtSportsline3.jpg
+    dashboard_bg6.png: BMWTeamRMG2.jpg
+    dashboard_bg7.png: sternAMGMercedes3.jpg
+    dashboard_bg8.png: AudiSportTeamAbt.jpg
+    dashboard_bg9.png: BMWTeamMTEK.jpg
+    dashboard_bg10.png: STIHLAMGMercedes.jpg
+    dashboard_bg11.png: AudiSportTeamRosberg.jpg
+    dashboard_bg12.png: BMWTeamRBM.jpg
+
 Main menu background (assets/title_bg.png):
   Zandvoort 2013 by Kevin McGill, CC BY-SA 2.0 -
   https://commons.wikimedia.org/wiki/File:DTM_Zandvoort,_2013_(10075032383).jpg
@@ -77,3 +100,12 @@ Main menu background (assets/title_bg.png):
   DTM wordmark (2000-2016), public-domain text logo from Wikimedia Commons -
   https://commons.wikimedia.org/wiki/File:Deutsche_Tourenwagen_Masters_(logo).png
   DTM is a trademark of its owner; used to name the series only.
+
+Menu music (assets/audio/music):
+  The game's own tracks are replaced by four tracks by Kevin MacLeod
+  (incompetech.com), licensed under Creative Commons: By Attribution 4.0
+  (https://creativecommons.org/licenses/by/4.0/). Used unchanged.
+    Beauty Flow
+    Hep Cats
+    Laser Groove
+    Voice Over Under

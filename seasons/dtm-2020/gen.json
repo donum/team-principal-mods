@@ -1,0 +1,185 @@
+{
+  "$comment": "Inputs for tools/season_from_research.py: maps the 2020 entrants to pack teams, colours and tracks. Engines, weights and rules come from bases/dtm-era5, which builds on bases/dtm-era4 (car profiles, Hankook tyre, tracks). Colours are first estimates from the teams' usual colours, not yet checked against 2020 photos. rating_range is wider than era 4's because Audi won 16 of 18 races.",
+  "base": "dtm-era5",
+  "year": 2020,
+  "title": "DTM 2020 - Deutsche Tourenwagen Masters",
+  "races_per_round": 2,
+  "rating_range": [
+    53,
+    58
+  ],
+  "teams": {
+    "Audi Sport Team Rosberg": {
+      "previous_position": 1,
+      "color": [
+        125,
+        12,
+        25
+      ],
+      "secondary": [
+        195,
+        195,
+        200
+      ],
+      "works": true,
+      "history": "Keke Rosberg's team from Neustadt an der Weinstraße. Has raced Audis since 2006. René Rast won the 2017 and 2019 titles with the team."
+    },
+    "Audi Sport Team Abt Sportsline": {
+      "previous_position": 2,
+      "color": [
+        25,
+        40,
+        95
+      ],
+      "secondary": [
+        215,
+        25,
+        50
+      ],
+      "works": true,
+      "history": "Hans-Jürgen Abt's team from Kempten. Has run Audis in the DTM since 2000."
+    },
+    "Audi Sport Team Phoenix": {
+      "previous_position": 3,
+      "color": [
+        185,
+        205,
+        20
+      ],
+      "secondary": [
+        0,
+        100,
+        60
+      ],
+      "works": true,
+      "history": "Founded by Ernst Moser. Based in Meuspath, next to the Nürburgring. Has run Audis in the DTM since 2006."
+    },
+    "BMW Team RMG": {
+      "previous_position": 4,
+      "color": [
+        245,
+        245,
+        245
+      ],
+      "secondary": [
+        100,
+        40,
+        120
+      ],
+      "works": true,
+      "history": "Stefan Reinhold's team from Andernach. Marco Wittmann won the 2014 and 2016 titles with the team."
+    },
+    "BMW Team RMR": {
+      "previous_position": 5,
+      "color": [
+        255,
+        204,
+        0
+      ],
+      "secondary": [
+        25,
+        25,
+        25
+      ],
+      "works": true,
+      "history": "A BMW team run jointly by RMG and RBM. Entered since 2017."
+    },
+    "BMW Team RBM": {
+      "previous_position": 6,
+      "nationality": "belgian",
+      "color": [
+        0,
+        125,
+        65
+      ],
+      "secondary": [
+        215,
+        30,
+        40
+      ],
+      "works": true,
+      "history": "Founded by Bart Mampaey. Based in Mechelen, Belgium. Has run BMWs in the DTM since 2012."
+    },
+    "Audi Sport Team WRT": {
+      "previous_position": 7,
+      "nationality": "belgian",
+      "color": [
+        235,
+        235,
+        235
+      ],
+      "secondary": [
+        200,
+        20,
+        30
+      ],
+      "works": false,
+      "history": "Vincent Vosse's team from Belgium. Runs Audis in GT racing. Second DTM season in 2020, with three cars."
+    },
+    "Orlen Team ART": {
+      "previous_position": 8,
+      "nationality": "french",
+      "color": [
+        220,
+        20,
+        30
+      ],
+      "secondary": [
+        255,
+        255,
+        255
+      ],
+      "works": false,
+      "history": "Frédéric Vasseur's team from France. Ran Mercedes cars in the DTM in 2004 and 2005. Returns in 2020 with a customer BMW for Robert Kubica."
+    }
+  },
+  "drivers": {
+    "Benoît Tréluyer": {
+      "skill": 12
+    }
+  },
+  "tracks": {
+    "1": "spa",
+    "2": "lausitzring",
+    "3": "lausitzring_gp",
+    "4": "assen",
+    "5": "nuerburgring",
+    "6": "nuerburgring13",
+    "7": "zolder20",
+    "8": "zolder20",
+    "9": "hockenheim13"
+  },
+  "shared_tracks": {
+    "spa": "f1-v8",
+    "nuerburgring": "f1-v8"
+  },
+  "track_overrides": {
+    "$comment": "2020 race laps (research/calendar.csv), one value per track for both races of a round. Spa and the Nürburgring Grand Prix circuit are the F1 base's tracks: speed_mult 1.09 is the ratio between the DTM and F1 Hockenheim tracks (same layout), a first guess until simulated. Assen and Zolder (zolder20, today's layout) are traced in bases/dtm-era5; dtm-1991's zolder is the Group A track and stays apart.",
+    "spa": {
+      "race_laps": 26,
+      "speed_mult": 1.09
+    },
+    "lausitzring": {
+      "race_laps": 43
+    },
+    "lausitzring_gp": {
+      "race_laps": 34
+    },
+    "assen": {
+      "race_laps": 36
+    },
+    "nuerburgring": {
+      "race_laps": 31,
+      "speed_mult": 1.09
+    },
+    "nuerburgring13": {
+      "race_laps": 40
+    },
+    "zolder20": {
+      "race_laps": 41
+    },
+    "hockenheim13": {
+      "race_laps": 37
+    }
+  }
+}

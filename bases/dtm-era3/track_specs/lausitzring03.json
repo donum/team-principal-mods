@@ -1,0 +1,101 @@
+{
+  "id": "lausitzring03",
+  "name": "EuroSpeedway Lausitz",
+  "nationality": "german",
+  "bbox": [
+    13.905,
+    51.524,
+    13.945,
+    51.546
+  ],
+  "length_km": 4.575,
+  "width_m": 13.0,
+  "speed_scale": 1.0,
+  "race_laps": 35,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.5,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.63,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.0,
+  "pole_side": "left",
+  "route_way_ids": [
+    "115077605"
+  ],
+  "via": [
+    [
+      51.5341989,
+      13.9234246
+    ],
+    [
+      51.5318143,
+      13.9208064
+    ],
+    [
+      51.5294087,
+      13.9270398
+    ],
+    [
+      51.5283555,
+      13.9309775
+    ],
+    [
+      51.528818,
+      13.9334727
+    ],
+    [
+      51.5300675,
+      13.9320226
+    ],
+    [
+      51.530445,
+      13.927022
+    ],
+    [
+      51.5319703,
+      13.9267602
+    ],
+    [
+      51.5313294,
+      13.9322829
+    ],
+    [
+      51.5322633,
+      13.9339582
+    ],
+    [
+      51.5341275,
+      13.9347574
+    ],
+    [
+      51.5358975,
+      13.933257
+    ],
+    [
+      51.535093,
+      13.9282087
+    ],
+    [
+      51.5342117,
+      13.9234765
+    ]
+  ],
+  "start": [
+    51.53467,
+    13.92616
+  ],
+  "drs_zones": [],
+  "notes": "Long road course of 2003 along OSM way 115077605 (DEKRA Lausitzring, one closed way of 4,578 m), in the way's own direction. Its length matches the 4.575 km implied by the 2003 race distance (research/calendar.csv). Sources say the 2003 layout used Turn 1 of the tri-oval; today's mapped course runs on the infield there, so that corner may differ. speed_scale 1.0 is uncalibrated. Start line as the base's short course (dtm-era4 lausitzring). The way's two ends are 4 m apart, joined by a bridge. Via points every 350 m keep the route on the way.",
+  "bridges": [
+    [
+      [
+        51.5342117,
+        13.9234765
+      ],
+      [
+        51.5341989,
+        13.9234246
+      ]
+    ]
+  ]
+}

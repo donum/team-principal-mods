@@ -1,0 +1,54 @@
+{
+  "$comment": "Inputs for tools/season_from_research.py: maps the 2010 entrants to pack teams, colours and tracks. Rules, engines and the Dunlop tyre come from the era base (bases/dtm-era3, set up on 2003); 2010 sets the A4 and C-Klasse W204 car profiles and the 2010 weight. Development was frozen: the works teams (HWA, Abt) ran 2009 cars, everyone else 2008 cars, which get less development headroom (potential 3, wishlist C4 and D7). Lighter older cars come only from ru.wiki and are not used. Team colours are first estimates, not yet checked against 2010 photos. Adria is traced into the era base (its spec has 2003's laps and tyre wear, so 2010's are in track_overrides). The short Hockenheim layout and the Shanghai street circuit are placeholders that copy another track's geometry and lap time.",
+  "base": "dtm-era3",
+  "year": 2010,
+  "title": "DTM 2010 - Deutsche Tourenwagen Masters",
+  "make_profiles": {"Audi": "audi_a4_dtm", "Mercedes-Benz": "amg_c_klasse_dtm"},
+  "mass_kg": {"Audi": 905.0, "Mercedes-Benz": 905.0},
+  "rating_range": [54, 57.5],
+  "teams": {
+    "Salzgitter/Mercedes-Benz Bank AMG-Mercedes": {"previous_position": 1, "entrants": ["Salzgitter AMG-Mercedes [HWA AG]", "Mercedes-Benz Bank AMG-Mercedes [HWA AG]"],
+                                                   "color": [195, 195, 200], "secondary": [0, 60, 130], "works": true,
+                                                   "history": "Run by HWA AG from Affalterbach. HWA builds and runs the Mercedes DTM cars. Gary Paffett won the 2005 title."},
+    "Laureus AMG-Mercedes": {"previous_position": 4, "entrants": ["AMG-Mercedes [HWA AG]", "Laureus AMG-Mercedes [HWA AG]"],
+                             "color": [190, 190, 195], "secondary": [30, 30, 30], "works": true,
+                             "history": "The second HWA car pair. Car #7 is entered as AMG-Mercedes, car #8 as Laureus AMG-Mercedes."},
+    "Audi Sport Team Abt": {"previous_position": 2, "entrants": ["Audi Sport Team Abt [Abt Sportsline]"], "color": [35, 35, 38], "secondary": [200, 200, 205], "works": true,
+                            "history": "One of the Abt Sportsline teams from Kempten. Timo Scheider won the 2008 and 2009 titles with the team."},
+    "Audi Sport Team Abt Sportsline": {"previous_position": 3, "entrants": ["Audi Sport Team Abt Sportsline [Abt Sportsline]"], "color": [25, 40, 95], "secondary": [215, 25, 50], "works": true,
+                                       "history": "Hans-Jürgen Abt's team from Kempten. Has run Audis in the DTM since 2000. Mattias Ekström won the title in 2004 and 2007."},
+    "TV Spielfilm/Junge Sterne AMG-Mercedes": {"previous_position": 5, "entrants": ["Junge Sterne AMG-Mercedes [Persson Motorsport]", "TV Spielfilm AMG-Mercedes [Persson Motorsport]", "Stern AMG-Mercedes [Persson Motorsport]"],
+                                               "color": [0, 120, 200], "secondary": [255, 255, 255], "potential": 3,
+                                               "history": "Ingmar Persson's team. Runs three 2008 C-Klasse cars. Car #21 is entered as Stern AMG-Mercedes."},
+    "Audi Sport Team Phoenix": {"previous_position": 6, "entrants": ["Audi Sport Team Phoenix [Phoenix Racing]"], "color": [240, 240, 240], "secondary": [0, 100, 60], "potential": 3,
+                                "history": "Founded by Ernst Moser. Based in Meuspath, next to the Nürburgring. Has run Audis in the DTM since 2006."},
+    "Audi Sport Team Rosberg": {"previous_position": 7, "entrants": ["Audi Sport Team Rosberg [Team Rosberg]"], "color": [125, 12, 25], "secondary": [195, 195, 200], "potential": 3,
+                                "history": "Keke Rosberg's team from Neustadt an der Weinstraße. First DTM season in 1995 with Opel. Has raced Audis since 2006."},
+    "Deutsche Post/GQ AMG-Mercedes": {"previous_position": 8, "entrants": ["GQ AMG-Mercedes [Mücke Motorsport]", "Deutsche Post AMG-Mercedes [Mücke Motorsport]"],
+                                      "color": [255, 204, 0], "secondary": [210, 20, 30], "potential": 3,
+                                      "history": "Peter Mücke's team from Berlin. Runs 2008 C-Klasse cars. David Coulthard drives his first DTM season here."},
+    "Audi Sport Rookie Team Abt": {"previous_position": 9, "entrants": ["Audi Sport Rookie Team Abt [Abt Sportsline]"], "color": [250, 250, 250], "secondary": [215, 25, 50], "potential": 3,
+                                   "history": "A one-car Abt Sportsline team for a rookie on a 2008 Audi A4. Miguel Molina drives."}
+  },
+  "drivers": {
+    "Darryl O'Young": {"nationality": "chinese"}
+  },
+  "tracks": {"1": "hockenheim13", "2": "valencia", "3": "lausitzring", "4": "norisring", "5": "nuerburgring13", "6": "zandvoort",
+             "7": "brandshatch", "8": "oschersleben", "9": "hockenheim10", "10": "adria", "11": "shanghai"},
+  "track_placeholders": {
+    "hockenheim10": {"from": "hockenheim13", "override": {"name": "Hockenheimring (short)", "length_km": 3.736, "lap_modifier": 0.94, "tyre_wear_mult": 1.34}},
+    "shanghai": {"from": "norisring", "override": {"name": "Shanghai Pudong street circuit", "nationality": "chinese", "length_km": 2.465, "lap_modifier": 0.98, "tyre_wear_mult": 1.19}}
+  },
+  "track_overrides": {
+    "$comment": "2010 race laps (research/calendar.csv; some sources differ, see research/season.md). tyre_wear_mult is the base's 2012 value scaled by 2012 laps / 2010 laps, so two stops stay the normal strategy. Not yet simulated.",
+    "hockenheim13": {"race_laps": 39, "tyre_wear_mult": 1.62},
+    "valencia": {"race_laps": 45, "tyre_wear_mult": 1.33},
+    "lausitzring": {"race_laps": 52, "tyre_wear_mult": 1.1},
+    "norisring": {"race_laps": 82, "tyre_wear_mult": 0.71},
+    "nuerburgring13": {"race_laps": 49, "tyre_wear_mult": 1.3},
+    "zandvoort": {"race_laps": 42, "tyre_wear_mult": 1.48},
+    "brandshatch": {"race_laps": 98, "tyre_wear_mult": 0.46},
+    "oschersleben": {"race_laps": 50, "tyre_wear_mult": 1.2},
+    "adria": {"race_laps": 38, "tyre_wear_mult": 1.17}
+  }
+}

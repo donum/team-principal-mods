@@ -493,7 +493,7 @@ function sounds() {
 }
 
 function candidates() {
-  return `<div style="display:grid;gap:6px"><h2>Sound candidates</h2><p class="lede">Recordings considered for the pack, in use or set aside. Each group is a folder under private/engine_audio; new candidates appear here on the next build.${D.library_page ? ` The full ranked clip library has its own page: <a href="${esc(D.library_page)}">library/index.html</a> (opens only on this computer).` : ""}</p></div>
+  return `<div style="display:grid;gap:6px"><h2>Sound candidates</h2><p class="lede">Recordings and music considered for the pack, in use or set aside. Each group names its folder under private/; new candidates appear here on the next build.${D.library_page ? ` The full ranked clip library has its own page: <a href="${esc(D.library_page)}">library/index.html</a> (opens only on this computer).` : ""}</p></div>
   ${D.candidates.map(g => `<div class="panel cgroup">
     <div style="display:grid;gap:4px"><h3>${esc(g.title)}</h3><span class="small muted">${esc(g.note)} <span class="mono">${esc(g.folder)}</span></span></div>
     ${g.items.map(i => `<div class="citem"><div style="display:grid;gap:4px;min-width:0"><span class="nm">${esc(i.name)}</span>${i.in_use ? chip("inuse", "in the pack") : ""}${i.note ? `<span class="small muted">${esc(i.note)}</span>` : ""}</div><div style="display:grid;gap:2px;min-width:0">${audioTag(i)}</div></div>`).join("")}

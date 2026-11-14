@@ -1,0 +1,58 @@
+{
+  "$comment": "DTM 2000-2011 rules, set up on 2003 (the mother template). A season patch is applied on top (tools/layers.py): 2003 uses one qualifying session (its Superpole is not possible, wishlist A5 and A6); 2006 and 2010 knockout qualifying. Two mandatory stops are not a game rule (wishlist B5): tyre wear and the refuelling tank make two stops the normal strategy.",
+  "categories": {
+    "points_system": {
+      "add_options": [
+        {
+          "key": "dtm_top8",
+          "name": "DTM 2003",
+          "points": [10, 8, 6, 5, 4, 3, 2, 1],
+          "summary": "Points for the top eight (10-8-6-5-4-3-2-1).",
+          "description": "The DTM points from 2003 to 2010. Only the first eight score."
+        }
+      ],
+      "default": "dtm_top8"
+    },
+    "car_profile": {
+      "add_options": [
+        {
+          "key": "dtm_v8_silhouette",
+          "name": "DTM V8 silhouette",
+          "corner_speed_multiplier": 1.1,
+          "acceleration_multiplier": 0.5,
+          "braking_multiplier": 1.0,
+          "drag_multiplier": 1.5,
+          "summary": "Carbon-chassis DTM silhouettes: about 470 hp, 1,080 kg and a lot of downforce.",
+          "description": "The 2000-2011 DTM cars. Start values from the 2013 car (era 4) with a little less corner speed. Not yet calibrated against the era's lap times."
+        }
+      ],
+      "default": "dtm_v8_silhouette"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "dtm_era3",
+          "name": "DTM 2003",
+          "min_car_mass_kg": 935.0,
+          "summary": "1,080 kg including the driver for every make.",
+          "description": "One minimum weight for all makes. The chassis figure here excludes the engine mass the game adds on top."
+        }
+      ],
+      "default": "dtm_era3"
+    },
+    "safety_car_policy": { "default": "physical_only" },
+    "drs_policy": { "default": "disabled" },
+    "ers_policy": { "default": "disabled" },
+    "formula_refueling": { "default": "allowed" },
+    "formula_fuel_tank": { "default": "60kg" },
+    "formula_compound_usage": { "default": "disabled" },
+    "formula_team_entry_cap": { "default": "three" },
+    "formula_team_entry_requirement": { "default": "variable" },
+    "pole_point": { "default": "disabled" },
+    "fastest_lap_point": { "default": "disabled" },
+    "qualifying_format": { "default": "knockout" },
+    "driver_aid_restrictions": { "default": "full_prohibition" },
+    "weekend_tyre_allocation": { "default": "light" },
+    "reliability_profile": { "default": "high_reliability" }
+  }
+}

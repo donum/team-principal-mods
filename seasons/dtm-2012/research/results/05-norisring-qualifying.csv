@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,11,Gary Paffett,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,49.139,+0.116,,qualified,"time from Q4 (official classification time); Q4 49.139; other session times not found; grid 1; hot and dry, about 35 C"
+2,5,Jamie Green,AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,49.171,+0.148,,qualified,time from Q4 (official classification time); Q4 49.171; other session times not found; grid 2
+3,16,Augusto Farfus,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,49.255,+0.232,,qualified,time from Q4 (official classification time); Q4 49.255; other session times not found; grid 3
+4,3,Mattias Ekström,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi A5 DTM,,49.369,+0.346,,qualified,time from Q4 (official classification time); Q4 49.369; other session times not found; grid 4
+5,6,Ralf Schumacher,AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,49.023,+0.000,,qualified,time from Q3 (official classification time); Q3 49.023; other session times not found; grid 5
+6,1,Martin Tomczyk,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,49.049,+0.026,,qualified,time from Q3 (official classification time); Q3 49.049; other session times not found; grid 6
+7,7,Bruno Spengler,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,49.100,+0.077,,qualified,time from Q3 (official classification time); Q3 49.100; other session times not found; grid 7
+8,12,Christian Vietoris,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,,49.156,+0.133,,qualified,time from Q3 (official classification time); Q3 49.156; other session times not found; grid 8
+9,15,Andy Priaulx,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),,49.186,+0.163,,qualified,time from Q3 (official classification time); Q3 49.186; other session times not found; grid 9
+10,21,Edoardo Mortara,Audi Sport Team Rosberg [Team Rosberg],Audi A5 DTM,,49.195,+0.172,,qualified,time from Q3 (official classification time); Q3 49.195; other session times not found; grid 10
+11,9,Mike Rockenfeller,Audi Sport Team Phoenix [Phoenix Racing],Audi A5 DTM,,49.029,+0.006,,qualified,time from Q2 (official classification time); Q2 49.029; other session times not found; grid 11
+12,18,Adrien Tambay,Audi Sport Team Abt [Abt Sportsline],Audi A5 DTM,,49.038,+0.015,,qualified,time from Q2 (official classification time); Q2 49.038; other session times not found; grid 12
+13,22,Filipe Albuquerque,Audi Sport Team Rosberg [Team Rosberg],Audi A5 DTM,,49.091,+0.068,,qualified,time from Q2 (official classification time); Q2 49.091; other session times not found; grid 13
+14,19,David Coulthard,DHL Paket/Stern AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,49.130,+0.107,,qualified,time from Q2 (official classification time); Q2 49.130; other session times not found; grid 14
+15,2,Joey Hand,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),,49.135,+0.112,,qualified,time from Q2 (official classification time); Q2 49.135; other session times not found; grid 15
+16,8,Dirk Werner,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),,49.297,+0.274,,qualified,time from Q2 (official classification time); Q2 49.297; other session times not found; grid 16
+17,20,Robert Wickens,DHL Paket/Stern AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,,49.248,+0.225,,qualified,time from Q1 (official classification time); Q1 49.248; Q1 rank not found; grid 17
+18,23,Roberto Merhi,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],DTM AMG Mercedes C-Coupé,,49.348,+0.325,,qualified,time from Q1 (official classification time); Q1 49.348; Q1 rank not found; grid 18
+19,24,Susie Wolff,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],DTM AMG Mercedes C-Coupé,,49.378,+0.355,,qualified,time from Q1 (official classification time); Q1 49.378; Q1 rank not found; grid 19
+20,10,Miguel Molina,Audi Sport Team Phoenix [Phoenix Racing],Audi A5 DTM,,49.466,+0.443,,qualified,time from Q1 (official classification time); Q1 49.466; Q1 rank not found; grid 20
+21,4,Timo Scheider,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi A5 DTM,,49.525,+0.502,,qualified,time from Q1 (official classification time); Q1 49.525; Q1 rank not found; grid 21
+22,17,Rahel Frey,Audi Sport Team Abt [Abt Sportsline],Audi A5 DTM,,49.539,+0.516,,qualified,time from Q1 (official classification time); Q1 49.539; Q1 rank not found; grid 22

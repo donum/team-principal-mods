@@ -50,6 +50,7 @@ import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -57,6 +58,7 @@ import layers  # noqa: E402
 TEMPLATE = Path(__file__).with_name("mod_browser_template.html")
 OUT_ROOT = REPO / "private" / "mod_browser"
 AUDIO_DATA = REPO / "private" / "engine_audio"
+MUSIC_CANDIDATES = REPO / "private" / "music" / "candidates"
 DEFAULT_GAME = Path(r"X:\SteamLibrary\steamapps\common\Team Principal A Racing Manager")
 AUDIO_EXT = {".wav", ".ogg", ".mp3", ".flac"}
 OVERLAY_DIR = "_private_overlay"                   # engine_audio/overlay.py STATE_DIR, under assets/audio
@@ -171,7 +173,7 @@ class Media:
         if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
             shutil.copy2(src, dst)
         self.used.add(dst)
-        return f"media/img/{rel}"
+        return quote(f"media/img/{rel}")
 
     def audio(self, src: Path, rel: str) -> str | None:
         """OGG preview (keeps the browser page light), redone only when the source changes."""
@@ -196,7 +198,8 @@ class Media:
                 tmp.replace(alt)
                 dst = alt
         self.used.add(dst)
-        return f"media/audio/{dst.relative_to(self.root / 'audio').as_posix()}"
+        # quoted: a file named "Cold%20Funk.mp3" must not be read as "Cold Funk"
+        return quote(f"media/audio/{dst.relative_to(self.root / 'audio').as_posix()}")
 
     def prune(self) -> int:
         n = 0
@@ -498,6 +501,7 @@ def build_tracks(pack, base, season, manifest, media):
     own = {name[:-5]: layers.layer_of(season, path) for name, path in layers.files(season, "tracks").items()} if season else {}
     shared = manifest.get("shared_tracks", {})
     overrides = manifest.get("track_overrides", {})
+    placeholders = {k: v["from"] for k, v in manifest.get("track_placeholders", {}).items() if not k.startswith("$")}
     tracks = []
     for p in sorted((pack / "tracks").glob("*.json")):
         t = load_json(p, {})
@@ -506,6 +510,8 @@ def build_tracks(pack, base, season, manifest, media):
             prov, origin = "custom", f"Our own trace ({own[tid].relative_to(REPO).as_posix()}/tracks)"
         elif tid in shared:
             prov, origin = "custom", f"Our trace, shared from {shared[tid]}"
+        elif tid in placeholders:
+            prov, origin = "custom", f"Placeholder: not traced yet, uses the geometry of {placeholders[tid]}"
         elif same_file(p, base / "tracks" / p.name):
             prov, origin = "vanilla", "Vanilla track from the base pack"
         else:
@@ -614,8 +620,42 @@ def build_sounds(pack, base, media, private):
     return rows
 
 
-def build_candidates(media):
+def tags(path: Path) -> dict:
+    """ID3/Vorbis tags of an audio file, keys lower-cased."""
+    res = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format_tags", "-of", "json", str(path)],
+                         capture_output=True, text=True)
+    try:
+        return {k.lower(): v for k, v in json.loads(res.stdout)["format"].get("tags", {}).items()}
+    except (ValueError, KeyError):
+        return {}
+
+
+def music_candidates(media, pack: Path | None) -> dict | None:
+    """Menu music considered for the pack (private/music/candidates, not shipped)."""
+    files = [p for p in sorted(MUSIC_CANDIDATES.glob("*")) if p.suffix.lower() in AUDIO_EXT]
+    if not files:
+        return None
+    playlist = {p.name for p in (pack / "assets" / "audio" / "music").glob("*")} if pack else set()
+    items = []
+    for p in files:
+        t = tags(p)
+        artist = t.get("artist") or t.get("tcm") or ""
+        bits = [b for b in (artist, t.get("genre"), t.get("date")) if b]
+        if "incompetech" in t.get("comment", "").lower() or artist == "Kevin MacLeod":
+            bits.append("incompetech.com, CC BY 4.0 (credit needed)")
+        items.append({"name": t.get("title") or p.stem, "file": p.name,
+                      "audio": media.audio(p, f"candidates/music/{p.name}"), "seconds": duration(p),
+                      "in_use": p.name in playlist, "note": ", ".join(bits)})
+    return {"title": "Menu music", "folder": "private/music/candidates",
+            "note": "Tracks for the dashboard playlist. Not in the pack until copied into the season's assets/audio/music.",
+            "items": items}
+
+
+def build_candidates(media, pack: Path | None = None):
     groups, seen = [], set()
+    music = music_candidates(media, pack)
+    if music:
+        groups.append(music)
     try:
         sys.path.insert(0, str(REPO / "tools" / "engine_audio"))
         from ambience import CROWD          # the crowd stretch in use
@@ -766,7 +806,7 @@ def build(season: Path | None, game: Path, pack_folder: str | None = None) -> Pa
     backgrounds = build_backgrounds(pack, base, game, media)
     sounds = build_sounds(pack, base, media, private_audio | private)
     # candidates belong to the private audio pipeline, so only packs carrying its overlay show them
-    candidates, library_page = build_candidates(media) if private else ([], None)
+    candidates, library_page = build_candidates(media, pack) if private else ([], None)
     files = classify_files(pack, base, private, season)
     bc, pc = constants(base / "constants.py"), constants(pack / "constants.py")
     data = {

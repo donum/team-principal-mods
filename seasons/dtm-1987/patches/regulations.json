@@ -1,0 +1,91 @@
+{
+  "$comment": "DTM 1987 rules: the 1991 template's Group A rules with the 1987 points table and minimum weights. One race per round, no pit stops.",
+  "categories": {
+    "points_system": {
+      "add_options": [
+        {
+          "key": "dtm_1987",
+          "name": "DTM 1987",
+          "points": [
+            20,
+            18,
+            16,
+            15,
+            14,
+            13,
+            12,
+            11,
+            10,
+            9
+          ],
+          "summary": "DTM scoring for the top ten (20-18-16-15-14-13-12-11-10-9).",
+          "description": "The 1987 Deutsche Tourenwagen-Meisterschaft paid points down to 18th place, with one result dropped. The game pays the top ten only."
+        }
+      ],
+      "default": "dtm_1987"
+    },
+    "car_profile": {
+      "add_options": [
+        {
+          "key": "group_a_touring",
+          "name": "Group A Touring Cars",
+          "corner_speed_multiplier": 0.78,
+          "acceleration_multiplier": 0.62,
+          "braking_multiplier": 0.6,
+          "drag_multiplier": 1.35,
+          "summary": "Heavy, low-downforce production-based saloons with roughly 330-370 hp.",
+          "description": "Group A touring cars corner, accelerate and brake far below single-seater levels. Calibrate against 1991 DTM qualifying times."
+        }
+      ],
+      "default": "group_a_touring"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "group_a_1987",
+          "name": "Group A 1987",
+          "min_car_mass_kg": 860.0,
+          "summary": "DTM 1987 minimum weights per model; the lightest car, the BMW M3, weighs 1,000 kg.",
+          "description": "Team car masses carry the per-model weight at round 1 (BMW M3 1000 kg, Mercedes 190E 1060 kg, Alfa 75 Turbo 1150 kg, BMW 635 CSi 1200 kg, Volvo 240 Turbo 1315 kg, Ford Sierra XR4Ti 1350 kg). The chassis figure here excludes the engine mass the game adds on top (BMW M3 1000 kg minus its 140 kg engine), as in the DTM 2013 pack."
+        }
+      ],
+      "default": "group_a_1987"
+    },
+    "drs_policy": {
+      "default": "disabled"
+    },
+    "ers_policy": {
+      "default": "disabled"
+    },
+    "formula_refueling": {
+      "default": "banned"
+    },
+    "formula_compound_usage": {
+      "default": "disabled"
+    },
+    "formula_team_entry_cap": {
+      "default": "three"
+    },
+    "formula_team_entry_requirement": {
+      "default": "variable"
+    },
+    "pole_point": {
+      "default": "disabled"
+    },
+    "fastest_lap_point": {
+      "default": "disabled"
+    },
+    "qualifying_format": {
+      "default": "session_60"
+    },
+    "driver_aid_restrictions": {
+      "default": "full_prohibition"
+    },
+    "weekend_tyre_allocation": {
+      "default": "unlimited"
+    },
+    "reliability_profile": {
+      "default": "meddling_reliability"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$comment": "Inputs for tools/season_from_research.py: maps the 2018 entrants to pack teams, colours and tracks. Rules, car profiles, engines, tyres and the engine sounds come from the era base (bases/dtm-era4); 2018 changes only what is set here and in patches/regulations.json (one qualifying per race, two races per round). Colours are first estimates from the team's usual colours, not yet checked against 2018 photos.",
+  "base": "dtm-era4",
+  "year": 2018,
+  "title": "DTM 2018 - Deutsche Tourenwagen Masters",
+  "races_per_round": 2,
+  "mass_kg": {"Audi": 970.0, "BMW": 970.0, "Mercedes-Benz": 970.0},
+  "teams": {
+    "Mercedes-AMG Motorsport PETRONAS": {"previous_position": 3, "color": [0, 161, 155], "secondary": [192, 192, 197], "works": true,
+                                         "history": "One of three HWA AG teams from Affalterbach. HWA builds and runs the Mercedes DTM cars. 2018 is the last DTM season for Mercedes."},
+    "Mercedes-AMG Motorsport REMUS": {"previous_position": 5, "color": [200, 200, 205], "secondary": [210, 25, 35], "works": true,
+                                      "history": "The second HWA AG team. Paul di Resta won the DTM title in 2010."},
+    "SILBERPFEIL Energy Mercedes-AMG Motorsport": {"previous_position": 9, "color": [35, 35, 40], "secondary": [190, 190, 195], "works": true,
+                                                   "history": "The third HWA AG team, entered with the SILBERPFEIL Energy drink."},
+    "Audi Sport Team Rosberg": {"previous_position": 1, "color": [125, 12, 25], "secondary": [195, 195, 200], "works": true,
+                                "history": "Keke Rosberg's team from Neustadt an der Weinstraße. Has raced Audis since 2006. René Rast won the 2017 title with the team."},
+    "Audi Sport Team Abt Sportsline": {"previous_position": 2, "color": [25, 40, 95], "secondary": [215, 25, 50], "works": true,
+                                       "history": "Hans-Jürgen Abt's team from Kempten. Has run Audis in the DTM since 2000."},
+    "Audi Sport Team Phoenix": {"previous_position": 7, "color": [185, 205, 20], "secondary": [0, 100, 60], "works": true,
+                                "history": "Founded by Ernst Moser. Based in Meuspath, next to the Nürburgring. Has run Audis in the DTM since 2006."},
+    "BMW Team RMG": {"previous_position": 6, "color": [245, 245, 245], "secondary": [100, 40, 120], "works": true,
+                     "history": "Stefan Reinhold's team from Andernach. Marco Wittmann won the 2014 and 2016 titles with the team."},
+    "BMW Team RMR": {"previous_position": 8, "color": [255, 204, 0], "secondary": [25, 25, 25], "works": true,
+                     "history": "A BMW team run jointly by RMG and RBM. Entered since 2017."},
+    "BMW Team RBM": {"previous_position": 4, "nationality": "belgian", "color": [0, 125, 65], "secondary": [215, 30, 40], "works": true,
+                     "history": "Founded by Bart Mampaey. Based in Mechelen, Belgium. Has run BMWs in the DTM since 2012."}
+  },
+  "drivers": {
+    "Sébastien Ogier": {"skill": 11},
+    "Alex Zanardi": {"skill": 10},
+    "Mattias Ekström": {"skill": 16}
+  },
+  "tracks": {"1": "hockenheim13", "2": "lausitzring_gp", "3": "hungaroring", "4": "norisring", "5": "zandvoort",
+             "6": "brandshatch_gp", "7": "misano", "8": "nuerburgring13", "9": "redbullring", "10": "hockenheim13"},
+  "shared_tracks": {"hungaroring": "f1-v8"},
+  "track_overrides": {
+    "$comment": "2018 race laps per race (55 min + 1 lap, research/calendar.csv), the same for both races of a round (the longer one where they differ; Lausitz race 1 ran only 21 laps, reason not known). The Hungaroring is the F1 base's track: speed_mult 1.09 is the ratio between the DTM and F1 Hockenheim tracks (same layout), a first guess until simulated. Lausitzring GP, Brands Hatch GP and Misano are the base's own tracks, traced for 2018 with speed_scale 1.0 (uncalibrated).",
+    "hockenheim13": {"race_laps": 36},
+    "lausitzring_gp": {"race_laps": 34},
+    "hungaroring": {"race_laps": 34, "speed_mult": 1.09},
+    "norisring": {"race_laps": 68},
+    "zandvoort": {"race_laps": 35},
+    "brandshatch_gp": {"race_laps": 40},
+    "misano": {"race_laps": 32},
+    "nuerburgring13": {"race_laps": 40},
+    "redbullring": {"race_laps": 40}
+  }
+}

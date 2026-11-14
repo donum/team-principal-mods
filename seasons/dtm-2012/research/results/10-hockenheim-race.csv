@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,7,Bruno Spengler,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),42,1:07:59.069,,1:35.603,classified,grid 3; 2 stops (mandatory); 25 pts
+2,11,Gary Paffett,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,42,1:08:01.283,+2.214,1:35.402,classified,grid 2; 2 stops (mandatory); 18 pts
+3,16,Augusto Farfus,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),42,1:08:11.023,+11.954,1:35.909,classified,grid 1; 2 stops (mandatory); 15 pts
+4,5,Jamie Green,AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,42,1:08:22.548,+23.479,1:35.875,classified,grid 9; 2 stops (mandatory); 12 pts
+5,8,Dirk Werner,BMW Team Schnitzer [Schnitzer Motorsport],BMW M3 DTM (E92),42,1:08:24.453,+25.384,1:35.873,classified,grid 7; 2 stops (mandatory); 10 pts
+6,21,Edoardo Mortara,Audi Sport Team Rosberg [Team Rosberg],Audi A5 DTM,42,1:08:40.770,+41.701,1:36.338,classified,grid 8; 2 stops (mandatory); 8 pts
+7,15,Andy Priaulx,BMW Team RBM [Racing Bart Mampaey],BMW M3 DTM (E92),42,1:08:41.334,+42.265,1:35.955,classified,grid 13; 2 stops (mandatory); 6 pts
+8,2,Joey Hand,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),42,1:08:41.912,+42.843,1:36.173,classified,grid 5; 2 stops (mandatory); 4 pts
+9,6,Ralf Schumacher,AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,42,1:08:42.947,+43.878,1:36.127,classified,grid 16; 2 stops (mandatory); 2 pts
+10,12,Christian Vietoris,Thomas Sabo/Mercedes-Benz Bank AMG-Mercedes [HWA AG],DTM AMG Mercedes C-Coupé,42,1:08:44.207,+45.138,1:36.073,classified,grid 12; 2 stops (mandatory); 1 pts
+11,22,Filipe Albuquerque,Audi Sport Team Rosberg [Team Rosberg],Audi A5 DTM,42,1:08:57.301,+58.232,1:36.137,classified,grid 10; 2 stops (mandatory)
+12,4,Timo Scheider,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi A5 DTM,42,1:09:13.089,+1:14.020,1:36.440,classified,grid 22; 2 stops (mandatory)
+13,24,Susie Wolff,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],DTM AMG Mercedes C-Coupé,42,1:09:35.000,+1:35.931,1:37.435,classified,grid 21; 2 stops (mandatory)
+14,1,Martin Tomczyk,BMW Team RMG [Reinhold Motorsport / Team RMG],BMW M3 DTM (E92),41,,+1 lap,1:37.445,classified,grid 6; 2 stops (mandatory)
+15,23,Roberto Merhi,Junge Sterne/TV-Spielfilm AMG-Mercedes [Persson Motorsport],DTM AMG Mercedes C-Coupé,41,,+1 lap,1:36.617,classified,grid 18; 2 stops (mandatory)
+16,17,Rahel Frey,Audi Sport Team Abt [Abt Sportsline],Audi A5 DTM,41,,+1 lap,1:37.943,classified,grid 15; 2 stops (mandatory)
+,10,Miguel Molina,Audi Sport Team Phoenix [Phoenix Racing],Audi A5 DTM,25,,,1:36.962,DNF,Retired; grid 19
+,19,David Coulthard,DHL Paket/Stern AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,23,,,1:37.031,DNF,Retired; grid 20
+,20,Robert Wickens,DHL Paket/Stern AMG-Mercedes [Mücke Motorsport],DTM AMG Mercedes C-Coupé,20,,,1:37.326,DNF,Retired; grid 17
+,3,Mattias Ekström,Audi Sport Team Abt Sportsline [Abt Sportsline],Audi A5 DTM,11,,,1:36.841,DNF,Retired; grid 4
+,9,Mike Rockenfeller,Audi Sport Team Phoenix [Phoenix Racing],Audi A5 DTM,2,,,1:52.957,DNF,Retired; grid 11
+,18,Adrien Tambay,Audi Sport Team Abt [Abt Sportsline],Audi A5 DTM,1,,,,DNF,Retired; grid 14

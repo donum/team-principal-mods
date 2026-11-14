@@ -1,0 +1,16 @@
+{
+  "$comment": "DTM 2010 over the era base (bases/dtm-era3). Cars weighed 1,050 kg including the driver: 905 kg once the engine is taken off. Qualifying was a knockout in four parts; the game runs three, and the final single-lap shootout of the top four is not possible (wishlist A5, A6).",
+  "categories": {
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "dtm_era3",
+          "name": "DTM 2010",
+          "min_car_mass_kg": 905.0,
+          "summary": "1,050 kg including the driver for both makes.",
+          "description": "One minimum weight for all cars. The chassis figure here excludes the engine mass the game adds on top."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "unit_rules": {
+    "base_wear_per_lap": 0.1,
+    "max_pace_penalty_s": 0.0,
+    "max_power_rating_loss_at_zero_condition": 6.25,
+    "power_rating_wear_quantum": 0.25,
+    "fail_prob_per_lap_over_50_wear": 0.0025,
+    "build_staff_hours": 50,
+    "build_cost_m": 0.5,
+    "allocation_choices": [
+      4,
+      6,
+      8,
+      10,
+      12
+    ]
+  },
+  "suppliers": {
+    "Audi": {
+      "engine": "Audi RC8 2.0 TFSI",
+      "factory": false,
+      "power_rating": 60.0,
+      "reliability_rating": 70.0,
+      "cost_m": 6,
+      "annual_budget_m": 60,
+      "capacity": 4,
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.01,
+      "fuel_efficiency": 60.0,
+      "mass_kg": 90.0,
+      "nationality": "german",
+      "passby_audio": "engine_passby_03"
+    },
+    "BMW": {
+      "engine": "BMW P48 Turbo",
+      "factory": false,
+      "power_rating": 59.0,
+      "reliability_rating": 70.0,
+      "cost_m": 6,
+      "annual_budget_m": 60,
+      "capacity": 4,
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.01,
+      "fuel_efficiency": 60.0,
+      "mass_kg": 90.0,
+      "nationality": "german",
+      "passby_audio": "engine_passby_01"
+    }
+  }
+}

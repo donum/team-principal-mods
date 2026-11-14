@@ -8,7 +8,9 @@ way to make one pack depend on another (see
 only in this repository.
 
 ```
-bases/dtm-era4/          DTM 2012–2018: New DTM, 4.0 V8   ("era 4" in docs/ERAS.md)
+bases/dtm-era3/          DTM 2000–2011: Masters, 4.0 V8 silhouettes, Dunlop ("era 3"); mother season 2003
+bases/dtm-era4/          DTM 2012–2018: New DTM, 4.0 V8   ("era 4" in docs/ERAS.md); mother season 2013
+bases/dtm-era5/          DTM 2019–2020: Class One 2.0 turbo, on top of dtm-era4 ("era 5"); mother season 2020
 bases/f1-v8/             F1 2010–2013: 2.4 V8, Pirelli from 2011 (plan: docs/plans/F1_V8.md)
   base.json              shared build settings: base pack, constants, shared
                          tracks, and the "audio" section (private sounds)
@@ -113,8 +115,27 @@ shared across eras.
 3. Put `"base": "<id>"` in each season's `gen.json`, re-run
    `tools/season_from_research.py`, and check that `dist/` is unchanged.
 
-The Group A seasons (1990–1992) don't use a base yet: they share rules and
+The Group A seasons (1987, 1990–1992) don't use a base yet: they share rules and
 tracks through `"template": "dtm-1991"` and `shared_tracks`. Both still work.
+
+## Mother seasons
+
+Each base is tuned on one **mother season**: the first year of the era we
+build. Its sounds, rules and car profiles are the era's defaults, and every
+later year of the era inherits them and overrides only what differs. The
+mother is named in `base.json` `"audio": {"research_season": ...}`.
+
+| Base | Mother | Seasons on it | Sounds |
+|---|---|---|---|
+| (Group A template `dtm-1991`) | 1991 | 1987, 1990, 1992 | vanilla, none collected yet |
+| `dtm-era3` | 2003 | 2006, 2010 | vanilla, none collected yet (`"in_pack": false`) |
+| `dtm-era4` | 2013 | 2012, 2018 | private overlay from 2012 and 2013 recordings |
+| `dtm-era5` | 2020 | (2019 later) | vanilla, none collected yet; overrides era 4's V8 overlay |
+
+A base with `"in_pack": false` and no recordings leaves the game's own
+engine sounds in the pack. When recordings of the mother season's cars are
+collected (`tools/engine_audio`, `ENGINE_AUDIO_BASE=<base id>` with its own
+`ENGINE_AUDIO_DATA`), every season on the base gets them.
 
 ## Sounds
 

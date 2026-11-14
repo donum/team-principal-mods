@@ -1,0 +1,6 @@
+{
+  "$comment": "DTM 2003 over the era base (bases/dtm-era3). Qualifying was a 20-minute session, then a Superpole: the top ten each ran one lap alone. The game has no single-lap shootout (wishlist A5, A6), so one open session sets the grid.",
+  "categories": {
+    "qualifying_format": { "default": "session_60" }
+  }
+}

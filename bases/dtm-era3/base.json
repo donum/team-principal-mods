@@ -1,0 +1,54 @@
+{
+  "$comment": "Era base for the 2000-2011 DTM (V8 silhouettes: Abt-Audi TT-R and Audi A4, AMG-Mercedes CLK and C-Klasse, Opel Astra V8 Coupe and Vectra GTS V8, 4.0 V8 with restrictors, Dunlop control tyre). Every season in seasons/ with \"base\": \"dtm-era3\" builds on it (tools/layers.py). 2003 is the mother template: the first era-3 season built, and the year whose cars the sound overlay will be recorded from. The tracks are the era-4 traces where the layout matches; values here are first guesses, not yet simulated.",
+  "title": "DTM 2000-2011 (era base)",
+  "base_pack": "default26",
+  "series": "formula",
+  "no_title_sponsors": true,
+  "constants": {
+    "POINTS_TOP10": [10, 8, 6, 5, 4, 3, 2, 1, 0, 0],
+    "QUALI_GRID_LIMIT": 22,
+    "QUALI_MIN_ENTRANTS": 18,
+    "PREQUALIFYING_TRIGGER_CARS": 30,
+    "PREQUALIFYING_FIELD_LIMIT": 30,
+    "DRIVER_RETIREMENT_MIN_AGE": 38,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 46,
+    "DRIVER_AID_AI_CHEAT_BASE_CHANCE": 0.01,
+    "ESPIONAGE_MAX_OPS_PER_TEAM_SEASON": 1,
+    "ESPIONAGE_MAX_OPS_PER_GRID_SEASON": 1
+  },
+  "shared_tracks": {
+    "hockenheim13": "dtm-era4",
+    "nuerburgring13": "dtm-era4",
+    "zandvoort": "dtm-era4",
+    "redbullring": "dtm-era4",
+    "brandshatch": "dtm-era4",
+    "lausitzring": "dtm-era4",
+    "oschersleben": "dtm-era4",
+    "valencia": "dtm-era4",
+    "norisring": "dtm-1991"
+  },
+  "track_overrides": {
+    "$comment": "Tyre wear from the 2012 pack (one dry Dunlop-like tyre, two stops per race in the simulator), as a starting point for the era's two mandatory stops. The Norisring keeps era 4's speed_mult (the Group A trace is far too slow for these cars). Not yet simulated for era 3.",
+    "hockenheim13": {"tyre_wear_mult": 1.5},
+    "nuerburgring13": {"tyre_wear_mult": 1.3},
+    "zandvoort": {"tyre_wear_mult": 1.45},
+    "redbullring": {"tyre_wear_mult": 1.35},
+    "brandshatch": {"tyre_wear_mult": 0.46},
+    "lausitzring": {"tyre_wear_mult": 1.1},
+    "oschersleben": {"tyre_wear_mult": 1.18},
+    "valencia": {"tyre_wear_mult": 1.3},
+    "norisring": {
+      "speed_mult": 1.27,
+      "tyre_wear_mult": 0.75,
+      "pit_lane_loss_s": 18.0
+    }
+  },
+  "audio": {
+    "$comment": "Engine sounds (tools/engine_audio; the audio stays out of git), shared by every season on this base. None recorded yet, so the packs keep the game's vanilla sounds. recording_years: only recordings of these years' cars are used (2003 is the mother template; later era-3 years inherit its sounds). research_season: the entry list that tells which driver drove which make in the videos. key_prefix: start of the clip keys in the game's sound manifests.",
+    "overlay": "dtm-era3",
+    "in_pack": false,
+    "recording_years": [2003],
+    "research_season": "dtm-2003",
+    "key_prefix": "dtm03"
+  }
+}

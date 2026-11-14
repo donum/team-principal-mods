@@ -1,0 +1,10 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2012-04-28,2012-04-29,Hockenheimring,DEU,2,DTM round 1,dates are race days (Sat/Sun); winners Rast and Edwards
+2,2012-05-05,2012-05-06,Lausitzring,DEU,2,DTM round 2,winners Thiim and Edwards
+3,2012-05-19,2012-05-19,Nürburgring Nordschleife,DEU,1,24 Hours of Nürburgring,"single race; not a DTM support round per de.wikipedia; the 24h support link is inferred from the date (24h weekend 17-20 May 2012); Estre won; DTM raced at Brands Hatch the next day"
+4,2012-06-02,2012-06-03,Red Bull Ring,AUT,2,DTM round 4,winners Siedler and Edwards
+5,2012-06-30,2012-07-01,Norisring,DEU,2,DTM round 5,Rast won both
+6,2012-08-18,2012-08-19,Nürburgring (GP circuit),DEU,2,DTM round 6,"short sprint layout as used by the DTM; winners Rast and Thiim"
+7,2012-08-25,2012-08-26,Circuit Park Zandvoort,NLD,2,DTM round 7,"winners Edwards and Rast; race 1 stopped by heavy rain, half points (en.wikipedia)"
+8,2012-09-15,2012-09-16,Motorsport Arena Oschersleben,DEU,2,DTM round 8,winners Rast and Edwards; Carrera Cup skipped DTM round 9 at Valencia
+9,2012-10-20,2012-10-21,Hockenheimring,DEU,2,DTM round 10,winners Thiim and Christensen

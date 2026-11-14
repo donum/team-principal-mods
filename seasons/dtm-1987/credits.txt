@@ -1,0 +1,17 @@
+DTM 1987 - Deutsche Tourenwagen-Meisterschaft
+Unofficial community season pack for Team Principal: A Racing Manager.
+
+Created by Daniel Raude - Team Principal Mods
+Content licensed CC BY-NC-SA 4.0. Tooling MIT.
+
+Season research sources: touringcarracing.net, de/en Wikipedia, Wikidata.
+See seasons/dtm-1987/README.md in the project repository for details.
+
+Track maps and track geometry:
+  Map data (c) OpenStreetMap contributors, available under the
+  Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
+  Track outlines are today's layouts and may differ from 1987 in detail.
+
+Real team, driver, manufacturer and sponsor names are used for historical
+description only. Not affiliated with or endorsed by the DTM, the ONS, the
+game's publisher or any manufacturer.

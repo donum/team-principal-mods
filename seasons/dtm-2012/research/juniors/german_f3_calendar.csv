@@ -1,0 +1,10 @@
+round,date_first_day,date_last_day,venue,country_iso3,races_in_round,support_of,notes
+1,2012-05-05,2012-05-06,Circuit Park Zandvoort,NLD,3,ADAC GT Masters,ADAC Masters Weekend; races 5 May (R1 R2) and 6 May (R3); en.wikipedia intro says the season began 4 May (practice day)
+2,2012-06-09,2012-06-10,Sachsenring,DEU,3,ADAC GT Masters,ADAC Masters Weekend; races 9 June (R1 R2) and 10 June (R3)
+3,2012-07-07,2012-07-08,Motorsport Arena Oschersleben,DEU,3,Preis der Stadt Magdeburg,"club meeting run by MCS Stuttgart with ADAC Procar and NEC Formel Renault 2.0; event 6-8 July; not an ADAC GT Masters weekend (GT Masters raced here on 30 March); en.wikipedia counts it as ADAC Masters Weekend"
+4,2012-07-14,2012-07-15,Circuit de Spa-Francorchamps,BEL,3,International Superstars Series,invitation round; only round in Belgium; en.wikipedia says Superstars support and de.wikipedia says International GT Open (conflict)
+5,2012-08-03,2012-08-05,TT Circuit Assen,NLD,3,GAMMA Race Day,invitation round; one race per day on 3 4 and 5 August; venue not in the 2013 calendar
+6,2012-08-11,2012-08-12,Red Bull Ring,AUT,3,ADAC GT Masters,ADAC Masters Weekend; races 11 Aug (R1 R2) and 12 Aug (R3); only round in Austria
+7,2012-08-25,2012-08-26,Lausitzring,DEU,3,ADAC GT Masters,ADAC Masters Weekend; races 25 Aug (R1 R2) and 26 Aug (R3); layout used not confirmed
+8,2012-09-15,2012-09-16,Nürburgring,DEU,3,ADAC GT Masters,ADAC Masters Weekend; replaced Zolder from the first calendar; layout used not confirmed
+9,2012-09-29,2012-09-30,Hockenheimring,DEU,3,ADAC GT Masters,ADAC Masters Weekend season finale; Grand Prix layout (4574 m per official race 3 result)

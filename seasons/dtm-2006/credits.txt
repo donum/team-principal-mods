@@ -1,0 +1,11 @@
+DTM 2006 - Deutsche Tourenwagen Masters
+Unofficial community season pack for Team Principal: A Racing Manager.
+
+Created by Daniel Raude - Team Principal Mods
+Content licensed CC BY-NC-SA 4.0. Tooling MIT.
+
+Season research sources: de/en Wikipedia, Autosport, Audi Media Center, Wikidata.
+See seasons/dtm-2006/README.md in the project repository for details.
+
+Car images, team logos and driver portraits: not made yet. The pack uses
+the game's placeholders.

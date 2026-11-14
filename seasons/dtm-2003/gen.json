@@ -1,0 +1,41 @@
+{
+  "$comment": "Inputs for tools/season_from_research.py: maps the 2003 entrants to pack teams, colours and tracks. Rules, car profiles, engines and the Dunlop tyre come from the era base (bases/dtm-era3/gen.json); 2003 is the base's mother template, so it changes only the qualifying (patches/regulations.json). Team colours are first estimates from the main sponsor's colours, not yet checked against 2003 photos. Teams on year-old 2002 cars get less development headroom (potential 3, wishlist C4 and D7). Adria, Donington and the Lausitz long course are traced into the era base (bases/dtm-era3/track_specs) with 2003's laps and tyre wear.",
+  "base": "dtm-era3",
+  "year": 2003,
+  "title": "DTM 2003 - Deutsche Tourenwagen Masters",
+  "teams": {
+    "Vodafone AMG-Mercedes": {"previous_position": 1, "entrants": ["Vodafone AMG-Mercedes (HWA)", "Express-Service AMG-Mercedes (HWA)"],
+                              "color": [205, 205, 210], "secondary": [230, 0, 0], "works": true,
+                              "history": "Run by HWA from Affalterbach. HWA builds and runs the Mercedes DTM cars. Bernd Schneider won the 2000 and 2001 titles. Car #4 is entered as Express-Service AMG-Mercedes."},
+    "AMG-Mercedes": {"previous_position": 3, "entrants": ["AMG-Mercedes (HWA)"], "color": [190, 190, 195], "secondary": [30, 30, 30], "works": true,
+                     "history": "The second HWA car pair from Affalterbach. Marcel Fässler and Jean Alesi drive the 2003 CLK."},
+    "Hasseröder Abt-Audi": {"previous_position": 2, "entrants": ["Hasseröder Abt-Audi (Abt Sportsline)"], "color": [140, 20, 30], "secondary": [215, 180, 90], "works": true,
+                            "history": "Hans-Jürgen Abt's team from Kempten. Has run the Abt-Audi TT-R since 2000. Laurent Aïello won the 2002 title with the team."},
+    "PlayStation 2 Red Bull Abt-Audi": {"previous_position": 4, "entrants": ["PlayStation 2 Red Bull Abt-Audi (Abt Sportsline)"], "nationality": "german",
+                                        "color": [25, 40, 95], "secondary": [215, 25, 50], "works": true,
+                                        "history": "The second Abt Sportsline car pair from Kempten. Mattias Ekström is in his third DTM season."},
+    "S line Audi Junior Team": {"previous_position": 8, "entrants": ["S line Audi Junior Team (Abt)"], "color": [210, 210, 215], "secondary": [200, 20, 30], "potential": 3,
+                                "history": "Abt's third team, backed by Audi. Two young drivers race year-old 2002 TT-Rs."},
+    "OPC Team Holzer": {"previous_position": 5, "color": [250, 210, 0], "secondary": [20, 20, 20], "works": true,
+                        "history": "One of three Opel teams. Runs the 2003 Astra V8 Coupé for Manuel Reuter and Alain Menu."},
+    "OPC Team Phoenix": {"previous_position": 6, "color": [0, 90, 160], "secondary": [250, 250, 250], "works": true,
+                         "history": "Ernst Moser's team from Meuspath, next to the Nürburgring. Runs the 2003 Astra V8 Coupé for Opel."},
+    "OPC Euroteam": {"previous_position": 7, "color": [230, 230, 230], "secondary": [0, 90, 170], "potential": 3,
+                     "history": "The third Opel team. Runs year-old 2002 Astras."},
+    "Original-Teile AMG-Mercedes": {"previous_position": 10, "entrants": ["Original-Teile AMG-Mercedes (Persson Motorsport)", "ARTA AMG-Mercedes (Persson Motorsport)"],
+                                    "color": [0, 60, 140], "secondary": [255, 255, 255], "potential": 3,
+                                    "history": "Ingmar Persson's team. Runs three year-old 2002 CLKs. Car #20 is entered as ARTA AMG-Mercedes."},
+    "Service 24h AMG-Mercedes": {"previous_position": 9, "entrants": ["Service 24h AMG-Mercedes (Team Rosberg)"], "color": [255, 205, 0], "secondary": [0, 50, 120], "potential": 3,
+                                 "history": "Keke Rosberg's team from Neustadt an der Weinstraße. First DTM season in 1995 with Opel. Runs year-old 2002 CLKs."}
+  },
+  "tracks": {"1": "hockenheim13", "2": "adria", "3": "nuerburgring13", "4": "lausitzring03", "5": "norisring",
+             "6": "donington", "7": "nuerburgring13", "8": "redbullring", "9": "zandvoort", "10": "hockenheim13"},
+  "track_overrides": {
+    "$comment": "2003 race laps (research/calendar.csv, mostly derived from distance and lap length). tyre_wear_mult is the base's 2012 value scaled by 2012 laps / 2003 laps, so a stint keeps the same share of the race and two stops stay the normal strategy. Not yet simulated.",
+    "hockenheim13": {"race_laps": 37, "tyre_wear_mult": 1.7},
+    "nuerburgring13": {"race_laps": 41, "tyre_wear_mult": 1.55},
+    "norisring": {"race_laps": 72, "tyre_wear_mult": 0.81},
+    "redbullring": {"race_laps": 40, "tyre_wear_mult": 1.59, "name": "A1-Ring"},
+    "zandvoort": {"race_laps": 36, "tyre_wear_mult": 1.73}
+  }
+}

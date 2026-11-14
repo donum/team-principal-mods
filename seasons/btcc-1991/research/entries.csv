@@ -1,0 +1,45 @@
+number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
+1,Robb Gravett,GBR,,Trakstar Motorsport,,Ford Sierra Sapphire,Ford 2.0 L4,,all,Only Ford in the manufacturer entries
+3,Andy Rouse,GBR,,Kaliber ICS Team Toyota,,Toyota Carina,Toyota 2.0 L4,,all,Run by Andy Rouse Engineering
+33,Gary Ayles,GBR,,Kaliber ICS Team Toyota,,Toyota Carina,Toyota 2.0 L4,,all,
+4,Tim Harvey,GBR,,BMW Team Labatt's,,BMW M3,BMW 2.0 L4,,all,Vic Lee Racing. Docked 48 points for round 3 (noise)
+9,Laurence Bristow,GBR,,BMW Team Labatt's,,BMW M3,BMW 2.0 L4,,"1-11,13",Vic Lee Racing
+9,Armin Hahne,GER,,BMW Team Labatt's,,BMW M3,BMW 2.0 L4,,12,Replaced Bristow at Thruxton
+5,John Cleland,GBR,,Vauxhall Sport,,Vauxhall Cavalier,Vauxhall 2.0 L4,,all,Dave Cook Racing
+6,Jeff Allam,GBR,,Vauxhall Sport,,Vauxhall Cavalier,Vauxhall 2.0 L4,,all,Dave Cook Racing
+56,Bob Berridge,GBR,,Vauxhall Sport,,Vauxhall Cavalier,Vauxhall 2.0 L4,,12-13,Third car
+11,Will Hoy,GBR,,BMW Team Listerine,,BMW M3,BMW 2.0 L4,,all,Vic Lee Racing
+12,Ray Bellm,GBR,,BMW Team Listerine,,BMW M3,BMW 2.0 L4,,all,Vic Lee Racing
+22,Jonathan Palmer,GBR,,BMW Team Finance,,BMW M3,BMW 2.0 L4,,all,Prodrive (BMW works team)
+44,Steve Soper,GBR,,BMW Team Finance,,BMW M3,BMW 2.0 L4,,"1,3,7-10,12",Missed rounds that clashed with his DTM programme
+44,Tim Sugden,GBR,,BMW Team Finance,,BMW M3,BMW 2.0 L4,,"2,5-6,11,13",Shared car 44 with Soper
+44,Christian Danner,GER,,BMW Team Finance,,BMW M3,BMW 2.0 L4,,4,Shared car 44
+23,Keith O'Dor,GBR,,Nissan Janspeed Racing,,Nissan Primera eGT,Nissan 2.0 L4,,2-13,Nissan missed round 1. en.wiki entry table spells him Kieth O'dor
+24,Julian Bailey,GBR,,Nissan Janspeed Racing,,Nissan Primera eGT,Nissan 2.0 L4,,11-13,Ex-F1 driver
+88,Mark Hales,GBR,,John Maguire Racing,,Mitsubishi Lancer / Galant,Mitsubishi 2.0 L4,,"1-5,8-13",Lancer GTi rounds 1-5; Galant rounds 8-13
+2,Frank Sytner,GBR,,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,,"1-8,10-11",Independent
+2,David Leslie,GBR,,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,,13,Independent
+18,Matt Neal,GBR,,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,,7,BTCC debut (Silverstone GP)
+18,Alistair Fenwick,GBR,,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,,12,Did not start
+18,Godfrey Hall,GBR,,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,,13,
+7,Sean Walker,GBR,,Sean Walker Racing,,Ford Sierra RS500,Ford Cosworth 2.0 turbo L4,,2,Did not start. Group A car restricted to Super Touring speed
+10,Nettan Lindgren,SWE,,BMW Team Sweden,,BMW M3,BMW 2.0 L4,,"1-3,5-6",Independent
+91,Peggen Andersson,SWE,,BMW Team Sweden,,BMW M3,BMW 2.0 L4,,"1-3,6",Per-Gunnar Andersson
+13,Angus MacKay,GBR,,R&D Motorsport,,BMW 318is,BMW 1.8 L4,,1-2,Independent
+13,Alistair Lyall,GBR,,R&D Motorsport,,BMW 318is,BMW 1.8 L4,,"4,7,13",Independent
+17,Andrew MacKenzie,GBR,,ACE Motorsport,,Peugeot 405 Mi16,Peugeot 1.9 L4,,"7,10",Independent. en.wiki gives the team an Italian flag
+19,Dennis Leech,GBR,,Judge Developments,,Ford Sierra RS500,Ford Cosworth 2.0 turbo L4,,1-4,Group A car restricted to Super Touring speed
+20,Grahame Davis,GBR,,Moto-Build,,Rover 216GTi,Rover 1.6 L4,,"1-2,7,10",Started one race (round 10)
+21,Dave Brodie,GBR,,Brodie Brittain Racing,,Ford Sierra Sapphire 4x4,Ford Cosworth 2.0 turbo L4,,10-13,Group A car restricted to Super Touring speed
+45,Ian Forrest,GBR,,Drambuie Racing,,BMW M3,BMW 2.0 L4,,all,Independent
+58,Jeff Wilson,GBR,,HWR Motorsport,,Vauxhall Belmont,Vauxhall 2.0 L4,,"9,11,13",Independent
+58,Tony Bardy,GBR,,HWR Motorsport,,Vauxhall Belmont,Vauxhall 2.0 L4,,12,Did not start
+59,Ian Flux,GBR,,BRR Motorsport,,BMW M3,BMW 2.0 L4,,"1,3-5,13",Independent
+59,Matt Neal,GBR,,BRR Motorsport,,BMW M3,BMW 2.0 L4,,9,
+59,Val Musetti,GBR,,BRR Motorsport,,BMW M3,BMW 2.0 L4,,11,
+66,Nick Whale,GBR,,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,,"1-5,8-9,11-13",Independent
+66,David Leslie,GBR,,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,,7,
+66,John Llewellyn,GBR,,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,,10,
+77,Nick Baird,GBR,,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,,"1-5,7-8,12-13",Independent
+77,Matt Neal,GBR,,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,,11,
+99,Andy Middlehurst,GBR,,Graham Goode Racing,,Ford Sierra RS Cosworth,Ford Cosworth 2.0 turbo L4,,all,Group A car restricted to Super Touring speed

@@ -1,0 +1,96 @@
+{
+  "base": "dtm-era3",
+  "title": "DTM 2010 - Deutsche Tourenwagen Masters",
+  "pack_folder": "dtm2010",
+  "version": "0.1",
+  "constants": {
+    "SEASON_START_YEAR": 2010
+  },
+  "team_clones": {
+    "Salzgitter/Mercedes-Benz Bank AMG-Mercedes": "Red Boar",
+    "Laureus AMG-Mercedes": "Mercurion",
+    "Audi Sport Team Abt": "McMean",
+    "Audi Sport Team Abt Sportsline": "Audex",
+    "Audi Sport Team Phoenix": "Scuderia Rossa",
+    "Audi Sport Rookie Team Abt": "French Blue",
+    "TV Spielfilm/Junge Sterne AMG-Mercedes": "Alpha Bison",
+    "Audi Sport Team Rosberg": "Willens Racing",
+    "Deutsche Post/GQ AMG-Mercedes": "Hossden GP"
+  },
+  "staff": {
+    "seed": 2010,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "Salzgitter/Mercedes-Benz Bank AMG-Mercedes": 16,
+      "Laureus AMG-Mercedes": 11,
+      "Audi Sport Team Abt": 10,
+      "Audi Sport Team Abt Sportsline": 9,
+      "Audi Sport Team Phoenix": 7,
+      "Audi Sport Rookie Team Abt": 7,
+      "TV Spielfilm/Junge Sterne AMG-Mercedes": 6,
+      "Audi Sport Team Rosberg": 5,
+      "Deutsche Post/GQ AMG-Mercedes": 4
+    }
+  },
+  "track_overrides": {
+    "$comment": "2010 race laps (research/calendar.csv; some sources differ, see research/season.md). tyre_wear_mult is the base's 2012 value scaled by 2012 laps / 2010 laps, so two stops stay the normal strategy. Not yet simulated.",
+    "hockenheim13": {
+      "race_laps": 39,
+      "tyre_wear_mult": 1.62
+    },
+    "valencia": {
+      "race_laps": 45,
+      "tyre_wear_mult": 1.33
+    },
+    "lausitzring": {
+      "race_laps": 52,
+      "tyre_wear_mult": 1.1
+    },
+    "norisring": {
+      "race_laps": 82,
+      "tyre_wear_mult": 0.71
+    },
+    "nuerburgring13": {
+      "race_laps": 49,
+      "tyre_wear_mult": 1.3
+    },
+    "zandvoort": {
+      "race_laps": 42,
+      "tyre_wear_mult": 1.48
+    },
+    "brandshatch": {
+      "race_laps": 98,
+      "tyre_wear_mult": 0.46
+    },
+    "oschersleben": {
+      "race_laps": 50,
+      "tyre_wear_mult": 1.2
+    },
+    "adria": {
+      "race_laps": 38,
+      "tyre_wear_mult": 1.17
+    }
+  },
+  "track_placeholders": {
+    "hockenheim10": {
+      "from": "hockenheim13",
+      "override": {
+        "name": "Hockenheimring (short)",
+        "length_km": 3.736,
+        "lap_modifier": 0.94,
+        "tyre_wear_mult": 1.34
+      }
+    },
+    "shanghai": {
+      "from": "norisring",
+      "override": {
+        "name": "Shanghai Pudong street circuit",
+        "nationality": "chinese",
+        "length_km": 2.465,
+        "lap_modifier": 0.98,
+        "tyre_wear_mult": 1.19
+      }
+    }
+  }
+}

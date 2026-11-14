@@ -1,0 +1,15 @@
+DTM 2020 - Deutsche Tourenwagen Masters
+Unofficial community season pack for Team Principal: A Racing Manager.
+
+Created by Daniel Raude - Team Principal Mods
+Content licensed CC BY-NC-SA 4.0. Tooling MIT.
+
+Season research sources: de/en Wikipedia, racingyears.com, racer.com,
+autosport.com, touringcartimes.com, Wikidata.
+See seasons/dtm-2020/README.md in the project repository for details.
+
+Tracks at Spa-Francorchamps and the Nürburgring Grand Prix circuit come
+from the project's F1 2010-2013 base. Lausitzring Grand Prix, Assen and
+Zolder use placeholder geometry from other tracks for now.
+
+Sounds: the game's own sounds. No DTM 2020 engine recordings are included.

@@ -1,0 +1,40 @@
+number,driver,nationality,birth_date,entrant,team_base,chassis,engine,rounds,notes
+1,Norbert Siedler,austrian,1982-12-29,Konrad Motorsport,"Verl, Germany",Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; 1 win; dob de.wikipedia and en.wikipedia
+2,Tomáš Pivoda,czech,1991-09-21,Konrad Motorsport,"Verl, Germany",Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; rookie; dob de.wikipedia (driverdb agrees)
+3,Harrie Kolen,dutch,1963-01-29,Land Motorsport,"Niederdreisbach, Germany",Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,B class; dob driverdb (single source)
+4,Hoevert Vos,dutch,1965-05-01,Land Motorsport,"Niederdreisbach, Germany",Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),2-9,B class; dob driverdb (day may be a placeholder; same date as 2013 file)
+5,Jaap van Lagen,dutch,1976-12-22,FE Racing by Land Motorsport,"Niederdreisbach, Germany",Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; dob de.wikipedia
+6,Wolf Nathan,dutch,1969-03-26,FE Racing by Land Motorsport,"Niederdreisbach, Germany",Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,B class; dob driverdb
+7,Michael Christensen,danish,1990-08-28,Konrad Motorsport,"Verl, Germany",Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; rookie; Porsche Junior 2012; 1 win (final race); dob de.wikipedia
+10,Felipe Fernández Laser,german,1988-11-16,Farnbacher ESET Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),"1,2,4,5",A class; rookie; dob de.wikipedia
+10,Niclas Kentenich,german,1988-07-16,Farnbacher ESET Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),3,A class; stand-in at Nordschleife; dob de.wikipedia
+11,Elia Erhart,german,1988-05-09,Marschall Goebel Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; rookie; dob driverdb
+12,Matthias Gamauf,austrian,1992-10-01,Marschall Goebel Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),"1,2,4,5",A class; rookie; en.wikipedia lists him as #91 (seems wrong; de.wikipedia says #12); dob driverdb (single source; day may be a placeholder)
+12,Peter Scharmach,new_zealander,1964-05-31,Marschall Goebel Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),6,B class; born in Germany with German and New Zealand nationality; raced under NZ flag; dob en.wikipedia (driverdb agrees)
+14,René Rast,german,1986-10-26,Team Deutsche Post by tolimit,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; champion; 6 wins; later DTM champion with Audi; dob de.wikipedia
+15,Klaus Bachler,austrian,1991-07-27,Team Deutsche Post by tolimit,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; rookie; Porsche Junior 2012; dob de.wikipedia and en.wikipedia
+16,Sean Edwards,british,1986-12-06,Team Deutsche Post by tolimit,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; 5 wins; dob de.wikipedia
+19,Clemens Schmid,austrian,1990-08-18,SWITCH IT Lechner Racing,Austria,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; later DTM driver (2022); dob de.wikipedia
+33,Bill Barazetti,german,1969-11-03,MRS GT-Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,"B class champion; Porsche press writes the name in quotes, so it may be a pseudonym; dob driverdb (single source)"
+34,Philipp Eng,austrian,1990-02-28,MRS GT-Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; rookie; later DTM driver (BMW); dob de.wikipedia
+37,Michael Ammermüller,german,1986-02-14,SWITCH IT Lechner Racing,Austria,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),"1-4,9",A class; 2 DTM starts in 2021 per en.wikipedia; dob de.wikipedia and en.wikipedia
+41,Jeroen Mul,dutch,1990-06-14,Team Bleekemolen,Netherlands,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),"1,7",guest (no points); A class; dob de.wikipedia
+42,Pascal Bour,french,,BG Racing,France,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),3,guest (no points); B class; dob not found (driverdb has no date)
+43,Peter Scharmach,new_zealander,1964-05-31,GT3 Cup Middle East,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),3,guest (no points); B class; same driver as #12 at round 6; dob en.wikipedia
+44,Andreas Mayerl,austrian,1976-11-06,Lechner Racing Team,Austria,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),4,guest (no points); B class; dob driverdb
+45,Mark J. Thomas,canadian,1960-11-17,Konrad Motorsport Austria,Austria,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),6-7,guest (no points); B class; dob driverdb (single source)
+46,Antonis Wossos,greek,,MRS GT-Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),7,guest (no points); B class; started race 1 only (DNS race 2); dob not found
+47,Robert Lukas,polish,1988-01-05,Förch Racing,Poland,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),8-9,guest (no points); A class; dob de.wikipedia (same as 2013 file)
+49,Florian Scholze,german,1973-05-01,Förch Racing,Poland,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),8-9,guest (no points); A class; dob driverdb (day may be a placeholder)
+51,Hannes Waimer,german,1961-11-02,GT3 Cup Middle East,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),"3,5-7",B class; dob driverdb (single source)
+52,Sebastiaan Bleekemolen,dutch,1978-08-09,Team Bleekemolen,Netherlands,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),7,guest (no points); A class; dob de.wikipedia
+52,Florian Spengler,german,1988-01-14,MRS GT-Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),9,guest (no points); A class; dob driverdb (same as 2013 file)
+66,Nicolas Armindo,french,1982-03-08,ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),"1,6",A class; shared #66; dob de.wikipedia and en.wikipedia
+66,David Jahn,german,1990-11-16,ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),2-5,A class; shared #66; dob en.wikipedia
+66,Jeroen Bleekemolen,dutch,1981-10-23,ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),7,A class; shared #66; former DTM driver (Opel 2003-2004; Audi 2006); dob de.wikipedia
+66,Arkin Aka,turkish,1970-08-18,ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),8,A class; shared #66; dob driverdb (single source)
+66,Robert Renauer,german,1985-03-15,ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),9,A class; shared #66; dob de.wikipedia and en.wikipedia
+77,Philipp Frommenwiler,swiss,1989-08-27,ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; dob en.wikipedia
+88,Nicki Thiim,danish,1989-04-17,Hermes ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; 3 wins; later DTM starts; dob de.wikipedia
+91,Christina Nielsen,danish,1992-01-10,Farnbacher ESET Racing,Germany,Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,B class; dob de.wikipedia and en.wikipedia
+99,Kévin Estre,french,1988-10-28,Hermes ATTEMPTO Racing,Turkey (licence),Porsche 911 GT3 Cup (Type 997),Porsche 3.8 flat-six (997 GT3 Cup; 450 PS),1-9,A class; rookie champion; 1 win; dob de.wikipedia

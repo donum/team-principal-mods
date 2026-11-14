@@ -1,0 +1,72 @@
+{
+  "base": "dtm-era3",
+  "title": "DTM 2006 - Deutsche Tourenwagen Masters",
+  "pack_folder": "dtm2006",
+  "version": "0.1",
+  "constants": {
+    "SEASON_START_YEAR": 2006
+  },
+  "team_clones": {
+    "Vodafone/Salzgitter AMG-Mercedes": "Red Boar",
+    "DaimlerChrysler Bank AMG-Mercedes": "Mercurion",
+    "Audi Sport Team Abt": "McMean",
+    "Audi Sport Team Abt Sportsline": "Audex",
+    "Stern/Easy Rent AMG-Mercedes": "Scuderia Rossa",
+    "Audi Sport Team Rosberg": "Ashton Darting",
+    "TV-Spielfilm/TrekStor AMG-Mercedes": "French Blue",
+    "Audi Sport Team Phoenix": "Alpha Bison",
+    "Futurecom TME": "Willens Racing",
+    "AutoScout24/Junge Gebrauchte AMG-Mercedes": "Hossden GP"
+  },
+  "staff": {
+    "seed": 2006,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "Vodafone/Salzgitter AMG-Mercedes": 16,
+      "DaimlerChrysler Bank AMG-Mercedes": 14,
+      "Audi Sport Team Abt": 13,
+      "Audi Sport Team Abt Sportsline": 11,
+      "Stern/Easy Rent AMG-Mercedes": 7,
+      "Audi Sport Team Rosberg": 6,
+      "TV-Spielfilm/TrekStor AMG-Mercedes": 5,
+      "Audi Sport Team Phoenix": 5,
+      "Futurecom TME": 4,
+      "AutoScout24/Junge Gebrauchte AMG-Mercedes": 4
+    }
+  },
+  "track_overrides": {
+    "$comment": "2006 race laps (research/calendar.csv, mostly derived from distance and lap length). tyre_wear_mult is the base's 2012 value scaled by 2012 laps / 2006 laps, so two stops stay the normal strategy. Not yet simulated.",
+    "hockenheim13": {
+      "race_laps": 37,
+      "tyre_wear_mult": 1.7
+    },
+    "lausitzring": {
+      "race_laps": 48,
+      "tyre_wear_mult": 1.19,
+      "name": "EuroSpeedway Lausitz",
+      "length_km": 3.442
+    },
+    "oschersleben": {
+      "race_laps": 44,
+      "tyre_wear_mult": 1.37,
+      "length_km": 3.667
+    },
+    "brandshatch": {
+      "race_laps": 85,
+      "tyre_wear_mult": 0.52
+    },
+    "norisring": {
+      "race_laps": 74,
+      "tyre_wear_mult": 0.79
+    },
+    "nuerburgring13": {
+      "race_laps": 43,
+      "tyre_wear_mult": 1.48
+    },
+    "zandvoort": {
+      "race_laps": 38,
+      "tyre_wear_mult": 1.64
+    }
+  }
+}

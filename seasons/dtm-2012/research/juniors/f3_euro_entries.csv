@@ -1,0 +1,33 @@
+number,driver,nationality,birth_date,entrant,team_base,chassis,engine,rounds,notes
+1,Daniel Juncadella,spanish,1991-05-07,Prema Powerteam,"Grisignano di Zocco, Italy",Dallara F312,Mercedes,1-8,Champion (Euro Series and FIA European); moved to Mercedes DTM with Mücke for 2013; dob en.wikipedia
+2,Sven Müller,german,1992-02-07,Prema Powerteam,"Grisignano di Zocco, Italy",Dallara F312,Mercedes,1-8,Rookie
+14,Michael Lewis,american,1990-12-24,Prema Powerteam,"Grisignano di Zocco, Italy",Dallara F312,Mercedes,1-8,
+15,Raffaele Marciello,italian,1994-12-17,Prema Powerteam,"Grisignano di Zocco, Italy",Dallara F312,Mercedes,1-8,Ferrari Driver Academy; 6 wins per formulascout; Swiss-born Italian
+5,Felix Rosenqvist,swedish,1991-11-07,Mücke Motorsport,"Berlin, Germany",Dallara F312,Mercedes,1-8,
+6,Pascal Wehrlein,german,1994-10-18,Mücke Motorsport,"Berlin, Germany",Dallara F312,Mercedes,1-8,Rookie; runner-up and rookie champion; Mercedes DTM from 2013
+7,Sandro Zeller,swiss,1991-11-16,Jo Zeller Racing,Switzerland,Dallara F308,Mercedes,1-8,Older F308 chassis
+8,Andrea Roda,italian,1990-04-11,Jo Zeller Racing,Switzerland,Dallara F312,Mercedes,1-8,dob en.wikipedia
+9,Lucas Wolf,german,1994-09-06,URD Rennsport,Germany,Dallara F312,Mercedes,1-8,Rookie; single-car team
+10,Philip Ellis,british,1992-10-09,GU-Racing,Germany,Dallara F312,Mercedes,"1,3-4",Rookie; entered as GBR; born in Munich; en.wikipedia calls him Swiss-British-German; later DTM 2021; dob en.wikipedia
+11,William Buller,british,1992-09-17,Carlin,"Farnham, United Kingdom",Dallara F312,Volkswagen,1-8,Also raced GP3 with Carlin
+12,Carlos Sainz Jr.,spanish,1994-09-01,Carlin,"Farnham, United Kingdom",Dallara F312,Volkswagen,1-8,Red Bull junior
+30,Harry Tincknell,british,1991-10-29,Carlin,"Farnham, United Kingdom",Dallara F312,Volkswagen,"2,4",Guest entry; ineligible for points
+34,Jazeman Jaafar,malaysian,1992-11-13,Carlin,"Farnham, United Kingdom",Dallara F312,Volkswagen,2-5,Guest entry; ineligible for points; dob en.wikipedia
+39,Jack Harvey,british,1993-04-15,Carlin,"Farnham, United Kingdom",Dallara F312,Volkswagen,4,Guest entry; ineligible for points; dob en.wikipedia
+40,Pietro Fantin,brazilian,1991-11-28,Carlin,"Farnham, United Kingdom",Dallara F312,Volkswagen,4,Guest entry; ineligible for points; dob en.wikipedia
+44,Felipe Nasr,brazilian,1992-08-21,Carlin,"Farnham, United Kingdom",Dallara F312,Volkswagen,8,Guest entry; ineligible for points; dob en.wikipedia
+16,Tom Blomqvist,british,1993-11-30,ma-con Motorsport,Germany,Dallara F312,Volkswagen,1-8,McLaren junior per formulascout; later BMW DTM 2015-2017
+17,Emil Bernstorff,british,1993-06-07,ma-con Motorsport,Germany,Dallara F312,Volkswagen,1-8,Rookie
+23,Luís Sá Silva,angolan,1990-08-23,Angola Racing Team,,Dallara F312,Mercedes,1-8,en.wikipedia entry list says all rounds; formulascout says 7 of 8 rounds; dob en.wikipedia
+31,Hannes van Asseldonk,dutch,1992-01-10,Fortec Motorsports,"Daventry, United Kingdom",Dallara F312,Mercedes,"1,4",Guest entry; ineligible for points; dob driverdb (single source)
+32,Félix Serrallés,puerto_rican,1992-06-24,Fortec Motorsports,"Daventry, United Kingdom",Dallara F312,Mercedes,"1,4,8",Guest entry; ineligible for points
+33,Alex Lynn,british,1993-09-17,Fortec Motorsports,"Daventry, United Kingdom",Dallara F312,Mercedes,"1,4,8",Guest entry; ineligible for points
+38,Luis Felipe Derani,brazilian,1993-10-12,Fortec Motorsports,"Daventry, United Kingdom",Dallara F312,Mercedes,"4,8",Guest entry; ineligible for points; known as Pipo Derani
+35,Geoff Uhrhane,australian,1991-04-11,Double R Racing,"Woking, United Kingdom",Dallara F312,Mercedes,"2,4",Guest entry; ineligible for points; dob driverdb (single source)
+36,Fahmi Ilyas,malaysian,1992-03-17,Double R Racing,"Woking, United Kingdom",Dallara F312,Mercedes,"2,4",Guest entry; ineligible for points; dob driverdb (single source)
+37,Duvashen Padayachee,australian,1990-05-04,Double R Racing,"Woking, United Kingdom",Dallara F308,Mugen-Honda,4,Guest entry; ineligible for points; dob driverdb (single source)
+41,Nick McBride,australian,,ThreeBond with T-Sport,"Brackley, United Kingdom",Dallara F312,ThreeBond Nissan,4,Guest entry; ineligible for points; aged 21 in Feb 2012 per speedcafe so born about 1990-1991; exact date not found
+42,Richard Goddard,australian,1992-08-17,ThreeBond with T-Sport,"Brackley, United Kingdom",Dallara F308,Mugen-Honda,4-5,Guest entry; ineligible for points; known as Spike Goddard; team read from a split Wikipedia table (uncertain)
+43,Alexander Sims,british,1988-03-15,ThreeBond with T-Sport,"Brackley, United Kingdom",Dallara F312,ThreeBond Nissan,5,Guest entry; ineligible for points; drove McBride's car to qualify for Macau
+50,Lucas Auer,austrian,1994-09-11,Van Amersfoort Racing,Netherlands,Dallara F312,Volkswagen,8,Guest entry; ineligible for points; German F3 runner-up 2012; later Mercedes DTM from 2015
+51,Dennis van de Laar,dutch,1994-02-03,Van Amersfoort Racing,Netherlands,Dallara F312,Volkswagen,8,Guest entry; ineligible for points

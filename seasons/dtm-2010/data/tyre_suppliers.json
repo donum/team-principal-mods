@@ -1,0 +1,121 @@
+{
+  "$merge_base": true,
+  "$replace": [
+    "suppliers"
+  ],
+  "suppliers": {
+    "Dunlop": {
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.0,
+      "prices": {
+        "works": 0,
+        "partner": 0,
+        "customer": 0
+      },
+      "nationality": "british",
+      "lateral_grip": {
+        "soft": 54.0,
+        "hard": 54.0,
+        "intermediate": 50.0,
+        "wet": 52.0
+      },
+      "longitudinal_grip": {
+        "soft": 54.0,
+        "hard": 54.0,
+        "intermediate": 50.0,
+        "wet": 52.0
+      },
+      "durability": {
+        "soft": 60.0,
+        "hard": 60.0,
+        "intermediate": 55.0,
+        "wet": 55.0
+      },
+      "temperature_tolerance": {
+        "soft": 54.0,
+        "hard": 54.0,
+        "intermediate": 50.0,
+        "wet": 50.0
+      },
+      "trend": {
+        "lateral_grip": 0.0,
+        "longitudinal_grip": 0.0,
+        "durability": 0.0,
+        "temperature_tolerance": 0.0
+      },
+      "variance": {
+        "lateral_grip": 0.0,
+        "longitudinal_grip": 0.0,
+        "durability": 0.0,
+        "temperature_tolerance": 0.0
+      },
+      "development_preference": "endurance"
+    }
+  },
+  "development": {
+    "$comment": "One dry Dunlop tyre for the whole era: the soft is a copy of the hard (data/tyremodel.json), kept in the programmes as in the 2012 pack, and the medium is dropped.",
+    "programs": {
+      "cornering_grip": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      },
+      "traction_braking": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      },
+      "durability": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      },
+      "thermal_stability": {
+        "compounds": [
+          "soft",
+          "hard",
+          "intermediate",
+          "wet"
+        ],
+        "required_compounds": [
+          "soft",
+          "hard"
+        ],
+        "compound_weights": {
+          "medium": null
+        }
+      }
+    }
+  }
+}

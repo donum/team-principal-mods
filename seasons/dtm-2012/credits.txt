@@ -16,3 +16,19 @@ Car images (assets/Cars):
 Team list icons (assets/logos):
   Each team is shown with its maker's emblem (Audi, BMW or Mercedes-Benz),
   as on the TV timing graphics. See the maker logos below.
+
+Track maps (assets/tracks):
+  Race-day illustrations made in the race-track-themes project, shared with
+  the DTM 2013 pack (the eight venues both seasons raced on; the trackside
+  branding is 2013's). The scenery is AI-rendered. The track surface,
+  kerbs, pit lane and paddock layout are drawn over it from OpenStreetMap
+  data (see the map data credit below). Valencia keeps the base map.
+
+Team dashboard backgrounds (assets/dashboard_bgs/<team>.jpg), every team:
+  The field in the first corners at Oschersleben, 15 September 2013, seen
+  from the stands (the same file as in the DTM 2013 pack, which raced there
+  a year later; the 2012 cars looked much the same). Photo by Jörg /
+  Spieler Family, used with permission; it keeps its copyright and is not
+  covered by the pack's licence. Cropped to 16:9, resized, light sharpening
+  and contrast.
+  https://www.flickr.com/photos/spieler/9873267756/

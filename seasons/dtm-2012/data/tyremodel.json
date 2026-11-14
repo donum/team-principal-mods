@@ -1,5 +1,5 @@
 {
-  "$comment": "DTM 2012 Hankook tyres: one dry tyre, the option came in 2013. The game's code can't be checked for a single dry compound, so the soft stays in the file as an exact copy of the hard (same grip and wear) and no car starts on it. The two-compound rule is off (patches/regulations.json). There was no medium, so it is removed (null). Wishlist B7.",
+  "$comment": "DTM 2012 Hankook tyres: one dry tyre, the option came in 2013. The game's code can't be checked for a single dry compound, so the soft stays in the file as an exact copy of the hard (same grip and wear) and no car starts on it. The two-compound rule is off (patches/regulations.json). There was no medium, so it is removed (null). Wishlist B7. Wear is 0.03 (the base hard: 0.018), so a stint lasts about a third of a race and two stops is the normal strategy, as the 2012 rules required (wishlist B5). At 0.018 most cars stopped once in the simulator.",
   "$merge_base": true,
   "default_compound": "hard",
   "mandatory_compound_count": 1,
@@ -14,14 +14,14 @@
     "soft": {
       "lat_grip_base": 1.002,
       "long_grip_base": 1.002,
-      "wear_rate_base": 0.018,
+      "wear_rate_base": 0.03,
       "wear_cliff_onset_pct": 65
     },
     "medium": null,
     "hard": {
       "lat_grip_base": 1.002,
       "long_grip_base": 1.002,
-      "wear_rate_base": 0.018,
+      "wear_rate_base": 0.03,
       "wear_cliff_onset_pct": 65
     }
   }

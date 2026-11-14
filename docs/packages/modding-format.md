@@ -35,7 +35,7 @@ one cheaper. Part of the [feature packages](README.md).
 - `constants.json`, read the same way for local and Workshop packs.
 - A JSON schema per file, a validation report at load, a list of fields
   that refer to team names.
-- Language maps for pack texts.
+- Locale files per pack, in the game's own key format.
 
 ## 4. Endurance
 

@@ -1,0 +1,21 @@
+{
+  "id": "brandshatch_gp",
+  "name": "Brands Hatch Grand Prix",
+  "nationality": "british",
+  "bbox": [0.245, 51.345, 0.275, 51.366],
+  "length_km": 3.916,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 40,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.7,
+  "pit_lane_loss_s": 17.0,
+  "tyre_wear_mult": 0.9,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "right",
+  "pit_way_names": ["Pit Lane"],
+  "loop_relation": "7218462",
+  "drs_zones": {"longest_straights": 1},
+  "notes": "Grand Prix circuit (clockwise): the Indy loop to Surtees, then out of Hawthorn Hill into the woods (Hawthorn Bend, Westfield, Dingle Dell, Sheene Curve, Stirlings) and back over Clearways and Clark Curve. Raceway loop over the members of OSM relation 7218462 (Brands Hatch Grand Prix circuit). DTM 2018 raced it. speed_scale 1.0 is uncalibrated; tyre_wear_mult is a first guess between the base's Indy (0.42, about 98 laps) and longer-lap tracks."
+}

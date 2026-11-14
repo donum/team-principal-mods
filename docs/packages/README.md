@@ -38,9 +38,9 @@ Edit and rerun `python -I tools/package_diagrams.py` to change them.
 | [Tyres and pit stops](tyres-and-stops.md) | B5, B7, B10, B12, D6 (repair), D8, D9 | Drafted, DTM evidence checked |
 | [Points and championships](points-and-championships.md) | B3, B4, B8, B9, C7 (points) | Outline |
 | [Balance and homologation](balance-and-homologation.md) | B1, B2, C4, D7 | Outline |
-| [Entries, drivers and crews](entries-and-crews.md) | C1, C2, C3, C5, C6, C8 | Outline |
+| [Entries, drivers and crews](entries-and-crews.md) | C1, C2, C3, C5, C6, C8, C9 | Outline |
 | [Car model](car-model.md) | D1, D2, D3, D5 | Outline |
-| [Race control and overtaking aids](race-control.md) | B6, B11, A3 (starts, red flags) | Outline |
+| [Race control and overtaking aids](race-control.md) | B6, B11, B13, A3 (starts, red flags) | Outline |
 | [Calendar, weather and the wider world](calendar-and-world.md) | A4, C7, D4, E6, E7 | Outline |
 | [Modding format and tools](modding-format.md) | E1, E2, E3, E5, E13 | Outline |
 | [Presentation and sound](presentation.md) | E4, E8 to E12, E14, E15 | Outline |

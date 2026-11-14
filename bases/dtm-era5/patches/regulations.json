@@ -1,0 +1,37 @@
+{
+  "$comment": "DTM 2019-2020 rules, applied after bases/dtm-era4's patch. Push-to-pass is modelled with the game's spec ERS, which harvests under braking and helps acceleration; the real system was a fixed power boost a set number of times per race (wish list D3, B6). Each race had its own qualifying, which the game runs as one open session, and the top three in qualifying scored 3-2-1 points; the game can only give pole one point (wish list B8). Car profile values are a first guess from the 2013 profile, not calibrated.",
+  "categories": {
+    "car_profile": {
+      "add_options": [
+        {
+          "key": "dtm_class1_turbo",
+          "name": "DTM Class One turbo",
+          "corner_speed_multiplier": 1.12,
+          "acceleration_multiplier": 0.5,
+          "braking_multiplier": 1.0,
+          "drag_multiplier": 1.45,
+          "summary": "Class One DTM cars with 2.0 turbo engines: about 610 hp and 1,070 kg.",
+          "description": "The 2019 and 2020 DTM cars (Audi RS 5 Turbo, BMW M4 Turbo). The 2013 profile with a little less drag for the extra power. Not yet calibrated to real lap times."
+        }
+      ],
+      "default": "dtm_class1_turbo"
+    },
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "dtm_2019",
+          "name": "DTM 2019",
+          "min_car_mass_kg": 980.0,
+          "summary": "1,070 kg with driver and fuel for every make.",
+          "description": "One minimum weight for all makes and no performance weights. The chassis figure here excludes the engine mass the game adds on top."
+        }
+      ],
+      "default": "dtm_2019"
+    },
+    "drs_policy": { "default": "enabled" },
+    "ers_policy": { "default": "spec" },
+    "formula_refueling": { "default": "banned" },
+    "qualifying_format": { "default": "session_60" },
+    "pole_point": { "default": "enabled" }
+  }
+}

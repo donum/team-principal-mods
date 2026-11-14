@@ -1,5 +1,5 @@
 {
-  "note": "Track art and game lines share one frame, the race-tracks plan frame (whole lap in the visible map area): tools/art_track.py writes tracks/<id>.json from these. speed_scale keeps the reference lap of the previous osm_track.py file (tools/art_track.py --calibrate). Tracks with \"art\" set use plan-frame art (2026-11-12: branded 2013 ChatGPT race-day images, checked by overlaying the race-tracks centreline). Tracks with \"art\" empty still have old-frame images and the base's osm_track.py file; tools/art_track.py skips them unless named, because with old-frame art the cars leave the drawn track. 2026-11-12 (staged): all nine tracks use plan-frame art, the aligned race-track-themes images listed in race-track-themes/exports/dtm-2013-pack-2026-11-12/APPLY.md.",
+  "note": "Track art and game lines share one frame, the race-tracks plan frame (whole lap in the visible map area): tools/art_track.py writes tracks/<id>.json from these. speed_scale keeps the reference lap of the previous osm_track.py file (tools/art_track.py --calibrate). Tracks with \"art\" set use plan-frame art (2026-11-12: branded 2013 ChatGPT race-day images, checked by overlaying the race-tracks centreline). Tracks with \"art\" empty still have old-frame images and the base's osm_track.py file; tools/art_track.py skips them unless named, because with old-frame art the cars leave the drawn track. 2026-11-12 (staged): all nine tracks use plan-frame art, the aligned race-track-themes images listed in race-track-themes/exports/dtm-2013-pack-2026-11-12/APPLY.md. 2026-11-13: all nine replaced by clean empty-venue images (C1: generic prompt race-track-themes/prompts/stages/c1-venue.txt on the race-tracks plan-natural plan, aligned, crisp white lines drawn on top by tools/line_overlay.py): final.png of the revisions listed in \"art\".",
   "tracks": {
     "brandshatch": {
       "race_tracks": {
@@ -7,7 +7,7 @@
         "layout": "indy@2003"
       },
       "spec": "bases/dtm-era4/track_specs/brandshatch.json",
-      "art": "race-track-themes/art/brands-hatch/indy@2003/2013/dtm/round-02/styles/illustrated-realism/variants/raceday/revisions/r0022/image.png",
+      "art": "race-track-themes/art/brands-hatch/indy@2003/2013/dtm/round-02/styles/illustrated-realism/variants/raceday/revisions/r0032/final.png",
       "speed_scale": 0.9837
     },
     "hockenheim13": {
@@ -16,7 +16,7 @@
         "layout": "gp@2002"
       },
       "spec": "bases/dtm-era4/track_specs/hockenheim13.json",
-      "art": "race-track-themes/art/hockenheimring/gp@2002/2013/dtm/round-01/styles/illustrated-realism/variants/raceday/revisions/r0014/image.png",
+      "art": "race-track-themes/art/hockenheimring/gp@2002/2013/dtm/round-01/styles/illustrated-realism/variants/raceday/revisions/r0027/final.png",
       "speed_scale": 1.0881
     },
     "lausitzring": {
@@ -25,7 +25,7 @@
         "layout": "sprint@2008"
       },
       "spec": "bases/dtm-era4/track_specs/lausitzring.json",
-      "art": "race-track-themes/art/lausitzring/sprint@2008/2013/dtm/round-04/styles/illustrated-realism/variants/raceday/revisions/r0009/image.png",
+      "art": "race-track-themes/art/lausitzring/sprint@2008/2013/dtm/round-04/styles/illustrated-realism/variants/raceday/revisions/r0010/final.png",
       "speed_scale": 0.9935
     },
     "moscow": {
@@ -34,7 +34,7 @@
         "layout": "sprint@2013"
       },
       "spec": "bases/dtm-era4/track_specs/moscow.json",
-      "art": "race-track-themes/art/moscow-raceway/sprint@2013/2013/dtm/round-06/styles/illustrated-realism/variants/raceday/revisions/r0012/image.png",
+      "art": "race-track-themes/art/moscow-raceway/sprint@2013/2013/dtm/round-06/styles/illustrated-realism/variants/raceday/revisions/r0013/final.png",
       "speed_scale": 1.0332
     },
     "norisring": {
@@ -43,7 +43,7 @@
         "layout": "street@1972"
       },
       "spec": "seasons/dtm-1991/track_specs/norisring.json",
-      "art": "race-track-themes/art/norisring/street@1972/2013/dtm/round-05/styles/illustrated-realism/variants/raceday/revisions/r0009/image.png",
+      "art": "race-track-themes/art/norisring/street@1972/2013/dtm/round-05/styles/illustrated-realism/variants/raceday/revisions/r0010/final.png",
       "speed_scale": 0.9818
     },
     "nuerburgring13": {
@@ -52,7 +52,7 @@
         "layout": "sprint@2002"
       },
       "spec": "bases/dtm-era4/track_specs/nuerburgring13.json",
-      "art": "race-track-themes/art/nurburgring/sprint@2002/2013/dtm/round-07/styles/illustrated-realism/variants/raceday/revisions/r0010/image.png",
+      "art": "race-track-themes/art/nurburgring/sprint@2002/2013/dtm/round-07/styles/illustrated-realism/variants/raceday/revisions/r0011/final.png",
       "speed_scale": 0.9724
     },
     "oschersleben": {
@@ -61,7 +61,7 @@
         "layout": "gp@2007"
       },
       "spec": "bases/dtm-era4/track_specs/oschersleben.json",
-      "art": "race-track-themes/art/oschersleben/gp@2007/2013/dtm/round-08/styles/illustrated-realism/variants/raceday/revisions/r0009/image.png",
+      "art": "race-track-themes/art/oschersleben/gp@2007/2013/dtm/round-08/styles/illustrated-realism/variants/raceday/revisions/r0010/final.png",
       "speed_scale": 1.0377
     },
     "redbullring": {
@@ -70,7 +70,7 @@
         "layout": "gp@2011"
       },
       "spec": "bases/dtm-era4/track_specs/redbullring.json",
-      "art": "race-track-themes/art/red-bull-ring/gp@2011/2013/dtm/round-03/styles/illustrated-realism/variants/raceday/revisions/r0011/image.png",
+      "art": "race-track-themes/art/red-bull-ring/gp@2011/2013/dtm/round-03/styles/illustrated-realism/variants/raceday/revisions/r0014/final.png",
       "speed_scale": 1.0662
     },
     "zandvoort": {
@@ -79,7 +79,7 @@
         "layout": "gp@1999"
       },
       "spec": "bases/dtm-era4/track_specs/zandvoort.json",
-      "art": "race-track-themes/art/zandvoort/gp@1999/2013/dtm/round-09/styles/illustrated-realism/variants/raceday/revisions/r0013/image.png",
+      "art": "race-track-themes/art/zandvoort/gp@1999/2013/dtm/round-09/styles/illustrated-realism/variants/raceday/revisions/r0014/final.png",
       "speed_scale": 1.011
     }
   }

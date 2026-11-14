@@ -1,0 +1,16 @@
+{
+  "$comment": "DTM 2006 over the era base (bases/dtm-era3). New cars weighed 1,050 kg, 2005 cars 1,035 kg (the 2004 cars' weight is not known): the lowest chassis figure is 890 kg once the engine is taken off. Knockout qualifying in three parts as in the base; the real one dropped the slowest six per part (wishlist A6). The manufacturer success ballast of plus or minus 10 kg is not modelled (wishlist B1, B2).",
+  "categories": {
+    "chassis_minimum_weight": {
+      "add_options": [
+        {
+          "key": "dtm_era3",
+          "name": "DTM 2006",
+          "min_car_mass_kg": 890.0,
+          "summary": "1,050 kg for new cars, 1,035 kg for older cars, including the driver.",
+          "description": "Older cars ran 15 kg lighter. The chassis figure here excludes the engine mass the game adds on top."
+        }
+      ]
+    }
+  }
+}

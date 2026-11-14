@@ -90,7 +90,9 @@ simulation.
 - **Engine sounds:** a V8 pass-by for each make (Audi, BMW, Mercedes)
   instead of base clips 03/01/04. Needs freely licensed recordings (CC0 or
   CC BY, credited in `credits.txt`), not base-game or other mods' files.
-- **Menu music:** CC0 tracks that fit the period, or none.
+- **Menu music:** done. Four Kevin MacLeod tracks (CC BY 4.0, credited)
+  replace the base playlist (`"vanilla_music": false` in `season.json`).
+  Other candidates are in `private/music/candidates`, listed on the mod page.
 - **Ambience:** a German-language PA and a crowd bed, if free recordings exist.
 - `build_pack.py` copies the base audio. Make sure it puts ours over the
   base files and that no base file ends up in git.

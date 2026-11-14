@@ -1,0 +1,137 @@
+{
+  "title": "BTCC 1991 - British Touring Car Championship",
+  "pack_folder": "btcc1991",
+  "version": "0.1",
+  "series": "formula",
+  "base_pack": "default26",
+  "no_title_sponsors": true,
+  "constants": {
+    "SEASON_START_YEAR": 1991,
+    "POINTS_TOP10": [
+      20,
+      15,
+      12,
+      10,
+      8,
+      6,
+      4,
+      3,
+      2,
+      1
+    ],
+    "QUALI_GRID_LIMIT": 30,
+    "QUALI_MIN_ENTRANTS": 20,
+    "PREQUALIFYING_TRIGGER_CARS": 35,
+    "PREQUALIFYING_FIELD_LIMIT": 35,
+    "DRIVER_RETIREMENT_MIN_AGE": 40,
+    "DRIVER_RETIREMENT_ESCALATION_AGE": 50
+  },
+  "team_clones": {
+    "BMW Team Listerine": "Red Boar",
+    "Vauxhall Sport": "Red Boar",
+    "Kaliber ICS Team Toyota": "Mercurion",
+    "BMW Team Finance": "Mercurion",
+    "BMW Team Labatt's": "McMean",
+    "Graham Goode Racing": "Audex",
+    "Trakstar Motorsport": "Audex",
+    "Pyramid Motorsport": "Scuderia Rossa",
+    "Nissan Janspeed Racing": "Scuderia Rossa",
+    "BMW Team Sweden": "Ashton Darting",
+    "Judge Developments": "French Blue",
+    "Auto Trader Techspeed Team": "French Blue",
+    "John Maguire Racing": "Alpha Bison",
+    "BRR Motorsport": "Alpha Bison",
+    "R&D Motorsport": "Willens Racing",
+    "HWR Motorsport": "Hossden GP",
+    "Drambuie Racing": "Hossden GP",
+    "Brodie Brittain Racing": "Cadylacky Motors"
+  },
+  "staff": {
+    "seed": 1991,
+    "salary_per_level_m": 0.1,
+    "named": [],
+    "levels": {
+      "BMW Team Listerine": 16,
+      "Vauxhall Sport": 14,
+      "Kaliber ICS Team Toyota": 13,
+      "BMW Team Finance": 11,
+      "BMW Team Labatt's": 7,
+      "Graham Goode Racing": 7,
+      "Trakstar Motorsport": 6,
+      "Pyramid Motorsport": 6,
+      "Nissan Janspeed Racing": 5,
+      "BMW Team Sweden": 4,
+      "Judge Developments": 4,
+      "Auto Trader Techspeed Team": 4,
+      "John Maguire Racing": 4,
+      "BRR Motorsport": 4,
+      "R&D Motorsport": 4,
+      "HWR Motorsport": 4,
+      "Drambuie Racing": 4,
+      "Brodie Brittain Racing": 4
+    }
+  },
+  "shared_tracks": {
+    "brandshatch": "dtm-era4",
+    "diepholz": "dtm-1991",
+    "wunstorf": "dtm-1991",
+    "avus": "dtm-1991",
+    "hockenheim": "dtm-1991",
+    "nuerburgring": "dtm-1991",
+    "zolder": "dtm-1991",
+    "alemannenring": "dtm-1991"
+  },
+  "track_overrides": {},
+  "track_placeholders": {
+    "$comment": "No British circuit is traced yet. Each placeholder borrows a DTM track of a similar kind (airfields for Silverstone, Snetterton and Thruxton) until it is traced with tools/osm_track.py.",
+    "silverstone_nat": {
+      "from": "diepholz",
+      "override": {
+        "name": "Silverstone National",
+        "nationality": "british"
+      }
+    },
+    "silverstone": {
+      "from": "hockenheim",
+      "override": {
+        "name": "Silverstone",
+        "nationality": "british"
+      }
+    },
+    "snetterton": {
+      "from": "wunstorf",
+      "override": {
+        "name": "Snetterton",
+        "nationality": "british"
+      }
+    },
+    "thruxton": {
+      "from": "avus",
+      "override": {
+        "name": "Thruxton",
+        "nationality": "british"
+      }
+    },
+    "donington": {
+      "from": "nuerburgring",
+      "override": {
+        "name": "Donington Park",
+        "nationality": "british"
+      }
+    },
+    "donington_nat": {
+      "from": "zolder",
+      "override": {
+        "name": "Donington Park National",
+        "nationality": "british"
+      }
+    },
+    "oulton": {
+      "from": "alemannenring",
+      "override": {
+        "name": "Oulton Park",
+        "nationality": "british"
+      }
+    }
+  }
+}

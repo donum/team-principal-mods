@@ -16,8 +16,10 @@ kind is one of
 
 The de column is left empty for a translator. Team, driver, sponsor and
 engine names, ids, keys and "$comment" notes are left out: they are names or
-are never shown. The game has no language setting yet (wishlist E13), so a
-translation would ship as a second pack.
+are never shown. The game has a language setting since November 2026, but
+only its own locale files (ui/assets/locales) are translated. Packs cannot
+add their own translations yet (wishlist E13), so these texts show in
+English in every language.
 
 Usage:
     python tools/translatable_strings.py seasons/dtm-2013
