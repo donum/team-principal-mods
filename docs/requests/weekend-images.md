@@ -77,10 +77,12 @@ Nürburgring, every session simulated. Version 2, after review:
   progress bar and text. No separate loading card.
 - **A strip for the weekend:** Practice, Qualifying, Race, ticked off as
   they are done. It follows the sessions the pack defines.
-- **Results:** practice and qualifying with a slim picture band and
-  without one (both shown). Race results follow mock-up D from the liveries
-  request (podium first).
-- **Simulating race:** today's live order with all its columns, plus cars.
+- **Tables stay as they are:** every table on these screens has today's
+  columns, flags and team logos, so this request changes only the
+  pictures. Practice and qualifying results come with a slim picture band
+  and without one. Race results keep today's table and standings; only the
+  podium cards come from mock-up D of the liveries request.
+- **Simulating race:** today's live order, unchanged, next to the race picture.
 - **Starting grid:** facts on top, the grid on the track, one full table
   below (never two columns). The car drawings set the direction: the 2013
   cars face left, so the grid runs right to left.
