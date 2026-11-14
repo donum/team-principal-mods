@@ -32,7 +32,7 @@ build them all.
 | dtm-2003 | A5, A6, B4, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2006 | A6, B1, B2, B5, B7, B10, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
-| dtm-2013 | A3, A5, A6, B5, B6, B7, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15 |
+| dtm-2013 | A3, A5, A6, B5, B6, B7, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17 |
 | dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2 |
 | dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
@@ -875,6 +875,24 @@ rules to these items:
   falls back to the default; a pack without the block works as today.
 - **Mockup:** `docs/packages/img/png/track-art-styles.png` (Hockenheim in
   map, illustrated and lines-only style).
+
+### E17. Weekend images per track, session, result and weather · P3
+- **Needed by:** dtm-2013 (and every season with track photos).
+- **Why:** the race weekend is the heart of the game, but its screens are
+  plain: the loading screens are a bar on black, the Simulate / Take Part
+  screens are two grey boxes, and the results are tables only. The team
+  dashboard shows how much one photo adds.
+- **Today:** no images on the weekend screens; the dashboard has a
+  background photo. Weather, round and results are known but not shown
+  with a picture.
+- **Request:** optional images in the pack, picked by track, session,
+  result of the player's team (win, podium, points, no points, retired)
+  and weather (wet, night), each falling back to a more general one and
+  finally to today's screen. Used on the loading screens, the choice
+  screens, a short card between sessions, the grid and the results.
+  Optional: an archive image per track with a year and a caption.
+- **Mockup:** `docs/requests/img/weekend-images/` (11 screens, Nürburgring
+  2013). Request text in `docs/requests/weekend-images.md`.
 
 ---
 
