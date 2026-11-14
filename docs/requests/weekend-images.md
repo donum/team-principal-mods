@@ -20,10 +20,13 @@ So my idea: **a pack can add images to the weekend, and the game picks the one t
 - **Results for your team:** the picture follows how your team did: win, podium, points, no points or retired.
 - **Optional archive:** an older picture of the track with the year and a caption.
 
-Each image falls back to a more general one: track and session, then track, then the whole pack, then today's screen. Packs without images look exactly as today.
+Each picture falls back: the track's picture for that session, then one pack picture for that session, then today's screen without a picture. Packs without images look exactly as today.
 
 ```json
 "weekend_images": {
+  "practice": ["practice.jpg"],
+  "qualifying": ["qualifying.jpg"],
+  "race": ["race.jpg"],
   "nuerburgring13": {
     "practice": ["nbr_practice.jpg"],
     "qualifying": ["nbr_quali.jpg"],
@@ -57,10 +60,24 @@ explain each screen and are not part of the design.
 | `09-results-retired.jpg` | 2 Weekend in three acts | Played as Phoenix: "retired" picture, from the pack-wide set |
 | `10-archive-loading.jpg` | 3 Track archive | Race loading with a 1987 picture, year and caption |
 | `11-archive-story.jpg` | 3 Track archive | Winner card with a 2006 photo of Spengler at the same track |
-| `12` to `19-loading-<track>.jpg` | 1 Loading cards | The same card at the other eight 2013 tracks, practice or qualifying |
+| `12` to `19-loading-<track>.jpg` | 1 Loading cards | The same card at the other eight 2013 tracks (Hockenheim as the race card) |
 
 The source page is in the session scratchpad and not kept; the screens are
 simple HTML over the photos and can be rebuilt.
+
+## The full weekend
+
+`img/weekend-journey/` walks through one race weekend as BMW Team MTEK at the
+Nürburgring, every session simulated: dashboard in the off week, next week,
+dashboard in race week, practice, simulating practice, practice results,
+qualifying, simulating qualifying, qualifying results, the card between
+sessions, the starting grid, race, simulating race, race results and the
+dashboard after the race. Two more screens show the fallback: the pack's
+one picture for the session, and no picture at all (today's screen).
+
+The starting grid (`11-starting-grid.jpg`) has the facts on top, the grid
+as it stands on the track in the middle (cars face left, so the start line
+is on the left and pole is in the lower lane), and the full table below.
 
 ## More screens: grid and pre-race
 
