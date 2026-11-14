@@ -15,7 +15,7 @@ The team dashboard already shows a photo behind the panels, and it makes a big d
 
 So my idea: **a pack can add images to the weekend, and the game picks the one that fits.**
 
-- **Loading cards:** practice, qualifying and race load over a picture of the track, with the session, round, weather and track outline. The game already knows all of these.
+- **Session screens:** practice, qualifying and race show a picture of the track, with the session, track, weather and track outline. The same screen is used to choose and while simulating. The game already knows all of these.
 - **Between sessions:** a short card from the result, for example "Rockenfeller takes pole", with portrait and car.
 - **Results for your team:** the picture follows how your team did: win, podium, points, no points or retired.
 - **Optional archive:** an older picture of the track with the year and a caption.
@@ -68,16 +68,33 @@ simple HTML over the photos and can be rebuilt.
 ## The full weekend
 
 `img/weekend-journey/` walks through one race weekend as BMW Team MTEK at the
-Nürburgring, every session simulated: dashboard in the off week, next week,
-dashboard in race week, practice, simulating practice, practice results,
-qualifying, simulating qualifying, qualifying results, the card between
-sessions, the starting grid, race, simulating race, race results and the
-dashboard after the race. Two more screens show the fallback: the pack's
-one picture for the session, and no picture at all (today's screen).
+Nürburgring, every session simulated. Version 2, after review:
 
-The starting grid (`11-starting-grid.jpg`) has the facts on top, the grid
-as it stands on the track in the middle (cars face left, so the start line
-is on the left and pole is in the lower lane), and the full table below.
+- **One box to start:** the week loading screen, shown when Next week starts
+  a race week. The dashboard itself does not change.
+- **One session screen:** picture, session name, track, weather and outline.
+  Only the bottom band changes: Simulate / Take Part, then today's
+  progress bar and text. No separate loading card.
+- **A strip for the weekend:** Practice, Qualifying, Race, ticked off as
+  they are done. It follows the sessions the pack defines.
+- **Results:** practice and qualifying with a slim picture band and
+  without one (both shown). Race results follow mock-up D from the liveries
+  request (podium first).
+- **Simulating race:** today's live order with all its columns, plus cars.
+- **Starting grid:** facts on top, the grid on the track, one full table
+  below (never two columns). The car drawings set the direction: the 2013
+  cars face left, so the grid runs right to left.
+- **Fallback:** the pack's one picture for the session, then today's screen.
+
+`img/weekend-1991/` shows a weekend the pack defines differently: the
+Norisring in DTM 1991 with practice, qualifying, a qualification race for
+places 17 to 26, Race 1 and Race 2 (grid from the Race 1 result). The 1991
+cars face right, so their grid runs left to right. Results are samples.
+
+Big fields: `img/weekend-grid/22` and `23` show Le Mans with 62 cars. The
+visual grid shows 16 cars at a time, with a class strip for the whole field
+and a window on it; the second opens on your own car. The cars are
+placeholders in class colours.
 
 ## More screens: grid and pre-race
 
