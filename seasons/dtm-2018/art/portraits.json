@@ -458,7 +458,13 @@
     "source": "helmet"
   },
   "Tom Lautenschlager": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Oschersleben 29.April 17.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Oschersleben_29.April_17.jpg",
+    "author": "SteffenKoch",
+    "license": "CC BY-SA 4.0",
+    "year": 2017,
+    "pinned": true
   },
   "Kris Wright": {
     "source": "photo",
@@ -501,7 +507,13 @@
     "source": "helmet"
   },
   "Max Hesse": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Max Hesse 2025 SportsCar Grand Prix.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Max_Hesse_2025_SportsCar_Grand_Prix.jpg",
+    "author": "MIDWST.BLUR",
+    "license": "CC BY 4.0",
+    "year": 2025,
+    "pinned": true
   },
   "Simon Reicher": {
     "source": "helmet"
@@ -599,7 +611,13 @@
     "year": 2023
   },
   "Enzo Fittipaldi": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Enzo Fittipaldi, interview, Nov 2020 - 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Enzo_Fittipaldi,_interview,_Nov_2020_-_01.jpg",
+    "author": "Lito Cavalcanti",
+    "license": "CC BY 3.0",
+    "year": 2020,
+    "pinned": true
   },
   "Niklas Krütten": {
     "source": "photo",
@@ -624,7 +642,13 @@
     "source": "helmet"
   },
   "David Schumacher": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:David Schumacher 2021.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:David_Schumacher_2021.JPG",
+    "author": "Lukas Raich",
+    "license": "CC BY-SA 4.0",
+    "year": 2021,
+    "pinned": true
   },
   "Mick Wishofer": {
     "source": "helmet"
