@@ -62,6 +62,19 @@ explain each screen and are not part of the design.
 The source page is in the session scratchpad and not kept; the screens are
 simple HTML over the photos and can be rebuilt.
 
+## More screens: grid and pre-race
+
+`img/weekend-grid/` has 20 more screens for the grid and the minutes
+before and after the start, with every entry's livery: grid boxes, the
+grid on the track art, front row, your cars, TV graphic, grid by rows,
+race plan, lap-by-lap forecast, start lights, formation lap, grid walk,
+pit lane open, spotter guide, team-mates, tower and photo, pole car
+loading card, grid to flag, parc fermé and the first laps. Same race, same
+pictures as above.
+
+All mock-ups can be browsed in one gallery:
+https://claude.ai/artifact/6cjkA3ucBe1gM5gB3WPemN (private).
+
 ## Pictures used
 
 | Screen | Picture | Source and licence |

@@ -2,7 +2,7 @@
 
 - **Status:** posted (around 2026-11-11, link to add)
 - **Wishlist:** E4, E15
-- **Attach:** mock-ups A, B, C, D and H (made in Claude Design, not in the repo)
+- **Attach:** mock-ups A, B, C, D and H (made in Claude Design), copies in `img/car-liveries/`
 
 ---
 
