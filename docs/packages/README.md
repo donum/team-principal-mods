@@ -43,7 +43,7 @@ Edit and rerun `python -I tools/package_diagrams.py` to change them.
 | [Race control and overtaking aids](race-control.md) | B6, B11, B13, A3 (starts, red flags) | Outline |
 | [Calendar, weather and the wider world](calendar-and-world.md) | A4, C7, D4, E6, E7 | Outline |
 | [Modding format and tools](modding-format.md) | E1, E2, E3, E5, E13 | Outline |
-| [Presentation and sound](presentation.md) | E4, E8 to E12, E14, E15 | Outline |
+| [Presentation and sound](presentation.md) | E4, E8 to E12, E14, E15, E18 | Outline |
 
 Every wish-list item has one home package. Items that touch other
 packages are listed under "Overlaps" in each file.
