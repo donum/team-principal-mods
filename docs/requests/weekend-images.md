@@ -47,7 +47,7 @@ explain each screen and are not part of the design.
 
 | File | Proposal | Shows |
 |---|---|---|
-| `01-loading-practice.jpg` | 1 Loading cards | Practice loading over a track photo, title block, weather, outline, venue fact |
+| `01-loading-practice.jpg` | 1 Loading cards | Practice loading over a track photo, title block and weather, track outline bottom right |
 | `02-loading-qualifying-wet.jpg` | 1 Loading cards | Same card with the wet picture and rain chip |
 | `03-race-choice.jpg` | 1 Loading cards | Simulate / Watch over the dimmed start photo, forecast strip |
 | `04-week-loading.jpg` | 1 Loading cards | Week advance before a race week, with the pack's track art and a three-day forecast |
