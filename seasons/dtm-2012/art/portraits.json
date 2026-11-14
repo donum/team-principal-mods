@@ -361,7 +361,13 @@
     "year": 2022
   },
   "Emil Bernstorff": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Emil Bernstorff (2013).JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Emil_Bernstorff_(2013).JPG",
+    "author": "Lutz H",
+    "license": "CC BY 2.0 de",
+    "year": 2013,
+    "pinned": true
   },
   "Luís Sá Silva": {
     "source": "photo",
@@ -420,7 +426,13 @@
     "year": 2014
   },
   "Klaus Bachler": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Klaus bachler.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Klaus_bachler.jpg",
+    "author": "DriverDatabase1",
+    "license": "CC0",
+    "year": 2024,
+    "pinned": true
   },
   "Sean Edwards": {
     "source": "photo",

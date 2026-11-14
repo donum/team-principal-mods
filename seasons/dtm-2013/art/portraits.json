@@ -275,7 +275,13 @@
     "year": 2022
   },
   "Jann Mardenborough": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Jann mardenborough brandshatch2014.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Jann_mardenborough_brandshatch2014.JPG",
+    "author": "Robk23oxf",
+    "license": "CC BY-SA 4.0",
+    "year": 2014,
+    "pinned": true
   },
   "Daniil Kvyat": {
     "source": "helmet"
@@ -358,10 +364,21 @@
     "source": "helmet"
   },
   "Tatiana Calderón": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Tatiana Calderón GP3 Driver at Spanish GP 2017 (cropped).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tatiana_Calder%C3%B3n_GP3_Driver_at_Spanish_GP_2017_(cropped).jpg",
+    "author": "Kristin Greenwood",
+    "license": "CC BY-SA 4.0",
+    "year": 2017,
+    "pinned": true
   },
   "Antonio Giovinazzi": {
-    "source": "helmet",
+    "source": "photo",
+    "file": "File:2014 F3 HockenheimringII Antonio Giovinazzi by 2eight DSC7611 (cropped).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014_F3_HockenheimringII_Antonio_Giovinazzi_by_2eight_DSC7611_(cropped).jpg",
+    "author": "Stefan Brending (2eight)",
+    "license": "CC BY-SA 3.0 de",
+    "year": 2014,
     "pinned": true
   },
   "Sean Gelael": {
@@ -421,7 +438,13 @@
     "pinned": true
   },
   "Christian Engelhart": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Christian Engelhart 2017.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Christian_Engelhart_2017.jpg",
+    "author": "Pietro.br",
+    "license": "CC BY-SA 4.0",
+    "year": 2017,
+    "pinned": true
   },
   "Felipe Fernández Laser": {
     "source": "helmet"
@@ -519,7 +542,13 @@
     "year": 2013
   },
   "Emil Bernstorff": {
-    "source": "helmet"
+    "source": "photo",
+    "file": "File:Emil Bernstorff (2013).JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Emil_Bernstorff_(2013).JPG",
+    "author": "Lutz H",
+    "license": "CC BY 2.0 de",
+    "year": 2013,
+    "pinned": true
   },
   "Marvin Kirchhöfer": {
     "source": "photo",
