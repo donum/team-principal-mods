@@ -6,8 +6,8 @@ from here and let the generator fill the rest.
 
 - **Data:** [dtm_staff.csv](dtm_staff.csv), one row per person, role, team and
   season.
-- **Built:** 2026-11-14, from six research passes (one per era) and a merge.
-- **Size:** 1,016 people: 561 verified, 455 assumed.
+- **Built:** 2026-11-14, from six research passes (one per era), a second pass on the gaps (privateer owners 1984 to 1995, works-team race engineers 2012 to 2019, engineering leads 1984 to 2011) and a merge.
+- **Size:** 1,168 people: 628 verified, 540 assumed. 512 of 631 team-seasons have a team principal.
 
 ## Columns
 
@@ -54,23 +54,23 @@ they mean:
 
 | Season | Teams | With principal | People | Verified | Assumed |
 |---|---|---|---|---|---|
-| dtm-1984 | 35 | 10 | 12 | 7 | 5 |
-| dtm-1985 | 38 | 8 | 9 | 3 | 6 |
-| dtm-1986 | 22 | 7 | 8 | 4 | 4 |
-| dtm-1987 | 18 | 8 | 14 | 6 | 8 |
-| dtm-1988 | 32 | 15 | 30 | 11 | 19 |
-| dtm-1989 | 28 | 13 | 24 | 9 | 15 |
-| dtm-1990 | 16 | 6 | 13 | 6 | 7 |
-| dtm-1991 | 22 | 8 | 15 | 6 | 9 |
-| dtm-1992 | 17 | 6 | 12 | 5 | 7 |
-| dtm-1993 | 33 | 16 | 25 | 7 | 18 |
-| dtm-1994 | 19 | 10 | 22 | 3 | 19 |
-| dtm-1995 | 13 | 11 | 25 | 5 | 20 |
-| itc-1996 | 13 | 13 | 32 | 11 | 21 |
-| dtm-2000 | 12 | 12 | 32 | 16 | 16 |
-| dtm-2001 | 12 | 12 | 31 | 18 | 13 |
-| dtm-2002 | 12 | 12 | 30 | 15 | 15 |
-| dtm-2003 | 10 | 10 | 28 | 22 | 6 |
+| dtm-1984 | 35 | 15 | 17 | 8 | 9 |
+| dtm-1985 | 38 | 14 | 15 | 5 | 10 |
+| dtm-1986 | 22 | 10 | 11 | 6 | 5 |
+| dtm-1987 | 18 | 11 | 17 | 8 | 9 |
+| dtm-1988 | 32 | 20 | 35 | 14 | 21 |
+| dtm-1989 | 28 | 17 | 28 | 10 | 18 |
+| dtm-1990 | 16 | 14 | 31 | 12 | 19 |
+| dtm-1991 | 22 | 17 | 36 | 16 | 20 |
+| dtm-1992 | 17 | 12 | 26 | 13 | 13 |
+| dtm-1993 | 33 | 21 | 31 | 7 | 24 |
+| dtm-1994 | 19 | 15 | 27 | 4 | 23 |
+| dtm-1995 | 13 | 13 | 29 | 5 | 24 |
+| itc-1996 | 13 | 13 | 36 | 11 | 25 |
+| dtm-2000 | 12 | 12 | 34 | 18 | 16 |
+| dtm-2001 | 12 | 12 | 33 | 18 | 15 |
+| dtm-2002 | 12 | 12 | 33 | 15 | 18 |
+| dtm-2003 | 10 | 10 | 30 | 22 | 8 |
 | dtm-2004 | 11 | 11 | 41 | 32 | 9 |
 | dtm-2005 | 14 | 14 | 50 | 29 | 21 |
 | dtm-2006 | 10 | 9 | 28 | 14 | 14 |
@@ -80,13 +80,13 @@ they mean:
 | dtm-2010 | 9 | 9 | 25 | 14 | 11 |
 | dtm-2011 | 10 | 10 | 27 | 14 | 13 |
 | dtm-2012 | 11 | 11 | 28 | 26 | 2 |
-| dtm-2013 | 11 | 11 | 33 | 21 | 12 |
-| dtm-2014 | 12 | 12 | 37 | 30 | 7 |
-| dtm-2015 | 12 | 12 | 31 | 9 | 22 |
-| dtm-2016 | 12 | 12 | 33 | 19 | 14 |
-| dtm-2017 | 9 | 9 | 16 | 10 | 6 |
-| dtm-2018 | 9 | 9 | 16 | 7 | 9 |
-| dtm-2019 | 12 | 8 | 20 | 11 | 9 |
+| dtm-2013 | 11 | 11 | 31 | 17 | 14 |
+| dtm-2014 | 12 | 12 | 42 | 34 | 8 |
+| dtm-2015 | 12 | 12 | 36 | 10 | 26 |
+| dtm-2016 | 12 | 12 | 41 | 27 | 14 |
+| dtm-2017 | 9 | 9 | 28 | 19 | 9 |
+| dtm-2018 | 9 | 9 | 29 | 11 | 18 |
+| dtm-2019 | 12 | 8 | 24 | 18 | 6 |
 | dtm-2020 | 8 | 8 | 13 | 11 | 2 |
 | dtm-2021 | 16 | 16 | 21 | 15 | 6 |
 | dtm-2022 | 17 | 17 | 25 | 14 | 11 |
@@ -95,8 +95,8 @@ they mean:
 | dtm-2025 | 13 | 13 | 20 | 15 | 5 |
 | dtm-2026 | 13 | 13 | 25 | 13 | 12 |
 
-By role, over all seasons: team principal 457, chief designer 211, head of
-engine 165, technical director 153, chief mechanic 20, head of aero 10, head
+By role, over all seasons: team principal 518, chief designer 237, head of
+engine 181, technical director 153, chief mechanic 57, head of aero 22, head
 of dynamics 0.
 
 ## Known gaps
@@ -104,24 +104,34 @@ of dynamics 0.
 The research ran out of web searches in five of the six eras, so the thin
 parts are not proof that nothing exists.
 
-- **Head of aero and head of dynamics** are almost empty in every era. Only
-  Lothar Pinske (Ford Sierra, 1987 to 1989) is in head of aero.
-- **1984 to 1992 privateers:** most have no principal. Missing owners include
-  Gubin, Isert, IPS/MS-Jet, Kamei, Bemani, Tauber, Valier, MM Diebels, Unitron,
-  Auto Maass, BAS, Vanicek, Schübel, Bigazzi and Linder.
+- **Head of aero and head of dynamics** are almost empty in every era. Head
+  of aero has Lothar Pinske (Ford Sierra, 1987 to 1989) and Richard Eppler
+  (Mercedes 190E Evo II, 1990 to 1992). No chassis lead was found for any
+  programme, after two passes.
+- **1984 to 1995 privateers:** the second pass found Gubin, Isert, IPS/MS-Jet,
+  MM Diebels, Schübel, Linder, Bemani and others. Still missing: about 50 small
+  1980s entries (clubs, dealers, sponsor names), Bigazzi, Auto Maass, BAS,
+  Kamei, Dellenbach, Eisele, Racing Dynamics, Marlboro BMW Dealer Team and a
+  few 1993 to 1995 teams.
 - **Mercedes / HWA:** no engine, aero or dynamics lead in any year. HWA's
   principal is its owner, Hans Werner Aufrecht (assumed for 2006 to 2012;
   Norbert Haug was the Mercedes motorsport boss above HWA).
 - **BMW 2012 to 2019:** no chief designer or engine head for most years.
   Mike Krack (2012) is filed as technical director at manufacturer level.
+  Race engineers (as chief mechanic) come from the 2014 and 2016 BMW media
+  guides; the other years carry them over as assumed.
+- **Fan wiki:** rows whose only source is the DTM fan wiki (dtm.fandom.com)
+  are marked assumed, not verified.
 - **2017, 2018 and 2020 to 2026:** mostly team principals only.
 - **Doubtful credits:** Wikipedia names Dominic Harlow as designer of the
   2013 BMW M3 DTM and Wolfgang Dürheimer for the Audi RS 5. Both were left
   out; see the notes on the rows used instead.
 
-Next targets for a second pass: the BMW and Audi press kits and media guides
-(2013 to 2019), the owners of the privateer teams listed above, and the AMG,
-Opel and Alfa aero and chassis leads.
+Corrections made in the second pass: Audi 2019 head of engine is Stefan
+Dreyer (not Baretzky); the Opel Vectra chief designer for 2004 and 2005 is
+Jean-Claude Martens (Günther Steiner stays technical director); Dominic
+Harlow is no longer listed as BMW chief designer in 2013 (BMW's 2014 guide
+shows him as a race engineer).
 
 ## Team lists to clean up
 
