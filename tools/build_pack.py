@@ -258,12 +258,76 @@ def readable_team_text(out):
     dump_json(path, teams)
 
 
-def generate_staff(out, base_dir, spec, teams):
-    """Fill every team with one placeholder staff member per role.
+STAFF_REF = REPO / "docs" / "staff"
+ROLE_AGE = {"team_principal": (38, 64), "technical_director": (36, 60), "chief_designer": (34, 58),
+            "head_of_aero": (30, 52), "head_of_engine": (36, 62), "head_of_dynamics": (30, 52),
+            "chief_mechanic": (28, 54)}
 
-    Real 1991 engineers are mostly undocumented, so names come from the
-    game's nationality name pool and skills scale with the team's level.
-    Records listed in spec["named"] (researched people) take precedence.
+
+def name_seed(*parts):
+    import hashlib
+    return int(hashlib.sha1("|".join(map(str, parts)).encode("utf-8")).hexdigest(), 16)
+
+
+def person_age(name, role, year, born=None):
+    """Age in `year`. Without a known birth year, a fixed one per name
+    (1930 to 1985) keeps the person the same age across packs; it is pulled
+    into the role's usual range only if it falls outside."""
+    if born:
+        return year - born
+    lo, hi = ROLE_AGE.get(role, (30, 60))
+    age = year - (1930 + name_seed(name, "born") % 56)
+    return age if 25 <= age <= 75 else lo + name_seed(name, role, "age") % (hi - lo + 1)
+
+
+def period_name(nationality, year, role, used, *seed):
+    """A made-up name that fits the nationality and the period, from the
+    same lists as tools/fictional_staff.py."""
+    import fictional_staff as fs
+    first_old, first_new, last = fs.NAMES.get(nationality) or fs.NAMES["german"]
+    lo, hi = ROLE_AGE.get(role, (30, 60))
+    born = year - (lo + name_seed(*seed, "age") % (hi - lo + 1))
+    firsts = first_old if born < 1960 else first_new
+    for i in range(400):
+        name = f"{firsts[name_seed(*seed, 'f', i) % len(firsts)]} {last[name_seed(*seed, 'l', i) % len(last)]}"
+        if name not in used:
+            return name, born
+    return name, born
+
+
+def staff_reference(season):
+    """team -> role -> list of (name, born, nationality) from docs/staff.
+
+    Real people (dtm_staff.csv, verified or assumed) come first, then the
+    made-up names of dtm_staff_fictional.csv for roles nobody was found for.
+    """
+    import csv
+
+    ref = {}
+    for path in (STAFF_REF / "dtm_staff.csv", STAFF_REF / "dtm_staff_fictional.csv"):
+        if not path.exists():
+            continue
+        with open(path, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if row["season"] != season:
+                    continue
+                born = int(row["born"]) if row.get("born") else None
+                ref.setdefault(row["team"], {}).setdefault(row["role"], []).append(
+                    (row["person"], born, row.get("nationality") or None))
+    return ref
+
+
+def generate_staff(out, base_dir, spec, teams):
+    """Fill every team with one staff member per role.
+
+    Order of precedence per team and role:
+    1. spec["named"]: full records written into season.json.
+    2. spec["reference"] (a season id like "dtm-2013"): the people in
+       docs/staff (real first, then the made-up names for empty roles).
+       A person can work for one team only, so a name shared by several
+       teams (a manufacturer-level designer) goes to the highest-level team.
+    3. A random name from the game's nationality pool.
+    Skills always scale with the team's level.
     """
     import random
 
@@ -276,7 +340,10 @@ def generate_staff(out, base_dir, spec, teams):
     used = {s["name"] for s in named}
     staff = list(named)
     levels = spec["levels"]
-    for team in teams:
+    season = spec.get("reference")
+    ref = staff_reference(season) if season else {}
+    year = int(season.split("-")[1]) if season else None
+    for team in sorted(teams, key=lambda t: -levels[t["name"]]):
         level = levels[team["name"]]
         filled = {s["role"] for s in named if s.get("team") == team["name"]}
         pool = pools.get(team["nationality"]) or pools["german"]
@@ -284,18 +351,30 @@ def generate_staff(out, base_dir, spec, teams):
             if role in filled:
                 continue
             tpl = copy.deepcopy(templates[role])
-            for _ in range(200):
-                name = f"{rng.choice(pool['first_names'])} {rng.choice(pool['last_names'])}"
+            age, nat = rng.randint(32, 58), None
+            for name, born, ref_nat in ref.get(team["name"], {}).get(role, []):
                 if name not in used:
+                    age = person_age(name, role, year, born)
+                    nat = ref_nat
                     break
+            else:
+                if season:
+                    name, born = period_name(team["nationality"], year, role, used, season, team["name"], role)
+                    age = year - born
+                else:
+                    for _ in range(200):
+                        name = f"{rng.choice(pool['first_names'])} {rng.choice(pool['last_names'])}"
+                        if name not in used:
+                            break
             used.add(name)
             jitter = lambda: max(1, min(20, level + rng.randint(-2, 2)))
+            nat = nat if nat in pools else (team["nationality"] if team["nationality"] in pools else "german")
             tpl.update({
                 "name": name,
                 "team": team["name"],
                 "skill": jitter(),
-                "age": rng.randint(32, 58),
-                "nationality": team["nationality"] if team["nationality"] in pools else "german",
+                "age": age,
+                "nationality": nat,
                 "skills": {k: jitter() for k in tpl["skills"]},
                 "talent": {k: min(20, jitter() + 2) for k in tpl["talent"]},
                 "contract": {"team": team["name"], "length_weeks": 104,
@@ -303,6 +382,57 @@ def generate_staff(out, base_dir, spec, teams):
             })
             staff.append(tpl)
     dump_json(out / "staff.json", staff)
+    if season:
+        generate_team_principals(out, spec, teams, ref, year, used)
+
+
+def generate_team_principals(out, spec, teams, ref, year, used_staff_names):
+    """Replace the base pack's fictional principals with one per DTM team.
+
+    The principal comes from docs/staff (real, else made-up). A name the
+    game already uses (a second team of the same owner, or a staff member)
+    falls back to a made-up name from the team's other roles' pool. Ratings
+    scale with the team's level; the background is fixed per name.
+    """
+    import hashlib
+    import random
+
+    path = out / "teamprincipals.json"
+    data = load_json(path)
+    backgrounds = [b for b in data.get("backgrounds", {}) if b != "newcomer"] or ["newcomer"]
+    rng = random.Random(f"tp-{spec.get('seed', year)}")
+    pools = load_json(out / "driver_names.json")["names_by_nationality"]
+    levels = spec["levels"]
+    used = set(used_staff_names)
+    principals = []
+    for team in sorted(teams, key=lambda t: -levels[t["name"]]):
+        level = levels[team["name"]]
+        name, born, nat = None, None, None
+        for cand, cand_born, cand_nat in ref.get(team["name"], {}).get("team_principal", []):
+            if cand not in used:
+                name, born, nat = cand, cand_born, cand_nat
+                break
+        if name is None:
+            name, born = period_name(team["nationality"], year, "team_principal", used,
+                                     "tp", team["name"])
+        used.add(name)
+        first, _, last = name.partition(" ")
+        seed = int(hashlib.sha1(name.encode("utf-8")).hexdigest(), 16)
+        age = person_age(name, "team_principal", year, born)
+        rate = lambda k: max(5, min(18, level + (seed >> (4 * k)) % 5 - 2))
+        principals.append({
+            "first_name": first,
+            "last_name": last,
+            "nationality": nat if nat in pools else (team["nationality"] if team["nationality"] in pools else "german"),
+            "age": age,
+            "background": backgrounds[seed % len(backgrounds)],
+            "team": team["name"],
+            "stats": {"reputation": rate(1), "finance": rate(2), "leadership": rate(3), "organization": rate(4)},
+        })
+    data["description"] = ("DTM team principals from docs/staff/dtm_staff.csv (real people, verified or "
+                           "assumed); made-up names where no principal is known.")
+    data["principals"] = principals
+    dump_json(path, data)
 
 
 def patch_constants(text, overrides):

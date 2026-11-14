@@ -22,7 +22,7 @@
   "staff": {
     "seed": 2012,
     "salary_per_level_m": 0.1,
-    "named": [],
+    "named": [], "reference": "dtm-2012",
     "levels": {
       "BMW Team Schnitzer": 16,
       "Thomas Sabo AMG-Mercedes": 15,

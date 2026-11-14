@@ -79,6 +79,25 @@ they mean:
 | `head_of_dynamics` | Chassis and vehicle dynamics lead. |
 | `chief_mechanic` | Chief mechanic, or the team's race engineer at the track (note says which). |
 
+## In the packs
+
+A pack reads this reference when its `season.json` names the season:
+`"staff": {..., "reference": "dtm-2013"}`. `tools/build_pack.py` then writes:
+
+- `staff.json`: for each team and role the real person, else the made-up
+  name from `dtm_staff_fictional.csv`, else a period name. A person works
+  for one team only, so a name shared by several teams goes to the team
+  with the highest level; the others get a period name.
+- `teamprincipals.json`: one principal per team, real where known, in place
+  of the base game's fictional principals. Pictures for them go in the
+  pack's `assets/team_principals/FirstLast.png`.
+
+Birth years of real people are not in the reference yet. Until they are, a
+real person gets a fixed made-up birth year, so the age is wrong but stays
+the same person from pack to pack.
+
+Packs using it: dtm-2012, dtm-2013.
+
 ## How to use it for a new pack
 
 1. Filter the CSV on the season.

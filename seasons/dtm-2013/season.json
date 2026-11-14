@@ -23,7 +23,7 @@
   "staff": {
     "seed": 2013,
     "salary_per_level_m": 0.1,
-    "named": [],
+    "named": [], "reference": "dtm-2013",
     "levels": {
       "Audi Sport Team Phoenix": 16,
       "BMW Team RBM": 15,
