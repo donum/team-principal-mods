@@ -7,7 +7,48 @@ from here and let the generator fill the rest.
 - **Data:** [dtm_staff.csv](dtm_staff.csv), one row per person, role, team and
   season.
 - **Built:** 2026-11-14, from six research passes (one per era), a second pass on the gaps (privateer owners 1984 to 1995, works-team race engineers 2012 to 2019, engineering leads 1984 to 2011) and a merge.
-- **Size:** 1,168 people: 628 verified, 540 assumed. 512 of 631 team-seasons have a team principal.
+- **Size:** 1,191 real people: 628 verified, 563 assumed. 512 of 631 team-seasons have a team principal.
+
+- **Gaps:** [dtm_staff_fictional.csv](dtm_staff_fictional.csv) fills every
+  empty role with a made-up name that fits the team's country and the
+  period (3,237 rows, 1,451 people). Built by `tools/fictional_staff.py`.
+
+## Real and fictional names
+
+The two files are kept apart on purpose. `dtm_staff.csv` holds only real
+people. `dtm_staff_fictional.csv` holds made-up people for every role that is
+still empty, so a pack can have a full staff list without putting a real
+person into a job they never had.
+
+- A fictional person keeps the job for a few seasons (a team principal about
+  eight, a chief mechanic about four), has a birth year that fits the role,
+  and never shares a name with a real person in the reference.
+- Design, engine, aero and dynamics jobs at a works make (Audi, BMW,
+  Mercedes, Opel, Alfa Romeo, …) from 1990 on are shared: one fictional
+  person serves all teams of that make in a season.
+- Where another team of the same make already has a real person in a
+  manufacturer-level role, the gap is filled with that real person instead,
+  marked `assumed` in `dtm_staff.csv` (note: "Same manufacturer-level role
+  as …").
+- When research later finds a real person, add the row to `dtm_staff.csv`
+  and rerun `python tools/fictional_staff.py`: the fictional row for that
+  slot disappears.
+
+## Pictures in the game
+
+The game shows pictures for two kinds of people only:
+
+| Who | File | Matched by |
+|---|---|---|
+| Drivers | `assets/portraits/FirstLast.png` | the driver's full name |
+| Team principals | `assets/team_principals/FirstLast.png` | the full name in `teamprincipals.json` |
+
+The six staff roles (technical director to chief mechanic) have no picture
+in the game. So the only staff people who can get a picture are the team
+principals: 518 real ones in `dtm_staff.csv` and 119 fictional ones. For
+real principals, the same photo rules apply as for driver portraits
+(licence, credit). Fictional principals would need drawn or generated
+portraits that do not look like a real person.
 
 ## Columns
 
