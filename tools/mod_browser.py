@@ -42,6 +42,7 @@ browser built so far.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import re
@@ -73,6 +74,9 @@ SLOT_NAMES = {"grid_idle": "Grid idle (loops until lights out)", "grid_launch": 
 
 # Sound candidates: folders under private/engine_audio and what they are.
 # New folders show up on their own under their folder name.
+# Pilot folders ranked by an index.csv list only their best clips.
+TOP_RANKED = 20
+
 CANDIDATE_GROUPS = [
     ("library/starts", "ingame_start_*.wav", "Starts as the game plays them",
      "The installed pairs mixed with the game's timing and levels: grid idle, five lights 0.5 s apart, "
@@ -728,25 +732,51 @@ def build_candidates(media, pack: Path | None = None, season: Path | None = None
                 item["note"] = c.get("note") or f"{c['kind']}, {c['video_id']} {c['start_s']}-{c['end_s']} s"
             items.append(item)
         groups.append({"title": title, "folder": f"private/engine_audio/{folder}", "note": note, "items": items})
+    pilot_dirs = []
     for d in sorted((AUDIO_DATA / "pilot").glob("*")):
         if d.is_dir() and not any(g[0] == f"pilot/{d.name}" for g in CANDIDATE_GROUPS):
-            # a folder's candidates.json (file -> note, frames, scores) labels its clips
-            meta = {c["file"]: c for c in load_json(d / "candidates.json", []) or [] if isinstance(c, dict) and "file" in c}
+            pilot_dirs.append(d)
+            pilot_dirs += [s for s in sorted(d.glob("*")) if s.is_dir()]   # e.g. one subfolder per make
+    for d in pilot_dirs:
+        rel = d.relative_to(AUDIO_DATA / "pilot").as_posix()
+        # a folder's index.csv (file relative to the folder, quality, ...) ranks its
+        # clips best first; only the top ones are listed, the rest stay in the folder
+        index = d.parent / "index.csv" if (d.parent / "index.csv").exists() else d / "index.csv"
+        ranked = {}
+        if index.exists():
+            with open(index, encoding="utf-8-sig") as fh:
+                for r in csv.DictReader(fh):
+                    ranked[(index.parent / r["file"]).resolve()] = r
+        # a folder's candidates.json (file -> note, frames, scores) labels its clips
+        meta = {c["file"]: c for c in load_json(d / "candidates.json", []) or [] if isinstance(c, dict) and "file" in c}
+        for p, r in ranked.items():
+            if p.parent == d.resolve():
+                meta[p.name] = {"note": f"score {float(r['quality']):.2f} · {r['year']} {r['track']} {r['race']}, "
+                                        f"{r['driver']}, {r['label'].replace('_', ' ')} at {r['rpm_mean']} rpm, "
+                                        f"{r['at_s']} s into {Path(r['source']).name}"}
 
-            def label(c: dict) -> str:
-                bits = [c.get("note"), c.get("frames"), c.get("title")]
-                if "hf_share" in c:
-                    bits.append(f"above 5 kHz {c['hf_share'] * 100:.1f} %, flatness {c['flatness']} (2013 pick: 0.2 %, 0.06)")
-                if c.get("standing_start"):
-                    bits.append("standing start")
-                return " · ".join(b for b in bits if b)
-            items = [{"name": p.stem.replace("_", " "), "file": p.name,
-                      "audio": media.audio(p, f"candidates/pilot/{d.name}/{p.name}"), "seconds": duration(p),
-                      "in_use": False, "note": label(meta.get(p.name, {}))}
-                     for p in sorted(d.glob("*.wav")) if not out_of_era(p.name)]
-            if items:
-                groups.append({"title": d.name.replace("_", " ").capitalize(), "folder": f"private/engine_audio/pilot/{d.name}",
-                               "note": "", "items": items})
+        def label(c: dict) -> str:
+            bits = [c.get("note"), c.get("frames"), c.get("title")]
+            if "hf_share" in c:
+                bits.append(f"above 5 kHz {c['hf_share'] * 100:.1f} %, flatness {c['flatness']} (2013 pick: 0.2 %, 0.06)")
+            if c.get("standing_start"):
+                bits.append("standing start")
+            return " · ".join(b for b in bits if b)
+        wavs = [p for p in sorted(d.glob("*.wav")) if not out_of_era(p.name)]
+        note = ""
+        if ranked:
+            wavs.sort(key=lambda p: -float(ranked.get(p.resolve(), {}).get("quality") or 0))
+            if len(wavs) > TOP_RANKED:
+                note = f"The {TOP_RANKED} best of {len(wavs)} by score (index.csv); the rest are in the folder."
+                wavs = wavs[:TOP_RANKED]
+        items = [{"name": p.stem.replace("_", " "), "file": p.name,
+                  "audio": media.audio(p, f"candidates/pilot/{rel}/{p.name}"), "seconds": duration(p),
+                  "in_use": False, "note": label(meta.get(p.name, {}))}
+                 for p in wavs]
+        if items:
+            top, _, sub = rel.partition("/")
+            groups.append({"title": top.replace("_", " ").capitalize() + (f": {sub}" if sub else ""),
+                           "folder": f"private/engine_audio/pilot/{rel}", "note": note, "items": items})
     lib = AUDIO_DATA / "library" / "index.html"
     return groups, (lib.as_uri() if lib.exists() else None)
 

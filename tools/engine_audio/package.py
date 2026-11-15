@@ -43,7 +43,7 @@ import pits
 import start_synth
 import starts
 from common import (BASE_ID, KEY_PREFIX, MAKES, OVERLAY_ID, PACK_DIR, REPO, SET_LIBRARY_DIR, SLOTS, connect, decode,
-                    dump_json, game_path, load_json, slug, write_wav)
+                    dump_json, game_path, load_json, slug, source_root, write_wav)
 
 sys.path.insert(0, str(REPO / "tools"))
 import layers as source_layers  # noqa: E402  (build() has a local "layers")
@@ -51,6 +51,21 @@ import layers as source_layers  # noqa: E402  (build() has a local "layers")
 SR = 44100
 C = 343.0
 FADE = 0.03
+
+# Pass-bys picked by ear, per sound set and make, instead of the best library
+# segment: (video id, file under the video source folder, start of the clean
+# stretch in s). The 2018 race onboards are not in the catalog; these come
+# from the pass-by sweep (pilot/passby_candidates_2018, picked 2026-11-15).
+PASSBY_PICKS = {
+    "dtm-2018": {
+        "Audi": ("pU1LnZukmNc", r"2018\DTM Spielberg 2018\030 - DTM Spielberg 2018 - René Rast (Audi RS5 DTM) - RE-LIVE Onboard (Race 1).mkv",
+                 2637.7, "René Rast, Spielberg 2018 race 1"),
+        "BMW": ("zSicNM65xYQ", r"2018\DTM Spielberg 2018\029 - DTM Spielberg 2018 - Philipp Eng (BMW M4 DTM) - RE-LIVE Onboard (Race 1).mkv",
+                1486.4, "Philipp Eng, Spielberg 2018 race 1"),
+        "Mercedes": ("LcnTuzj55q4", r"2018\DTM Misano 2018\011 - DTM Misano 2018 - Pascal Wehrlein (Mercedes-AMG C63 DTM) - Re-Live Onboard (Race 2).mkv",
+                     1538.2, "Pascal Wehrlein, Misano 2018 race 2"),
+    },
+}
 
 
 # ------------------------------------------------------------------ helpers
@@ -209,8 +224,15 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
     # pass-bys, one per make, tagged on the supplier
     lvl = stock_level(base_audio, "session/hotlap_flybys.json", "engine_passby")
     by_make = {}          # make -> clip key; overlay.py tags each season's suppliers by name
+    picks = PASSBY_PICKS.get(OVERLAY_ID, {})
     for make in (MAKES if "passby" in SLOTS else ()):
-        for r in candidates(db, ("full_throttle", "steady_high"), min_q, make=make):
+        rows = candidates(db, ("full_throttle", "steady_high"), min_q, make=make)
+        if make in picks:
+            vid, rel, at, who = picks[make]
+            rows = [{"audio_path": str(source_root() / rel), "start_s": at, "end_s": at + 4.4,
+                     "video_id": vid, "manufacturer": make, "driver": who, "track": "picked by ear",
+                     "quality": 1.0}]
+        for r in rows:
             if r["end_s"] - r["start_s"] < 2.0:
                 continue
             src = decode(Path(r["audio_path"]), max(0, r["start_s"] - 0.5), 4.9, SR, 2).mean(axis=1)
