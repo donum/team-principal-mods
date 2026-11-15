@@ -40,6 +40,10 @@ Era 5 is neon on navy. Era 6 is neon (2021–22), then yellow on black (2023–2
 then the notched 2025 logo. Text-only logos count as public domain on Commons
 (below the threshold of originality), which is why we can ship them.
 
+Other series: the BTCC logo references for 1991 (season review DVD cover,
+and the Esso podium boards and number panels in the 1991 review) are
+described in [seasons/btcc-1991/README.md](../seasons/btcc-1991/README.md#series-logo).
+
 ## What changes between eras (game view)
 
 **Era 1: Production and Group A**

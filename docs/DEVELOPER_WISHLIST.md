@@ -361,7 +361,7 @@ rules to these items:
 - **Request:** allow 4–6 entries.
 
 ### C2. Entry lists per round (part-timers and guests) · P1
-- **Needed by:** dtm-1991, dtm-1992 (Audi withdrew after round 6; in the game it races all season), dtm-1987, dtm-2003, dtm-2006, dtm-2010.
+- **Needed by:** dtm-1991, dtm-1992 (Audi withdrew after round 6; in the game it races all season), dtm-1987, dtm-2003, dtm-2006, dtm-2010, btcc-1991 (Prodrive's car 44 was shared: Steve Soper drove 7 rounds around his DTM programme, Tim Sugden 5; in the game Soper races all 15, so the Mobil BMW team scores about 6 points too much in simulated seasons).
 - **1991:**
   - Michael Schumacher drove 2 rounds for Zakspeed.
   - Walter Röhrl drove 1 round for SMS.

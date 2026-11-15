@@ -34,16 +34,18 @@ fastest race lap and average race lap against 1991 (see memory rule).
   their speed factors make up for it, but the shapes want a second look in
   race-tracks · P2.
 - **Lap times** · done 2026-11-15: `speed_mult` per track from three seasons
-  of pole, fastest race lap and average race lap. Now (three seasons,
-  build/sim/btcc-1991/20261115-130705): pole -0.4% to +1.6%, fastest lap
-  -1.5% to +2.2%, race lap +0.5% to +3.7% per track.
-- **Make balance** · done 2026-11-15 (three passes, gen.json). Three seasons
-  against 1991: 5, 5 and 3 different winners (real 6); wins per season
-  Cleland 5.3 (4), Rouse 3.3 (3), Soper 2.7 (3), Hoy 2.3 (3), Harvey 0.7 (1);
-  points Securicor 21.9% (22.1%), Labatt's 10.9% (10.2%), Vauxhall 23.0%
-  (20.5%), Toyota 20.2% (14.3%), Mobil 20.0% (14.4%; Soper races every
-  round in the game, six fewer in 1991). Still open · P2: the independents
-  score 1-2% against 3-4% (Middlehurst, Gravett, Sytner).
+  of pole, fastest race lap and average race lap. Final check (three
+  seasons, build/sim/btcc-1991/20261115-160024): every track within -1.9% to
+  +2.3% on all three measures.
+- **Make balance** · done 2026-11-15 after four passes (gen.json). Final
+  three seasons against 1991: 5, 4 and 5 different winners (real 6);
+  points Securicor 22.4% (22.1%), Mobil 15.3% (14.4%), Toyota 17.9% (14.3%),
+  Labatt's 7.1% (10.2%), Vauxhall 29.9% (20.5%), Graham Goode 3.6% (4.4%),
+  Trakstar 2.6% (3.6%). Vauxhall's rating did not change between the last
+  runs while its share moved from 20% to 30%: over three seasons a team's
+  share moves about 5 to 10 points by chance, so further passes would chase
+  noise. Mobil's 1991 car 44 was shared by Soper and Sugden; the game can't
+  share a seat (wishlist C2).
 - **Report matching** · P3: the result files carry the printed entrant
   names, so `tools/simulate.py` files about 5% of the real points under "?".
 
