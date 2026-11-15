@@ -65,10 +65,22 @@ python tools/simulate.py dtm-2013 --runs 4 --out build/sim/dtm-2013/venues-fit1
 python -I tools/venue_stats.py --pack seasons/dtm-2013 --years 2012-2013 --sim build/sim/dtm-2013/venues-fit1 --fit
 ```
 
-`--sim` pools the runs (all made with the track values now in `dist/`),
-counts retirements and swaps per track the same way as for the real races,
-and moves each value by target / simulated. `--fit` writes them. Rebuild the
-pack and simulate again until the two agree.
+`--sim` pools the runs (all made with the same track values; the fit reads
+them from the first run's sandbox), counts retirements and swaps per track
+the same way as for the real races, and moves each value towards the target.
+`--fit` writes them. Rebuild the pack and simulate again until the two agree.
+
+`--overtake-factor 1.15` aims for 15% more swaps than the real races had: a
+bit more passing than real life plays better (the DTM 2013 pack uses it).
+Swaps respond to `overtaking_difficulty` roughly as value^-0.85 at first
+(measured on DTM 2013), so the fit moves the value by (simulated / target)^1.2.
+Below about 0.3 it stops helping: there is little dirty air left to take away
+(DTM 2013 round four: values a quarter lower, only 10% more swaps). A 40%
+stronger slipstream (`<season>/patches/config.json`, merged by
+`build_pack.py`) made no difference either (round five: 2.16 swaps per car,
+against 2.23). Swaps count grid-to-finish changes, and the simulated field
+finishes close to its race-pace order, so easier passing adds few. Once the
+values are that low, fit only the retirements (`--fit --fit-only dnf`).
 
 `python -I tools/pit_lane.py <specs>` prints the pit-lane estimate per track.
 With `--csv` it prints `osm_pit_lane_m` rows for this file.

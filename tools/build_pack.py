@@ -14,7 +14,10 @@ Season source layout (seasons/<id>/):
                        record taken from the base pack
     patches/regulations.json
                        per-category overrides ("default", extra "options")
-    tracks/<id>.json   our own traced tracks
+    patches/config.json
+                       deep-merged into the base pack's config.json (race
+                       physics: dirty air, slipstream, DRS)
+    tracks/<id>.json  our own traced tracks
     assets/...         our own images, copied over the base assets
 
 Usage:
@@ -669,6 +672,12 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
         patch = layer / "patches" / "regulations.json"
         if patch.exists():
             dump_json(out / "regulations.json", patch_regulations(load_json(out / "regulations.json"), load_json(patch)))
+        # config.json (race physics: dirty air, slipstream, DRS...) is deep-merged;
+        # keys starting with "$" are comments.
+        patch = layer / "patches" / "config.json"
+        if patch.exists():
+            body = {k: v for k, v in load_json(patch).items() if not k.startswith("$")}
+            dump_json(out / "config.json", deep_merge(load_json(out / "config.json"), body))
 
     constants = out / "constants.py"
     raw = constants.read_bytes().decode("utf-8")

@@ -50,8 +50,8 @@
         "stagger_m": 4.0
       },
       "wet_weather_probability_multiplier": 1.1,
-      "dnf_modifier": 0.6,
-      "overtaking_difficulty": 0.24
+      "dnf_modifier": 0.9,
+      "overtaking_difficulty": 0.13
     }
   },
   "audio": {

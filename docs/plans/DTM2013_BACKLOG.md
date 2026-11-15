@@ -33,15 +33,21 @@ writes the sourced ones into the specs.
 - Done: `dnf_modifier` and `overtaking_difficulty`, fitted in two simulator
   rounds (`venue_stats.py --sim ... --fit`) to the 2012–2013 retirements and
   grid-to-finish swaps per venue. The game rolls failures every lap, so long
-  races need low values (Brands Hatch 0.25, Moscow 0.60) and short ones high
-  (Hockenheim 1.74). Three rounds (`build/sim/dtm-2013/venues-fit1` to `-fit3`;
-  the game updated to build 45440200 between rounds one and two). Round three,
-  50 races: 15.5% of starters retired (real 14.3%), 2.03 swaps per car (real
-  2.32; the new build passes less, so overtaking values came down again).
-  Values from round three are in; one more round would confirm them.
+  races need low values (Brands Hatch 0.33, Moscow 0.58) and short ones high
+  (Hockenheim 1.78). Six rounds (`build/sim/dtm-2013/venues-fit1` to `-fit6`;
+  the game updated to build 45440200 between rounds one and two). Round six,
+  40 races: 13.9% of starters retired (real 14.3%), 2.13 swaps per car (real
+  2.32), about 2 stops everywhere. Per track the retirements scatter with 4
+  races each; not refitted further.
+- Overtaking: the aim was 15% more than real (2.67 swaps per car). Overtaking
+  values below about 0.3 and a 40% stronger slipstream (round five) gave no
+  more swaps: the field finishes close to its race-pace order. Accepted at
+  about 2.2 (2026-11-15); the slipstream is back to the game default. More
+  would need race-pace variance (driver consistency) or DRS, which touches
+  the ratings and qualifying.
 - Moscow: with the real pit loss the AI one-stopped (1.4 stops), so its
-  `tyre_wear_mult` went from 0.59 to 0.75 (2.46 stops), now 0.68. Not yet
-  re-simulated.
+  `tyre_wear_mult` went from 0.59 to 0.75 (2.46 stops), now 0.68 (round six:
+  2.2 stops).
 - `pit_lane_loss_s`: Moscow 25.8 s from the official in-and-out time named on
   TV (29 s with the stop). The commentators' figures at the Nürburgring and
   Zandvoort match the specs and `tools/pit_lane.py`. At the Red Bull Ring the

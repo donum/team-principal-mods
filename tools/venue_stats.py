@@ -235,11 +235,13 @@ def sim_rows(sim_dir: Path) -> list[dict]:
     return rows
 
 
-OVERTAKE_POWER = 1.0   # swaps ~ overtaking_difficulty ** -1/OVERTAKE_POWER (first guess; refit after a round)
+# swaps ~ overtaking_difficulty ** (-1 / OVERTAKE_POWER). Measured on DTM 2013: values
+# 20% lower gave 21% more swaps (wear-v2 -> venues-fit1), so about 1.2.
+OVERTAKE_POWER = 1.2
 
 
 def sim_fit(pack: Path, sim_dirs: list[Path], real: list[dict], years: tuple[int, int] | None,
-            write: bool = False) -> None:
+            write: bool = False, overtake_factor: float = 1.0, only: str | None = None) -> None:
     """Calibrate dnf_modifier and overtaking_difficulty against the real races,
     like tools/calibrate.py does for lap times: pool the given simulate.py runs
     (all made with the same track values, the ones in dist/<pack>), then
@@ -251,14 +253,19 @@ def sim_fit(pack: Path, sim_dirs: list[Path], real: list[dict], years: tuple[int
     (PRIOR_RACES). The game rolls failures every lap, so a long race (Brands
     Hatch, 98 laps) retires far more cars at the same modifier; a track with
     fewer than 2 simulated races is predicted from the per-lap rate of the others.
-    --write puts the new values into the specs (or the base's track_overrides)."""
+    --write puts the new values into the specs (or the base's track_overrides);
+    only="dnf" or "overtaking" writes just that one."""
     series = pack.name.split("-")[0]
     year = int(pack.name.split("-")[1])
     lo, hi = years or (year, year)
     pool = [r for r in real if r["series"] == series and lo <= int(r["season"].split("-")[1]) <= hi]
     real_v, real_t = by_venue(pool), by_venue([{**r, "venue": "*"} for r in pool])["*"]
     season = json.loads((pack / "season.json").read_text(encoding="utf-8"))
-    dist = REPO / "dist" / season.get("pack_folder", pack.name.replace("-", ""))
+    folder = season.get("pack_folder", pack.name.replace("-", ""))
+    # The values the simulated races ran with: the pack copy in the first run's
+    # sandbox (dist/ may already hold newer values), else dist/.
+    sandbox = sorted(sim_dirs[0].glob(f"run-*/data/{folder}/tracks"))
+    dist = sandbox[0].parent if sandbox else REPO / "dist" / folder
     schedule = json.loads((pack / "data" / "schedule.json").read_text(encoding="utf-8"))
     tids = list(dict.fromkeys(t for t in schedule if t and t not in ("private", "test")))
     rows = [r for d in sim_dirs for r in sim_rows(d)]
@@ -285,7 +292,8 @@ def sim_fit(pack: Path, sim_dirs: list[Path], real: list[dict], years: tuple[int
         name = json.loads(spec.read_text(encoding="utf-8")).get("name", tid) if spec else tid
         rv = real_v.get(venue_key(name, "", str(now[tid].get("length_km", ""))) or tid)
         dr, sr = shrunk_ratios(rv, real_t) if rv else (1.0, 1.0)
-        t_dnf, t_swaps = dr * real_t["dnf_rate"], sr * real_t["swaps_per_car"]
+        # overtake_factor: a game is more fun with a bit more passing than the real races had
+        t_dnf, t_swaps = dr * real_t["dnf_rate"], sr * real_t["swaps_per_car"] * overtake_factor
         dm, od = now[tid].get("dnf_modifier", 1.0), now[tid].get("overtaking_difficulty", 1.0)
         v = sv.get(tid)
         n = v["races"] if v else 0
@@ -295,8 +303,9 @@ def sim_fit(pack: Path, sim_dirs: list[Path], real: list[dict], years: tuple[int
         s_sw = (n * (v["swaps_per_car"] or 0) + PRIOR_RACES * st["swaps_per_car"]) / (n + PRIOR_RACES) if v \
             else st["swaps_per_car"]
         new_dm = round(min(3.0, max(0.15, dm * t_dnf / s_dnf)), 2) if s_dnf else dm
-        new_od = round(min(1.5, max(0.15, od * (s_sw / t_swaps) ** OVERTAKE_POWER)), 2) if t_swaps else od
-        new_vals[tid] = {"dnf_modifier": new_dm, "overtaking_difficulty": new_od}
+        new_od = round(min(1.5, max(0.05, od * (s_sw / t_swaps) ** OVERTAKE_POWER)), 2) if t_swaps else od
+        new_vals[tid] = {k: v for k, v in (("dnf_modifier", new_dm), ("overtaking_difficulty", new_od))
+                         if only is None or k.startswith(only[:3])}
         print(f"{tid:16} {laps[tid]:>4} {n:>4}  {s_dnf:>7.1%} {t_dnf:>6.1%} {dm:>5} {new_dm:>5}   "
               f"{s_sw:>9.2f} {t_swaps:>6.2f} {od:>5} {new_od:>5}")
     if write:
@@ -431,6 +440,10 @@ def main() -> None:
                     help="tools/simulate.py output folders (same track values): fit dnf_modifier and "
                          "overtaking_difficulty against the real races")
     ap.add_argument("--fit", action="store_true", help="with --sim: write the fitted values")
+    ap.add_argument("--fit-only", choices=["dnf", "overtaking"],
+                    help="with --fit: write only this value (overtaking stops responding below ~0.3)")
+    ap.add_argument("--overtake-factor", type=float, default=1.0,
+                    help="with --sim: aim for this many times the real swaps (DTM 2013: 1.15)")
     a = ap.parse_args()
     rows = collect()
     write(rows)
@@ -440,7 +453,8 @@ def main() -> None:
             apply_facts(pack)
         years = tuple(int(y) for y in a.years.split("-")) if a.years else None
         if a.sim:
-            sim_fit(pack, [d if d.is_absolute() else REPO / d for d in a.sim], rows, years, write=a.fit)
+            sim_fit(pack, [d if d.is_absolute() else REPO / d for d in a.sim], rows, years, write=a.fit,
+                    overtake_factor=a.overtake_factor, only=a.fit_only)
         else:
             pack_report(pack, rows, years)
 
