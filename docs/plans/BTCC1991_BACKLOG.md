@@ -25,17 +25,25 @@ Priority: **P1** = changes how the game plays, **P2** = more of the real
 
 ## 3. Calibration
 
-- **Lap times** · done 2026-11-15: per-track `speed_mult` from simulated
-  against real poles; over three seasons the poles are within -2.4% to +3.7%
-  (build/sim/btcc-1991/20261115-120905).
-- **Make balance** · first pass done 2026-11-15: team ratings and driver
-  skills by hand (gen.json). Three simulated seasons against 1991: 3 to 5
-  different winners (real 6); wins per season Hoy 5.7 (3), Soper 3.0 (3),
-  Rouse 2.7 (3), Cleland 1.7 (4); points Vauxhall 20% (20%), Toyota 19%
-  (14%), Securicor 28% (22%), Mobil 22% (14%, Soper races every round in
-  the game but missed six in 1991). Still open · P2: the independents score
-  about 1% each against 3 to 4% (Middlehurst, Gravett, Sytner), and Cleland
-  wins too few.
+Checked before every tuning run: track layouts and lengths, and pole,
+fastest race lap and average race lap against 1991 (see memory rule).
+
+- **Tracks** · all eight from the race-tracks repo's 1991 layouts. Lengths
+  within 1% of the 1991 figures, except Silverstone GP 1991 (traced 4.1%
+  short) and Oulton Park 1975 (3.7% short), both marked approximate there:
+  their speed factors make up for it, but the shapes want a second look in
+  race-tracks · P2.
+- **Lap times** · done 2026-11-15: `speed_mult` per track from three seasons
+  of pole, fastest race lap and average race lap. Now (three seasons,
+  build/sim/btcc-1991/20261115-130705): pole -0.4% to +1.6%, fastest lap
+  -1.5% to +2.2%, race lap +0.5% to +3.7% per track.
+- **Make balance** · done 2026-11-15 (three passes, gen.json). Three seasons
+  against 1991: 5, 5 and 3 different winners (real 6); wins per season
+  Cleland 5.3 (4), Rouse 3.3 (3), Soper 2.7 (3), Hoy 2.3 (3), Harvey 0.7 (1);
+  points Securicor 21.9% (22.1%), Labatt's 10.9% (10.2%), Vauxhall 23.0%
+  (20.5%), Toyota 20.2% (14.3%), Mobil 20.0% (14.4%; Soper races every
+  round in the game, six fewer in 1991). Still open · P2: the independents
+  score 1-2% against 3-4% (Middlehurst, Gravett, Sytner).
 - **Report matching** · P3: the result files carry the printed entrant
   names, so `tools/simulate.py` files about 5% of the real points under "?".
 
