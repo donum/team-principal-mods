@@ -80,6 +80,10 @@ def launch(args):
                  "    private/sim-venv/Scripts/python -m pip install pygame==2.6.1")
     out = Path(args.out) if args.out else REPO / "build" / "sim" / args.season / time.strftime("%Y%m%d-%H%M%S")
     out.mkdir(parents=True, exist_ok=True)
+    # Unpack a new game build once, here: parallel workers unpacking it at the
+    # same time collide on the shared pyz.partial folder (2026-11-15, build 45440200).
+    import game_code
+    game_code.unpack(game_dir() / "TeamPrincipal.exe")
     seed0 = args.seed if args.seed is not None else random.randrange(1_000_000)
     meta = {"season": args.season, "pack": pack, "source": str(source), "seasons": args.seasons,
             "runs": args.runs, "seed": seed0, "save": str(args.save) if args.save else None}

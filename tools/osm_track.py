@@ -643,9 +643,13 @@ def via_route(nodes, ways, spec, relations=()):
     return coords, sorted(used)
 
 
-def build(spec_path):
-    spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
-    season_dir = Path(spec_path).resolve().parent.parent
+def trace(spec):
+    """The OSM data, the racing loop and the pit lane of a spec, in metres.
+
+    Returns nodes, ways, relations, proj, loop_ways, pit_m (the pit lane way
+    named in pit_way_names, or None) and dense (the resampled, smoothed loop,
+    starting at the start line). Used by build() and by tools/pit_lane.py.
+    """
     # Dense cities exceed the OSM API's node limit, so a spec may split its
     # area into "bbox_tiles" that are fetched separately and merged.
     nodes, ways, relations = parse(fetch(spec["bbox"], spec["id"]))
@@ -697,6 +701,16 @@ def build(spec_path):
     dense = resample(loop_m, step=STEP_M)
     start = min(range(len(dense)), key=lambda i: math.dist(dense[i], anchor))
     dense = smooth(dense[start:] + dense[:start])
+    return {"nodes": nodes, "ways": ways, "relations": relations, "proj": proj,
+            "loop_ways": loop_ways, "pit_m": pit_m, "dense": dense}
+
+
+def build(spec_path):
+    spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
+    season_dir = Path(spec_path).resolve().parent.parent
+    t = trace(spec)
+    nodes, ways, relations, proj = t["nodes"], t["ways"], t["relations"], t["proj"]
+    loop_ways, pit_m, dense = t["loop_ways"], t["pit_m"], t["dense"]
 
     xs, ys = [p[0] for p in dense], [p[1] for p in dense]
     box_w, box_h = SAFE_BOX[2] - SAFE_BOX[0], SAFE_BOX[3] - SAFE_BOX[1]

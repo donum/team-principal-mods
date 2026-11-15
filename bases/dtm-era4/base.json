@@ -42,7 +42,16 @@
           "start_progress": 0.9354,
           "end_progress": 0.254
         }
-      ]
+      ],
+      "starting_grid": {
+        "pole_side": "right",
+        "row_spacing_m": 10.0,
+        "column_spacing_m": 3.0,
+        "stagger_m": 4.0
+      },
+      "wet_weather_probability_multiplier": 1.1,
+      "dnf_modifier": 0.6,
+      "overtaking_difficulty": 0.24
     }
   },
   "audio": {

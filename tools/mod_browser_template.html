@@ -427,7 +427,7 @@ function engines() {
 
 function tracks() {
   const byId = Object.fromEntries(D.tracks.map(t => [t.id, t]));
-  const statKeys = ["length_km", "race_laps", "overtaking_difficulty", "pit_lane_loss_s", "tyre_wear_mult", "lap_modifier", "nationality"];
+  const statKeys = ["length_km", "race_laps", "overtaking_difficulty", "dnf_modifier", "pit_lane_loss_s", "tyre_wear_mult", "wet_weather_probability_multiplier", "pole_side", "lap_modifier", "nationality"];
   return `<div style="display:grid;gap:6px"><h2>Calendar &amp; tracks</h2><p class="lede">The season by game week. Test and private weeks are dashed.</p></div>
   <div class="cal">${D.calendar.map(c => `<div class="wk ${c.round ? "" : "test"}"><span class="mono small muted">week ${c.week}</span><b>${c.round ? "R" + c.round + " · " : ""}${esc(byId[c.event]?.name || nat(c.event))}</b></div>`).join("")}</div>
   <div class="grid wide">${D.tracks.map(t => `<article class="trk">

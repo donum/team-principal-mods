@@ -20,6 +20,7 @@ starting with **2012**.
 | DTM 2018 | 🚧 generated and builds, two races per round, feeder series and portraits; not yet tested in-game or simulated | [`seasons/dtm-2018`](seasons/dtm-2018), on [`bases/dtm-era4`](bases/dtm-era4) |
 | DTM 2020 | 🚧 generated and builds, two races per round, not yet tested in-game or simulated; vanilla sounds | [`seasons/dtm-2020`](seasons/dtm-2020) (mother season), on [`bases/dtm-era5`](bases/dtm-era5) (2019–2020, on top of era 4) |
 | DTM 1984–2026 | 📚 research data ([season archive](tools/build_browser.py)) | `seasons/*/research` |
+| All series | 📚 per-venue facts for the track values: grid side, pit lane, climate, race stats ([venues](docs/venues/README.md)); TV commentary and stills as a source ([tv_coverage](tools/tv_coverage/README.md)) | `docs/venues` |
 | F1 2012 | 🚧 first Formula 1 pack: generated, tuned with the simulator, not yet played in-game | [`seasons/f1-2012`](seasons/f1-2012), on the era base [`bases/f1-v8`](bases/f1-v8) (2010–2013) |
 | F1 2010, 2011, 2013 | 📋 planned on the same base ([plan](docs/plans/F1_V8.md)) | `seasons/f1-20xx/research` |
 | BTCC 1991 | 🚧 first British Touring Car pack (first Super Touring year): generated and builds, placeholder tracks, not yet tested in-game or simulated ([backlog](docs/plans/BTCC1991_BACKLOG.md)) | [`seasons/btcc-1991`](seasons/btcc-1991) |

@@ -32,7 +32,7 @@ build them all.
 | dtm-2003 | A5, A6, B4, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2006 | A6, B1, B2, B5, B7, B10, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
-| dtm-2013 | A3, A5, A6, B5, B6, B7, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20 |
+| dtm-2013 | A3, A5, A6, B5, B6, B7, B11, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20 |
 | dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18 |
 | dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
@@ -294,11 +294,13 @@ rules to these items:
   for which stops count (`not_under_sc`, `not_under_fcy`).
 
 ### B11. Race control rules · P3
-- **Needed by:** dtm-2007 (pit lane closed under the safety car), dtm-2022 to dtm-2026 (full-course yellow at 60 km/h), dtm-2023 to dtm-2026 (penalty lap).
+- **Needed by:** dtm-2007 (pit lane closed under the safety car), dtm-2022 to dtm-2026 (full-course yellow at 60 km/h), dtm-2023 to dtm-2026 (penalty lap), dtm-2013 (the wet Nürburgring race started behind the safety car; a race stopped early added the track's in-and-out time, 29 s at Moscow, to every driver short of his mandatory stops).
 - **Today:** `safety_car_policy` picks the safety car and the virtual
   safety car. The VSC stands in for the FCY.
 - **Request:** `pit_lane_closed_under_sc`, and a penalty-lap penalty type
-  next to time penalties.
+  next to time penalties. A safety-car start when the race starts wet. A
+  time penalty per missing mandatory stop when a race ends early, set per
+  track (it can default to the track's `pit_lane_loss_s` plus a stop).
 
 ### B12. Tyre and stop rules as data · P1
 - **Needed by:** dtm-1988 on (set limits), dtm-2001 on (stop rules), dtm-2012, dtm-2013 (two stops, option tyre once), dtm-2014 (option cap), dtm-2023 on (start on qualifying tyres), dtm-2020.
@@ -508,7 +510,8 @@ rules to these items:
 ### D4. Weather realism · P3
 - **Needed by:** dtm-1991, dtm-2013 (a track has one
   `wet_weather_probability_multiplier` for every visit, so the May and
-  October Hockenheim rounds can't have different rain chances).
+  October Hockenheim rounds can't have different rain chances; the pack now
+  sets it from the climate in the race month, docs/venues).
 - **Request:** weather probability per date and region (e.g. April in the
   Eifel), or at least per schedule round, red-flag or restart for heavy rain, and tyre changes to wets as
   real strategy.
@@ -720,7 +723,16 @@ rules to these items:
   - Import a track from GPS/GPX coordinates.
   - A per-track pit-lane path and pit position. Today the pits are at the
     start line, so in dtm-2013 the start lines at Moscow, the Nürburgring,
-    Oschersleben and Zandvoort were moved onto the pit straight.
+    Oschersleben and Zandvoort were moved onto the pit straight. At the
+    Norisring the pit lane crosses the line, so a stop spans two laps.
+  - Document how the track values work. Found in the game code (dtm-2013,
+    [docs/venues](venues/README.md)): `dnf_modifier` scales the crash and
+    failure chance rolled every lap, so a 98-lap race at Brands Hatch retires
+    four times as many cars as a 42-lap race at Hockenheim at the same value;
+    `overtaking_difficulty` scales the dirty-air loss (default 1.0, not a 0–1
+    scale); `pit_lane_loss_s` excludes the service time. A per-race
+    retirement rate, or a note that the value is per lap, would save a
+    simulator round per pack.
 
 ### E6. Currency and economy per pack · P3
 - **Needed by:** dtm-1991, dtm-2013, dtm-2012.

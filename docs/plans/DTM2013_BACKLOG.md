@@ -24,6 +24,32 @@ each one per venue and set it in `track_specs/*.json` (Norisring:
 
 After the change, play a season and check pit stops, retirements and race times.
 
+**Status (2026-11-15).** The facts now live in [docs/venues](../venues/README.md),
+shared by every pack, and `tools/venue_stats.py --pack seasons/dtm-2013 --apply`
+writes the sourced ones into the specs.
+- Done: `starting_grid` pole side from the TV starts (8 of 9 venues; five specs
+  changed) and `wet_weather_probability_multiplier` from the climate in the
+  race month (Red Bull Ring 1.27 to Oschersleben 0.76).
+- Done: `dnf_modifier` and `overtaking_difficulty`, fitted in two simulator
+  rounds (`venue_stats.py --sim ... --fit`) to the 2012–2013 retirements and
+  grid-to-finish swaps per venue. The game rolls failures every lap, so long
+  races need low values (Brands Hatch 0.25, Moscow 0.60) and short ones high
+  (Hockenheim 1.74). Three rounds (`build/sim/dtm-2013/venues-fit1` to `-fit3`;
+  the game updated to build 45440200 between rounds one and two). Round three,
+  50 races: 15.5% of starters retired (real 14.3%), 2.03 swaps per car (real
+  2.32; the new build passes less, so overtaking values came down again).
+  Values from round three are in; one more round would confirm them.
+- Moscow: with the real pit loss the AI one-stopped (1.4 stops), so its
+  `tyre_wear_mult` went from 0.59 to 0.75 (2.46 stops), now 0.68. Not yet
+  re-simulated.
+- `pit_lane_loss_s`: Moscow 25.8 s from the official in-and-out time named on
+  TV (29 s with the stop). The commentators' figures at the Nürburgring and
+  Zandvoort match the specs and `tools/pit_lane.py`. At the Red Bull Ring the
+  commentary says about 20 s with the stop (about 17 s lane loss): the model
+  (23 s) runs high there, the spec keeps 19. Brands Hatch is still an estimate
+  (model 14, spec 17).
+- Open: `fuel_consumption` (120 L with no refuelling).
+
 ## 2. Drivers for the years after 2013 · P1
 
 `data/drivers.json` holds only the 22 race drivers: no free agents, reserves
@@ -41,6 +67,9 @@ generated drivers.
   teams) separate from `drivers.json`, and do they move up into the DTM?
 
 ## 3. Feeder series · P2
+
+**Done:** five real 2013 series in `data/junior_series.json` (see the pack
+README, "Feeder series"). The notes below are kept for other seasons.
 
 `junior_series.json` is a list of up to 4 series. Each has `series_name`,
 `series_abbreviation`, `description`, `tier`, `minimum_driver_age`,
@@ -99,8 +128,8 @@ simulation.
 
 ## 6. Smaller items
 
-- **Staff:** named real technical staff instead of placeholders
-  (`season.json` `staff.named`). · P2
+- ~~**Staff:** named real technical staff instead of placeholders~~ done in
+  v0.2, from [docs/staff](../staff/README.md).
 - **Rule changes over time:** `change_control` / `scripted_changes` for
   2014 onwards (needs research on what changed). · P2
 - **Part labels:** touring-car names in `car_parts.json` (🧪 whether the UI

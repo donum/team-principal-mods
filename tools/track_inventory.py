@@ -338,6 +338,16 @@ def collect_media(venues):
             })
 
 
+def collect_venue_facts(venues):
+    """docs/venues: sourced facts and per-race stats (tools/venue_stats.py), any series."""
+    for r in read_rows(REPO / "docs" / "venues" / "venue_facts.csv"):
+        if r.get("venue") in venues:
+            venues[r["venue"]].setdefault("facts", []).append(r)
+    for r in read_rows(REPO / "docs" / "venues" / "race_stats.csv"):
+        if r.get("venue") in venues:
+            venues[r["venue"]].setdefault("stats", []).append(r)
+
+
 def _count(it):
     out = defaultdict(int)
     for x in it:
@@ -353,6 +363,7 @@ def build():
     collect_game_tracks(venues)
     collect_race_tracks(venues)
     collect_media(venues)
+    collect_venue_facts(venues)
     out = []
     for key, v in venues.items():
         if not v["races"]:

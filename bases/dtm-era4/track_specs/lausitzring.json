@@ -12,13 +12,13 @@
   "width_m": 13.0,
   "speed_scale": 1.046,
   "race_laps": 52,
-  "dnf_modifier": 1.0,
-  "overtaking_difficulty": 0.5,
+  "dnf_modifier": 0.52,
+  "overtaking_difficulty": 0.36,
   "pit_lane_loss_s": 20.0,
   "tyre_wear_mult": 1.22,
   "fuel_consumption": 1.0,
-  "wet_weather_probability_multiplier": 1.0,
-  "pole_side": "left",
+  "wet_weather_probability_multiplier": 0.94,
+  "pole_side": "right",
   "drs_zones": {
     "longest_straights": 1
   },

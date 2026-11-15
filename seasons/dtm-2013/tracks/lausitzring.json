@@ -3,12 +3,12 @@
   "nationality": "german",
   "length_km": 3.478,
   "lap_modifier": 1.04,
-  "dnf_modifier": 1.0,
-  "overtaking_difficulty": 0.5,
+  "dnf_modifier": 0.52,
+  "overtaking_difficulty": 0.36,
   "pit_lane_loss_s": 20.0,
   "tyre_wear_mult": 1.22,
   "fuel_consumption": 1.0,
-  "wet_weather_probability_multiplier": 1.0,
+  "wet_weather_probability_multiplier": 0.94,
   "use_raw_canvas_coordinates": true,
   "raw_canvas_size": [
     1044,
@@ -24,7 +24,7 @@
     "visual_lateral_scale": 1.5
   },
   "starting_grid": {
-    "pole_side": "left",
+    "pole_side": "right",
     "row_spacing_m": 10.0,
     "column_spacing_m": 3.0,
     "stagger_m": 4.0
