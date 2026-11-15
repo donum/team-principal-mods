@@ -113,4 +113,4 @@ favourite and wait for per-track sounds (wishlist E9).
 - **Wheelguns:** none recorded for 2017-2018.
 - **Crowd:** no engines in it, so the year does not matter.
 
-Not yet heard in game.
+Heard in game and approved by the user (2026-11-15).
