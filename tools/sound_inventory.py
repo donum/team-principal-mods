@@ -235,10 +235,11 @@ def stack_slots(sets: list[dict], overlays: dict, recs: dict) -> dict | None:
                 if one["passby"]:
                     out["passby"].update(one["passby"])
                     src[group] = oid
-            elif any(one[k] for k in keys):
-                for k in keys:
-                    out[k] = one[k]
-                src[group] = oid
+            else:
+                for k in keys:             # per clip kind: a set may make launches but not grid loops
+                    if one[k]:
+                        out[k] = one[k]
+                        src[group] = oid
     if out is not None:
         out["from"] = src
     return out

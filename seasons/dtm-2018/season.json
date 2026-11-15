@@ -70,10 +70,10 @@
   },
 
   "audio": {
-    "$comment": "2018's own sound set on top of the era-4 set (bases/README.md, Sounds): recordings of 2017-2018 cars only (the 2017 rules: less downforce, same 4.0 V8; the recordings pop and crackle more than 2013's). It makes only the slots listed; the rest stay the era's 2013 sounds.",
+    "$comment": "2018's own sound set on top of the era-4 set (bases/README.md, Sounds): recordings of 2017-2018 cars only (the 2017 rules: less downforce, same 4.0 V8; the recordings pop and crackle more than 2013's). It makes only the slots listed: the launch (the grid loop stays 2013's), pit exits (wheelguns stay 2013's) and the track loop; pass-bys and crowd stay the era's 2013 sounds.",
     "overlay": "dtm-2018",
     "key_prefix": "dtm18",
     "recording_years": [2017, 2018],
-    "slots": ["cars"]
+    "slots": ["start", "pit", "cars"]
   }
 }

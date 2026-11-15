@@ -31,7 +31,7 @@ from pathlib import Path
 
 import numpy as np
 
-from common import SET_LIBRARY_DIR, connect, decode, dump_json, write_wav
+from common import OVERLAY_ID, SET_LIBRARY_DIR, connect, decode, dump_json, write_wav
 
 SR = 44100
 IDLE_MAX_S = 15.0
@@ -51,8 +51,9 @@ OUT_DIR = SET_LIBRARY_DIR / "starts"
 # out), tail (video id, from, to) joined at join_s launch seconds (default:
 # the end) over tail_xf_s, launch_s (clip length), fade_s (default
 # END_FADE_S) and fade_db (a steady fall of that many dB; default a cosine);
-# seconds in the video
-STARTS = [
+# seconds in the video. idle=None: no grid loop of its own, the set below
+# keeps its grid idle (the launch then opens on GO_AT_S s of this recording).
+STARTS_ERA4 = [
     # go set by hand: the 1-4 kHz roar steps up 6 dB at 54.6 s and stays; the
     # phone's gain control smears the broadband level, so refine_go is off
     # 14.5 s, picked by ear 2026-11-05. 5-10 s of steady roar are spliced out
@@ -71,6 +72,20 @@ STARTS = [
          note="Hockenheim finale 2013, grid and start: clean revving, the getaway, the field "
               "swelling past (5-10 s spliced out), to the end of the recording, then a 4 s fade"),
 ]
+# 2018 set (2017-2018 cars). Picked by ear 2026-11-15 from
+# pilot/start_candidates_2018: the Norisring 2018 start filmed from the
+# Schoeller stand at the hairpin (bE-cwxQ42JA). The field launches far away
+# (0-13 s, too far to make a grid loop), the track announcer speaks 14-26 s,
+# then the pack arrives at the hairpin and powers out (27-42 s), the part the
+# user liked. The launch starts after the announcer; the grid revving stays
+# the era's 2013 loop. Hockenheim 2017 (IBuEsBSh9_I): good but broken;
+# Hockenheim 2018 (yTccPcMoqV4, 5wHZNpLeCA4): not nice to listen to.
+STARTS_2018 = [
+    dict(vid="bE-cwxQ42JA", idle=None, go=27.6, refine=False, end=42.0, fade_s=3.0, fade_db=30,
+         note="Norisring 2018 from the Schoeller stand: the field arrives at the hairpin "
+              "and powers out (the announcer before it cut away)"),
+]
+STARTS = {"dtm-era4": STARTS_ERA4, "dtm-2018": STARTS_2018}.get(OVERLAY_ID, [])
 # Set aside after listening in game (2026-11-04): noise and mic overload at the
 # launch (Nurburgring 2014 x_JJhPIFjdY, Hockenheim 2012 kf4kpYMJ3vc, Zandvoort
 # 2015 8sTzEebHYSo), Brands Hatch 4pue6jM-VQY dropped with them.
@@ -130,7 +145,7 @@ def path_of(db, vid: str) -> tuple[str, Path] | None:
 
 def render(db, s: dict):
     title, path = path_of(db, s["vid"])
-    t0 = s["idle"][0]
+    t0 = s["idle"][0] if s["idle"] else s["go"] - GO_AT_S
     x = decode(path, t0, None if s["end"] is None else s["end"] - t0, SR, 2)
     go = refine_go(x, t0, s["go"]) if s.get("refine", True) else s["go"]
     launch = x[int((go - GO_AT_S - t0) * SR):].copy()
@@ -151,6 +166,8 @@ def render(db, s: dict):
         launch[-fo:] *= (10 ** (-s["fade_db"] * np.linspace(0, 1, fo) / 20))[:, None]
     else:
         launch[-fo:] *= np.cos(np.linspace(0, np.pi / 2, fo))[:, None]
+    if not s["idle"]:
+        return title, None, launch, go
     idle_end = min(s["idle"][1], go - 0.25)
     idle_start = max(s["idle"][0], idle_end - IDLE_MAX_S)
     idle = make_loop(x[int((idle_start - t0) * SR):int((idle_end - t0) * SR)])
@@ -199,16 +216,19 @@ def main() -> int:
         old.unlink()
     meta = []
     for i, s in enumerate(starts, 1):
-        peak = max(np.abs(s["idle"]).max(), np.abs(s["launch"]).max()) + 1e-9
+        idle = s["idle"]
+        peak = max(np.abs(idle).max() if idle is not None else 0, np.abs(s["launch"]).max()) + 1e-9
         g = 10 ** (-1 / 20) / peak
-        write_wav(OUT_DIR / f"start_{i:02d}_grid_idle.wav", s["idle"] * g, SR)
+        if idle is not None:
+            write_wav(OUT_DIR / f"start_{i:02d}_grid_idle.wav", idle * g, SR)
+            write_wav(OUT_DIR / f"start_{i:02d}_idle_then_launch.wav", np.concatenate([idle, s["launch"]]) * g, SR)
         write_wav(OUT_DIR / f"start_{i:02d}_grid_launch.wav", s["launch"] * g, SR)
-        write_wav(OUT_DIR / f"start_{i:02d}_idle_then_launch.wav",
-                  np.concatenate([s["idle"], s["launch"]]) * g, SR)
         meta.append({k: v for k, v in s.items() if k not in ("idle", "launch")}
-                    | dict(idle_s=round(len(s["idle"]) / SR, 2), launch_s=round(len(s["launch"]) / SR, 2)))
-        print(f"start {i}: {s['video_id']} go {s['go_s']:.2f}s, grid loop {len(s['idle']) / SR:.1f}s, "
-              f"launch {len(s['launch']) / SR:.1f}s")
+                    | dict(idle_s=round(len(idle) / SR, 2) if idle is not None else 0,
+                           launch_s=round(len(s["launch"]) / SR, 2)))
+        print(f"start {i}: {s['video_id']} go {s['go_s']:.2f}s, "
+              + (f"grid loop {len(idle) / SR:.1f}s, " if idle is not None else "grid loop from the set below, ")
+              + f"launch {len(s['launch']) / SR:.1f}s")
     dump_json(OUT_DIR / "starts.json", meta)
     return 0
 

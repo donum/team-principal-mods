@@ -36,7 +36,7 @@ from pathlib import Path
 
 import numpy as np
 
-from common import LIBRARY_DIR, SET_LIBRARY_DIR, connect, decode, dump_json, load_json, write_wav
+from common import LIBRARY_DIR, OVERLAY_ID, SET_LIBRARY_DIR, connect, decode, dump_json, load_json, write_wav
 
 SR = 44100
 OUT_DIR = SET_LIBRARY_DIR / "pits"
@@ -61,7 +61,7 @@ FADE_OUT_S = {"fireup": 0.05, "exit": 2.0, "wheelguns": 0.15}
 # Brands Hatch pit-stop practice, the strongest flat broadband bursts of
 # `pits.py --scan`, checked on the spectrogram and frames.
 EXIT_VIDEO = "EMSlNAM8zC0"
-PITS: list[dict] = [
+PITS_ERA4: list[dict] = [
     dict(exit=(EXIT_VIDEO, 16.3, 29.3), exit_unconfirmed=True, wheelguns=("gpLEQ52Q4F4", 12.7, 15.3),
          note="2013 pit lane, Audi Red Bull pulls away; Audi Phoenix stop, Brands Hatch practice"),
     dict(exit=(EXIT_VIDEO, 146.3, 159.3), exit_unconfirmed=True, wheelguns=("1K5GsYD9vmI", 2.1, 5.7),
@@ -86,6 +86,23 @@ PITS: list[dict] = [
     dict(exit=(EXIT_VIDEO, 63.5, 76.5), exit_unconfirmed=True, wheelguns=("HF-w0SiCD-Y", 32.9, 35.0),
          note="2013 pit lane, dark red Mercedes pulls away; BMW stop, Brands Hatch practice"),
 ]
+
+# 2018 set (2017-2018 cars), picked by ear 2026-11-15 from
+# pilot/pit_candidates_2018: Misano 2018 pit-exit practice starts
+# (1_f68-hUy8w), a car standing at the line and pulling away. Each clip
+# ends at the camera cut or where the car has gone (ffmpeg scene cuts at
+# 118.1, 311.9, 357.4 s), with a longer fade-in than the 2013 exits (the
+# first cut started on a loud stretch). No wheelguns: the era's 2013 sets keep
+# theirs. exit_fade_in / exit_fade_out override FADE_IN_S / FADE_OUT_S.
+PITS_2018: list[dict] = [
+    dict(exit=("1_f68-hUy8w", 104.0, 117.6), exit_fade_in=1.5, note="Misano 2018 practice start at the pit exit (fence)"),
+    dict(exit=("1_f68-hUy8w", 113.85, 126.85), exit_fade_in=0.8, note="Misano 2018, BMW pulls away behind the fence"),
+    dict(exit=("1_f68-hUy8w", 294.0, 311.7), exit_fade_in=1.0, exit_fade_out=1.5,
+         note="Misano 2018, Audi (Castrol) pulls away, to the camera cut"),
+    dict(exit=("1_f68-hUy8w", 317.0, 336.8), exit_fade_in=1.0, note="Misano 2018, blue Audi pulls away"),
+    dict(exit=("1_f68-hUy8w", 332.0, 345.0), exit_fade_in=1.0, note="Misano 2018, black Audi pulls away"),
+]
+PITS = {"dtm-era4": PITS_ERA4, "dtm-2018": PITS_2018}.get(OVERLAY_ID, [])
 
 # Fan clips that are not pit exits, set aside from the pack (by ear,
 # 2026-11-07; old pit_exit_NN in brackets). Real drive-bys whose make is not
@@ -117,9 +134,10 @@ def heard_db(x: np.ndarray, gain: float = 1.0) -> float:
     return float(10 * np.log10(np.mean(np.square(y, dtype=np.float64)) + 1e-12))
 
 
-def fade(x: np.ndarray, kind: str) -> np.ndarray:
+def fade(x: np.ndarray, kind: str, fade_in: float | None = None, fade_out: float | None = None) -> np.ndarray:
     x = x.copy()
-    a, b = int(FADE_IN_S[kind] * SR), int(FADE_OUT_S[kind] * SR)
+    a = int((FADE_IN_S[kind] if fade_in is None else fade_in) * SR)
+    b = int((FADE_OUT_S[kind] if fade_out is None else fade_out) * SR)
     if a:
         x[:a] *= np.linspace(0, 1, a, dtype=np.float32)[:, None]
     if b:
@@ -132,7 +150,7 @@ def audio_path(db, vid: str) -> Path | None:
     return Path(row[0]) if row and Path(row[0]).exists() else None
 
 
-def cut(db, spec, kind: str) -> np.ndarray | None:
+def cut(db, spec, kind: str, fade_in: float | None = None, fade_out: float | None = None) -> np.ndarray | None:
     if not spec:
         return None
     vid, a, b = spec
@@ -140,7 +158,7 @@ def cut(db, spec, kind: str) -> np.ndarray | None:
     if not path:
         return None
     x = decode(path, a, b - a, SR, 2)
-    return fade(x / (np.abs(x).max() + 1e-9) * 10 ** (-1 / 20), kind)
+    return fade(x / (np.abs(x).max() + 1e-9) * 10 ** (-1 / 20), kind, fade_in, fade_out)
 
 
 def departure(fireup: np.ndarray, exit_: np.ndarray, scale: float = 1.0) -> np.ndarray:
@@ -155,7 +173,8 @@ def departure(fireup: np.ndarray, exit_: np.ndarray, scale: float = 1.0) -> np.n
 def real_pits(db) -> list[dict]:
     out = []
     for s in PITS:
-        clips = {k: cut(db, s.get(k), k) for k in ("fireup", "exit", "wheelguns")}
+        clips = {k: cut(db, s.get(k), k, s.get(f"{k}_fade_in"), s.get(f"{k}_fade_out"))
+                 for k in ("fireup", "exit", "wheelguns")}
         if clips["exit"] is None:
             continue
         out.append(dict(note=s["note"], sources={k: s.get(k) for k in clips},

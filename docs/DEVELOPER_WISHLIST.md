@@ -752,7 +752,12 @@ rules to these items:
   sounds like a BMW.
 
 ### E9. Ambience and start sounds per track · P3
-- **Needed by:** dtm-2013, dtm-2012.
+- **Needed by:** dtm-2013, dtm-2012, dtm-2018.
+- **2018:** ready to use once per-track sets exist: the Lausitzring 2018
+  downshifts and starts (`JDtk4MRd1d0`, the user's favourite 2018
+  recording, not in the pack today) for a Lausitzring pass-by and start, and
+  the Norisring 2018 track announcer over the start
+  (`pilot/pa_candidates/`, cut out of the 2018 launch) for a Norisring PA.
 - **2013:** the venues sound very different: the Norisring street circuit
   between concrete walls and a packed grandstand, the open Lausitzring,
   the dunes at Zandvoort, a half-empty Moscow Raceway. The broadcasts give

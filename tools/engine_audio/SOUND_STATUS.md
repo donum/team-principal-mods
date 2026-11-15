@@ -95,21 +95,22 @@ differ, so this was checked by ear: A/B clips in
 | Slot | Now | Made from |
 |---|---|---|
 | `cars_on_track` | `dtm18_cars_on_track`, 240 s loop | 10 hand-picked shots of cars on track (`ambience.BED_PICKS`): Misano 2018 night race (`maJ-qIGkz_o`), Misano 2018 by day (`1_f68-hUy8w`), a 2017 compilation (`plmbOpRMwHs`). Grids, practice starts and pit-exit shots left out by their frames. Shorter than stock: only ~290 s of 2017-2018 track sound passes. |
+| `grid_launch_01`, `_02` | `dtm18_grid_launch_01`, 16 s | Norisring 2018 from the Schoeller stand (`bE-cwxQ42JA`), picked by ear: the field arrives at the hairpin and powers out (26-42 s). The track announcer before it (14-26 s) is cut away and kept as a PA reference (`pilot/pa_candidates/`). |
+| `pit_exit_01`-`10` | 5 clips, cycled | Misano 2018 pit-exit practice starts (`1_f68-hUy8w`), picked by ear: a car standing at the line, then pulling away. Each ends at the camera cut or where the car has gone (13-20 s); 0.8-1.5 s fade-ins. |
+| `pit_fireup_01`-`10` | stock, levelled for the 2018 exits | as in 2013 |
 
-## To pick by ear
-
-- **Starts** (`pilot/start_candidates_2018/`, scored like the 2013 pick:
-  share above 5 kHz, then flatness 150 Hz-4 kHz; 2013 pick 0.2 % / 0.06):
-  Misano 2018 night start `maJ-qIGkz_o` 0.2 % / 0.07 and Norisring 2018
-  `bE-cwxQ42JA` 0.2 % / 0.05 are as clean as the 2013 pick; Lausitzring 2018
-  `JDtk4MRd1d0` 0.5 % / 0.10. Hockenheim 2017 and 2018 and Norisring 2017
-  are noisier (flatness 0.12-0.25). "Go" was found automatically; where
-  the level step is small (1-2 dB) it may be off.
-- **Pit exits** (`pilot/pit_candidates_2018/`): 12 pull-aways from the
-  Misano 2018 pit-exit practice starts, 7 of them a car standing at the line
-  and pulling away by the frames (`standing_start` in `candidates.json`).
+Picked by ear 2026-11-15 from `pilot/start_candidates_2018/` and
+`pilot/pit_candidates_2018/`. Set aside: Hockenheim 2017 start (good but
+broken), Hockenheim 2018 start and grid (not nice to listen to). The
+Lausitzring 2018 downshifts and starts (`JDtk4MRd1d0`) are the user's
+favourite and wait for per-track sounds (wishlist E9).
 
 ## Still the era's 2013 sounds
 
-Pass-bys (no 2017-2018 onboard laps yet), wheelguns and fire-ups (none
-recorded), crowd (no engines in it, so the year does not matter).
+- **Grid revving** (`grid_idle`): the Norisring recording's grid is too far
+  away to loop.
+- **Pass-bys:** no 2017-2018 onboard laps yet.
+- **Wheelguns:** none recorded for 2017-2018.
+- **Crowd:** no engines in it, so the year does not matter.
+
+Not yet heard in game.

@@ -190,6 +190,18 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
     race = "assets/audio/race/race_engines.json"
     db = connect()
 
+    def below_count(prefix: str) -> int:
+        """How many numbered keys (grid_launch_NN, pit_exit_NN) the sets under
+        this one fill: a season set covers them all, so none of the era's
+        clips is drawn in its pack."""
+        n = 0
+        for s in source_layers.audio_sets(source_layers.source_dir(BASE_ID)):
+            if s["overlay"] == pack:
+                continue
+            ov = load_json(PACK_DIR / s["overlay"] / "overlay.json", {}) or {}
+            n = max(n, sum(1 for c in ov.get("clips", {}).get(race, []) if c.get("key", "").startswith(prefix)))
+        return n
+
     def save(rel: str, audio: np.ndarray, loop: bool = False) -> None:
         write_wav(out / "files" / rel, audio if loop else fades(audio), SR)
         files.append(rel)
@@ -259,27 +271,32 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
             pairs.append((idle, launch, f"private: simulated 22-car start, seed {seed}, listener {info['listener']}"))
     entries = []
     for i, (idle, launch, src) in enumerate(pairs, 1):
-        g = 10 ** (-1 / 20) / (max(np.abs(idle).max(), np.abs(launch).max()) + 1e-9)
-        idle, launch = idle * g, launch * g
-        save(f"assets/audio/race/{KEY_PREFIX}_grid_idle_{i:02d}.ogg", idle, loop=True)
+        # idle None: the start has no grid loop of its own (starts.py), the
+        # set below keeps its grid idle and only the launch is ours
+        g = 10 ** (-1 / 20) / (max(np.abs(idle).max() if idle is not None else 0, np.abs(launch).max()) + 1e-9)
+        launch = launch * g
+        if idle is not None:
+            idle = idle * g
+            save(f"assets/audio/race/{KEY_PREFIX}_grid_idle_{i:02d}.ogg", idle, loop=True)
         save(f"assets/audio/race/{KEY_PREFIX}_grid_launch_{i:02d}.wav", launch)
         # matched to stock, the real start was inaudible in game (2026-11-04):
         # the stock start is quiet, its burst ~6 dB under a pass-by, and our
         # 22 s grandstand roar then reads as background. The launch's loudest
         # 0.5 s now sits at pass-by level, the grid revving 5 dB over stock.
-        idle_g = round(min(1.0, gain_for(idle, lvl_idle) * 10 ** (START_IDLE_BOOST_DB / 20)), 6)
+        idle_g = round(min(1.0, gain_for(idle, lvl_idle) * 10 ** (START_IDLE_BOOST_DB / 20)), 6) if idle is not None else None
         launch_g = round(min(1.0, gain_for(launch, lvl_launch, loudest_db) * 10 ** (START_LAUNCH_BOOST_DB / 20)), 6)
-        entries.append((f"{KEY_PREFIX}_grid_idle_{i:02d}.ogg", 0.5 if test_start else idle_g,
+        entries.append((f"{KEY_PREFIX}_grid_idle_{i:02d}.ogg" if idle is not None else None, 0.5 if test_start else idle_g,
                         f"{KEY_PREFIX}_grid_launch_{i:02d}.wav", 0.8 if test_start else launch_g, src))
     # fewer pairs than the stock bank: the stock slots left over would still be
     # picked at random, so they point at our files too
     stock_pairs = sum(1 for c in load_json(base_audio / "race/race_engines.json", {"clips": []})["clips"]
                       if c.get("key", "").startswith("grid_launch_"))
+    stock_pairs = max(stock_pairs, below_count("grid_launch_"))
     for i in range(max(len(entries), stock_pairs if entries else 0)):
         idle_f, idle_g, launch_f, launch_g, src = entries[i % len(entries)]
-        clips.setdefault(race, []).extend([
-            {"key": f"grid_idle_{i + 1:02d}", "file": idle_f, "gain": idle_g, "source": src},
-            {"key": f"grid_launch_{i + 1:02d}", "file": launch_f, "gain": launch_g, "source": src}])
+        if idle_f:
+            clips.setdefault(race, []).append({"key": f"grid_idle_{i + 1:02d}", "file": idle_f, "gain": idle_g, "source": src})
+        clips.setdefault(race, []).append({"key": f"grid_launch_{i + 1:02d}", "file": launch_f, "gain": launch_g, "source": src})
     if "start" in SLOTS:
         report.append(f"grid idle/launch pairs: {len(pairs)} " + ("(TEST TONES)" if test_start else f"({sum('simulated' not in p[2] for p in pairs)} real fan recordings)")
                   + (f", filling {stock_pairs} stock slots" if pairs and len(pairs) < stock_pairs else "")
@@ -292,6 +309,7 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
     # stock exit; a kind our set lacks keeps the stock clip of that number.
     stock_race = load_json(base_audio / "race" / "race_engines.json", {"clips": []})
     stock_n = sum(1 for c in stock_race["clips"] if c.get("key", "").startswith("pit_exit_"))
+    cover_n = max(stock_n, below_count("pit_exit_"))
     heard = {}
     for kind in ("fireup", "exit", "wheelguns"):
         lv = [pits.heard_db(decode(base_audio / "race" / c["file"], sr=SR, channels=2), c.get("gain", 1.0))
@@ -346,7 +364,7 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
                     entry[kind]["source"] += " (UNCONFIRMED pit exit: not yet confirmed by ear)"
             written[(kind, s["sources"][kind])] = entry[kind]
         files_for.append(entry)
-    for n in range(max(len(files_for), stock_n if files_for else 0)):
+    for n in range(max(len(files_for), cover_n if files_for else 0)):
         for kind, e in files_for[n % len(files_for)].items():
             clips.setdefault(race, []).append({"key": f"pit_{kind}_{n + 1:02d}", **e})
     real = {k: sum(k in e and e[k]["source"].startswith("private") for e in files_for) for k in ("fireup", "exit", "wheelguns")}
