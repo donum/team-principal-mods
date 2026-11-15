@@ -25,12 +25,19 @@ Priority: **P1** = changes how the game plays, **P2** = more of the real
 
 ## 3. Calibration
 
-- **Lap times** · P1: car profile `super_touring_1991` multipliers and the
-  engine power ratings are first guesses. Run `tools/simulate.py btcc-1991`
-  once the tracks have real lap times.
-- **Make balance** · P1: in 1991 BMW won most races, Vauxhall and Toyota won
-  several, Ford, Nissan and Mitsubishi did not win. Check the simulated
-  points per make.
+- **Lap times** · done 2026-11-15: per-track `speed_mult` from simulated
+  against real poles; over three seasons the poles are within -2.4% to +3.7%
+  (build/sim/btcc-1991/20261115-120905).
+- **Make balance** · first pass done 2026-11-15: team ratings and driver
+  skills by hand (gen.json). Three simulated seasons against 1991: 3 to 5
+  different winners (real 6); wins per season Hoy 5.7 (3), Soper 3.0 (3),
+  Rouse 2.7 (3), Cleland 1.7 (4); points Vauxhall 20% (20%), Toyota 19%
+  (14%), Securicor 28% (22%), Mobil 22% (14%, Soper races every round in
+  the game but missed six in 1991). Still open · P2: the independents score
+  about 1% each against 3 to 4% (Middlehurst, Gravett, Sytner), and Cleland
+  wins too few.
+- **Report matching** · P3: the result files carry the printed entrant
+  names, so `tools/simulate.py` files about 5% of the real points under "?".
 
 ## 4. Structure
 
