@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,44,Steve Soper,Prodrive/The Mobil BMW Team,BMW M3,,1:42.740,,,qualified,source TCN qualifying.php?id=728; AS round 3
+2,22,Jonathan Palmer,Prodrive/The Mobil BMW Team,BMW M3,,1:43.870,,,qualified,source TCN qualifying.php?id=728; AS round 3
+3,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,,1:44.200,,,qualified,source TCN qualifying.php?id=728; AS round 3
+4,6,Jeff Allam,Vauxhall Dealersport,Vauxhall Cavalier GSi,,1:44.450,,,qualified,source TCN qualifying.php?id=728; AS round 3
+5,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,,1:44.530,,,qualified,source TCN qualifying.php?id=728; AS round 3
+6,2,Frank Sytner,Pyramid Motorsport/Mobil,BMW M3,,1:44.640,,,qualified,source TCN qualifying.php?id=728; AS round 3
+7,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,,1:44.720,,,qualified,source TCN qualifying.php?id=728; AS round 3
+8,59,Ian Flux,BRR/Crawley,BMW M3,,1:45.150,,,qualified,source TCN qualifying.php?id=728; AS round 3
+9,12,Ray Bellm,VLM/Team Securicor+Listerine,BMW M3,,1:45.160,,,qualified,source TCN qualifying.php?id=728; AS round 3
+10,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,,1:45.400,,,qualified,source TCN qualifying.php?id=728; AS round 3
+11,19,Dennis Leech,Leech/Judge Developments+Partservice,Ford Sierra RS500,,1:45.660,,,qualified,source TCN qualifying.php?id=728; AS round 3
+12,10,Nettan Lindgren,BMW Team Sweden,BMW M3,,1:45.750,,,qualified,source TCN qualifying.php?id=728; AS round 3
+13,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,,1:45.960,,,qualified,source TCN qualifying.php?id=728; AS round 3
+14,66,Nick Whale,Techspeed/Midland Auto Trader+Mobil,BMW M3,,1:46.340,,,qualified,source TCN qualifying.php?id=728; AS round 3
+15,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,,1:46.340,,,qualified,source TCN qualifying.php?id=728; AS round 3
+16,45,Ian Forrest,Forrest/Drambuie+Lazerprinz,BMW M3,,1:46.500,,,qualified,source TCN qualifying.php?id=728; AS round 3
+17,88,Mark Hales,Maguire/Mitsubishi Motors+Firestone,Mitsubishi Lancer GTi,,1:46.800,,,qualified,source TCN qualifying.php?id=728; AS round 3
+18,91,Peggen Andersson,BMW Team Sweden,BMW M3,,1:46.950,,,qualified,source TCN qualifying.php?id=728; AS round 3
+19,77,Nick Baird,Techspeed/Midland Auto Trader,BMW M3,,1:46.980,,,qualified,source TCN qualifying.php?id=728; AS round 3
+20,23,Kieth O'Dor,Castrol Racing with Janspeed,Nissan Primera ZX,,1:48.160,,,qualified,source TCN qualifying.php?id=728; AS round 3
+21,11,Will Hoy,VLM/Team Securicor+Listerine,BMW M3,,,,,no time,source TCN qualifying.php?id=728; AS round 3
+22,4,Tim Harvey,VLM/Team Labatt's,BMW M3,,,,,no time,source TCN qualifying.php?id=728; AS round 3

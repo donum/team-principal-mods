@@ -1,0 +1,21 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,11,Will Hoy,VLM/Team Securicor,BMW M3,36,29:50.04,,49.080,classified,grid 2; tyres Y; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+2,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,36,29:58.16,+8.12,49.150,classified,grid 5; tyres Y; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+3,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,36,29:58.31,+8.27,49.230,classified,grid 4; tyres D; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+4,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,36,30:07.39,+17.35,49.360,classified,grid 11; tyres Y; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+5,4,Tim Harvey,VLM/Team Labatt's,BMW M3,36,30:07.39,+17.35,49.600,classified,grid 18; tyres Y; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+6,22,Jonathan Palmer,Prodrive/Mobil BMW Team,BMW M3,36,30:10.92,+20.88,49.360,classified,grid 7; tyres P; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+7,2,Frank Sytner,Pyramid Motorsport/Mobil + Ronal,BMW M3,34,,+2 laps,50.160,classified,grid 9; tyres P; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+,77,John Llewellyn,Techspeed/Genesis,BMW M3,24,,,50.390,retired,grid 10; tyres P; source AS round 10; TCN race.php?id=782; engine; grid set by race 11 result
+,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,22,,,48.930,retired,grid 1; tyres Y; source AS round 10; TCN race.php?id=782; puncture; grid set by race 11 result
+,23,Kieth O'Dor,Janspeed/Nissan Racing with Castrol,Nissan Primera ZX,20,,,50.070,retired,grid 17; tyres D; source AS round 10; TCN race.php?id=782; overheating; grid set by race 11 result
+,45,Ian Forrest,Forrest/Drambuie + Laserprinz,BMW M3,20,,,50.640,retired,grid 12; tyres P; source AS round 10; TCN race.php?id=782; gearbox; grid set by race 11 result
+,12,Ray Bellm,VLM/Team Securicor,BMW M3,17,,,48.880,retired,grid 14; tyres Y; source AS round 10; TCN race.php?id=782; driveshaft; grid set by race 11 result
+,44,Steve Soper,Prodrive/Mobil BMW Team,BMW M3,15,,,49.090,retired,grid 6; tyres P; source AS round 10; TCN race.php?id=782; fuel pump; grid set by race 11 result
+,88,Mark Hales,Maguire/Mitsubishi Motors + Firestone,Mitsubishi Lancer,6,,,51.660,retired,grid 13; tyres F; source AS round 10; TCN race.php?id=782; engine; grid set by race 11 result
+,6,Jeff Allam,Vauxhall Dealersport,Vauxhall Cavalier GSi,6,,,49.620,retired,grid 8; tyres D; source AS round 10; TCN race.php?id=782; power steering; grid set by race 11 result
+,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,0,,,,dns,grid 3; tyres Y; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,0,,,,dns,grid 15; tyres Y; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+,21,Dave Brodie,BBR/Starchips,Ford Sapphire,0,,,,dns,grid 16; tyres H; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+,20,Grahame Davis,Moto-Build,Rover 216 GTi,0,,,,dns,grid 19; tyres H; source AS round 10; TCN race.php?id=782; grid set by race 11 result
+,17,Andrew Mackenzie,Andrew Mackenzie Racing,Peugeot 405 Mi16,0,,,,dns,grid 20; source AS round 10; TCN race.php?id=782; grid set by race 11 result

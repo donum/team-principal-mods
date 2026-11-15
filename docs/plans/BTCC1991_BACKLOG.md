@@ -15,7 +15,6 @@ Priority: **P1** = changes how the game plays, **P2** = more of the real
 | Second source | Done 2026-11-15: calendar, every result, every total, points, weights, tyres, laps and lengths checked against Autosport (1990sbtcc.com), touringcars.net and touringcarracing.net (research/season.md). | done |
 | Birth dates | 24 of 31 regulars found (racingsportscars.com). Missing: Gravett, Baird, Forrest, Leech, Llewellyn, Lindgren, Andersson. | P2 |
 | Engines | Outputs for Toyota, Vauxhall and Ford (BMW about 270 hp and Nissan 265 hp are known). | P2 |
-| Results files | Per-race qualifying and race CSVs in `research/results/`, as in dtm-1991, so `tools/simulate.py` can compare poles. `research/race_results.csv` has finishing positions only. The qualifying tables per round are on https://1990sbtcc.com/race-archive/. | P2 |
 
 ## 2. Tracks
 

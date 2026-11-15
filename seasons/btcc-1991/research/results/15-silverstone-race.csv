@@ -1,0 +1,26 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,4,Tim Harvey,BMW Team Labatt's,BMW M3,15,31:16.04,,2:03.180,classified,grid 4; source TCN race.php?id=793
+2,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,15,31:16.99,+0.95,2:03.650,classified,grid 1; source TCN race.php?id=793
+3,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra RS Cosworth,15,31:24.13,+8.09,2:03.890,classified,grid 5; source TCN race.php?id=793
+4,2,David Leslie,Pyramid Motorsport,BMW M3,15,31:31.92,+15.88,2:04.380,classified,grid 16; source TCN race.php?id=793
+5,11,Will Hoy,BMW Team Listerine,BMW M3,15,31:36.23,+20.19,2:04.220,classified,grid 3; source TCN race.php?id=793
+6,12,Ray Bellm,BMW Team Listerine,BMW M3,15,31:37.08,+21.04,2:04.220,classified,grid 20; source TCN race.php?id=793
+7,9,Laurence Bristow,BMW Team Labatt's,BMW M3,15,31:37.34,+21.30,2:04.590,classified,grid 19; source TCN race.php?id=793
+8,6,Jeff Allam,Vauxhall Sport,Vauxhall Cavalier GSi,15,31:38.79,+22.75,2:04.110,classified,grid 10; source TCN race.php?id=793
+9,5,John Cleland,Vauxhall Sport,Vauxhall Cavalier GSi,15,31:42.35,+26.31,2:04.460,classified,grid 2; source TCN race.php?id=793
+10,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,15,31:42.67,+26.63,2:04.110,classified,grid 7; source TCN race.php?id=793
+11,23,Kieth O'Dor,Castrol Racing with Janspeed,Nissan Primera ZX,15,31:43.55,+27.51,2:04.890,classified,grid 11; source TCN race.php?id=793
+12,24,Julian Bailey,Castrol Racing with Janspeed,Nissan Primera ZX,15,31:43.55,+27.51,2:04.950,classified,grid 14; source TCN race.php?id=793
+13,1,Robb Gravett,Trakstar Motorsport,Ford Sierra Sapphire,15,31:46.12,+30.08,2:04.610,classified,grid 12; source TCN race.php?id=793
+14,59,Ian Flux,BRR Motorsport,BMW M3,15,31:46.40,+30.36,2:04.380,classified,grid 13; source TCN race.php?id=793
+15,21,Dave Brodie,Brodie Brittain Racing,Ford Sierra Sapphire,15,32:01.72,+45.68,2:06.220,classified,grid 15; source TCN race.php?id=793
+16,56,Bob Berridge,Vauxhall Sport,Vauxhall Cavalier GSi,15,32:05.39,+49.35,2:05.830,classified,grid 9; source TCN race.php?id=793
+17,77,Nick Baird,Auto Trader Techspeed Team,BMW M3,15,32:07.76,+51.72,2:06.200,classified,grid 23; source TCN race.php?id=793
+18,13,Alastair Lyall,R&D Motorsport,BMW 318is,15,32:18.31,+62.27,2:06.240,classified,grid 18; source TCN race.php?id=793
+19,66,Nick Whale,Auto Trader Techspeed Team,BMW M3,15,32:19.48,+63.44,2:07.370,classified,grid 17; source TCN race.php?id=793
+20,18,Godfrey Hall,Pyramid Motorsport,BMW M3,15,32:39.04,+83.00,2:08.350,classified,grid 25; source TCN race.php?id=793
+21,22,Jonathan Palmer,BMW Team Finance,BMW M3,15,33:05.43,+109.39,2:03.790,classified,grid 6; source TCN race.php?id=793
+22,45,Ian Forrest,Drambuie Racing,BMW M3,14,,+1 lap,2:06.490,classified,grid 21; source TCN race.php?id=793
+,58,Jeff Wilson,HWR Motorsport,Vauxhall Belmont,12,,,2:08.520,retired,grid 24; source TCN race.php?id=793; accident
+,88,Mark Hales,John Maguire Racing,Mitsubishi Galant,12,,,2:05.870,retired,grid 22; source TCN race.php?id=793; engine
+,44,Tim Sugden,BMW Team Finance,BMW M3,4,,,2:03.790,retired,grid 8; source TCN race.php?id=793; engine

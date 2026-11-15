@@ -136,6 +136,16 @@ read from them, with video and time:
 - Birth dates from racingsportscars.com (driver pages); O'Dor's from
   en.wiki only.
 
+## Per-race results
+`results/NN-<track>-race.csv` and `-qualifying.csv` for all 15 races, for
+`tools/simulate.py`: order, laps, times and best laps from touringcars.net
+(race.php and qualifying.php pages), entrant, car and tyres as printed in the
+Autosport tables (race 15 from touringcars.net only; races 9 and 12 take
+the entrants and tyres of races 8 and 11). Checked: finishing order equals
+`race_results.csv` in every race, pole equals the grid-1 driver, race 7
+spot-checked against the Autosport table. Odd tyre codes are kept as
+printed (Palmer "Y" at round 1, Allam "P" at round 7, "A" probably Avon).
+
 ## Open questions
 - Birth dates still missing: Gravett, Baird, Forrest, Leech, Llewellyn,
   Lindgren, Andersson (they are aged 30 in the pack).

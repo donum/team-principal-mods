@@ -1,0 +1,19 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,25,32:21.34,,1:16.370,classified,grid 4; tyres Y; source AS round 8; TCN race.php?id=776
+2,44,Steve Soper,Prodrive/Mobil BMW Team,BMW M3,25,32:21.83,+0.49,1:16.520,classified,grid 2; tyres P; source AS round 8; TCN race.php?id=776
+3,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,25,32:36.42,+15.08,1:17.070,classified,grid 1; tyres D; source AS round 8; TCN race.php?id=776
+4,22,Jonathan Palmer,Prodrive/Mobil BMW Team,BMW M3,25,32:37.16,+15.82,1:17.320,classified,grid 8; tyres P; source AS round 8; TCN race.php?id=776
+5,6,Jeff Allam,Vauxhall Dealersport,Vauxhall Cavalier GSi,25,32:37.98,+16.64,1:17.270,classified,grid 6; tyres D; source AS round 8; TCN race.php?id=776
+6,12,Ray Bellm,VLM/Team Securicor + Listerine,BMW M3,25,32:38.30,+16.96,1:17.370,classified,grid 9; tyres Y; source AS round 8; TCN race.php?id=776
+7,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,25,32:38.81,+17.47,1:17.290,classified,grid 11; tyres Y; source AS round 8; TCN race.php?id=776
+8,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,25,32:45.82,+24.48,1:17.350,classified,grid 13; tyres Y; source AS round 8; TCN race.php?id=776
+9,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,25,32:47.60,+26.26,1:17.320,classified,grid 12; tyres Y; source AS round 8; TCN race.php?id=776
+10,23,Kieth O'Dor,Janspeed/Nissan Racing with Castrol,Nissan Primera eZX,25,33:11.15,+49.81,1:18.260,classified,grid 10; tyres D; source AS round 8; TCN race.php?id=776
+11,66,Nick Whale,Techspeed/Midland Auto Trader,BMW M3,25,33:13.86,+52.52,1:18.570,classified,grid 15; tyres P; source AS round 8; TCN race.php?id=776
+12,77,Nick Baird,Techspeed/Midland Auto Trader,BMW M3,25,33:19.68,+58.34,1:18.960,classified,grid 14; tyres P; source AS round 8; TCN race.php?id=776
+13,45,Ian Forrest,Forrest/Drambuie + Laserprinz,BMW M3,24,,+1 lap,1:19.250,classified,grid 17; tyres P; source AS round 8; TCN race.php?id=776
+14,88,Mark Hales,Maguire/Mitsubishi Motors + Firestone,Mitsubishi Galant,23,,+2 laps,1:20.820,classified,grid 18; tyres F; source AS round 8; TCN race.php?id=776
+,11,Will Hoy,VLM/Team Securicor + Listerine,BMW M3,21,,,1:16.620,retired,grid 3; tyres Y; source AS round 8; TCN race.php?id=776; engine
+,4,Tim Harvey,VLM/Team Labatt's,BMW M3,15,,,1:17.400,retired,grid 5; tyres Y; source AS round 8; TCN race.php?id=776; suspension
+,2,Frank Sytner,Pyramid Motorsport/Mobil + Ronal,BMW M3,9,,,1:18.760,retired,grid 16; tyres P; source AS round 8; TCN race.php?id=776; engine
+,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,1,,,1:25.260,retired,grid 7; tyres Y; source AS round 8; TCN race.php?id=776; engine

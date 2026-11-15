@@ -1,0 +1,18 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,44,Tim Sugden,Prodrive/Mobil BMW Team,BMW M3,36,29:59.33,,49.400,classified,grid 1; tyres P; source AS round 6; TCN race.php?id=774
+2,11,Will Hoy,VLM/Team Securicor + Listerine,BMW M3,36,30:00.19,+0.86,49.360,classified,grid 2; tyres Y; source AS round 6; TCN race.php?id=774
+3,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,36,30:10.57,+11.24,49.570,classified,grid 5; tyres Y; source AS round 6; TCN race.php?id=774
+4,4,Tim Harvey,VLM/Team Labatt's,BMW M3,36,30:12.23,+12.90,49.690,classified,grid 8; tyres Y; source AS round 6; TCN race.php?id=774
+5,6,Jeff Allam,Vauxhall Dealersport,Vauxhall Cavalier GSi,36,30:13.37,+14.04,49.820,classified,grid 3; tyres D; source AS round 6; TCN race.php?id=774
+6,22,Jonathan Palmer,Prodrive/Mobil BMW Team,BMW M3,36,30:14.61,+15.28,49.920,classified,grid 4; tyres P; source AS round 6; TCN race.php?id=774
+7,12,Ray Bellm,VLM/Team Securicor + Listerine,BMW M3,36,30:14.77,+15.44,49.540,classified,grid 9; tyres Y; source AS round 6; TCN race.php?id=774
+8,2,Frank Sytner,Pyramid Motorsport/Mobil,BMW M3,36,30:15.20,+15.87,49.820,classified,grid 7; tyres Y; source AS round 6; TCN race.php?id=774
+9,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,36,30:23.60,+24.27,49.740,classified,grid 10; tyres Y; source AS round 6; TCN race.php?id=774
+10,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,36,30:25.96,+26.63,49.850,classified,grid 14; tyres Y; source AS round 6; TCN race.php?id=774
+11,91,Peggen Andersson,BMW Dealer Team Sweden,BMW M3,36,30:28.16,+28.83,50.070,classified,grid 13; tyres Y; source AS round 6; TCN race.php?id=774
+12,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,36,30:29.02,+29.69,50.200,classified,grid 11; tyres D; source AS round 6; TCN race.php?id=774
+13,10,Nettan Lindgren,BMW Dealer Team Sweden,BMW M3,36,30:38.40,+39.07,50.180,classified,grid 15; tyres Y; source AS round 6; TCN race.php?id=774
+14,45,Ian Forrest,Forrest/Drambuie + Lazerprinz,BMW M3,35,,+1 lap,50.710,classified,grid 17; tyres P; source AS round 6; TCN race.php?id=774
+15,23,Kieth O'Dor,Nissan Racing with Castrol,Nissan Primera eZX,34,,+2 laps,50.730,classified,grid 18; tyres D; source AS round 6; TCN race.php?id=774
+,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,20,,,50.140,retired,grid 12; tyres Y; source AS round 6; TCN race.php?id=774; misfire
+,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,4,,,49.510,retired,grid 6; tyres Y; source AS round 6; TCN race.php?id=774; accident

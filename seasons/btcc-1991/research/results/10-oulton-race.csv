@@ -1,0 +1,19 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,20,34:50.33,,1:43.730,classified,grid 1; tyres D; source AS round 9; TCN race.php?id=780
+2,11,Will Hoy,Team Securicor + Listerine/VLM,BMW M3,20,34:53.54,+3.21,1:43.570,classified,grid 6; tyres Y; source AS round 9; TCN race.php?id=780
+3,44,Steve Soper,Prodrive/Mobil BMW Team,BMW M3,20,34:54.62,+4.29,1:43.530,classified,grid 3; tyres P; source AS round 9; TCN race.php?id=780
+4,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,20,34:55.04,+4.71,1:43.670,classified,grid 2; tyres Y; source AS round 9; TCN race.php?id=780
+5,22,Jonathan Palmer,Prodrive/Mobil BMW Team,BMW M3,20,34:56.24,+5.91,1:43.540,classified,grid 5; tyres P; source AS round 9; TCN race.php?id=780
+6,12,Ray Bellm,Team Securicor + Listerine/VLM,BMW M3,20,34:56.73,+6.40,1:43.680,classified,grid 4; tyres Y; source AS round 9; TCN race.php?id=780
+7,4,Tim Harvey,VLM/Team Labatt's,BMW M3,20,35:01.53,+11.20,1:44.000,classified,grid 8; tyres Y; source AS round 9; TCN race.php?id=780
+8,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,20,35:13.13,+22.80,1:44.330,classified,grid 13; tyres Y; source AS round 9; TCN race.php?id=780
+9,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,20,35:16.98,+26.65,1:44.250,classified,grid 9; tyres Y; source AS round 9; TCN race.php?id=780
+10,23,Kieth O'Dor,Janspeed/Nissan Racing with Castrol,Nissan Primera eZX,20,35:23.78,+33.45,1:44.920,classified,grid 11; tyres D; source AS round 9; TCN race.php?id=780
+11,66,Nick Whale,Techspeed/Midland Auto Trader,BMW M3,20,35:38.78,+48.45,1:45.430,classified,grid 14; tyres P; source AS round 9; TCN race.php?id=780
+12,45,Ian Forrest,Forrest/Drambuie + Laserprinz,BMW M3,19,,+1 lap,1:46.950,classified,grid 15; tyres P; source AS round 9; TCN race.php?id=780
+13,58,Jeff Wilson,HWR Motorsport/Bristol Street Motors,Vauxhall Belmont,19,,+1 lap,1:50.740,classified,grid 18; tyres A; source AS round 9; TCN race.php?id=780
+14,88,Mark Hales,Maguire/Mitsubishi Motors + Firestone,Mitsubishi Galant,18,,+2 laps,1:47.880,classified,grid 17; tyres F; source AS round 9; TCN race.php?id=780
+,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,18,,,1:44.710,retired,grid 12; tyres Y; source AS round 9; TCN race.php?id=780; accident
+,59,Matt Neal,BRR/100+ Wheels + British Gas Resource,BMW M3,12,,,1:45.950,retired,grid 16; tyres Y; source AS round 9; TCN race.php?id=780; tyres
+,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,8,,,1:43.350,retired,grid 10; tyres Y; source AS round 9; TCN race.php?id=780; engine
+,6,Jeff Allam,Vauxhall Dealersport,Vauxhall Cavalier GSi,8,,,1:44.380,retired,grid 7; tyres D; source AS round 9; TCN race.php?id=780; brakes

@@ -1,0 +1,23 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,44,Steve Soper,Mobil BMW Team/Prodrive,BMW M3,20,27:50.50,,1:22.610,classified,grid 2; tyres P; source AS round 12; TCN race.php?id=788
+2,22,Jonathan Palmer,Mobil BMW Team/Prodrive,BMW M3,20,27:52.66,+2.16,1:22.600,classified,grid 1; tyres P; source AS round 12; TCN race.php?id=788
+3,9,Armin Hahne,Team Labatt's/VLM,BMW M3,20,28:03.41,+12.91,1:22.870,classified,grid 10; tyres Y; source AS round 12; TCN race.php?id=788
+4,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,20,28:06.89,+16.39,1:22.970,classified,grid 9; tyres Y; source AS round 12; TCN race.php?id=788
+5,12,Ray Bellm,Team Securicor + Listerine/VLM,BMW M3,20,28:07.12,+16.62,1:22.710,classified,grid 6; tyres Y; source AS round 12; TCN race.php?id=788
+6,23,Kieth O'Dor,Nissan Racing with Castrol/Janspeed,Nissan Primera eZX,20,28:17.06,+26.56,1:23.140,classified,grid 14; tyres D; source AS round 12; TCN race.php?id=788
+7,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,20,28:17.30,+26.80,1:22.820,classified,grid 11; tyres Y; source AS round 12; TCN race.php?id=788
+8,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,20,28:21.26,+30.76,1:22.660,classified,grid 4; tyres D; source AS round 12; TCN race.php?id=788
+9,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,20,28:22.28,+31.78,1:23.070,classified,grid 17; tyres Y; source AS round 12; TCN race.php?id=788
+10,6,Jeff Allam,Vauxhall Dealersport,Vauxhall Cavalier GSi,20,28:29.81,+39.31,1:22.990,classified,grid 7; tyres D; source AS round 12; TCN race.php?id=788
+11,88,Mark Hales,Mitsubishi Motors with Firestone/Maguire,Mitsubishi Galant GTi,20,28:39.16,+48.66,1:24.750,classified,grid 20; tyres F; source AS round 12; TCN race.php?id=788
+12,66,Nick Whale,Techspeed/Midland Auto Trader,BMW M3,20,28:39.62,+49.12,1:24.640,classified,grid 18; tyres P; source AS round 12; TCN race.php?id=788
+13,45,Ian Forrest,Forrest/Knockhill + Weiss Blau,BMW M3,20,28:44.83,+54.33,1:24.580,classified,grid 19; tyres P; source AS round 12; TCN race.php?id=788
+,4,Tim Harvey,Team Labatt's/VLM,BMW M3,18,,,1:22.470,retired,grid 5; tyres Y; source AS round 12; TCN race.php?id=788; fuse
+,21,Dave Brodie,Brodie Brittain Racing/Starchips,Ford Sapphire,17,,,1:24.160,retired,grid 15; tyres D; source AS round 12; TCN race.php?id=788; engine
+,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,16,,,1:23.820,retired,grid 16; tyres Y; source AS round 12; TCN race.php?id=788; gear linkage
+,11,Will Hoy,Team Securicor + Listerine/VLM,BMW M3,13,,,1:22.590,retired,grid 3; tyres Y; source AS round 12; TCN race.php?id=788; accident
+,24,Julian Bailey,Nissan Racing with Castrol/Janspeed,Nissan Primera eZX,7,,,1:23.440,retired,grid 13; tyres D; source AS round 12; TCN race.php?id=788; accident
+,56,Bob Berridge,Vauxhall Dealersport,Vauxhall Cavalier GSi,6,,,1:23.520,retired,grid 8; tyres D; source AS round 12; TCN race.php?id=788; accident
+,77,Nick Baird,Techspeed/Midland Auto Trader,BMW M3,0,,,,dns,grid 12; tyres P; source AS round 12; TCN race.php?id=788
+,58,Tony Bardy,HWR Motorsport/Bristol Street Motors,Vauxhall Belmont,0,,,,dns,grid 21; tyres D; source AS round 12; TCN race.php?id=788
+,18,Alastair Fenwick,Pyramid Motorsport/Fenwick Group,BMW M3,0,,,,dns,grid 22; tyres Y; source AS round 12; TCN race.php?id=788

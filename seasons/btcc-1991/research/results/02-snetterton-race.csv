@@ -1,0 +1,24 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,11,Will Hoy,VLM/Team Securicor+Listerine,BMW M3,18,23:23.89,,1:17.280,classified,grid 2; tyres Y; source AS round 2; TCN race.php?id=762
+2,12,Ray Bellm,VLM/Team Securicor+Listerine,BMW M3,18,23:27.88,+3.99,1:17.370,classified,grid 3; tyres Y; source AS round 2; TCN race.php?id=762
+3,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,18,23:31.51,+7.62,1:17.380,classified,grid 8; tyres Y; source AS round 2; TCN race.php?id=762
+4,6,Jeff Allam,Vauxhall Dealersport,Vauxhall Cavalier GSi,18,23:34.16,+10.27,1:17.430,classified,grid 4; tyres D; source AS round 2; TCN race.php?id=762
+5,2,Frank Sytner,Pyramid Motorsport/Mobil,BMW M3,18,23:42.40,+18.51,1:17.590,classified,grid 9; tyres Y; source AS round 2; TCN race.php?id=762
+6,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,18,23:44.66,+20.77,1:17.670,classified,grid 10; tyres Y; source AS round 2; TCN race.php?id=762
+7,4,Tim Harvey,VLM/Team Labatt's,BMW M3,18,23:51.95,+28.06,1:17.630,classified,grid 6; tyres Y; source AS round 2; TCN race.php?id=762
+8,91,Peggen Andersson,BMW Team Sweden,BMW M3,18,23:56.08,+32.19,1:18.130,classified,grid 16; tyres Y; source AS round 2; TCN race.php?id=762
+9,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,18,23:56.20,+32.31,1:17.490,classified,grid 1; tyres D; source AS round 2; TCN race.php?id=762
+10,88,Mark Hales,Maguire/Mitsubishi Motors+Firestone,Mitsubishi Lancer GTi,18,24:01.36,+37.47,1:18.530,classified,grid 22; tyres A; source AS round 2; TCN race.php?id=762
+11,45,Ian Forrest,Forrest/Drambuie+Lazerprinz,BMW M3,18,24:12.53,+48.64,1:19.160,classified,grid 20; tyres P; source AS round 2; TCN race.php?id=762
+12,66,Nick Whale,Techspeed/Midland Auto Trader+Mobil,BMW M3,18,24:13.32,+49.43,1:19.200,classified,grid 14; tyres P; source AS round 2; TCN race.php?id=762
+13,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,18,24:18.09,+54.20,1:18.390,classified,grid 13; tyres Y; source AS round 2; TCN race.php?id=762
+14,19,Dennis Leech,Leech/Judge Developments+Partservice,Ford Sierra RS500,18,24:19.77,+55.88,1:18.700,classified,grid 15; tyres Y; source AS round 2; TCN race.php?id=762
+15,13,Angus MacKay,R&D Motorsport,BMW 318iS,18,24:32.81,+68.92,1:20.470,classified,grid 23; tyres D; source AS round 2; TCN race.php?id=762
+,10,Nettan Lindgren,BMW Team Sweden,BMW M3,2,,,1:20.120,retired,grid 17; tyres Y; source AS round 2; TCN race.php?id=762; accident
+,22,Jonathan Palmer,Prodrive/The Mobil BMW Team,BMW M3,2,,,1:20.170,retired,grid 5; tyres P; source AS round 2; TCN race.php?id=762; accident
+,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,0,,,1:17.670,retired,grid 11; tyres Y; source AS round 2; TCN race.php?id=762; clutch
+,44,Tim Sugden,Prodrive/The Mobil BMW Team,BMW M3,0,,,,retired,grid 7; tyres P; source AS round 2; TCN race.php?id=762; driveshaft
+,23,Kieth O'Dor,Castrol Racing with Janspeed,Nissan Primera ZX,0,,,,retired,grid 21; tyres D; source AS round 2; TCN race.php?id=762; clutch
+,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,18,,,1:17.870,dsq,grid 12; tyres Y; source AS round 2; TCN race.php?id=762; finished on the road +19.73s; excluded: windscreen wiper arm missing
+,20,Grahame Davis,Moto-Build,Rover 216 GTi,0,,,,dns,source AS round 2; TCN race.php?id=762
+,7,Sean Walker,Sean Walker,Ford Sierra RS500 Cosworth,0,,,,dns,source AS round 2; TCN race.php?id=762

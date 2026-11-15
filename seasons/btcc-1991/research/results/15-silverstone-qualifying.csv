@@ -1,0 +1,26 @@
+pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
+1,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,,2:05.890,,,qualified,source TCN qualifying.php?id=745
+2,5,John Cleland,Vauxhall Sport,Vauxhall Cavalier GSi,,2:07.100,,,qualified,source TCN qualifying.php?id=745
+3,11,Will Hoy,BMW Team Listerine,BMW M3,,2:07.180,,,qualified,source TCN qualifying.php?id=745
+4,4,Tim Harvey,BMW Team Labatt's,BMW M3,,2:07.380,,,qualified,source TCN qualifying.php?id=745
+5,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra RS Cosworth,,2:07.400,,,qualified,source TCN qualifying.php?id=745
+6,22,Jonathan Palmer,BMW Team Finance,BMW M3,,2:07.460,,,qualified,source TCN qualifying.php?id=745
+7,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,,2:07.730,,,qualified,source TCN qualifying.php?id=745
+8,44,Tim Sugden,BMW Team Finance,BMW M3,,2:08.170,,,qualified,source TCN qualifying.php?id=745
+9,56,Bob Berridge,Vauxhall Sport,Vauxhall Cavalier GSi,,2:08.340,,,qualified,source TCN qualifying.php?id=745
+10,6,Jeff Allam,Vauxhall Sport,Vauxhall Cavalier GSi,,2:08.900,,,qualified,source TCN qualifying.php?id=745
+11,23,Kieth O'Dor,Nissan Racing with Castrol,Nissan Primera ZX,,2:08.900,,,qualified,source TCN qualifying.php?id=745
+12,1,Robb Gravett,Trakstar Motorsport,Ford Sierra Sapphire,,2:09.260,,,qualified,source TCN qualifying.php?id=745
+13,59,Ian Flux,BRR Motorsport,BMW M3,,2:09.410,,,qualified,source TCN qualifying.php?id=745
+14,24,Julian Bailey,Nissan Racing with Castrol,Nissan Primera ZX,,2:09.470,,,qualified,source TCN qualifying.php?id=745
+15,21,Dave Brodie,Brodie Brittain Racing,Ford Sierra Sapphire,,2:10.610,,,qualified,source TCN qualifying.php?id=745
+16,2,David Leslie,Pyramid Motorsport,BMW M3,,2:11.640,,,qualified,source TCN qualifying.php?id=745
+17,66,Nick Whale,Auto Trader Techspeed Team,BMW M3,,2:12.120,,,qualified,source TCN qualifying.php?id=745
+18,13,Alastair Lyall,R&D Motorsport,BMW 318is,,2:12.210,,,qualified,source TCN qualifying.php?id=745
+19,9,Laurence Bristow,BMW Team Labatt's,BMW M3,,2:12.360,,,qualified,source TCN qualifying.php?id=745
+20,12,Ray Bellm,BMW Team Listerine,BMW M3,,2:12.450,,,qualified,source TCN qualifying.php?id=745
+21,45,Ian Forrest,Drambuie Racing,BMW M3,,2:12.540,,,qualified,source TCN qualifying.php?id=745
+22,88,Mark Hales,John Maguire Racing,Mitsubishi Galant,,2:13.450,,,qualified,source TCN qualifying.php?id=745
+23,77,Nick Baird,Auto Trader Techspeed Team,BMW M3,,2:16.890,,,qualified,source TCN qualifying.php?id=745
+24,58,Jeff Wilson,HWR Motorsport,Vauxhall Belmont,,2:17.450,,,qualified,source TCN qualifying.php?id=745
+25,18,Godfrey Hall,Pyramid Motorsport,BMW M3,,2:56.390,,,qualified,source TCN qualifying.php?id=745
