@@ -23,7 +23,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from build_pack import game_path, load_json  # noqa: E402
-from common import LIBRARY_DIR, REPO, decode, write_wav  # noqa: E402
+from common import REPO, SET_LIBRARY_DIR, decode, write_wav  # noqa: E402
 
 SR = 44100
 PRE_S = 6.0                      # grid idle heard before the 1st light
@@ -51,7 +51,7 @@ def main(pack: str | None = None) -> int:
     race = game_path(None) / "data" / pack / "assets" / "audio" / "race"
     clips = {c["key"]: c for c in load_json(race / "race_engines.json")["clips"]}
     light, out = decode(race / "start_light.wav", sr=SR, channels=2), decode(race / "lights_out.wav", sr=SR, channels=2)
-    dst = LIBRARY_DIR / "starts"
+    dst = SET_LIBRARY_DIR / "starts"
     dst.mkdir(parents=True, exist_ok=True)
     for old in dst.glob("ingame_start_*.wav"):
         old.unlink()

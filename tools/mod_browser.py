@@ -521,7 +521,8 @@ def build_tracks(pack, base, season, manifest, media):
                        "img": media.image(pack / "assets" / "tracks" / f"{tid}.png", f"tracks/{tid}.png"),
                        "img_prov": "vanilla" if same_file(pack / "assets" / "tracks" / f"{tid}.png",
                                                           base / "assets" / "tracks" / f"{tid}.png") else "custom",
-                       "stats": {k: v for k, v in t.items() if isinstance(v, (int, float, str)) and k != "name"},
+                       "stats": {**{k: v for k, v in t.items() if isinstance(v, (int, float, str)) and k != "name"},
+                                 "pole_side": (t.get("starting_grid") or {}).get("pole_side", "left")},
                        "drs_zones": len(t.get("drs_zones", []) or []), "overrides": overrides.get(tid),
                        "source": t.get("source")})
     calendar = []
@@ -786,9 +787,11 @@ def build(season: Path | None, game: Path, pack_folder: str | None = None) -> Pa
     out = OUT_ROOT / pack_folder
     media = Media(out / "media")
     applied = load_json(pack / "assets" / "audio" / OVERLAY_DIR / "applied.json", {}) or {}
-    if not applied and manifest.get("audio", {}).get("in_pack"):
-        # baked into the pack (build_pack.py, no backup state): read the overlay's own list
-        applied = load_json(AUDIO_DATA / "pack" / layers.audio_overlay(manifest) / "overlay.json", {}) or {}
+    if not applied and season:
+        # baked into the pack (build_pack.py, no backup state): read the baked sets' own lists
+        baked = [s["overlay"] for s in layers.audio_sets(season) if s.get("in_pack")]
+        applied = {"files": sorted({f for s in baked
+                                    for f in (load_json(AUDIO_DATA / "pack" / s / "overlay.json", {}) or {}).get("files", [])})}
     private = set(applied.get("files", []))
     private_audio = {f.split("assets/audio/", 1)[-1] for f in private}
 

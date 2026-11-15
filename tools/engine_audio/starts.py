@@ -31,7 +31,7 @@ from pathlib import Path
 
 import numpy as np
 
-from common import LIBRARY_DIR, connect, decode, dump_json, write_wav
+from common import SET_LIBRARY_DIR, connect, decode, dump_json, write_wav
 
 SR = 44100
 IDLE_MAX_S = 15.0
@@ -44,7 +44,7 @@ END_FADE_S = 2.5
 # the sequence) the idle fades out in 0.2 s and grid_launch starts once;
 # lights out is 1.5 s later and the cars move 0.5 s after that.
 GO_AT_S = 1.6
-OUT_DIR = LIBRARY_DIR / "starts"
+OUT_DIR = SET_LIBRARY_DIR / "starts"
 
 # video id, grid revving from/to, go estimate (refine=False: exact), launch end
 # (None: end of the video), note; optional: skip (a, b: launch seconds spliced

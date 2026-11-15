@@ -6,10 +6,12 @@ package.py writes private/engine_audio/pack/<overlay id>/ with:
                       "set": {json file: {"dotted.key": value}},
                       "passby_by_make": {make: clip key}}
 
-The overlay id is the season base's "audio": {"overlay": ...} (else the pack
-folder), so every season on one base (bases/<id>, tools/layers.py) gets the
-same sounds. "passby_by_make" tags each engine supplier whose name starts
-with the make, so it fits any season of the base.
+A pack plays a stack of sound sets (layers.audio_sets): its era base's,
+and on top, its season's own set if it has one ("audio": {"overlay": ...}
+in season.json). The stack is combined into one overlay, the upper set
+winning per file, clip key and value, so a season set that makes only a
+few slots keeps the base's other sounds. "passby_by_make" tags each engine
+supplier whose name starts with the make, so it fits any season of the base.
 
 apply() copies the files, upserts manifest clips by key, sets the values and
 keeps a backup of every JSON file it touched, so remove() restores the pack
@@ -69,11 +71,42 @@ def overlay_for(overlay_id: str) -> Path | None:
     return src if (src / "overlay.json").exists() else None
 
 
-def apply(target: Path, overlay_id: str, pack: str | None = None) -> str:
-    src = overlay_for(overlay_id)
-    if src is None:
+def combine(overlay_ids: list[str]) -> tuple[dict, dict[str, Path], list[str]] | None:
+    """One overlay from a stack of sound sets, bottom first (layers.audio_sets):
+    a later set wins per file, clip key, set value and make. Sets not built
+    yet are skipped. Returns (overlay, {file: source folder}, ids used)."""
+    ov = {"files": [], "clips": {}, "set": {}, "passby_by_make": {}}
+    origin, used = {}, []
+    for oid in overlay_ids:
+        src = overlay_for(oid)
+        if src is None:
+            continue
+        one = _read(src / "overlay.json")
+        used.append(oid)
+        for rel in one["files"]:
+            if rel not in origin:
+                ov["files"].append(rel)
+            origin[rel] = src
+        for rel, clips in one.get("clips", {}).items():
+            by_key = {c["key"]: c for c in ov["clips"].get(rel, [])}
+            by_key.update({c["key"]: c for c in clips})
+            ov["clips"][rel] = list(by_key.values())
+        for rel, values in one.get("set", {}).items():
+            ov["set"].setdefault(rel, {}).update(values)
+        ov["passby_by_make"].update(one.get("passby_by_make", {}))
+    return (ov, origin, used) if used else None
+
+
+def _ids(overlay_ids: str | list[str]) -> list[str]:
+    return [overlay_ids] if isinstance(overlay_ids, str) else list(overlay_ids)
+
+
+def apply(target: Path, overlay_ids: str | list[str], pack: str | None = None) -> str:
+    """Apply one sound set, or a stack of them (bottom first)."""
+    combined = combine(_ids(overlay_ids))
+    if combined is None:
         return "no private audio overlay built"
-    ov = _read(src / "overlay.json")
+    ov, origin, used = combined
     remove(target, quiet=True)                      # start from the clean pack
     state = target / STATE_DIR
     backup = state / "backup"
@@ -95,7 +128,7 @@ def apply(target: Path, overlay_id: str, pack: str | None = None) -> str:
     for rel in ov["files"]:
         dst = target / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src / "files" / rel, dst)
+        shutil.copy2(origin[rel] / "files" / rel, dst)
     for rel, clips in ov.get("clips", {}).items():
         path = target / rel
         data = _read(path)
@@ -114,14 +147,14 @@ def apply(target: Path, overlay_id: str, pack: str | None = None) -> str:
         _write(path, data)
     _write(state / "applied.json", {"files": ov["files"], "touched": sorted(touched)})
     (target / MARKER).write_text(MARKER_TEXT.format(pack=pack or target.name), encoding="utf-8")
-    return f"private audio overlay {overlay_id} applied: {len(ov['files'])} files, {len(touched)} JSON files patched"
+    return f"private audio overlay {' + '.join(used)} applied: {len(ov['files'])} files, {len(touched)} JSON files patched"
 
 
-def bake(target: Path, overlay_id: str) -> str:
+def bake(target: Path, overlay_ids: str | list[str]) -> str:
     """Apply the overlay for good: same files and JSON edits as apply(), but no
-    backup and no do-not-upload marker. For a pack that ships the sounds
-    (base.json "audio": {"in_pack": true}); build_pack.py bakes into dist/."""
-    msg = apply(target, overlay_id)
+    backup and no do-not-upload marker. For sets that ship with the pack
+    ("audio": {"in_pack": true}); build_pack.py bakes into dist/."""
+    msg = apply(target, overlay_ids)
     shutil.rmtree(target / STATE_DIR, ignore_errors=True)
     (target / MARKER).unlink(missing_ok=True)
     return msg.replace("private audio overlay", "engine audio").replace("applied", "baked in")
@@ -158,14 +191,14 @@ def main() -> int:
     if not target.is_dir():
         raise SystemExit(f"pack not installed: {target}")
     season = layers.season_for_pack(args.pack)
-    sound = layers.audio_overlay(layers.manifest(season)) if season else args.pack
+    sounds = [s["overlay"] for s in layers.audio_sets(season)] if season else [args.pack]
     if args.action == "apply":
-        print(apply(target, sound, args.pack))
+        print(apply(target, sounds, args.pack))
     elif args.action == "remove":
         print(remove(target))
     else:
         print("installed" if (target / STATE_DIR / "applied.json").exists() else "not installed",
-              f"| {sound} built" if overlay_for(sound) else f"| {sound} not built")
+              "| " + ", ".join(f"{s} {'built' if overlay_for(s) else 'not built'}" for s in sounds))
     return 0
 
 

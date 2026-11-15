@@ -11,7 +11,19 @@ sounds.
 - `recording_years`: which cars may be heard (`common.ERA`, see "Era");
 - `research_season`: the entry list that tells who drove which make in the
   videos (`catalog.py`);
-- `key_prefix`: the start of our clip keys (`dtm13_audi`, `dtm13_grid_idle_01`...).
+- `key_prefix`: the start of our clip keys (`dtm13_audi`, `dtm13_grid_idle_01`...);
+- `slots` (optional): the slot groups the set makes (`passby`, `tv`, `start`,
+  `pit`, `cars`, `crowd`); all when left out;
+- `inherit` (optional): `false` starts a fresh stack (a new car generation).
+
+**Season sets.** A season can have its own set in `season.json` `"audio"`
+(own `overlay` id and `key_prefix`), merged over its era's settings. It sits
+on top of the era's set and makes only its `slots`; the era's set fills the
+rest (`layers.audio_sets`, `overlay.combine`). Run the stages with
+`ENGINE_AUDIO_BASE=<season id>`: it shares the era's library (same
+`ENGINE_AUDIO_DATA`), and its loops and previews go to
+`library/sets/<overlay id>/` (`common.SET_LIBRARY_DIR`; the era-4 set keeps
+`library/` itself). See `bases/README.md`, "Sounds".
 
 The pass-by tags are set per make when the overlay is applied
 (`overlay.json` `"passby_by_make"`): every engine supplier whose name starts

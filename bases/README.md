@@ -130,7 +130,7 @@ mother is named in `base.json` `"audio": {"research_season": ...}`.
 | (Group A template `dtm-1991`) | 1991 | 1987, 1990, 1992 | vanilla, none collected yet |
 | `dtm-era3` | 2003 | 2006, 2010 | vanilla, none collected yet (`"in_pack": false`) |
 | `dtm-era4` | 2013 | 2012, 2018 | private overlay from 2012 and 2013 recordings |
-| `dtm-era5` | 2020 | (2019 later) | vanilla, none collected yet; overrides era 4's V8 overlay |
+| `dtm-era5` | 2020 | (2019 later) | vanilla, none collected yet; `"inherit": false` keeps era 4's V8 sounds out |
 
 A base with `"in_pack": false` and no recordings leaves the game's own
 engine sounds in the pack. When recordings of the mother season's cars are
@@ -139,8 +139,32 @@ collected (`tools/engine_audio`, `ENGINE_AUDIO_BASE=<base id>` with its own
 
 ## Sounds
 
-The private engine sounds are built once per base, not per year
-(`tools/engine_audio`, settings in `base.json` `"audio"`). Every installed
-season on the base gets the same overlay: `build_pack.py --install` applies
-it, and `tools/engine_audio/package.py --install` refreshes it on all of them.
-The sounds stay private: never in git, `dist/` or the Workshop.
+The engine and track sounds come in **sound sets** (`tools/engine_audio`),
+each set in a layer's `"audio"` section with its own `"overlay"` id:
+
+- An **era base's set** (`base.json`) is made once, from its mother
+  season's cars, and every season on the base plays it.
+- A **season's own set** (`season.json`) sits on top of its era's set and
+  makes only the slots it lists, for example its own track loop, starts and
+  crowd from recordings of that year's cars, while the pass-bys and pit lane
+  stay the era's:
+
+  ```json
+  "audio": {"overlay": "dtm-2018", "key_prefix": "dtm18",
+            "recording_years": [2017, 2018], "slots": ["start", "cars", "crowd"]}
+  ```
+
+  Slot groups: `passby`, `tv`, `start`, `pit`, `cars` (the track loop),
+  `crowd`. Without `"slots"` a set makes all of them. The other settings
+  (`in_pack`, `research_season`...) are inherited from the base unless set.
+- `"inherit": false` starts a fresh stack: a new car generation on an older
+  base (era 5 on era 4) plays none of the sets below it.
+
+`tools/layers.py` `audio_sets()` gives a pack's stack, bottom first;
+`tools/engine_audio/overlay.py` combines it, the upper set winning per file,
+clip and value. Sets with `"in_pack": true` are baked into `dist/` by
+`build_pack.py` and ship with the pack; others go onto the installed copy
+only. A set that is not built yet is skipped. Build a set with
+`ENGINE_AUDIO_BASE=<base or season id> python tools/engine_audio/package.py`;
+`--install` refreshes every installed pack that plays it. The audio files
+themselves stay in `private/engine_audio`, never in git.

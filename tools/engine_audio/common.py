@@ -14,19 +14,33 @@ import os
 import re
 import sqlite3
 import subprocess
+import sys
 import unicodedata
 from pathlib import Path
 
 import numpy as np
 
 REPO = Path(__file__).resolve().parents[2]
-# The era base whose sounds this library makes (bases/<id>/base.json "audio").
-# Every season on that base gets the same overlay. ENGINE_AUDIO_BASE picks
-# another base; give it its own ENGINE_AUDIO_DATA, since one library holds
-# one car generation.
+# The sound set this run makes: the "audio" section of an era base
+# (bases/<id>/base.json) or of a season (seasons/<id>/season.json), merged
+# over the layers below it (tools/layers.py). Every season on that layer
+# plays it; a season's own set sits on top of its era's and fills only its
+# "slots". ENGINE_AUDIO_BASE picks the layer (default the era-4 base); a
+# new car generation gets its own ENGINE_AUDIO_DATA, since one library
+# holds one generation, while a season set of the same generation shares
+# the era's library.
+sys.path.insert(0, str(REPO / "tools"))
+import layers as _layers  # noqa: E402
+
 BASE_ID = os.environ.get("ENGINE_AUDIO_BASE", "dtm-era4")
-AUDIO = json.loads((REPO / "bases" / BASE_ID / "base.json").read_text(encoding="utf-8"))["audio"]
+_SET_DIR = _layers.source_dir(BASE_ID)
+if not (_layers.load_json(_layers.manifest_file(_SET_DIR)).get("audio") or {}).get("overlay"):
+    raise SystemExit(f"{BASE_ID} has no sound set of its own (an \"audio\" section with an \"overlay\" id)")
+AUDIO = next(a for a in _layers.audio_sets(_SET_DIR) if a["layer"] == _SET_DIR.name)
 OVERLAY_ID = AUDIO["overlay"]
+# The slot groups this set makes; the sets below it fill the rest.
+SLOT_GROUPS = ("passby", "tv", "start", "pit", "cars", "crowd")
+SLOTS = tuple(AUDIO.get("slots") or SLOT_GROUPS)
 KEY_PREFIX = AUDIO.get("key_prefix", OVERLAY_ID.replace("-", ""))
 RESEARCH = REPO / "seasons" / AUDIO["research_season"] / "research"   # who drove which make in the videos
 # ENGINE_AUDIO_DATA redirects everything (tests, or a bigger disk)
@@ -35,6 +49,10 @@ DB_PATH = DATA / "library.sqlite"
 AUDIO_DIR = DATA / "audio"          # extract.py: lossless audio tracks
 FEATURE_DIR = DATA / "features"     # segment.py: per-video analysis cache
 LIBRARY_DIR = DATA / "library"      # library.py: ranked clips + reports
+# What this set builds from the library (ambience/, starts/, pits/ loops and
+# previews). The era-4 set came first and keeps library/ itself; every
+# other set of the library gets library/sets/<overlay id>/.
+SET_LIBRARY_DIR = LIBRARY_DIR if OVERLAY_ID == "dtm-era4" else LIBRARY_DIR / "sets" / OVERLAY_ID
 PACK_DIR = DATA / "pack"            # package.py: game overlays, one per era base (OVERLAY_ID)
 SEPARATED_DIR = DATA / "separated"  # separate.py: event windows, original and commentary removed
 CURATION = REPO / "tools" / "engine_audio" / "curation.csv"   # review.py decisions (metadata only)

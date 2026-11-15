@@ -30,6 +30,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "tools" / "engine_audio"))
 from common import ENGINE_TYPES, ERA_EXCLUDE, UPLOAD_YEARS, video_years  # noqa: E402
+import layers  # noqa: E402
 
 PRIVATE = REPO / "private" / "engine_audio"
 TEMPLATE = REPO / "tools" / "sound_inventory_template.html"
@@ -166,20 +167,33 @@ def overlay_slots(overlay_id: str, recs: dict) -> dict | None:
             label = {"grid_idle": "Grid idle", "grid_launch": "Launch", "pit_exit": "Pit exit",
                      "pit_wheelguns": "Wheelguns", "pit_fireup": "Fire-up"}[kind]
             out[kind].append({"key": key, **src(c, label)})
-    # The long track loop: every shot in shots.json, summed per recording.
-    per = defaultdict(float)
-    for shot in load(PRIVATE / "library" / "ambience" / "shots.json", []) or []:
-        per[shot["video_id"]] += shot.get("used_s", 0)
-    for vid, secs in sorted(per.items(), key=lambda kv: -kv[1]):
-        if vid in recs and "Track loop" not in recs[vid]["uses"]:
-            recs[vid]["uses"].append("Track loop")
-        out["cars"].append({"vid": vid, "secs": round(secs, 1)})
-    crowd = crowd_source()
-    if crowd:
-        vid, at, length, note = crowd
-        if vid in recs:
-            recs[vid]["uses"].append("Crowd")
-        out["crowd"].append({"vid": vid, "at": at, "secs": length, "note": note})
+    # The long track loop and the crowd, when this set makes them: every shot
+    # of the set's shots.json, summed per recording (the era-4 set keeps
+    # library/ itself, others library/sets/<id>/, as tools/engine_audio/common.py).
+    layer_set = ov.get("set", {}).get("assets/audio/ambience/session_layers.json", {})
+    amb = PRIVATE / "library" / ("ambience" if overlay_id == "dtm-era4" else f"sets/{overlay_id}/ambience")
+    if "cars.file" in layer_set:
+        per = defaultdict(float)
+        for shot in load(amb / "shots.json", []) or []:
+            per[shot["video_id"]] += shot.get("used_s", 0)
+        for vid, secs in sorted(per.items(), key=lambda kv: -kv[1]):
+            if vid in recs and "Track loop" not in recs[vid]["uses"]:
+                recs[vid]["uses"].append("Track loop")
+            out["cars"].append({"vid": vid, "secs": round(secs, 1)})
+        if not out["cars"]:
+            out["cars"].append({"vid": None, "note": f"loop of the {overlay_id} set"})
+    if "crowd.file" in layer_set:
+        crowd = crowd_source() if overlay_id == "dtm-era4" else None
+        meta = load(amb / "crowd.json")
+        if meta:
+            crowd = (meta["vid"], meta["at"], meta["secs"], meta.get("note", ""))
+        if crowd:
+            vid, at, length, note = crowd
+            if vid in recs:
+                recs[vid]["uses"].append("Crowd")
+            out["crowd"].append({"vid": vid, "at": at, "secs": length, "note": note})
+        else:
+            out["crowd"].append({"vid": None, "note": f"crowd of the {overlay_id} set"})
     return out
 
 
@@ -199,8 +213,38 @@ def candidate_counts(recs: dict) -> list[dict]:
     return starts
 
 
+GROUP_KEYS = {"passby": ("passby",), "tv": ("tv",), "start": ("grid_idle", "grid_launch"),
+              "pit": ("pit_exit", "pit_wheelguns", "pit_fireup"), "cars": ("cars",), "crowd": ("crowd",)}
+
+
+def stack_slots(sets: list[dict], overlays: dict, recs: dict) -> dict | None:
+    """The slots a pack hears from its stack of sound sets: per slot group,
+    the topmost built set that makes it (tools/engine_audio/overlay.combine)."""
+    out, src = None, {}
+    for s in sets:
+        oid = s["overlay"]
+        if oid not in overlays:
+            overlays[oid] = overlay_slots(oid, recs)
+        one = overlays[oid]
+        if one is None:
+            continue
+        if out is None:
+            out = {k: ({} if k == "passby" else []) for k in one}
+        for group, keys in GROUP_KEYS.items():
+            if group == "passby":
+                if one["passby"]:
+                    out["passby"].update(one["passby"])
+                    src[group] = oid
+            elif any(one[k] for k in keys):
+                for k in keys:
+                    out[k] = one[k]
+                src[group] = oid
+    if out is not None:
+        out["from"] = src
+    return out
+
+
 def season_rows(recs: dict) -> list[dict]:
-    bases = {p.parent.name: load(p) for p in (REPO / "bases").glob("*/base.json")}
     overlays: dict[str, dict | None] = {}
     rows = []
     for sdir in sorted((REPO / "seasons").iterdir()):
@@ -210,31 +254,29 @@ def season_rows(recs: dict) -> list[dict]:
         gen = load(sdir / "gen.json", {}) or {}
         base_id = gen.get("base")
         template = gen.get("template") or ("dtm-1991" if sdir.name == "dtm-1991" else None)
-        audio = (bases.get(base_id) or {}).get("audio") if base_id else None
         engines = (load(sdir / "data" / "engines.json", {}) or {}).get("suppliers", {})
         makes = [m for m, e in engines.items() if e.get("active", True)]
         stock_passby = {m: e.get("passby_audio", "") for m, e in engines.items()}
 
-        overlay = None
-        if audio and audio.get("in_pack"):
-            oid = audio["overlay"]
-            if oid not in overlays:
-                overlays[oid] = overlay_slots(oid, recs)
-            overlay = overlays[oid]
-        mother = audio.get("research_season") if audio else None
+        sets = layers.audio_sets(sdir)
+        built = [s for s in sets if (PRIVATE / "pack" / s["overlay"] / "overlay.json").exists()]
+        slots = stack_slots(built, overlays, recs)
+        era_set = sets[0] if sets else None
         rows.append({
             "id": sdir.name,
             "series": series,
             "year": year,
             "era": era_of(series, year),
             "base": base_id or (f"template {template}" if template and template != sdir.name else None),
-            "overlay": audio["overlay"] if overlay else None,
-            "planned_overlay": audio["overlay"] if audio and not overlay else None,
-            "mother": mother,
-            "recording_years": audio.get("recording_years") if audio else None,
+            "overlay": " + ".join(s["overlay"] for s in built) if slots else None,
+            "planned_overlay": sets[-1]["overlay"] if sets and not slots else None,
+            "sets": [{"id": s["overlay"], "layer": s["layer"], "built": s in built, "in_pack": bool(s.get("in_pack")),
+                      "slots": s.get("slots"), "years": s.get("recording_years")} for s in sets],
+            "mother": era_set.get("research_season") if era_set else None,
+            "recording_years": era_set.get("recording_years") if era_set else None,
             "makes": makes,
             "stock_passby": stock_passby,
-            "slots": overlay,
+            "slots": slots,
         })
     return rows
 

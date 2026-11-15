@@ -267,9 +267,15 @@ function renderYear() {
   let set;
   if (sl) {
     const mother = s.mother ? +s.mother.split("-")[1] : null;
+    const era = s.sets[0];
     set = mother === s.year
-      ? `This is the mother season of the <code>${esc(s.overlay)}</code> set: recordings of ${s.recording_years.join(" and ")} cars. Every pack on <code>${esc(s.base)}</code> plays it.`
-      : `Plays the <code>${esc(s.overlay)}</code> set of its era base, made for ${mother} from recordings of ${s.recording_years.join(" and ")} cars.`;
+      ? `This is the mother season of the <code>${esc(era.id)}</code> set: recordings of ${era.years.join(" and ")} cars. Every pack on <code>${esc(s.base)}</code> plays it.`
+      : `Plays the <code>${esc(era.id)}</code> set of its era base, made for ${mother} from recordings of ${era.years.join(" and ")} cars.`;
+    for (const own of s.sets.slice(1)) {
+      set += own.built
+        ? ` On top, its own set <code>${esc(own.id)}</code> (${own.years ? own.years.join(", ") + " cars" : "own recordings"}) makes ${own.slots ? esc(own.slots.join(", ")) : "every slot"}.`
+        : ` Its own set <code>${esc(own.id)}</code> is planned but not built yet.`;
+    }
   } else if (s.planned_overlay) {
     set = `The era base has a sound set (<code>${esc(s.planned_overlay)}</code>, made for ${esc(s.mother)}), but nothing is recorded for it yet, so the pack keeps the game's own sounds.`;
   } else {

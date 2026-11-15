@@ -36,10 +36,10 @@ from pathlib import Path
 
 import numpy as np
 
-from common import LIBRARY_DIR, connect, decode, dump_json, load_json, write_wav
+from common import LIBRARY_DIR, SET_LIBRARY_DIR, connect, decode, dump_json, load_json, write_wav
 
 SR = 44100
-OUT_DIR = LIBRARY_DIR / "pits"
+OUT_DIR = SET_LIBRARY_DIR / "pits"
 GAME_BOOST_MAX = 5.0          # race_engines.json pit_departure_gain
 GAME_PEAK = 31128.65 / 32768  # the game boosts up to this peak
 CROSSFADE_S = 0.65            # race_engines.json pit_fireup_crossfade_s

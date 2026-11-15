@@ -3,9 +3,10 @@
   "base": "dtm-era4",
   "title": "DTM 2019-2020 (era base)",
   "audio": {
-    "$comment": "No turbo engine recordings yet: the packs keep the game's vanilla sounds. The era4 V8 sounds are not used (in_pack false). When recordings are collected, they are made from 2020 cars (recording_years) with the 2020 entry list (research_season), so 2019 inherits them. See docs/plans/DTM2020_BACKLOG.md.",
+    "$comment": "No turbo engine recordings yet: the packs keep the game's vanilla sounds. The era4 V8 sounds are not used (inherit false: the turbo cars start their own sound set). When recordings are collected, they are made from 2020 cars (recording_years) with the 2020 entry list (research_season), so 2019 inherits them. See docs/plans/DTM2020_BACKLOG.md.",
     "overlay": "dtm-era5",
     "in_pack": false,
+    "inherit": false,
     "recording_years": [2020],
     "research_season": "dtm-2020",
     "key_prefix": "dtm20"

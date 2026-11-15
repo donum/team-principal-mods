@@ -34,7 +34,7 @@ from pathlib import Path
 import numpy as np
 from scipy.ndimage import uniform_filter1d
 
-from common import FEATURE_DIR, LIBRARY_DIR, connect, decode, dump_json, era_reason, write_wav
+from common import FEATURE_DIR, SET_LIBRARY_DIR, connect, decode, dump_json, era_reason, write_wav
 
 SR = 44100
 FPS = 20                 # segment.py feature rate
@@ -46,7 +46,7 @@ MIN_DR_DB = 9.0          # level swing (p95 - p10) a shot needs: cars coming and
 MAX_SHOT_S = 60.0
 TRIM_S = 0.4             # dropped at both ends of a shot (camera handling around cuts)
 XF_S = 2.0
-OUT_DIR = LIBRARY_DIR / "ambience"
+OUT_DIR = SET_LIBRARY_DIR / "ambience"
 # Crowd layer: picked by ear from candidates (engine-free stretches of the
 # spectator videos): the steadiest (level +-0.8 dB), widest and least tonal.
 CROWD = ("J8dSJmxobSg", 29.0, 19.4, "Nurburgring 2015 grandstand before the start")

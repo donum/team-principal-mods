@@ -21,9 +21,10 @@ assets/audio/README_AUDIO.txt:
 Levels follow the stock clips (whole-clip RMS x gain).
 
 Output: private/engine_audio/pack/<overlay id>/ (files/ + overlay.json), one
-overlay per era base (bases/<id>/base.json "audio"), shared by all its seasons.
---install applies it to every installed pack of that base, never to dist/ or
-the repo.
+overlay per sound set: an era base's (bases/<id>/base.json "audio"), shared by
+all its seasons, or a season's own (season.json "audio", ENGINE_AUDIO_BASE=<season>),
+which makes only its "slots" and sits on top of the era's. --install applies
+every installed pack's whole stack of sets, never to dist/ or the repo.
 
     python tools/engine_audio/package.py [--install]
 """
@@ -41,7 +42,7 @@ import overlay
 import pits
 import start_synth
 import starts
-from common import (BASE_ID, KEY_PREFIX, LIBRARY_DIR, MAKES, OVERLAY_ID, PACK_DIR, REPO, connect, decode,
+from common import (BASE_ID, KEY_PREFIX, MAKES, OVERLAY_ID, PACK_DIR, REPO, SET_LIBRARY_DIR, SLOTS, connect, decode,
                     dump_json, game_path, load_json, slug, write_wav)
 
 sys.path.insert(0, str(REPO / "tools"))
@@ -183,6 +184,8 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
     if out.exists():
         shutil.rmtree(out)
     files, clips, sets, report = [], {}, {}, []
+    if set(SLOTS) != {"passby", "tv", "start", "pit", "cars", "crowd"}:
+        report.append(f"set {pack} makes only: {', '.join(SLOTS)} (the sets below it fill the rest)")
     flyby = "assets/audio/session/hotlap_flybys.json"
     race = "assets/audio/race/race_engines.json"
     db = connect()
@@ -194,7 +197,7 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
     # pass-bys, one per make, tagged on the supplier
     lvl = stock_level(base_audio, "session/hotlap_flybys.json", "engine_passby")
     by_make = {}          # make -> clip key; overlay.py tags each season's suppliers by name
-    for make in MAKES:
+    for make in (MAKES if "passby" in SLOTS else ()):
         for r in candidates(db, ("full_throttle", "steady_high"), min_q, make=make):
             if r["end_s"] - r["start_s"] < 2.0:
                 continue
@@ -218,7 +221,8 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
             report.append(f"pass-by {make}: no clean onboard full-throttle yet (stock tag kept)")
 
     # real TV pass-bys: random bank only
-    tv = [r for r in candidates(db, ("passby",), min_q, onboard=False) if r["direction"] in ("rl", "lr")]
+    tv = [r for r in candidates(db, ("passby",), min_q, onboard=False)
+          if r["direction"] in ("rl", "lr")] if "tv" in SLOTS else []
     for i, r in enumerate(tv[:n_tv], 1):
         x = peak_normalise(decode(Path(r["audio_path"]), r["peak_s"] - 2.0, 4.0, SR, 2))
         rl = x if r["direction"] == "rl" else x[:, ::-1].copy()
@@ -245,9 +249,9 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
     if test_start:
         idle, launch = starts.test_pair()
         pairs.append((idle, launch, "TEST TONES (package.py --test-start): not a car"))
-    for s in ([] if test_start else starts.real_starts(db)[:n_grid]):
+    for s in ([] if test_start or "start" not in SLOTS else starts.real_starts(db)[:n_grid]):
         pairs.append((s["idle"], s["launch"], f"private: {s['video_id']} go @ {s['go_s']:.2f}s ({s['note']})"))
-    if synth_starts and not test_start:
+    if synth_starts and not test_start and "start" in SLOTS:
         sources = start_synth.find_sources(db)
         for seed in range(1, n_grid - len(pairs) + 1):
             idle, launch, info = start_synth.render_start(sources, seed=seed)
@@ -291,7 +295,7 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
         lv = [pits.heard_db(decode(base_audio / "race" / c["file"], sr=SR, channels=2), c.get("gain", 1.0))
               for c in stock_race["clips"] if c.get("key", "").startswith(f"pit_{kind}_")]
         heard[kind] = float(np.median(lv)) if lv else -24.0
-    pit_sets = [] if test_start else pits.real_pits(db)[:n_pit]
+    pit_sets = [] if test_start or "pit" not in SLOTS else pits.real_pits(db)[:n_pit]
     stock_by_key = {c["key"]: c for c in stock_race["clips"] if "key" in c}
 
     def fireup_entry(x: np.ndarray, name: str, source: str) -> dict:
@@ -352,7 +356,9 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
     layers = "assets/audio/ambience/session_layers.json"
     stock_layers = load_json(base_audio / "ambience" / "session_layers.json", {})
     for layer, stock_file, name in (("cars", "cars_on_track.ogg", "cars on track"), ("crowd", "crowd.ogg", "crowd")):
-        src_file = LIBRARY_DIR / "ambience" / stock_file
+        if layer not in SLOTS:
+            continue
+        src_file = SET_LIBRARY_DIR / "ambience" / stock_file
         if not src_file.exists():
             report.append(f"{name}: stock (run ambience.py)")
             continue
@@ -388,7 +394,7 @@ def main() -> int:
     ap.add_argument("--pit-sets", type=int, default=12)
     ap.add_argument("--tv-passbys", type=int, default=5)
     ap.add_argument("--install", action="store_true",
-                    help="apply to every installed pack whose season is on this base")
+                    help="apply to every installed pack that plays this set (with the sets under it)")
     args = ap.parse_args()
     build(args.min_quality, args.grid_pairs, args.pit_sets, args.tv_passbys,
           args.synth_starts, args.test_start)
@@ -396,15 +402,18 @@ def main() -> int:
         installed = [(s, load_json(s / "season.json")["pack_folder"]) for s in source_layers.seasons_on_overlay(OVERLAY_ID)]
         installed = [(s, pack) for s, pack in installed if (game_path() / "data" / pack).is_dir()]
         if not installed:
-            raise SystemExit(f"no pack of base {BASE_ID} is installed yet (run build_pack.py <season> --install)")
-        for _, pack in installed:
+            raise SystemExit(f"no pack playing {OVERLAY_ID} is installed yet (run build_pack.py <season> --install)")
+        for season, pack in installed:
             target = game_path() / "data" / pack
-            print(f"{pack}: " + (overlay.apply(target, OVERLAY_ID, pack) if overlay.overlay_for(OVERLAY_ID)
+            stack = [a["overlay"] for a in source_layers.audio_sets(season)]
+            print(f"{pack}: " + (overlay.apply(target, stack, pack) if any(overlay.overlay_for(s) for s in stack)
                                  else overlay.remove(target)))
-        starts.main()                 # library/starts/start_NN_*.wav, the browser's "Real starts"
-        pits.main()                   # library/pits/pit_NN_*.wav, the browser's "Pit lane"
-        import start_preview          # the starts as the game mixes them, for the browser
-        start_preview.main(installed[0][1])
+        if "start" in SLOTS:
+            starts.main()             # library/starts/start_NN_*.wav, the browser's "Real starts"
+            import start_preview      # the starts as the game mixes them, for the browser
+            start_preview.main(installed[0][1])
+        if "pit" in SLOTS:
+            pits.main()               # library/pits/pit_NN_*.wav, the browser's "Pit lane"
         # keep the mod browser (tools/mod_browser.py) in sync with what is installed
         import mod_browser
         for season, pack in installed:

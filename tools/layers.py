@@ -123,9 +123,34 @@ def merged_json(folder: Path, rel: str) -> dict:
 
 
 def audio_overlay(manifest_data: dict) -> str:
-    """Id of the private sound overlay a pack gets (tools/engine_audio).
-    Seasons on one base share it; without one, it is the pack folder."""
+    """Id of the top sound set a pack gets (tools/engine_audio): the last
+    layer's "audio": {"overlay": ...}; without one, the pack folder.
+    audio_sets() gives the whole stack."""
     return manifest_data.get("audio", {}).get("overlay") or manifest_data["pack_folder"]
+
+
+def audio_sets(folder: Path) -> list[dict]:
+    """The sound sets a pack plays, bottom first.
+
+    Any layer (era base or season) may hold a sound set: an "audio" section
+    with its own "overlay" id. Each set's settings are the audio sections of
+    its layer and the layers below, merged. A set fills only the slots it
+    lists in "slots" (all when it has none); the sets below fill the rest,
+    so a season can replace, say, its track loop and keep its era's pass-bys.
+    A set with "inherit": false starts afresh (a new car generation on top
+    of an older base). "in_pack" says whether a set may ship in dist/
+    (build_pack.py bakes those); a set that is not built yet is skipped,
+    so its slots keep the sets below or the game's own sounds."""
+    stack, merged = [], {}
+    for layer in chain(folder):
+        own = load_json(manifest_file(layer)).get("audio") or {}
+        merged = deep_merge(merged, {k: v for k, v in own.items() if not k.startswith("$")})
+        if not own.get("overlay"):
+            continue
+        if own.get("inherit") is False:
+            stack = []
+        stack.append({**merged, "layer": layer.name})
+    return stack
 
 
 def seasons() -> list[Path]:
@@ -133,7 +158,8 @@ def seasons() -> list[Path]:
 
 
 def seasons_on_overlay(overlay_id: str) -> list[Path]:
-    return [s for s in seasons() if audio_overlay(manifest(s)) == overlay_id]
+    """Seasons whose packs play this sound set, on its own or under another."""
+    return [s for s in seasons() if overlay_id in (a["overlay"] for a in audio_sets(s))]
 
 
 def season_for_pack(pack_folder: str) -> Path | None:
