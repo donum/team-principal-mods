@@ -1,5 +1,5 @@
 {
-  "$comment": "Inputs for tools/season_from_research.py: the 1991 BTCC, the first Super Touring season. First British Touring Car pack. It starts from the DTM Group A template (dtm-1991) for the data layout and replaces rules, engines, car profiles and tracks. Team colours, engine ratings, car profiles, masses and tyres are first estimates, not yet checked against sources (see research/season.md, open questions).",
+  "$comment": "Inputs for tools/season_from_research.py: the 1991 BTCC, the first Super Touring season. First British Touring Car pack. It starts from the DTM Group A template (dtm-1991) for the data layout and replaces rules, engines, car profiles and tracks. Masses, tyres, points, race laps and circuit lengths are sourced (research/season.md); team colours, engine ratings and car profiles are still first estimates.",
   "year": 1991,
   "template": "dtm-1991",
   "title": "BTCC 1991 - British Touring Car Championship",
@@ -7,7 +7,7 @@
   "series_label": "BTCC",
   "rules": "own",
   "constants": {
-    "POINTS_TOP10": [20, 15, 12, 10, 8, 6, 4, 3, 2, 1],
+    "POINTS_TOP10": [24, 18, 12, 10, 8, 6, 4, 3, 2, 1],
     "QUALI_GRID_LIMIT": 30,
     "PREQUALIFYING_TRIGGER_CARS": 35,
     "PREQUALIFYING_FIELD_LIMIT": 35
@@ -24,6 +24,8 @@
     "Peugeot": "Peugeot"
   },
   "default_tyre": "Dunlop",
+  "$tyre_comment": "Tyres per team are in research/entries.csv (Autosport results boxes, tyre column). Firestone was Mitsubishi's; Michelin and Bridgestone were not in the 1991 field.",
+  "tyre_suppliers": {"Bridgestone": {"active": false, "join_chance": 0.0, "leave_chance": 0.01, "prices": {"works": 0, "partner": 0, "customer": 3}, "nationality": "japanese", "lateral_grip": {"soft": 58.0, "medium": 56.0, "hard": 53.0, "intermediate": 48.0, "wet": 50.0}, "longitudinal_grip": {"soft": 58.0, "medium": 56.0, "hard": 53.0, "intermediate": 48.0, "wet": 50.0}, "durability": {"soft": 46.0, "medium": 54.0, "hard": 62.0, "intermediate": 55.0, "wet": 55.0}, "temperature_tolerance": {"soft": 50.0, "medium": 52.0, "hard": 55.0, "intermediate": 50.0, "wet": 50.0}, "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0}, "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02}, "development_preference": "grip"}, "Yokohama": {"active": true, "join_chance": 0.0, "leave_chance": 0.02, "prices": {"works": 0, "partner": 0, "customer": 2}, "nationality": "japanese", "lateral_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 47.0, "wet": 48.0}, "longitudinal_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 47.0, "wet": 48.0}, "durability": {"soft": 48.0, "medium": 56.0, "hard": 63.0, "intermediate": 55.0, "wet": 54.0}, "temperature_tolerance": {"soft": 50.0, "medium": 50.0, "hard": 52.0, "intermediate": 50.0, "wet": 50.0}, "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0}, "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02}, "development_preference": "endurance"}, "Dunlop": {"active": true, "join_chance": 0.0, "leave_chance": 0.02, "prices": {"works": 0, "partner": 0, "customer": 2}, "nationality": "british", "lateral_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 52.0, "wet": 55.0}, "longitudinal_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 52.0, "wet": 55.0}, "durability": {"soft": 47.0, "medium": 55.0, "hard": 62.0, "intermediate": 57.0, "wet": 57.0}, "temperature_tolerance": {"soft": 50.0, "medium": 50.0, "hard": 52.0, "intermediate": 52.0, "wet": 52.0}, "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0}, "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02}, "development_preference": "wet_weather"}, "Michelin": {"active": false, "join_chance": 0.0, "leave_chance": 0.02, "prices": {"works": 0, "partner": 0, "customer": 2}, "nationality": "french", "lateral_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 49.0, "wet": 51.0}, "longitudinal_grip": {"soft": 57.0, "medium": 55.0, "hard": 52.0, "intermediate": 49.0, "wet": 51.0}, "durability": {"soft": 50.0, "medium": 58.0, "hard": 64.0, "intermediate": 56.0, "wet": 55.0}, "temperature_tolerance": {"soft": 52.0, "medium": 52.0, "hard": 54.0, "intermediate": 50.0, "wet": 50.0}, "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0}, "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02}, "development_preference": "endurance"}, "Pirelli": {"active": true, "join_chance": 0.0, "leave_chance": 0.03, "prices": {"works": 0, "partner": 0, "customer": 2}, "nationality": "italian", "lateral_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 47.0, "wet": 48.0}, "longitudinal_grip": {"soft": 56.0, "medium": 54.0, "hard": 51.0, "intermediate": 47.0, "wet": 48.0}, "durability": {"soft": 46.0, "medium": 54.0, "hard": 61.0, "intermediate": 54.0, "wet": 54.0}, "temperature_tolerance": {"soft": 50.0, "medium": 50.0, "hard": 52.0, "intermediate": 50.0, "wet": 50.0}, "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0}, "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02}, "development_preference": "grip"}, "Firestone": {"active": true, "join_chance": 0.0, "leave_chance": 0.01, "prices": {"works": 0, "partner": 0, "customer": 3}, "nationality": "american", "lateral_grip": {"soft": 58.0, "medium": 56.0, "hard": 53.0, "intermediate": 48.0, "wet": 50.0}, "longitudinal_grip": {"soft": 58.0, "medium": 56.0, "hard": 53.0, "intermediate": 48.0, "wet": 50.0}, "durability": {"soft": 46.0, "medium": 54.0, "hard": 62.0, "intermediate": 55.0, "wet": 55.0}, "temperature_tolerance": {"soft": 50.0, "medium": 52.0, "hard": 55.0, "intermediate": 50.0, "wet": 50.0}, "trend": {"lateral_grip": 0.01, "longitudinal_grip": 0.01, "durability": 0.01, "temperature_tolerance": 0.0}, "variance": {"lateral_grip": 0.05, "longitudinal_grip": 0.05, "durability": 0.03, "temperature_tolerance": 0.02}, "development_preference": "grip"}},
   "drivers": {
     "$comment": "Hand-set skills where points mislead: Soper missed six rounds for the DTM, Harvey lost 48 points to the noise penalty.",
     "Steve Soper": {"skill": 17},
@@ -45,7 +47,8 @@
     "st_nissan_primera": {"acceleration": 0, "straight": 0, "slow": 0, "med": 0, "high": 0, "braking": 0, "tyre_management": 0, "chassis_reliability": -3, "aero_efficiency_rating": 0, "dirty_air_sensitivity": 0},
     "st_mitsubishi": {"acceleration": -1, "straight": -1, "slow": -1, "med": -1, "high": -1, "braking": -1, "tyre_management": 0, "chassis_reliability": -2, "aero_efficiency_rating": -1, "dirty_air_sensitivity": 0}
   },
-  "mass_kg": {"BMW": 810.0, "Vauxhall": 810.0, "Toyota": 810.0, "Ford": 830.0, "Nissan": 810.0, "Mitsubishi": 810.0},
+  "$mass_comment": "Car plus engine (140 kg, Ford 150 kg) gives the 1991 minimum weights: front-wheel drive 950 kg, rear-wheel drive 1050 kg (BMW M3, Ford Sierra). Source: 1990sbtcc.com/btcc-regulations, touringcarracing.net 1991 cars.",
+  "mass_kg": {"BMW": 910.0, "Vauxhall": 810.0, "Toyota": 810.0, "Ford": 900.0, "Nissan": 810.0, "Mitsubishi": 810.0},
   "engines": {
     "BMW": {"engine": "BMW S14 2.0 16V", "factory": false, "power_rating": 47.0, "reliability_rating": 70.0,
             "cost_m": 3, "annual_budget_m": 30, "capacity": 1, "active": true, "join_chance": 0.0, "leave_chance": 0.01,
@@ -96,7 +99,7 @@
     "HWR Motorsport": {"nationality": "british", "color": [240, 240, 240], "secondary": [150, 0, 0]},
     "Sean Walker Racing": {"skip": true},
     "Moto-Build": {"skip": true},
-    "ACE Motorsport": {"skip": true}
+    "Andrew Mackenzie Racing": {"skip": true}
   },
   "tracks": {"1": "silverstone_nat", "2": "snetterton", "3": "donington", "4": "thruxton", "5": "silverstone_nat",
              "6": "brandshatch", "7": "silverstone", "8": ["donington_nat", "donington_nat"], "9": "oulton",
@@ -113,5 +116,15 @@
     "donington_nat": {"from": "zolder", "override": {"name": "Donington Park National", "nationality": "british"}},
     "oulton": {"from": "alemannenring", "override": {"name": "Oulton Park", "nationality": "british"}}
   },
-  "track_overrides": {}
+  "track_overrides": {
+    "$comment": "1991 race laps and lap lengths from the Autosport results boxes (1990sbtcc.com/as9101-as9112) and touringcars.net. Donington GP ran 20 laps in April and 15 in September; the pack uses 20.",
+    "silverstone_nat": {"race_laps": 25, "length_km": 2.654},
+    "snetterton": {"race_laps": 18, "length_km": 3.14},
+    "donington": {"race_laps": 20, "length_km": 4.023},
+    "thruxton": {"race_laps": 20, "length_km": 3.792},
+    "brandshatch": {"race_laps": 36, "length_km": 1.936},
+    "silverstone": {"race_laps": 15, "length_km": 5.226},
+    "donington_nat": {"race_laps": 25, "length_km": 3.149},
+    "oulton": {"race_laps": 20, "length_km": 4.456}
+  }
 }

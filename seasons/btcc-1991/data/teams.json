@@ -178,10 +178,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "partner",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "partner"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 60.0,
         "profile": "st_bmw_m3"
@@ -266,7 +266,7 @@
       "engine_supplier": "Toyota",
       "engine_contract_type": "partner",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "partner"
       },
       "car_mass_kg": 810.0,
@@ -310,10 +310,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "partner",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Pirelli",
         "type": "partner"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 53.2,
         "profile": "st_bmw_m3"
@@ -354,10 +354,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "partner",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "partner"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 45.6,
         "profile": "st_bmw_m3"
@@ -398,10 +398,10 @@
       "engine_supplier": "Ford",
       "engine_contract_type": "customer",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "customer"
       },
-      "car_mass_kg": 830.0,
+      "car_mass_kg": 900.0,
       "$rating": {
         "base": 45.5,
         "profile": "st_ford_sierra"
@@ -442,10 +442,10 @@
       "engine_supplier": "Ford",
       "engine_contract_type": "partner",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "partner"
       },
-      "car_mass_kg": 830.0,
+      "car_mass_kg": 900.0,
       "$rating": {
         "base": 43.2,
         "profile": "st_ford_sierra"
@@ -486,10 +486,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "customer",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "customer"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 42.9,
         "profile": "st_bmw_m3"
@@ -574,10 +574,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "customer",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "customer"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 38.5,
         "profile": "st_bmw_m3"
@@ -618,10 +618,10 @@
       "engine_supplier": "Ford",
       "engine_contract_type": "customer",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "customer"
       },
-      "car_mass_kg": 830.0,
+      "car_mass_kg": 900.0,
       "$rating": {
         "base": 37.5,
         "profile": "st_ford_sierra"
@@ -662,10 +662,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "customer",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Pirelli",
         "type": "customer"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 37.1,
         "profile": "st_bmw_m3"
@@ -706,7 +706,7 @@
       "engine_supplier": "Mitsubishi",
       "engine_contract_type": "partner",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Firestone",
         "type": "partner"
       },
       "car_mass_kg": 810.0,
@@ -753,7 +753,7 @@
         "supplier": "Dunlop",
         "type": "customer"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 36.7,
         "profile": "st_bmw_m3"
@@ -794,10 +794,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "customer",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Yokohama",
         "type": "customer"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 36.0,
         "profile": "st_bmw_m3"
@@ -882,10 +882,10 @@
       "engine_supplier": "BMW",
       "engine_contract_type": "customer",
       "tyre_contract": {
-        "supplier": "Dunlop",
+        "supplier": "Pirelli",
         "type": "customer"
       },
-      "car_mass_kg": 810.0,
+      "car_mass_kg": 910.0,
       "$rating": {
         "base": 36.0,
         "profile": "st_bmw_m3"
@@ -929,7 +929,7 @@
         "supplier": "Dunlop",
         "type": "customer"
       },
-      "car_mass_kg": 830.0,
+      "car_mass_kg": 900.0,
       "$rating": {
         "base": 36.0,
         "profile": "st_ford_sierra"

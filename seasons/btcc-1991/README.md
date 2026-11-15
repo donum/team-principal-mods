@@ -1,6 +1,6 @@
 # BTCC 1991: Season Pack
 
-Status: **v0.1, generated and builds; not yet tested in-game or simulated.**
+Status: **v0.1, generated and builds; research checked against period sources (2026-11-15).**
 Our first British Touring Car Championship pack, and the first season of
 Super Touring. The data was generated with `tools/season_from_research.py`
 from `research/`, configured in `gen.json`. For the sourced facts behind it
@@ -38,7 +38,10 @@ The pack folder is `btcc1991`.
 
 ## Simplifications
 
-- Every team runs Dunlop tyres and one 950 kg weight limit, until the real
-  values are sourced.
+- Every race pays 24-18-12-10-8-6-4-3-2-1. In 1991 the four races at the two
+  double-header meetings paid half points to the top eight; the game has
+  one points scale for all races (wishlist A1).
+- One minimum weight of 950 kg; the BMW M3 and Ford Sierra carry their
+  1050 kg as car mass.
 - No car images, team logos or portraits yet.
 - Sounds are the game's own.

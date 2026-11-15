@@ -38,13 +38,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 92,
+      "age": 36,
+      "talent": 90,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "top_racer",
+      "career_stage": "top_veteran",
       "nationality": "british",
       "team": "BMW Team Listerine",
       "number": 11
@@ -67,13 +67,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 83,
+      "age": 40,
+      "talent": 77,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "BMW Team Listerine",
       "number": 12
@@ -96,13 +96,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 89,
+      "age": 38,
+      "talent": 85,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "top_racer",
+      "career_stage": "top_veteran",
       "nationality": "british",
       "team": "Vauxhall Sport",
       "number": 5
@@ -125,8 +125,8 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 82,
+      "age": 36,
+      "talent": 80,
       "traits": [],
       "personalities": [
         "loyal"
@@ -152,7 +152,7 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
+      "age": 34,
       "talent": 60,
       "traits": [],
       "personalities": [
@@ -180,13 +180,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 87,
+      "age": 43,
+      "talent": 78,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "top_racer",
+      "career_stage": "top_veteran",
       "nationality": "british",
       "team": "Kaliber ICS Team Toyota",
       "number": 3
@@ -209,7 +209,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 26,
       "talent": 69,
       "traits": [],
       "personalities": [
@@ -238,7 +238,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 34,
       "talent": 79,
       "traits": [],
       "personalities": [
@@ -267,13 +267,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 84,
+      "age": 39,
+      "talent": 79,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "top_racer",
+      "career_stage": "top_veteran",
       "nationality": "british",
       "team": "BMW Team Finance",
       "number": 44
@@ -294,7 +294,7 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
+      "age": 26,
       "talent": 72,
       "traits": [],
       "personalities": [
@@ -320,7 +320,7 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
+      "age": 32,
       "talent": 65,
       "traits": [],
       "personalities": [
@@ -348,7 +348,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 29,
       "talent": 75,
       "traits": [],
       "personalities": [
@@ -377,13 +377,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 69,
+      "age": 38,
+      "talent": 65,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "BMW Team Labatt's",
       "number": 9
@@ -404,8 +404,8 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
-      "talent": 67,
+      "age": 35,
+      "talent": 66,
       "traits": [],
       "personalities": [
         "loyal"
@@ -432,7 +432,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 28,
       "talent": 74,
       "traits": [],
       "personalities": [
@@ -490,13 +490,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 71,
+      "age": 46,
+      "talent": 59,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "Pyramid Motorsport",
       "number": 2
@@ -517,7 +517,7 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
+      "age": 24,
       "talent": 60,
       "traits": [],
       "personalities": [
@@ -543,8 +543,8 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
-      "talent": 67,
+      "age": 37,
+      "talent": 64,
       "traits": [],
       "personalities": [
         "loyal"
@@ -554,7 +554,7 @@
       "reserve_number": 2
     },
     {
-      "name": "Alistair Fenwick",
+      "name": "Alastair Fenwick",
       "cornering": 10,
       "braking": 10,
       "consistency": 9,
@@ -606,7 +606,7 @@
       "reserve_number": 18
     },
     {
-      "name": "Keith O'Dor",
+      "name": "Kieth O'Dor",
       "cornering": 12,
       "braking": 12,
       "consistency": 11,
@@ -623,7 +623,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 28,
       "talent": 66,
       "traits": [],
       "personalities": [
@@ -650,7 +650,7 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
+      "age": 29,
       "talent": 60,
       "traits": [],
       "personalities": [
@@ -762,7 +762,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 27,
       "talent": 62,
       "traits": [],
       "personalities": [
@@ -846,13 +846,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 62,
+      "age": 40,
+      "talent": 56,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "John Maguire Racing",
       "number": 88
@@ -875,7 +875,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 34,
       "talent": 62,
       "traits": [],
       "personalities": [
@@ -913,7 +913,7 @@
       "reserve_number": 59
     },
     {
-      "name": "Alistair Lyall",
+      "name": "Alastair Lyall",
       "cornering": 10,
       "braking": 10,
       "consistency": 9,
@@ -1069,13 +1069,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 47,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "Brodie Brittain Racing",
       "number": 21

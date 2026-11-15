@@ -12,13 +12,10 @@ Priority: **P1** = changes how the game plays, **P2** = more of the real
 
 | Item | What | Prio |
 |---|---|---|
-| Second source | Everything comes from one Wikipedia page tagged "sources needed". Check entries, results and points against a period source (Autosport, touringcarracing.net). | P1 |
-| Points scale | 20-15-12-10-8-6-4-3-2-1 matches half the drivers exactly but not the top (Rouse -21, Gravett -17). Find the real scale, drop scores and fastest-lap points. | P1 |
-| Weights and tyres | Super Touring minimum weight in 1991, and which tyre each team ran. The pack uses 950 kg and Dunlop for all. | P1 |
-| Lap counts and lengths | Race laps per meeting and the 1991 lengths of Silverstone National and GP, Snetterton, Thruxton, Donington National and Oulton Park. | P2 |
-| Birth dates | Needed for driver ages (all 30 for now). | P2 |
-| Engines | Real engine names and outputs (`entries.csv` has generic "2.0 L4"). | P2 |
-| Results files | Per-race qualifying and race CSVs in `research/results/`, as in dtm-1991, so `tools/simulate.py` can compare poles. `research/race_results.csv` has finishing positions only. | P2 |
+| Second source | Done 2026-11-15: calendar, every result, every total, points, weights, tyres, laps and lengths checked against Autosport (1990sbtcc.com), touringcars.net and touringcarracing.net (research/season.md). | done |
+| Birth dates | 24 of 31 regulars found (racingsportscars.com). Missing: Gravett, Baird, Forrest, Leech, Llewellyn, Lindgren, Andersson. | P2 |
+| Engines | Outputs for Toyota, Vauxhall and Ford (BMW about 270 hp and Nissan 265 hp are known). | P2 |
+| Results files | Per-race qualifying and race CSVs in `research/results/`, as in dtm-1991, so `tools/simulate.py` can compare poles. `research/race_results.csv` has finishing positions only. The qualifying tables per round are on https://1990sbtcc.com/race-archive/. | P2 |
 
 ## 2. Tracks
 

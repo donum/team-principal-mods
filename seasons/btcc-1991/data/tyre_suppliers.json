@@ -5,7 +5,7 @@
   ],
   "suppliers": {
     "Bridgestone": {
-      "active": true,
+      "active": false,
       "join_chance": 0.0,
       "leave_chance": 0.01,
       "prices": {
@@ -161,7 +161,7 @@
       "development_preference": "wet_weather"
     },
     "Michelin": {
-      "active": true,
+      "active": false,
       "join_chance": 0.0,
       "leave_chance": 0.02,
       "prices": {
@@ -247,6 +247,58 @@
         "soft": 50.0,
         "medium": 50.0,
         "hard": 52.0,
+        "intermediate": 50.0,
+        "wet": 50.0
+      },
+      "trend": {
+        "lateral_grip": 0.01,
+        "longitudinal_grip": 0.01,
+        "durability": 0.01,
+        "temperature_tolerance": 0.0
+      },
+      "variance": {
+        "lateral_grip": 0.05,
+        "longitudinal_grip": 0.05,
+        "durability": 0.03,
+        "temperature_tolerance": 0.02
+      },
+      "development_preference": "grip"
+    },
+    "Firestone": {
+      "active": true,
+      "join_chance": 0.0,
+      "leave_chance": 0.01,
+      "prices": {
+        "works": 0,
+        "partner": 0,
+        "customer": 3
+      },
+      "nationality": "american",
+      "lateral_grip": {
+        "soft": 58.0,
+        "medium": 56.0,
+        "hard": 53.0,
+        "intermediate": 48.0,
+        "wet": 50.0
+      },
+      "longitudinal_grip": {
+        "soft": 58.0,
+        "medium": 56.0,
+        "hard": 53.0,
+        "intermediate": 48.0,
+        "wet": 50.0
+      },
+      "durability": {
+        "soft": 46.0,
+        "medium": 54.0,
+        "hard": 62.0,
+        "intermediate": 55.0,
+        "wet": 55.0
+      },
+      "temperature_tolerance": {
+        "soft": 50.0,
+        "medium": 52.0,
+        "hard": 55.0,
         "intermediate": 50.0,
         "wet": 50.0
       },

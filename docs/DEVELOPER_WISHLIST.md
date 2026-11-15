@@ -55,7 +55,7 @@ rules to these items:
 ## A. Race weekend format
 
 ### A1. Several races per weekend (heats) · P1
-- **Needed by:** dtm-1990, dtm-1991, dtm-1992 (each runs one race per round at heat distance), dtm-2018 and dtm-2020 (two races a weekend; each race is its own game week, which stretches the calendar on back-to-back weekends), btcc-1991 (two races at Donington and Brands Hatch; each takes its own week).
+- **Needed by:** dtm-1990, dtm-1991, dtm-1992 (each runs one race per round at heat distance), dtm-2018 and dtm-2020 (two races a weekend; each race is its own game week, which stretches the calendar on back-to-back weekends), btcc-1991 (two races at Donington and Brands Hatch; each takes its own week, and each paid half points to the top eight, 12-9-6-5-4-3-2-1, against 24-18-12 in the single races).
 - **1991:** every DTM round had **two heats of about 100 km**, both with full
   points. The heat-2 grid was the heat-1 finishing order.
 - **Today:** one race per scheduled week.

@@ -8,8 +8,8 @@
   "constants": {
     "SEASON_START_YEAR": 1991,
     "POINTS_TOP10": [
-      20,
-      15,
+      24,
+      18,
       12,
       10,
       8,
@@ -81,7 +81,41 @@
     "zolder": "dtm-1991",
     "alemannenring": "dtm-1991"
   },
-  "track_overrides": {},
+  "track_overrides": {
+    "$comment": "1991 race laps and lap lengths from the Autosport results boxes (1990sbtcc.com/as9101-as9112) and touringcars.net. Donington GP ran 20 laps in April and 15 in September; the pack uses 20.",
+    "silverstone_nat": {
+      "race_laps": 25,
+      "length_km": 2.654
+    },
+    "snetterton": {
+      "race_laps": 18,
+      "length_km": 3.14
+    },
+    "donington": {
+      "race_laps": 20,
+      "length_km": 4.023
+    },
+    "thruxton": {
+      "race_laps": 20,
+      "length_km": 3.792
+    },
+    "brandshatch": {
+      "race_laps": 36,
+      "length_km": 1.936
+    },
+    "silverstone": {
+      "race_laps": 15,
+      "length_km": 5.226
+    },
+    "donington_nat": {
+      "race_laps": 25,
+      "length_km": 3.149
+    },
+    "oulton": {
+      "race_laps": 20,
+      "length_km": 4.456
+    }
+  },
   "track_placeholders": {
     "$comment": "No British circuit is traced yet. Each placeholder borrows a DTM track of a similar kind (airfields for Silverstone, Snetterton and Thruxton) until it is traced with tools/osm_track.py.",
     "silverstone_nat": {

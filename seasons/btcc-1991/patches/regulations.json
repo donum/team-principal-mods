@@ -5,9 +5,9 @@
         {
           "key": "btcc_1991",
           "name": "BTCC 1991",
-          "points": [20, 15, 12, 10, 8, 6, 4, 3, 2, 1],
-          "summary": "Points to the top ten of each race (20-15-12-10-8-6-4-3-2-1).",
-          "description": "Each race pays points to the top ten. The real 1991 totals do not match this scale exactly, so extra rules are still unknown."
+          "points": [24, 18, 12, 10, 8, 6, 4, 3, 2, 1],
+          "summary": "Points to the top ten of each race (24-18-12-10-8-6-4-3-2-1).",
+          "description": "Each race pays points to the top ten. At the two meetings with two races, each race paid half points to the top eight. No dropped scores."
         }
       ],
       "default": "btcc_1991"
@@ -33,8 +33,8 @@
           "key": "super_touring_1991",
           "name": "Super Touring 1991",
           "min_car_mass_kg": 950.0,
-          "summary": "One weight limit for every two-litre car (first estimate).",
-          "description": "Team car masses carry the per-model weight. The exact 1991 limit is not yet sourced."
+          "summary": "950 kg for front-wheel drive cars, 1050 kg for rear-wheel drive cars.",
+          "description": "The limit depends on the drive layout. Team car masses carry the higher weight of the BMW M3 and the Ford Sierra."
         }
       ],
       "default": "super_touring_1991"
