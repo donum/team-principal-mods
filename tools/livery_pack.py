@@ -7,8 +7,8 @@ Inputs, all under <Pictures>/mods/<series>-<year>/livery_pack/ (a bare year mean
                car      car number
                view     left | right | front | rear | front-left | front-right |
                         rear-left | rear-right | top | detail
-                        (left/right = the car's own side: nose pointing right in
-                        the image shows its LEFT side)
+                        (left/right = the car's own side: nose pointing LEFT in
+                        the image shows its LEFT side, the view the drawings use)
                quality  A (draw from it) | B (usable) | C (only for colours)
                note     free text: what it shows, sponsors read, doubts
   liveries.csv per car: number, driver, team, base_colors, main_sponsor,
@@ -115,9 +115,10 @@ def main():
         q = sorted(h.get(v, []))
         return q[0] if q else "-"
     md = [f"# {series.upper()} {a.year} livery reference pack", "",
+          "left/right = the car's own side; left = nose pointing left in the frame, the view the drawings use.", "",
           "Raw material for side-view livery drawings in the style of the DTM 2012/2013 sheets.",
           "One folder per car. File names: `<quality>_<view>_<source>`; quality A = draw from it,",
-          "B = usable, C = colours only. left/right = the car's own side.", "",
+          "B = usable, C = colours only.", "",
           "| # | Driver | Team | left | right | front¾ | rear¾ | front | rear |", "|---|---|---|---|---|---|---|---|---|"]
     for num in sorted(entries, key=int):
         h, e = cover[num], entries[num]
