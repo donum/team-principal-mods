@@ -79,43 +79,43 @@
     "silverstone_nat": {
       "race_laps": 25,
       "length_km": 2.654,
-      "speed_mult": 0.98
+      "speed_mult": 0.969
     },
     "snetterton": {
       "race_laps": 18,
       "length_km": 3.14,
-      "speed_mult": 0.984
+      "speed_mult": 0.967
     },
     "donington": {
       "race_laps": 20,
       "length_km": 4.023,
-      "speed_mult": 1.027
+      "speed_mult": 1.04
     },
     "thruxton": {
       "race_laps": 20,
       "length_km": 3.792,
-      "speed_mult": 1.062
+      "speed_mult": 1.092
     },
     "brandshatch": {
       "race_laps": 36,
       "length_km": 1.936,
-      "speed_mult": 1.073
+      "speed_mult": 1.113
     },
     "silverstone": {
       "race_laps": 15,
       "length_km": 5.226,
-      "speed_mult": 1.005
+      "speed_mult": 1.009
     },
     "donington_nat": {
       "race_laps": 25,
       "length_km": 3.149,
-      "speed_mult": 1.014
+      "speed_mult": 1.03
     },
     "oulton": {
       "race_laps": 20,
       "length_km": 4.456,
-      "speed_mult": 1.046
+      "speed_mult": 1.067
     },
-    "$speed_comment": "speed_mult = simulated / real pole time, averaged over each track's races, from one simulated season on the traced tracks (build/sim/btcc-1991/20261115-104118, poles -2.9% to +8.7% before). First pass; rerun tools/simulate.py btcc-1991 --runs 4 to refine."
+    "$speed_comment": "speed_mult = earlier factor x simulated / real lap time, averaged per track over pole, fastest race lap and average race lap, from three simulated seasons (build/sim/btcc-1991/20261115-120905). Silverstone GP 1991 and Oulton Park 1975 are traced about 4% short, so their factors also make up for the length."
   }
 }
