@@ -34,7 +34,7 @@ from pathlib import Path
 import numpy as np
 from scipy.ndimage import uniform_filter1d
 
-from common import FEATURE_DIR, SET_LIBRARY_DIR, connect, decode, dump_json, era_reason, write_wav
+from common import FEATURE_DIR, OVERLAY_ID, SET_LIBRARY_DIR, connect, decode, dump_json, era_reason, write_wav
 
 SR = 44100
 FPS = 20                 # segment.py feature rate
@@ -52,6 +52,27 @@ OUT_DIR = SET_LIBRARY_DIR / "ambience"
 CROWD = ("J8dSJmxobSg", 29.0, 19.4, "Nurburgring 2015 grandstand before the start")
 CROWD_XF_S = 1.5
 
+
+# A set may pick its shots by hand instead (video id, from, to, what the
+# frames show): for years with few recordings, where the long montages
+# also hold grids, practice starts and pit lanes. Picked from three frames
+# per detected shot (2026-11-15); the montages' shots of cars on track only.
+BED_PICKS = {
+    "dtm-2018": [
+        ("plmbOpRMwHs", 143.9, 175.4, "2017 cars through a corner"),
+        ("maJ-qIGkz_o", 227.0, 278.1, "Misano 2018 at night, cars on track"),
+        ("maJ-qIGkz_o", 278.9, 287.8, "Misano at night, along the fence"),
+        ("maJ-qIGkz_o", 288.6, 321.1, "Misano at night, cars passing"),
+        ("maJ-qIGkz_o", 326.4, 350.6, "Misano at night, far corner"),
+        ("maJ-qIGkz_o", 374.1, 451.1, "Misano at night, cars on track"),
+        ("maJ-qIGkz_o", 520.4, 536.5, "Misano at night, cars passing"),
+        ("maJ-qIGkz_o", 795.8, 812.0, "Misano at dusk, cars passing"),
+        ("1_f68-hUy8w", 438.0, 449.1, "Misano 2018 at dusk, cars on track"),
+        ("1_f68-hUy8w", 549.0, 572.0, "Misano 2018, start-finish straight from the stands"),
+    ],
+}
+# Loop length per set where its picks are too few for the stock 393 s.
+BED_SECONDS = {"dtm-2018": 240.0}
 
 NOT_BED = re.compile(r"start|grid|aufstellung|einf.hrung|runde 1|1ste runde|warm.?up", re.I)
 
@@ -160,7 +181,22 @@ def build_bed(shots: list[dict], seconds: float, rng) -> tuple[np.ndarray, list[
     return loop, used
 
 
+def picked_shots(db, picks) -> list[dict]:
+    shots = []
+    for vid, a, b, note in picks:
+        row = db.execute("SELECT v.title, a.path FROM videos v JOIN audio a ON a.id = v.id WHERE v.id=?",
+                         (vid,)).fetchone()
+        if not row or not Path(row["path"]).exists():
+            print(f"{vid}: not extracted, pick skipped")
+            continue
+        shots.append(dict(video_id=vid, title=row["title"], path=row["path"], start_s=a, end_s=b, note=note))
+    print(f"{len(shots)} hand-picked shots, {sum(s['end_s'] - s['start_s'] for s in shots):.0f} s")
+    return shots
+
+
 def collect_shots(db) -> list[dict]:
+    if OVERLAY_ID in BED_PICKS:
+        return picked_shots(db, BED_PICKS[OVERLAY_ID])
     rows = db.execute("""SELECT v.id, v.title, a.path FROM videos v JOIN audio a ON a.id = v.id
                          WHERE v.video_type = 'spectator' AND v.status = 'done'""").fetchall()
     shots = []
@@ -187,7 +223,7 @@ def build_crowd(db) -> np.ndarray | None:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--seconds", type=float, default=BED_S)
+    ap.add_argument("--seconds", type=float, default=BED_SECONDS.get(OVERLAY_ID, BED_S))
     ap.add_argument("--seed", type=int, default=1)
     args = ap.parse_args()
     db = connect()

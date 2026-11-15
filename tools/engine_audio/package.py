@@ -234,7 +234,8 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
             {"key": key, "file": f"{key}.wav", "crossing_s": cross, "gain": gain, "source": ref(r)},
             {"key": f"{key}_lr", "file": f"{key}_lr.wav", "direction": "lr",
              "crossing_s": cross, "gain": gain, "source": ref(r)}])
-    report.append(f"TV pass-bys: {min(len(tv), n_tv)} clean (of {len(tv)})")
+    if "tv" in SLOTS:
+        report.append(f"TV pass-bys: {min(len(tv), n_tv)} clean (of {len(tv)})")
 
     # grid idle + launch pairs: real fan recordings of race starts (starts.py).
     # The broadcast starts are unusable (commentary peaks there). Simulated
@@ -279,7 +280,8 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
         clips.setdefault(race, []).extend([
             {"key": f"grid_idle_{i + 1:02d}", "file": idle_f, "gain": idle_g, "source": src},
             {"key": f"grid_launch_{i + 1:02d}", "file": launch_f, "gain": launch_g, "source": src}])
-    report.append(f"grid idle/launch pairs: {len(pairs)} " + ("(TEST TONES)" if test_start else f"({sum('simulated' not in p[2] for p in pairs)} real fan recordings)")
+    if "start" in SLOTS:
+        report.append(f"grid idle/launch pairs: {len(pairs)} " + ("(TEST TONES)" if test_start else f"({sum('simulated' not in p[2] for p in pairs)} real fan recordings)")
                   + (f", filling {stock_pairs} stock slots" if pairs and len(pairs) < stock_pairs else "")
                   + ("" if pairs else ", stock kept"))
 
@@ -348,7 +350,8 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
         for kind, e in files_for[n % len(files_for)].items():
             clips.setdefault(race, []).append({"key": f"pit_{kind}_{n + 1:02d}", **e})
     real = {k: sum(k in e and e[k]["source"].startswith("private") for e in files_for) for k in ("fireup", "exit", "wheelguns")}
-    report.append(f"pit sets: {len(files_for)} (real: " + ", ".join(f"{v} {k}" for k, v in real.items())
+    if "pit" in SLOTS:
+        report.append(f"pit sets: {len(files_for)} (real: " + ", ".join(f"{v} {k}" for k, v in real.items())
                   + ("; the rest of the fire-ups are stock, levelled for our exits)" if files_for else "), stock kept"))
 
     # ambience layers from real trackside recordings (ambience.py): seamless

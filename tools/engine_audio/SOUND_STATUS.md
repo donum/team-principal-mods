@@ -66,3 +66,50 @@ All of this is one set per pack, never per track (wishlist E9).
 
 The mod browser (`tools/mod_browser.py`, rebuilt on every install) shows
 the same picture live, with every clip playable.
+
+# DTM 2018 sound status
+
+2018 has its own sound set `dtm-2018` (`seasons/dtm-2018/season.json`
+`"audio"`, 2017-2018 cars only) on top of the era-4 set. Checked on
+2026-11-15.
+
+## Do the 2017-2018 cars sound different?
+
+Measured over the fan recordings (2012-13: 23, 2014-16: 12, 2017-18: 12),
+in the loud frames where an engine is clearly heard:
+
+| | 2012-13 | 2014-16 | 2017-18 |
+|---|---|---|---|
+| Engine speed, median | 6,515 rpm | 6,758 | 6,436 |
+| Top revs (98th percentile) | 8,528 | 8,580 | 8,528 |
+| Pops and crackles per minute, median | 0.3 | 0.8 | 2.6 |
+| Treble vs midrange (2-8 kHz vs 0.2-2 kHz) | -10.2 dB | -11.9 | -8.6 |
+
+Same revs; the 2017-2018 recordings pop on the overrun far more (the
+backfires the 2018 videos are named for) and sound brighter. Phone mics
+differ, so this was checked by ear: A/B clips in
+`pilot/compare_2013_2018/` (the user chose to replace the 2018 sounds).
+
+## Replaced
+
+| Slot | Now | Made from |
+|---|---|---|
+| `cars_on_track` | `dtm18_cars_on_track`, 240 s loop | 10 hand-picked shots of cars on track (`ambience.BED_PICKS`): Misano 2018 night race (`maJ-qIGkz_o`), Misano 2018 by day (`1_f68-hUy8w`), a 2017 compilation (`plmbOpRMwHs`). Grids, practice starts and pit-exit shots left out by their frames. Shorter than stock: only ~290 s of 2017-2018 track sound passes. |
+
+## To pick by ear
+
+- **Starts** (`pilot/start_candidates_2018/`, scored like the 2013 pick:
+  share above 5 kHz, then flatness 150 Hz-4 kHz; 2013 pick 0.2 % / 0.06):
+  Misano 2018 night start `maJ-qIGkz_o` 0.2 % / 0.07 and Norisring 2018
+  `bE-cwxQ42JA` 0.2 % / 0.05 are as clean as the 2013 pick; Lausitzring 2018
+  `JDtk4MRd1d0` 0.5 % / 0.10. Hockenheim 2017 and 2018 and Norisring 2017
+  are noisier (flatness 0.12-0.25). "Go" was found automatically; where
+  the level step is small (1-2 dB) it may be off.
+- **Pit exits** (`pilot/pit_candidates_2018/`): 12 pull-aways from the
+  Misano 2018 pit-exit practice starts, 7 of them a car standing at the line
+  and pulling away by the frames (`standing_start` in `candidates.json`).
+
+## Still the era's 2013 sounds
+
+Pass-bys (no 2017-2018 onboard laps yet), wheelguns and fire-ups (none
+recorded), crowd (no engines in it, so the year does not matter).
