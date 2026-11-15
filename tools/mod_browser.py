@@ -652,7 +652,7 @@ def music_candidates(media, pack: Path | None) -> dict | None:
             "items": items}
 
 
-def build_candidates(media, pack: Path | None = None):
+def build_candidates(media, pack: Path | None = None, season: Path | None = None):
     groups, seen = [], set()
     music = music_candidates(media, pack)
     if music:
@@ -663,23 +663,34 @@ def build_candidates(media, pack: Path | None = None):
         crowd_tag = f"{CROWD[0]}_{CROWD[1]:.0f}s"
     except Exception:
         crowd_tag = None
-    # only the 2013 car generation may be heard (engine_audio/common.py ERA):
-    # clips cut from other years' videos are left out, and counted
+    # only cars this pack may play are listed: the recording years of its
+    # sound sets (an era's, plus a season's own, e.g. 2018: 2012-2013 and
+    # 2017-2018; layers.audio_sets). Clips cut from other years' videos are
+    # left out, and counted. Without sets: the default set's years.
     try:
-        from common import era_reason
+        from common import ERA, ERA_EXCLUDE, UPLOAD_YEARS, video_years
         import sqlite3
         with sqlite3.connect(AUDIO_DATA / "library.sqlite") as db:
             videos = {i: (t, ty) for i, t, ty in db.execute("SELECT id, title, video_type FROM videos")}
+        allowed = {y for s in (layers.audio_sets(season) if season else []) for y in s.get("recording_years", [])}
+        allowed = allowed or set(range(ERA[0], ERA[-1] + 1))
     except Exception:
-        era_reason, videos = None, {}
+        videos, allowed = None, set()
+
+    def video_out(vid: str, title: str, vtype: str) -> bool:
+        if vid in ERA_EXCLUDE:
+            return True
+        if vtype != "spectator":          # the onboard, TV and archive playlists are 2013
+            return 2013 not in allowed
+        years = video_years(title) or ([UPLOAD_YEARS[vid]] if vid in UPLOAD_YEARS else [])
+        return not years or any(y not in allowed for y in years)
 
     def out_of_era(name: str) -> bool:
-        if not era_reason:
+        if videos is None:
             return False
-        from common import ERA
         years = [int(y) for y in re.findall(r"(?<!\d)(20[0-2]\d)(?!\d)", name)]   # e.g. hockenheim2017_start
-        return (any(not ERA[0] <= y <= ERA[1] for y in years)
-                or any(era_reason(i, t, ty) for i, (t, ty) in videos.items() if i in name))
+        return (any(y not in allowed for y in years)
+                or any(video_out(i, t, ty) for i, (t, ty) in videos.items() if i in name))
 
     starts_meta = load_json(AUDIO_DATA / "library" / "starts" / "starts.json", []) or []
     pit_cand = {c["file"]: c for c in load_json(AUDIO_DATA / "pilot" / "pit_candidates" / "candidates.json", []) or []}
@@ -719,9 +730,20 @@ def build_candidates(media, pack: Path | None = None):
         groups.append({"title": title, "folder": f"private/engine_audio/{folder}", "note": note, "items": items})
     for d in sorted((AUDIO_DATA / "pilot").glob("*")):
         if d.is_dir() and not any(g[0] == f"pilot/{d.name}" for g in CANDIDATE_GROUPS):
+            # a folder's candidates.json (file -> note, frames, scores) labels its clips
+            meta = {c["file"]: c for c in load_json(d / "candidates.json", []) or [] if isinstance(c, dict) and "file" in c}
+
+            def label(c: dict) -> str:
+                bits = [c.get("note"), c.get("frames"), c.get("title")]
+                if "hf_share" in c:
+                    bits.append(f"above 5 kHz {c['hf_share'] * 100:.1f} %, flatness {c['flatness']} (2013 pick: 0.2 %, 0.06)")
+                if c.get("standing_start"):
+                    bits.append("standing start")
+                return " · ".join(b for b in bits if b)
             items = [{"name": p.stem.replace("_", " "), "file": p.name,
                       "audio": media.audio(p, f"candidates/pilot/{d.name}/{p.name}"), "seconds": duration(p),
-                      "in_use": False, "note": ""} for p in sorted(d.glob("*.wav")) if not out_of_era(p.name)]
+                      "in_use": False, "note": label(meta.get(p.name, {}))}
+                     for p in sorted(d.glob("*.wav")) if not out_of_era(p.name)]
             if items:
                 groups.append({"title": d.name.replace("_", " ").capitalize(), "folder": f"private/engine_audio/pilot/{d.name}",
                                "note": "", "items": items})
@@ -809,7 +831,7 @@ def build(season: Path | None, game: Path, pack_folder: str | None = None) -> Pa
     backgrounds = build_backgrounds(pack, base, game, media)
     sounds = build_sounds(pack, base, media, private_audio | private)
     # candidates belong to the private audio pipeline, so only packs carrying its overlay show them
-    candidates, library_page = build_candidates(media, pack) if private else ([], None)
+    candidates, library_page = build_candidates(media, pack, season) if private else ([], None)
     files = classify_files(pack, base, private, season)
     bc, pc = constants(base / "constants.py"), constants(pack / "constants.py")
     data = {
