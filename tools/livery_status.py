@@ -7,7 +7,8 @@ Reads, for every seasons/dtm-*/ and btcc-*/ in the repo:
   assets/Cars/*.png           GENERATED: one image per team when there is no drawing
 and from the picture store (default ~/Pictures/mods/<series>-<year>/):
   livery_pack/labels.csv      labelled reference images per car and view
-  teams/**                    raw photos per team (not yet labelled)
+  teams/**                    raw photos per team (not yet labelled); shown per car when the
+                              file name gives '#NN' or names the driver first
 and from the video store (default ~/Videos/yt/<SERIES>/<year>/): number of videos.
 
 Writes one self-contained HTML page (default ~/Pictures/mods/livery_status.html).
@@ -69,10 +70,17 @@ def season(year_dir, pics, vids):
         for r in csv.DictReader(open(lab, encoding="utf-8")):
             labels[r["car"].strip()].append(r)
     raw = defaultdict(int)
+    photos = defaultdict(list)                     # car -> raw photos naming it (not yet labelled)
+    labelled = {(pdir / "teams" / r["source"][6:]).resolve() for rs in labels.values() for r in rs
+                if r["source"].startswith("photo:")}
     if (pdir / "teams").exists():
-        for f in (pdir / "teams").rglob("*"):
+        for f in sorted((pdir / "teams").rglob("*")):
             if f.suffix.lower() in IMG and "_not_suitable" not in f.parts:
-                raw[f.relative_to(pdir / "teams").parts[0]] += 1
+                team_dir = f.relative_to(pdir / "teams").parts[0]
+                raw[team_dir] += 1
+                if f.resolve() not in labelled and not NOT_CAR.intersection(x.lower() for x in f.parts):
+                    for n in photo_cars(f, team_dir, cars):
+                        photos[n].append(f)
     vdir = vids / series.upper() / y
     nvid = sum(1 for f in vdir.rglob("*") if f.suffix.lower() in VID) if vdir.exists() else 0
     rows = []
@@ -101,11 +109,14 @@ def season(year_dir, pics, vids):
                      "left": best(lr, ("left",)), "right": best(lr, ("right",)),
                      "front": best(lr, ("front", "front-left", "front-right")),
                      "rear": best(lr, ("rear", "rear-left", "rear-right")), "nref": len(lr),
+                     "photos": photos.get(n, []),
                      "teamraw": raw.get(c.get("entrant", ""), 0)})
     return {"year": y, "key": year_dir.name, "label": f"{series.upper()} {y}", "rows": rows, "artist": artist, "raw": sum(raw.values()), "videos": nvid,
             "pack": (pdir / "livery_pack" / "README.md").exists(), "packdir": pdir / "livery_pack"}
 
 
+NOT_CAR = {"historic", "other_years", "people", "portrait", "portrait_frame"}   # folders that are no livery reference
+MAXPHOTOS = 16                                      # raw photos shown per car
 THUMBS = None                                       # set in main(): <pictures>/_status_thumbs
 
 
@@ -126,6 +137,38 @@ def thumb(p, out, width=360):
         THUMBS.mkdir(parents=True, exist_ok=True)
         cv2.imencode(".jpg", im, [cv2.IMWRITE_JPEG_QUALITY, 82])[1].tofile(str(t))
     return os.path.relpath(t, out.parent).replace(os.sep, "/")
+
+
+def photo_cars(f, team_dir, cars):
+    """Car numbers a raw photo shows, from its file name: '#NN' or the first named driver
+    (Getty/Alamy/STR names list the subject first). Team folder breaks ties between a
+    driver's cars. Returns [] when no entry driver is named."""
+    name = f.stem
+    nums = {c["number"].strip() for c in cars}
+    hit = [m for m in re.findall(r"#(\d+)\b", name) if m in nums]
+    if hit:
+        return [hit[0]]
+    desc = name.split(" - ", 2)[-1] if name.count(" - ") >= 2 else name.split(" - ", 1)[-1]
+    best_pos, cand = None, []
+    for c in cars:
+        last = c["driver"].split()[-1]
+        m = re.search(r"\b" + re.escape(last) + r"\b", desc, re.I) or \
+            (re.search(r"\b" + re.escape(last.split("'")[-1]) + r"\b", desc, re.I) if "'" in last else None)
+        if not m:
+            continue
+        if best_pos is None or m.start() < best_pos:
+            best_pos, cand = m.start(), [c]
+        elif m.start() == best_pos:
+            cand.append(c)
+    if len({c["number"] for c in cand}) > 1:      # same driver in several cars (Matt Neal 1991)
+        t = norm(team_dir)
+        narrowed = [c for c in cand if norm(c.get("entrant", ""))[:6] in t or t[:6] in norm(c.get("entrant", ""))]
+        cand = narrowed or cand
+    out = []
+    for c in cand:
+        if c["number"].strip() not in out:
+            out.append(c["number"].strip())
+    return out if len(out) == 1 else []
 
 
 def ready(r):
@@ -159,7 +202,7 @@ def page(seasons, out):
         if not rs:
             continue
         open_ = " open" if s["pack"] else ""
-        body = []
+        body, shown = [], set()
         for r in sorted(rs, key=lambda r: (int(re.sub(r"\D", "", r["n"]) or 0), r["n"])):
             st = {"final": "Final drawing", "generated": "Generated", "none": "Missing"}[r["status"]]
             chips = "".join(f"<td class='q q{r[k] or 'x'}'>{r[k] or '·'}</td>" for k in ("left", "right", "front", "rear"))
@@ -171,6 +214,14 @@ def page(seasons, out):
                 if u := thumb(p, out):
                     pics.append(f"<a class='rf' href='{e(p.as_uri())}' target='_blank' title='{e(view)} · {e(note)} · {e(p.name)}'>"
                                 f"<img loading='lazy' src='{e(u)}' alt='{e(view)}'><i class='q{q}'>{tag} {q}</i></a>")
+            if r["n"] not in shown:                # raw photos once per car number, not per driver row
+                shown.add(r["n"])
+                for p in r["photos"][:MAXPHOTOS]:
+                    if u := thumb(p, out):
+                        pics.append(f"<a class='ph' href='{e(p.as_uri())}' target='_blank' title='{e(p.name)}'>"
+                                    f"<img loading='lazy' src='{e(u)}' alt='photo'><i>Photo</i></a>")
+                if len(r["photos"]) > MAXPHOTOS:
+                    pics.append(f"<span class='more'>+{len(r['photos']) - MAXPHOTOS} more in teams/</span>")
             body.append(f"<tr><td class='num'>{e(r['n'])}</td><td>{e(r['driver'])}</td><td class='team'>{e(r['team'])}</td>"
                         f"<td class='team'>{e(r['car'])}</td><td><span class='st {r['status']}'>{st}</span></td>{chips}"
                         f"<td class='num'>{r['nref'] or ''}</td><td class='num'>{r['teamraw'] or ''}</td></tr>")
@@ -216,6 +267,7 @@ tr.pics td{{border-bottom:1px solid var(--line);padding:2px 8px 10px;white-space
 .strip img{{height:96px;width:auto;display:block}} .strip a.lv img{{height:120px}}
 .strip i{{position:absolute;left:0;bottom:0;font:600 11px/1 system-ui,sans-serif;font-style:normal;padding:3px 6px;
 background:rgba(0,0,0,.72);color:#fff;border-top-right-radius:6px}}
+.strip .more{{color:var(--mute);font-size:12px;align-self:center}} .strip a.ph i{{color:#9cc4ff}}
 .strip i.qA{{color:#6ee7a8}} .strip i.qB{{color:#c3e88d}} .strip i.qC{{color:#ffcb6b}}
 </style></head><body><main>
 <h1>DTM &amp; BTCC Livery Status</h1>
@@ -229,7 +281,9 @@ background:rgba(0,0,0,.72);color:#fff;border-top-right-radius:6px}}
 </div>
 <p class="legend"><b>Livery:</b> Final drawing = artist sheet in <code>art/drawings.json</code>; Generated = team image from adapted outlines
 (<code>assets/Cars</code>); Missing = nothing in-game. <b>Left/Right/Front/Rear:</b> best labelled reference
-(A draw from it, B usable, C colours only, · none); left/right = the car's own side. <b>Ready</b> = both sides at A or B.</p>
+(A draw from it, B usable, C colours only, · none); left/right = the car's own side. <b>Ready</b> = both sides at A or B.
+<b>Photo</b> = real period photo from the picture store (<code>teams/</code>), matched to the car by the name or number in its
+file name and not yet labelled. Reference only: most need permission before any use.</p>
 <div class="wrap"><table><thead><tr><th>Season</th><th>Cars</th><th>Final</th><th>Generated</th><th>Ready to draw</th>
 <th>One side only</th><th>Raw photos</th><th>Videos</th><th>Final share</th></tr></thead><tbody>{''.join(summary)}</tbody></table></div>
 <h2 style="font-size:17px;margin:28px 0 8px">Per car</h2>
