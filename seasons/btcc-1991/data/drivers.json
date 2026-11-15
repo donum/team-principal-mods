@@ -30,7 +30,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Listerine",
+        "team": "Team Securicor + Listerine",
         "length_weeks": 52,
         "salary_m": 5.0,
         "start_week": 1,
@@ -46,7 +46,7 @@
       ],
       "career_stage": "top_veteran",
       "nationality": "british",
-      "team": "BMW Team Listerine",
+      "team": "Team Securicor + Listerine",
       "number": 11
     },
     {
@@ -59,7 +59,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Listerine",
+        "team": "Team Securicor + Listerine",
         "length_weeks": 52,
         "salary_m": 2.99,
         "start_week": 1,
@@ -75,7 +75,7 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "british",
-      "team": "BMW Team Listerine",
+      "team": "Team Securicor + Listerine",
       "number": 12
     },
     {
@@ -88,7 +88,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Vauxhall Sport",
+        "team": "Vauxhall Dealersport",
         "length_weeks": 52,
         "salary_m": 4.29,
         "start_week": 1,
@@ -104,7 +104,7 @@
       ],
       "career_stage": "top_veteran",
       "nationality": "british",
-      "team": "Vauxhall Sport",
+      "team": "Vauxhall Dealersport",
       "number": 5
     },
     {
@@ -117,7 +117,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Vauxhall Sport",
+        "team": "Vauxhall Dealersport",
         "length_weeks": 52,
         "salary_m": 2.68,
         "start_week": 1,
@@ -133,7 +133,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "Vauxhall Sport",
+      "team": "Vauxhall Dealersport",
       "number": 6
     },
     {
@@ -146,7 +146,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Vauxhall Sport",
+        "team": "Vauxhall Dealersport",
         "length_weeks": 52,
         "salary_m": 0.2,
         "start_week": 1,
@@ -230,7 +230,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Finance",
+        "team": "Mobil BMW Team",
         "length_weeks": 52,
         "salary_m": 2.24,
         "start_week": 1,
@@ -246,7 +246,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "BMW Team Finance",
+      "team": "Mobil BMW Team",
       "number": 22
     },
     {
@@ -259,7 +259,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Finance",
+        "team": "Mobil BMW Team",
         "length_weeks": 52,
         "salary_m": 3.17,
         "start_week": 1,
@@ -275,7 +275,7 @@
       ],
       "career_stage": "top_veteran",
       "nationality": "british",
-      "team": "BMW Team Finance",
+      "team": "Mobil BMW Team",
       "number": 44
     },
     {
@@ -288,7 +288,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Finance",
+        "team": "Mobil BMW Team",
         "length_weeks": 52,
         "salary_m": 1.19,
         "start_week": 1,
@@ -314,7 +314,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Finance",
+        "team": "Mobil BMW Team",
         "length_weeks": 52,
         "salary_m": 0.45,
         "start_week": 1,
@@ -340,7 +340,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Labatt's",
+        "team": "Team Labatt's",
         "length_weeks": 52,
         "salary_m": 1.5,
         "start_week": 1,
@@ -356,7 +356,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "BMW Team Labatt's",
+      "team": "Team Labatt's",
       "number": 4
     },
     {
@@ -369,7 +369,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Labatt's",
+        "team": "Team Labatt's",
         "length_weeks": 52,
         "salary_m": 0.82,
         "start_week": 1,
@@ -385,7 +385,7 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "british",
-      "team": "BMW Team Labatt's",
+      "team": "Team Labatt's",
       "number": 9
     },
     {
@@ -398,7 +398,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Labatt's",
+        "team": "Team Labatt's",
         "length_weeks": 52,
         "salary_m": 0.57,
         "start_week": 1,
@@ -453,7 +453,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Trakstar Motorsport",
+        "team": "Shell Team Trakstar Ford",
         "length_weeks": 52,
         "salary_m": 1.07,
         "start_week": 1,
@@ -469,7 +469,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "Trakstar Motorsport",
+      "team": "Shell Team Trakstar Ford",
       "number": 1
     },
     {
@@ -615,7 +615,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Nissan Janspeed Racing",
+        "team": "Nissan Racing with Castrol",
         "length_weeks": 52,
         "salary_m": 0.51,
         "start_week": 1,
@@ -631,7 +631,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "Nissan Janspeed Racing",
+      "team": "Nissan Racing with Castrol",
       "number": 23
     },
     {
@@ -644,7 +644,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Nissan Janspeed Racing",
+        "team": "Nissan Racing with Castrol",
         "length_weeks": 52,
         "salary_m": 0.2,
         "start_week": 1,
@@ -670,7 +670,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Sweden",
+        "team": "BMW Dealer Team Sweden",
         "length_weeks": 52,
         "salary_m": 0.23,
         "start_week": 1,
@@ -686,7 +686,7 @@
       ],
       "career_stage": "racer",
       "nationality": "swedish",
-      "team": "BMW Team Sweden",
+      "team": "BMW Dealer Team Sweden",
       "number": 10
     },
     {
@@ -699,7 +699,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "BMW Team Sweden",
+        "team": "BMW Dealer Team Sweden",
         "length_weeks": 52,
         "salary_m": 0.39,
         "start_week": 1,
@@ -725,7 +725,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Judge Developments",
+        "team": "Judge Developments + Partservice",
         "length_weeks": 52,
         "salary_m": 0.29,
         "start_week": 1,
@@ -741,7 +741,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "Judge Developments",
+      "team": "Judge Developments + Partservice",
       "number": 19
     },
     {
@@ -754,7 +754,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Auto Trader Techspeed Team",
+        "team": "Techspeed Midland Auto Trader",
         "length_weeks": 52,
         "salary_m": 0.23,
         "start_week": 1,
@@ -770,7 +770,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "Auto Trader Techspeed Team",
+      "team": "Techspeed Midland Auto Trader",
       "number": 66
     },
     {
@@ -783,7 +783,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Auto Trader Techspeed Team",
+        "team": "Techspeed Midland Auto Trader",
         "length_weeks": 52,
         "salary_m": 0.26,
         "start_week": 1,
@@ -799,7 +799,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "Auto Trader Techspeed Team",
+      "team": "Techspeed Midland Auto Trader",
       "number": 77
     },
     {
@@ -812,7 +812,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Auto Trader Techspeed Team",
+        "team": "Techspeed Midland Auto Trader",
         "length_weeks": 52,
         "salary_m": 0.2,
         "start_week": 1,
@@ -838,7 +838,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "John Maguire Racing",
+        "team": "Mitsubishi Motors + Firestone",
         "length_weeks": 52,
         "salary_m": 0.23,
         "start_week": 1,
@@ -854,7 +854,7 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "british",
-      "team": "John Maguire Racing",
+      "team": "Mitsubishi Motors + Firestone",
       "number": 88
     },
     {
@@ -1032,7 +1032,7 @@
       "balance_preference": 55,
       "traction_preference": 50,
       "contract": {
-        "team": "Drambuie Racing",
+        "team": "Drambuie + Lazerprinz",
         "length_weeks": 52,
         "salary_m": 0.2,
         "start_week": 1,
@@ -1048,7 +1048,7 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "team": "Drambuie Racing",
+      "team": "Drambuie + Lazerprinz",
       "number": 45
     },
     {

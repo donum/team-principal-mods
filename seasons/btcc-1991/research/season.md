@@ -79,13 +79,25 @@ Manufacturer entries: BMW (Prodrive as "BMW Team Finance", Vic Lee Racing as
 Mitsubishi (John Maguire Racing, Lancer then Galant). The independents ran
 mostly BMW M3s.
 
-Period team names [AS, TCN] differ from the en.wiki names the pack uses:
-Vic Lee's BMWs ran as "VLM/Team Securicor + Listerine" (Hoy's car in
-Securicor Omega Express colours), Prodrive as "Prodrive/The Mobil BMW
-Team", Vauxhall as "Vauxhall Dealersport", Janspeed as "Castrol Racing with
-Janspeed" (later "Nissan Racing with Castrol/Janspeed"), Team Sweden as "BMW
-Dealer Team Sweden", Brodie as "BBR/Starchips". Cars: Vauxhall Cavalier GSi,
-Nissan Primera eZX, Mitsubishi Galant GTi from round 8.
+Team names are the 1991 ones from the Autosport "Entrant/Sponsor" column
+[AS], since 2026-11-15. Where the entrant is the runner's initials or a
+person (VLM, Prodrive, Maguire, Forrest, Leech, Janspeed) the pack uses the
+sponsor name; where it is a team name it keeps that. As printed: "VLM/Team
+Securicor + Listerine" (Hoy, Bellm; Hoy's car in Securicor Omega Express
+colours), "VLM/Team Labatt's", "Prodrive/The Mobil BMW Team" (later
+"Prodrive/Mobil BMW Team"), "Vauxhall Dealersport", "Kaliber ICS Team
+Toyota", "Shell Team Trakstar Ford", "Castrol Racing with Janspeed" (later
+"Janspeed/Nissan Racing with Castrol"; the pack uses the later name),
+"Maguire/Mitsubishi Motors+Firestone", "Pyramid Motorsport/Mobil", "BMW
+Team Sweden" (later "BMW Dealer Team Sweden"), "Techspeed/Midland Auto
+Trader(+Mobil)", "Forrest/Drambuie+Lazerprinz", "Leech/Judge
+Developments+Partservice", "HWR Motorsport/Bristol Street Motors",
+"BRR/100+ Wheels + British Gas Resource" (Neal), "Graham Goode Racing",
+"R&D Motorsport". Cars: Vauxhall Cavalier GSi, Nissan Primera ZX then eZX,
+Mitsubishi Lancer GTi then Galant. The en.wiki names were "BMW Team
+Listerine", "BMW Team Labatt's", "BMW Team Finance", "Vauxhall Sport",
+"Trakstar Motorsport", "Nissan Janspeed Racing", "John Maguire Racing",
+"Auto Trader Techspeed Team", "Drambuie Racing", "Judge Developments".
 
 Left out of the pack (`gen.json` "skip"): Sean Walker Racing (one entry, did
 not start), Moto-Build (Rover 216GTi, one start) and Andrew Mackenzie Racing

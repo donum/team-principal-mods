@@ -1,14 +1,14 @@
 round,date,venue,circuit_layout,country,length_km,heats,laps_per_heat,distance_km_per_heat,qual_race,winners,notes
-1,1991-04-01,Silverstone,Silverstone National,GBR,2.654,1,25,66.4,no,R1: Will Hoy,Pole: Soper. FL: Hoy. Winning team BMW Team Listerine.
-2,1991-04-14,Snetterton,Snetterton,GBR,3.140,1,18,56.6,no,R2: Will Hoy,Pole: Cleland. FL: Hoy. BMW Team Listerine. Gary Ayles disqualified (missing wiper arm); the chequered flag was waved early (Autosport).
-3,1991-04-28,Donington Park,Donington Park GP,GBR,4.023,1,20,80.5,no,R3: Steve Soper,Pole: Soper. FL: Cleland. BMW Team Finance. Harvey disqualified (noise) and docked 48 points.
-4,1991-05-27,Thruxton,Thruxton,GBR,3.792,1,20,75.8,no,R4: John Cleland,Pole: Hoy. FL: Hoy. Vauxhall Sport.
+1,1991-04-01,Silverstone,Silverstone National,GBR,2.654,1,25,66.4,no,R1: Will Hoy,Pole: Soper. FL: Hoy. Winning team Team Securicor + Listerine.
+2,1991-04-14,Snetterton,Snetterton,GBR,3.140,1,18,56.6,no,R2: Will Hoy,Pole: Cleland. FL: Hoy. Team Securicor + Listerine. Gary Ayles disqualified (missing wiper arm); the chequered flag was waved early (Autosport).
+3,1991-04-28,Donington Park,Donington Park GP,GBR,4.023,1,20,80.5,no,R3: Steve Soper,Pole: Soper. FL: Cleland. Mobil BMW Team. Harvey disqualified (noise) and docked 48 points.
+4,1991-05-27,Thruxton,Thruxton,GBR,3.792,1,20,75.8,no,R4: John Cleland,Pole: Hoy. FL: Hoy. Vauxhall Dealersport.
 5,1991-06-09,Silverstone,Silverstone National,GBR,2.654,1,10,26.5,no,R5: John Cleland,Pole: Sugden. FL: Rouse. Stopped after 10 laps (16.49 mi) for heavy rain and not restarted. No points awarded.
-6,1991-06-30,Brands Hatch,Brands Hatch Indy,GBR,1.936,1,36,69.9,no,R6: Tim Sugden,Pole: Sugden. FL: Hoy. BMW Team Finance.
-7,1991-07-14,Silverstone,Silverstone GP,GBR,5.226,1,15,78.4,no,R7: Steve Soper,"Pole, FL and win: Soper. BMW Team Finance. Matt Neal's BTCC debut (13th)."
+6,1991-06-30,Brands Hatch,Brands Hatch Indy,GBR,1.936,1,36,69.9,no,R6: Tim Sugden,Pole: Sugden. FL: Hoy. Mobil BMW Team.
+7,1991-07-14,Silverstone,Silverstone GP,GBR,5.226,1,15,78.4,no,R7: Steve Soper,"Pole, FL and win: Soper. Mobil BMW Team. Matt Neal's BTCC debut (13th)."
 8,1991-07-28,Donington Park,Donington Park National,GBR,3.149,2,25/19,,no,R8: Andy Rouse; R9: Andy Rouse,"R8 pole: Cleland. FL R8: Rouse; R9: Bellm. Both races Kaliber ICS Team Toyota. R8 25 laps, 48.93 mi. R9 red-flagged after 7 laps, restarted over 12, result on aggregate (19 laps, 37.18 mi). Half points (top 8) in both races."
-9,1991-08-11,Oulton Park,Oulton Park International,GBR,4.456,1,20,89.1,no,R10: John Cleland,Pole: Cleland. FL: Ayles. Vauxhall Sport.
+9,1991-08-11,Oulton Park,Oulton Park International,GBR,4.456,1,20,89.1,no,R10: John Cleland,Pole: Cleland. FL: Ayles. Vauxhall Dealersport.
 10,1991-08-26,Brands Hatch,Brands Hatch Indy,GBR,1.936,2,36/36,69.7,no,R11: Andy Rouse; R12: Will Hoy,R11 pole: Rouse. FL R11: Rouse; R12: Bellm. Half points (top 8) in both races.
-11,1991-09-15,Donington Park,Donington Park GP,GBR,4.023,1,15,60.4,no,R13: John Cleland,"Pole, FL and win: Cleland. Vauxhall Sport."
+11,1991-09-15,Donington Park,Donington Park GP,GBR,4.023,1,15,60.4,no,R13: John Cleland,"Pole, FL and win: Cleland. Vauxhall Dealersport."
 12,1991-09-22,Thruxton,Thruxton,GBR,3.792,1,20,75.8,no,R14: Steve Soper,Pole: Palmer. FL: Harvey. Palmer spun leader Hoy; Hoy retired after contact with Cleland. Cleland 8th. Title goes to the last round.
-13,1991-10-06,Silverstone,Silverstone GP,GBR,5.226,1,15,,no,R15: Tim Harvey,Pole: Rouse. FL: Harvey. BMW Team Labatt's. Hoy 5th ahead of Cleland 9th: Hoy champion.
+13,1991-10-06,Silverstone,Silverstone GP,GBR,5.226,1,15,,no,R15: Tim Harvey,Pole: Rouse. FL: Harvey. Team Labatt's. Hoy 5th ahead of Cleland 9th: Hoy champion.

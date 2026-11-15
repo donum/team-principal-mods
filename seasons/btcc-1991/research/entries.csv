@@ -1,45 +1,45 @@
 number,driver,nationality,birth_date,entrant,team_base,car,engine,tyres,rounds,notes
-1,Robb Gravett,GBR,,Trakstar Motorsport,,Ford Sierra Sapphire,Ford 2.0 L4,Yokohama,all,Only Ford in the manufacturer entries
+1,Robb Gravett,GBR,,Shell Team Trakstar Ford,,Ford Sierra Sapphire,Ford 2.0 L4,Yokohama,all,Only Ford in the manufacturer entries
 3,Andy Rouse,GBR,1947-12-02,Kaliber ICS Team Toyota,,Toyota Carina,Toyota 2.0 L4,Yokohama,all,Run by Andy Rouse Engineering
 33,Gary Ayles,GBR,1964-09-25,Kaliber ICS Team Toyota,,Toyota Carina,Toyota 2.0 L4,Yokohama,all,
-4,Tim Harvey,GBR,1961-11-20,BMW Team Labatt's,,BMW M3,BMW 2.0 L4,Yokohama,all,Vic Lee Racing. Docked 48 points for round 3 (noise)
-9,Laurence Bristow,GBR,1952-07-18,BMW Team Labatt's,,BMW M3,BMW 2.0 L4,Yokohama,"1-11,13",Vic Lee Racing
-9,Armin Hahne,GER,1955-09-10,BMW Team Labatt's,,BMW M3,BMW 2.0 L4,Yokohama,12,Replaced Bristow at Thruxton
-5,John Cleland,GBR,1952-07-15,Vauxhall Sport,,Vauxhall Cavalier,Vauxhall 2.0 L4,Dunlop,all,Dave Cook Racing
-6,Jeff Allam,GBR,1954-12-19,Vauxhall Sport,,Vauxhall Cavalier,Vauxhall 2.0 L4,Dunlop,all,Dave Cook Racing
-56,Bob Berridge,GBR,1956-09-13,Vauxhall Sport,,Vauxhall Cavalier,Vauxhall 2.0 L4,Dunlop,12-13,Third car
-11,Will Hoy,GBR,1954-04-02,BMW Team Listerine,,BMW M3,BMW 2.0 L4,Yokohama,all,Vic Lee Racing
-12,Ray Bellm,GBR,1950-05-20,BMW Team Listerine,,BMW M3,BMW 2.0 L4,Yokohama,all,Vic Lee Racing
-22,Jonathan Palmer,GBR,1956-11-07,BMW Team Finance,,BMW M3,BMW 2.0 L4,Pirelli,all,Prodrive (BMW works team)
-44,Steve Soper,GBR,1951-09-27,BMW Team Finance,,BMW M3,BMW 2.0 L4,Pirelli,"1,3,7-10,12",Missed rounds that clashed with his DTM programme
-44,Tim Sugden,GBR,1964-04-26,BMW Team Finance,,BMW M3,BMW 2.0 L4,Pirelli,"2,5-6,11,13",Shared car 44 with Soper
-44,Christian Danner,GER,1958-04-04,BMW Team Finance,,BMW M3,BMW 2.0 L4,Pirelli,4,Shared car 44
-23,Kieth O'Dor,GBR,1962-04-05,Nissan Janspeed Racing,,Nissan Primera eZX,Nissan 2.0 L4,Dunlop,2-13,"Nissan missed round 1. en.wiki entry table spells him Kieth O'dor; Period spelling Kieth (Autosport tables, 1990sbtcc.com)"
-24,Julian Bailey,GBR,1961-10-09,Nissan Janspeed Racing,,Nissan Primera eZX,Nissan 2.0 L4,Dunlop,11-13,Ex-F1 driver
-88,Mark Hales,GBR,1950-11-07,John Maguire Racing,,Mitsubishi Lancer / Galant,Mitsubishi 2.0 L4,Firestone,"1-5,8-13",Lancer GTi rounds 1-5; Galant rounds 8-13
+4,Tim Harvey,GBR,1961-11-20,Team Labatt's,,BMW M3,BMW 2.0 L4,Yokohama,all,Vic Lee Racing. Docked 48 points for round 3 (noise)
+9,Laurence Bristow,GBR,1952-07-18,Team Labatt's,,BMW M3,BMW 2.0 L4,Yokohama,"1-11,13",Vic Lee Racing
+9,Armin Hahne,GER,1955-09-10,Team Labatt's,,BMW M3,BMW 2.0 L4,Yokohama,12,Replaced Bristow at Thruxton
+5,John Cleland,GBR,1952-07-15,Vauxhall Dealersport,,Vauxhall Cavalier,Vauxhall 2.0 L4,Dunlop,all,Dave Cook Racing
+6,Jeff Allam,GBR,1954-12-19,Vauxhall Dealersport,,Vauxhall Cavalier,Vauxhall 2.0 L4,Dunlop,all,Dave Cook Racing
+56,Bob Berridge,GBR,1956-09-13,Vauxhall Dealersport,,Vauxhall Cavalier,Vauxhall 2.0 L4,Dunlop,12-13,Third car
+11,Will Hoy,GBR,1954-04-02,Team Securicor + Listerine,,BMW M3,BMW 2.0 L4,Yokohama,all,Vic Lee Racing
+12,Ray Bellm,GBR,1950-05-20,Team Securicor + Listerine,,BMW M3,BMW 2.0 L4,Yokohama,all,Vic Lee Racing
+22,Jonathan Palmer,GBR,1956-11-07,Mobil BMW Team,,BMW M3,BMW 2.0 L4,Pirelli,all,Prodrive (BMW works team)
+44,Steve Soper,GBR,1951-09-27,Mobil BMW Team,,BMW M3,BMW 2.0 L4,Pirelli,"1,3,7-10,12",Missed rounds that clashed with his DTM programme
+44,Tim Sugden,GBR,1964-04-26,Mobil BMW Team,,BMW M3,BMW 2.0 L4,Pirelli,"2,5-6,11,13",Shared car 44 with Soper
+44,Christian Danner,GER,1958-04-04,Mobil BMW Team,,BMW M3,BMW 2.0 L4,Pirelli,4,Shared car 44
+23,Kieth O'Dor,GBR,1962-04-05,Nissan Racing with Castrol,,Nissan Primera eZX,Nissan 2.0 L4,Dunlop,2-13,"Nissan missed round 1. en.wiki entry table spells him Kieth O'dor; Period spelling Kieth (Autosport tables, 1990sbtcc.com)"
+24,Julian Bailey,GBR,1961-10-09,Nissan Racing with Castrol,,Nissan Primera eZX,Nissan 2.0 L4,Dunlop,11-13,Ex-F1 driver
+88,Mark Hales,GBR,1950-11-07,Mitsubishi Motors + Firestone,,Mitsubishi Lancer / Galant,Mitsubishi 2.0 L4,Firestone,"1-5,8-13",Lancer GTi rounds 1-5; Galant rounds 8-13
 2,Frank Sytner,GBR,1944-06-29,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,Yokohama,"1-8,10-11",Independent
 2,David Leslie,GBR,1953-11-09,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,Yokohama,13,Independent
 18,Matt Neal,GBR,1966-12-20,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,Yokohama,7,BTCC debut (Silverstone GP)
 18,Alastair Fenwick,GBR,,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,Yokohama,12,Did not start
 18,Godfrey Hall,GBR,,Pyramid Motorsport,,BMW M3,BMW 2.0 L4,Yokohama,13,
 7,Sean Walker,GBR,,Sean Walker Racing,,Ford Sierra RS500,Ford Cosworth 2.0 turbo L4,,2,Did not start. Group A car restricted to Super Touring speed
-10,Nettan Lindgren,SWE,,BMW Team Sweden,,BMW M3,BMW 2.0 L4,Yokohama,"1-3,5-6",Independent
-91,Peggen Andersson,SWE,,BMW Team Sweden,,BMW M3,BMW 2.0 L4,Yokohama,"1-3,6",Per-Gunnar Andersson
+10,Nettan Lindgren,SWE,,BMW Dealer Team Sweden,,BMW M3,BMW 2.0 L4,Yokohama,"1-3,5-6",Independent
+91,Peggen Andersson,SWE,,BMW Dealer Team Sweden,,BMW M3,BMW 2.0 L4,Yokohama,"1-3,6",Per-Gunnar Andersson
 13,Angus MacKay,GBR,,R&D Motorsport,,BMW 318is,BMW 1.8 L4,Yokohama,1-2,Independent
 13,Alastair Lyall,GBR,,R&D Motorsport,,BMW 318is,BMW 1.8 L4,Yokohama,"4,7,13",Independent
 17,Andrew Mackenzie,GBR,,Andrew Mackenzie Racing,,Peugeot 405 Mi16,Peugeot 1.9 L4,Dunlop,"7,10",Independent. Entrant per Autosport round 7 and touringcars.net (en.wiki: ACE Motorsport)
-19,Dennis Leech,GBR,,Judge Developments,,Ford Sierra RS500,Ford Cosworth 2.0 turbo L4,Yokohama,1-4,Group A car restricted to Super Touring speed
+19,Dennis Leech,GBR,,Judge Developments + Partservice,,Ford Sierra RS500,Ford Cosworth 2.0 turbo L4,Yokohama,1-4,Group A car restricted to Super Touring speed
 20,Grahame Davis,GBR,,Moto-Build,,Rover 216GTi,Rover 1.6 L4,Dunlop,"1-2,7,10",Started one race (round 10)
 21,Dave Brodie,GBR,1943-05-15,Brodie Brittain Racing,,Ford Sierra Sapphire 4x4,Ford Cosworth 2.0 turbo L4,,10-13,Group A car restricted to Super Touring speed
-45,Ian Forrest,GBR,,Drambuie Racing,,BMW M3,BMW 2.0 L4,Pirelli,all,Independent
+45,Ian Forrest,GBR,,Drambuie + Lazerprinz,,BMW M3,BMW 2.0 L4,Pirelli,all,Independent
 58,Jeff Wilson,GBR,,HWR Motorsport,,Vauxhall Belmont,Vauxhall 2.0 L4,Dunlop,"9,11,13",Independent
 58,Tony Bardy,GBR,,HWR Motorsport,,Vauxhall Belmont,Vauxhall 2.0 L4,Dunlop,12,Did not start
 59,Ian Flux,GBR,1956-05-11,BRR Motorsport,,BMW M3,BMW 2.0 L4,,"1,3-5,13",Independent
 59,Matt Neal,GBR,1966-12-20,BRR Motorsport,,BMW M3,BMW 2.0 L4,,9,
 59,Val Musetti,GBR,,BRR Motorsport,,BMW M3,BMW 2.0 L4,,11,
-66,Nick Whale,GBR,1963-03-04,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,Pirelli,"1-5,8-9,11-13",Independent
-66,David Leslie,GBR,1953-11-09,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,Pirelli,7,
-66,John Llewellyn,GBR,,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,Pirelli,10,
-77,Nick Baird,GBR,,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,Pirelli,"1-5,7-8,12-13",Independent
-77,Matt Neal,GBR,1966-12-20,Auto Trader Techspeed Team,,BMW M3,BMW 2.0 L4,Pirelli,11,
+66,Nick Whale,GBR,1963-03-04,Techspeed Midland Auto Trader,,BMW M3,BMW 2.0 L4,Pirelli,"1-5,8-9,11-13",Independent
+66,David Leslie,GBR,1953-11-09,Techspeed Midland Auto Trader,,BMW M3,BMW 2.0 L4,Pirelli,7,
+66,John Llewellyn,GBR,,Techspeed Midland Auto Trader,,BMW M3,BMW 2.0 L4,Pirelli,10,
+77,Nick Baird,GBR,,Techspeed Midland Auto Trader,,BMW M3,BMW 2.0 L4,Pirelli,"1-5,7-8,12-13",Independent
+77,Matt Neal,GBR,1966-12-20,Techspeed Midland Auto Trader,,BMW M3,BMW 2.0 L4,Pirelli,11,
 99,Andy Middlehurst,GBR,1962-07-16,Graham Goode Racing,,Ford Sierra,Ford 2.0 L4,Yokohama,all,Group A car restricted to Super Touring speed; 2.0 non-turbo per Autosport round 1 and touringcarracing.net (en.wiki: RS Cosworth)
