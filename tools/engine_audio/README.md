@@ -80,6 +80,7 @@ python tools/engine_audio/package.py --install
 | `start_preview.py` | the installed pack | each start mixed with the game's own timing and levels (`library/starts/ingame_start_NN.wav`) |
 | `ambience.py` | spectator montages | 393 s `cars_on_track` loop of real trackside shots, cut at camera cuts |
 | `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (only with `package.py --synth-starts`) |
+| `announcer.py` | fan recordings (all years) and archive features named in `EXTRA` | `pilot/track_announcer/`: every speech stretch with its text (faster-whisper `small`), language, voice level against the 2 s around and bass share, in `index.csv`; `kind` and `note` from the hand labels in `announcer_labels.csv` (pa, feature, video, fan, crew, unsure). A reference for building track announcers per track; the mod browser lists it on every season's page |
 | `package.py` | segments, base pack audio levels | `pack/dtm-era4/` (files + `overlay.json`); `--install` applies it to every installed season of the base |
 | `overlay.py` | `pack/dtm-era4/` | `apply`, `remove`, `status` on an installed pack (`--pack dtm2013`) |
 

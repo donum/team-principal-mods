@@ -76,6 +76,8 @@ SLOT_NAMES = {"grid_idle": "Grid idle (loops until lights out)", "grid_launch": 
 # New folders show up on their own under their folder name.
 # Pilot folders ranked by an index.csv list only their best clips.
 TOP_RANKED = 20
+# Pilot folders shown on every season's page, whatever the year of the recording.
+ERA_FREE = {"track_announcer"}
 
 CANDIDATE_GROUPS = [
     ("library/starts", "ingame_start_*.wav", "Starts as the game plays them",
@@ -751,9 +753,14 @@ def build_candidates(media, pack: Path | None = None, season: Path | None = None
         meta = {c["file"]: c for c in load_json(d / "candidates.json", []) or [] if isinstance(c, dict) and "file" in c}
         for p, r in ranked.items():
             if p.parent == d.resolve():
-                meta[p.name] = {"note": f"score {float(r['quality']):.2f} · {r['year']} {r['track']} {r['race']}, "
-                                        f"{r['driver']}, {r['label'].replace('_', ' ')} at {r['rpm_mean']} rpm, "
-                                        f"{r['at_s']} s into {Path(r['source']).name}"}
+                if "text" in r:   # announcer.py: what is said
+                    note = (f"{r['kind'] or 'unsorted'} · {r['year']} {r['track']} · {r['language']} · voice "
+                            f"{r['voice_db']} dB over the 2 s around, bass {r['low_db']} dB · “{r['text']}” · {r['title']}")
+                else:             # pass-by sweep
+                    note = (f"score {float(r['quality']):.2f} · {r['year']} {r['track']} {r['race']}, "
+                            f"{r['driver']}, {r['label'].replace('_', ' ')} at {r['rpm_mean']} rpm, "
+                            f"{r['at_s']} s into {Path(r['source']).name}")
+                meta[p.name] = {"note": note}
 
         def label(c: dict) -> str:
             bits = [c.get("note"), c.get("frames"), c.get("title")]
@@ -762,9 +769,17 @@ def build_candidates(media, pack: Path | None = None, season: Path | None = None
             if c.get("standing_start"):
                 bits.append("standing start")
             return " · ".join(b for b in bits if b)
-        wavs = [p for p in sorted(d.glob("*.wav")) if not out_of_era(p.name)]
+        # people talking are not tied to a car generation: every season lists them
+        wavs = [p for p in sorted(d.glob("*.wav")) if rel in ERA_FREE or not out_of_era(p.name)]
         note = ""
-        if ranked:
+        if ranked and rel in ERA_FREE:
+            # announcer.py: the announcer first, by year and track; clips sorted
+            # out by hand as fans or video voice-overs are left in the folder
+            row = lambda p: ranked.get(p.resolve(), {})
+            wavs = [p for p in wavs if row(p).get("kind") not in ("fan", "video", "noise")]
+            wavs.sort(key=lambda p: (row(p).get("kind") != "pa", row(p).get("year") or "", row(p).get("track") or "", p.name))
+            note = "The track announcer (pa) first, then unsorted speech; fans and video voice-overs are left out (index.csv)."
+        elif ranked:
             wavs.sort(key=lambda p: -float(ranked.get(p.resolve(), {}).get("quality") or 0))
             if len(wavs) > TOP_RANKED:
                 note = f"The {TOP_RANKED} best of {len(wavs)} by score (index.csv); the rest are in the folder."

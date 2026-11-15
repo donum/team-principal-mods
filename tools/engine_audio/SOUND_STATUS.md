@@ -98,6 +98,7 @@ differ, so this was checked by ear: A/B clips in
 | `grid_launch_01`, `_02` | `dtm18_grid_launch_01`, 16 s | Norisring 2018 from the Schoeller stand (`bE-cwxQ42JA`), picked by ear: the field arrives at the hairpin and powers out (26-42 s). The track announcer before it (14-26 s) is cut away and kept as a PA reference (`pilot/pa_candidates/`). |
 | `pit_exit_01`-`10` | 5 clips, cycled | Misano 2018 pit-exit practice starts (`1_f68-hUy8w`), picked by ear: a car standing at the line, then pulling away. Each ends at the camera cut or where the car has gone (13-20 s); 0.8-1.5 s fade-ins. |
 | `pit_fireup_01`-`10` | stock, levelled for the 2018 exits | as in 2013 |
+| Pass-by, Audi / BMW / Mercedes | `dtm18_audi`, `dtm18_bmw`, `dtm18_mercedes` + `_lr` | simulated pass-bys at 220 km/h from 2018 race onboards, picked by ear on 2026-11-15 from the sweep in `pilot/passby_candidates_2018/` (445 candidates, 79 onboards): René Rast, Spielberg race 1 (2637.7 s); Philipp Eng, Spielberg race 1 (1486.4 s); Pascal Wehrlein, Misano race 2 (1538.2 s). Set in `package.PASSBY_PICKS`. |
 
 Picked by ear 2026-11-15 from `pilot/start_candidates_2018/` and
 `pilot/pit_candidates_2018/`. Set aside: Hockenheim 2017 start (good but
@@ -109,7 +110,6 @@ favourite and wait for per-track sounds (wishlist E9).
 
 - **Grid revving** (`grid_idle`): the Norisring recording's grid is too far
   away to loop.
-- **Pass-bys:** no 2017-2018 onboard laps yet.
 - **Wheelguns:** none recorded for 2017-2018.
 - **Crowd:** no engines in it, so the year does not matter.
 
