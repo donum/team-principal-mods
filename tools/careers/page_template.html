@@ -1,0 +1,200 @@
+<title>DTM Driver Database</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a results sheet. Header strip with the four views, then one wide table per view; season grids scroll sideways inside their own box. */
+:root {
+  --bg: #f4f6f8; --panel: #ffffff; --ink: #18202a; --muted: #5d6874; --line: #d8dee5; --accent: #1f4f8f; --accent-soft: #e3ebf6;
+  --r-gold: #fff3b0; --r-silver: #e2e4e8; --r-bronze: #ffdcaa; --r-points: #d9f2dc; --r-class: #dbe2ff; --r-dnf: #eedcff; --r-dsq: #2a2a2a; --r-dsq-ink: #ffffff; --r-dns: #ffffff; --r-nc: #f0f0f0;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "Inter", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #10151b; --panel: #171e26; --ink: #e6ebf0; --muted: #98a3ae; --line: #2a3440; --accent: #8db4ec; --accent-soft: #1d2a3b;
+  --r-gold: #5a4b0e; --r-silver: #41464e; --r-bronze: #5c3b17; --r-points: #1f4227; --r-class: #2a3360; --r-dnf: #452a5c; --r-dsq: #000000; --r-dsq-ink: #ffffff; --r-dns: #171e26; --r-nc: #232b34;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #10151b; --panel: #171e26; --ink: #e6ebf0; --muted: #98a3ae; --line: #2a3440; --accent: #8db4ec; --accent-soft: #1d2a3b;
+  --r-gold: #5a4b0e; --r-silver: #41464e; --r-bronze: #5c3b17; --r-points: #1f4227; --r-class: #2a3360; --r-dnf: #452a5c; --r-dsq: #000000; --r-dsq-ink: #ffffff; --r-dns: #171e26; --r-nc: #232b34;
+  color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--body); }
+.wrap { max-width: 1200px; margin: 0 auto; padding-block: 20px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 18px; }
+header { display: grid; gap: 6px; }
+h1 { font: 700 2.1rem/1.05 var(--display); letter-spacing: .01em; margin: 0; text-wrap: balance; }
+h2 { font: 600 1.35rem/1.1 var(--display); margin: 0; letter-spacing: .02em; }
+.sub { color: var(--muted); max-width: 70ch; margin: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 .82rem var(--mono); color: var(--muted); }
+.stats b { color: var(--ink); font-weight: 600; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 2px solid var(--line); }
+nav a { font: 600 1.05rem var(--display); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 6px 12px; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+nav a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+input[type=search], select { font: 14px var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; min-width: 0; }
+input[type=search] { width: min(320px, 100%); }
+.note { color: var(--muted); font-size: .85rem; margin: 0; max-width: 75ch; }
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { padding: 5px 8px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--line); }
+th { font: 600 .74rem var(--body); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); position: sticky; top: 0; background: var(--panel); cursor: pointer; user-select: none; }
+th.l, td.l { text-align: left; }
+td.num { font-family: var(--mono); font-size: .82rem; }
+tbody tr:hover td { background: var(--accent-soft); }
+.name { color: var(--accent); cursor: pointer; font-weight: 500; background: none; border: 0; padding: 0; font: inherit; }
+.chip { display: inline-block; font: 600 .68rem var(--mono); padding: 1px 6px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); vertical-align: 1px; }
+.grid td.c { text-align: center; padding: 4px 3px; min-width: 30px; font: .76rem var(--mono); border-left: 1px solid var(--line); }
+.grid th.c { text-align: center; padding: 4px 3px; font: 600 .66rem var(--mono); letter-spacing: 0; text-transform: none; border-left: 1px solid var(--line); cursor: default; }
+.c.g1 { background: var(--r-gold); font-weight: 600; } .c.g2 { background: var(--r-silver); } .c.g3 { background: var(--r-bronze); }
+.c.pt { background: var(--r-points); } .c.cl { background: var(--r-class); } .c.dnf { background: var(--r-dnf); }
+.c.dsq { background: var(--r-dsq); color: var(--r-dsq-ink); } .c.ns { background: var(--r-dns); color: var(--muted); } .c.nc { background: var(--r-nc); color: var(--muted); font-style: italic; }
+.c.pole { box-shadow: inset 0 -3px 0 var(--accent); } .c.fl { text-decoration: underline dotted; }
+th.c.ncol { color: var(--muted); font-style: italic; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .78rem; color: var(--muted); align-items: center; }
+.legend span.c { display: inline-block; width: 26px; text-align: center; border-radius: 3px; font: .7rem var(--mono); color: var(--ink); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 10px; }
+.card .head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
+.kv { display: flex; flex-wrap: wrap; gap: 4px 20px; font: .85rem var(--mono); color: var(--muted); }
+.kv b { color: var(--ink); }
+button.close { font: 600 .8rem var(--body); color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+ul.checks { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 95ch; }
+ul.checks li { font-size: .86rem; }
+.src { display: grid; gap: 4px; }
+.src p { margin: 0; max-width: 80ch; }
+.muted { color: var(--muted); }
+@media (max-width: 600px) { h1 { font-size: 1.7rem; } nav a { padding: 6px 8px; font-size: .95rem; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>DTM Driver Database</h1>
+    <p class="sub">Every driver's result in every DTM and ITC race, 1984 to 2026. The game's driver history in each pack is read from this table: everything a driver did before the pack's season.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+  <nav id="nav">
+    <a href="#drivers">Drivers</a><a href="#seasons">Seasons</a><a href="#packs">Packs</a><a href="#sources">Sources</a>
+  </nav>
+  <main id="view"></main>
+</div>
+
+<script>
+const D = /*DATA*/null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const NAT = n => n ? n.replace(/_/g, " ") : "";
+const store = {get(k, d) { try { return localStorage.getItem(k) ?? d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} }};
+
+$("#stats").innerHTML = [
+  ["races rows", D.counts.races], ["driver seasons", D.counts.driver_seasons], ["drivers", D.counts.drivers],
+  ["seasons", D.counts.seasons], ["built", D.built]].map(([k, v]) => `<span><b>${typeof v === "number" ? v.toLocaleString("en") : v}</b> ${k}</span>`).join("");
+
+function cellClass(v, kind) {
+  if (!v) return "c";
+  const [val, flags = ""] = v.split("|");
+  if (kind === "nc" || kind === "annulled") return "c nc";
+  const n = parseInt(val, 10);
+  let cls = "c";
+  if (!isNaN(n)) cls += n === 1 ? " g1" : n === 2 ? " g2" : n === 3 ? " g3" : n <= 10 ? " pt" : " cl";
+  else if (/^(DNF|RET|NC)/.test(val)) cls += " dnf";
+  else if (/^(DSQ|EX)/.test(val)) cls += " dsq";
+  else cls += " ns";
+  if (flags.includes("P")) cls += " pole";
+  if (flags.includes("F")) cls += " fl";
+  return cls;
+}
+const cellText = v => (v || "").split("|")[0];
+
+/* ------------------------------------------------------------ drivers */
+let dSort = {k: 8, dir: -1}, dQuery = "";
+const DCOLS = [["Driver", 0, "l"], ["Nat.", 1, "l"], ["Born", 2], ["From", 3], ["To", 4], ["Seasons", 5], ["Titles", 6], ["Starts", 7], ["Wins", 8], ["Podiums", 9], ["Poles", 10], ["Points", 11]];
+function drivers(focus) {
+  const q = dQuery.toLowerCase();
+  const rows = D.drivers.map((d, i) => [d, i]).filter(([d]) => !q || d[0].toLowerCase().includes(q) || NAT(d[1]).includes(q));
+  rows.sort((a, b) => { const x = a[0][dSort.k], y = b[0][dSort.k]; return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y))) * dSort.dir; });
+  $("#view").innerHTML = `
+    <div style="display:grid;gap:12px">
+      <div class="bar"><input type="search" id="dq" placeholder="Search a driver or nationality" value="${esc(dQuery)}" aria-label="Search drivers"><span class="note">${rows.length} drivers. Click a name for the season by season record.</span></div>
+      <div id="card"></div>
+      <div class="box"><table><thead><tr>${DCOLS.map(([t, k, a]) => `<th class="${a || ""}" data-k="${k}">${t}${dSort.k === k ? (dSort.dir < 0 ? " ▾" : " ▴") : ""}</th>`).join("")}</tr></thead>
+      <tbody>${rows.map(([d, i]) => `<tr><td class="l"><button class="name" data-i="${i}">${esc(d[0])}</button></td><td class="l">${esc(NAT(d[1]))}</td>${d.slice(2).map(v => `<td class="num">${v === "" ? "" : v}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+    </div>`;
+  $("#dq").addEventListener("input", e => { dQuery = e.target.value; const pos = e.target.selectionStart; drivers(); const el = $("#dq"); el.focus(); el.setSelectionRange(pos, pos); });
+  $("#view").querySelectorAll("th[data-k]").forEach(th => th.addEventListener("click", () => { const k = +th.dataset.k; dSort = {k, dir: dSort.k === k ? -dSort.dir : (k <= 1 ? 1 : -1)}; drivers(); }));
+  $("#view").querySelectorAll("button.name").forEach(b => b.addEventListener("click", () => { showDriver(+b.dataset.i); }));
+  if (focus != null) showDriver(focus);
+}
+function showDriver(i) {
+  const d = D.drivers[i];
+  const seasons = [];
+  for (const [y, s] of Object.entries(D.seasons)) for (const r of s.rows) if (r[0] === i) seasons.push([y, s, r]);
+  const max = Math.max(...seasons.map(([, s]) => s.cols.length), 1);
+  $("#card").innerHTML = `<div class="card">
+    <div class="head"><h2>${esc(d[0])}</h2><button class="close" id="cl">Close</button></div>
+    <div class="kv"><span>${esc(NAT(d[1])) || "nationality unknown"}</span><span>born <b>${d[2] || "?"}</b></span><span><b>${d[5]}</b> seasons</span><span><b>${d[6]}</b> titles</span><span><b>${d[7]}</b> starts</span><span><b>${d[8]}</b> wins</span><span><b>${d[9]}</b> podiums</span><span><b>${d[10]}</b> poles</span><span><b>${d[11]}</b> points</span></div>
+    <div class="box"><table class="grid"><thead><tr><th class="l">Season</th><th class="l">Make</th><th>Pos.</th><th>Pts</th>${Array.from({length: max}, (_, k) => `<th class="c">${k + 1}</th>`).join("")}</tr></thead>
+    <tbody>${seasons.map(([y, s, r]) => `<tr><td class="l"><a href="#seasons" data-y="${y}" class="name sy">${y}${r[1] !== "DTM" ? ` <span class="chip">${r[1]}</span>` : ""}</a></td><td class="l">${esc(r[4])}${r[5] ? ' <span class="chip">guest</span>' : ""}</td><td class="num">${r[2] || ""}</td><td class="num">${r[3] || ""}</td>${s.cols.map((c, k) => c[0] === r[1] ? `<td class="${cellClass(r[6 + k], c[4])}" title="${esc(c[3])}${c[2] ? " " + c[2] : ""}">${esc(cellText(r[6 + k]))}</td>` : "").join("")}</tr>`).join("")}</tbody></table></div>
+    ${legend()}</div>`;
+  $("#cl").addEventListener("click", () => { $("#card").innerHTML = ""; });
+  $("#card").querySelectorAll("a.sy").forEach(a => a.addEventListener("click", () => store.set("dtm-db-season", a.dataset.y)));
+  $("#card").scrollIntoView({block: "nearest"});
+}
+function legend() {
+  return `<div class="legend"><span><span class="c g1">1</span> win</span><span><span class="c g2">2</span><span class="c g3">3</span> podium</span><span><span class="c pt">7</span> top ten</span><span><span class="c cl">14</span> classified</span><span><span class="c dnf">DNF</span> retired</span><span><span class="c dsq">DSQ</span> disqualified</span><span><span class="c ns">DNS</span> no start</span><span><span class="c pole">1</span> pole</span><span><span class="c nc">nc</span> non-championship or annulled race</span></div>`;
+}
+
+/* ------------------------------------------------------------ seasons */
+function seasons() {
+  const years = Object.keys(D.seasons);
+  let y = store.get("dtm-db-season", "2013"); if (!D.seasons[y]) y = years[years.length - 1];
+  const s = D.seasons[y];
+  const series = [...new Set(s.cols.map(c => c[0]))];
+  $("#view").innerHTML = `<div style="display:grid;gap:12px">
+    <div class="bar"><label for="ys" class="muted">Season</label><select id="ys">${years.map(v => `<option${v === y ? " selected" : ""}>${v}</option>`).join("")}</select>
+    <span class="note">Results from ${esc(s.source)}. Hover a cell for the event.</span></div>
+    ${series.map(ser => { const cols = s.cols.map((c, k) => [c, k]).filter(([c]) => c[0] === ser); const rows = s.rows.filter(r => r[1] === ser);
+      return `${series.length > 1 ? `<h2>${ser}</h2>` : ""}<div class="box"><table class="grid"><thead><tr><th>Pos.</th><th class="l">Driver</th><th class="l">Make</th>${cols.map(([c]) => `<th class="c${c[4] !== "race" && c[4] !== "qr" ? " ncol" : ""}" title="${c[4] === "qr" ? "qualifying race" : c[4] === "race" ? "race" : "not counted"}">${esc(c[3])}${c[2] ? "<br>" + (c[4] === "qr" ? "Q" : c[2]) : ""}</th>`).join("")}<th>Pts</th></tr></thead>
+      <tbody>${rows.map(r => `<tr><td class="num">${r[2] || ""}</td><td class="l"><button class="name" data-i="${r[0]}">${esc(D.drivers[r[0]][0])}</button>${r[5] ? ' <span class="chip">guest</span>' : ""}</td><td class="l">${esc(r[4])}</td>${cols.map(([c, k]) => `<td class="${cellClass(r[6 + k], c[4])}">${esc(cellText(r[6 + k]))}</td>`).join("")}<td class="num">${r[3] || ""}</td></tr>`).join("")}</tbody></table></div>`; }).join("")}
+    ${legend()}</div>`;
+  $("#ys").addEventListener("change", e => { store.set("dtm-db-season", e.target.value); seasons(); });
+  $("#view").querySelectorAll("button.name").forEach(b => b.addEventListener("click", () => { location.hash = "drivers"; setTimeout(() => drivers(+b.dataset.i), 0); }));
+}
+
+/* ------------------------------------------------------------ packs */
+function packs() {
+  let id = store.get("dtm-db-pack", "dtm-2013"); if (!D.packs.find(p => p.id === id)) id = D.packs[0].id;
+  const p = D.packs.find(x => x.id === id);
+  const active = p.drivers.filter(r => r[1] !== "retired"), retired = p.drivers.filter(r => r[1] === "retired");
+  const table = (rows, team) => `<div class="box"><table><thead><tr><th class="l">Driver</th>${team ? '<th class="l">Team</th>' : ""}<th>Seasons</th><th>Titles</th><th>Wins</th><th>Podiums</th><th>Poles</th><th>Starts</th><th>Points</th></tr></thead>
+    <tbody>${rows.map(r => `<tr><td class="l">${esc(r[0])}</td>${team ? `<td class="l">${esc(r[1])}</td>` : ""}${r.slice(2).map(v => `<td class="num">${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  $("#view").innerHTML = `<div style="display:grid;gap:12px">
+    <div class="bar"><label for="ps" class="muted">Pack</label><select id="ps">${D.packs.map(x => `<option value="${x.id}"${x.id === id ? " selected" : ""}>${x.id}</option>`).join("")}</select>
+    <span class="note">The <code>history</code> block the game reads for each driver: every DTM and ITC race before ${p.year}.</span></div>
+    <h2>On the grid and in reserve (${active.length})</h2>${table(active.sort((a, b) => b[7] - a[7] || a[0].localeCompare(b[0])), true)}
+    <h2>Retired winners and champions (${retired.length})</h2>
+    <p class="note">Added with <code>retired: true</code>, so the game's all-time statistics start with the real record holders, the way the F1 Workshop packs do it.</p>
+    ${table(retired, false)}</div>`;
+  $("#ps").addEventListener("change", e => { store.set("dtm-db-pack", e.target.value); packs(); });
+}
+
+/* ------------------------------------------------------------ sources */
+function sources() {
+  $("#view").innerHTML = `<div style="display:grid;gap:16px">
+    <div class="card src"><h2>Where the numbers come from</h2>
+      <p><b>dtm.fandom.com (de)</b>: the result of every driver in every race, from the season pages. Used for 1984 to 1993 and 1995 (DTM and ITC), and as a check for the other years.</p>
+      <p><b>en.wikipedia</b>: the drivers' standings of each season, race by race. Bold marks the pole and italics the fastest lap. Used for 1994, 1996 and 2000 to 2026.</p>
+      <p><b>de.wikipedia</b>: pole sitter and winner of every race. Gives the poles for 1984 to 1993 and 1995, and checks the winners.</p>
+      <p class="muted">Not counted: qualifying races (2001, 2002), non-championship rounds (Brno and Donington 1991, Donington 1993, the ITR Gold Cups 1994, Shanghai 2004, Munich 2011 and 2012, Fuji 2019) and the annulled AVUS heat 2 in 1995. They stay in the grid in grey.</p>
+      <p class="muted">Seasons count when a driver started at least one race. Points are the season totals of each year's own scoring system, added up.</p></div>
+    <div class="card"><h2>Where the sources disagree</h2><ul class="checks">${D.checks.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>
+  </div>`;
+}
+
+const VIEWS = {drivers, seasons, packs, sources};
+function route() {
+  const v = VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "drivers";
+  document.querySelectorAll("#nav a").forEach(a => { if (a.getAttribute("href") === "#" + v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  VIEWS[v]();
+}
+addEventListener("hashchange", route);
+route();
+</script>

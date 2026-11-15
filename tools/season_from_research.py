@@ -382,6 +382,13 @@ def main():
     if gen.get("juniors"):
         juniors(season, gen, year, driver_records, out_data)
 
+    # Career history (docs/drivers): every driver's DTM/ITC record before this
+    # year, plus retired winners and champions. Packs of other series skip it.
+    if season.name.startswith(("dtm-", "itc-")) and gen.get("career_history", True):
+        import driver_careers
+        seasons_db, drivers_db = driver_careers.load_db()
+        driver_careers.apply_pack(season, seasons_db, drivers_db)
+
 
 # Feeder series: the game's junior_series.json (see docs/CAPABILITIES.md). The
 # game seats the listed drivers only in its first season, matched by name

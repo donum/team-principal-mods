@@ -337,12 +337,12 @@ function driverCard(d) {
     ${d.portrait ? `<img class="ph" src="${esc(d.portrait)}" alt="${esc(d.name)}" loading="lazy" data-full tabindex="0">` : `<div class="ph"></div>`}
     <div style="min-width:0">
       <div class="name">${esc(d.name)}</div>
-      <div class="teamline"><span class="swatch" style="background:${rgb(d.team_color)}"></span>${esc(d.team || d.junior || "free agent")}</div>
+      <div class="teamline"><span class="swatch" style="background:${rgb(d.team_color)}"></span>${esc(d.team || d.junior || (d.retired ? "retired" : "free agent"))}</div>
       <div class="facts"><span><b>${esc(nat(d.nationality))}</b></span><span>age <b>${esc(d.age)}</b>${d.birth_year ? ` <span class="muted">(born ${esc(d.birth_year)})</span>` : ""}</span><span>talent <b>${esc(d.talent)}</b></span>${d.number ? `<span>#<b>${esc(d.number)}</b></span>` : ""}</div>
       <div style="margin-top:6px">${provChip(d.prov)}</div>
     </div>
     <div class="ratings">${r.map(k => `<span class="muted">${k}</span><span class="bar"><i style="width:${100 * (d[k] || 0) / 20}%"></i></span><span class="v">${esc(d[k])}</span>`).join("")}</div>
-    <div class="facts" style="grid-column:1/-1;margin:0"><span>seasons <b>${h.seasons ?? 0}</b></span><span>titles <b>${h.championships ?? 0}</b></span><span>wins <b>${h.wins ?? 0}</b></span><span>podiums <b>${h.podiums ?? 0}</b></span><span>poles <b>${h.poles ?? 0}</b></span></div>
+    <div class="facts" style="grid-column:1/-1;margin:0"><span>seasons <b>${h.seasons ?? 0}</b></span><span>titles <b>${h.championships ?? 0}</b></span><span>wins <b>${h.wins ?? 0}</b></span><span>podiums <b>${h.podiums ?? 0}</b></span><span>poles <b>${h.poles ?? 0}</b></span><span>starts <b>${h.starts ?? 0}</b></span><span>points <b>${h.points ?? 0}</b></span></div>
     <div class="credit">${credit}</div>
     <details><summary>All fields, and where each comes from</summary>${fieldTable(d, d.fields, ["portrait", "portrait_info", "fields", "prov", "team_color"])}</details>
   </article>`;

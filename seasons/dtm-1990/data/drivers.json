@@ -47,7 +47,16 @@
       "career_stage": "top_veteran",
       "nationality": "german",
       "team": "SMS Schmidt Motorsport",
-      "number": 44
+      "number": 44,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 1,
+        "poles": 0,
+        "starts": 5,
+        "points": 38
+      }
     },
     {
       "name": "Walter Röhrl",
@@ -73,7 +82,16 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "german",
-      "reserve_number": 45
+      "reserve_number": 45,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Frank Jelinski",
@@ -99,7 +117,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 46
+      "reserve_number": 46,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 1,
+        "points": 18
+      }
     },
     {
       "name": "Johnny Cecotto",
@@ -128,7 +155,16 @@
       "career_stage": "top_veteran",
       "nationality": "venezuelan",
       "team": "BMW M Team Schnitzer",
-      "number": 3
+      "number": 3,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 6,
+        "podiums": 13,
+        "poles": 2,
+        "starts": 36,
+        "points": 410
+      }
     },
     {
       "name": "Fabien Giroix",
@@ -157,7 +193,16 @@
       "career_stage": "racer",
       "nationality": "french",
       "team": "BMW M Team Schnitzer",
-      "number": 2
+      "number": 2,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 12,
+        "poles": 0,
+        "starts": 24,
+        "points": 305
+      }
     },
     {
       "name": "Emanuele Pirro",
@@ -183,7 +228,16 @@
       ],
       "career_stage": "racer",
       "nationality": "italian",
-      "reserve_number": 29
+      "reserve_number": 29,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Christian Danner",
@@ -209,7 +263,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 32
+      "reserve_number": 32,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 3,
+        "poles": 0,
+        "starts": 28,
+        "points": 197
+      }
     },
     {
       "name": "Roberto Ravaglia",
@@ -235,7 +298,16 @@
       ],
       "career_stage": "racer",
       "nationality": "italian",
-      "reserve_number": 1
+      "reserve_number": 1,
+      "history": {
+        "seasons": 2,
+        "championships": 1,
+        "wins": 3,
+        "podiums": 10,
+        "poles": 4,
+        "starts": 23,
+        "points": 315
+      }
     },
     {
       "name": "Eric van de Poele",
@@ -261,7 +333,16 @@
       ],
       "career_stage": "racer",
       "nationality": "belgian",
-      "reserve_number": 34
+      "reserve_number": 34,
+      "history": {
+        "seasons": 3,
+        "championships": 1,
+        "wins": 0,
+        "podiums": 3,
+        "poles": 2,
+        "starts": 13,
+        "points": 144
+      }
     },
     {
       "name": "Kurt Thiim",
@@ -290,7 +371,16 @@
       "career_stage": "top_racer",
       "nationality": "danish",
       "team": "AMG Mercedes",
-      "number": 6
+      "number": 6,
+      "history": {
+        "seasons": 4,
+        "championships": 1,
+        "wins": 6,
+        "podiums": 11,
+        "poles": 1,
+        "starts": 37,
+        "points": 509
+      }
     },
     {
       "name": "Klaus Ludwig",
@@ -319,7 +409,16 @@
       "career_stage": "top_veteran",
       "nationality": "german",
       "team": "AMG Mercedes",
-      "number": 7
+      "number": 7,
+      "history": {
+        "seasons": 5,
+        "championships": 1,
+        "wins": 15,
+        "podiums": 20,
+        "poles": 8,
+        "starts": 46,
+        "points": 500
+      }
     },
     {
       "name": "Fritz Kreutzpointner",
@@ -348,7 +447,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "AMG Mercedes",
-      "number": 77
+      "number": 77,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Thomas Winkelhock",
@@ -374,7 +482,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 66
+      "reserve_number": 66,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Karl Wendlinger",
@@ -400,7 +517,16 @@
       ],
       "career_stage": "racer",
       "nationality": "austrian",
-      "reserve_number": 60
+      "reserve_number": 60,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 17,
+        "points": 20
+      }
     },
     {
       "name": "Robb Gravett",
@@ -426,7 +552,16 @@
       ],
       "career_stage": "racer",
       "nationality": "british",
-      "reserve_number": 64
+      "reserve_number": 64,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Michael Schumacher",
@@ -452,7 +587,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 65
+      "reserve_number": 65,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Steve Soper",
@@ -481,7 +625,16 @@
       "career_stage": "top_veteran",
       "nationality": "british",
       "team": "BMW M Team Bigazzi",
-      "number": 8
+      "number": 8,
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 9,
+        "poles": 0,
+        "starts": 27,
+        "points": 285
+      }
     },
     {
       "name": "Joachim Winkelhock",
@@ -510,7 +663,16 @@
       "career_stage": "top_racer",
       "nationality": "german",
       "team": "BMW M Team Bigazzi",
-      "number": 9
+      "number": 9,
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 17,
+        "points": 80
+      }
     },
     {
       "name": "Jacques Laffite",
@@ -539,7 +701,16 @@
       "career_stage": "reliable_veteran",
       "nationality": "french",
       "team": "BMW M Team Bigazzi",
-      "number": 10
+      "number": 10,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Altfrid Heger",
@@ -568,7 +739,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "BMW M Team Linder",
-      "number": 11
+      "number": 11,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 5,
+        "poles": 2,
+        "starts": 39,
+        "points": 348
+      }
     },
     {
       "name": "Kris Nissen",
@@ -597,7 +777,16 @@
       "career_stage": "racer",
       "nationality": "danish",
       "team": "BMW M Team Linder",
-      "number": 12
+      "number": 12,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 10,
+        "points": 36
+      }
     },
     {
       "name": "Franz Engstler",
@@ -623,7 +812,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 13
+      "reserve_number": 13,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 2,
+        "points": 0
+      }
     },
     {
       "name": "Frank Biela",
@@ -652,7 +850,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "MS-Jet Racing",
-      "number": 16
+      "number": 16,
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 5,
+        "poles": 0,
+        "starts": 41,
+        "points": 319
+      }
     },
     {
       "name": "Jörg van Ommen",
@@ -681,7 +888,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "MS-Jet Racing",
-      "number": 17
+      "number": 17,
+      "history": {
+        "seasons": 6,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 5,
+        "poles": 2,
+        "starts": 58,
+        "points": 350
+      }
     },
     {
       "name": "Armin Hahne",
@@ -710,7 +926,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "BMW M Team Zakspeed",
-      "number": 19
+      "number": 19,
+      "history": {
+        "seasons": 4,
+        "championships": 0,
+        "wins": 7,
+        "podiums": 11,
+        "poles": 5,
+        "starts": 32,
+        "points": 305
+      }
     },
     {
       "name": "Dieter Quester",
@@ -739,7 +964,16 @@
       "career_stage": "reliable_veteran",
       "nationality": "austrian",
       "team": "BMW M Team Zakspeed",
-      "number": 18
+      "number": 18,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 2,
+        "poles": 0,
+        "starts": 36,
+        "points": 294
+      }
     },
     {
       "name": "Annette Meeuvissen",
@@ -768,7 +1002,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "BMW M Team Zakspeed",
-      "number": 20
+      "number": 20,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 21,
+        "points": 18
+      }
     },
     {
       "name": "Alain Cudini",
@@ -797,7 +1040,16 @@
       "career_stage": "reliable_veteran",
       "nationality": "french",
       "team": "Snobeck Racing",
-      "number": 15
+      "number": 15,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 3,
+        "poles": 0,
+        "starts": 41,
+        "points": 351
+      }
     },
     {
       "name": "Roland Asch",
@@ -826,7 +1078,16 @@
       "career_stage": "reliable_veteran",
       "nationality": "german",
       "team": "Snobeck Racing",
-      "number": 14
+      "number": 14,
+      "history": {
+        "seasons": 5,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 11,
+        "poles": 0,
+        "starts": 58,
+        "points": 534
+      }
     },
     {
       "name": "Günther Murmann",
@@ -855,7 +1116,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "MM Diebels Alt",
-      "number": 30
+      "number": 30,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 10,
+        "points": 4
+      }
     },
     {
       "name": "Frank Schmickler",
@@ -884,7 +1154,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "MM Diebels Alt",
-      "number": 31
+      "number": 31,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 22,
+        "points": 150
+      }
     },
     {
       "name": "Anton Goeser",
@@ -910,7 +1189,16 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "german",
-      "reserve_number": 53
+      "reserve_number": 53,
+      "history": {
+        "seasons": 4,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 2,
+        "poles": 0,
+        "starts": 34,
+        "points": 179
+      }
     },
     {
       "name": "Klaus Niedzwiedz",
@@ -939,7 +1227,16 @@
       "career_stage": "reliable_veteran",
       "nationality": "german",
       "team": "Opel Team Irmscher",
-      "number": 4
+      "number": 4,
+      "history": {
+        "seasons": 5,
+        "championships": 0,
+        "wins": 6,
+        "podiums": 16,
+        "poles": 6,
+        "starts": 49,
+        "points": 501
+      }
     },
     {
       "name": "Markus Oestreich",
@@ -968,7 +1265,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "Opel Team Irmscher",
-      "number": 5
+      "number": 5,
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 5,
+        "poles": 0,
+        "starts": 40,
+        "points": 316
+      }
     },
     {
       "name": "Volker Strycek",
@@ -994,7 +1300,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 54
+      "reserve_number": 54,
+      "history": {
+        "seasons": 5,
+        "championships": 1,
+        "wins": 0,
+        "podiums": 6,
+        "poles": 0,
+        "starts": 45,
+        "points": 372
+      }
     },
     {
       "name": "Kurt König",
@@ -1023,7 +1338,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "Valier Motorsport",
-      "number": 28
+      "number": 28,
+      "history": {
+        "seasons": 6,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 3,
+        "poles": 1,
+        "starts": 83,
+        "points": 472
+      }
     },
     {
       "name": "Harald Grohs",
@@ -1049,7 +1373,16 @@
       ],
       "career_stage": "reliable_veteran",
       "nationality": "german",
-      "reserve_number": 22
+      "reserve_number": 22,
+      "history": {
+        "seasons": 6,
+        "championships": 0,
+        "wins": 7,
+        "podiums": 18,
+        "poles": 10,
+        "starts": 74,
+        "points": 557
+      }
     },
     {
       "name": "Hans Kalaschek",
@@ -1075,7 +1408,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 49
+      "reserve_number": 49,
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 8,
+        "points": 0
+      }
     },
     {
       "name": "Leopold Prinz von Bayern",
@@ -1104,7 +1446,16 @@
       "career_stage": "reliable_veteran",
       "nationality": "german",
       "team": "BMW Team Isert",
-      "number": 24
+      "number": 24,
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 1,
+        "poles": 0,
+        "starts": 22,
+        "points": 84
+      }
     },
     {
       "name": "Olaf Manthey",
@@ -1133,7 +1484,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "BMW Team Isert",
-      "number": 23
+      "number": 23,
+      "history": {
+        "seasons": 6,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 13,
+        "poles": 1,
+        "starts": 80,
+        "points": 516
+      }
     },
     {
       "name": "Armin Bernhard",
@@ -1162,7 +1522,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "BAS Reifendienst",
-      "number": 40
+      "number": 40,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 13,
+        "points": 3
+      }
     },
     {
       "name": "Carsten Struwe",
@@ -1191,7 +1560,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "Tauber Motorsport",
-      "number": 36
+      "number": 36,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Örnulf Wirdheim",
@@ -1217,7 +1595,16 @@
       ],
       "career_stage": "racer",
       "nationality": "swedish",
-      "reserve_number": 47
+      "reserve_number": 47,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 11,
+        "points": 4
+      }
     },
     {
       "name": "Franz Dufter",
@@ -1243,7 +1630,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 35
+      "reserve_number": 35,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Georg Severich",
@@ -1269,7 +1665,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 37
+      "reserve_number": 37,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Udo Schneider",
@@ -1295,7 +1700,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 48
+      "reserve_number": 48,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 1,
+        "poles": 0,
+        "starts": 10,
+        "points": 84
+      }
     },
     {
       "name": "Peter Oberndorfer",
@@ -1324,7 +1738,16 @@
       "career_stage": "racer",
       "nationality": "german",
       "team": "Opel Team Schübel",
-      "number": 27
+      "number": 27,
+      "history": {
+        "seasons": 6,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 5,
+        "poles": 0,
+        "starts": 67,
+        "points": 442
+      }
     },
     {
       "name": "Klaus Gohlke",
@@ -1350,7 +1773,16 @@
       ],
       "career_stage": "racer",
       "nationality": "german",
-      "reserve_number": 55
+      "reserve_number": 55,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
     },
     {
       "name": "Philipp Müller",
@@ -1379,7 +1811,16 @@
       "career_stage": "racer",
       "nationality": "swiss",
       "team": "Bemani Motorenbau",
-      "number": 25
+      "number": 25,
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 16,
+        "points": 37
+      }
     },
     {
       "name": "Toni Seiler",
@@ -1405,7 +1846,302 @@
       ],
       "career_stage": "racer",
       "nationality": "swiss",
-      "reserve_number": 26
+      "reserve_number": 26,
+      "history": {
+        "seasons": 0,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0,
+        "starts": 0,
+        "points": 0
+      }
+    },
+    {
+      "name": "Per Stureson",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "swedish",
+      "history": {
+        "seasons": 5,
+        "championships": 1,
+        "wins": 2,
+        "podiums": 10,
+        "poles": 3,
+        "starts": 54,
+        "points": 344
+      },
+      "birth_year": 1948,
+      "age": 42
+    },
+    {
+      "name": "Manfred Trint",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "german",
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 4,
+        "podiums": 6,
+        "poles": 1,
+        "starts": 15,
+        "points": 114
+      },
+      "age": 60
+    },
+    {
+      "name": "Alain Ferté",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "french",
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 3,
+        "podiums": 4,
+        "poles": 0,
+        "starts": 9,
+        "points": 84
+      },
+      "birth_year": 1955,
+      "age": 35
+    },
+    {
+      "name": "Manuel Reuter",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "german",
+      "history": {
+        "seasons": 5,
+        "championships": 0,
+        "wins": 3,
+        "podiums": 7,
+        "poles": 5,
+        "starts": 59,
+        "points": 489
+      },
+      "birth_year": 1961,
+      "age": 29
+    },
+    {
+      "name": "Winfried Vogt",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "german",
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 3,
+        "podiums": 7,
+        "poles": 2,
+        "starts": 27,
+        "points": 228
+      },
+      "birth_year": 1945,
+      "age": 45
+    },
+    {
+      "name": "Dany Snobeck",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "french",
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 3,
+        "poles": 0,
+        "starts": 40,
+        "points": 290
+      },
+      "birth_year": 1946,
+      "age": 44
+    },
+    {
+      "name": "Heinz-Friedrich Peil",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "german",
+      "history": {
+        "seasons": 5,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 4,
+        "poles": 2,
+        "starts": 37,
+        "points": 128
+      },
+      "age": 60
+    },
+    {
+      "name": "Per-Gunnar Andersson",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "swedish",
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 5,
+        "poles": 1,
+        "starts": 21,
+        "points": 161
+      },
+      "birth_year": 1957,
+      "age": 33
+    },
+    {
+      "name": "Volker Weidler",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "german",
+      "history": {
+        "seasons": 3,
+        "championships": 0,
+        "wins": 2,
+        "podiums": 5,
+        "poles": 0,
+        "starts": 23,
+        "points": 129
+      },
+      "birth_year": 1962,
+      "age": 28
+    },
+    {
+      "name": "Marc Hessel",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "german",
+      "history": {
+        "seasons": 2,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 3,
+        "poles": 0,
+        "starts": 22,
+        "points": 144
+      },
+      "birth_year": 1965,
+      "age": 25
+    },
+    {
+      "name": "Peter John",
+      "team": null,
+      "retired": true,
+      "cornering": 5,
+      "braking": 5,
+      "consistency": 5,
+      "smoothness": 5,
+      "control": 5,
+      "talent": 5,
+      "traits": [],
+      "personalities": [],
+      "nationality": "german",
+      "history": {
+        "seasons": 5,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 5,
+        "poles": 0,
+        "starts": 24,
+        "points": 140
+      },
+      "age": 60
     }
-  ]
+  ],
+  "$career_retired": [
+    "Per Stureson",
+    "Manfred Trint",
+    "Alain Ferté",
+    "Manuel Reuter",
+    "Winfried Vogt",
+    "Dany Snobeck",
+    "Heinz-Friedrich Peil",
+    "Per-Gunnar Andersson",
+    "Volker Weidler",
+    "Marc Hessel",
+    "Peter John"
+  ],
+  "$career_history": "history = DTM/ITC career before 1990, from docs/drivers (tools/driver_careers.py apply). Retired records: race winners and champions."
 }
