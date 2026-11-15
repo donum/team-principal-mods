@@ -548,6 +548,29 @@ def place_tracks(season_dir, out, manifest):
     return placeholders
 
 
+def strip_notes(out):
+    """Drop our "$..." note keys ("$comment" and the like) from every JSON file
+    in the pack. They are notes for us; the game's own files never have them,
+    and a player reported a pack file with one as invalid (2026-11-15)."""
+    def clean(d):
+        if isinstance(d, dict):
+            return {k: clean(v) for k, v in d.items() if not k.startswith("$")}
+        if isinstance(d, list):
+            return [clean(v) for v in d]
+        return d
+    changed = []
+    for path in sorted(out.rglob("*.json")):
+        try:
+            data = load_json(path)
+        except (ValueError, UnicodeDecodeError):
+            continue                      # validate() reports broken JSON
+        tidy = clean(data)
+        if tidy != data:
+            dump_json(path, tidy)
+            changed.append(path.relative_to(out).as_posix())
+    return changed
+
+
 def validate(out):
     errors, warnings = [], []
     teams = load_json(out / "teams.json")
@@ -725,6 +748,8 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
             sys.exit(f"audio in_pack, but no overlay built at private/engine_audio/pack/{missing[0]}; run tools/engine_audio/package.py")
         print(overlay.bake(out, baked))
 
+    for rel in strip_notes(out):
+        print(f"notes stripped: {rel}")
     errors, warnings = validate(out)
     for track_id, source in placeholders.items():
         print(f"placeholder: track {track_id} uses geometry of base track {source}")
