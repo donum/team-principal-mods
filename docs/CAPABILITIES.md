@@ -3,6 +3,8 @@
 This is a living reference for what a Team Principal data pack can change and
 what it can't. It's based on game version **0.99.5** (the `VERSION` constant), with the
 0.99.6 beta's new keys in [section 3a](#3a-new-in-0996)
+(0.99.6 released 2026-11-11, Patch #1 2026-11-15; patch impact on our packs is
+tracked in [game/changelog.csv](game/changelog.csv) by `tools/game_changelog.py`)
 and on the installed default packs (`default22` to `default26`) plus eight
 community Workshop seasons, as of 2026-11-01.
 

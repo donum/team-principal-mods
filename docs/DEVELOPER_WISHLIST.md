@@ -6,8 +6,11 @@ packs: 1987 and 1990–1992 (Group A), 2003, 2006 and 2010 (V8 Masters),
 what the game can't do today, our current workaround, and what would solve
 it. **Needed by** names the season packs (`seasons/dtm-*`) that would use
 it. Findings are based on game version 0.99.5, rechecked against the
-0.99.6 beta's modding guide (no item closed). See
-[CAPABILITIES.md](CAPABILITIES.md) for what we confirmed works.
+0.99.6 beta's modding guide (no item closed). 0.99.6 was released on
+2026-11-11, with Patch #1 on 2026-11-15. See
+[CAPABILITIES.md](CAPABILITIES.md) for what we confirmed works, and
+[game/changelog.csv](game/changelog.csv) for every patch and what it means
+for our packs.
 
 Priority: **P1** = needed for an authentic series, **P2** = big gain,
 **P3** = nice to have.
@@ -388,6 +391,9 @@ rules to these items:
 - **Request:** a "customer car" contract type, like engines, where chassis
   and aero performance come from the supplier's homologated model. Also
   homologation steps (Evo kits) as data.
+- **Coming:** the 0.99.6 Patch #1 notes (2026-11-15) tease buyable and
+  sellable chassis and buildable gearboxes and other parts for 0.99.7.
+  Recheck this item and D1 when it lands.
 
 ### C5. Retirement and age tuning in data · P3
 - **Needed by:** dtm-1991.

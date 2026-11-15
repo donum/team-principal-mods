@@ -1,0 +1,29 @@
+date,title,gid,url,mod_impact
+2026-11-15,0.99.6 Patch #1 Notes (MacOS update & bug fixes/optimizations),1849458702685622,https://store.steampowered.com/news/app/4340600/view/1849458702685622,"No pack update needed (dev). New whitelisted constants ESPIONAGE_THIRD_PARTY_PROTEST_ADJACENT_CHANCE 0.05 and _NEARBY_CHANCE 0.025: our packs keep the vanilla values. Grid penalties now carry from qualifying to the race. Workshop listings can carry a 0.99.6 version tag: set it on our uploads. 0.99.7 teaser (endurance, engine development, buyable chassis, buildable gearboxes) noted on wishlist C4."
+2026-11-11,Team Principal v0.99.6 Patch Notes (Releasing Today!),1849192144179873,https://store.steampowered.com/news/app/4340600/view/1849192144179873,"Covered in docs/CAPABILITIES.md 3a from the beta guide. Game folder has 'UPDATING FORMULA MODS TO 99.6.txt'. tyremodel.json now 12 wetness bands: our tyre files are overlays on vanilla, built packs have 12 bands, nothing to do. New optional files driverslicense.json and teamprincipals.json, regulations compulsory_reserve_sessions (supplied by the game when omitted), config reserve_practice / formula_red_flags / staff_roles / start_year. Chassis parts can be renamed in the roster editor."
+2026-10-19,0.99.5 Patch #1 and FULL MacOS Support!,1846651706688563,https://store.steampowered.com/news/app/4340600/view/1846651706688563,Baseline of our docs (0.99.5). Packs need the vanilla constants.py names of each version (an old one fails with ImportError AERO_EFFICIENCY_RATING_MAX).
+2026-10-17,Team Principal Patch 0.99.5 (LARGEST Patch yet),1846651706683643,https://store.steampowered.com/news/app/4340600/view/1846651706683643,Baseline of our docs (0.99.5).
+2026-10-01,Team Principal General Game Update & Happenings,1845383656379514,https://store.steampowered.com/news/app/4340600/view/1845383656379514,Before our 0.99.5 baseline.
+2026-09-16,Patch v0.99.2c AND 0.99.2d (Misc. Fixes and Light Additions),1844115010488008,https://store.steampowered.com/news/app/4340600/view/1844115010488008,Before our 0.99.5 baseline.
+2026-09-11,Mac Version Available in Steam Betas now!,1843481262693919,https://store.steampowered.com/news/app/4340600/view/1843481262693919,Before our 0.99.5 baseline.
+2026-09-10,Patch v0.991.2b (Small Patch) and Game News!,1843481262690902,https://store.steampowered.com/news/app/4340600/view/1843481262690902,Before our 0.99.5 baseline.
+2026-09-08,v0.991.2 Patch Notes (Major Update),1842846814454732,https://store.steampowered.com/news/app/4340600/view/1842846814454732,Before our 0.99.5 baseline.
+2026-09-01,v0.991 Patch 3,1842212951312014,https://store.steampowered.com/news/app/4340600/view/1842212951312014,Before our 0.99.5 baseline.
+2026-08-28,v0.99.1 Hotfix #1,1842212951303951,https://store.steampowered.com/news/app/4340600/view/1842212951303951,Before our 0.99.5 baseline.
+2026-08-28,"v0.99.1 ""Definitive"" is live now!",1842212951301927,https://store.steampowered.com/news/app/4340600/view/1842212951301927,Before our 0.99.5 baseline.
+2026-08-27,"v0.99.1 ""Definitive"" Patch Notes. (Large Content, UI, and Optimization Update)",1842212951298896,https://store.steampowered.com/news/app/4340600/view/1842212951298896,Before our 0.99.5 baseline.
+2026-08-10,Patch v0.99c #3 (Minor Update),1840310314350217,https://store.steampowered.com/news/app/4340600/view/1840310314350217,Before our 0.99.5 baseline.
+2026-08-07,Patch 0.99c Hotfix,1840310314343754,https://store.steampowered.com/news/app/4340600/view/1840310314343754,Before our 0.99.5 baseline.
+2026-08-05,v0.99c - Major Update (Oval Series Beta),1840310314340428,https://store.steampowered.com/news/app/4340600/view/1840310314340428,Before our 0.99.5 baseline.
+2026-07-14,Patch v0.99b (Moderate Update),1837955055365060,https://store.steampowered.com/news/app/4340600/view/1837955055365060,Before our 0.99.5 baseline.
+2026-07-02,Patch v0.99a (Small Maintenance Patch),1836506165566933,https://store.steampowered.com/news/app/4340600/view/1836506165566933,Before our 0.99.5 baseline.
+2026-06-29,Update v0.99 (Misc. Update and UI Overhaul),1836506165559131,https://store.steampowered.com/news/app/4340600/view/1836506165559131,Before our 0.99.5 baseline.
+2026-06-22,Patch v0.98.5 (Major Update),1835871199312075,https://store.steampowered.com/news/app/4340600/view/1835871199312075,Before our 0.99.5 baseline.
+2026-05-18,Patch v0.98.2 (Small Patch),1832700592797347,https://store.steampowered.com/news/app/4340600/view/1832700592797347,Before our 0.99.5 baseline.
+2026-05-14,Patch 0.98.1 (small maintenance patch),1832700592790542,https://store.steampowered.com/news/app/4340600/view/1832700592790542,Before our 0.99.5 baseline.
+2026-05-14,Patch Notes v0.98 - Large Content Update,1832700592787794,https://store.steampowered.com/news/app/4340600/view/1832700592787794,Before our 0.99.5 baseline.
+2026-05-05,Patch 0.975,1831432155578995,https://store.steampowered.com/news/app/4340600/view/1831432155578995,Before our 0.99.5 baseline.
+2026-04-18,Patch 0.97,1830163047262992,https://store.steampowered.com/news/app/4340600/view/1830163047262992,Before our 0.99.5 baseline.
+2026-03-15,Update Patch Notes for 0.95 - The Physics Overhaul,1826992588598989,https://store.steampowered.com/news/app/4340600/view/1826992588598989,Before our 0.99.5 baseline.
+2026-02-17,Roadmap for the Game Post-Launch,1824644522846749,https://store.steampowered.com/news/app/4340600/view/1824644522846749,Before our 0.99.5 baseline.
+2026-02-13,Team Principal is LIVE on steam,1824644522838208,https://store.steampowered.com/news/app/4340600/view/1824644522838208,Before our 0.99.5 baseline.
