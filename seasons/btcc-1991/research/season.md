@@ -91,6 +91,28 @@ Left out of the pack (`gen.json` "skip"): Sean Walker Racing (one entry, did
 not start), Moto-Build (Rover 216GTi, one start) and Andrew Mackenzie Racing
 (Peugeot 405, two entries, one start; en.wiki has it as ACE Motorsport).
 
+## From the TV coverage (transcripts, 2026-11-15)
+The 18 broadcasts in the video archive (`Videos/yt/BTCC/1991`) were
+transcribed (private, `private/tv_coverage/transcripts/btcc/1991`). Facts
+read from them, with video and time:
+- **Rules:** two-litre engines, at most six cylinders, 8,500 rpm limit,
+  unleaded fuel [Round 1 race archive 0:01:00]; six tyres per car for
+  practice and race [Will Butler Round 4 Pt 1 0:00:11]; exhaust noise under
+  110 dB [Round 3 race archive 0:00:28].
+- **Noise at Donington (round 3):** four cars started from the back with a
+  ten-second penalty for breaking the noise rule, Harvey last [Round 3 race
+  archive 0:06:42, 0:16:15]; Bellm, Harvey and Bristow faced a noise check
+  after the race [0:18:36]. Harvey's 48-point penalty followed.
+- **Power:** "about 280 horsepower" for the BMW M3 and the Cavalier [Round 1
+  race archive 0:04:30, 0:13:17], "some 250 horsepower" in a later report
+  [Will Butler Round 4 Pt 1 0:01:54]. The front-wheel drive Vauxhalls had
+  "a slight weight advantage" [Snetterton 14 Apr 1991 0:09:01].
+- **Ages** agree with the birth dates in `entries.csv`: Ayles 26 [Round 3
+  0:09:36], Middlehurst 28 [Round 1 Pt 1 0:10:08; pt4 Round 15 0:04:23],
+  Allam 36 and Cleland 38 [Snetterton 14 Apr 1991 0:09:45]. Hometowns:
+  Ayles Maidstone, Middlehurst St Helens, Cleland Peebles.
+- **Colours:** Middlehurst's Sierra was grey and blue [pt4 Round 15 0:04:23].
+
 ## Corrections from the second sources (2026-11-15)
 - Points scale (above), weights, tyres, race laps and lap lengths.
 - Nick Baird did not start at Snetterton (not in AS or TCN; en.wiki: Ret).
