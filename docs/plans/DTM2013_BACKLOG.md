@@ -15,11 +15,11 @@ each one per venue and set it in `track_specs/*.json` (Norisring:
 
 | Field | Now | To do |
 |---|---|---|
-| `pit_lane_loss_s` | Estimates, 17–21 s | Real 2013 pit-lane times (pit-in to pit-out minus a racing lap) |
-| `dnf_modifier` | 1.0 everywhere | Higher for walled tracks (Norisring, Moscow?), lower for open ones (Hockenheim, Red Bull Ring); compare with 2013 retirements |
-| `overtaking_difficulty` | Estimates, 0.45–0.7 | Calibrate against 2013 position changes per race |
-| `starting_grid` | Same everywhere (pole on the left) | Real pole side and grid spacing per track |
-| `wet_weather_probability_multiplier` | Set only for Brands Hatch, Zandvoort, Nürburgring | One value per venue from climate data for the race month |
+| `pit_lane_loss_s` | From TV and `tools/pit_lane.py`; Moscow 25.8 s | Brands Hatch is still an estimate |
+| `dnf_modifier` | Fitted in six simulator rounds | Done |
+| `overtaking_difficulty` | Fitted; passing accepted at about 2.2 swaps per car | Done (more would need driver consistency or DRS) |
+| `starting_grid` | Pole side from the TV starts | Done (Nürburgring started behind the safety car) |
+| `wet_weather_probability_multiplier` | From climate data for the race month | Done |
 | `fuel_consumption` | 1.0 everywhere | Check that 120 L lasts a race with no refuelling |
 
 After the change, play a season and check pit stops, retirements and race times.
