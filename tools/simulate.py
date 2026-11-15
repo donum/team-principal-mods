@@ -21,6 +21,12 @@ Usage:
     python tools/simulate.py dtm-2013 --save my.json     # continue from a save
     python tools/simulate.py dtm-2013 --installed        # the installed pack, not dist/
     python tools/simulate.py --report build/sim/dtm-2013/<stamp>
+    python tools/simulate.py dtm-2013 --track brandshatch --runs 8   # one race, eight times
+
+--track jumps straight to that track's race week and stops after its race
+(--races sets how many races to run; with --track the default is 1). The
+races before it are skipped, so standings and car development start from
+zero: use it for race-day questions such as pit stops and retirements.
 
 A season takes about 40 minutes per run (a race weekend about 3).
 """
@@ -86,6 +92,7 @@ def launch(args):
     game_code.unpack(game_dir() / "TeamPrincipal.exe")
     seed0 = args.seed if args.seed is not None else random.randrange(1_000_000)
     meta = {"season": args.season, "pack": pack, "source": str(source), "seasons": args.seasons,
+            "track": args.track, "races": args.races,
             "runs": args.runs, "seed": seed0, "save": str(args.save) if args.save else None}
     (out / "sim.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     pending = []
@@ -102,6 +109,10 @@ def launch(args):
             run, seed = pending.pop(0)
             cmd = [str(VENV_PY), "-I", str(Path(__file__).resolve()), "--worker", str(run),
                    "--seasons", str(args.seasons), "--seed", str(seed), "--exe", str(game_dir() / "TeamPrincipal.exe")]
+            if args.track:
+                cmd += ["--track", args.track]
+            if args.races:
+                cmd += ["--races", str(args.races)]
             log = open(run / "log.txt", "w", encoding="utf-8")
             running.append((run, subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT), log))
         time.sleep(5)
@@ -232,6 +243,15 @@ def worker(args):
             row.update({f"attr_{k}": v for k, v in (t.get("attr") or {}).items()})
             out[name] = {k: round(float(v), 2) for k, v in row.items() if isinstance(v, (int, float))}
         return {"season": race.get("season"), "week": race.get("week"), "track": race.get("track"), "teams": out}
+    if args.track:
+        weeks = [w for w in range(state.week_index, len(state.schedule)) if state.schedule[w] == args.track]
+        if not weeks:
+            raise SystemExit(f"{args.track} is not on the schedule from week {state.week_index} "
+                             f"({sorted({t for t in state.schedule if t})})")
+        print(f"jump from week {state.week_index} to week {weeks[0]} ({args.track})", flush=True)
+        state.week_index = weeks[0]
+    max_races = args.races or (1 if args.track else None)
+    new_races = 0
     first_season = state.season_no
     seen_events = {r.get("event_id") for r in state.race_results}
     while state.season_no < first_season + args.seasons:
@@ -247,6 +267,7 @@ def worker(args):
                 seen_events.add(r.get("event_id"))
                 races.write(json.dumps(r, ensure_ascii=False) + "\n")
                 races.flush()
+                new_races += 1
                 try:
                     cars.write(json.dumps(car_snapshot(r), ensure_ascii=False) + "\n")
                     cars.flush()
@@ -259,6 +280,9 @@ def worker(args):
             standings.write(json.dumps(snapshot, ensure_ascii=False) + "\n")
             standings.flush()
             print(f"season {season} finished", flush=True)
+        if max_races and new_races >= max_races:
+            print(f"stopped after {new_races} race(s)", flush=True)
+            break
     state.save_season()
 
 
@@ -481,6 +505,8 @@ def main():
     ap.add_argument("--installed", action="store_true", help="use the installed pack instead of dist/")
     ap.add_argument("--seed", type=int)
     ap.add_argument("--out", help="output folder (default build/sim/<season>/<time>)")
+    ap.add_argument("--track", help="jump to this track's race week (track id, e.g. brandshatch) and race only there")
+    ap.add_argument("--races", type=int, help="stop each run after this many races (default with --track: 1)")
     ap.add_argument("--report", help="only (re)write the report of an earlier output folder")
     ap.add_argument("--worker", help=argparse.SUPPRESS)
     ap.add_argument("--exe", help=argparse.SUPPRESS)

@@ -221,6 +221,20 @@ rules to these items:
   the rest stopped between zero and seven times. The balance is fine:
   Norisring went from mostly three or four stops at 0.65 to mostly one at
   0.50. Rain races always add tyre stops.
+- **Why short tracks stay messy (DTM 2013, 2026-11-15, game 45440200):**
+  tyre wear is per lap, so tracks with short laps and many laps need a low
+  `tyre_wear_mult` (Brands Hatch Indy 0.42, Norisring 0.57, Moscow 0.68).
+  In `managers/strategy.py`, `_default_stop_cap` gives every track with
+  `track_wear_mult` at 1.2 or below a plan cap of 2 stops, and
+  `_restrict_decision_defaults` then uses the restricted decision path.
+  In the last two simulator rounds every 2013 track above 1.2 had 99 to
+  100% two-stoppers in clean races, while the three tracks below it had
+  10 to 22% one-stoppers and 20 to 49% three-stoppers. Over all rounds at
+  today's values one-stoppers won 20 of 56 races there, and 10 of 16 after
+  a safety car, because a stop under the safety car is cheap. In-game the same: Paffett won Brands Hatch from 6th
+  on one stop after a safety car, and Ekström won Moscow from 12th on one
+  stop. Raising the wear swaps one-stoppers for three-stoppers (Moscow 0.75:
+  5% one stop, 50% three or more, one-stoppers still won 2 of 4).
 - **Request:**
   - `mandatory_stops: N`, set **per race** of the weekend (2015: Saturday
     0, Sunday 1; 2025: Saturday 1, Sunday 2).

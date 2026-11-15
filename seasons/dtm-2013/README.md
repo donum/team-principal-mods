@@ -336,7 +336,18 @@ races of 68–77 minutes. Farfus took 8 of 10 poles (in 2013 nobody took more
 than two). STIHL AMG (23%) and Schnitzer (5%) were off again, so their car
 ratings were swapped by hand (`rating` in `gen.json`: STIHL 56.9, Schnitzer
 57.3). Nine cars one-stopped at the Norisring and five at Brands Hatch, both
-after a safety car, so their wear went back up a little (0.65, 0.45).
+after a safety car, so their wear went back up a little (0.65, 0.45). Later
+rounds settled on 0.57 and 0.42.
+
+After the v0.3 test season (2026-11-16) one-stoppers still won at Brands
+Hatch, Moscow and the Norisring, most of all after a safety car. The game
+can't require two stops, and short tracks get a simpler AI pit planner (see
+the wishlist, B5). Eight single races per track (`simulate.py --track`) with
+Brands Hatch at 0.46 and the Norisring at 0.61: one-stoppers in clean races
+fell from about 20% to 2 to 3%, and 13 of 16 winners stopped twice (before:
+17 of 44 won on one stop). About half the field now stops three times.
+Moscow stays at 0.68: its one-stoppers come after a safety car, and more wear
+only adds three-stoppers.
 
 - Top speeds: about 2.5% lower than season 5 (not measured since).
 - The Nürburgring lap with the F1 chicane.

@@ -34,7 +34,7 @@
     "norisring": {
       "race_laps": 83,
       "speed_mult": 1.29,
-      "tyre_wear_mult": 0.57,
+      "tyre_wear_mult": 0.61,
       "pit_lane_loss_s": 18.0,
       "drs_zones": [
         {

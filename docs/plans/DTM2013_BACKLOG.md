@@ -54,6 +54,11 @@ writes the sourced ones into the specs.
   commentary says about 20 s with the stop (about 17 s lane loss): the model
   (23 s) runs high there, the spec keeps 19. Brands Hatch is still an estimate
   (model 14, spec 17).
+- Tyre wear on the short tracks (2026-11-16): after one-stop wins in the v0.3
+  test season, Brands Hatch 0.42 to 0.46 and Norisring 0.57 to 0.61, checked
+  with eight single races each (`simulate.py --track`). Winners now stop
+  twice, about half the field three times. Moscow stays at 0.68. The real fix
+  is a mandatory-stops rule (wishlist B5).
 - Open: `fuel_consumption` (120 L with no refuelling).
 
 ## 2. Drivers for the years after 2013 · P1

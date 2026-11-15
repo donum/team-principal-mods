@@ -25,7 +25,7 @@ Ratings and skills are estimates based on the 2013 results. They are not history
 [*]Pit lane time loss per track, checked against TV timing and commentary.
 [*]Pole position starts on the side seen in the 2013 TV starts.
 [*]Rain chance per track from the climate in the race month.
-[*]Moscow tyre wear raised, so the AI makes two stops there.
+[*]Tyre wear raised at Moscow, Brands Hatch and the Norisring, so most races are won on two stops.
 [/list]
 
 [h2]Changes in 0.2[/h2]
@@ -37,6 +37,7 @@ Ratings and skills are estimates based on the 2013 results. They are not history
 [h2]Known limits[/h2]
 [list]
 [*]The Q4 shootout for the top four is not in the game. Qualifying is a normal knockout.
+[*]The game can't require two pit stops. At Brands Hatch, the Norisring and Moscow some AI cars stop once or three times, most of all after a safety car.
 [*]Track outlines are today's layouts and may differ in detail.
 [/list]
 
