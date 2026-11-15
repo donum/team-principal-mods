@@ -76,6 +76,8 @@ UPLOAD_YEARS = {
     "JDtk4MRd1d0": 2018,   # "DTM Sound Pure V8 - Downshifts & Starts" (Lausitzring 2018)
     "plmbOpRMwHs": 2017,   # "The Sounds of DTM!"
     "4pue6jM-VQY": 2010,   # "Brands Hatch Round of DTM - Start"
+    "WR62Z_5KJM8": 2018,   # Misano night qualifying: the first DTM night race was Misano 2018
+    "maJ-qIGkz_o": 2018,   # "the first ever DTM Race Weekend by night": Misano 2018
 }
 # In era by year but kept out anyway (reason shown in the mod browser).
 ERA_EXCLUDE = {
