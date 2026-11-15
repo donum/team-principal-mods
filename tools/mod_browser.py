@@ -830,8 +830,10 @@ def build(season: Path | None, game: Path, pack_folder: str | None = None) -> Pa
     drivers = [{**d, "junior": junior_of.get(d["name"])} for d in drivers]
     backgrounds = build_backgrounds(pack, base, game, media)
     sounds = build_sounds(pack, base, media, private_audio | private)
-    # candidates belong to the private audio pipeline, so only packs carrying its overlay show them
-    candidates, library_page = build_candidates(media, pack, season) if private else ([], None)
+    # candidates belong to the private audio pipeline: packs carrying its overlay show them, and
+    # packs with a sound set still being made (unbuilt, e.g. dtm-2010) so its candidates can be heard
+    has_set = bool(season and layers.audio_sets(season))
+    candidates, library_page = build_candidates(media, pack, season) if private or has_set else ([], None)
     files = classify_files(pack, base, private, season)
     bc, pc = constants(base / "constants.py"), constants(pack / "constants.py")
     data = {

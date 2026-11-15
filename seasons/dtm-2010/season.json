@@ -92,5 +92,13 @@
         "tyre_wear_mult": 1.19
       }
     }
+  },
+
+  "audio": {
+    "$comment": "2010's own sound set on the era-3 base (bases/README.md, Sounds): recordings of 2010-2011 cars (Audi A4 DTM R14 Plus, Mercedes C-Class). The era-3 set (mother 2003) has no recordings, so this set sits alone on the game's own sounds. Not built yet: candidates in private/engine_audio/pilot/candidates_2010 wait to be picked by ear.",
+    "overlay": "dtm-2010",
+    "key_prefix": "dtm10",
+    "recording_years": [2010, 2011],
+    "in_pack": false
   }
 }
