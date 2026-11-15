@@ -1,0 +1,72 @@
+[h1]DTM 2013 - Deutsche Tourenwagen Masters[/h1]
+
+An unofficial season pack for Team Principal. Run a team in the 2013 DTM season with the real teams, drivers, cars and tracks.
+
+[h2]What is in the pack[/h2]
+[list]
+[*]11 teams and 22 drivers from the 2013 entry list, with their real car numbers.
+[*]Audi, BMW and Mercedes-AMG as works partners. All three use a 4.0 litre V8.
+[*]The 2013 calendar. Ten rounds at nine tracks, from Hockenheim in May to the Hockenheim finale in October.
+[*]Tracks traced from OpenStreetMap, with the 2013 routes such as the Nürburgring sprint course and the Lausitzring short course.
+[*]2013 rules. Knockout qualifying, DRS, no refuelling, two cars per team, points from 25 down to 1.
+[*]Hankook tyres. A standard tyre and an option tyre, and both must be used in a dry race.
+[*]Real team principals and technical staff.
+[*]Starting sponsors from the 2013 liveries.
+[*]Five real feeder series from 2013. FIA F3 European Championship, Porsche Carrera Cup Deutschland, ATS Formel 3 Cup, ADAC Formel Masters and the ADAC Procar series.
+[*]Drawn cars, driver portraits, team photos as dashboard backgrounds and new menu music.
+[/list]
+
+Ratings and skills are estimates based on the 2013 results. They are not history.
+
+[h2]Changes in 0.3[/h2]
+[list]
+[*]Retirements per track are fitted to the 2012 and 2013 races. About 14 in 100 starters retire, as in those seasons.
+[*]Overtaking per track is fitted to the same races.
+[*]Pit lane time loss per track, checked against TV timing and commentary.
+[*]Pole position starts on the side seen in the 2013 TV starts.
+[*]Rain chance per track from the climate in the race month.
+[*]Moscow tyre wear raised, so the AI makes two stops there.
+[/list]
+
+[h2]Changes in 0.2[/h2]
+[list]
+[*]Real team principals and technical staff.
+[*]Five more driver portraits.
+[/list]
+
+[h2]Known limits[/h2]
+[list]
+[*]The Q4 shootout for the top four is not in the game. Qualifying is a normal knockout.
+[*]Track outlines are today's layouts and may differ in detail.
+[/list]
+
+[h2]Credits[/h2]
+[b]Car images[/b] drawn by Pappydhorn12 and used with the artist's permission. All rights to these drawings stay with the artist. They are not covered by the pack's licence.
+
+[b]Team photos[/b] (dashboard backgrounds)
+[list]
+[*]Dennis de Wolde (InMotion Photos), used with permission. [url=https://www.inmotion-photos.com]inmotion-photos.com[/url]
+[*]Jörg / Spieler Family, Oschersleben start 2013, used with permission.
+[*]Mark Seymour, CC BY 2.0, via Wikimedia Commons.
+[*]Kevin McGill, CC BY-SA 2.0, via Wikimedia Commons.
+[/list]
+The permission photos keep their copyright and are not covered by the pack's licence. The photos are cropped and edited.
+
+[b]Menu background[/b] Zandvoort 2013 by Kevin McGill, CC BY-SA 2.0, edited. DTM wordmark from Wikimedia Commons (public domain text logo).
+
+[b]Driver portraits[/b] Free licence photos from Wikimedia Commons by Stefan Brending (2eight), Lutz H, Robk23oxf, Steffen Prößdorf, Pietro.br, Morio and others. Drivers without a free photo have a drawn helmet card.
+
+[b]Logos[/b] Audi, BMW, Mercedes-Benz and Hankook logos from Wikimedia Commons. Mercedes-Benz star by Khaled, CC BY-SA 4.0. The others are public domain.
+
+[b]Track maps[/b] Map data © OpenStreetMap contributors, ODbL 1.0. The scenery in the track illustrations is AI rendered. The track, kerbs, pit lane and paddock are drawn over it from OpenStreetMap data.
+
+[b]Menu music[/b] Beauty Flow, Hep Cats, Laser Groove and Voice Over Under by Kevin MacLeod (incompetech.com), CC BY 4.0.
+
+[b]Research[/b] de and en Wikipedia, the DTM fan wiki, racingyears.com, crash.net and Wikidata. Driver codes, sponsors and liveries were checked against Andy Blackmore's 2013 DTM Spotter Guide. No part of the guide is in the pack.
+
+Every photo with its author, licence and link is listed in credits.txt in the pack folder.
+
+[h2]Licence[/h2]
+Pack content CC BY-NC-SA 4.0, except the items above that are used with permission. Made by Daniel Raude.
+
+Real team, driver, manufacturer and sponsor names are used to describe history only. All trademarks belong to their owners. Not affiliated with or endorsed by the DTM, ITR, the game's publisher or any manufacturer.

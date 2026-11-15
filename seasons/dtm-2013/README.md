@@ -1,6 +1,6 @@
 # DTM 2013: Season Pack
 
-Status: **v0.2, one full season played in-game, lap times calibrated.** The data was generated
+Status: **v0.3, track values fitted to the 2012 and 2013 races. Workshop text in [workshop_description.txt](workshop_description.txt).** The data was generated
 with `tools/season_from_research.py` from `research/`, configured in
 `gen.json`. For the sourced facts behind it (calendar, entry list, standings,
 rules, sources and unverified points), see

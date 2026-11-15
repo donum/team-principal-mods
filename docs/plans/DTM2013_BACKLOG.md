@@ -149,10 +149,11 @@ simulation.
   and Priaulx have tight close-ups (bigger heads). Werner's photo is black
   and white with sunglasses. Look for better free photos of these five. · P3
 - **Moscow length:** 2.555 vs 2.661 km still open.
-- **Workshop description:** write it before the first upload. It must
-  credit the car images to Pappydhorn12 (used with permission, rights stay
-  with the artist) and list the photo, logo and map credits from
-  `credits.txt`. · P1
+- ~~**Workshop description**~~ done for v0.3:
+  [workshop_description.txt](../../seasons/dtm-2013/workshop_description.txt)
+  (Steam BBCode, credits Pappydhorn12 and the photo, logo and map credits).
+  Update its changelog with every version. Set the game's 0.99.6 version
+  tag when uploading.
 
 ## 7. Still to check in-game
 
