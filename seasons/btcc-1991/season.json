@@ -72,14 +72,7 @@
     }
   },
   "shared_tracks": {
-    "brandshatch": "dtm-era4",
-    "diepholz": "dtm-1991",
-    "wunstorf": "dtm-1991",
-    "avus": "dtm-1991",
-    "hockenheim": "dtm-1991",
-    "nuerburgring": "dtm-1991",
-    "zolder": "dtm-1991",
-    "alemannenring": "dtm-1991"
+    "brandshatch": "dtm-era4"
   },
   "track_overrides": {
     "$comment": "1991 race laps and lap lengths from the Autosport results boxes (1990sbtcc.com/as9101-as9112) and touringcars.net. Donington GP ran 20 laps in April and 15 in September; the pack uses 20.",
@@ -114,58 +107,6 @@
     "oulton": {
       "race_laps": 20,
       "length_km": 4.456
-    }
-  },
-  "track_placeholders": {
-    "$comment": "No British circuit is traced yet. Each placeholder borrows a DTM track of a similar kind (airfields for Silverstone, Snetterton and Thruxton) until it is traced with tools/osm_track.py.",
-    "silverstone_nat": {
-      "from": "diepholz",
-      "override": {
-        "name": "Silverstone National",
-        "nationality": "british"
-      }
-    },
-    "silverstone": {
-      "from": "hockenheim",
-      "override": {
-        "name": "Silverstone",
-        "nationality": "british"
-      }
-    },
-    "snetterton": {
-      "from": "wunstorf",
-      "override": {
-        "name": "Snetterton",
-        "nationality": "british"
-      }
-    },
-    "thruxton": {
-      "from": "avus",
-      "override": {
-        "name": "Thruxton",
-        "nationality": "british"
-      }
-    },
-    "donington": {
-      "from": "nuerburgring",
-      "override": {
-        "name": "Donington Park",
-        "nationality": "british"
-      }
-    },
-    "donington_nat": {
-      "from": "zolder",
-      "override": {
-        "name": "Donington Park National",
-        "nationality": "british"
-      }
-    },
-    "oulton": {
-      "from": "alemannenring",
-      "override": {
-        "name": "Oulton Park",
-        "nationality": "british"
-      }
     }
   }
 }

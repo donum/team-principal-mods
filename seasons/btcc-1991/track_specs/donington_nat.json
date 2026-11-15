@@ -1,0 +1,28 @@
+{
+  "id": "donington_nat",
+  "name": "Donington Park National",
+  "nationality": "british",
+  "race_tracks": {
+    "track": "donington-park",
+    "layout": "national@1986"
+  },
+  "bbox": [
+    -1.3889,
+    52.8244,
+    -1.3607,
+    52.8369
+  ],
+  "length_km": 3.149,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 25,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.0,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "left",
+  "drs_zones": [],
+  "notes": "National circuit without the Melbourne Loop (clockwise). Today's line (race-tracks national@1986). BTCC 1991 race laps 25 (Autosport). speed_scale 1.0 is uncalibrated."
+}

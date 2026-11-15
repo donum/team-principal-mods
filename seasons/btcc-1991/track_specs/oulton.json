@@ -1,0 +1,28 @@
+{
+  "id": "oulton",
+  "name": "Oulton Park",
+  "nationality": "british",
+  "race_tracks": {
+    "track": "oulton-park",
+    "layout": "international@1975"
+  },
+  "bbox": [
+    -2.6256,
+    53.1662,
+    -2.6065,
+    53.187
+  ],
+  "length_km": 4.456,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 20,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.0,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "left",
+  "drs_zones": [],
+  "notes": "International circuit as in 1991 without Hislop's chicane (clockwise): Old Hall, Cascades, Island, Knickerbrook, Druids, Lodge. Traced line from race-tracks (approximate, 4.29 km against the official 4.456 km). BTCC 1991 race laps 20 (Autosport). speed_scale 1.0 is uncalibrated."
+}

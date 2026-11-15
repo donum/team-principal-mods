@@ -654,7 +654,15 @@ def build(spec_path):
         nodes.update(t_nodes)
         ways.update(t_ways)
         relations += t_relations
-    if "via" in spec:
+    rt = None
+    if "race_tracks" in spec:
+        # A layout from the race-tracks repo (tools/race_tracks.py): the line
+        # the track maps draw, including layouts OSM no longer has (e.g.
+        # Silverstone GP 1991). OSM still gives the background map.
+        import race_tracks
+        rt = race_tracks.layout(spec["race_tracks"]["track"], spec["race_tracks"]["layout"])
+        loop_ll, loop_ways = [tuple(p) for p in rt["loop"]], []
+    elif "via" in spec:
         loop_ll, loop_ways = via_route(nodes, ways, spec, relations)
     elif "loop_relation" in spec:
         # Raceway loop restricted to one circuit relation's members (e.g. a
@@ -677,8 +685,12 @@ def build(spec_path):
     pit = next((w for w in ways.values() if w["tags"].get("highway") == "raceway"
                 and w["tags"].get("name") in spec.get("pit_way_names", ["Pitlane"])), None)
     pit_m = [proj.metres(*nodes[n]) for n in pit["nds"] if n in nodes] if pit else None
+    if rt and rt["pit"]:
+        pit_m = [proj.metres(*p) for p in rt["pit"]]
     # Start/finish: an explicit position, else the racing line nearest the middle of the pit lane.
-    if "start" in spec:
+    if "start" not in spec and rt:
+        anchor = proj.metres(*rt["start"])
+    elif "start" in spec:
         anchor = proj.metres(*spec["start"])
     else:
         anchor = pit_m[len(pit_m) // 2] if pit_m else loop_m[0]

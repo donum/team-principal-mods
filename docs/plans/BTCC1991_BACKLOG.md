@@ -21,7 +21,7 @@ Priority: **P1** = changes how the game plays, **P2** = more of the real
 
 | Item | What | Prio |
 |---|---|---|
-| Trace six circuits | Silverstone (National and GP, 1991 layouts), Snetterton, Thruxton, Donington Park (GP and National), Oulton Park (International) with `tools/osm_track.py`. Each is a placeholder on a DTM track now. A British base (or the BTCC base below) is the place for them. | P1 |
+| Trace six circuits | Done 2026-11-15 from the race-tracks repo's 1991 layouts (`tools/race_tracks.py`). Silverstone GP 1991, Snetterton 1990 and Oulton Park 1975 are traced lines marked approximate there. Calibrate `speed_scale` against the 1991 qualifying times. A British base is the place for them once more BTCC years follow. | P1 |
 | Brands Hatch Indy | Shared from `bases/dtm-era4`, calibrated for 2013 DTM cars. Needs a `speed_mult` for 1991 Super Touring cars. | P1 |
 
 ## 3. Calibration

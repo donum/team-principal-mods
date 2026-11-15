@@ -1,0 +1,28 @@
+{
+  "id": "donington",
+  "name": "Donington Park",
+  "nationality": "british",
+  "race_tracks": {
+    "track": "donington-park",
+    "layout": "gp@1986"
+  },
+  "bbox": [
+    -1.3889,
+    52.8242,
+    -1.3607,
+    52.8369
+  ],
+  "length_km": 4.023,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 20,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.0,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "left",
+  "drs_zones": [],
+  "notes": "Grand Prix circuit with the Melbourne Loop (clockwise): Redgate, Craner Curves, Old Hairpin, Starkey's, McLeans, Coppice, Melbourne Hairpin, Goddards. Today's line (race-tracks gp@1986). BTCC 1991 race laps 20 (Autosport). speed_scale 1.0 is uncalibrated."
+}

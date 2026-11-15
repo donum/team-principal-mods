@@ -1,0 +1,28 @@
+{
+  "id": "thruxton",
+  "name": "Thruxton",
+  "nationality": "british",
+  "race_tracks": {
+    "track": "thruxton",
+    "layout": "main@1968"
+  },
+  "bbox": [
+    -1.6136,
+    51.2019,
+    -1.5863,
+    51.2183
+  ],
+  "length_km": 3.792,
+  "width_m": 11.0,
+  "speed_scale": 1.0,
+  "race_laps": 20,
+  "dnf_modifier": 1.0,
+  "overtaking_difficulty": 0.6,
+  "pit_lane_loss_s": 20.0,
+  "tyre_wear_mult": 1.0,
+  "fuel_consumption": 1.0,
+  "wet_weather_probability_multiplier": 1.3,
+  "pole_side": "left",
+  "drs_zones": [],
+  "notes": "The circuit since 1968 (clockwise): Allard, Campbell, Cobb, Segrave, Noble, Goodwood, Village, Church, Brooklands, the Complex, Club chicane. Today's line. BTCC 1991 race laps 20 (Autosport). speed_scale 1.0 is uncalibrated."
+}

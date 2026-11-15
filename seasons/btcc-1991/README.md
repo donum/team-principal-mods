@@ -33,8 +33,10 @@ The pack folder is `btcc1991`.
 - **Calendar:** 13 meetings. Donington National (round 8) and Brands Hatch
   Indy (round 10) had two races, so each of those takes two game weeks.
 - **Tracks:** Brands Hatch Indy is our traced track from the DTM era 4 base
-  (`shared_tracks`). The other six British circuits are placeholders that
-  borrow a DTM track's geometry (`track_placeholders`) until they are traced.
+  (`shared_tracks`). The other six circuits are traced in `track_specs/` from
+  the 1991 layouts of the race-tracks repo (`tools/race_tracks.py`,
+  `tools/osm_track.py`): Silverstone National and GP 1991, Snetterton 1990,
+  Donington Park GP and National, Oulton Park International 1975, Thruxton.
 
 ## Simplifications
 
