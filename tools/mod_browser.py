@@ -382,7 +382,7 @@ def build_teams(pack, base, season, manifest, media, sources):
         # 0.99.6+ chassis naming: a pinned name for the year, else prefix + two-digit year
         chassis = (t.get("chassis_names") or {}).get(str(year)) or (
             f"{t['chassis_prefix']}{year % 100:02d}" if t.get("chassis_prefix") and year else None)
-        other = [{"number": c["number"],
+        other = [{"number": c["number"], "driver": c.get("driver"),
                   "car": media.image(season / c["file"], f"liveries/{Path(c['file']).name}")}
                  for c in liveries.get(t["name"], []) if not c["team_image"] and (season / c["file"]).exists()]
         sponsors = [{"slot": d["slot"], "name": d["name"], "seasons": d.get("seasons"),
@@ -393,6 +393,7 @@ def build_teams(pack, base, season, manifest, media, sources):
         out.append({**t, "prov": "custom", "sponsors": sponsors, "chassis_name": chassis,
                     "car": media.image(pack / "assets" / "Cars" / f"{n}.png", f"cars/{n}.png"),
                     "car_number": next((c["number"] for c in liveries.get(t["name"], []) if c["team_image"]), None),
+                    "car_driver": next((c.get("driver") for c in liveries.get(t["name"], []) if c["team_image"]), None),
                     "other_liveries": other,
                     "logo": media.image(pack / "assets" / "logos" / f"{n}.png", f"logos/{n}.png"),
                     "history_text": hist.get(t["name"]), "cloned_from": clones.get(t["name"]),

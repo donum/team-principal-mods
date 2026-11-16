@@ -17,6 +17,13 @@ written:
   "teams" sheet to their team;
 * every car to build/art/<season>/drawn_NN.png for checking.
 
+A sheet may set "transparent": true for an image that is already cut out
+(one car on a transparent background, like the BTCC 1991 cars): the car is
+cropped by its alpha instead of cut from black.
+A one-car sheet may name its "driver"; the name goes into liveries.json and the
+other-livery file name (<Team>_NN_<surname>.png), so two drivers who shared a
+number (BTCC 1991 #9, Bristow and Hahne) each keep their car.
+
 A sheet may set "shadow_max": rows of the sheet with no pixel brighter than
 this are cleared to background, for faint shadow lines drawn under the cars
 (they join the tyres to the body at ground level).
@@ -283,11 +290,35 @@ def cut_cars(path, n, edits=(), shadow_max=0):
     return cars
 
 
+def drop_faint(img):
+    """Clear every separate patch of an RGBA image whose strongest pixel is
+    below alpha 32: faint specks left by background removal, and the halo
+    the resize spreads from them. The car body and antenna are far above
+    that, so they don't show as dust in previews."""
+    alpha = np.array(img.getchannel("A"))
+    labels, n = ndimage.label(alpha > 0)
+    if n:
+        peak = ndimage.maximum(alpha, labels, range(1, n + 1))
+        alpha[np.isin(labels, np.flatnonzero(np.asarray(peak) < 32) + 1)] = 0
+        img.putalpha(Image.fromarray(alpha))
+    return img
+
+
+def cut_transparent(path):
+    """One car already cut out on a transparent background, cropped to its pixels."""
+    car = Image.open(path).convert("RGBA")
+    car = drop_faint(car)
+    box = car.getchannel("A").point(lambda a: 255 if a > 8 else 0).getbbox()
+    if box is None:
+        raise SystemExit(f"{path.name}: no car pixels")
+    return car.crop(box)
+
+
 def place(car):
     """A car crop on the game canvas, scaled to car_art.py's span, tyres on GROUND_Y."""
     scale = CAR_SPAN_PX / car.width
     w, h = CAR_SPAN_PX, round(car.height * scale)
-    small = car.resize((w, h), Image.LANCZOS)
+    small = drop_faint(car.resize((w, h), Image.LANCZOS))
     top = GROUND_Y - ground_row(small.getchannel("A"))
     if top < 0 or top + h > CANVAS[1]:
         raise SystemExit(f"car doesn't fit the canvas (top {top}, height {h})")
@@ -322,23 +353,28 @@ def main():
         old.unlink()
     liveries = {}
     for name, sheet in cfg["sheets"].items():
-        cars = cut_cars(source / name, len(sheet["cars"]), sheet.get("edits", ()), sheet.get("shadow_max", 0))
+        if sheet.get("transparent"):
+            cars = [cut_transparent(source / name)]
+        else:
+            cars = cut_cars(source / name, len(sheet["cars"]), sheet.get("edits", ()), sheet.get("shadow_max", 0))
         by_number = dict(zip(sheet["cars"], (place(c) for c in cars)))
         for number, img in by_number.items():
             img.save(all_dir / f"drawn_{number:02d}.png", optimize=True)
         teams = {sheet["team"]: sheet["cars"][0]} if "team" in sheet else sheet["teams"]
+        who = {"driver": sheet["driver"]} if sheet.get("driver") else {}
+        tag = f"_{sheet['driver'].split()[-1].lower()}" if who else ""
         for team, number in teams.items():
             path = out_dir / f"{team.replace(' ', '')}.png"
             by_number[number].save(path, optimize=True)
             written.append((f"#{number} - {team}", by_number[number]))
             print(f"wrote {path.relative_to(REPO)} (#{number} from {name})")
-            liveries.setdefault(team, []).append({"number": number, "team_image": True,
+            liveries.setdefault(team, []).append({"number": number, "team_image": True, **who,
                                                   "file": path.relative_to(season).as_posix()})
         others = {n: sheet["team"] for n in sheet["cars"] if n not in teams.values()} if "team" in sheet             else {int(n): t for n, t in sheet.get("liveries", {}).items()}
         for number, team in others.items():
-            path = liv_dir / f"{team.replace(' ', '')}_{number:02d}.png"
+            path = liv_dir / f"{team.replace(' ', '')}_{number:02d}{tag}.png"
             by_number[number].save(path, optimize=True)
-            liveries.setdefault(team, []).append({"number": number, "team_image": False,
+            liveries.setdefault(team, []).append({"number": number, "team_image": False, **who,
                                                   "file": path.relative_to(season).as_posix()})
             print(f"wrote {path.relative_to(REPO)} (#{number} from {name}, other livery)")
     with open(liv_dir / "liveries.json", "w", encoding="utf-8") as fh:

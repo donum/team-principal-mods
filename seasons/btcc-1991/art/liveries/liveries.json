@@ -1,0 +1,263 @@
+{
+ "$comment": "Every drawn car per team, team image first. Written by tools/car_drawings.py; the other liveries wait for a game feature (wishlist E4) and are not in the pack.",
+ "teams": {
+  "BMW Dealer Team Sweden": [
+   {
+    "number": 10,
+    "team_image": true,
+    "driver": "Nettan Lindgren",
+    "file": "assets/Cars/BMWDealerTeamSweden.png"
+   }
+  ],
+  "BRR Motorsport": [
+   {
+    "number": 59,
+    "team_image": true,
+    "driver": "Ian Flux",
+    "file": "assets/Cars/BRRMotorsport.png"
+   },
+   {
+    "number": 59,
+    "team_image": false,
+    "driver": "Val Musetti",
+    "file": "art/liveries/BRRMotorsport_59_musetti.png"
+   },
+   {
+    "number": 59,
+    "team_image": false,
+    "driver": "Matt Neal",
+    "file": "art/liveries/BRRMotorsport_59_neal.png"
+   }
+  ],
+  "Brodie Brittain Racing": [
+   {
+    "number": 21,
+    "team_image": true,
+    "driver": "Dave Brodie",
+    "file": "assets/Cars/BrodieBrittainRacing.png"
+   }
+  ],
+  "Drambuie + Lazerprinz": [
+   {
+    "number": 45,
+    "team_image": true,
+    "driver": "Ian Forrest",
+    "file": "assets/Cars/Drambuie+Lazerprinz.png"
+   }
+  ],
+  "Graham Goode Racing": [
+   {
+    "number": 99,
+    "team_image": true,
+    "driver": "Andy Middlehurst",
+    "file": "assets/Cars/GrahamGoodeRacing.png"
+   }
+  ],
+  "HWR Motorsport": [
+   {
+    "number": 58,
+    "team_image": true,
+    "driver": "Jeff Wilson",
+    "file": "assets/Cars/HWRMotorsport.png"
+   },
+   {
+    "number": 58,
+    "team_image": false,
+    "driver": "Tony Bardy",
+    "file": "art/liveries/HWRMotorsport_58_bardy.png"
+   }
+  ],
+  "Judge Developments + Partservice": [
+   {
+    "number": 19,
+    "team_image": true,
+    "driver": "Dennis Leech",
+    "file": "assets/Cars/JudgeDevelopments+Partservice.png"
+   }
+  ],
+  "Kaliber ICS Team Toyota": [
+   {
+    "number": 3,
+    "team_image": true,
+    "driver": "Andy Rouse",
+    "file": "assets/Cars/KaliberICSTeamToyota.png"
+   },
+   {
+    "number": 33,
+    "team_image": false,
+    "driver": "Gary Ayles",
+    "file": "art/liveries/KaliberICSTeamToyota_33_ayles.png"
+   }
+  ],
+  "Mitsubishi Motors + Firestone": [
+   {
+    "number": 88,
+    "team_image": true,
+    "driver": "Mark Hales",
+    "file": "assets/Cars/MitsubishiMotors+Firestone.png"
+   }
+  ],
+  "Mobil BMW Team": [
+   {
+    "number": 22,
+    "team_image": true,
+    "driver": "Jonathan Palmer",
+    "file": "assets/Cars/MobilBMWTeam.png"
+   },
+   {
+    "number": 44,
+    "team_image": false,
+    "driver": "Steve Soper",
+    "file": "art/liveries/MobilBMWTeam_44_soper.png"
+   },
+   {
+    "number": 44,
+    "team_image": false,
+    "driver": "Tim Sugden",
+    "file": "art/liveries/MobilBMWTeam_44_sugden.png"
+   },
+   {
+    "number": 44,
+    "team_image": false,
+    "driver": "Christian Danner",
+    "file": "art/liveries/MobilBMWTeam_44_danner.png"
+   }
+  ],
+  "Nissan Racing with Castrol": [
+   {
+    "number": 23,
+    "team_image": true,
+    "driver": "Kieth O'Dor",
+    "file": "assets/Cars/NissanRacingwithCastrol.png"
+   },
+   {
+    "number": 24,
+    "team_image": false,
+    "driver": "Julian Bailey",
+    "file": "art/liveries/NissanRacingwithCastrol_24_bailey.png"
+   }
+  ],
+  "Pyramid Motorsport": [
+   {
+    "number": 2,
+    "team_image": true,
+    "driver": "Frank Sytner",
+    "file": "assets/Cars/PyramidMotorsport.png"
+   },
+   {
+    "number": 2,
+    "team_image": false,
+    "driver": "David Leslie",
+    "file": "art/liveries/PyramidMotorsport_02_leslie.png"
+   },
+   {
+    "number": 18,
+    "team_image": false,
+    "driver": "Alastair Fenwick",
+    "file": "art/liveries/PyramidMotorsport_18_fenwick.png"
+   },
+   {
+    "number": 18,
+    "team_image": false,
+    "driver": "Godfrey Hall",
+    "file": "art/liveries/PyramidMotorsport_18_hall.png"
+   },
+   {
+    "number": 18,
+    "team_image": false,
+    "driver": "Matt Neal",
+    "file": "art/liveries/PyramidMotorsport_18_neal.png"
+   }
+  ],
+  "R&D Motorsport": [
+   {
+    "number": 13,
+    "team_image": true,
+    "driver": "Angus MacKay",
+    "file": "assets/Cars/R&DMotorsport.png"
+   },
+   {
+    "number": 13,
+    "team_image": false,
+    "driver": "Alastair Lyall",
+    "file": "art/liveries/R&DMotorsport_13_lyall.png"
+   }
+  ],
+  "Shell Team Trakstar Ford": [
+   {
+    "number": 1,
+    "team_image": true,
+    "driver": "Robb Gravett",
+    "file": "assets/Cars/ShellTeamTrakstarFord.png"
+   }
+  ],
+  "Team Labatt's": [
+   {
+    "number": 4,
+    "team_image": true,
+    "driver": "Tim Harvey",
+    "file": "assets/Cars/TeamLabatt's.png"
+   },
+   {
+    "number": 9,
+    "team_image": false,
+    "driver": "Laurence Bristow",
+    "file": "art/liveries/TeamLabatt's_09_bristow.png"
+   },
+   {
+    "number": 9,
+    "team_image": false,
+    "driver": "Armin Hahne",
+    "file": "art/liveries/TeamLabatt's_09_hahne.png"
+   }
+  ],
+  "Team Securicor + Listerine": [
+   {
+    "number": 11,
+    "team_image": true,
+    "driver": "Will Hoy",
+    "file": "assets/Cars/TeamSecuricor+Listerine.png"
+   },
+   {
+    "number": 12,
+    "team_image": false,
+    "driver": "Ray Bellm",
+    "file": "art/liveries/TeamSecuricor+Listerine_12_bellm.png"
+   }
+  ],
+  "Techspeed Midland Auto Trader": [
+   {
+    "number": 66,
+    "team_image": true,
+    "driver": "Nick Whale",
+    "file": "assets/Cars/TechspeedMidlandAutoTrader.png"
+   },
+   {
+    "number": 77,
+    "team_image": false,
+    "driver": "Nick Baird",
+    "file": "art/liveries/TechspeedMidlandAutoTrader_77_baird.png"
+   },
+   {
+    "number": 77,
+    "team_image": false,
+    "driver": "Matt Neal",
+    "file": "art/liveries/TechspeedMidlandAutoTrader_77_neal.png"
+   }
+  ],
+  "Vauxhall Dealersport": [
+   {
+    "number": 5,
+    "team_image": true,
+    "driver": "John Cleland",
+    "file": "assets/Cars/VauxhallDealersport.png"
+   },
+   {
+    "number": 6,
+    "team_image": false,
+    "driver": "Jeff Allam",
+    "file": "art/liveries/VauxhallDealersport_06_allam.png"
+   }
+  ]
+ }
+}
