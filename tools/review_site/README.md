@@ -12,6 +12,12 @@ language has its own reviews, glossary, claims, decisions and packages.
 Screenshots are shared: a screen looks the same in every language, so a German
 picture also shows a French reviewer where a text sits.
 
+Terms are shared too. The Glossary tab is one terminology base for all
+languages: each term is an English word with its meaning ("driver: the racing
+driver, never a software driver"), and each language adds its own translation,
+proposed by anyone and agreed by that language's leads. A term one team starts
+shows up for every other team, with the translations already made.
+
 Needs PHP 8.0 or newer with PDO SQLite (or MySQL) and Apache (`.htaccess`).
 Nothing to install, no build step.
 
@@ -91,8 +97,14 @@ python tools/screen_capture.py --lang de --push https://<your domain>/translatio
 The password comes from `TP_REVIEW_PASSWORD` or a prompt. A new run replaces
 the pictures of the earlier run for the same screens and language; pictures the
 team added by hand stay. Without `--push` the results stay in `build/screens/`.
-Today it covers the screens that open with just a career (46 screens, about
-900 messages in German); race weekends, negotiations and mails need more set-up.
+Today it covers the screens that open with just a career, their tabs, the
+negotiation screens behind each market, and one simulated race weekend from the
+tyre allocation to the results (76 screens, about 1,170 messages in German, about
+25 minutes; `--no-weekend` takes 8). Run it for English too (`--lang en`): the
+site shows a picture in any language on every language's messages, own language
+first, then English. Live sessions still need more set-up. Mails and news get no pictures on purpose: they are full
+sentences that read fine on their own, and the site leaves them out of "No
+screenshot yet".
 
 ## After a game update
 

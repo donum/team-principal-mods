@@ -83,10 +83,38 @@ function migrate(PDO $pdo): void {
         "login_attempts (ip $key NOT NULL, at INT NOT NULL)",
     ];
     foreach ($tables as $t) $pdo->exec("CREATE TABLE IF NOT EXISTS $t$end");
+    // The terminology base: one concept per English term, shared by all languages
+    // (with its meaning), and one translation per language with its own status.
+    $pdo->exec("CREATE TABLE IF NOT EXISTS terms (id $id, en_term $key NOT NULL, note $txt, user_id INT, updated $key)$end");
+    $pdo->exec("CREATE TABLE IF NOT EXISTS term_langs (term_id INT NOT NULL, lang $short NOT NULL, term $key,
+        status $key NOT NULL, note $txt, user_id INT, updated $key, PRIMARY KEY (term_id, lang))$end");
+    migrate_glossary($pdo);
     // Columns added after the first version: a package is sent when a lead says so.
     add_column($pdo, 'batches', 'sent_at', $key);
     add_column($pdo, 'batches', 'sent_by', 'INT');
     add_column($pdo, 'batches', 'sent_note', $txt);
+}
+
+/** Move the first version's per-language glossary into the shared terms, once. */
+function migrate_glossary(PDO $pdo): void {
+    if ((int)$pdo->query('SELECT COUNT(*) FROM terms')->fetchColumn() > 0) return;
+    $old = $pdo->query('SELECT lang, en_term, de_term, note, status, user_id, updated FROM glossary ORDER BY id')->fetchAll();
+    if (!$old) return;
+    $ids = [];
+    foreach ($old as $g) {
+        $k = mb_strtolower(trim($g['en_term']));
+        if (!isset($ids[$k])) {
+            $st = $pdo->prepare('INSERT INTO terms (en_term, note, user_id, updated) VALUES (?, ?, ?, ?)');
+            $st->execute([trim($g['en_term']), '', $g['user_id'], $g['updated']]);
+            $ids[$k] = (int)$pdo->lastInsertId();
+        }
+        $st = $pdo->prepare('SELECT 1 FROM term_langs WHERE term_id = ? AND lang = ?');
+        $st->execute([$ids[$k], $g['lang']]);
+        if (!$st->fetch()) {
+            $pdo->prepare('INSERT INTO term_langs (term_id, lang, term, status, note, user_id, updated) VALUES (?, ?, ?, ?, ?, ?, ?)')
+                ->execute([$ids[$k], $g['lang'], $g['de_term'], $g['status'], $g['note'], $g['user_id'], $g['updated']]);
+        }
+    }
 }
 
 function add_column(PDO $pdo, string $table, string $col, string $type): void {

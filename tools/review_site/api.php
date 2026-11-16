@@ -124,7 +124,24 @@ if ($a === 'state') {
     $decisions = q('SELECT msg_key, status, text, review_id, note, base_de, base_en, decided_by, updated, batch_id FROM decisions WHERE lang = ?', [$L])->fetchAll();
     $batches = q('SELECT id, name, created, created_by, item_count, sent_at, sent_by, sent_note FROM batches WHERE lang = ? ORDER BY id DESC', [$L])->fetchAll();
     $claims = q('SELECT area, user_id, claimed_at FROM claims WHERE lang = ?', [$L])->fetchAll();
-    $glossary = q('SELECT id, en_term, de_term, note, status, user_id, updated FROM glossary WHERE lang = ? ORDER BY en_term', [$L])->fetchAll();
+    // The terminology base: every concept with its translation in each language.
+    $terms = [];
+    foreach (q('SELECT id, en_term, note, user_id, updated FROM terms ORDER BY en_term')->fetchAll() as $t) {
+        $t['id'] = (int)$t['id']; $t['user_id'] = (int)$t['user_id']; $t['langs'] = (object)[];
+        $terms[$t['id']] = $t;
+    }
+    foreach (q('SELECT term_id, lang, term, status, note, user_id, updated FROM term_langs')->fetchAll() as $r) {
+        if (!isset($terms[(int)$r['term_id']])) continue;
+        $terms[(int)$r['term_id']]['langs']->{$r['lang']} = ['term' => (string)$r['term'], 'status' => $r['status'],
+            'note' => (string)$r['note'], 'user_id' => (int)$r['user_id'], 'updated' => $r['updated']];
+    }
+    // The current language's entries in the first version's shape, which the message cards use.
+    $glossary = [];
+    foreach ($terms as $t) {
+        $r = $t['langs']->{$L} ?? null;
+        if ($r) $glossary[] = ['id' => $t['id'], 'en_term' => $t['en_term'], 'de_term' => $r['term'], 'note' => $r['note'] ?: $t['note'],
+            'status' => $r['status'], 'user_id' => $r['user_id'], 'updated' => $r['updated']];
+    }
     // Screenshots of every language: a screen looks the same in all of them, so another
     // language's picture still shows where a text sits.
     $shots = q('SELECT id, lang, width, height, area, screen, caption, user_id, created FROM shots ORDER BY id')->fetchAll();
@@ -146,7 +163,8 @@ if ($a === 'state') {
         'decisions' => $ints($decisions, ['review_id', 'decided_by', 'batch_id']),
         'batches' => $ints($batches, ['id', 'created_by', 'item_count', 'sent_by']),
         'claims' => $ints($claims, ['user_id']),
-        'glossary' => $ints($glossary, ['id', 'user_id']),
+        'glossary' => $glossary,
+        'terms' => array_values($terms),
         'shots' => $ints($shots, ['id', 'width', 'height', 'user_id']),
         'shot_links' => $ints($links, ['shot_id', 'user_id']),
         'releases' => $ints($releases, ['is_current', 'messages']),
@@ -291,24 +309,61 @@ switch ($a) {
         out(['ok' => true]);
     }
     case 'glossary': {
+        // One concept per English term for all languages; this language's translation beside it.
         $id = (int)($in['id'] ?? 0);
-        $en = $s('en_term', 200); $de = $s('de_term', 200); $note = $s('note', 2000);
+        $en = $s('en_term', 200); $meaning = $s('meaning', 2000);
+        $term = $s('de_term', 200); $note = $s('note', 2000);
+        $keep = !empty($in['keep_english']);
         $status = ($in['status'] ?? 'proposed') === 'agreed' ? 'agreed' : 'proposed';
         if ($status === 'agreed') $need_lead();
         if ($en === '') fail('Write the English term.');
-        if ($id) {
-            $g = q('SELECT user_id, status FROM glossary WHERE id = ? AND lang = ?', [$id, $L])->fetch();
-            if (!$g) fail('That entry is gone.');
-            if (!$lead && ((int)$g['user_id'] !== $me['id'] || $g['status'] === 'agreed')) fail('Only a lead can change this entry.', 403);
-            q('UPDATE glossary SET en_term = ?, de_term = ?, note = ?, status = ?, updated = ? WHERE id = ?', [$en, $de, $note, $status, now(), $id]);
-        } else {
-            q('INSERT INTO glossary (lang, en_term, de_term, note, status, user_id, updated) VALUES (?, ?, ?, ?, ?, ?, ?)', [$L, $en, $de, $note, $status, $me['id'], now()]);
+        $concept = $id ? q('SELECT * FROM terms WHERE id = ?', [$id])->fetch() : null;
+        if (!$concept) {     // the same English term is the same concept, whoever started it
+            foreach (q('SELECT * FROM terms')->fetchAll() as $c)
+                if (mb_strtolower(trim($c['en_term'])) === mb_strtolower($en)) { $concept = $c; break; }
         }
-        out(['ok' => true]);
+        if ($concept) {
+            $cid = (int)$concept['id'];
+            // Joining a term by its English word keeps the term as it is (only an empty meaning
+            // gets filled); changing the word or the meaning needs an explicit edit (an id).
+            if (!$id) {
+                $en = $concept['en_term'];
+                if ((string)$concept['note'] !== '' || $meaning === '') unset($in['meaning']);
+            }
+            $changes_concept = $en !== $concept['en_term'] || (array_key_exists('meaning', $in) && $meaning !== (string)$concept['note']);
+            if ($changes_concept) {
+                if (!is_lead($me) && (int)$concept['user_id'] !== $me['id']) fail('Only a lead can change the English term or its meaning.', 403);
+                q('UPDATE terms SET en_term = ?, note = ?, updated = ? WHERE id = ?',
+                    [$en, array_key_exists('meaning', $in) ? $meaning : $concept['note'], now(), $cid]);
+            }
+        } else {
+            q('INSERT INTO terms (en_term, note, user_id, updated) VALUES (?, ?, ?, ?)', [$en, $meaning, $me['id'], now()]);
+            $cid = (int)db()->lastInsertId();
+        }
+        if ($term !== '' || $keep) {
+            $row = q('SELECT user_id, status FROM term_langs WHERE term_id = ? AND lang = ?', [$cid, $L])->fetch();
+            if ($row) {
+                if (!$lead && ((int)$row['user_id'] !== $me['id'] || $row['status'] === 'agreed')) fail('Only a lead can change this entry.', 403);
+                q('UPDATE term_langs SET term = ?, status = ?, note = ?, updated = ? WHERE term_id = ? AND lang = ?',
+                    [$keep ? '' : $term, $status, $note, now(), $cid, $L]);
+            } else {
+                q('INSERT INTO term_langs (term_id, lang, term, status, note, user_id, updated) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                    [$cid, $L, $keep ? '' : $term, $status, $note, $me['id'], now()]);
+            }
+        }
+        out(['ok' => true, 'id' => $cid]);
     }
     case 'unglossary': {
-        $g = q('SELECT user_id, status FROM glossary WHERE id = ?', [(int)($in['id'] ?? 0)])->fetch();
-        if ($g && ($lead || ((int)$g['user_id'] === $me['id'] && $g['status'] !== 'agreed'))) q('DELETE FROM glossary WHERE id = ?', [(int)$in['id']]);
+        // Removes this language's translation; the concept goes too when no language uses it any more.
+        $cid = (int)($in['id'] ?? 0);
+        $row = q('SELECT user_id, status FROM term_langs WHERE term_id = ? AND lang = ?', [$cid, $L])->fetch();
+        if ($row) {
+            if (!$lead && ((int)$row['user_id'] !== $me['id'] || $row['status'] === 'agreed')) fail('Only a lead can remove this entry.', 403);
+            q('DELETE FROM term_langs WHERE term_id = ? AND lang = ?', [$cid, $L]);
+        }
+        $c = q('SELECT user_id FROM terms WHERE id = ?', [$cid])->fetch();
+        $left = (int)q('SELECT COUNT(*) FROM term_langs WHERE term_id = ?', [$cid])->fetchColumn();
+        if ($c && !$left && (is_lead($me) || (int)$c['user_id'] === $me['id'])) q('DELETE FROM terms WHERE id = ?', [$cid]);
         out(['ok' => true]);
     }
     case 'decide': {
@@ -398,7 +453,12 @@ switch ($a) {
     case 'shot_link': {
         $sid = (int)($in['shot_id'] ?? 0);
         if (!q('SELECT 1 FROM shots WHERE id = ?', [$sid])->fetch()) fail('That screenshot is gone.');
-        $key = $s('key', 255); $msg($key);
+        // Keys are the same in every language, so a picture in any language (English
+        // too, which has no review of its own) can be linked to a message.
+        $key = $s('key', 255);
+        $known = false;
+        foreach (loaded_langs() as $l) if (isset(current_texts($l)[$key])) { $known = true; break; }
+        if (!$known) fail('This message is not in the current game file.');
         $r = $rect();
         q('DELETE FROM shot_links WHERE shot_id = ? AND msg_key = ?', [$sid, $key]);
         q('INSERT INTO shot_links (shot_id, msg_key, x, y, w, h, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)', [$sid, $key, $r['x'], $r['y'], $r['w'], $r['h'], $me['id']]);

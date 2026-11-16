@@ -36,7 +36,8 @@ function shotsHtml(r) {
       <span class="msg">${sh.screen ? `<b>${esc(sh.screen)}</b> · ` : ""}${esc(langName(sh.lang))} screenshot${sh.lang !== S.lang ? " (other language)" : ""}${(sh.caption || "").startsWith("auto:") ? ", taken automatically" : ""}</span></button>`;
   }).join("");
   return `<div class="shots">${tiles}
-    <div class="act"><button class="btn small" data-act="shot-add">${links.length ? "Add another screenshot" : "Add screenshot"}</button>
+    <div class="act">${!links.length && isMail(r) ? `<span class="msg">Mail or news text: no screenshot needed.</span>` : ""}
+    <button class="btn small" data-act="shot-add">${links.length ? "Add another screenshot" : "Add screenshot"}</button>
     ${links.length > 3 ? `<span class="msg">${links.length - 3} more</span>` : ""}</div></div>`;
 }
 

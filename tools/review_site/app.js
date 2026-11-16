@@ -98,7 +98,7 @@ const STATUS = {
   "sent": "Sent to the developers",
   "rejected": "Rejected suggestions",
   "glossary": "Breaks an agreed glossary term",
-  "noshot": "No screenshot yet",
+  "noshot": "No screenshot yet (not mails or news)",
   "shot": "Has a screenshot",
 };
 const SORTS = { flagged: "Flagged first", suggestions: "Most suggestions first", key: "By key" };
@@ -153,6 +153,9 @@ function msgState(r) {
   return revs.length ? "reviewed" : "none";
 }
 
+/** Mails and news: full sentences that read fine without a picture, so no screenshot is asked for. */
+const isMail = r => r.key.startsWith("mail.") || P[r.places[0]][0].endsWith("Mailbox and news");
+
 function matches(r) {
   if (st.keys && !st.keys.has(r.key)) return false;
   if (st.area && !r.places.some(i => P[i][0] === st.area && (!st.screen || P[i][1] === st.screen))) return false;
@@ -163,7 +166,7 @@ function matches(r) {
       case "mine-open": if (revs.some(v => v.user_id === me().id)) return false; break;
       case "none": if (revs.length) return false; break;
       case "glossary": if (!glossaryHits(r).some(h => !h.ok)) return false; break;
-      case "noshot": if (IDX.links.has(r.key)) return false; break;
+      case "noshot": if (IDX.links.has(r.key) || isMail(r)) return false; break;
       case "shot": if (!IDX.links.has(r.key)) return false; break;
       default: if (s !== st.status) return false;
     }
@@ -457,53 +460,106 @@ function showKeys(keys, label) {
 
 // --- Glossary view ----------------------------------------------------------------------------
 
+function termRegex(en) {
+  return new RegExp("(^|[^A-Za-z])" + en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "($|[^A-Za-z])", "i");
+}
+
 function viewGlossary(v) {
-  const agreed = S.glossary.filter(g => g.status === "agreed"), proposed = S.glossary.filter(g => g.status !== "agreed");
-  const breaks = g => { const e = IDX.glossary.find(x => x.id === g.id); if (!e) return [];
-    return ROWS.filter(r => e.re.test(r.en) && e.de_term && !(IDX.decisions.get(r.key)?.status === "approved" ? IDX.decisions.get(r.key).text : r.de).toLowerCase().includes(e.de_term.toLowerCase())).map(r => r.key); };
-  const rowHtml = g => {
-    const b = g.status === "agreed" ? breaks(g) : [];
-    const canEdit = isLead() || (g.user_id === me().id && g.status !== "agreed");
-    return `<tr><td><b>${esc(g.en_term)}</b></td><td>${g.de_term ? esc(g.de_term) : "<em>keep the English word</em>"}</td><td>${esc(g.note || "")}<div class="msg">${esc(uname(g.user_id))}, ${when(g.updated)}</div></td>
-      <td class="num">${g.status === "agreed" ? (b.length ? `<button class="linkish" data-act="gl-show" data-id="${g.id}">${fmt(b.length)}</button>` : "0") : ""}</td>
-      <td><div class="act">${isLead() && g.status !== "agreed" ? `<button class="btn small" data-act="gl-agree" data-id="${g.id}">Agree</button>` : ""}
-      ${canEdit ? `<button class="btn small" data-act="gl-edit" data-id="${g.id}">Edit</button><button class="btn small" data-act="gl-del" data-id="${g.id}">Delete</button>` : ""}</div></td></tr>`;
+  const L = S.lang, Lname = langName(L);
+  const terms = (S.terms || []).map(t => ({ ...t, mine: t.langs[L] || null, re: termRegex(t.en_term) }));
+  const uses = t => { if (t._uses === undefined) t._uses = ROWS.filter(r => t.re.test(r.en)).length; return t._uses; };
+  const textOf = r => (IDX.decisions.get(r.key)?.status === "approved" ? IDX.decisions.get(r.key).text : r.de).toLowerCase();
+  const breaks = t => t.mine && t.mine.status === "agreed" && t.mine.term
+    ? ROWS.filter(r => t.re.test(r.en) && !textOf(r).includes(t.mine.term.toLowerCase())).map(r => r.key) : [];
+  const filter = st.glFilter || "all";
+  const shown = terms.filter(t => filter === "all" || (filter === "missing" && !t.mine) || (filter === "proposed" && t.mine && t.mine.status !== "agreed"));
+  const counts = { all: terms.length, missing: terms.filter(t => !t.mine).length, proposed: terms.filter(t => t.mine && t.mine.status !== "agreed").length };
+  const others = t => Object.entries(t.langs).filter(([l]) => l !== L).map(([l, x]) =>
+    `<span class="chip ${x.status === "agreed" ? "good" : ""}" title="${esc(langName(l))}${x.note ? ": " + esc(x.note) : ""}">${esc(l)}: ${x.term ? esc(x.term) : "<em>English kept</em>"}</span>`).join(" ");
+  const rowHtml = t => {
+    const m = t.mine, b = breaks(t);
+    const canEdit = m && (isLead() || (m.user_id === me().id && m.status !== "agreed"));
+    const mineHtml = m
+      ? `${m.term ? `<b>${esc(m.term)}</b>` : "<em>keep the English word</em>"} <span class="chip ${m.status === "agreed" ? "good" : "warn"}">${m.status === "agreed" ? "agreed" : "proposed"}</span>
+         ${m.note ? `<div class="msg">${esc(m.note)}</div>` : ""}<div class="msg">${esc(uname(m.user_id))}, ${when(m.updated)}</div>`
+      : `<span class="chip warn">no ${esc(Lname)} term yet</span>`;
+    return `<tr>
+      <td><b>${esc(t.en_term)}</b>${t.note ? `<div class="msg">${esc(t.note)}</div>` : ""}</td>
+      <td>${mineHtml}</td>
+      <td>${others(t) || '<span class="msg">no other language yet</span>'}</td>
+      <td class="num"><button class="linkish" data-act="gl-uses" data-id="${t.id}">${fmt(uses(t))}</button>${b.length ? `<div><button class="linkish" data-act="gl-show" data-id="${t.id}" style="color:var(--bad)">${fmt(b.length)} break it</button></div>` : ""}</td>
+      <td><div class="act">
+        ${!m ? `<button class="btn small primary" data-act="gl-edit" data-id="${t.id}">Add ${esc(Lname)}</button>` : ""}
+        ${m && isLead() && m.status !== "agreed" ? `<button class="btn small" data-act="gl-agree" data-id="${t.id}">Agree</button>` : ""}
+        ${canEdit || (!m && isLead()) ? `<button class="btn small" data-act="gl-edit" data-id="${t.id}">Edit</button>` : ""}
+        ${canEdit ? `<button class="btn small" data-act="gl-del" data-id="${t.id}">Remove ${esc(L)}</button>` : ""}
+      </div></td></tr>`;
   };
-  const table = (rows, empty) => rows.length ? `<div class="tbl"><table><thead><tr><th>English</th><th>German</th><th>Note</th><th class="num">Breaks</th><th></th></tr></thead><tbody>${rows.map(rowHtml).join("")}</tbody></table></div>` : `<div class="empty">${empty}</div>`;
   const words = new Map();
   for (const r of ROWS) for (const f of r.flags) if (f.startsWith("leftover:")) for (const w of f.slice(9).split(",")) { const k = w.toLowerCase(); if (!words.has(k)) words.set(k, []); words.get(k).push(r.key); }
   const wl = [...words.entries()].sort((a, b) => b[1].length - a[1].length).slice(0, 150);
   st.wordList = wl;
+  const editing = st.glEdit ? terms.find(t => t.id === st.glEdit) : null;
   v.innerHTML = `
-    <div class="box"><h2>${st.glEdit ? "Change the entry" : "Propose a term"}</h2>
-      <p class="sub">One English term and the German word the whole translation uses for it. Leave German empty when the English word stays (like Qualifying). ${isLead() ? "As a lead you can agree it right away." : "A lead agrees it."}</p>
-      <form id="glform" class="row">
-        <input type="text" id="gl-en" placeholder="English, for example laps" required maxlength="200" aria-label="English term">
-        <input type="text" id="gl-de" placeholder="German, for example Runden" maxlength="200" aria-label="German term">
-        <input type="text" id="gl-note" placeholder="Note (optional)" maxlength="2000" style="flex:1 1 220px" aria-label="Note">
-        ${isLead() ? `<label class="row"><input type="checkbox" id="gl-agreed"> agreed</label>` : ""}
-        <button class="btn primary" type="submit">${st.glEdit ? "Save" : "Add"}</button>
-        ${st.glEdit ? `<button class="btn" type="button" data-act="gl-cancel">Cancel</button>` : ""}
+    <div class="box"><h2>${editing ? `${editing.mine ? "Change" : "Add the " + esc(Lname)} term for "${esc(editing.en_term)}"` : "Add a term"}</h2>
+      <p class="sub">A term is one English word or phrase with its <b>meaning</b>, shared by every language, and one translation per language.
+      A term another team started shows up here too, so all languages use the same list. ${isLead() ? "As a lead you can agree your language's term right away." : "A lead of your language agrees it."}</p>
+      <form id="glform" class="form" style="max-width:820px">
+        <div class="row">
+          <input type="text" id="gl-en" placeholder="English, for example driver" required maxlength="200" aria-label="English term" style="flex:1 1 200px">
+          <input type="text" id="gl-meaning" placeholder="Meaning, for all languages: the racing driver, never a software driver" maxlength="2000" aria-label="Meaning" style="flex:3 1 320px">
+        </div>
+        <div class="row">
+          <input type="text" id="gl-de" placeholder="${esc(Lname)}, for example ${L === "de" ? "Fahrer" : "…"}" maxlength="200" aria-label="${esc(Lname)} term" style="flex:1 1 200px">
+          <label class="row"><input type="checkbox" id="gl-keep"> keep the English word</label>
+          <input type="text" id="gl-note" placeholder="Note for ${esc(Lname)} (optional)" maxlength="2000" aria-label="Note" style="flex:2 1 220px">
+          ${isLead() ? `<label class="row"><input type="checkbox" id="gl-agreed"> agreed</label>` : ""}
+        </div>
+        <div class="act"><button class="btn primary" type="submit">Save</button>
+        ${editing ? `<button class="btn" type="button" data-act="gl-cancel">Cancel</button>` : ""}</div>
       </form></div>
-    <h2>Agreed terms</h2>${table(agreed, "No agreed terms yet. Start with the most common ones in the list below.")}
-    <h2 style="margin-top:18px">Proposed terms</h2>${table(proposed, "No proposals waiting.")}
+    <div class="row" style="justify-content:space-between;margin-bottom:8px">
+      <h2 style="margin:0">Terms in all languages</h2>
+      <div class="act">${[["all", "All"], ["missing", `No ${Lname} term yet`], ["proposed", "Proposed"]].map(([k, l]) =>
+        `<button class="btn small ${filter === k ? "on" : ""}" data-act="gl-filter" data-f="${k}">${esc(l)} (${counts[k]})</button>`).join("")}</div>
+    </div>
+    ${shown.length ? `<div class="tbl"><table><thead><tr><th>English and meaning</th><th>${esc(Lname)}</th><th>Other languages</th><th class="num">Messages</th><th></th></tr></thead>
+      <tbody>${shown.map(rowHtml).join("")}</tbody></table></div>`
+      : `<div class="empty">${terms.length ? "No term in this list." : "No terms yet. Start with the most common ones in the lists below."}</div>`}
     <div class="grid2" style="margin-top:18px">
-      <div><h2>Same term, several translations</h2><p class="sub">Short English terms the German file translates in more than one way. Click a variant to see its messages.</p>
-      <div class="tbl"><table><thead><tr><th>English</th><th>German variants (messages)</th><th></th></tr></thead><tbody>${D.terms.map((t, ti) => `<tr><td><b>${esc(t.en)}</b></td>
+      <div><h2>Same term, several translations</h2><p class="sub">Short English terms the ${esc(Lname)} file translates in more than one way. Click a variant to see its messages.</p>
+      <div class="tbl"><table><thead><tr><th>English</th><th>${esc(Lname)} variants (messages)</th><th></th></tr></thead><tbody>${D.terms.map((t, ti) => `<tr><td><b>${esc(t.en)}</b></td>
         <td>${t.variants.map((x, vi) => `<button class="linkish" data-act="term-show" data-t="${ti}" data-v="${vi}">${esc(x[0])}</button> <span class="msg">(${x[1].length})</span>`).join(" · ")}</td>
         <td><button class="btn small" data-act="term-add" data-t="${ti}">Make a term</button></td></tr>`).join("")}</tbody></table></div></div>
-      <div><h2>English words kept</h2><p class="sub">English words that also appear in the German text. Some are fine (Grand Prix), others are leftovers.</p>
+      <div><h2>English words kept</h2><p class="sub">English words that also appear in the ${esc(Lname)} text. Some are fine (Grand Prix), others are leftovers.</p>
       <div class="tbl"><table><thead><tr><th>Word</th><th class="num">Messages</th><th></th></tr></thead><tbody>${wl.map(([w, ks], i) => `<tr><td><button class="linkish" data-act="word-show" data-i="${i}">${esc(w)}</button></td><td class="num">${ks.length}</td>
         <td><button class="btn small" data-act="word-add" data-i="${i}">Make a term</button></td></tr>`).join("")}</tbody></table></div></div>
     </div>`;
-  if (st.glEdit) { const g = S.glossary.find(x => x.id === st.glEdit); if (g) { $("#gl-en").value = g.en_term; $("#gl-de").value = g.de_term || ""; $("#gl-note").value = g.note || ""; if ($("#gl-agreed")) $("#gl-agreed").checked = g.status === "agreed"; } }
-  if (st.glPrefill) { $("#gl-en").value = st.glPrefill.en; $("#gl-de").value = st.glPrefill.de || ""; st.glPrefill = null; $("#gl-de").focus(); }
+  if (editing) {
+    $("#gl-en").value = editing.en_term; $("#gl-meaning").value = editing.note || "";
+    if (editing.mine) {
+      $("#gl-de").value = editing.mine.term || ""; $("#gl-keep").checked = !editing.mine.term; $("#gl-note").value = editing.mine.note || "";
+      if ($("#gl-agreed")) $("#gl-agreed").checked = editing.mine.status === "agreed";
+    }
+    (editing.mine ? $("#gl-de") : $("#gl-de")).focus();
+  }
+  if (st.glPrefill) {
+    $("#gl-en").value = st.glPrefill.en; $("#gl-de").value = st.glPrefill.de || "";
+    const known = terms.find(t => t.en_term.toLowerCase() === st.glPrefill.en.toLowerCase());
+    if (known) $("#gl-meaning").value = known.note || "";
+    st.glPrefill = null; $("#gl-de").focus();
+  }
   $("#glform").addEventListener("submit", async e => {
     e.preventDefault();
+    const term = $("#gl-de").value.trim(), keep = $("#gl-keep").checked;
+    const body = { id: st.glEdit || 0, en_term: $("#gl-en").value, meaning: $("#gl-meaning").value, de_term: keep ? "" : term,
+      keep_english: keep ? 1 : 0, note: $("#gl-note").value,
+      status: $("#gl-agreed")?.checked ? "agreed" : "proposed" };
     try {
-      await api("glossary", { id: st.glEdit || 0, en_term: $("#gl-en").value, de_term: $("#gl-de").value, note: $("#gl-note").value,
-        status: $("#gl-agreed")?.checked ? "agreed" : (st.glEdit ? S.glossary.find(x => x.id === st.glEdit)?.status : "proposed") });
-      st.glEdit = null; toast("Saved"); await refresh(true);
+      await api("glossary", body);
+      st.glEdit = null;
+      toast(term || keep ? "Saved" : `Saved the English term. Add the ${Lname} word when you know it.`);
+      await refresh(true);
     } catch (err) { toast(err.message, true); }
   });
 }
@@ -714,8 +770,12 @@ document.addEventListener("click", async e => {
     case "unclaim": return run(() => api("claim", { area: t.dataset.k, release: 1 }), "Released");
     case "area-show": st.area = t.dataset.a; st.screen = t.dataset.s; st.openArea = st.area; st.keys = null; st.keysLabel = ""; st.page = 0; setView("messages"); return;
     case "area-toggle": st.areasOpen = st.areasOpen || new Set(); st.areasOpen.has(t.dataset.a) ? st.areasOpen.delete(t.dataset.a) : st.areasOpen.add(t.dataset.a); renderView(); return;
-    case "gl-agree": { const g = S.glossary.find(x => x.id === Number(t.dataset.id)); return run(() => api("glossary", { ...g, status: "agreed" }), "Agreed"); }
-    case "gl-edit": st.glEdit = Number(t.dataset.id); renderView(); $("#gl-en").focus(); return;
+    case "gl-agree": { const tm = S.terms.find(x => x.id === Number(t.dataset.id)), m = tm.langs[S.lang];
+      return run(() => api("glossary", { id: tm.id, en_term: tm.en_term, de_term: m.term, keep_english: m.term ? 0 : 1, note: m.note, status: "agreed" }), "Agreed"); }
+    case "gl-filter": st.glFilter = t.dataset.f; renderView(); return;
+    case "gl-uses": { const tm = S.terms.find(x => x.id === Number(t.dataset.id)), re = termRegex(tm.en_term);
+      return showKeys(ROWS.filter(r => re.test(r.en)).map(r => r.key), `Messages with "${tm.en_term}"`); }
+    case "gl-edit": st.glEdit = Number(t.dataset.id); renderView(); window.scrollTo(0, 0); return;
     case "gl-cancel": st.glEdit = null; renderView(); return;
     case "gl-del": return run(() => api("unglossary", { id: Number(t.dataset.id) }), "Deleted");
     case "gl-show": { const g = S.glossary.find(x => x.id === Number(t.dataset.id)); const e2 = IDX.glossary.find(x => x.id === g.id);
