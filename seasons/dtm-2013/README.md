@@ -286,6 +286,10 @@ brackets).
 - **Sponsors:** make-wide partners (Puma, Sonax, Würth, Petronas...) ran on
   every car of a make; here each is on one team (E12). Sponsor money is the
   vanilla deals' and not real (E6).
+- **Series logo** is drawn into the menu photo, as a pack can't add its
+  own logo. The game cuts the photo to fit the window, so the "DTM 2013"
+  wordmark sits lower than it would on a real poster, to stay visible
+  from 16:10 to 21:9 windows (E21).
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
 - **Pit crews** (game 0.99.6): team-mates share one crew, so a car that
   arrives while its team-mate is being serviced waits. We keep that on: later

@@ -15,6 +15,7 @@ Status: `draft` (not posted yet), `posted` (with date and link), `answered`.
 | [Weekend images per team](weekend-images-per-team.md) | E19 | draft |
 | [Ambience per track and drive-by pools](ambience-per-track.md) | E9, E11 | posted |
 | [Dashboard images in random order](dashboard-random-order.md) | E20 | draft |
+| [Responsive images, safe areas and a pack logo](responsive-images.md) | E21, E5 | draft |
 | [Ten more ideas for immersion](immersion-ideas.md) | none yet | ideas |
 
 All mock-ups in one gallery: https://claude.ai/artifact/6cjkA3ucBe1gM5gB3WPemN (private).

@@ -10,7 +10,8 @@ venues. Part of the [feature packages](README.md).
   [E11](../DEVELOPER_WISHLIST.md#e11-a-full-field-crossing-the-line--p3),
   [E12](../DEVELOPER_WISHLIST.md#e12-a-sponsor-on-several-teams--p3),
   [E14](../DEVELOPER_WISHLIST.md#e14-pit-entry-sound--p3),
-  [E15](../DEVELOPER_WISHLIST.md#e15-car-and-portrait-in-session-screens--p3).
+  [E15](../DEVELOPER_WISHLIST.md#e15-car-and-portrait-in-session-screens--p3),
+  [E21](../DEVELOPER_WISHLIST.md#e21-backgrounds-that-fit-any-window-and-a-pack-logo--p2).
 - **Modes:** all three.
 - **Status:** outline.
 

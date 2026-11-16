@@ -19,8 +19,8 @@
         "logo": {
           "file": "art/title_logo.png",
           "width": 560,
-          "right": 110,
-          "top": 80
+          "right": 170,
+          "top": 230
         },
         "in_pack": true
       },

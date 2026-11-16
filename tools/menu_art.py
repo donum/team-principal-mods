@@ -6,6 +6,11 @@ so the photo is placed against the right edge: it fills the full height and
 the strip left over on the left (under the menu) is a blurred mirror of the
 photo's edge. That keeps every car in the photo in the frame.
 
+The game scales the image to fill the window and keeps the middle, so a
+wider window loses the top and bottom (2.4:1 cuts 187 px of 1440) and a
+narrower one the sides (16:10 cuts 128 px of 2560). Keep a logo at least
+230 px from the top and 170 px from the right (the defaults).
+
 Config: <season>/art/menu.json. Several photos can be kept; "use" picks the
 one that is built.
     {"title_bg": {"use": "<name>",
@@ -15,7 +20,7 @@ one that is built.
                       "crop": [x0, y0, x1, y1],      # fractions of the photo
                       "grade": "cinematic" | null,   # contrast, light on the right
                       "logo_shade": true,            # darken behind the game logo
-                      "logo": {"file": "art/<png>", "width": 560, "right": 110, "top": 80},
+                      "logo": {"file": "art/<png>", "width": 560, "right": 170, "top": 230},
                                                      # optional overlay, top right
                       "in_pack": true,               # free licence: ship it in the pack
                       "rights": "...", "page": "...", "caption": "..."}}}}
@@ -132,7 +137,7 @@ def render(spec: dict, folder: Path, season: Path | None = None) -> Image.Image:
     if spec.get("logo") and season is not None:
         lg = spec["logo"]
         img = overlay_logo(img, Image.open(season / lg["file"]).convert("RGBA"),
-                           lg.get("width", 560), lg.get("right", 110), lg.get("top", 80))
+                           lg.get("width", 560), lg.get("right", 170), lg.get("top", 230))
     return img
 
 
