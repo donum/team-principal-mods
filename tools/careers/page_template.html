@@ -61,6 +61,8 @@ ul.checks li { font-size: .86rem; }
 .src { display: grid; gap: 4px; }
 .src p { margin: 0; max-width: 80ch; }
 .muted { color: var(--muted); }
+details.card summary { cursor: pointer; }
+details.card:not([open]) { padding-block: 10px; }
 @media (max-width: 600px) { h1 { font-size: 1.7rem; } nav a { padding: 6px 8px; font-size: .95rem; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
@@ -166,9 +168,21 @@ function packs() {
   const active = p.drivers.filter(r => r[1] !== "retired"), retired = p.drivers.filter(r => r[1] === "retired");
   const table = (rows, team) => `<div class="box"><table><thead><tr><th class="l">Driver</th>${team ? '<th class="l">Team</th>' : ""}<th>Seasons</th><th>Titles</th><th>Wins</th><th>Podiums</th><th>Poles</th><th>Starts</th><th>Points</th></tr></thead>
     <tbody>${rows.map(r => `<tr><td class="l">${esc(r[0])}</td>${team ? `<td class="l">${esc(r[1])}</td>` : ""}${r.slice(2).map(v => `<td class="num">${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  const teams = p.teams || [];
+  const teamTable = teams.length ? `<h2>Teams (${teams.length})</h2>
+    <p class="note">The <code>history</code> block of each team in <code>teams.json</code>: every race before ${p.year} run by an entry of the team's line in <code>docs/drivers/team_lineage.csv</code>. Starts count races, not cars. Titles are teams' championships (from 2000).</p>
+    <div class="box"><table><thead><tr><th class="l">Team</th><th>Seasons</th><th>Titles</th><th>Wins</th><th>Podiums</th><th>Poles</th><th>Starts</th><th>Points</th></tr></thead>
+    <tbody>${teams.map(t => `<tr><td class="l">${esc(t.name)}</td>${t.history.map(v => `<td class="num">${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+    <h2>Team lines</h2>
+    <p class="note">Which entries each team takes. The pattern is matched against "linked articles | en.wikipedia entrant | fandom entrant". Open a team to see every entry counted, year by year.</p>
+    ${teams.map(t => `<details class="card"><summary><b>${esc(t.name)}</b> <span class="muted">${t.lines.length ? t.lines.map(l => `${l[0]} to ${l[1]}`).join(", ") + ` · ${t.years.length} seasons with entries` : "no line: starts at zero"}</span></summary>
+      ${t.lines.map(l => `<p class="note">${esc(l[3])}</p><p class="note"><code>${esc(l[2])}</code></p>`).join("")}
+      ${t.years.length ? `<div class="box"><table><thead><tr><th class="l">Season</th><th class="l">Entry</th><th class="l">Drivers</th></tr></thead><tbody>${t.years.map(([y, es]) => es.map(([e, ds], k) => `<tr><td class="l">${k ? "" : y}</td><td class="l">${esc(e)}</td><td class="l">${esc(ds.join(", "))}</td></tr>`).join("")).join("")}</tbody></table></div>` : ""}
+    </details>`).join("")}` : "";
   $("#view").innerHTML = `<div style="display:grid;gap:12px">
     <div class="bar"><label for="ps" class="muted">Pack</label><select id="ps">${D.packs.map(x => `<option value="${x.id}"${x.id === id ? " selected" : ""}>${x.id}</option>`).join("")}</select>
-    <span class="note">The <code>history</code> block the game reads for each driver: every DTM and ITC race before ${p.year}.</span></div>
+    <span class="note">The <code>history</code> block the game reads for each driver and team: every DTM and ITC race before ${p.year}.</span></div>
+    ${teamTable}
     <h2>On the grid and in reserve (${active.length})</h2>${table(active.sort((a, b) => b[7] - a[7] || a[0].localeCompare(b[0])), true)}
     <h2>Retired winners and champions (${retired.length})</h2>
     <p class="note">Added with <code>retired: true</code>, so the game's all-time statistics start with the real record holders, the way the F1 Workshop packs do it.</p>
@@ -185,6 +199,12 @@ function sources() {
       <p><b>de.wikipedia</b>: pole sitter and winner of every race. Gives the poles for 1984 to 1993 and 1995, and checks the winners.</p>
       <p class="muted">Not counted: qualifying races (2001, 2002), non-championship rounds (Brno and Donington 1991, Donington 1993, the ITR Gold Cups 1994, Shanghai 2004, Munich 2011 and 2012, Fuji 2019) and the annulled AVUS heat 2 in 1995. They stay in the grid in grey.</p>
       <p class="muted">Seasons count when a driver started at least one race. Points are the season totals of each year's own scoring system, added up.</p></div>
+    <div class="card src"><h2>Teams</h2>
+      <p><b>en.wikipedia</b>, the "Teams and drivers" table of each season from 1987: the team cell links the operator's article, so a sponsor name still says who ran the car, and the rounds column covers drivers who changed team.</p>
+      <p><b>dtm.fandom.com (de)</b>, the "Starterfeld" of each season page: the entrant name for 1984 to 1986 and the gaps, and the name that splits the two Abt teams, which en.wikipedia files together.</p>
+      <p class="muted">A team's line is hand-written in <code>docs/drivers/team_lineage.csv</code>. For 2013: the same owner counts across makes, and both HWA teams carry HWA's full record, including the AMG works team before 1999.</p>
+      <h2>Teams' champions</h2>
+      <div class="box"><table><thead><tr><th class="l">Season</th><th class="l">Team</th><th class="l">Operator article</th></tr></thead><tbody>${(D.team_champions || []).map(c => `<tr><td class="l">${c[0]}</td><td class="l">${esc(c[1])}</td><td class="l muted">${esc(c[2])}</td></tr>`).join("")}</tbody></table></div></div>
     <div class="card"><h2>Where the sources disagree</h2><ul class="checks">${D.checks.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>
   </div>`;
 }

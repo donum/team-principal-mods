@@ -561,6 +561,27 @@ def show(args):
         print(n, h.get(names.canon(n)))
 
 
+def pack_teams(pack, lineage, entries):
+    """Teams of a pack for the page: history from teams.json, the lineage rows and the entries counted."""
+    path = pack / "data" / "teams.json"
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    recs = data["records"] if isinstance(data, dict) else data
+    rows = [r for r in lineage if r["pack"] == pack.name]
+    year = pack_year(pack)
+    out = []
+    for r in recs:
+        mine = [x for x in rows if x["team"] == r["name"]]
+        h = r.get("history") or {}
+        counted = teams.counted_entries(teams.lineage_rules(rows, pack.name, r["name"]), year, entries) if mine else {}
+        out.append({"name": r["name"], "history": [h.get(k, 0) for k in ("seasons", "championships", "wins", "podiums",
+                                                                         "poles", "starts", "points")],
+                    "lines": [[x["from"], x["to"], x["pattern"], x["note"]] for x in mine],
+                    "years": [[y, [[e, d] for e, d in sorted(counted[y].items())]] for y in sorted(counted)]})
+    return out if rows else []
+
+
 def page(args):
     """Write the database page (tools/careers/page_template.html + data) to args.out."""
     races = read_csv(OUT / "dtm_races.csv")
@@ -604,6 +625,8 @@ def page(args):
         D["seasons"][y] = {"cols": [list(c) for c in cols], "rows": trs,
                            "source": rows[0]["source"]}
     D["packs"] = []
+    lineage = read_csv(OUT / "team_lineage.csv")
+    team_entries = read_csv(OUT / "dtm_team_entries.csv")
     for f in sorted(REPO.glob("seasons/*/data/drivers.json")):
         pk = f.parent.parent
         if not pk.name.startswith(("dtm-", "itc-")):
@@ -619,7 +642,8 @@ def page(args):
                         h.get("championships", 0), h.get("wins", 0), h.get("podiums", 0), h.get("poles", 0),
                         h.get("starts", 0), h.get("points", 0)])
         D["packs"].append({"id": pk.name, "year": pack_year(pk), "drivers": out,
-                           "total": len(recs)})
+                           "total": len(recs), "teams": pack_teams(pk, lineage, team_entries)})
+    D["team_champions"] = [[c["season"], c["entrant"], c["articles"]] for c in read_csv(OUT / "dtm_team_champions.csv")]
     checks = (OUT / "CHECKS.md").read_text(encoding="utf-8").split("\n")
     D["checks"] = [c[2:] for c in checks if c.startswith("- ")]
     D["counts"] = {"races": len(races), "driver_seasons": len(seasons), "drivers": len(drivers),

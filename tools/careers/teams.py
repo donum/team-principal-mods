@@ -350,5 +350,15 @@ def team_history(rules, year, entries, races, driver_seasons, champions):
     return h
 
 
-def dumps_entries(rows):
-    return json.dumps(rows, ensure_ascii=False)
+def counted_entries(rules, year, entries):
+    """{season: {entrant shown: [drivers]}} of the entries a team's line takes before `year`."""
+    out = collections.defaultdict(lambda: collections.defaultdict(list))
+    for e in entries:
+        y = int(e["season"])
+        if y < year and belongs(rules, y, e["articles"].split(";") if e["articles"] else [], e["entrant"],
+                                e.get("fandom_entrant", "")):
+            name = e.get("fandom_entrant") or e["entrant"]
+            if e["articles"] and e["entrant"] != name:
+                name += f" ({e['entrant']})"
+            out[y][name].append(e["driver"])
+    return out

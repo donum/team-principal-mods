@@ -9,8 +9,11 @@ pack's season.
 - **Page:** the private artifact "DTM Driver Database"
   (https://claude.ai/artifact/6yik2XS5df4K2MYhpiaDK7). It has the drivers,
   every season as a results grid, the history each pack gets and the source
-  checks. Rebuild it with `python -I tools/driver_careers.py page <file>.html`
-  and republish it to the same URL.
+  checks, and per pack the team history with each team's line and every
+  entry counted. Offline copy: [dtm_driver_database.html](dtm_driver_database.html)
+  (one file, opens in any browser without internet; only the fonts need it).
+  Rebuild with `python -I tools/driver_careers.py page docs/drivers/dtm_driver_database.html`
+  and republish that file to the same URL.
 
 ## Files
 
