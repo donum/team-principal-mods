@@ -56,3 +56,30 @@ Uses in the game:
   2013 and 2016 car sponsors, the 2019 BMW team split, the 2020 WRT cars.
 
 When you add facts, keep the source URL in each row and update this list.
+
+## BTCC
+
+The same files for the BTCC, with the prefix `btcc_`:
+
+| File | Notes |
+|---|---|
+| `btcc_team_changes.csv` | 1992 to 2000, same columns as the DTM file |
+| `btcc_game_events.csv` | Read by `tools/real_history.py`; keys of the 1991 teams in `seasons/btcc-1991/gen.json` |
+| `btcc_sponsors.csv` | 1991 only. Extra columns `source_industry`, `country` (from the sources) and `game_industry`, `game_nationality` (the game's lists) |
+| `btcc_driver_backing.csv` | Same columns as the DTM file |
+
+Status (2026-11-16):
+
+- Joins and leaves of every 1991 team and every works team to 2000. A team
+  that changed make is a leave plus a join under a new key (wishlist C12).
+  Two names were changed by us so they stay unique: BMW Team Motorsport
+  (1995) and Honda Team WSR (1999).
+- Colours of the joining teams are mostly from memory, five are
+  placeholders. Unclear: who ran BMW (1995) and Toyota (1995), Renault
+  Dealer Racing's operating company, the link between Team DCRS (1997) and
+  Dave Cook. Several exit years only come from Wikipedia.
+- Sponsors: Castrol (Nissan), Firestone (Mitsubishi), Lazerprinz and
+  Partservice could not be found for 1991. BMW Team Finance and Mobil 1 on
+  the Prodrive cars are weak.
+- No 1992 seat was announced before the 1991 finale (6 Oct 1991); the first
+  was Will Hoy to Toyota on 4 Dec 1991.

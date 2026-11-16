@@ -1,4 +1,8 @@
-"""Fill the empty staff roles in docs/staff/dtm_staff.csv with period names.
+"""Fill the empty staff roles in docs/staff/<series>_staff.csv with period names.
+
+Series: dtm (DTM and ITC seasons, dtm_staff.csv) and btcc (btcc_staff.csv).
+Each series has its own real and fictional file; the seasons and their teams
+come from docs/staff/teams_by_season.json.
 
 Two kinds of filled rows:
 - A manufacturer-level role (designer, engine, aero, dynamics) that another
@@ -23,8 +27,19 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-STAFF = ROOT / "docs/staff/dtm_staff.csv"
-FICT = ROOT / "docs/staff/dtm_staff_fictional.csv"
+SERIES = {"dtm": ("dtm", "itc"), "btcc": ("btcc",)}  # file prefix -> season prefixes
+
+
+def staff_files(series):
+    return ROOT / f"docs/staff/{series}_staff.csv", ROOT / f"docs/staff/{series}_staff_fictional.csv"
+
+
+def series_of(season):
+    return next(k for k, v in SERIES.items() if season.split("-")[0] in v)
+
+
+# Teams of one operator share the jobs above the chief mechanic (one workshop).
+OPERATORS = {"btcc-1991": {"Team Securicor + Listerine": "Vic Lee Racing", "Team Labatt's": "Vic Lee Racing"}}
 ROLES = ["team_principal", "technical_director", "chief_designer", "head_of_aero",
          "head_of_engine", "head_of_dynamics", "chief_mechanic"]
 MAKE_ROLES = {"chief_designer", "head_of_engine", "head_of_aero", "head_of_dynamics"}
@@ -96,6 +111,24 @@ NAMES = {
                  ["Mike", "Chris", "Jason", "Brian", "Kevin", "Scott"],
                  ["Miller", "Davis", "Wilson", "Anderson", "Taylor", "Moore", "Jackson", "Thompson"]),
 }
+# Wider lists for the BTCC, where nearly every team is British. DTM keeps
+# NAMES so its made-up people do not change.
+SERIES_NAMES = {"btcc": {
+    "british": (["Alan", "Barry", "Brian", "Clive", "Colin", "Derek", "Dennis", "Douglas", "Gordon", "Graham",
+                 "Ian", "John", "Keith", "Ken", "Malcolm", "Martin", "Neil", "Nigel", "Norman", "Peter",
+                 "Ray", "Roger", "Ron", "Stuart", "Terry", "Tony", "Trevor", "Bernard", "Geoff", "Phil"],
+                ["Andrew", "Chris", "Darren", "Gary", "Jason", "Lee", "Mark", "Matt", "Neil", "Paul",
+                 "Richard", "Rob", "Russell", "Scott", "Simon", "Steve", "Stuart", "Wayne", "Dean", "Craig"],
+                ["Ainsworth", "Ashby", "Bradshaw", "Brennan", "Butcher", "Catchpole", "Cotterill", "Dawson",
+                 "Dobson", "Eastwood", "Fairbrother", "Fenton", "Gilbert", "Goddard", "Hargreaves", "Holloway",
+                 "Hopkins", "Jarvis", "Kemp", "Lamb", "Lockwood", "Marsden", "Mather", "Metcalfe", "Newbold",
+                 "Oakley", "Pickering", "Pritchard", "Radford", "Rowlands", "Sadler", "Simmonds", "Stokes",
+                 "Thornton", "Tranter", "Venables", "Wainwright", "Whitlock", "Woodward", "Yates"]),
+    "scottish": (["Alastair", "Angus", "Douglas", "Hamish", "Iain", "Ian", "Kenneth", "Robert"],
+                 ["Calum", "Craig", "Euan", "Fraser", "Grant", "Ross", "Scott", "Stuart"],
+                 ["Buchanan", "Cameron", "Ferguson", "Fraser", "Gillespie", "MacLeod", "McIntyre", "Ross",
+                  "Sinclair", "Urquhart"]),
+}}
 CODE = {"GER": "german", "D": "german", "AUT": "austrian", "A": "austrian", "SUI": "swiss", "CH": "swiss",
         "ITA": "italian", "I": "italian", "GBR": "british", "GB": "british", "UK": "british", "BEL": "belgian",
         "B": "belgian", "NED": "dutch", "NL": "dutch", "FRA": "french", "F": "french", "SWE": "swedish",
@@ -159,7 +192,22 @@ def make_of(team):
 
 def main():
     tb = json.load(open(ROOT / "docs/staff/teams_by_season.json", encoding="utf-8"))
-    rows = list(csv.DictReader(open(STAFF, encoding="utf-8")))
+    for series in SERIES:
+        seasons = {k: v for k, v in tb.items() if series_of(k) == series}
+        if seasons:
+            fill(series, seasons)
+
+
+def fill(series, tb):
+    STAFF, FICT = staff_files(series)
+    names = {**NAMES, **SERIES_NAMES.get(series, {})}
+    fields = ["season", "team", "role", "person", "status", "source", "note"]
+    if STAFF.exists():
+        reader = csv.DictReader(open(STAFF, encoding="utf-8"))
+        rows = list(reader)
+        fields = reader.fieldnames  # keeps extra columns such as "born"
+    else:
+        rows = []
     rows = [r for r in rows if not r["note"].startswith("Same manufacturer-level role as ")]  # rerun-safe
     real_names = {r["person"] for r in rows}
     filled = {(r["season"], r["team"], r["role"]) for r in rows}
@@ -172,7 +220,8 @@ def main():
         year = int(season.split("-")[1])
         used = used_per_season.setdefault(season, set())
         for team in tb[season]:
-            make = make_of(team)
+            make = make_of(team) if series == "dtm" else None
+            operator = OPERATORS.get(season, {}).get(team)
             for role in ROLES:
                 if (season, team, role) in filled:
                     continue
@@ -188,11 +237,14 @@ def main():
                         continue
                 # 2. fictional person, kept for a few seasons
                 nat = nationality(season, team, nations)
+                nat = nat if nat in names else "british"
                 key = make if (role in MAKE_ROLES and make and year >= 1990) else team
+                if operator and role != "chief_mechanic":
+                    key = operator
                 block = year // TENURE[role]
                 pk = (key, role, block)
                 if pk not in people:
-                    first_old, first_new, last = NAMES[nat]
+                    first_old, first_new, last = names[nat]
                     lo, hi = AGE[role]
                     born = year - (lo + h(*pk, "age") % (hi - lo + 1))
                     firsts = first_old if born < 1960 else first_new
@@ -206,19 +258,22 @@ def main():
                 fict.append(dict(season=season, team=team, role=role, person=name, status="fictional",
                                  nationality=nat, born=born,
                                  note=("Shared by the " + make + " teams. " if key == make else "") +
+                                      ("Shared by the " + operator + " teams. " if key == operator else "") +
                                       "Made-up name for an empty role; not a real person."))
 
     with open(STAFF, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["season", "team", "role", "person", "status", "source", "note"])
+        w = csv.DictWriter(f, fieldnames=fields, restval="")
         w.writeheader()
         allrows = rows + added_assumed
-        allrows.sort(key=lambda r: (int(r["season"].split("-")[1]), r["team"], ROLES.index(r["role"]), r["person"]))
+        # Stable sort: within one role the file's order is kept, so the first
+        # person listed is the one a pack uses.
+        allrows.sort(key=lambda r: (int(r["season"].split("-")[1]), r["team"], ROLES.index(r["role"])))
         w.writerows(allrows)
     with open(FICT, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["season", "team", "role", "person", "status", "nationality", "born", "note"])
         w.writeheader()
         w.writerows(fict)
-    print(f"assumed copies added: {len(added_assumed)}, fictional rows: {len(fict)}, "
+    print(f"{series}: assumed copies added: {len(added_assumed)}, fictional rows: {len(fict)}, "
           f"fictional people: {len(set((p[0]) for p in people.values()))}")
 
 

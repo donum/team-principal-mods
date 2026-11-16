@@ -13,6 +13,22 @@ from here and let the generator fill the rest.
   empty role with a made-up name that fits the team's country and the
   period (3,237 rows, 1,451 people). Built by `tools/fictional_staff.py`.
 
+## BTCC
+
+The same layout for the BTCC: [btcc_staff.csv](btcc_staff.csv) (real
+people, with an extra `born` column) and
+[btcc_staff_fictional.csv](btcc_staff_fictional.csv). `fictional_staff.py`
+fills both series in one run.
+
+- **btcc-1991 (2026-11-16):** 25 real rows (15 verified, 10 assumed) for 14 of
+  18 teams, mostly from Motor Sport magazine's 1991 issues. Nothing found
+  for BMW Dealer Team Sweden, Techspeed, BRR and R&D Motorsport. The two Vic
+  Lee teams share their made-up staff (one workshop). János Ódor's birth
+  year is our estimate.
+- **Open:** the Autosport scans on 1990sbtcc.com (`/as9101/` to `/as9112/`)
+  are images and were not read; they likely name more engineers and team
+  managers.
+
 ## Real and fictional names
 
 The two files are kept apart on purpose. `dtm_staff.csv` holds only real

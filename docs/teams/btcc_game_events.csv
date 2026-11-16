@@ -1,0 +1,83 @@
+year,event,key,make,name,entry_count,performance,nationality,color,secondary,history,detail
+1992,team_leave,VicLee-2,BMW,,,,,,,,Team Labatt's last raced 1991. Vic Lee runs one team in 1992.
+1992,team_leave,GrahamGoode,Ford,,,,,,,,Last raced 1991. Andy Middlehurst moves to Nissan.
+1992,team_leave,Trakstar,Ford,,,,,,,,Last raced 1991. Robb Gravett joins works Peugeot.
+1992,team_leave,Pyramid,BMW,,,,,,,,Last raced 1991.
+1992,team_leave,Sweden,BMW,,,,,,,,Last raced 1991. Peggen Andersson made two 1993 starts with her own team.
+1992,team_leave,Mitsubishi,Mitsubishi,,,,,,,,Last raced 1991 (John Maguire Racing for Mark Hales).
+1992,team_leave,BRR,BMW,,,,,,,,Last raced 1991.
+1992,team_leave,RD,BMW,,,,,,,,Last raced 1991.
+1992,team_leave,HWR,Vauxhall,,,,,,,,Last raced 1991.
+1992,team_leave,Brodie,Ford,,,,,,,,Last raced 1991.
+1992,engine_supplier_leave,Mitsubishi,Mitsubishi,,,,,,,,No Mitsubishi from 1992.
+1992,engine_supplier_join,Peugeot,Peugeot,Peugeot 2.0 16V,,,french,,,,Works Peugeot arrives (one privateer 405 raced in 1991). Engine name is ours (simple make and size).
+1992,engine_supplier_join,Mazda,Mazda,Mazda 2.0 V6,,,japanese,,,,Mazda arrives with the 323F. Engine name is ours (simple make and size).
+1992,team_join,RML-Ecosse,Vauxhall,Ecurie Ecosse Vauxhall,2,upper_midfield,british,0 40 104,255 255 255,Ray Mallock Ltd runs Vauxhall Cavaliers under the Scottish Ecurie Ecosse name. The team joins in 1992 with David Leslie. It runs the works Vauxhalls from 1994.,Colours unverified (Ecurie Ecosse blue assumed).
+1992,team_join,Peugeot-Works,Peugeot,Peugeot Talbot Sport,1,lower_midfield,british,255 255 255,0 51 153,Peugeot Talbot Sport is the works Peugeot team from Coventry. It joins in 1992 with a 405 Mi16 for Robb Gravett.,Colours unverified.
+1992,team_join,Mazda-RD,Mazda,Shell Mazda Racing Team,1,lower_midfield,british,255 213 0,221 29 33,Roger Dowson Engineering runs the works Mazda. The team joins in 1992 with a 323F for Patrick Watts. Shell is the main sponsor.,Shell yellow/red assumed from sponsor; unverified.
+1992,team_join,ParkLane,Toyota,Park Lane Racing,1,lower_midfield,british,255 255 255,200 16 46,Park Lane Racing is an independent Toyota team. It joins in 1992 with a Carina for James Kaye.,Colours unknown (placeholder).
+1992,team_join,TeamDynamics,BMW,Rimstock Racing,1,backmarker,british,255 255 255,0 0 0,Rimstock Racing is the family team of Steve and Matt Neal from the West Midlands. It joins in 1992 with a BMW M3. It becomes Team Dynamics in 1993.,Colours unknown (placeholder).
+1993,team_leave,VicLee-1,BMW,,,,,,,,Last raced 1992. Vic Lee Motorsport liquidated; assets to Team Dynamics.
+1993,team_leave,Prodrive,BMW,,,,,,,,Last raced 1992. BMW GB withdrew.
+1993,team_leave,Rouse,Toyota,,,,,,,,Last raced 1992 with Toyota. Rouse moves to Ford (see Rouse-Ford).
+1993,team_leave,Judge,Ford,,,,,,,,Last raced 1992.
+1993,team_leave,Techspeed,BMW,,,,,,,,Last raced 1992.
+1993,team_leave,Drambuie,BMW,,,,,,,,Last raced 1992 as Ian Forrest Racing.
+1993,engine_supplier_join,Renault,Renault,Renault 2.0 16V,,,french,,,,Renault arrives. Engine name is ours (simple make and size).
+1993,team_join,Schnitzer-BMW,BMW,BMW Motorsport Team,2,front_runner,german,255 255 255,0 102 204,Schnitzer Motorsport is the BMW works team from Freilassing in Germany. It joins in 1993 after BMW leaves the DTM. Steve Soper and Joachim Winkelhock drive.,White with BMW Motorsport stripes assumed; unverified.
+1993,team_join,TOMs-Toyota,Toyota,Team Securicor Toyota,2,midfield,british,0 40 120,255 255 255,"TOM's GB is the European arm of the Japanese tuner TOM's, based in Norfolk. It takes over the works Toyota in 1993. Will Hoy and Julian Bailey drive the new Carina E.",Securicor colours unverified.
+1993,team_join,Rouse-Ford,Ford,Team Mondeo,2,midfield,british,255 255 255,0 51 153,Andy Rouse Engineering builds and runs the works Ford Mondeo. The team joins in the middle of 1993. Andy Rouse and Paul Radisich drive.,Colours unverified.
+1993,team_join,Renault-Dealer,Renault,Renault Dealer Racing,2,midfield,french,255 204 0,255 255 255,"Renault Dealer Racing is the works Renault team, backed by the British dealers. It joins in 1993 with the Renault 19. Tim Harvey and Alain Menu drive.",Colours and operating company unverified; nationality could be british.
+1994,team_leave,DaveCook,Vauxhall,,,,,,,,Last raced 1993. Works Vauxhall goes to RML (RML-Ecosse key).
+1994,engine_supplier_join,Volvo,Volvo,Volvo 2.0 5-cylinder,,,swedish,,,,Volvo arrives. Engine name is ours (simple make and size).
+1994,engine_supplier_join,Alfa Romeo,Alfa Romeo,Alfa Romeo 2.0 TS,,,italian,,,,Alfa Romeo arrives. Engine name is ours (simple make and size).
+1994,team_join,TWR-Volvo,Volvo,Volvo 850 Racing,2,lower_midfield,british,255 255 255,0 51 153,Tom Walkinshaw Racing builds and runs the Volvo team from Oxfordshire. It joins in 1994 with the Volvo 850 estate. Jan Lammers and Rickard Rydell drive.,Announced Oct 1993. Colours unverified.
+1994,team_join,AlfaCorse,Alfa Romeo,Alfa Corse,2,front_runner,italian,200 16 46,255 255 255,Alfa Corse is the Italian works racing team of Alfa Romeo. It joins in 1994 with the 155 TS. Gabriele Tarquini and Giampiero Simoni drive.,Tarquini champion 1994.
+1995,team_leave,Mazda-RD,Mazda,,,,,,,,Last raced 1994 (withdrew mid-season).
+1995,team_leave,Janspeed,Nissan,,,,,,,,Last raced 1994.
+1995,team_leave,Renault-Dealer,Renault,,,,,,,,Last raced 1994. Williams takes over Renault.
+1995,team_leave,AlfaCorse,Alfa Romeo,,,,,,,,Last raced 1994. Prodrive takes over Alfa.
+1995,team_leave,Schnitzer-BMW,BMW,,,,,,,,Last raced 1994. Returns 1996.
+1995,engine_supplier_leave,Mazda,Mazda,,,,,,,,No Mazda from 1995.
+1995,engine_supplier_join,Honda,Honda,Honda 2.0 VTEC,,,japanese,,,,Honda arrives. Engine name is ours (simple make and size).
+1995,team_join,Williams-Renault,Renault,Williams Renault Dealer Racing,2,front_runner,british,255 204 0,0 40 100,Williams Touring Car Engineering is a company of the Williams Formula One team. The deal with Renault UK is signed in September 1994. It runs the Renault Laguna from 1995.,Colours unverified.
+1995,team_join,Prodrive-Alfa,Alfa Romeo,Alfa Romeo Old Spice Racing,2,midfield,british,200 16 46,255 255 255,Prodrive is a British team from Banbury. It returns in 1995 to run the works Alfa Romeo 155. Derek Warwick and Giampiero Simoni drive.,Colours unverified.
+1995,team_join,BMW-Motorsport,BMW,BMW Team Motorsport,2,midfield,german,255 255 255,0 102 204,BMW runs its own team in 1995 after Schnitzer leaves. Johnny Cecotto and David Brabham drive the 320i.,Operator unclear; colours unverified. Name changed by us: the 1993 Schnitzer team already uses BMW Motorsport Team.
+1995,team_join,MSD-Honda,Honda,Honda Team MSD,2,lower_midfield,british,255 255 255,200 16 46,Motor Sport Developments is a British team. It joins in 1995 to run the works Honda Accord. David Leslie and James Kaye drive.,Colours unverified.
+1996,team_leave,TOMs-Toyota,Toyota,,,,,,,,Last raced 1995. Toyota GB withdrew.
+1996,team_leave,Prodrive-Alfa,Alfa Romeo,,,,,,,,Last raced 1995. Alfa Romeo withdrew.
+1996,team_leave,Rouse-Ford,Ford,,,,,,,,Last raced 1995 with Ford. Rouse moves to Nissan.
+1996,team_leave,BMW-Motorsport,BMW,,,,,,,,Last raced 1995. Schnitzer returns.
+1996,engine_supplier_leave,Alfa Romeo,Alfa Romeo,,,,,,,,No Alfa Romeo from 1996.
+1996,engine_supplier_join,Audi,Audi,Audi 2.0 5V,,,german,,,,Audi arrives. Engine name is ours (simple make and size).
+1996,team_join,AudiSportUK,Audi,Audi Sport UK,2,front_runner,british,192 192 192,200 16 46,Audi Sport UK is formed by Richard Lloyd and David Ingram with Audi UK. It joins in 1996 with the four wheel drive A4 quattro. Frank Biela and John Bintcliffe drive.,Biela champion 1996. Colours unverified.
+1996,team_join,WSR-Ford,Ford,Valvoline Team Mondeo,2,lower_midfield,british,0 51 160,255 255 255,West Surrey Racing is a British team led by Dick Bennetts. It takes over the works Ford Mondeo in 1996. Reynard builds the cars.,Valvoline colours assumed; unverified.
+1996,team_join,Rouse-Nissan,Nissan,Rouse Sport,2,lower_midfield,british,255 255 255,200 16 46,Andy Rouse Engineering is the team of the four time champion. It runs Nissan Primeras in 1996 after losing the Ford contract.,Colours unknown (placeholder).
+1996,team_join,Schnitzer-BMW-2,BMW,BMW Team Schnitzer,2,upper_midfield,german,255 255 255,0 102 204,Schnitzer Motorsport from Freilassing comes back to run the works BMWs in 1996. Joachim Winkelhock and Roberto Ravaglia drive.,Return of the 1993-94 team; 3rd car late in year.
+1996,team_join,Brookes,Toyota,Team Brookes,1,lower_midfield,british,255 255 255,0 0 0,Brookes Motorsport is the independent team of Lee Brookes. It joins in 1996 with an ex-works Toyota Carina.,Won 1996 independents cup. Colours unknown (placeholder).
+1997,team_leave,Schnitzer-BMW-2,BMW,,,,,,,,Last raced 1996. Last BMW works season.
+1997,team_leave,Rouse-Nissan,Nissan,,,,,,,,Last raced 1996. Andy Rouse team gone.
+1997,team_leave,RML-Ecosse,Vauxhall,,,,,,,,Last raced 1996 with Vauxhall. RML moves to Nissan (RML-Nissan).
+1997,team_leave,MSD-Honda,Honda,,,,,,,,Last raced 1996 with Honda. MSD moves to Peugeot.
+1997,team_leave,Peugeot-Works,Peugeot,,,,,,,,Last raced 1996 as in-house team. MSD runs Peugeot.
+1997,engine_supplier_leave,Toyota,Toyota,,,,,,,,No Toyota in 1997.
+1997,team_join,TripleEight-Vauxhall,Vauxhall,Vauxhall Sport,2,midfield,british,255 255 255,200 16 46,"Triple Eight Race Engineering is founded in late 1996 by Derek Warwick, Roland Dane and Ian Harrison. It runs the works Vauxhall Vectra from 1997.",Colours unverified.
+1997,team_join,RML-Nissan,Nissan,Vodafone Nissan Racing,2,upper_midfield,british,255 255 255,230 0 0,Ray Mallock Ltd moves from Vauxhall to Nissan. It joins in 1997 with the Primera. David Leslie and Anthony Reid drive.,Vodafone red/white assumed.
+1997,team_join,Prodrive-Honda,Honda,Team Honda Sport,2,midfield,british,255 255 255,200 16 46,Prodrive from Banbury takes over the works Honda Accord in 1997. James Thompson and Gabriele Tarquini drive.,Colours unverified.
+1997,team_join,MSD-Peugeot,Peugeot,Esso Ultron Team Peugeot,2,midfield,british,255 255 255,200 16 46,Motor Sport Developments moves from Honda to Peugeot in 1997. It runs the Peugeot 406 for Tim Harvey and Patrick Watts.,Colours unverified.
+1997,team_join,DCRS,BMW,Team DCRS,1,backmarker,british,255 255 255,0 0 0,Dave Cook Racing Services comes back in 1997. It runs an old BMW 318i for Colin Gallie.,Colours unknown. Link with 1998-99 DC Cook Motorsport assumed.
+1998,engine_supplier_leave,BMW,BMW,,,,,,,,No BMW from 1998.
+1999,team_leave,MSD-Peugeot,Peugeot,,,,,,,,Last raced 1998. Peugeot withdrew.
+1999,team_leave,AudiSportUK,Audi,,,,,,,,Last raced 1998. Audi withdrew.
+1999,team_leave,WSR-Ford,Ford,,,,,,,,Last raced 1998 with Ford. WSR moves to Honda.
+1999,team_leave,Prodrive-Honda,Honda,,,,,,,,Last raced 1998 with Honda. Prodrive moves to Ford.
+1999,engine_supplier_leave,Peugeot,Peugeot,,,,,,,,No Peugeot in 1999-2000.
+1999,engine_supplier_leave,Audi,Audi,,,,,,,,No Audi from 1999.
+1999,team_join,Prodrive-Ford,Ford,Ford Team Mondeo,2,upper_midfield,british,255 255 255,0 51 153,Prodrive from Banbury takes over the works Ford Mondeo in 1999 on a two year deal. Anthony Reid and Alain Menu drive.,Colours unverified.
+1999,team_join,WSR-Honda,Honda,Honda Team WSR,2,upper_midfield,british,255 255 255,200 16 46,West Surrey Racing swaps Ford for Honda in 1999. James Thompson and Peter Kox drive the Accord.,Colours unverified. Name changed by us: the 1997 Prodrive team already uses Team Honda Sport.
+2000,team_leave,Williams-Renault,Renault,,,,,,,,Last raced 1999. Announced 14 July 1999.
+2000,team_leave,TWR-Volvo,Volvo,,,,,,,,Last raced 1999. Announced about August 1999.
+2000,team_leave,RML-Nissan,Nissan,,,,,,,,Last raced 1999. Announced 28 September 1999.
+2000,team_leave,DCRS,BMW,,,,,,,,Last raced 1999 (DC Cook Motorsport withdrew mid-season). Ran a Honda in 1999; the game keeps the team on BMW.
+2000,engine_supplier_leave,Renault,Renault,,,,,,,,No Renault in 2000.
+2000,engine_supplier_leave,Volvo,Volvo,,,,,,,,No Volvo in 2000.

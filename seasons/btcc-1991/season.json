@@ -69,7 +69,8 @@
       "HWR Motorsport": 4,
       "Drambuie + Lazerprinz": 4,
       "Brodie Brittain Racing": 4
-    }
+    },
+    "reference": "btcc-1991"
   },
   "shared_tracks": {
     "brandshatch": "dtm-era4"
@@ -117,5 +118,106 @@
       "speed_mult": 1.067
     },
     "$speed_comment": "speed_mult = earlier factor x simulated / real lap time, averaged per track over pole, fastest race lap and average race lap, from three simulated seasons (build/sim/btcc-1991/20261115-120905). Silverstone GP 1991 and Oulton Park 1975 are traced about 4% short, so their factors also make up for the length."
+  },
+  "real_history": {
+    "events": "docs/teams/btcc_game_events.csv",
+    "operators": {
+      "VicLee-1": "Team Securicor + Listerine",
+      "VicLee-2": "Team Labatt's",
+      "DaveCook": "Vauxhall Dealersport",
+      "Rouse": "Kaliber ICS Team Toyota",
+      "Prodrive": "Mobil BMW Team",
+      "GrahamGoode": "Graham Goode Racing",
+      "Trakstar": "Shell Team Trakstar Ford",
+      "Pyramid": "Pyramid Motorsport",
+      "Janspeed": "Nissan Racing with Castrol",
+      "Sweden": "BMW Dealer Team Sweden",
+      "Judge": "Judge Developments + Partservice",
+      "Techspeed": "Techspeed Midland Auto Trader",
+      "Mitsubishi": "Mitsubishi Motors + Firestone",
+      "BRR": "BRR Motorsport",
+      "RD": "R&D Motorsport",
+      "HWR": "HWR Motorsport",
+      "Drambuie": "Drambuie + Lazerprinz",
+      "Brodie": "Brodie Brittain Racing"
+    },
+    "pay_drivers": {
+      "Ray Bellm": 1.0,
+      "Laurence Bristow": 1.0,
+      "Matt Neal": 0.3,
+      "Ian Forrest": 0.2
+    }
+  },
+  "sponsors": {
+    "pool": {
+      "Securicor": {
+        "industry": "Finance",
+        "nationality": "british"
+      },
+      "Listerine": {
+        "industry": "Consumer Goods",
+        "nationality": "american"
+      },
+      "Labatt's": {
+        "industry": "Alcohol",
+        "nationality": "canadian"
+      },
+      "Kaliber": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      },
+      "ICS": {
+        "industry": "Technology",
+        "nationality": "british"
+      },
+      "Shell": {
+        "industry": "Energy",
+        "nationality": "british"
+      },
+      "Mobil 1": {
+        "industry": "Energy",
+        "nationality": "american"
+      },
+      "Vauxhall Dealers": {
+        "industry": "Automobile",
+        "nationality": "british"
+      },
+      "Auto Trader": {
+        "industry": "Entertainment",
+        "nationality": "british"
+      },
+      "Drambuie": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      }
+    },
+    "teams": {
+      "Team Securicor + Listerine": [
+        "Securicor",
+        "Listerine"
+      ],
+      "Team Labatt's": [
+        "Labatt's"
+      ],
+      "Kaliber ICS Team Toyota": [
+        "Kaliber",
+        "ICS"
+      ],
+      "Shell Team Trakstar Ford": [
+        "Shell"
+      ],
+      "Mobil BMW Team": [
+        "Mobil 1"
+      ],
+      "Vauxhall Dealersport": [
+        "Vauxhall Dealers"
+      ],
+      "Techspeed Midland Auto Trader": [
+        "Auto Trader"
+      ],
+      "Drambuie + Lazerprinz": [
+        "Drambuie"
+      ]
+    }
   }
 }

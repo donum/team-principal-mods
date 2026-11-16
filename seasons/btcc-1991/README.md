@@ -37,6 +37,20 @@ The pack folder is `btcc1991`.
   the 1991 layouts of the race-tracks repo (`tools/race_tracks.py`,
   `tools/osm_track.py`): Silverstone National and GP 1991, Snetterton 1990,
   Donington Park GP and National, Oulton Park International 1975, Thruxton.
+- **Staff and team principals:** real people from
+  `docs/staff/btcc_staff.csv` (25 rows, `"staff_reference": "btcc-1991"`),
+  made-up period names from `btcc_staff_fictional.csv` for every other
+  role. Team facts behind them: [research/team_facts.md](research/team_facts.md).
+- **Sponsors:** the real 1991 backers from `docs/teams/btcc_sponsors.csv`
+  (`sponsors` in `gen.json`). Teams without a known sponsor keep the base
+  game's fictional ones.
+- **After 1991:** `real_history` in `gen.json` plays the real grid of 1992
+  to 2000 from `docs/teams/btcc_game_events.csv`: 27 teams join (Peugeot,
+  Mazda, Renault, Volvo, Alfa Romeo, Honda and Audi arrive as makes), the
+  1991 teams leave when they really did. Pay drivers: Ray Bellm, Laurence
+  Bristow, Matt Neal, Ian Forrest (amounts are our estimates). No 1992 seat
+  was announced before the 1991 finale, so there are no future contracts.
+  Debut liveries of the later teams: [research/later_team_liveries.md](research/later_team_liveries.md).
 
 ## Series logo
 
@@ -74,3 +88,8 @@ Championship" or "BTCC"), as the DTM packs do for unverified years
   1050 kg as car mass.
 - No car images, team logos or portraits yet.
 - Sounds are the game's own.
+- A team that changed make (Rouse, RML, Prodrive, WSR, Schnitzer's return)
+  is a new team in the game (wishlist C12). The game keeps 10 teams, so
+  four teams that left after 1999 stay (wishlist C10).
+- Later teams have no car images yet; their colours are mostly unchecked
+  (see `research/later_team_liveries.md`).

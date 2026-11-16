@@ -39,6 +39,7 @@ build them all.
 | dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18, E21, E22 |
 | dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
+| btcc-1991 | C10, C11, C12 |
 
 Seasons without a pack yet (research only) are covered for qualifying and
 race rules in [dtm_rules.html](dtm_rules.html), which maps every season's
@@ -482,7 +483,8 @@ rules to these items:
 
 ### C10. A grid with fewer than 10 teams · P2
 - **Needed by:** dtm-2013 to dtm-2016 careers that run into 2017 and later,
-  and any pack of a series with a small grid.
+  btcc-1991 (in 2000 the grid fell to 8 works teams), and any pack of a
+  series with a small grid.
 - **Real:** the DTM cut its grid to 18 cars in 2017: 3 makes with 3 teams
   of 2 cars, so 9 teams. In 2020 it had 8 teams (Audi 4, BMW 4).
 - **Today:** `team_leave` is skipped when fewer than 10 teams would be
@@ -496,8 +498,9 @@ rules to these items:
   go ahead.
 
 ### C11. Title sponsor already in the team name · P3
-- **Needed by:** every DTM pack with Mercedes teams (2000 to 2018), and
-  Orlen Team ART in 2020.
+- **Needed by:** every DTM pack with Mercedes teams (2000 to 2018),
+  Orlen Team ART in 2020, and btcc-1991 (Kaliber ICS Team Toyota, Team
+  Securicor + Listerine).
 - **Real:** the Mercedes teams raced under their sponsor's name, such as
   STIHL AMG-Mercedes or Euronics AMG-Mercedes. Audi and BMW sponsors were
   only on the car name.
@@ -509,6 +512,25 @@ rules to these items:
 - **Request:** an optional `title_base_name` per team, used with the title
   sponsor ("AMG-Mercedes"), while `name` stays the unique key. When the
   deal ends, the team shows the base name.
+
+### C12. A team that changes make · P2
+- **Needed by:** btcc-1991 careers from 1993 on.
+- **Real:** BTCC teams often kept their crew and changed make. Andy Rouse
+  went from Toyota (1991 to 1992) to Ford (1993 to 1995) and Nissan (1996).
+  Ray Mallock went from Vauxhall to Nissan in 1997, Prodrive from BMW to
+  Alfa Romeo, Honda and Ford. Schnitzer ran BMW in 1993 and 1994, left in
+  1995 and came back in 1996.
+- **Today:** a team keeps its engine supplier for good. Events can only add
+  a team (`team_join`) or remove it (`team_leave`). A team that left can't
+  come back.
+- **Workaround:** `tools/real_history.py` writes a leave and a new team with
+  its own name for each change (`docs/teams/btcc_game_events.csv`). The
+  team history, staff and results don't carry over. Team Dynamics stays on
+  BMW and two Toyota privateers keep Toyota in the series after the works
+  teams left.
+- **Request:** an event that moves a team to another engine supplier in a
+  given season (`team_engine_change` with `team`, `supplier`,
+  `exact_season`), and a `team_join` that can bring back a team that left.
 
 ## D. Cars and simulation
 

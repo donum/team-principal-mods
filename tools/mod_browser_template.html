@@ -373,8 +373,9 @@ function teamCard(t) {
       ${t.career ? `<div class="small"><span class="muted">Later seasons:</span> ${esc(t.career)}</div>` : ""}
       <div class="small"><span class="muted">Drivers:</span> ${esc(t.drivers.join(", ") || "—")}</div>
       ${(t.sponsors || []).length ? `<div class="small"><span class="muted">Sponsors:</span> ${t.sponsors.map(x => `<span title="${esc(x.slot + ", " + (x.industry || "?") + ", " + nat(x.nationality) + ", " + (x.seasons ?? "?") + " season(s)" + (x.prov === "vanilla" ? ", vanilla" : ""))}">${esc(x.name)}${x.amount_m != null ? ` <span class="muted">$${esc(x.amount_m)}m</span>` : ""}${x.prov === "vanilla" ? ` <span class="muted">(vanilla)</span>` : ""}</span>`).join(" · ")}</div>` : ""}
+      ${(t.staff || []).length ? `<div class="small"><span class="muted">Staff:</span> ${t.staff.map(x => `<span title="${esc((x.role || "").replace(/_/g, " ") + (x.age != null ? ", age " + x.age : "") + (x.real ? ", real person" : ", made-up name"))}">${esc(x.name)}${x.real ? "" : ` <span class="muted">*</span>`}</span>`).join(" · ")} <span class="muted">(* made up; principal first)</span></div>` : ""}
       ${t.history_text ? `<div class="history">${esc(t.history_text)}</div>` : ""}
-      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers", "sponsors", "chassis_name", "career", "future"])}</details>
+      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers", "sponsors", "staff", "chassis_name", "career", "future"])}</details>
     </div>
   </article>`;
 }

@@ -4,8 +4,29 @@
     {
       "name": "review-site-test",
       "runtimeExecutable": "C:/Users/dan/AppData/Local/Microsoft/WinGet/Packages/PHP.PHP.8.3_Microsoft.Winget.Source_8wekyb3d8bbwe/php.exe",
-      "runtimeArgs": ["-c", "C:/Users/dan/AppData/Local/Temp/claude/1e87942feaa77725/1f27bdfa-12e5-4931-9c11-e85cd687a006/scratchpad/php.ini", "-S", "127.0.0.1:8777", "-t", "C:/Users/dan/AppData/Local/Temp/claude/1e87942feaa77725/1f27bdfa-12e5-4931-9c11-e85cd687a006/scratchpad/site"],
-      "port": 8777, "autoPort": false
+      "runtimeArgs": [
+        "-c",
+        "C:/Users/dan/AppData/Local/Temp/claude/1e87942feaa77725/1f27bdfa-12e5-4931-9c11-e85cd687a006/scratchpad/php.ini",
+        "-S",
+        "127.0.0.1:8777",
+        "-t",
+        "C:/Users/dan/AppData/Local/Temp/claude/1e87942feaa77725/1f27bdfa-12e5-4931-9c11-e85cd687a006/scratchpad/site"
+      ],
+      "port": 8777,
+      "autoPort": false
+    },
+    {
+      "name": "mod-browser",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8791",
+        "-d",
+        "private/mod_browser"
+      ],
+      "port": 8791,
+      "autoPort": false
     }
   ]
 }

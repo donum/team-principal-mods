@@ -362,6 +362,11 @@ def main():
         manifest["constants"].update(gen.get("constants", {}))
         gen_tracks = {"shared_tracks": {}, "track_overrides": {}, **gen}
     manifest["staff"] = {"seed": year, "salary_per_level_m": 0.1, "named": [], "levels": staff_levels}
+    # Real staff from docs/staff/<series>_staff.csv: gen.json "staff_reference",
+    # else what the old season.json had (set by hand before this key existed).
+    old_staff = load_json(season / "season.json").get("staff", {}) if (season / "season.json").exists() else {}
+    if gen.get("staff_reference") or old_staff.get("reference"):
+        manifest["staff"]["reference"] = gen.get("staff_reference") or old_staff["reference"]
     for key in ("shared_tracks", "track_overrides", "track_placeholders"):
         if key in gen_tracks and (gen_tracks[key] or key != "track_placeholders"):
             manifest[key] = gen_tracks[key]

@@ -283,11 +283,12 @@ def person_age(name, role, year, born=None):
     return age if 25 <= age <= 75 else lo + name_seed(name, role, "age") % (hi - lo + 1)
 
 
-def period_name(nationality, year, role, used, *seed):
+def period_name(nationality, year, role, used, *seed, series="dtm"):
     """A made-up name that fits the nationality and the period, from the
     same lists as tools/fictional_staff.py."""
     import fictional_staff as fs
-    first_old, first_new, last = fs.NAMES.get(nationality) or fs.NAMES["german"]
+    names = {**fs.NAMES, **fs.SERIES_NAMES.get(series, {})}
+    first_old, first_new, last = names.get(nationality) or names["german"]
     lo, hi = ROLE_AGE.get(role, (30, 60))
     born = year - (lo + name_seed(*seed, "age") % (hi - lo + 1))
     firsts = first_old if born < 1960 else first_new
@@ -307,7 +308,8 @@ def staff_reference(season):
     import csv
 
     ref = {}
-    for path in (STAFF_REF / "dtm_staff.csv", STAFF_REF / "dtm_staff_fictional.csv"):
+    series = "btcc" if season.startswith("btcc-") else "dtm"
+    for path in (STAFF_REF / f"{series}_staff.csv", STAFF_REF / f"{series}_staff_fictional.csv"):
         if not path.exists():
             continue
         with open(path, encoding="utf-8") as f:
@@ -362,7 +364,8 @@ def generate_staff(out, base_dir, spec, teams):
                     break
             else:
                 if season:
-                    name, born = period_name(team["nationality"], year, role, used, season, team["name"], role)
+                    name, born = period_name(team["nationality"], year, role, used, season, team["name"], role,
+                                             series=season.split("-")[0])
                     age = year - born
                 else:
                     for _ in range(200):
@@ -417,7 +420,7 @@ def generate_team_principals(out, spec, teams, ref, year, used_staff_names):
                 break
         if name is None:
             name, born = period_name(team["nationality"], year, "team_principal", used,
-                                     "tp", team["name"])
+                                     "tp", team["name"], series=spec["reference"].split("-")[0])
         used.add(name)
         first, _, last = name.partition(" ")
         seed = int(hashlib.sha1(name.encode("utf-8")).hexdigest(), 16)
@@ -432,8 +435,9 @@ def generate_team_principals(out, spec, teams, ref, year, used_staff_names):
             "team": team["name"],
             "stats": {"reputation": rate(1), "finance": rate(2), "leadership": rate(3), "organization": rate(4)},
         })
-    data["description"] = ("DTM team principals from docs/staff/dtm_staff.csv (real people, verified or "
-                           "assumed); made-up names where no principal is known.")
+    series = "BTCC" if spec["reference"].startswith("btcc-") else "DTM"
+    data["description"] = (f"{series} team principals from docs/staff/{series.lower()}_staff.csv (real people, "
+                           "verified or assumed); made-up names where no principal is known.")
     data["principals"] = principals
     dump_json(path, data)
 

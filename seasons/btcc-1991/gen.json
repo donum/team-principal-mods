@@ -99,15 +99,15 @@
                             "history": "Mitsubishi's single car. It starts the year as a Lancer and becomes a Galant."},
     "Graham Goode Racing": {"rating": 57.0, "nationality": "british", "color": [150, 152, 158], "secondary": [0, 90, 170],
                             "history": "A privateer two-litre Ford Sierra in grey and blue for Andy Middlehurst."},
-    "Pyramid Motorsport": {"rating": 55.0, "nationality": "british", "color": [240, 240, 240], "secondary": [40, 40, 40]},
-    "BMW Dealer Team Sweden": {"rating": 43.0, "nationality": "swedish", "color": [0, 90, 170], "secondary": [250, 205, 0]},
-    "Techspeed Midland Auto Trader": {"rating": 48.0, "nationality": "british", "color": [250, 250, 250], "secondary": [230, 120, 0]},
-    "Drambuie + Lazerprinz": {"rating": 41.0, "nationality": "british", "color": [120, 20, 30], "secondary": [220, 180, 80]},
-    "BRR Motorsport": {"rating": 42.0, "nationality": "british", "color": [245, 245, 245], "secondary": [60, 60, 60]},
-    "R&D Motorsport": {"rating": 41.0, "nationality": "british", "color": [240, 240, 240], "secondary": [0, 100, 60]},
-    "Judge Developments + Partservice": {"rating": 43.0, "nationality": "british", "color": [245, 245, 245], "secondary": [30, 30, 30]},
-    "Brodie Brittain Racing": {"rating": 41.0, "nationality": "british", "color": [245, 245, 245], "secondary": [0, 70, 150]},
-    "HWR Motorsport": {"rating": 40.0, "nationality": "british", "color": [240, 240, 240], "secondary": [150, 0, 0]},
+    "Pyramid Motorsport": {"rating": 55.0, "nationality": "british", "color": [240, 240, 240], "secondary": [40, 40, 40], "history": "A privateer BMW team set up by BMW dealers. Frank Sytner drives most of the year. Matt Neal makes his BTCC debut in its second car at Silverstone."},
+    "BMW Dealer Team Sweden": {"rating": 43.0, "nationality": "swedish", "color": [0, 90, 170], "secondary": [250, 205, 0], "history": "Swedish BMW dealers send two M3s to Britain. Nettan Lindgren and Peggen Andersson drive in the early rounds."},
+    "Techspeed Midland Auto Trader": {"rating": 48.0, "nationality": "british", "color": [250, 250, 250], "secondary": [230, 120, 0], "history": "Tech-Speed was founded in 1984 and builds BMW M3s for other teams. It runs two cars for Nick Whale and Nick Baird with Auto Trader backing."},
+    "Drambuie + Lazerprinz": {"rating": 41.0, "nationality": "british", "color": [120, 20, 30], "secondary": [220, 180, 80], "history": "Ian Forrest runs his own BMW M3 with Drambuie backing. He pays for the season with a bank loan."},
+    "BRR Motorsport": {"rating": 42.0, "nationality": "british", "color": [245, 245, 245], "secondary": [60, 60, 60], "history": "A small privateer team with one BMW M3. Ian Flux drives most of its races."},
+    "R&D Motorsport": {"rating": 41.0, "nationality": "british", "color": [240, 240, 240], "secondary": [0, 100, 60], "history": "A privateer team with a BMW 318is. It is the smallest car on the grid."},
+    "Judge Developments + Partservice": {"rating": 43.0, "nationality": "british", "color": [245, 245, 245], "secondary": [30, 30, 30], "history": "Dennis Leech races his Ford Sierra RS500 for Judge Developments. The Group A car runs with limits to match the new two litre cars."},
+    "Brodie Brittain Racing": {"rating": 41.0, "nationality": "british", "color": [245, 245, 245], "secondary": [0, 70, 150], "history": "Dave Brodie and Ken Brittain set up BBR in Brackley. They are turbo specialists. Brodie races a four wheel drive Ford Sierra Sapphire from Brands Hatch on."},
+    "HWR Motorsport": {"rating": 40.0, "nationality": "british", "color": [240, 240, 240], "secondary": [150, 0, 0], "history": "Jeff Wilson and Brian Holliday founded HWR in 1978. Wilson races a Vauxhall Belmont he prepares himself."},
     "Sean Walker Racing": {"skip": true},
     "Moto-Build": {"skip": true},
     "Andrew Mackenzie Racing": {"skip": true}
@@ -160,5 +160,109 @@
       "speed_mult": 1.067
     },
     "$speed_comment": "speed_mult = earlier factor x simulated / real lap time, averaged per track over pole, fastest race lap and average race lap, from three simulated seasons (build/sim/btcc-1991/20261115-120905). Silverstone GP 1991 and Oulton Park 1975 are traced about 4% short, so their factors also make up for the length."
+  },
+  "staff_reference": "btcc-1991",
+  "real_history": {
+    "$comment": "Real BTCC history 1992 to 2000 (docs/teams/btcc_*.csv). operators maps the keys of btcc_game_events.csv to this pack's teams. Pay driver amounts are our estimates: no source gives a figure (docs/teams/btcc_driver_backing.csv).",
+    "events": "docs/teams/btcc_game_events.csv",
+    "operators": {
+      "VicLee-1": "Team Securicor + Listerine",
+      "VicLee-2": "Team Labatt's",
+      "DaveCook": "Vauxhall Dealersport",
+      "Rouse": "Kaliber ICS Team Toyota",
+      "Prodrive": "Mobil BMW Team",
+      "GrahamGoode": "Graham Goode Racing",
+      "Trakstar": "Shell Team Trakstar Ford",
+      "Pyramid": "Pyramid Motorsport",
+      "Janspeed": "Nissan Racing with Castrol",
+      "Sweden": "BMW Dealer Team Sweden",
+      "Judge": "Judge Developments + Partservice",
+      "Techspeed": "Techspeed Midland Auto Trader",
+      "Mitsubishi": "Mitsubishi Motors + Firestone",
+      "BRR": "BRR Motorsport",
+      "RD": "R&D Motorsport",
+      "HWR": "HWR Motorsport",
+      "Drambuie": "Drambuie + Lazerprinz",
+      "Brodie": "Brodie Brittain Racing"
+    },
+    "pay_drivers": {
+      "Ray Bellm": 1.0,
+      "Laurence Bristow": 1.0,
+      "Matt Neal": 0.3,
+      "Ian Forrest": 0.2
+    }
+  },
+  "sponsors": {
+    "$comment": "Real 1991 sponsors from docs/teams/btcc_sponsors.csv. Tyre makers are left out (tyre_contract in teams). BMW Team Finance is left out: the company is not confirmed.",
+    "pool": {
+      "Securicor": {
+        "industry": "Finance",
+        "nationality": "british"
+      },
+      "Listerine": {
+        "industry": "Consumer Goods",
+        "nationality": "american"
+      },
+      "Labatt's": {
+        "industry": "Alcohol",
+        "nationality": "canadian"
+      },
+      "Kaliber": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      },
+      "ICS": {
+        "industry": "Technology",
+        "nationality": "british"
+      },
+      "Shell": {
+        "industry": "Energy",
+        "nationality": "british"
+      },
+      "Mobil 1": {
+        "industry": "Energy",
+        "nationality": "american"
+      },
+      "Vauxhall Dealers": {
+        "industry": "Automobile",
+        "nationality": "british"
+      },
+      "Auto Trader": {
+        "industry": "Entertainment",
+        "nationality": "british"
+      },
+      "Drambuie": {
+        "industry": "Alcohol",
+        "nationality": "british"
+      }
+    },
+    "teams": {
+      "Team Securicor + Listerine": [
+        "Securicor",
+        "Listerine"
+      ],
+      "Team Labatt's": [
+        "Labatt's"
+      ],
+      "Kaliber ICS Team Toyota": [
+        "Kaliber",
+        "ICS"
+      ],
+      "Shell Team Trakstar Ford": [
+        "Shell"
+      ],
+      "Mobil BMW Team": [
+        "Mobil 1"
+      ],
+      "Vauxhall Dealersport": [
+        "Vauxhall Dealers"
+      ],
+      "Techspeed Midland Auto Trader": [
+        "Auto Trader"
+      ],
+      "Drambuie + Lazerprinz": [
+        "Drambuie"
+      ]
+    }
   }
 }

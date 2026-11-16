@@ -343,6 +343,26 @@ def build_teams(pack, base, season, manifest, media, sources):
     # (tools/car_drawings.py, art/liveries; not in the pack, wishlist E4)
     liveries = (load_json(season / "art" / "liveries" / "liveries.json", {}) or {}).get("teams", {}) if season else {}
     year = start_year(pack)
+    # Staff and principals (build_pack.py from docs/staff): real people are
+    # the names in docs/staff/<series>_staff.csv, the rest are made up.
+    real_people = set()
+    ref = (manifest.get("staff") or {}).get("reference")
+    if ref:
+        import csv
+        series = "btcc" if ref.startswith("btcc-") else "dtm"
+        ref_csv = Path(__file__).resolve().parent.parent / "docs" / "staff" / f"{series}_staff.csv"
+        if ref_csv.exists():
+            with open(ref_csv, encoding="utf-8") as fh:
+                real_people = {r["person"] for r in csv.DictReader(fh) if r["season"] == ref}
+    staff_by_team = {}
+    for st in load_json(pack / "staff.json", []) or []:
+        staff_by_team.setdefault(st.get("team"), []).append(
+            {"role": st.get("role"), "name": st.get("name"), "age": st.get("age"), "real": st.get("name") in real_people})
+    principals = {}
+    for tp in (load_json(pack / "teamprincipals.json", {}) or {}).get("principals", []):
+        name = f"{tp.get('first_name', '')} {tp.get('last_name', '')}".strip()
+        principals[tp.get("team")] = {"role": "team_principal", "name": name, "age": tp.get("age"),
+                                      "real": name in real_people}
     # Scripted joins and exits in later seasons (tools/real_history.py)
     joins, leaves = {}, {}
     for e in load_json(pack / "events.json", []) or []:
@@ -378,6 +398,8 @@ def build_teams(pack, base, season, manifest, media, sources):
                     "history_text": hist.get(t["name"]), "cloned_from": clones.get(t["name"]),
                     "career": career(t["name"]), "future": t.get("active", True) is False,
                     "drivers": [d["name"] for d in drivers if d.get("team") == t["name"]],
+                    "staff": ([principals[t["name"]]] if t["name"] in principals else []) +
+                             sorted(staff_by_team.get(t["name"], []), key=lambda x: x["role"] or ""),
                     "fields": sources.get(t["name"], {})})
     vanilla = []
     for t in load_json(base / "teams.json", []):
