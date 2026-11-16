@@ -70,7 +70,7 @@ rules to these items:
   `reversed_top_n`.
 
 ### A2. Qualification race · P1
-- **Needed by:** dtm-1991, every DTM pack (season records, see below).
+- **Needed by:** dtm-1991.
 - **1991:** places 1–16 came from qualifying. All other cars ran a ~50 km
   **qualification race** for places 17+.
 - **Today:** no way to model this. Our 39-car field either all starts or is
@@ -410,7 +410,7 @@ rules to these items:
   Recheck this item and D1 when it lands.
 
 ### C5. Retirement and age tuning in data · P3
-- **Needed by:** dtm-1991, every DTM pack (season records, see below).
+- **Needed by:** dtm-1991.
 - **1991:** drivers raced competitively into their 40s and 50s (Quester was
   51, Laffite 47).
 - **Today:** we changed `DRIVER_RETIREMENT_*` in `constants.py`.
@@ -508,7 +508,7 @@ rules to these items:
   the lap-one damage outcome and the "wing damage" radio bank.
 
 ### D2. Drivetrain · P2
-- **Needed by:** dtm-1991, every DTM pack (season records, see below).
+- **Needed by:** dtm-1991.
 - **1991:** the 4WD Audi V8 had a big advantage in the wet. In Hockenheim's
   wet heat 2 the Audis finished about a minute clear.
 - **Request:** a `drivetrain` value (`rwd` / `fwd` / `awd`) that affects
@@ -688,7 +688,7 @@ rules to these items:
   too.
 
 ### E3. Published schema and validation · P2
-- **Needed by:** dtm-1991, every DTM pack (season records, see below).
+- **Needed by:** dtm-1991.
 - **Request:**
   - A JSON schema for every pack file.
   - A validation mode that lists errors at load time (unknown team in a
