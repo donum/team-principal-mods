@@ -12,7 +12,9 @@
         "championships": 0,
         "wins": 0,
         "podiums": 0,
-        "poles": 0
+        "poles": 0,
+        "starts": 0,
+        "points": 0
       },
       "engine_contract_seasons": 2,
       "engine_contract_bonus": "bonus2",
@@ -176,6 +178,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 13,
+        "championships": 0,
+        "wins": 7,
+        "podiums": 30,
+        "poles": 7,
+        "starts": 139,
+        "points": 751
       }
     },
     {
@@ -230,6 +241,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 1,
+        "podiums": 3,
+        "poles": 2,
+        "starts": 10,
+        "points": 93
       }
     },
     {
@@ -284,6 +304,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 22,
+        "championships": 9,
+        "wins": 142,
+        "podiums": 377,
+        "poles": 92,
+        "starts": 337,
+        "points": 7508
       }
     },
     {
@@ -338,6 +367,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 6,
+        "championships": 1,
+        "wins": 23,
+        "podiums": 75,
+        "poles": 12,
+        "starts": 100,
+        "points": 2076
       }
     },
     {
@@ -392,6 +430,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 13,
+        "championships": 2,
+        "wins": 25,
+        "podiums": 73,
+        "poles": 28,
+        "starts": 139,
+        "points": 1051
       }
     },
     {
@@ -446,6 +493,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 22,
+        "championships": 9,
+        "wins": 142,
+        "podiums": 377,
+        "poles": 92,
+        "starts": 337,
+        "points": 7508
       }
     },
     {
@@ -554,6 +610,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 10,
+        "championships": 1,
+        "wins": 14,
+        "podiums": 59,
+        "poles": 28,
+        "starts": 103,
+        "points": 717
       }
     },
     {
@@ -608,6 +673,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 8,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 5,
+        "poles": 0,
+        "starts": 83,
+        "points": 108
       }
     },
     {
@@ -662,6 +736,15 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 1,
+        "championships": 0,
+        "wins": 0,
+        "podiums": 3,
+        "poles": 0,
+        "starts": 10,
+        "points": 75
       }
     },
     {
@@ -716,7 +799,17 @@
         "cfd_center": 1,
         "recon_centre": 2,
         "driver_centre": 2
+      },
+      "history": {
+        "seasons": 14,
+        "championships": 0,
+        "wins": 6,
+        "podiums": 19,
+        "poles": 3,
+        "starts": 170,
+        "points": 661
       }
     }
-  ]
+  ],
+  "$team_history": "history = DTM/ITC record before 2013 of each team's line in docs/drivers/team_lineage.csv (tools/driver_careers.py apply). Teams not listed there start at zero."
 }

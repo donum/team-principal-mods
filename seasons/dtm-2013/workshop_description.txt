@@ -24,6 +24,7 @@ Ratings and skills are estimates based on the 2013 results. They are not history
 [list]
 [*]Real careers for every driver. Seasons, titles, wins, podiums, poles, starts and points up to the end of 2012, from every DTM and ITC race since 1984. They show on the Drivers tab of the statistics screen.
 [*]The old champions and race winners are in the all-time statistics as retired drivers. They can't be signed.
+[*]Real history for every team up to the end of 2012. Seasons, team titles, wins, podiums, poles, starts and points of the team's line, on the Teams tab. Both HWA teams carry HWA's full record.
 [*]Retirements per track are fitted to the 2012 and 2013 races. About 14 in 100 starters retire, as in those seasons.
 [*]Overtaking per track is fitted to the same races.
 [*]Pit lane time loss per track, checked against TV timing and commentary.

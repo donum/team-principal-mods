@@ -21,7 +21,11 @@ Usage:
 `apply` writes `history` (seasons, championships, wins, podiums, poles,
 starts, points: everything before the pack's year) into every driver record
 of data/drivers.json and adds retired race winners and champions as
-`retired: true` records, like the F1 Workshop packs do.
+`retired: true` records, like the F1 Workshop packs do. For packs with rows
+in docs/drivers/team_lineage.csv it also writes each team's `history` into
+data/teams.json (see tools/careers/teams.py).
+
+  python -I tools/driver_careers.py teams            # rebuild only the team CSVs
 """
 
 import argparse
@@ -37,6 +41,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent / "careers"))
 import fandom  # noqa: E402
+import teams  # noqa: E402
 import wiki  # noqa: E402
 
 CACHE = REPO / "reference" / "driver_careers"
@@ -392,6 +397,52 @@ def build(args):
         "Each line is a place where two sources disagree. Fix the source data or add a name to "
         "aliases.csv, then rebuild.\n\n" + "\n".join(checks) + "\n", encoding="utf-8")
     print(f"{len(races)} race rows, {len(seasons_tbl)} driver-seasons, {len(drow)} drivers, {len(checks)} check lines")
+    build_teams(args)
+
+
+TEAM_ENTRY_FIELDS = ["season", "driver", "rounds", "articles", "entrant", "fandom_entrant", "source"]
+
+
+def build_teams(args=None):
+    """docs/drivers/dtm_team_entries.csv and dtm_team_champions.csv from the cached pages."""
+    pages = json.loads((CACHE / "pages.json").read_text(encoding="utf-8"))
+    en = json.loads((CACHE / "wiki_en.json").read_text(encoding="utf-8"))
+    races = read_csv(OUT / "dtm_races.csv")
+    names = Names([s["driver"] for s in read_csv(OUT / "dtm_driver_seasons.csv")])
+    entries, champions = teams.build(en, pages, races, names.canon)
+    write_csv(OUT / "dtm_team_entries.csv", entries, TEAM_ENTRY_FIELDS)
+    write_csv(OUT / "dtm_team_champions.csv", champions, ["season", "articles", "entrant", "source"])
+    print(f"{len(entries)} team entries, {len(champions)} team champions")
+
+
+def apply_teams(pack, seasons):
+    """Write `history` into every team of data/teams.json that has rows in team_lineage.csv."""
+    lineage = [r for r in read_csv(OUT / "team_lineage.csv") if r["pack"] == pack.name]
+    if not lineage:
+        return
+    year = pack_year(pack)
+    entries = read_csv(OUT / "dtm_team_entries.csv")
+    champions = read_csv(OUT / "dtm_team_champions.csv")
+    races = read_csv(OUT / "dtm_races.csv")
+    path = pack / "data" / "teams.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    recs = data["records"] if isinstance(data, dict) else data
+    known = {r["team"] for r in lineage}
+    filled = []
+    for r in recs:
+        if r["name"] in known:
+            r["history"] = teams.team_history(teams.lineage_rules(lineage, pack.name, r["name"]), year,
+                                              entries, races, seasons, champions)
+            filled.append(r["name"])
+    missing = known - set(filled)
+    if missing:
+        sys.exit(f"team_lineage.csv names teams not in {path}: {sorted(missing)}")
+    if isinstance(data, dict):
+        data["$team_history"] = (f"history = DTM/ITC record before {year} of each team's line in "
+                                 f"docs/drivers/team_lineage.csv (tools/driver_careers.py apply). "
+                                 f"Teams not listed there start at zero.")
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"{pack.name}: team history for {len(filled)} of {len(recs)} teams")
 
 
 # ---------------------------------------------------------------- history
@@ -492,6 +543,7 @@ def apply_pack(pack, seasons, drivers, retired=True):
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{pack.name}: {filled}/{len(recs) - len(added)} drivers have a DTM record before {year}; "
           f"{len(added)} retired winners and champions added")
+    apply_teams(pack, seasons)
 
 
 def apply(args):
@@ -590,6 +642,7 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("fetch").set_defaults(fn=fetch)
     sub.add_parser("build").set_defaults(fn=build)
+    sub.add_parser("teams", help="rebuild only the team entries and champions").set_defaults(fn=build_teams)
     a = sub.add_parser("apply")
     a.add_argument("packs", nargs="+")
     a.add_argument("--no-retired", action="store_true")

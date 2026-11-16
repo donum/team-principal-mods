@@ -5,7 +5,7 @@
     "override": {
       "active": true,
       "performance_scale": "rating_100",
-      "history": {"seasons": 0, "championships": 0, "wins": 0, "podiums": 0, "poles": 0},
+      "history": {"seasons": 0, "championships": 0, "wins": 0, "podiums": 0, "poles": 0, "starts": 0, "points": 0},
       "engine_contract_seasons": 2,
       "engine_contract_bonus": "bonus2",
       "driver_aids": {"active_suspension": 0, "active_aero": 0, "traction_control": 0, "abs": 0, "advanced_tpms": 0}

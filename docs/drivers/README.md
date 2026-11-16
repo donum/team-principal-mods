@@ -21,6 +21,9 @@ pack's season.
 | [dtm_drivers.csv](dtm_drivers.csv) | driver | Career totals, birth year, game nationality, and the fandom wiki's own career box for comparison. |
 | [aliases.csv](aliases.csv) | other spelling | Maps a name in a pack or a source to the database name (Susie Stoddart → Susie Wolff). |
 | [CHECKS.md](CHECKS.md) | disagreement | Written by `build`: where the sources disagree. |
+| [dtm_team_entries.csv](dtm_team_entries.csv) | driver, season and team | Who ran the car: the operator's linked article on en.wikipedia (`articles`), the entrant name there and on the fandom wiki, and the rounds driven for it. |
+| [dtm_team_champions.csv](dtm_team_champions.csv) | season | The teams' champion (en.wikipedia, 2000 on). |
+| [team_lineage.csv](team_lineage.csv) | pack team | Which entries belong to a pack's team: a pattern on the entry, and the years. Hand-written, with a note per line. |
 
 ## Sources
 
@@ -53,11 +56,29 @@ The raw pages are cached in `reference/driver_careers/` (gitignored).
   holders. The file-level key `$career_retired` lists them, and the next
   `apply` replaces them.
 
+- **Team history** = every race before the pack's year run by an entry
+  of the team's line in `team_lineage.csv`. Seasons count when one of its
+  cars started. Starts count races (heats), not cars. Wins, podiums and
+  poles count cars. Points are the drivers' season points scored for the
+  team (shared by races when a driver changed team). Titles are teams'
+  championships, which the tables have from 2000 on.
+- **Lineage choices for 2013 (2026-11-16):** the same owner counts across
+  makes (Phoenix with Opel 2000 to 2005, Rosberg with Opel and Mercedes,
+  Schnitzer from 1985). Both HWA teams (Euronics and STIHL) get HWA's full
+  record, including the AMG works team before 1999. en.wikipedia files both
+  Abt teams under Abt Sportsline, so the fandom entrant name splits them.
+  MTEK is new in 2013 and starts at zero.
+- **Team sources:** the en.wikipedia "Teams and drivers" table from 1987
+  (1984 to 1986 and its gaps: the fandom "Starterfeld" entrant). Gaps that
+  remain: about 120 privateer driver-seasons from 1984 to 1989, and 2024 to
+  2026, whose en.wikipedia tables don't parse yet.
+
 ## Commands
 
 ```
 python -I tools/driver_careers.py build
 python -I tools/driver_careers.py apply seasons/dtm-2013
+python -I tools/driver_careers.py teams     # rebuild only the team CSVs
 python -I tools/driver_careers.py history 2013 "Mike Rockenfeller"
 python -I tools/driver_careers.py page dtm_driver_database.html
 ```
@@ -74,6 +95,10 @@ present. The numbers feed the statistics screen (all-time tables), the
 driver negotiation history panel, news cards for career milestones (starts,
 podiums, poles, seasons, dynasties), and driver mood after a weekend. The
 game adds each new race to the same counters.
+
+Team `history` in `teams.json` has the same seven keys and fills the Teams
+tab of the statistics screen. Both are read when a new career starts, so a
+save from before an update keeps its old numbers.
 
 ## Car drawings
 

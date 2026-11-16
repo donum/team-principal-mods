@@ -1,0 +1,11 @@
+pack,team,from,to,pattern,note
+dtm-2013,Audi Sport Team Phoenix,2000,2012,Phoenix,"Phoenix Racing (Ernst Moser): Opel 2000-2005, Audi from 2006. Same owner counts."
+dtm-2013,BMW Team RBM,2012,2012,Racing Bart Mampaey|\bRBM\b,Racing Bart Mampaey. DTM from 2012.
+dtm-2013,STIHL AMG-Mercedes,1988,2012,^(HWA AG|HWA Team|AMG-Mercedes|Mercedes-AMG)( ;| \|)|^ \| (AMG Motorenbau GmbH|AMG-Mercedes) \|,"HWA AG, and before 1999 the AMG works team (same owner, Hans Werner Aufrecht). Both 2013 HWA teams get HWA's full record (user's choice, 2026-11-16)."
+dtm-2013,Euronics AMG-Mercedes,1988,2012,^(HWA AG|HWA Team|AMG-Mercedes|Mercedes-AMG)( ;| \|)|^ \| (AMG Motorenbau GmbH|AMG-Mercedes) \|,"As STIHL AMG-Mercedes: both HWA teams get HWA's full record."
+dtm-2013,BMW Team Schnitzer,1984,2012,Schnitzer,Schnitzer Motorsport: BMW 1985-1992 and from 2012.
+dtm-2013,Audi Sport Team Abt Sportsline,2000,2012,^(?!.*Team Abt(?! Sportsline)).*Abt,"Abt Sportsline, every Abt entry except the second team. en.wikipedia files both Abt teams under Abt Sportsline, so the fandom entrant name splits them."
+dtm-2013,Audi Sport Team Abt,2002,2012,Team Abt(?! Sportsline),"The second Abt team (Audi Sport Team Abt, also as Rookie, Junior and Lady Power team), from the fandom entrant name."
+dtm-2013,stern AMG-Mercedes,2000,2012,M(ü|ue)cke,Mücke Motorsport (Peter Mücke).
+dtm-2013,BMW Team RMG,2012,2012,Team RMG|\bRMG\b,Team RMG (Stefan Reinhold). DTM from 2012.
+dtm-2013,Audi Sport Team Rosberg,1995,2012,Rosberg,"Team Rosberg: Opel 1995-1996, Mercedes 2000-2005, Audi from 2006. Same owner counts."
