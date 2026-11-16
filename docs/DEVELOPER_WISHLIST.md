@@ -31,12 +31,12 @@ build them all.
 | dtm-1990 | A1, A6, B1, B2, D1, D9, E1, E2 |
 | dtm-1991 | A1–A6, B1–B4, C1–C5, D1–D4, D9, E1–E7 |
 | dtm-1992 | A1, A6, B2, B3, C1, C2, D1, D9, E1, E2 |
-| dtm-2012 | A3, A5, A6, B5, B7, B12, C4, C6, C7, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E13, E15, E18, E20 |
+| dtm-2012 | A3, A5, A6, B5, B7, B12, C4, C6, C7, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E13, E15, E18, E20, E21 |
 | dtm-2003 | A5, A6, B4, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2006 | A6, B1, B2, B5, B7, B10, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
-| dtm-2013 | A3, A5, A6, B5, B6, B7, B11, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20 |
-| dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18 |
+| dtm-2013 | A3, A5, A6, B5, B6, B7, B11, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20, E21 |
+| dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18, E21 |
 | dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
 
@@ -70,7 +70,7 @@ rules to these items:
   `reversed_top_n`.
 
 ### A2. Qualification race · P1
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, every DTM pack (season records, see below).
 - **1991:** places 1–16 came from qualifying. All other cars ran a ~50 km
   **qualification race** for places 17+.
 - **Today:** no way to model this. Our 39-car field either all starts or is
@@ -410,7 +410,7 @@ rules to these items:
   Recheck this item and D1 when it lands.
 
 ### C5. Retirement and age tuning in data · P3
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, every DTM pack (season records, see below).
 - **1991:** drivers raced competitively into their 40s and 50s (Quester was
   51, Laffite 47).
 - **Today:** we changed `DRIVER_RETIREMENT_*` in `constants.py`.
@@ -508,7 +508,7 @@ rules to these items:
   the lap-one damage outcome and the "wing damage" radio bank.
 
 ### D2. Drivetrain · P2
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, every DTM pack (season records, see below).
 - **1991:** the 4WD Audi V8 had a big advantage in the wet. In Hockenheim's
   wet heat 2 the Audis finished about a minute clear.
 - **Request:** a `drivetrain` value (`rwd` / `fwd` / `awd`) that affects
@@ -688,7 +688,7 @@ rules to these items:
   too.
 
 ### E3. Published schema and validation · P2
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, every DTM pack (season records, see below).
 - **Request:**
   - A JSON schema for every pack file.
   - A validation mode that lists errors at load time (unknown team in a
@@ -765,11 +765,22 @@ rules to these items:
   factors for salaries, costs, sponsor money and prize money.
 
 ### E7. Historical start state · P3
-- **Needed by:** dtm-1991.
+- **Needed by:** dtm-1991, every DTM pack (season records, see below).
 - **Request:**
   - Previous-season standings and history per team and driver, to drive
     prestige and form.
   - A real date for each schedule week, for news and emails.
+- **Season records (2026-11-16, game 45440200):** `history` in
+  `drivers.json` fills the Drivers tab of the statistics screen with career
+  totals (every DTM pack does this since the driver careers database). The
+  Records tab (most wins, podiums, poles, points, DNFs in a season, best
+  average finish) reads `driver_season_history`, which only
+  `record_season_history` fills from seasons played in the save. A pack can't
+  supply past seasons, so the tab stays empty until the first season ends.
+  Request: an optional `season_history` list per driver (`year`, `team`,
+  `position`, `points`, `wins`, `podiums`, `poles`, `starts`, `dnfs`), shown
+  in Records and on the driver's history page. dtm-2013 would fill it for
+  1984 to 2012 from docs/drivers.
 
 ### E8. Engine sounds per supplier beyond pass-bys · P3
 - **Needed by:** dtm-2013, dtm-2012, dtm-2003, dtm-2006, dtm-2010.
@@ -1011,6 +1022,36 @@ rules to these items:
   `"dashboard_order": "random"`, that starts at a random image or
   shuffles the set. Without it the order stays as today.
 - **Post:** `docs/requests/dashboard-random-order.md`.
+
+### E21. Backgrounds that fit any window, and a pack logo · P2
+- **Needed by:** dtm-2013 (wordmark in the menu image), dtm-2012 and
+  dtm-2018 (planned the same way), and every pack with its own art.
+- **Why:** on a wide window (here about 21:9, 2000×857) the menu photo is
+  cut at the top and bottom. The "DTM 2013" wordmark sits in the top right
+  of the image, so only the bottom half of "DTM" shows. The race map has
+  the same problem the other way round: it is stretched to the panel (E5).
+- **Today:** `assets/title_bg.png` is scaled to cover the window and the
+  middle is cut out. A pack has no way to place a logo of its own, so we
+  draw the series wordmark into the photo (`tools/menu_art.py`,
+  `"logo"` in `art/menu.json`). The game's own `title_logo.png` is drawn
+  as a separate layer and always fits.
+- **Workaround:** keep the wordmark well inside the 16:9 frame. This only
+  helps up to a certain width, and it is wasted space on 16:9.
+- **Request:**
+  - An optional **pack logo** (`assets/pack_logo.png`), drawn as its own
+    layer in the top right of the main menu, sized and placed like the
+    game logo so it is never cut. Optionally also small on the loading
+    screens and the dashboard header.
+  - An optional **focus point** per background image (for example
+    `"title_bg_focus": [0.75, 0.6]`, fractions of the image) that the
+    crop keeps in view, instead of always the middle. The same for the
+    dashboard backgrounds.
+  - Optionally, a second image for very wide windows
+    (`title_bg_wide.png`, 21:9), used when the window is wider than
+    about 2:1.
+  - Packs without these files look as today.
+- **Post:** `docs/requests/responsive-images.md` (with E5's map aspect
+  ratio and safe areas), screenshots in `docs/requests/img/responsive/`.
 
 ---
 
