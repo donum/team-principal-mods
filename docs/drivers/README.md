@@ -127,3 +127,12 @@ rebuild it with `python -I drawings_build.py` there.
   redirects to another name (Susie Stoddart → Wolff 2011 and others).
 - **Use:** fan drawings under CC BY-SA (the fandom default). Credit Byggxx
   and dtm.fandom.com before using one in a pack.
+- **Corrections:** [fandom_svg_fixes.csv](fandom_svg_fixes.csv) fixes
+  `SOURCES.csv` rows where the wiki's entry table is wrong, each checked
+  against the number drawn on the car (2026-11-16). A few table rows name the
+  wrong driver (2012 row 9 says Timo Scheider for Rockenfeller's car), so the
+  drawing of that driver got the other car's number; `sort_svgs.py` now keeps
+  the first row and applies the fixes. 150 drawings are grey cars with a big
+  `?` (the wiki has no livery for them, mostly 1984 to 1989): they have
+  `placeholder` = `yes`, and the livery status page counts them but does not
+  show them.

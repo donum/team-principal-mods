@@ -1,0 +1,216 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#2 Frank Sytner, Pyramid Motorsport BMW M3, BTCC 1991",
+ "note": "Base livery measured on Getty LAT 2201222122 (Silverstone 14 July 1991, left side, 3/4 front, pixel grid; x between the wheel centres, y by window line to sill) with colours from Sutton 2175990625 (Donington 29 April 1991, left side): black car, ESSO-headed white number board at the front of the front door, Mobil (blue letters, red o, white edge) and a black '1' box across the doors, BMW M stripes (light blue, violet, red) rising from the sill ahead of the rear wheel onto the C-pillar, sticker row on the sill. Mobil 1 size and place follow the measured Mobil BMW cars (same decal). Not drawn: the TV graphics drawings (A_v13_15-36_cap_sytner, grid captions) show a plain black car; at Brands Hatch in August (Getty 2201200951) the doors carried TSW Tiger Sport Wheel instead of Mobil 1; the right side carried RONAL at times (STR 4712). Wheels: gold BBS-style mesh with a polished lip, from Sutton 2175990625 and STR 4711/4712; no standing photo of #2 was found (all Pyramid pictures are on track).",
+ "base": "#141414",
+ "rim": "#c9a646",
+ "wheel": "cross",
+ "shapes": [
+  {
+   "poly": [
+    [
+     1370,
+     700
+    ],
+    [
+     1440,
+     700
+    ],
+    [
+     1906.1,
+     110
+    ],
+    [
+     1836.1,
+     110
+    ]
+   ],
+   "fill": "#4a9be0"
+  },
+  {
+   "poly": [
+    [
+     1440,
+     700
+    ],
+    [
+     1510,
+     700
+    ],
+    [
+     1976.1,
+     110
+    ],
+    [
+     1906.1,
+     110
+    ]
+   ],
+   "fill": "#5a3a9a"
+  },
+  {
+   "poly": [
+    [
+     1510,
+     700
+    ],
+    [
+     1580,
+     700
+    ],
+    [
+     2046.1,
+     110
+    ],
+    [
+     1976.1,
+     110
+    ]
+   ],
+   "fill": "#e3301f"
+  },
+  {
+   "rect": [
+    772,
+    322,
+    216,
+    46
+   ],
+   "fill": "#d8261c",
+   "r": 4
+  },
+  {
+   "rect": [
+    772,
+    368,
+    216,
+    236
+   ],
+   "fill": "#ffffff",
+   "stroke": "#bbbbbb",
+   "sw": 3,
+   "r": 4
+  },
+  {
+   "rect": [
+    990,
+    640,
+    110,
+    34
+   ],
+   "fill": "#f2f2f2"
+  },
+  {
+   "rect": [
+    1110,
+    640,
+    130,
+    34
+   ],
+   "fill": "#f2f2f2"
+  },
+  {
+   "rect": [
+    1250,
+    640,
+    80,
+    34
+   ],
+   "fill": "#d9a520"
+  },
+  {
+   "rect": [
+    1470,
+    376,
+    113,
+    138
+   ],
+   "fill": "#111111",
+   "stroke": "#ffffff",
+   "sw": 6
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 880,
+   "y": 359,
+   "size": 40,
+   "fill": "#ffffff",
+   "w": 120
+  },
+  {
+   "t": "British Touring Car Championship",
+   "x": 880,
+   "y": 396,
+   "size": 18,
+   "fill": "#222222",
+   "w": 196,
+   "font": "Arial, Helvetica, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "2",
+   "x": 880,
+   "y": 588,
+   "size": 200,
+   "fill": "#000000",
+   "font": "Arial, Helvetica, sans-serif"
+  },
+  {
+   "t": "M",
+   "x": 1058,
+   "y": 514,
+   "size": 186,
+   "fill": "#1d2a88",
+   "anchor": "start",
+   "w": 128,
+   "font": "Arial, Helvetica, sans-serif",
+   "stroke": "#ffffff",
+   "sw": 8
+  },
+  {
+   "t": "o",
+   "x": 1193,
+   "y": 514,
+   "size": 186,
+   "fill": "#e3301f",
+   "anchor": "start",
+   "w": 76,
+   "font": "Arial, Helvetica, sans-serif",
+   "stroke": "#ffffff",
+   "sw": 8
+  },
+  {
+   "t": "bil",
+   "x": 1276,
+   "y": 514,
+   "size": 186,
+   "fill": "#1d2a88",
+   "anchor": "start",
+   "w": 157,
+   "font": "Arial, Helvetica, sans-serif",
+   "stroke": "#ffffff",
+   "sw": 8
+  },
+  {
+   "t": "1",
+   "x": 1527,
+   "y": 500,
+   "size": 140,
+   "fill": "#ffffff",
+   "font": "Arial, Helvetica, sans-serif"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Sytner",
+   "x": 1585,
+   "y": 167,
+   "size": 74,
+   "fill": "#ffffff",
+   "w": 228,
+   "font": "Arial, Helvetica, sans-serif"
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#18 Godfrey Hall, Pyramid Motorsport BMW M3, BTCC 1991",
+ "base": "#141a33",
+ "rim": "#b39456",
+ "wheel": "cross",
+ "spokes": 10,
+ "window": "#2a2a2a",
+ "lip": "#d4d4d4",
+ "shapes": [
+  {
+   "rect": [
+    0,
+    515,
+    2400,
+    133
+   ],
+   "fill": "#e8b62a"
+  },
+  {
+   "rect": [
+    0,
+    648,
+    2400,
+    45
+   ],
+   "fill": "#2a46b0"
+  },
+  {
+   "rect": [
+    772,
+    328,
+    236,
+    50
+   ],
+   "fill": "#d71920"
+  },
+  {
+   "circle": [
+    2060,
+    375,
+    38
+   ],
+   "fill": "#f6c400",
+   "stroke": "#d71920",
+   "sw": 6
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 890,
+   "y": 368,
+   "size": 42,
+   "fill": "#ffffff",
+   "w": 130
+  },
+  {
+   "t": "Shell",
+   "x": 2060,
+   "y": 455,
+   "size": 42,
+   "fill": "#ffffff",
+   "w": 115,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 2160,
+   "y": 610,
+   "size": 56,
+   "fill": "#111",
+   "w": 270
+  }
+ ],
+ "number": {
+  "rect": [
+   772,
+   380,
+   236,
+   268
+  ],
+  "n": "18",
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "r": 6
+ },
+ "over_texts": [
+  {
+   "t": "Hall",
+   "x": 1570,
+   "y": 125,
+   "size": 48,
+   "fill": "#ffffff",
+   "w": 136,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Very dark blue (almost black) M3 with a yellow band along the lower body from bumper to bumper and a blue band under it on the sill, big white number board with the red Esso header on the front door, Shell on the rear quarter. Band heights and the number board measured on the nose-left Super Touring Register photo of Fenwick #18 (6216, Thruxton) against the wheelbase and door, and checked with the STR photo of Hall #18 (4723, other side: Shell, Dunlop, yellow and blue bands) and the Getty front view of Fenwick (Thruxton 22 September, 2201200918: yellow front bumper with a blue lip). TV caption drawings (round 12 Thruxton) are dark and blurry: black car, large white number board, yellow marks low down. Wheels: bronze/gold BBS mesh with a polished lip, from the Hall STR photo (on track); no standing photo of this car found. Hall drove it at round 13 (Silverstone GP); the STR photo of Hall (other side) shows no V.J. Edwards board, so the door is plain; Shell roundel and Dunlop on the yellow behind the rear wheel are taken from that photo and mirrored."
+}

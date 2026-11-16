@@ -10,6 +10,10 @@ and from the picture store (default ~/Pictures/mods/<series>-<year>/):
   teams/**                    raw photos per team (not yet labelled); shown per car when the
                               file name gives '#NN' or names the driver first
 and from the video store (default ~/Videos/yt/<SERIES>/<year>/): number of videos.
+and from the fandom SVG import (<pictures>/dtm_fandom_svgs/SOURCES.csv, DTM and ITC only):
+  side-view SVG drawings per car from dtm.fandom.com, matched by year and driver; car type,
+  number and team pick the row when a driver has several. Entries without a known number
+  get a '?' row. Grey '?' placeholder drawings are counted, not shown.
 
 Writes one self-contained HTML page (default ~/Pictures/mods/livery_status.html).
 tools/livery_pack.py calls this after every pack build, so the page stays current;
@@ -17,7 +21,7 @@ run it by hand after adding drawings or photos:
 
     python tools/livery_status.py [--pictures DIR] [--videos DIR] [--out FILE]
 """
-import argparse, csv, datetime as dt, html, json, os, re, sys
+import argparse, csv, datetime as dt, html, json, os, re, sys, unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -28,8 +32,14 @@ SIDES = ("left", "right")
 QRANK = {"A": 0, "B": 1, "C": 2}
 
 
+def fold(s):
+    """Lower case without accents: 'Müller' -> 'muller', 'Schrøter' -> 'schroter'."""
+    s = unicodedata.normalize("NFKD", s.replace("ø", "o").replace("Ø", "O").replace("ß", "ss"))
+    return "".join(ch for ch in s if not unicodedata.combining(ch)).lower()
+
+
 def norm(s):
-    return re.sub(r"[^a-z0-9]", "", s.lower())
+    return re.sub(r"[^a-z0-9]", "", fold(s))
 
 
 def best(rows, views):
@@ -37,12 +47,67 @@ def best(rows, views):
     return min(q, key=lambda x: QRANK.get(x, 9)) if q else ""
 
 
+SVGS = None                                        # set in main(): year -> list of SOURCES.csv car rows
+GREY = defaultdict(int)                            # year -> grey '?' placeholder drawings left out
+
+
+def load_svgs(root):
+    """Fandom car SVGs by year. Rows without a driver get it from the file name. Grey '?' cars
+    (placeholder 'yes', from docs/drivers/fandom_svg_fixes.csv) are only counted."""
+    out = defaultdict(list)
+    src = root / "SOURCES.csv"
+    if not src.exists():
+        return out
+    for r in csv.DictReader(open(src, encoding="utf-8")):
+        if r["kind"] != "car" or not (root / r["file"]).exists():
+            continue
+        if r.get("placeholder"):
+            GREY[r["year"]] += 1
+            continue
+        r = dict(r, path=root / r["file"])
+        if not r["driver"]:
+            stem = re.sub(r"\(.*?\)", "", Path(r["file"]).stem)
+            r["driver"] = re.split(r"_\d{4}", stem)[0].replace("_", " ")
+        out[r["year"]].append(r)
+    return out
+
+
+def same_driver(a, b):
+    """Same last name and the same first initial ('A. Kaufmann', 'Willi'/'Wilhelm F. Weber').
+    Accents fold, so 'Müller' and 'Möller' stay apart. The wiki adds footnotes: '<ref>' is cut."""
+    a, b = (re.split(r"<ref|\[", x)[0].split() for x in (a, b))
+    if not a or not b or norm(a[-1]) != norm(b[-1]):
+        return False
+    return len(a) == 1 or len(b) == 1 or norm(a[0])[:1] == norm(b[0])[:1]
+
+
+def svg_match(cars, rows):
+    """Car index -> SVG rows, plus the rows that match no car. Each SVG goes to one entry row of its
+    driver; when the driver has several (other car, other number, a second team), the row with
+    the one whose car shares most words with the SVG's (or its file name: '(BMW_528i)') wins, then
+    the same number, then the team."""
+    hit, left = defaultdict(list), []
+    words = lambda s: set(re.findall(r"[a-z0-9]{2,}", fold(s)))
+    for r in rows:
+        cand = [i for i, c in enumerate(cars) if same_driver(c["driver"], r["driver"])]
+        if not cand:
+            left.append(r)
+            continue
+        num = r["number"].strip()
+        car = r["car"] or " ".join(re.findall(r"\(([^)]*)\)", r["path"].stem)).replace("_", " ")   # '(BMW_528i)'
+        score = lambda i: (len(words(cars[i].get("car", "")) & words(car)), cars[i]["number"].strip() == num != "",
+                           len(words(cars[i].get("entrant", "")) & words(r["team"])), norm(cars[i]["driver"]) == norm(r["driver"]), -i)
+        hit[max(cand, key=score)].append(r)
+    return hit, left
+
+
 def season(year_dir, pics, vids):
     series, y = year_dir.name.split("-")[0], year_dir.name.split("-")[1]
     ent = year_dir / "research" / "entries.csv"
     if not ent.exists():
         return None
-    cars = [r for r in csv.DictReader(open(ent, encoding="utf-8")) if r.get("number", "").strip()]
+    cars = list(csv.DictReader(open(ent, encoding="utf-8")))   # rows without a known number too ('?')
+    numbered = [c for c in cars if c.get("number", "").strip()]
     final, artist = {}, ""
     dj = year_dir / "art" / "drawings.json"
     if dj.exists():
@@ -51,6 +116,14 @@ def season(year_dir, pics, vids):
         for sheet, s in d.get("sheets", {}).items():
             for n in s.get("cars", []):
                 final[str(n)] = sheet
+    our_svg = defaultdict(dict)                    # art/svg/<NN>_<surname>.svg: our own SVG drawings (tools/livery_svg.py),
+    for p in sorted((year_dir / "art" / "svg").glob("*.svg")):   # one per driver; preview in build/art/<season>/svg/
+        num, _, who = p.stem.partition("_")
+        if not num.isdigit():
+            continue
+        n = str(int(num))
+        our_svg[n][norm(who)] = (p, REPO / "build" / "art" / year_dir.name / "svg" / (p.stem + ".png"))
+        final.setdefault(n, p.name)
     team_img = {norm(p.stem): p for p in (year_dir / "assets" / "Cars").glob("*.png")}
     gen = set(team_img) if not final else set()
     per_car = {}                                   # art/liveries/<Team>_<NN>.png: the other car of a sheet
@@ -79,22 +152,33 @@ def season(year_dir, pics, vids):
                 team_dir = f.relative_to(pdir / "teams").parts[0]
                 raw[team_dir] += 1
                 if f.resolve() not in labelled and not NOT_CAR.intersection(x.lower() for x in f.parts):
-                    for n in photo_cars(f, team_dir, cars):
+                    for n in photo_cars(f, team_dir, numbered):
                         photos[n].append(f)
     vdir = vids / series.upper() / y
     nvid = sum(1 for f in vdir.rglob("*") if f.suffix.lower() in VID) if vdir.exists() else 0
+    svg_hit, svg_left = svg_match(cars, SVGS.get(y, []) if series in ("dtm", "itc") else [])
     rows = []
-    for c in cars:
-        n = c["number"].strip()
+    for i, c in enumerate(cars):
+        n = c.get("number", "").strip()
         lr = labels.get(n, [])
         status = "final" if n in final else ("generated" if norm(c.get("entrant", "")) in gen else "none")
-        if status == "final":
+        svgfile = None
+        mine = our_svg.get(n, {})
+        pick = mine.get(norm(c.get("driver", "").split()[-1]) if c.get("driver", "").split() else "") or mine.get("")
+        if status == "final" and final[n].endswith(".svg") and not pick:
+            status = "none"                        # a team-mate's drawing, not this driver's
+        if status == "final" and pick:
+            svgfile, img = pick[0], (pick[1] if pick[1].exists() else None)
+        elif status == "final":
             img = per_car.get(n) or team_img.get(norm(sheet_team.get(n, "")))
         elif status == "generated":
             img = team_img.get(norm(c.get("entrant", "")))
         else:
             img = None
         refs = []                                  # best labelled image per view group
+        tv = sorted((pdir / "tv_artwork" / "cars").glob(f"{int(n):02d} */[ABC]_*.png")) if n.isdigit() else []
+        if tv:                                     # best drawing from the TV graphics (A before B before C)
+            refs.append(("T", tv[0].name[0], "tv art", tv[0], "TV graphic drawing, tv_artwork/cars"))
         for tag, views in (("L", ("left",)), ("R", ("right",)), ("F", ("front", "front-left", "front-right")),
                            ("B", ("rear", "rear-left", "rear-right"))):
             cand = sorted((r for r in lr if r["view"] in views), key=lambda r: QRANK.get(r["quality"], 9))
@@ -105,14 +189,16 @@ def season(year_dir, pics, vids):
                 if p.exists():
                     refs.append((tag, r["quality"], r["view"], p, r.get("note", "")))
         rows.append({"n": n, "driver": c.get("driver", ""), "team": c.get("entrant", ""), "car": c.get("car", ""),
-                     "status": status, "sheet": final.get(n, ""), "img": img, "refs": refs,
+                     "status": status, "sheet": final.get(n, ""), "img": img, "svgfile": svgfile, "refs": refs,
                      "left": best(lr, ("left",)), "right": best(lr, ("right",)),
                      "front": best(lr, ("front", "front-left", "front-right")),
                      "rear": best(lr, ("rear", "rear-left", "rear-right")), "nref": len(lr),
-                     "photos": photos.get(n, []),
+                     "photos": photos.get(n, []) if n else [], "svgs": svg_hit.get(i, []),
                      "teamraw": raw.get(c.get("entrant", ""), 0)})
     return {"year": y, "key": year_dir.name, "label": f"{series.upper()} {y}", "rows": rows, "artist": artist, "raw": sum(raw.values()), "videos": nvid,
-            "pack": (pdir / "livery_pack" / "README.md").exists(), "packdir": pdir / "livery_pack"}
+            "pack": (pdir / "livery_pack" / "README.md").exists(), "packdir": pdir / "livery_pack",
+            "svgs": sum(len(v) for v in svg_hit.values()) + len(svg_left), "svg_left": svg_left,
+            "grey": GREY.get(y, 0) if series in ("dtm", "itc") else 0}
 
 
 NOT_CAR = {"historic", "other_years", "people", "portrait", "portrait_frame"}   # folders that are no livery reference
@@ -171,6 +257,17 @@ def photo_cars(f, team_dir, cars):
     return out if len(out) == 1 else []
 
 
+def svg_pic(v, out, who=False):
+    """Fandom SVG shown as is (browsers draw SVG; no thumbnail needed)."""
+    e = html.escape
+    u = os.path.relpath(v["path"], out.parent).replace(os.sep, "/")
+    lab = f"SVG {v['driver']}" if who else "SVG"
+    tip = " · ".join(x for x in (v["driver"], f"#{v['number']}" if v["number"] else "", v["team"], v["car"],
+                                  f"by {v['uploader']}", v["path"].name) if x)
+    return (f"<a class='sv' href='{e(v['path'].as_uri())}' target='_blank' title='{e(tip)}'>"
+            f"<img loading='lazy' src='{e(u)}' alt='svg'><i>{e(lab)}</i></a>")
+
+
 def ready(r):
     """Enough to draw from: both sides at A/B."""
     return r["left"] in ("A", "B") and r["right"] in ("A", "B")
@@ -184,6 +281,7 @@ def page(seasons, out):
             tot["cars"] += 1
             tot[r["status"]] += 1
             tot["ready"] += r["status"] != "final" and ready(r)
+            tot["svg"] += bool(r["svgs"])
     summary = []
     for s in seasons:
         rs = s["rows"]
@@ -191,11 +289,12 @@ def page(seasons, out):
         g = sum(r["status"] == "generated" for r in rs)
         rd = sum(r["status"] != "final" and ready(r) for r in rs)
         one = sum(r["status"] != "final" and not ready(r) and bool(r["left"] or r["right"]) for r in rs)
+        sv = sum(bool(r["svgs"]) for r in rs)
         pct = round(100 * f / len(rs)) if rs else 0
         summary.append(f"<tr><td><a href='#{s['key']}'>{s['label']}</a></td><td>{len(rs)}</td>"
                        f"<td class='num'>{f or ''}</td><td class='num'>{g or ''}</td><td class='num'>{rd or ''}</td>"
                        f"<td class='num'>{one or ''}</td><td class='num'>{s['raw'] or ''}</td><td class='num'>{s['videos'] or ''}</td>"
-                       f"<td><div class='bar'><span style='width:{pct}%'></span></div></td></tr>")
+                       f"<td class='num'>{sv or ''}</td><td><div class='bar'><span style='width:{pct}%'></span></div></td></tr>")
     details = []
     for s in seasons:
         rs = s["rows"]
@@ -203,13 +302,17 @@ def page(seasons, out):
             continue
         open_ = " open" if s["pack"] else ""
         body, shown = [], set()
-        for r in sorted(rs, key=lambda r: (int(re.sub(r"\D", "", r["n"]) or 0), r["n"])):
+        for r in sorted(rs, key=lambda r: (not r["n"], int(re.sub(r"\D", "", r["n"]) or 0), r["n"])):
             st = {"final": "Final drawing", "generated": "Generated", "none": "Missing"}[r["status"]]
             chips = "".join(f"<td class='q q{r[k] or 'x'}'>{r[k] or '·'}</td>" for k in ("left", "right", "front", "rear"))
             pics = []
             if r["img"] is not None and (u := thumb(r["img"], out, 480)):
-                pics.append(f"<a class='lv' href='{e(r['img'].as_uri())}' target='_blank' title='{e(r['img'].name)}'>"
-                            f"<img loading='lazy' src='{e(u)}' alt='livery #{e(r['n'])}'><i>{st}</i></a>")
+                link = r.get("svgfile") or r["img"]
+                lab = "Final drawing (SVG)" if r.get("svgfile") else st
+                pics.append(f"<a class='lv' href='{e(link.as_uri())}' target='_blank' title='{e(link.name)}'>"
+                            f"<img loading='lazy' src='{e(u)}' alt='livery #{e(r['n'])}'><i>{lab}</i></a>")
+            for v in r["svgs"]:                         # each SVG sits on one entry row only
+                pics.append(svg_pic(v, out))
             for tag, q, view, p, note in r["refs"]:
                 if u := thumb(p, out):
                     pics.append(f"<a class='rf' href='{e(p.as_uri())}' target='_blank' title='{e(view)} · {e(note)} · {e(p.name)}'>"
@@ -222,17 +325,21 @@ def page(seasons, out):
                                     f"<img loading='lazy' src='{e(u)}' alt='photo'><i>Photo</i></a>")
                 if len(r["photos"]) > MAXPHOTOS:
                     pics.append(f"<span class='more'>+{len(r['photos']) - MAXPHOTOS} more in teams/</span>")
-            body.append(f"<tr><td class='num'>{e(r['n'])}</td><td>{e(r['driver'])}</td><td class='team'>{e(r['team'])}</td>"
+            body.append(f"<tr><td class='num'>{e(r['n'] or '?')}</td><td>{e(r['driver'])}</td><td class='team'>{e(r['team'])}</td>"
                         f"<td class='team'>{e(r['car'])}</td><td><span class='st {r['status']}'>{st}</span></td>{chips}"
-                        f"<td class='num'>{r['nref'] or ''}</td><td class='num'>{r['teamraw'] or ''}</td></tr>")
+                        f"<td class='num'>{len(r['svgs']) or ''}</td><td class='num'>{r['nref'] or ''}</td><td class='num'>{r['teamraw'] or ''}</td></tr>")
             if pics:
-                body.append(f"<tr class='pics'><td></td><td colspan='10'><div class='strip'>{''.join(pics)}</div></td></tr>")
+                body.append(f"<tr class='pics'><td></td><td colspan='11'><div class='strip'>{''.join(pics)}</div></td></tr>")
+        if s["svg_left"]:
+            body.append("<tr class='pics'><td></td><td colspan='11'><b class='lft'>SVG drawings not matched to a car</b>"
+                        f"<div class='strip'>{''.join(svg_pic(v, out, True) for v in s['svg_left'])}</div></td></tr>")
         link = f" · <a href='{e(os.path.relpath(s['packdir'], out.parent).replace(os.sep, '/'))}/README.md'>pack</a>" if s["pack"] else ""
         art = f" · drawings by {e(s['artist'])}" if s["artist"] else ""
         details.append(f"<details id='{s['key']}'{open_}><summary>{s['label']} <small>{len(rs)} cars{art}"
-                       f" · {s['raw']} raw photos · {s['videos']} videos{link}</small></summary>"
+                       f" · {s['raw']} raw photos · {s['videos']} videos · {s['svgs']} SVG drawings"
+                       f"{f' (+{g} grey ? cars left out)' if (g := s['grey']) else ''}{link}</small></summary>"
                        "<table class='cars'><thead><tr><th>#</th><th>Driver</th><th>Team</th><th>Car</th><th>Livery</th>"
-                       "<th>Left</th><th>Right</th><th>Front</th><th>Rear</th><th>Refs</th><th>Team photos</th></tr></thead>"
+                       "<th>Left</th><th>Right</th><th>Front</th><th>Rear</th><th>SVG</th><th>Refs</th><th>Team photos</th></tr></thead>"
                        f"<tbody>{''.join(body)}</tbody></table></details>")
     now = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -268,6 +375,8 @@ tr.pics td{{border-bottom:1px solid var(--line);padding:2px 8px 10px;white-space
 .strip i{{position:absolute;left:0;bottom:0;font:600 11px/1 system-ui,sans-serif;font-style:normal;padding:3px 6px;
 background:rgba(0,0,0,.72);color:#fff;border-top-right-radius:6px}}
 .strip .more{{color:var(--mute);font-size:12px;align-self:center}} .strip a.ph i{{color:#9cc4ff}}
+.strip a.sv{{background:#fff}} .strip a.sv img{{height:80px;padding:4px}} .strip a.sv i{{color:#ffd68a}}
+.lft{{display:block;color:var(--mute);font-size:12px;font-weight:600;margin:6px 0}}
 .strip i.qA{{color:#6ee7a8}} .strip i.qB{{color:#c3e88d}} .strip i.qC{{color:#ffcb6b}}
 </style></head><body><main>
 <h1>DTM &amp; BTCC Livery Status</h1>
@@ -278,14 +387,16 @@ background:rgba(0,0,0,.72);color:#fff;border-top-right-radius:6px}}
 <div class="kpi"><b style="color:var(--gen)">{tot['generated']}</b><span>generated stand-ins</span></div>
 <div class="kpi"><b style="color:var(--qa)">{tot['ready']}</b><span>ready to draw (both sides A/B)</span></div>
 <div class="kpi"><b style="color:var(--none)">{tot['none']}</b><span>no livery image</span></div>
+<div class="kpi"><b style="color:var(--acc)">{tot['svg']}</b><span>cars with a fandom SVG</span></div>
 </div>
-<p class="legend"><b>Livery:</b> Final drawing = artist sheet in <code>art/drawings.json</code>; Generated = team image from adapted outlines
+<p class="legend"><b>Livery:</b> Final drawing = artist sheet in <code>art/drawings.json</code> or our own SVG in <code>art/svg/</code>; Generated = team image from adapted outlines
 (<code>assets/Cars</code>); Missing = nothing in-game. <b>Left/Right/Front/Rear:</b> best labelled reference
 (A draw from it, B usable, C colours only, · none); left/right = the car's own side. <b>Ready</b> = both sides at A or B.
 <b>Photo</b> = real period photo from the picture store (<code>teams/</code>), matched to the car by the name or number in its
-file name and not yet labelled. Reference only: most need permission before any use.</p>
+file name and not yet labelled. Reference only: most need permission before any use.
+<b>SVG</b> = side-view drawing from dtm.fandom.com (<code>dtm_fandom_svgs/</code>), CC BY-SA: credit the uploader and the wiki.</p>
 <div class="wrap"><table><thead><tr><th>Season</th><th>Cars</th><th>Final</th><th>Generated</th><th>Ready to draw</th>
-<th>One side only</th><th>Raw photos</th><th>Videos</th><th>Final share</th></tr></thead><tbody>{''.join(summary)}</tbody></table></div>
+<th>One side only</th><th>Raw photos</th><th>Videos</th><th>Cars with SVG</th><th>Final share</th></tr></thead><tbody>{''.join(summary)}</tbody></table></div>
 <h2 style="font-size:17px;margin:28px 0 8px">Per car</h2>
 <div class="wrap">{''.join(details)}</div>
 </main></body></html>"""
@@ -299,9 +410,10 @@ def main(argv=None):
     ap.add_argument("--out", type=Path, default=None)
     a = ap.parse_args(argv)
     out = a.out or a.pictures / "livery_status.html"
-    global THUMBS
+    global THUMBS, SVGS
+    SVGS = load_svgs(a.pictures / "dtm_fandom_svgs")
     THUMBS = out.parent / "_status_thumbs"
-    seasons = [s for d in sorted((REPO / "seasons").glob("dtm-*")) + sorted((REPO / "seasons").glob("btcc-*")) if (s := season(d, a.pictures, a.videos))]
+    seasons = [s for d in sorted((REPO / "seasons").glob("dtm-*")) + sorted((REPO / "seasons").glob("itc-*")) + sorted((REPO / "seasons").glob("btcc-*")) if (s := season(d, a.pictures, a.videos))]
     page(seasons, out)
     print("status page:", out)
 

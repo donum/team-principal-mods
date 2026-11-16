@@ -243,6 +243,14 @@ The game features these would need are in the
 [developer wish list](../../docs/DEVELOPER_WISHLIST.md) (item numbers in
 brackets).
 
+- **Later seasons** follow the real grid (`docs/teams`): ART joins in 2015,
+  BMW Team RMR and a third HWA team in 2017, Aston Martin (R-Motorsport) and
+  Audi Sport Team WRT in 2019, Orlen Team ART in 2020. MTEK, Schnitzer,
+  Mücke and ART leave after 2016, Mercedes after 2018. The game keeps at
+  least 10 teams (C10), so Audi Sport Team Abt stays from 2017 and one
+  R-Motorsport team stays in 2020. Audi and BMW don't leave after 2020.
+- **Title sponsors** stay in the Mercedes team names, even when the deal
+  ends (C11).
 - **Feeder series** race once per weekend (C7). F3 and Formel Masters ran
   3 races, and the Carrera Cup, German F3 and the DTC 2. Each uses its main
   points table without bonus points, and results ignore the track. The

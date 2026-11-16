@@ -11,6 +11,7 @@ Status: `draft` (not posted yet), `posted` (with date and link), `answered`.
 |---|---|---|
 | [Track art styles the player picks](track-art-styles.md) | E16 | draft |
 | [More car liveries, more often](car-liveries.md) | E4, E15 | posted |
+| [Car image per title sponsor](title-sponsor-liveries.md) | E23, E24 | posted |
 | [Weekend images: track, session and result](weekend-images.md) | E17 | draft |
 | [Weekend images per team](weekend-images-per-team.md) | E19 | draft |
 | [Ambience per track and drive-by pools](ambience-per-track.md) | E9, E11 | answered: implemented, next version |

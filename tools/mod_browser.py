@@ -343,6 +343,19 @@ def build_teams(pack, base, season, manifest, media, sources):
     # (tools/car_drawings.py, art/liveries; not in the pack, wishlist E4)
     liveries = (load_json(season / "art" / "liveries" / "liveries.json", {}) or {}).get("teams", {}) if season else {}
     year = start_year(pack)
+    # Scripted joins and exits in later seasons (tools/real_history.py)
+    joins, leaves = {}, {}
+    for e in load_json(pack / "events.json", []) or []:
+        if e.get("type") in ("team_join", "team_leave") and e.get("exact_season"):
+            (joins if e["type"] == "team_join" else leaves)[e["team"]] = e["exact_season"]
+    def career(name):
+        parts = []
+        if name in joins:
+            parts.append(f"Joins in season {joins[name]}" + (f" ({year + joins[name] - 1})" if year else ""))
+        if name in leaves:
+            last = leaves[name] - 1
+            parts.append(f"Leaves after season {last}" + (f" ({year + last - 1})" if year else ""))
+        return ". ".join(parts) or None
     out = []
     for t in load_json(pack / "teams.json", []):
         n = nospace(t["name"])
@@ -363,6 +376,7 @@ def build_teams(pack, base, season, manifest, media, sources):
                     "other_liveries": other,
                     "logo": media.image(pack / "assets" / "logos" / f"{n}.png", f"logos/{n}.png"),
                     "history_text": hist.get(t["name"]), "cloned_from": clones.get(t["name"]),
+                    "career": career(t["name"]), "future": t.get("active", True) is False,
                     "drivers": [d["name"] for d in drivers if d.get("team") == t["name"]],
                     "fields": sources.get(t["name"], {})})
     vanilla = []

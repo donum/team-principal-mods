@@ -1,0 +1,908 @@
+{
+ "model": "ford_sierra_sapphire",
+ "title": "#21 Dave Brodie, Brodie Brittain Racing Ford Sierra Sapphire 4x4, BTCC 1991",
+ "base": "#111111",
+ "wheel": "cross",
+ "rim": "#262626",
+ "window": "#0d0d0d",
+ "spokes": 10,
+ "lip": "#d6d6d6",
+ "shapes": [
+  {
+   "path": "M790,396 L1020,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1020,396 L790,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M870,396 L1100,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1100,396 L870,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M950,396 L1180,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1180,396 L950,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1030,396 L1260,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1260,396 L1030,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1110,396 L1340,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1340,396 L1110,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1190,396 L1420,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1420,396 L1190,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1270,396 L1500,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1500,396 L1270,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1350,396 L1580,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1580,396 L1350,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1430,396 L1660,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1660,396 L1430,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1510,396 L1740,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1740,396 L1510,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1590,396 L1820,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1820,396 L1590,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1670,396 L1900,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1900,396 L1670,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1750,396 L1980,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "path": "M1980,396 L1750,625",
+   "fill": "none",
+   "stroke": "#2ec43c",
+   "sw": 24
+  },
+  {
+   "rect": [
+    700,
+    300,
+    410,
+    360
+   ],
+   "fill": "#111111"
+  },
+  {
+   "rect": [
+    1100,
+    150,
+    1300,
+    246
+   ],
+   "fill": "#111111"
+  },
+  {
+   "rect": [
+    1100,
+    625,
+    760,
+    60
+   ],
+   "fill": "#111111"
+  },
+  {
+   "poly": [
+    [
+     1416,
+     396
+    ],
+    [
+     2400,
+     396
+    ],
+    [
+     2400,
+     640
+    ],
+    [
+     1655,
+     640
+    ],
+    [
+     1662,
+     600
+    ]
+   ],
+   "fill": "#111111"
+  },
+  {
+   "path": "M1105,630 C1095,360 1245,360 1235,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1165,630 C1155,360 1305,360 1295,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1225,630 C1215,360 1365,360 1355,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1285,630 C1275,360 1425,360 1415,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1345,630 C1335,360 1485,360 1475,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1405,630 C1395,360 1545,360 1535,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1465,630 C1455,360 1605,360 1595,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1525,630 C1515,360 1665,360 1655,630",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1650,215 C1720,330 1760,420 1780,492",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1666,215 C1736,330 1776,420 1796,492",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1682,215 C1752,330 1792,420 1812,492",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M1698,215 C1768,330 1808,420 1828,492",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 7
+  },
+  {
+   "path": "M533,646 A164,164 0 0 1 861,646",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 14
+  },
+  {
+   "path": "M1677,643 A164,164 0 0 1 2005,643",
+   "fill": "none",
+   "stroke": "#ff8c1a",
+   "sw": 14
+  },
+  {
+   "rect": [
+    280,
+    535,
+    270,
+    9
+   ],
+   "fill": "#ff8c1a"
+  },
+  {
+   "rect": [
+    280,
+    556,
+    270,
+    9
+   ],
+   "fill": "#a6f03c"
+  },
+  {
+   "rect": [
+    280,
+    580,
+    270,
+    13
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "rect": [
+    280,
+    612,
+    270,
+    9
+   ],
+   "fill": "#2ec43c"
+  },
+  {
+   "rect": [
+    280,
+    640,
+    270,
+    9
+   ],
+   "fill": "#ff8c1a"
+  },
+  {
+   "rect": [
+    280,
+    667,
+    270,
+    9
+   ],
+   "fill": "#a6f03c"
+  },
+  {
+   "rect": [
+    1950,
+    384,
+    310,
+    8
+   ],
+   "fill": "#a6f03c"
+  },
+  {
+   "rect": [
+    1900,
+    414,
+    360,
+    8
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "rect": [
+    1985,
+    500,
+    275,
+    14
+   ],
+   "fill": "#ff8c1a"
+  },
+  {
+   "rect": [
+    1990,
+    545,
+    270,
+    8
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "rect": [
+    1990,
+    575,
+    270,
+    8
+   ],
+   "fill": "#ff8c1a"
+  },
+  {
+   "rect": [
+    2000,
+    603,
+    260,
+    8
+   ],
+   "fill": "#2ec43c"
+  },
+  {
+   "poly": [
+    [
+     1692.0,
+     220.0
+    ],
+    [
+     1698.4,
+     237.2
+    ],
+    [
+     1716.7,
+     238.0
+    ],
+    [
+     1702.4,
+     249.4
+    ],
+    [
+     1707.3,
+     267.0
+    ],
+    [
+     1692.0,
+     256.9
+    ],
+    [
+     1676.7,
+     267.0
+    ],
+    [
+     1681.6,
+     249.4
+    ],
+    [
+     1667.3,
+     238.0
+    ],
+    [
+     1685.6,
+     237.2
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "poly": [
+    [
+     1764.0,
+     294.0
+    ],
+    [
+     1770.9,
+     312.5
+    ],
+    [
+     1790.6,
+     313.3
+    ],
+    [
+     1775.2,
+     325.6
+    ],
+    [
+     1780.5,
+     344.7
+    ],
+    [
+     1764.0,
+     333.8
+    ],
+    [
+     1747.5,
+     344.7
+    ],
+    [
+     1752.8,
+     325.6
+    ],
+    [
+     1737.4,
+     313.3
+    ],
+    [
+     1757.1,
+     312.5
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "poly": [
+    [
+     1842.0,
+     358.0
+    ],
+    [
+     1848.9,
+     376.5
+    ],
+    [
+     1868.6,
+     377.3
+    ],
+    [
+     1853.2,
+     389.6
+    ],
+    [
+     1858.5,
+     408.7
+    ],
+    [
+     1842.0,
+     397.8
+    ],
+    [
+     1825.5,
+     408.7
+    ],
+    [
+     1830.8,
+     389.6
+    ],
+    [
+     1815.4,
+     377.3
+    ],
+    [
+     1835.1,
+     376.5
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "poly": [
+    [
+     1572.0,
+     402.0
+    ],
+    [
+     1580.9,
+     425.8
+    ],
+    [
+     1606.2,
+     426.9
+    ],
+    [
+     1586.4,
+     442.7
+    ],
+    [
+     1593.2,
+     467.1
+    ],
+    [
+     1572.0,
+     453.1
+    ],
+    [
+     1550.8,
+     467.1
+    ],
+    [
+     1557.6,
+     442.7
+    ],
+    [
+     1537.8,
+     426.9
+    ],
+    [
+     1563.1,
+     425.8
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "poly": [
+    [
+     1920.0,
+     424.0
+    ],
+    [
+     1926.4,
+     441.2
+    ],
+    [
+     1944.7,
+     442.0
+    ],
+    [
+     1930.4,
+     453.4
+    ],
+    [
+     1935.3,
+     471.0
+    ],
+    [
+     1920.0,
+     460.9
+    ],
+    [
+     1904.7,
+     471.0
+    ],
+    [
+     1909.6,
+     453.4
+    ],
+    [
+     1895.3,
+     442.0
+    ],
+    [
+     1913.6,
+     441.2
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "poly": [
+    [
+     2022.0,
+     430.0
+    ],
+    [
+     2027.9,
+     445.8
+    ],
+    [
+     2044.8,
+     446.6
+    ],
+    [
+     2031.6,
+     457.1
+    ],
+    [
+     2036.1,
+     473.4
+    ],
+    [
+     2022.0,
+     464.1
+    ],
+    [
+     2007.9,
+     473.4
+    ],
+    [
+     2012.4,
+     457.1
+    ],
+    [
+     1999.2,
+     446.6
+    ],
+    [
+     2016.1,
+     445.8
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "poly": [
+    [
+     2088.0,
+     424.0
+    ],
+    [
+     2092.4,
+     435.9
+    ],
+    [
+     2105.1,
+     436.4
+    ],
+    [
+     2095.2,
+     444.3
+    ],
+    [
+     2098.6,
+     456.6
+    ],
+    [
+     2088.0,
+     449.6
+    ],
+    [
+     2077.4,
+     456.6
+    ],
+    [
+     2080.8,
+     444.3
+    ],
+    [
+     2070.9,
+     436.4
+    ],
+    [
+     2083.6,
+     435.9
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "poly": [
+    [
+     728.0,
+     410.0
+    ],
+    [
+     731.9,
+     420.6
+    ],
+    [
+     743.2,
+     421.1
+    ],
+    [
+     734.4,
+     428.1
+    ],
+    [
+     737.4,
+     438.9
+    ],
+    [
+     728.0,
+     432.7
+    ],
+    [
+     718.6,
+     438.9
+    ],
+    [
+     721.6,
+     428.1
+    ],
+    [
+     712.8,
+     421.1
+    ],
+    [
+     724.1,
+     420.6
+    ]
+   ],
+   "fill": "#ff2a7a"
+  },
+  {
+   "circle": [
+    882,
+    528,
+    22
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "circle": [
+    882,
+    528,
+    17
+   ],
+   "fill": "#111111"
+  },
+  {
+   "rect": [
+    912,
+    402,
+    198,
+    220
+   ],
+   "fill": "#ffffff",
+   "stroke": "#000",
+   "sw": 3,
+   "r": 4
+  },
+  {
+   "rect": [
+    912,
+    402,
+    198,
+    30
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    920,
+    455,
+    182,
+    160
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "STAR",
+   "x": 642,
+   "y": 438,
+   "size": 44,
+   "fill": "#ffffff",
+   "w": 136,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "CHIP",
+   "x": 818,
+   "y": 438,
+   "size": 44,
+   "fill": "#ffffff",
+   "w": 136,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "BILSTEIN",
+   "x": 840,
+   "y": 466,
+   "size": 16,
+   "fill": "#ffffff",
+   "w": 64,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "Hoosier",
+   "x": 840,
+   "y": 492,
+   "size": 18,
+   "fill": "#ffffff",
+   "w": 64,
+   "font": "Georgia, serif",
+   "italic": true
+  },
+  {
+   "t": "ESSO",
+   "x": 1011.0,
+   "y": 427.8,
+   "size": 30.0,
+   "fill": "#ffffff",
+   "w": 95.03999999999999
+  },
+  {
+   "t": "British Touring",
+   "x": 1019.0,
+   "y": 442.35,
+   "size": 8.28,
+   "fill": "#000",
+   "w": 118.8,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 1019.0,
+   "y": 452.24,
+   "size": 8.28,
+   "fill": "#000",
+   "w": 138.6,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "21",
+   "x": 1011.0,
+   "y": 592.6,
+   "size": 160.0,
+   "fill": "#000",
+   "font": "Arial Narrow, Arial, sans-serif",
+   "w": 112.84
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Brodie",
+   "x": 1524,
+   "y": 288,
+   "size": 50,
+   "fill": "#ffffff",
+   "w": 180,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Black car with the neon STAR CHIP scheme. No near side-on photo of the left side: positions measured on the Getty / LAT photo 'Brands Hatch 26 August 1991, Dave Brodie' (2201200916, right side, mirrored and warped onto the model by the wheel centres and window corners); the left side is confirmed by the other LAT photo of that day (2201200818, front three-quarter, nose left: same number board, STAR CHIP on the front wing, lattice on the rear door, Brodie on the rear window) and the Thruxton TV graphic drawings. Same 4-door Sapphire shell as Gravett's car. Uncertain: the lattice and orange loops are drawn as a regular pattern (the real graphic is hand-drawn and irregular); star sizes and the exact stripe order on the bumpers are approximate; small stickers (Bilstein, Hoosier, the round logo) are partly unreadable. Wheels: dark centres with a polished lip, from on-track photos only (no photo of the car standing still)."
+}

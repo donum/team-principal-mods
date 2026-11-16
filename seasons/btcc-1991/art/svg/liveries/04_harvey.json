@@ -1,0 +1,170 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#4 Tim Harvey, Team Labatt's BMW M3, BTCC 1991",
+ "note": "Layout from the TV graphics drawing A_v13_18-08_cap_harvey and the left-side frame B_left_tv_BTCC 1991 Round 1 Pt 2_00-00-13 (#4), colours and lettering from the standing paddock photo 'Super Touring Register - Armin Hahne Labatt's BMW M3 #9 in the paddock 1991 (6214)' (left side, teams/Team Labatt's/ask_permission/paddock): royal blue car, white band under the windows with 'Please Don't Drink & Drive' in navy serif, red ESSO sticker above a white number board, white 'Labatt's' on the blue doors, YOKOHAMA on the sill. Wheels: gold 5-spoke with wide spokes from that same standing photo (also gold on the Brands Hatch pit photo of Harvey). Measured with a pixel grid on the near side-on left frame B_left_tv_BTCC 1991 Round 1 Pt 2_00-00-13 (x by wheel centres, y by window line to sill): band from the window line to about 30% of the door height, ESSO strip and number board about 220 wide starting at the front door shut line (as on the Hahne paddock photo), Labatt's from the board to the B-pillar and about 45% of the door height tall; checked against Getty LAT 2200274356 (left side, 3/4 front) and the TV drawing. Most Getty side-on shots (2201201091, 2200274342, 2201200825, STR 4710/4713) show the RIGHT side, where 'Please' sits at the rear. 'Please' lettering size is a compromise: the TV drawing shows it smaller than the photos.",
+ "base": "#1f42a8",
+ "rim": "#c9a23c",
+ "wheel": "star",
+ "shapes": [
+  {
+   "poly": [
+    [
+     -10,
+     200
+    ],
+    [
+     770,
+     200
+    ],
+    [
+     820,
+     295
+    ],
+    [
+     2410,
+     295
+    ],
+    [
+     2410,
+     416
+    ],
+    [
+     -10,
+     416
+    ]
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    -10,
+    404,
+    2420,
+    5
+   ],
+   "fill": "#1b2f86"
+  },
+  {
+   "rect": [
+    752,
+    326,
+    222,
+    56
+   ],
+   "fill": "#d8261c",
+   "r": 6
+  },
+  {
+   "poly": [
+    [
+     765,
+     632
+    ],
+    [
+     800,
+     632
+    ],
+    [
+     787,
+     664
+    ],
+    [
+     752,
+     664
+    ]
+   ],
+   "fill": "#d61f6e"
+  }
+ ],
+ "texts": [
+  {
+   "t": "Please",
+   "x": 240,
+   "y": 392,
+   "size": 96,
+   "fill": "#1b2f86",
+   "anchor": "start",
+   "w": 400,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "ESSO",
+   "x": 863,
+   "y": 372,
+   "size": 50,
+   "fill": "#ffffff",
+   "w": 150
+  },
+  {
+   "t": "Don't",
+   "x": 990,
+   "y": 392,
+   "size": 96,
+   "fill": "#1b2f86",
+   "anchor": "start",
+   "w": 290,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Drink & Drive",
+   "x": 1360,
+   "y": 392,
+   "size": 96,
+   "fill": "#1b2f86",
+   "anchor": "start",
+   "w": 860,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Labatt's",
+   "x": 992,
+   "y": 598,
+   "size": 190,
+   "fill": "#ffffff",
+   "anchor": "start",
+   "w": 585,
+   "font": "Georgia, Times New Roman, serif",
+   "italic": true
+  },
+  {
+   "t": "YOKOHAMA",
+   "x": 935,
+   "y": 662,
+   "size": 38,
+   "fill": "#ffffff",
+   "w": 250
+  }
+ ],
+ "number": {
+  "rect": [
+   755,
+   416,
+   215,
+   210
+  ],
+  "n": "4",
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "border": "#999999",
+  "r": 6,
+  "font": "Arial, Helvetica, sans-serif"
+ },
+ "over_texts": [
+  {
+   "t": "Harvey",
+   "x": 1585,
+   "y": 167,
+   "size": 74,
+   "fill": "#ffffff",
+   "w": 228,
+   "font": "Arial, Helvetica, sans-serif"
+  }
+ ],
+ "spokes": 5,
+ "hub": 0.27,
+ "outer": 0.82,
+ "twist": 22,
+ "window": "#2a2a2a",
+ "wheel_note": "Rim design re-checked on STR 6214 (Hahne #9, paddock): zoomed wheel, spoke count, window shape and sweep.",
+ "spoke_w": 0.34
+}

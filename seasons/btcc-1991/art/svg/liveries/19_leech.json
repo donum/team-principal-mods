@@ -1,0 +1,158 @@
+{
+ "model": "ford_sierra_rs500",
+ "title": "#19 Dennis Leech, Judge Developments + Partservice Ford Sierra RS500, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "cross",
+ "rim": "#d8d8d8",
+ "shapes": [
+  {
+   "poly": [
+    [
+     1032.7,
+     325.7
+    ],
+    [
+     1942.9,
+     315.1
+    ],
+    [
+     1942.9,
+     325.0
+    ],
+    [
+     1032.7,
+     335.6
+    ]
+   ],
+   "fill": "#1a1a1a"
+  },
+  {
+   "poly": [
+    [
+     998.8,
+     492.8
+    ],
+    [
+     1676.6,
+     486.0
+    ],
+    [
+     1676.6,
+     493.9
+    ],
+    [
+     998.8,
+     500.6
+    ]
+   ],
+   "fill": "#1a1a1a"
+  },
+  {
+   "rect": [
+    761.6,
+    309.4,
+    237.2,
+    224.6
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    761.6,
+    309.4,
+    237.2,
+    35.2
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    771.3,
+    387.5,
+    222.7,
+    144.6
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 880.2,
+   "y": 339.7,
+   "size": 33.4,
+   "fill": "#ffffff",
+   "w": 118.6
+  },
+  {
+   "t": "British Touring",
+   "x": 889.7,
+   "y": 362.6,
+   "size": 14.6,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 889.7,
+   "y": 380.6,
+   "size": 14.6,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "19",
+   "x": 882.6,
+   "y": 511.9,
+   "size": 133.0,
+   "fill": "#000",
+   "font": "Arial Narrow, Arial, sans-serif",
+   "w": 178.2
+  },
+  {
+   "t": "JUDGE",
+   "x": 1279.6,
+   "y": 440.8,
+   "size": 55.1,
+   "fill": "#1a1a1a",
+   "w": 387.4,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "DEVELOPMENTS",
+   "x": 1633.0,
+   "y": 433.2,
+   "size": 35.5,
+   "fill": "#1a1a1a",
+   "w": 300.2,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "PARTSERVICE",
+   "x": 1337.7,
+   "y": 477.6,
+   "size": 23.6,
+   "fill": "#1a1a1a",
+   "w": 271.1,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Leech",
+   "x": 1560.4,
+   "y": 252.5,
+   "size": 43.4,
+   "fill": "#ffffff",
+   "w": 203.4,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Low confidence. No photo of Leech's car found; drawn from the BBC grid graphics only (A_grid_r03_donington_09 and _sharp_07, A_grid_r04_thruxton_sharp_08; all blurred). They show a white Sierra RS500 with the rear wing, the ESSO number board on the front door, a dark sponsor band at mid-door height with thin dark lines above and below along the doors. The sponsor words are assumed from the entrant name (Judge Developments + Partservice) and are not readable in the graphics; colours other than white and black, the name on the window and the wheels (plain silver cross-spoke) are guesses. Positions: x by the wheel centres, y as share of beltline-to-door-bottom height."
+}

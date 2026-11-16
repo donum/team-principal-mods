@@ -20,3 +20,7 @@ desktop.ini
 # Private reference material (period scans etc.), never published
 reference/
 private/
+
+# svg_model.py intermediates: a copy of the source photo and a debug render
+*.photo.png
+*.debug.png

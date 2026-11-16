@@ -122,7 +122,10 @@ it hasn't been seen in a game yet.
 | Banned-aid cheating | `DRIVER_AID_*` in `constants.py` (whitelisted) | AI cheat chance 0.01 per team per season (vanilla 0.05) | ✅ |
 | Espionage | `ESPIONAGE_*` in `constants.py` (whitelisted) | At most one operation per team and per grid per season (vanilla 2 and 4) | ✅ |
 | Scripted test weeks | `regulations.json` `scripted_changes`, `calendar` rows `add_test` / `remove_test` | Not used: our test weeks are in `schedule.json` | ✅ documented |
-| Season windows, team announcements, revivals, guaranteed events, supplier join/leave, factory programme ending, rebrand nationality | `events.json`, `team_buyouts.json` | Not used: they only matter for careers past the pack's season | ✅ documented |
+| Season windows, team announcements, revivals, guaranteed events, supplier join/leave, factory programme ending, rebrand nationality | `events.json`, `team_buyouts.json` | Real joins and exits after the pack's year, from `docs/teams/dtm_game_events.csv` (`tools/real_history.py`, season.json `real_history`). Teams that join are inactive in `teams.json` and get a generated car from `entry_performance_tag`. The game keeps at least 10 teams (wishlist C10). No rebrands yet. | ✅ code / ✅ 8-season rollover test (dtm-2013) |
+| Pay drivers, licence practice point | `drivers.json` `pay_driver_amount_m`, `driverslicense.json` `practicepoint` | Pay drivers from `docs/teams/dtm_driver_backing.csv` (amounts are estimates). `practicepoint` is 0: the DTM had no licence points for practice runs. | ✅ code / 🧪 in game |
+| Car images and logos per season | `assets/cars/<Team>Season<N>.png`, `<Team><Year>.png`, `Season<N>/<Team>.png`, `<Year>/<Team>.png` (same for logos). Names lose every non-letter, non-digit. Found in `ui_assets.get_team_car_image`, not in the modding guide. | Teams that join later show their real debut livery. Use `Season<N>`: `<Year>` counts from `config.json` `start_year`, which our packs don't set. | ✅ code / 🧪 in game |
+| Title sponsors | `sponsors.json` `"type": "title"` | Not used: the game puts the sponsor in front of the team name, and our names already hold it (wishlist C11) | ✅ code |
 | Safety progression, staff role unlock years, staff with negative ages | `config.json`, `staff.json` | Not needed for 2012 to 2018 | ✅ documented |
 
 ## 3b. Announced for the next version

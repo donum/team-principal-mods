@@ -1,0 +1,21 @@
+year,event,key,make,name,entry_count,performance,nationality,color,secondary,history,detail
+2015,team_join,ART-Mercedes,Mercedes-Benz,Mercedes-AMG Team ART,2,midfield,french,192 192 198,20 20 24,ART Grand Prix from Villeneuve-la-Guyard in France. Known from Formula 3 and GP2. Joins the DTM in 2015 as the third Mercedes team.,Announced 2014-11-29 after the 2014 season. In 2015 the cars ran as Euronics/BWT Mercedes-AMG.
+2017,team_leave,ART-Mercedes,Mercedes-Benz,,,,,,,,Last season 2016. Mercedes cut to 6 cars all run by HWA.
+2017,team_leave,Mücke,Mercedes-Benz,,,,,,,,Last season 2016. Mercedes ended its DTM work with Mücke.
+2017,team_leave,MTEK,BMW,,,,,,,,Last season 2016. MTEK moved to the BMW GTE programme.
+2017,team_leave,Schnitzer,BMW,,,,,,,,Last season 2016. Schnitzer moved to GT racing.
+2017,team_leave,Abt-2,Audi,,,,,,,,Last season 2016. Abt went from 2 teams to 1.
+2017,team_join,RMR,BMW,BMW Team RMR,2,midfield,german,245 245 245,0 90 170,A shared BMW crew from Team RMG and Team RBM. RMR stands for Reinhold Mampaey Racing. First DTM season in 2017.,BMW kept 6 cars in 3 teams of 2. Exact announcement date not found.
+2017,team_join,HWA-3,Mercedes-Benz,Mercedes-AMG Motorsport SILBERPFEIL Energy,2,upper_midfield,german,170 175 180,20 20 24,The third HWA team from Affalterbach. From 2017 HWA runs all 6 Mercedes cars.,Mercedes confirmed 6 HWA cars on 2016-10-27.
+2019,team_leave,HWA-1,Mercedes-Benz,,,,,,,,Last season 2018. Mercedes left the DTM for Formula E. Announced 2017-07-24.
+2019,team_leave,HWA-2,Mercedes-Benz,,,,,,,,Last season 2018. Mercedes left the DTM for Formula E.
+2019,team_leave,HWA-3,Mercedes-Benz,,,,,,,,Last season 2018. Mercedes left the DTM for Formula E.
+2019,engine_supplier_leave,Mercedes-Benz,Mercedes-Benz,,,,,,,,Mercedes left after 2018.
+2019,engine_supplier_join,HWA,Aston Martin,HWA AFR Turbo 2.0,,,german,,,,HWA built the engine of the Aston Martin Vantage DTM (AFR Turbo 2.0). Engine name only checked on Wikipedia.
+2019,team_join,R-Motorsport-1,Aston Martin,R-Motorsport,2,backmarker,swiss,0 95 70,235 235 235,Florian Kamelger's Swiss team. Brings Aston Martin to the DTM in 2019 with the Vantage DTM built by HWA.,Announced 2018-10-11 after the 2018 season. 4 cars in 2 teams.
+2019,team_join,R-Motorsport-2,Aston Martin,R-Motorsport 2,2,backmarker,swiss,0 95 70,200 230 0,The second R-Motorsport team. Runs the Aston Martin Vantage DTM built by HWA.,Announced 2018-10-11 after the 2018 season.
+2019,team_join,WRT,Audi,Audi Sport Team WRT,2,lower_midfield,belgian,40 40 44,230 0 40,Vincent Vosse's team from Belgium. Known from GT racing. The first Audi customer team in the DTM from 2019.,Announced 2018-10-12 after the 2018 season. Went to 3 cars in 2020.
+2020,team_leave,R-Motorsport-1,Aston Martin,,,,,,,,Last season 2019. Split from HWA and withdrew on 2020-01-24.
+2020,team_leave,R-Motorsport-2,Aston Martin,,,,,,,,Last season 2019.
+2020,engine_supplier_leave,HWA,Aston Martin,,,,,,,,No Aston Martin cars after 2019.
+2020,team_join,ART-BMW,BMW,Orlen Team ART,1,lower_midfield,french,220 30 40,255 255 255,ART Grand Prix returns to the DTM in 2020. Runs one customer BMW for Robert Kubica with backing from Orlen.,Announced 2020-02-13.

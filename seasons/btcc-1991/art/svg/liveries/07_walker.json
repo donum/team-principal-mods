@@ -1,0 +1,87 @@
+{
+ "model": "ford_sierra_rs500",
+ "title": "#7 Sean Walker, Sean Walker Racing Ford Sierra RS500, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "cross",
+ "rim": "#d8d8d8",
+ "shapes": [
+  {
+   "rect": [
+    850.0,
+    330.0,
+    210.0,
+    240.0
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    850.0,
+    330.0,
+    210.0,
+    40.0
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    858.0,
+    400.0,
+    198.0,
+    166.0
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 955.0,
+   "y": 364.4,
+   "size": 38.0,
+   "fill": "#ffffff",
+   "w": 105.0
+  },
+  {
+   "t": "British Touring",
+   "x": 963.4,
+   "y": 382.6,
+   "size": 12.0,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 963.4,
+   "y": 395.2,
+   "size": 12.0,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "7",
+   "x": 957.0,
+   "y": 542.8,
+   "size": 152.7,
+   "fill": "#000",
+   "font": "Arial Narrow, Arial, sans-serif"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Walker",
+   "x": 1590,
+   "y": 208,
+   "size": 50,
+   "fill": "#ffffff",
+   "w": 180,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Placeholder only, no confidence in the livery. No photo, TV frame or BBC graphics drawing of Walker's car was found (he did not start at round 2, so the car is not in the grid graphics). Drawn as a plain white Sierra RS500 with the standard ESSO number board on the front door and the name on the rear side window; colours, sponsors and wheels are unknown."
+}

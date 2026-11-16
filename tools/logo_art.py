@@ -319,6 +319,10 @@ def team_maker_tiles(season, cfg, zip_path):
     engines.update(cfg.get("engines", {}))
     teams = load_json(layers.files(season, "data")["teams.json"])
     teams = teams["records"] if isinstance(teams, dict) else teams
+    # Teams that join in later seasons (season.json real_history) need a tile too.
+    import real_history
+    manifest = load_json(season / "season.json")
+    teams = teams + real_history.planned_teams(manifest, set(engines) | {t["engine_supplier"] for t in teams})
     out_dir = season / "assets" / "logos"
     out_dir.mkdir(parents=True, exist_ok=True)
     for old in out_dir.glob("*.png"):

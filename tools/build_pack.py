@@ -667,6 +667,9 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
     readable_team_text(out)
     if "staff" in manifest and "staff.json" not in data_files:
         generate_staff(out, base_dir, manifest["staff"], load_json(out / "teams.json"))
+    # Future teams and exits come after staff: they hire on the market when they debut.
+    import real_history
+    real_history.apply(out, manifest)
 
     for layer in chain:
         patch = layer / "patches" / "regulations.json"

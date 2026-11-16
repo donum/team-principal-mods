@@ -1,0 +1,98 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#2 David Leslie, Pyramid Motorsport BMW M3, BTCC 1991",
+ "note": "Leslie drove #2 at round 13 (Silverstone, October). STR 4711 shows that car plain black with the ESSO-headed number board on the front door (right side), matching the TV graphics drawings (A_v13_15-36_cap_sytner, measured with --compare): board about 16% of the wheelbase wide from just under the window line to the sill, sticker row on the sill. The left side of the round 13 car is not pictured; plain black assumed. Wheels: gold BBS-style mesh with a polished lip, from Sutton 2175990625 and STR 4711/4712; no standing photo of #2 was found (all Pyramid pictures are on track).",
+ "base": "#141414",
+ "rim": "#c9a646",
+ "wheel": "cross",
+ "shapes": [
+  {
+   "rect": [
+    772,
+    322,
+    216,
+    46
+   ],
+   "fill": "#d8261c",
+   "r": 4
+  },
+  {
+   "rect": [
+    772,
+    368,
+    216,
+    236
+   ],
+   "fill": "#ffffff",
+   "stroke": "#bbbbbb",
+   "sw": 3,
+   "r": 4
+  },
+  {
+   "rect": [
+    990,
+    640,
+    110,
+    34
+   ],
+   "fill": "#f2f2f2"
+  },
+  {
+   "rect": [
+    1110,
+    640,
+    130,
+    34
+   ],
+   "fill": "#f2f2f2"
+  },
+  {
+   "rect": [
+    1250,
+    640,
+    80,
+    34
+   ],
+   "fill": "#d9a520"
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 880,
+   "y": 359,
+   "size": 40,
+   "fill": "#ffffff",
+   "w": 120
+  },
+  {
+   "t": "British Touring Car Championship",
+   "x": 880,
+   "y": 396,
+   "size": 18,
+   "fill": "#222222",
+   "w": 196,
+   "font": "Arial, Helvetica, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "2",
+   "x": 880,
+   "y": 588,
+   "size": 200,
+   "fill": "#000000",
+   "font": "Arial, Helvetica, sans-serif"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Leslie",
+   "x": 1585,
+   "y": 167,
+   "size": 74,
+   "fill": "#ffffff",
+   "w": 228,
+   "font": "Arial, Helvetica, sans-serif"
+  }
+ ]
+}

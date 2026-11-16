@@ -1,0 +1,434 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#59 Ian Flux, BRR Motorsport BMW M3, BTCC 1991",
+ "base": "#ffffff",
+ "rim": "#cfcfcf",
+ "wheel": "cross",
+ "spokes": 10,
+ "window": "#4a4a4a",
+ "lip": "#e6e6e6",
+ "shapes": [
+  {
+   "poly": [
+    [
+     1161,
+     322
+    ],
+    [
+     1183,
+     322
+    ],
+    [
+     1153,
+     398
+    ],
+    [
+     1131,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1203,
+     322
+    ],
+    [
+     1225,
+     322
+    ],
+    [
+     1195,
+     398
+    ],
+    [
+     1173,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1245,
+     322
+    ],
+    [
+     1267,
+     322
+    ],
+    [
+     1237,
+     398
+    ],
+    [
+     1215,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1406,
+     322
+    ],
+    [
+     1428,
+     322
+    ],
+    [
+     1398,
+     398
+    ],
+    [
+     1376,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1448,
+     322
+    ],
+    [
+     1470,
+     322
+    ],
+    [
+     1440,
+     398
+    ],
+    [
+     1418,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1490,
+     322
+    ],
+    [
+     1512,
+     322
+    ],
+    [
+     1482,
+     398
+    ],
+    [
+     1460,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1667,
+     322
+    ],
+    [
+     1689,
+     322
+    ],
+    [
+     1659,
+     398
+    ],
+    [
+     1637,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1709,
+     322
+    ],
+    [
+     1731,
+     322
+    ],
+    [
+     1701,
+     398
+    ],
+    [
+     1679,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1751,
+     322
+    ],
+    [
+     1773,
+     322
+    ],
+    [
+     1743,
+     398
+    ],
+    [
+     1721,
+     398
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     981,
+     610
+    ],
+    [
+     1003,
+     610
+    ],
+    [
+     973,
+     692
+    ],
+    [
+     951,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1023,
+     610
+    ],
+    [
+     1045,
+     610
+    ],
+    [
+     1015,
+     692
+    ],
+    [
+     993,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1065,
+     610
+    ],
+    [
+     1087,
+     610
+    ],
+    [
+     1057,
+     692
+    ],
+    [
+     1035,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1243,
+     610
+    ],
+    [
+     1265,
+     610
+    ],
+    [
+     1235,
+     692
+    ],
+    [
+     1213,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1285,
+     610
+    ],
+    [
+     1307,
+     610
+    ],
+    [
+     1277,
+     692
+    ],
+    [
+     1255,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1327,
+     610
+    ],
+    [
+     1349,
+     610
+    ],
+    [
+     1319,
+     692
+    ],
+    [
+     1297,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1504,
+     610
+    ],
+    [
+     1526,
+     610
+    ],
+    [
+     1496,
+     692
+    ],
+    [
+     1474,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1546,
+     610
+    ],
+    [
+     1568,
+     610
+    ],
+    [
+     1538,
+     692
+    ],
+    [
+     1516,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "poly": [
+    [
+     1588,
+     610
+    ],
+    [
+     1610,
+     610
+    ],
+    [
+     1580,
+     692
+    ],
+    [
+     1558,
+     692
+    ]
+   ],
+   "fill": "#111"
+  },
+  {
+   "rect": [
+    770,
+    338,
+    225,
+    48
+   ],
+   "fill": "#d0202a"
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 882,
+   "y": 376,
+   "size": 42,
+   "fill": "#ffffff",
+   "w": 130
+  }
+ ],
+ "number": {
+  "rect": [
+   780,
+   400,
+   205,
+   200
+  ],
+  "n": "59",
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "border": "#ffffff",
+  "r": 6
+ },
+ "over_texts": [
+  {
+   "t": "Flux",
+   "x": 1570,
+   "y": 125,
+   "size": 48,
+   "fill": "#ffffff",
+   "w": 136,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Flux's early-season look (rounds 1, 3-5): white M3 with three groups of black slashes under the side windows and three along the sill, black 59 on the front door under the Esso board. Based on the TV caption drawings (round 3 Donington, round 4 Thruxton, round 7 Silverstone; all blurry, slash positions measured on the round 3 drawing against its wheel centres) and the round 3 broadcast frame (front-right: the same slash rows, 59 without a dark board). No nose-left photo of this version. The Super Touring Register photo of Flux (4697, other side) shows a different scheme (red ABSAAR across the doors, 'Battery Chargers', Halfords on the rear quarter): probably his late-season car (round 13), not drawn. Sponsor names on this early car are not legible in any reference. Wheels: silver mesh as in the round 3 frame and STR 4697 (both on track); no standing photo found."
+}

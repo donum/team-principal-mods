@@ -370,19 +370,21 @@ function teamCard(t) {
       <div class="head">${t.logo ? `<img src="${esc(t.logo)}" alt="${esc(t.name)} logo" loading="lazy" data-full tabindex="0">` : ""}<div style="min-width:0"><div class="name">${esc(t.name)}</div><div class="teamline"><span class="swatch" style="background:${rgb(t.color_rgb)}"></span><span class="swatch" style="background:${rgb(t.secondary_color_rgb)}"></span>${t.chassis_name ? esc(t.chassis_name) + " · " : ""}${esc(t.engine)}</div></div></div>
       <div style="display:flex;flex-wrap:wrap;gap:6px">${provChip(t.prov)}${t.cloned_from ? chip("vanilla", (t.sponsors || []).some(x => x.prov === "custom") ? "staff, ownership and sponsor money cloned from vanilla " + t.cloned_from : "staff, sponsors and ownership cloned from vanilla " + t.cloned_from) : ""}</div>
       <div class="facts" style="margin:0">${s("pace", t.team_pace)}${s("budget", "$" + t.budget_m + "m")}${s("reliability", t.chassis_reliability)}${s("tyres", t.tyre_management)}${s("prestige", t.prestige_base)}${s("mass", t.car_mass_kg + " kg")}</div>
+      ${t.career ? `<div class="small"><span class="muted">Later seasons:</span> ${esc(t.career)}</div>` : ""}
       <div class="small"><span class="muted">Drivers:</span> ${esc(t.drivers.join(", ") || "—")}</div>
       ${(t.sponsors || []).length ? `<div class="small"><span class="muted">Sponsors:</span> ${t.sponsors.map(x => `<span title="${esc(x.slot + ", " + (x.industry || "?") + ", " + nat(x.nationality) + ", " + (x.seasons ?? "?") + " season(s)" + (x.prov === "vanilla" ? ", vanilla" : ""))}">${esc(x.name)}${x.amount_m != null ? ` <span class="muted">$${esc(x.amount_m)}m</span>` : ""}${x.prov === "vanilla" ? ` <span class="muted">(vanilla)</span>` : ""}</span>`).join(" · ")}</div>` : ""}
       ${t.history_text ? `<div class="history">${esc(t.history_text)}</div>` : ""}
-      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers", "sponsors", "chassis_name"])}</details>
+      <details><summary>All fields, and where each comes from</summary>${fieldTable(t, t.fields, ["car", "logo", "fields", "prov", "history_text", "cloned_from", "drivers", "sponsors", "chassis_name", "career", "future"])}</details>
     </div>
   </article>`;
 }
 
 let teamFilter = "custom";
 function teams() {
-  const opts = [["custom", "Ours", D.teams.length], ["replaced", "Vanilla teams (replaced)", D.vanilla_teams.length]];
-  const body = teamFilter === "custom"
-    ? `<div class="grid wide">${D.teams.map(teamCard).join("")}</div>`
+  const now = D.teams.filter(t => !t.future), later = D.teams.filter(t => t.future);
+  const opts = [["custom", "Ours", now.length], ...(later.length ? [["future", "Join in later seasons", later.length]] : []), ["replaced", "Vanilla teams (replaced)", D.vanilla_teams.length]];
+  const body = teamFilter !== "replaced"
+    ? `<div class="grid wide">${(teamFilter === "future" ? later : now).map(teamCard).join("")}</div>`
     : `<div class="vteams">${D.vanilla_teams.map(t => `<div class="vteam" data-search="${esc(t.name.toLowerCase())}">${t.car ? `<img src="${esc(t.car)}" alt="${esc(t.name)} car (vanilla)" loading="lazy" data-full tabindex="0">` : ""}<div style="display:flex;align-items:center;gap:6px"><span class="swatch" style="background:${rgb(t.color_rgb)}"></span><b>${esc(t.name)}</b></div><span class="muted">${esc(t.engine || "")}</span>${provChip("replaced")}</div>`).join("")}</div>`;
   return `<div style="display:grid;gap:6px"><h2>Teams &amp; cars</h2><p class="lede">Car images are our own layered liveries on traced outlines. Each team's records outside teams.json (staff, sponsors, ownership) are cloned from a vanilla team, shown on the card. Template record: ${esc(D.team_template || "none")}.</p></div>
   <div class="toolbar">${filters("teamf", opts, teamFilter)}<input type="search" id="teamq" placeholder="Search team or engine" aria-label="Search teams"></div>

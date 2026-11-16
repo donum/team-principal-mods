@@ -1,0 +1,310 @@
+{
+ "model": "vauxhall_cavalier",
+ "title": "#56 Bob Berridge, Vauxhall Dealersport Cavalier GSi, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "cross",
+ "rim": "#c9a64a",
+ "lip": "#e6e6e6",
+ "shapes": [
+  {
+   "poly": [
+    [
+     146,
+     320
+    ],
+    [
+     367,
+     270
+    ],
+    [
+     643,
+     257
+    ],
+    [
+     717,
+     270
+    ],
+    [
+     744,
+     452
+    ],
+    [
+     643,
+     470
+    ],
+    [
+     569,
+     470
+    ],
+    [
+     459,
+     455
+    ],
+    [
+     312,
+     420
+    ],
+    [
+     183,
+     390
+    ]
+   ],
+   "fill": "#ffd400"
+  },
+  {
+   "poly": [
+    [
+     600,
+     262
+    ],
+    [
+     643,
+     254
+    ],
+    [
+     717,
+     270
+    ],
+    [
+     744,
+     452
+    ],
+    [
+     700,
+     448
+    ],
+    [
+     690,
+     330
+    ]
+   ],
+   "fill": "#ff8a00"
+  },
+  {
+   "poly": [
+    [
+     643,
+     254
+    ],
+    [
+     809,
+     270
+    ],
+    [
+     800,
+     452
+    ],
+    [
+     744,
+     455
+    ],
+    [
+     717,
+     270
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    1270,
+    336,
+    450,
+    90
+   ],
+   "fill": "#ffd400"
+  },
+  {
+   "rect": [
+    800,
+    300,
+    226,
+    312
+   ],
+   "fill": "#ffffff",
+   "stroke": "#000",
+   "sw": 3,
+   "r": 4
+  },
+  {
+   "rect": [
+    800,
+    300,
+    226,
+    42
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    808,
+    389,
+    210,
+    215
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  },
+  {
+   "circle": [
+    1136,
+    356,
+    77
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "circle": [
+    1136,
+    356,
+    58
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "path": "M1105,395 L1112,350 L1100,325 L1128,318 L1150,330 L1168,322 L1160,348 L1172,372 L1150,368 L1140,395 Z",
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    2120,
+    250,
+    72,
+    84
+   ],
+   "fill": "#111111"
+  },
+  {
+   "rect": [
+    255,
+    552,
+    30,
+    36
+   ],
+   "fill": "#111111"
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 913,
+   "y": 334,
+   "size": 40,
+   "fill": "#ffffff",
+   "w": 110
+  },
+  {
+   "t": "British Touring Car Championship",
+   "x": 913,
+   "y": 374,
+   "size": 18,
+   "fill": "#000",
+   "w": 196,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "56",
+   "x": 913,
+   "y": 583,
+   "size": 180,
+   "fill": "#000",
+   "w": 175,
+   "font": "Arial Narrow, Arial, sans-serif"
+  },
+  {
+   "t": "VAUXHALL",
+   "x": 1463,
+   "y": 328,
+   "size": 80,
+   "fill": "#4c5662",
+   "w": 493,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "Sport",
+   "x": 1225,
+   "y": 410,
+   "size": 58,
+   "fill": "#4c5662",
+   "italic": true,
+   "anchor": "start",
+   "font": "Georgia, Times New Roman, serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Philips Car Stereo",
+   "x": 1359,
+   "y": 517,
+   "size": 86,
+   "fill": "#c8102e",
+   "w": 592,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "Mobil",
+   "x": 1960,
+   "y": 332,
+   "size": 135,
+   "fill": "#1c3f94",
+   "w": 300,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "1",
+   "x": 2156,
+   "y": 322,
+   "size": 82,
+   "fill": "#ffffff",
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "Daily Express",
+   "x": 250,
+   "y": 385,
+   "size": 40,
+   "fill": "#2a3f8f",
+   "w": 230,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Mobil",
+   "x": 200,
+   "y": 585,
+   "size": 44,
+   "fill": "#1c3f94",
+   "w": 100,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 2150,
+   "y": 520,
+   "size": 40,
+   "fill": "#d7192b",
+   "w": 150,
+   "italic": true,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "1",
+   "x": 270,
+   "y": 583,
+   "size": 30,
+   "fill": "#ffffff"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Berridge",
+   "x": 1505,
+   "y": 146,
+   "size": 60,
+   "fill": "#ffffff",
+   "w": 300,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Same Vauxhall Sport scheme as Cleland's #5 (05_cleland.json, measured on STR 4718), with 56 on the number board and Berridge on the rear door window. Checked on the Super Touring Register photos of Berridge's car: 4716 (near side-on, right side, mirrored for the number and name sizes: two narrower digits, name about 300 model px wide), 3368 (standing in the paddock, front left three-quarter: same front, Mobil 1 on the rear quarter) and 4714 (in the garage, rear: Mobil 1, Sport band, Philips Car Stereo as on #5), and the Getty photo at Silverstone (6 October, 2201200726, right side). No differences from #5 found apart from number and name. TV caption drawings: only two blurry ones (round 12 Thruxton), consistent with the scheme. Wheels: gold BBS-style cross-spoke with polished lip, from the standing photo STR 3368."
+}

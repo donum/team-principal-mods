@@ -365,6 +365,8 @@ def main():
     for key in ("shared_tracks", "track_overrides", "track_placeholders"):
         if key in gen_tracks and (gen_tracks[key] or key != "track_placeholders"):
             manifest[key] = gen_tracks[key]
+    if gen.get("real_history"):
+        manifest["real_history"] = {k: v for k, v in gen["real_history"].items() if not k.startswith("$")}
     if gen.get("sponsors"):
         manifest["sponsors"] = {k: v for k, v in gen["sponsors"].items() if not k.startswith("$")}
     dump_json(season / "season.json", manifest)
@@ -561,7 +563,8 @@ def juniors(season, gen, year, driver_records, out_data):
                     print(f"  note: free agent {rec['name']} ({game_age}) can take a seat in {', '.join(open_to)}")
 
     dump_json(out_data / "junior_series.json", series_out)
-    dump_json(out_data / "driverslicense.json", {"enabled": cfg.get("licences", True), "series": licence})
+    dump_json(out_data / "driverslicense.json", {"enabled": cfg.get("licences", True),
+                                                  "practicepoint": cfg.get("practicepoint", 0), "series": licence})
     drivers = load_json(out_data / "drivers.json")
     drivers["records"] = driver_records + records
     drivers["$comment"] += f" Feeder-series drivers ({len(records)}, team null) from research/juniors."

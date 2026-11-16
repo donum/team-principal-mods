@@ -1,0 +1,250 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#66 David Leslie, Techspeed Midland Auto Trader BMW M3, BTCC 1991",
+ "base": "#ffffff",
+ "rim": "#c9a64a",
+ "wheel": "cross",
+ "spokes": 10,
+ "window": "#3a3324",
+ "lip": "#d9d9d9",
+ "shapes": [
+  {
+   "poly": [
+    [
+     585,
+     520
+    ],
+    [
+     760,
+     545
+    ],
+    [
+     1010,
+     600
+    ],
+    [
+     1040,
+     700
+    ],
+    [
+     585,
+     700
+    ]
+   ],
+   "fill": "#1f6fd1"
+  },
+  {
+   "poly": [
+    [
+     985,
+     700
+    ],
+    [
+     1700,
+     515
+    ],
+    [
+     1720,
+     700
+    ]
+   ],
+   "fill": "#d8202a"
+  },
+  {
+   "poly": [
+    [
+     1690,
+     400
+    ],
+    [
+     1860,
+     300
+    ],
+    [
+     2340,
+     248
+    ],
+    [
+     2340,
+     292
+    ],
+    [
+     1880,
+     350
+    ],
+    [
+     1770,
+     405
+    ]
+   ],
+   "fill": "#1f6fd1"
+  },
+  {
+   "rect": [
+    2000,
+    548,
+    340,
+    10
+   ],
+   "fill": "#d8202a"
+  },
+  {
+   "rect": [
+    2000,
+    562,
+    340,
+    8
+   ],
+   "fill": "#1f6fd1"
+  },
+  {
+   "rect": [
+    750,
+    330,
+    205,
+    42
+   ],
+   "fill": "#d8202a"
+  },
+  {
+   "poly": [
+    [
+     985,
+     480
+    ],
+    [
+     1060,
+     458
+    ],
+    [
+     1060,
+     478
+    ],
+    [
+     985,
+     500
+    ]
+   ],
+   "fill": "#d8202a"
+  },
+  {
+   "poly": [
+    [
+     985,
+     512
+    ],
+    [
+     1060,
+     490
+    ],
+    [
+     1060,
+     510
+    ],
+    [
+     985,
+     532
+    ]
+   ],
+   "fill": "#1f6fd1"
+  },
+  {
+   "poly": [
+    [
+     995,
+     410
+    ],
+    [
+     1255,
+     335
+    ],
+    [
+     1255,
+     368
+    ],
+    [
+     995,
+     443
+    ]
+   ],
+   "fill": "#ffffff",
+   "stroke": "#d8202a",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 852,
+   "y": 366,
+   "size": 40,
+   "fill": "#ffffff",
+   "w": 120
+  },
+  {
+   "t": "Midland",
+   "x": 1125,
+   "y": 404,
+   "size": 34,
+   "fill": "#000",
+   "w": 200,
+   "rot": -16,
+   "italic": true
+  },
+  {
+   "t": "Auto",
+   "x": 1397,
+   "y": 421,
+   "size": 147,
+   "fill": "#111",
+   "w": 493,
+   "rot": -16,
+   "italic": true,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "Trader",
+   "x": 1415,
+   "y": 545,
+   "size": 136,
+   "fill": "#111",
+   "w": 830,
+   "rot": -16,
+   "italic": true,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "UNISYS",
+   "x": 2190,
+   "y": 345,
+   "size": 50,
+   "fill": "#1a2a6c",
+   "w": 220,
+   "font": "Times New Roman, serif"
+  }
+ ],
+ "number": {
+  "rect": [
+   750,
+   432,
+   200,
+   185
+  ],
+  "n": "66",
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "r": 6
+ },
+ "over_texts": [
+  {
+   "t": "Leslie",
+   "x": 1555,
+   "y": 125,
+   "size": 48,
+   "fill": "#ffffff",
+   "w": 180,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "White M3 with the diagonal Auto Trader scheme: blue lower front, red wedge under 'Trader', blue band over the rear quarter to the tail, number on the front door with the Esso board above, 'Midland' bar and red/blue bars ahead of 'Auto'. Layout from the TV caption drawings of #66/#77 and the nose-left frames (season review: Whale #66 and Baird #77); positions and sizes of Auto Trader, number and bands measured on the nose-left Getty photo of Leslie (Silverstone 14 July, 2201222185) against the wheelbase and window line. The near-side front wing text and rear-quarter decals vary between rounds; small stickers left out. Leslie drove it at round 7 (Silverstone GP): the Getty photos of that day show no 'rhythm of the city' on the wing, so it is left out. Wheels: BBS mesh as on Whale's car (the B/W Getty photo shows the mesh; colour from the colour shots of Whale); no standing photo found."
+}

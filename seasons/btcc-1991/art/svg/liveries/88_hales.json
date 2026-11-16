@@ -1,0 +1,506 @@
+{
+ "model": "mitsubishi_lancer",
+ "title": "#88 Mark Hales, John Maguire Racing Mitsubishi Lancer GTi, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "star",
+ "spokes": 5,
+ "spoke_w": 0.4,
+ "hub": 0.27,
+ "outer": 0.82,
+ "twist": 26,
+ "rim": "#222222",
+ "window": "#4a4a4a",
+ "wheel_note": "Rim design re-checked on STR 4705: zoomed wheel, spoke count, window shape and sweep.",
+ "shapes": [
+  {
+   "poly": [
+    [
+     73.6,
+     443.4
+    ],
+    [
+     124.2,
+     398.1
+    ],
+    [
+     221.3,
+     385.6
+    ],
+    [
+     311.1,
+     388.0
+    ],
+    [
+     336.1,
+     405.8
+    ],
+    [
+     296.9,
+     413.1
+    ],
+    [
+     187.7,
+     418.5
+    ],
+    [
+     102.7,
+     438.1
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "poly": [
+    [
+     305.5,
+     377.7
+    ],
+    [
+     474.0,
+     360.0
+    ],
+    [
+     518.2,
+     372.8
+    ],
+    [
+     535.3,
+     399.2
+    ],
+    [
+     348.4,
+     409.3
+    ],
+    [
+     336.3,
+     402.2
+    ]
+   ],
+   "fill": "#b9bec6"
+  },
+  {
+   "poly": [
+    [
+     480.7,
+     354.2
+    ],
+    [
+     583.9,
+     344.8
+    ],
+    [
+     627.6,
+     363.9
+    ],
+    [
+     654.8,
+     388.1
+    ],
+    [
+     548.9,
+     397.4
+    ],
+    [
+     518.0,
+     375.5
+    ]
+   ],
+   "fill": "#1f4fb4"
+  },
+  {
+   "poly": [
+    [
+     1040.2,
+     328.1
+    ],
+    [
+     1283.1,
+     328.8
+    ],
+    [
+     1581.8,
+     642.7
+    ],
+    [
+     1335.0,
+     632.8
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "poly": [
+    [
+     1296.6,
+     328.8
+    ],
+    [
+     1544.7,
+     318.2
+    ],
+    [
+     1709.2,
+     484.7
+    ],
+    [
+     1682.6,
+     545.9
+    ],
+    [
+     1667.8,
+     634.9
+    ],
+    [
+     1593.6,
+     640.8
+    ]
+   ],
+   "fill": "#c3c8cf"
+  },
+  {
+   "poly": [
+    [
+     1563.2,
+     310.4
+    ],
+    [
+     1784.0,
+     305.2
+    ],
+    [
+     1935.0,
+     470.8
+    ],
+    [
+     1868.9,
+     450.3
+    ],
+    [
+     1815.3,
+     444.9
+    ],
+    [
+     1751.7,
+     453.3
+    ],
+    [
+     1718.3,
+     483.5
+    ]
+   ],
+   "fill": "#1f4fb4"
+  },
+  {
+   "poly": [
+    [
+     1080.2,
+     473.2
+    ],
+    [
+     1107.2,
+     433.0
+    ],
+    [
+     1085.7,
+     389.6
+    ],
+    [
+     1058.7,
+     429.8
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "poly": [
+    [
+     1080.2,
+     473.2
+    ],
+    [
+     1101.5,
+     516.7
+    ],
+    [
+     1149.8,
+     519.8
+    ],
+    [
+     1128.5,
+     476.3
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "poly": [
+    [
+     1080.2,
+     473.2
+    ],
+    [
+     1031.8,
+     469.9
+    ],
+    [
+     1005.0,
+     510.2
+    ],
+    [
+     1053.3,
+     513.5
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    745.0,
+    344.6,
+    222.2,
+    272.9
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    745.0,
+    344.6,
+    222.2,
+    46.6
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    754.9,
+    439.7,
+    210.8,
+    172.3
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  },
+  {
+   "poly": [
+    [
+     116.3,
+     614.4
+    ],
+    [
+     130.1,
+     593.7
+    ],
+    [
+     119.1,
+     571.4
+    ],
+    [
+     105.2,
+     592.1
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "poly": [
+    [
+     116.3,
+     614.4
+    ],
+    [
+     127.2,
+     636.8
+    ],
+    [
+     152.1,
+     638.4
+    ],
+    [
+     141.1,
+     616.0
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "poly": [
+    [
+     116.3,
+     614.4
+    ],
+    [
+     91.4,
+     612.7
+    ],
+    [
+     77.6,
+     633.5
+    ],
+    [
+     102.5,
+     635.1
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "circle": [
+    208.2,
+    638.5,
+    32.3
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "circle": [
+    208.2,
+    638.5,
+    24.2
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "circle": [
+    657.3,
+    459.4,
+    8.1
+   ],
+   "fill": "#111111"
+  }
+ ],
+ "texts": [
+  {
+   "t": "Firestone",
+   "x": 1810.8,
+   "y": 444.6,
+   "size": 82.6,
+   "fill": "#d7192b",
+   "w": 492.1,
+   "rot": -4.8,
+   "font": "Georgia, Times New Roman, serif",
+   "italic": true,
+   "stroke": "#ffffff",
+   "sw": 5
+  },
+  {
+   "t": "MITSUBISHI",
+   "x": 1078.2,
+   "y": 543.8,
+   "size": 19.8,
+   "fill": "#333333",
+   "w": 85.3,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "MOTORS",
+   "x": 1076.5,
+   "y": 568.9,
+   "size": 19.8,
+   "fill": "#333333",
+   "w": 62.9,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "ESSO",
+   "x": 856.1,
+   "y": 384.7,
+   "size": 44.3,
+   "fill": "#ffffff",
+   "w": 111.1
+  },
+  {
+   "t": "British Touring",
+   "x": 865.0,
+   "y": 411.6,
+   "size": 16.5,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 865.0,
+   "y": 431.9,
+   "size": 16.5,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "88",
+   "x": 860.3,
+   "y": 587.9,
+   "size": 158.5,
+   "fill": "#000",
+   "font": "Arial Black, Arial, sans-serif",
+   "w": 168.6
+  },
+  {
+   "t": "NGK",
+   "x": 207.6,
+   "y": 647.4,
+   "size": 23.3,
+   "fill": "#d7192b",
+   "w": 35.9
+  }
+ ],
+ "over_glass": [
+  {
+   "poly": [
+    [
+     1751.6,
+     46.7
+    ],
+    [
+     1800.6,
+     40.0
+    ],
+    [
+     1847.1,
+     71.0
+    ],
+    [
+     1832.9,
+     109.6
+    ],
+    [
+     1784.5,
+     93.8
+    ],
+    [
+     1754.4,
+     72.0
+    ]
+   ],
+   "fill": "#d7192b"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Hales",
+   "x": 1479.9,
+   "y": 210.5,
+   "size": 96.9,
+   "fill": "#ffffff",
+   "w": 220.6,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "Mark",
+   "x": 1525.8,
+   "y": 141.5,
+   "size": 32.3,
+   "fill": "#ffffff",
+   "w": 44.9,
+   "font": "Brush Script MT, Segoe Script, cursive",
+   "weight": "normal",
+   "italic": true
+  }
+ ],
+ "note": "Lancer GTi saloon (notchback), as raced in rounds 1-5 and shown by the BBC graphics all season. Measured on Super Touring Register 4705 (Hales #88, right side, near side-on, mirrored to our left side and levelled): stripes, ESSO board, diamonds, Firestone, name. Left side checked on Getty LAT 2201201287 and 2201201308 (Snetterton, front-left 3/4): same layout, Hales on the rear door window. Wheels: black 5-spoke, from 4705 and the Snetterton photos (on track only, no standing photo). Uncertain: the boot and tail lie outside 4705 and follow the BBC drawing; the left-side lettering is assumed to mirror the right side; Mark above Hales is small and blurred."
+}

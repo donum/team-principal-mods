@@ -1,0 +1,256 @@
+{
+ "model": "peugeot_405",
+ "title": "#17 Andrew Mackenzie, Andrew Mackenzie Racing Peugeot 405 Mi16, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "star",
+ "spokes": 6,
+ "spoke_w": 0.3,
+ "hub": 0.28,
+ "outer": 0.84,
+ "twist": 0,
+ "rim": "#2a2a2a",
+ "window": "#0e0e0e",
+ "shapes": [
+  {
+   "poly": [
+    [
+     1066.8,
+     335.1
+    ],
+    [
+     1126.4,
+     333.8
+    ],
+    [
+     1110.4,
+     484.4
+    ],
+    [
+     1081.0,
+     647.4
+    ],
+    [
+     1008.1,
+     648.5
+    ],
+    [
+     1048.2,
+     484.9
+    ]
+   ],
+   "fill": "#c8102e"
+  },
+  {
+   "poly": [
+    [
+     1130.1,
+     333.8
+    ],
+    [
+     1188.0,
+     335.0
+    ],
+    [
+     1172.3,
+     484.0
+    ],
+    [
+     1165.6,
+     646.2
+    ],
+    [
+     1085.1,
+     647.3
+    ],
+    [
+     1114.3,
+     484.4
+    ]
+   ],
+   "fill": "#9aa0a8"
+  },
+  {
+   "rect": [
+    683.9,
+    370.8,
+    320.1,
+    263.1
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    683.9,
+    370.8,
+    320.1,
+    30.7
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    682.0,
+    461.7,
+    322.0,
+    172.2
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  },
+  {
+   "poly": [
+    [
+     0,
+     522
+    ],
+    [
+     2400,
+     510
+    ],
+    [
+     2400,
+     518
+    ],
+    [
+     0,
+     530
+    ]
+   ],
+   "fill": "#c8102e"
+  },
+  {
+   "path": "M95,630 L80,595 Q85,560 120,555 Q155,560 160,595 L145,630 Z",
+   "fill": "#f6c400",
+   "stroke": "#d7192b",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 844.0,
+   "y": 397.2,
+   "size": 29.2,
+   "fill": "#ffffff",
+   "w": 160.1
+  },
+  {
+   "t": "British Touring",
+   "x": 856.8,
+   "y": 426.8,
+   "size": 20.5,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 856.8,
+   "y": 452.1,
+   "size": 20.5,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "17",
+   "x": 843.0,
+   "y": 609.8,
+   "size": 158.4,
+   "fill": "#000",
+   "font": "Arial Black, Arial, sans-serif",
+   "w": 257.6
+  },
+  {
+   "t": "Builders & Estate Developers",
+   "x": 1618.4,
+   "y": 343.8,
+   "size": 26.0,
+   "fill": "#1a1a1a",
+   "w": 603.5,
+   "font": "Arial Narrow, Arial, sans-serif"
+  },
+  {
+   "t": "Westmount Developments",
+   "x": 1688.0,
+   "y": 425.1,
+   "size": 64.3,
+   "fill": "#1a1a1a",
+   "w": 630.4,
+   "font": "Brush Script MT, Segoe Script, cursive",
+   "weight": "normal",
+   "italic": true
+  },
+  {
+   "t": "Charters",
+   "x": 760,
+   "y": 692,
+   "size": 30,
+   "fill": "#1a1a1a",
+   "w": 110,
+   "italic": true,
+   "font": "Georgia, serif"
+  },
+  {
+   "t": "B.B.A.",
+   "x": 860,
+   "y": 690,
+   "size": 18,
+   "fill": "#1a1a1a",
+   "w": 50,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 975,
+   "y": 694,
+   "size": 36,
+   "fill": "#1a1a1a",
+   "w": 150,
+   "italic": true,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "Shell",
+   "x": 330,
+   "y": 438,
+   "size": 46,
+   "fill": "#1a1a1a",
+   "w": 120,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "FUELS AND LUBRICANTS",
+   "x": 330,
+   "y": 458,
+   "size": 11,
+   "fill": "#1a1a1a",
+   "w": 110,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 540,
+   "y": 425,
+   "size": 26,
+   "fill": "#1a1a1a",
+   "w": 110,
+   "italic": true
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Mackenzie",
+   "x": 1360,
+   "y": 250,
+   "size": 50,
+   "fill": "#ffffff",
+   "w": 230,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Medium confidence for the layout, low for some colours. Side measured on Getty LAT 2201221550 (Silverstone round 7, left side, front 3/4, black and white), mapped onto the model by the front door corners (beltline and door bottom above the side skirt): ESSO board on the front door; two vertical stripes behind it; Shell with FUELS AND LUBRICANTS and Dunlop on the front wing (left side); Builders & Estate Developers and a script name (read as Westmount Developments, not certain) on the rear door; Charters, B.B.A. and Dunlop on the side skirt; a pinstripe along the side at bumper height. Colours from the user-supplied paddock photo (livery pack B_front_photo, Super Touring Register, front view, standing): white car, Shell in black on the left wing, thin red pinstripe along the bumper and sides, red at the foot of the front door behind the wheel (so the darker vertical stripe is drawn red; the lighter one is drawn grey, its colour is not confirmed). Not visible from the side and so not drawn: red B.B.A. EXPRESS COURIER with red underline and the ESSO board with 17 on the bonnet, BENTLEY BROTHERS CITY OF LONDON JEWELLERS on the front plate, MASS on the bumper, J.E. Dell & Loader on the boot (Getty 2201221893). Wheels: dark 6-spoke from the on-track photos (no side view of the wheel standing). The name on the window is not seen; drawn white on the rear door glass. The fandom pages the user suggested (british-touring-car-online) refused automated reading, so the entrant name stays Andrew Mackenzie Racing as in entries.csv."
+}

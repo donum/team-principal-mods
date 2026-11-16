@@ -1,5 +1,6 @@
 {
   "enabled": true,
+  "practicepoint": 0,
   "series": {
     "F3EU": {
       "tier": 2,

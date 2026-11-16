@@ -1,0 +1,169 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#66 John Llewellyn, Techspeed Midland Auto Trader BMW M3, BTCC 1991",
+ "base": "#ffffff",
+ "rim": "#c8a832",
+ "wheel": "star",
+ "spokes": 5,
+ "gap": 0.72,
+ "hub": 0.3,
+ "window": "#2b2b2b",
+ "shapes": [
+  {
+   "rect": [
+    990,
+    452,
+    700,
+    14
+   ],
+   "fill": "#2a4fc0"
+  },
+  {
+   "rect": [
+    980,
+    548,
+    710,
+    14
+   ],
+   "fill": "#2a4fc0"
+  },
+  {
+   "poly": [
+    [
+     1330,
+     385
+    ],
+    [
+     1350,
+     445
+    ],
+    [
+     1410,
+     465
+    ],
+    [
+     1350,
+     485
+    ],
+    [
+     1330,
+     560
+    ],
+    [
+     1310,
+     485
+    ],
+    [
+     1250,
+     465
+    ],
+    [
+     1310,
+     445
+    ]
+   ],
+   "fill": "#1c2f8a"
+  },
+  {
+   "rect": [
+    750,
+    330,
+    205,
+    42
+   ],
+   "fill": "#d0202a"
+  },
+  {
+   "rect": [
+    2010,
+    545,
+    330,
+    12
+   ],
+   "fill": "#d0202a"
+  }
+ ],
+ "texts": [
+  {
+   "t": "UNISYS",
+   "x": 440,
+   "y": 418,
+   "size": 74,
+   "fill": "#d0202a",
+   "w": 300,
+   "font": "Times New Roman, Georgia, serif"
+  },
+  {
+   "t": "ESSO",
+   "x": 852,
+   "y": 366,
+   "size": 40,
+   "fill": "#ffffff",
+   "w": 120
+  },
+  {
+   "t": "GENESIS",
+   "x": 1335,
+   "y": 535,
+   "size": 84,
+   "fill": "#ffffff",
+   "w": 640,
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "stroke": "#d0202a",
+   "sw": 5
+  },
+  {
+   "t": "Auto Trader",
+   "x": 1090,
+   "y": 672,
+   "size": 64,
+   "fill": "#111",
+   "w": 640,
+   "italic": true
+  },
+  {
+   "t": "UNISYS Distributor",
+   "x": 2045,
+   "y": 372,
+   "size": 62,
+   "fill": "#d0202a",
+   "w": 560,
+   "font": "Times New Roman, Georgia, serif"
+  },
+  {
+   "t": "of the Year",
+   "x": 2150,
+   "y": 438,
+   "size": 56,
+   "fill": "#d0202a",
+   "w": 300,
+   "font": "Times New Roman, Georgia, serif"
+  }
+ ],
+ "number": {
+  "rect": [
+   750,
+   432,
+   200,
+   185
+  ],
+  "n": "66",
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "border": "#d0202a",
+  "r": 6
+ },
+ "over_texts": [
+  {
+   "t": "Llewellyn",
+   "x": 1580,
+   "y": 125,
+   "size": 46,
+   "fill": "#ffffff",
+   "w": 205,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Llewellyn drove #66 only at round 10 (Brands Hatch, 26 August), when the car ran a one-off Unisys/Genesis scheme instead of the diagonal Auto Trader one: white, red Unisys on the front wing, Esso and number on the front door, the Genesis logo between two blue lines across the door, 'Auto Trader' on the sill, 'Unisys Distributor of the Year' on the rear quarter. Based on the nose-left Getty photo of that day (2201200946) and the Super Touring Register photo (4700, other side). No TV caption drawing of this version. Positions and sizes measured on the Getty photo against the number board, door and wheel arches; the photo is a front three-quarter view, so the rear-quarter text sizes are less sure. Wheels: gold five-spoke, from the same Getty photo (on track); no standing photo found."
+}

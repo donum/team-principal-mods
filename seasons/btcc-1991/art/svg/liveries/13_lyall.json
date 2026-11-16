@@ -1,0 +1,109 @@
+{
+ "model": "bmw_318is_e30",
+ "title": "#13 Alistair Lyall, R&D Motorsport BMW 318is, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "cross",
+ "rim": "#7a6040",
+ "lip": "#d8d8d8",
+ "shapes": [
+  {
+   "rect": [
+    813.5,
+    325.1,
+    237.6,
+    259.9
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    813.5,
+    325.1,
+    237.6,
+    36.3
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    822.9,
+    407.2,
+    218.8,
+    176.3
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 932.3,
+   "y": 356.3,
+   "size": 34.5,
+   "fill": "#ffffff",
+   "w": 118.8
+  },
+  {
+   "t": "British Touring",
+   "x": 941.8,
+   "y": 380.6,
+   "size": 15.6,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 941.8,
+   "y": 399.9,
+   "size": 15.6,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "13",
+   "x": 932.3,
+   "y": 558.8,
+   "size": 162.2,
+   "fill": "#000",
+   "font": "Arial Black, Arial, sans-serif",
+   "w": 175.0
+  },
+  {
+   "t": "Alastair Lyall",
+   "x": 682.6,
+   "y": 347.6,
+   "size": 18.7,
+   "fill": "#1a1a1a",
+   "w": 180.5,
+   "font": "Brush Script MT, Segoe Script, cursive",
+   "weight": "normal",
+   "italic": true
+  },
+  {
+   "t": "YOKOHAMA",
+   "x": 1555.0,
+   "y": 617.1,
+   "size": 17.3,
+   "fill": "#1a1a1a",
+   "w": 131.8,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Lyall",
+   "x": 1619.0,
+   "y": 231.5,
+   "size": 54.4,
+   "fill": "#ffffff",
+   "w": 150.4,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Measured on Super Touring Register 4694 (Lyall #13, right side, side-on, mirrored to our side; x by the wheel centres, y as share of beltline-to-door-bottom height): white car (the blue tint in that photo is a colour cast, the number board shows the same tint), ESSO board on the front door, small driver name on the front wing, Yokohama low on the rear quarter, Lyall in white on the rear side window. Checked against the BBC graphics drawing (A_grid_r04_thruxton_sharp_20: plain white car, board on the front door) and Getty LAT 2201200989 (Silverstone round 7 grid, white car). At round 7 the right side carried a one-off blue 'Well Done Nigel' message; not drawn, the left side is not seen there. Wheels: bronze BBS-style mesh with polished lip, from the on-track photo only (no standing photo). Uncertain: left-side small stickers assumed to mirror the right side; the wing name lettering is too small to read exactly."
+}

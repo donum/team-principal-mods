@@ -1,0 +1,168 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#45 Ian Forrest, Drambuie Racing BMW M3, BTCC 1991",
+ "base": "#ffffff",
+ "rim": "#b89a55",
+ "wheel": "star",
+ "shapes": [
+  {
+   "poly": [
+    [
+     606,
+     522
+    ],
+    [
+     1415,
+     348
+    ],
+    [
+     1861,
+     191
+    ],
+    [
+     2108,
+     184
+    ],
+    [
+     2125,
+     300
+    ],
+    [
+     1960,
+     322
+    ],
+    [
+     1629,
+     358
+    ],
+    [
+     1035,
+     480
+    ],
+    [
+     606,
+     571
+    ]
+   ],
+   "fill": "#d71920"
+  },
+  {
+   "poly": [
+    [
+     754,
+     674
+    ],
+    [
+     2356,
+     366
+    ],
+    [
+     2405,
+     371
+    ],
+    [
+     2405,
+     627
+    ],
+    [
+     1629,
+     680
+    ],
+    [
+     1134,
+     675
+    ],
+    [
+     754,
+     681
+    ]
+   ],
+   "fill": "#d71920"
+  },
+  {
+   "rect": [
+    362,
+    369,
+    254,
+    33
+   ],
+   "fill": "#d71920"
+  },
+  {
+   "rect": [
+    796,
+    358,
+    244,
+    34
+   ],
+   "fill": "#d71920"
+  }
+ ],
+ "texts": [
+  {
+   "t": "DRAMBUIE",
+   "x": 1572,
+   "y": 487,
+   "size": 126,
+   "w": 774,
+   "rot": -11.5,
+   "fill": "#d71920"
+  },
+  {
+   "t": "GROUP",
+   "x": 2178,
+   "y": 398,
+   "size": 32,
+   "w": 173,
+   "fill": "#d71920"
+  },
+  {
+   "t": "PIRELLI",
+   "x": 489,
+   "y": 400,
+   "size": 34,
+   "w": 228,
+   "fill": "#ffffff"
+  },
+  {
+   "t": "ESSO",
+   "x": 920,
+   "y": 390,
+   "size": 34,
+   "w": 149,
+   "fill": "#ffffff"
+  }
+ ],
+ "number": {
+  "rect": [
+   791,
+   449,
+   238,
+   171
+  ],
+  "n": "45",
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "border": "#d71920",
+  "r": 6
+ },
+ "over_texts": [
+  {
+   "t": "Forrest",
+   "x": 1560,
+   "y": 125,
+   "size": 46,
+   "fill": "#ffffff",
+   "w": 200,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Layout, colours and sizes measured from the nose-left Super Touring Register photo (4703, Forrest #45), mapped to the model by the wheel centres; checked against the TV caption drawings (red wedge growing to the rear, red rear quarter) and the Brands Hatch/Silverstone Getty shots. Driver name is white lettering straight on the rear side window, as in the photo. Wheels: gold eight-spoke, from the same photo (on track); no standing photo of this car found.",
+ "spokes": 8,
+ "hub": 0.46,
+ "outer": 0.84,
+ "twist": 0,
+ "window": "#2a2a2a",
+ "wheel_note": "Rim design re-checked on STR 4703: zoomed wheel, spoke count, window shape and sweep.",
+ "spoke_w": 0.32
+}

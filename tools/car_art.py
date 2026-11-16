@@ -519,7 +519,9 @@ def main():
             if args.only and car["team"] != args.only:
                 continue
             img = render_car(cfg["models"][car["model"]], car, zip_path, season)
-            img.save(all_dir / f"{car['number']:02d}.png", optimize=True)
+            # Cars of later seasons ("season": real year) may share a 2013 number.
+            stem = f"{car['season']}_{car['number']:02d}" if car.get("season") else f"{car['number']:02d}"
+            img.save(all_dir / f"{stem}.png", optimize=True)
             rendered.append((f"#{car['number']} {car.get('driver', '')} - {car['team']}", img))
             if car["team"] not in done:
                 done.add(car["team"])

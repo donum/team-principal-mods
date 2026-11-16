@@ -1,0 +1,320 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#44 Tim Sugden, Mobil BMW Team BMW M3, BTCC 1991",
+ "note": "Base livery measured on Getty LAT 2201201184 (Palmer #22, Silverstone 1 April 1991, near side-on, left side) with a pixel grid (x by wheel positions, y by window line to sill) and checked with --compare --refwheels; also checked on Super Touring Register 4695/4696/4726, the left frames B_left_tv_BTCC 1991 Round 3 Pt 3_00-00-16 and Season Review 01-00-18, and the TV drawings A_v13_19-12_cap_palmer / A_v13_03-52_cap_soper. BMW M stripe band (red/blue) under the window line, falling slightly toward the nose: red, blue (into the front arch), red, blue down behind the front wheel; at the rear a red and a blue stripe drop to the sill ahead of the rear wheel, then red and blue pieces to the tail. BMW Finance on the front wing, ESSO-headed white number board, Mobil (red o) and a black '1' box on the doors, name in white on the rear side window. Wheels: gold 7-spoke from the standing pit photo 'Getty LAT Images - Snetterton 14 April 1991 - Tim Sugden sits in his BMW M3 in the pits with Jonathan Palmer in his BMW M3 alongside' (2201201221). Small sill stickers left out except PIRELLI. Sugden shared #44 with Soper and Danner; STR 4726 shows #44 with his name, same livery.",
+ "base": "#ffffff",
+ "rim": "#a8893a",
+ "wheel": "star",
+ "spokes": 7,
+ "gap": 0.4,
+ "hub": 0.3,
+ "window": "#1a1a1a",
+ "shapes": [
+  {
+   "poly": [
+    [
+     -100,
+     409.2
+    ],
+    [
+     278,
+     389.544
+    ],
+    [
+     226.8,
+     517.544
+    ],
+    [
+     -151.20000000000002,
+     537.2
+    ]
+   ],
+   "fill": "#e3301f"
+  },
+  {
+   "poly": [
+    [
+     290,
+     388.92
+    ],
+    [
+     392,
+     383.616
+    ],
+    [
+     321.4464,
+     560
+    ],
+    [
+     221.56799999999998,
+     560
+    ]
+   ],
+   "fill": "#1d2a88"
+  },
+  {
+   "poly": [
+    [
+     452,
+     380.496
+    ],
+    [
+     625,
+     371.5
+    ],
+    [
+     573.8,
+     499.5
+    ],
+    [
+     400.8,
+     508.496
+    ]
+   ],
+   "fill": "#e3301f"
+  },
+  {
+   "poly": [
+    [
+     625,
+     371.5
+    ],
+    [
+     768,
+     364.064
+    ],
+    [
+     674.1817599999999,
+     640
+    ],
+    [
+     533.71,
+     640
+    ]
+   ],
+   "fill": "#1d2a88"
+  },
+  {
+   "poly": [
+    [
+     1635,
+     318.98
+    ],
+    [
+     1793,
+     310.764
+    ],
+    [
+     1481.6112,
+     700
+    ],
+    [
+     1330.184,
+     700
+    ]
+   ],
+   "fill": "#e3301f"
+  },
+  {
+   "poly": [
+    [
+     1805,
+     310.14
+    ],
+    [
+     1940,
+     303.12
+    ],
+    [
+     1622.496,
+     700
+    ],
+    [
+     1493.112,
+     700
+    ]
+   ],
+   "fill": "#1d2a88"
+  },
+  {
+   "poly": [
+    [
+     1955,
+     302.34000000000003
+    ],
+    [
+     2130,
+     293.24
+    ],
+    [
+     2078.8,
+     421.24
+    ],
+    [
+     1903.8,
+     430.34000000000003
+    ]
+   ],
+   "fill": "#e3301f"
+  },
+  {
+   "poly": [
+    [
+     2142,
+     292.616
+    ],
+    [
+     2500,
+     274.0
+    ],
+    [
+     2448.8,
+     402.0
+    ],
+    [
+     2090.8,
+     420.616
+    ]
+   ],
+   "fill": "#1d2a88"
+  },
+  {
+   "rect": [
+    788,
+    321,
+    234,
+    49
+   ],
+   "fill": "#d8261c",
+   "r": 3
+  },
+  {
+   "rect": [
+    788,
+    370,
+    234,
+    262
+   ],
+   "fill": "#ffffff",
+   "stroke": "#555555",
+   "sw": 3,
+   "r": 4
+  },
+  {
+   "rect": [
+    800,
+    440,
+    210,
+    180
+   ],
+   "fill": "none",
+   "stroke": "#d8261c",
+   "sw": 4
+  },
+  {
+   "rect": [
+    1470,
+    376,
+    113,
+    138
+   ],
+   "fill": "#111111"
+  }
+ ],
+ "texts": [
+  {
+   "t": "BMW Finance",
+   "x": 500,
+   "y": 330,
+   "size": 48,
+   "fill": "#1d2a88",
+   "w": 400,
+   "rot": -5,
+   "font": "Arial, Helvetica, sans-serif"
+  },
+  {
+   "t": "ESSO",
+   "x": 905,
+   "y": 362,
+   "size": 46,
+   "fill": "#ffffff",
+   "w": 120
+  },
+  {
+   "t": "British Touring Car Championship",
+   "x": 905,
+   "y": 398,
+   "size": 20,
+   "fill": "#222222",
+   "w": 200,
+   "font": "Arial, Helvetica, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "44",
+   "x": 908,
+   "y": 604,
+   "size": 205,
+   "fill": "#000000",
+   "w": 160,
+   "font": "Arial Narrow, Arial, sans-serif"
+  },
+  {
+   "t": "M",
+   "x": 1058,
+   "y": 514,
+   "size": 186,
+   "fill": "#1d2a88",
+   "anchor": "start",
+   "w": 128,
+   "font": "Arial, Helvetica, sans-serif"
+  },
+  {
+   "t": "o",
+   "x": 1193,
+   "y": 514,
+   "size": 186,
+   "fill": "#e3301f",
+   "anchor": "start",
+   "w": 76,
+   "font": "Arial, Helvetica, sans-serif"
+  },
+  {
+   "t": "bil",
+   "x": 1276,
+   "y": 514,
+   "size": 186,
+   "fill": "#1d2a88",
+   "anchor": "start",
+   "w": 157,
+   "font": "Arial, Helvetica, sans-serif"
+  },
+  {
+   "t": "1",
+   "x": 1527,
+   "y": 500,
+   "size": 140,
+   "fill": "#ffffff",
+   "font": "Arial, Helvetica, sans-serif"
+  },
+  {
+   "t": "PIRELLI",
+   "x": 1070,
+   "y": 676,
+   "size": 28,
+   "fill": "#111111",
+   "w": 170
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Sugden",
+   "x": 1592,
+   "y": 166,
+   "size": 80,
+   "fill": "#ffffff",
+   "w": 258,
+   "font": "Arial, Helvetica, sans-serif"
+  }
+ ]
+}

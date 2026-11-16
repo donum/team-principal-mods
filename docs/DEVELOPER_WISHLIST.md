@@ -35,7 +35,7 @@ build them all.
 | dtm-2003 | A5, A6, B4, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2006 | A6, B1, B2, B5, B7, B10, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8, E22 |
-| dtm-2013 | A3, A5, A6, B5, B6, B7, B11, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20, E21, E22 |
+| dtm-2013 | A3, A5, A6, B5, B6, B7, B11, B12, C4, C6, C7, C10, C11, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20, E21, E22, E23, E24 |
 | dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18, E21, E22 |
 | dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
@@ -479,6 +479,36 @@ rules to these items:
   engine, weight and profile. The changes during the season aren't modelled.
 - **Request:** a car model per entry, with its own engine, weight and
   profile, that can change from a given round.
+
+### C10. A grid with fewer than 10 teams · P2
+- **Needed by:** dtm-2013 to dtm-2016 careers that run into 2017 and later,
+  and any pack of a series with a small grid.
+- **Real:** the DTM cut its grid to 18 cars in 2017: 3 makes with 3 teams
+  of 2 cars, so 9 teams. In 2020 it had 8 teams (Audi 4, BMW 4).
+- **Today:** `team_leave` is skipped when fewer than 10 teams would be
+  left (hard-coded in `managers/team_leave_events.py`). Nothing tells the
+  modder or the player.
+- **Workaround:** `tools/real_history.py` checks the same rule at build
+  time and drops a leave the game would skip. In a 2013 career, Audi Sport
+  Team Abt stays from 2017 and one R-Motorsport team stays in 2020.
+- **Request:** a minimum team count in `config.json` (default 10), or a
+  minimum car count. A scripted leave with `guaranteed` could also always
+  go ahead.
+
+### C11. Title sponsor already in the team name · P3
+- **Needed by:** every DTM pack with Mercedes teams (2000 to 2018), and
+  Orlen Team ART in 2020.
+- **Real:** the Mercedes teams raced under their sponsor's name, such as
+  STIHL AMG-Mercedes or Euronics AMG-Mercedes. Audi and BMW sponsors were
+  only on the car name.
+- **Today:** a sponsor with `"type": "title"` is put in front of the team
+  name. Our names already hold the sponsor, so it would read "STIHL STIHL
+  AMG-Mercedes". Two teams of the same owner can't both use the base name.
+- **Workaround:** no title sponsors (`no_title_sponsors` in the era base).
+  The sponsor stays in the team name, even when the deal ends.
+- **Request:** an optional `title_base_name` per team, used with the title
+  sponsor ("AMG-Mercedes"), while `name` stays the unique key. When the
+  deal ends, the team shows the base name.
 
 ## D. Cars and simulation
 
@@ -1127,6 +1157,42 @@ rules to these items:
     points, falling back to the normal pass-by played quieter;
   - tracks without the list sound as today.
 - **Post:** `docs/requests/second-pass-sound.md`.
+
+### E23. Car image per title sponsor · P3
+- **Needed by:** every DTM pack from 2000 to 2018 (Mercedes teams named
+  after their sponsor), and any pack with sponsor liveries.
+- **Real:** a livery follows the main sponsor. When STIHL left a Mercedes
+  team, the car changed colour from orange to the new sponsor's colours.
+- **Today:** the car image is found by team name and, since 0.99.6, by
+  season or year (`<Team>Season<N>.png`, `<Team><Year>.png`, found in the
+  code, not in the modding guide). A pack can show a new livery from a
+  given season, but it can't know who the sponsor will be in a career.
+- **Workaround:** the real liveries by season, for the years that
+  happened. In a career where the sponsor changes, the car keeps its old
+  look.
+- **Request:** an optional image per title sponsor, for example
+  `Cars/<Team>_<Sponsor>.png`, used while that sponsor holds the title
+  slot. Fallback: the season image, then the team image. Please also add
+  the seasonal names to the modding guide.
+- **Post:** `docs/requests/title-sponsor-liveries.md` (follow-up to
+  johnduff71's "Seasonal Livery Support" thread).
+
+### E24. Car numbers drawn by the game · P2
+- **Needed by:** every pack with car images (all DTM packs).
+- **Real:** numbers belong to the driver or the entry, and change: the
+  champion takes #1, a new driver brings a new number.
+- **Today:** the number is painted into the car image. When drivers move
+  in a career, the image shows the old number. One image per team also
+  shows one number for both cars.
+- **Workaround:** none. Our images show the lower number of the 2013 pair.
+- **Request:** an optional `number_box` per team or per image (position,
+  size, font colour, background colour) where the game draws the entry's
+  current number. Images without it stay as today. Works well with a car
+  image per entry (E4). The same idea could cover the driver's name and
+  flag on the car, and the title sponsor (E23).
+- **Post:** raised as a follow-up in
+  `docs/requests/title-sponsor-liveries.md` (number, driver name and
+  flag, title sponsor drawn on the car).
 
 ---
 

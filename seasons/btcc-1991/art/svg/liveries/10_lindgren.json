@@ -1,0 +1,215 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#10 Nettan Lindgren, BMW Dealer Team Sweden BMW M3, BTCC 1991",
+ "note": "Layout from the TV graphics drawings A_grid_r01_silverstone_b_sharp_15 and A_grid_r03_donington_sharp_13 (white car, stripe band along the top of the front wing and along the rear quarter from the C-pillar to the tail, number board at the front of the front door). Colours from the right-side frames B_right_tv Season Review 00-12-30 and C_right_tv Round 2 Pt 1 00-05-45 (no left-side picture of #10): BMW M stripes, red at the nose and up the C-pillar, violet, light blue at the A-pillar and the tail; red ESSO sticker above a white number board; Castrol on the rear quarter; 'Lindgren' in white on the rear side window. The TV drawing shows the stripe colours as teal and blue, the photos as M colours. Wheels: gold mesh (BBS style) with a polished lip from the Season Review 00-12-30 frame, where the car stands in the gravel after its crash; no paddock photo found. Sizes checked against the photos relative to the door height and wheel size (the --compare overlay of the TV drawing was misaligned): stripe band about a fifth of the door height thick (photos; the TV drawing shows it thicker), number board about 13% of the wheelbase wide.",
+ "base": "#ffffff",
+ "rim": "#c9a646",
+ "wheel": "cross",
+ "shapes": [
+  {
+   "poly": [
+    [
+     -60,
+     378.4736842105263
+    ],
+    [
+     250,
+     345.0263157894737
+    ],
+    [
+     220,
+     409.0263157894737
+    ],
+    [
+     -90,
+     442.4736842105263
+    ]
+   ],
+   "fill": "#e0262f"
+  },
+  {
+   "poly": [
+    [
+     250,
+     345.0263157894737
+    ],
+    [
+     520,
+     315.89473684210526
+    ],
+    [
+     490,
+     379.89473684210526
+    ],
+    [
+     220,
+     409.0263157894737
+    ]
+   ],
+   "fill": "#2a3590"
+  },
+  {
+   "poly": [
+    [
+     520,
+     315.89473684210526
+    ],
+    [
+     820,
+     283.5263157894737
+    ],
+    [
+     790,
+     347.5263157894737
+    ],
+    [
+     490,
+     379.89473684210526
+    ]
+   ],
+   "fill": "#4a9be0"
+  },
+  {
+   "poly": [
+    [
+     1800,
+     190
+    ],
+    [
+     1875,
+     190
+    ],
+    [
+     1990,
+     305
+    ],
+    [
+     1990,
+     369
+    ],
+    [
+     1880,
+     369
+    ]
+   ],
+   "fill": "#e0262f"
+  },
+  {
+   "poly": [
+    [
+     1990,
+     305
+    ],
+    [
+     2160,
+     305
+    ],
+    [
+     2140,
+     369
+    ],
+    [
+     1990,
+     369
+    ]
+   ],
+   "fill": "#2a3590"
+  },
+  {
+   "poly": [
+    [
+     2160,
+     305
+    ],
+    [
+     2420,
+     305
+    ],
+    [
+     2420,
+     369
+    ],
+    [
+     2140,
+     369
+    ]
+   ],
+   "fill": "#4a9be0"
+  },
+  {
+   "rect": [
+    775,
+    330,
+    185,
+    46
+   ],
+   "fill": "#d8261c",
+   "r": 5
+  },
+  {
+   "rect": [
+    775,
+    378,
+    185,
+    44
+   ],
+   "fill": "#ffffff",
+   "stroke": "#cccccc",
+   "sw": 2
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 868,
+   "y": 366,
+   "size": 36,
+   "fill": "#ffffff",
+   "w": 110
+  },
+  {
+   "t": "British Touring Car Championship",
+   "x": 868,
+   "y": 405,
+   "size": 16,
+   "fill": "#333333",
+   "w": 165,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Castrol",
+   "x": 2195,
+   "y": 482,
+   "size": 96,
+   "fill": "#111111",
+   "w": 295,
+   "italic": true
+  }
+ ],
+ "number": {
+  "rect": [
+   775,
+   424,
+   185,
+   165
+  ],
+  "n": "10",
+  "bg": "#ffffff",
+  "fg": "#000000",
+  "border": "#d8261c",
+  "r": 5,
+  "font": "Arial, Helvetica, sans-serif"
+ },
+ "over_texts": [
+  {
+   "t": "Lindgren",
+   "x": 1598,
+   "y": 167,
+   "size": 66,
+   "fill": "#ffffff",
+   "w": 240,
+   "font": "Arial, Helvetica, sans-serif"
+  }
+ ]
+}

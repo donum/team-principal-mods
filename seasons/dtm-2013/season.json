@@ -23,7 +23,8 @@
   "staff": {
     "seed": 2013,
     "salary_per_level_m": 0.1,
-    "named": [], "reference": "dtm-2013",
+    "named": [],
+    "reference": "dtm-2013",
     "levels": {
       "Audi Sport Team Phoenix": 16,
       "BMW Team RBM": 15,
@@ -36,6 +37,27 @@
       "stern AMG-Mercedes": 6,
       "BMW Team RMG": 5,
       "Audi Sport Team Rosberg": 5
+    }
+  },
+  "real_history": {
+    "events": "docs/teams/dtm_game_events.csv",
+    "operators": {
+      "HWA-1": "STIHL AMG-Mercedes",
+      "HWA-2": "Euronics AMG-Mercedes",
+      "Mücke": "stern AMG-Mercedes",
+      "MTEK": "BMW Team MTEK",
+      "Schnitzer": "BMW Team Schnitzer",
+      "RBM": "BMW Team RBM",
+      "RMG": "BMW Team RMG",
+      "Abt-1": "Audi Sport Team Abt Sportsline",
+      "Abt-2": "Audi Sport Team Abt",
+      "Phoenix": "Audi Sport Team Phoenix",
+      "Rosberg": "Audi Sport Team Rosberg"
+    },
+    "pay_drivers": {
+      "Vitaly Petrov": 1.0,
+      "Nicholas Latifi": 0.5,
+      "Sean Gelael": 0.5
     }
   },
   "sponsors": {

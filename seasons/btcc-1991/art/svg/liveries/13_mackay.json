@@ -1,0 +1,109 @@
+{
+ "model": "bmw_318is_e30",
+ "title": "#13 Angus MacKay, R&D Motorsport BMW 318is, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "cross",
+ "rim": "#7a6040",
+ "lip": "#d8d8d8",
+ "shapes": [
+  {
+   "rect": [
+    813.5,
+    325.1,
+    237.6,
+    259.9
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    813.5,
+    325.1,
+    237.6,
+    36.3
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    822.9,
+    407.2,
+    218.8,
+    176.3
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 932.3,
+   "y": 356.3,
+   "size": 34.5,
+   "fill": "#ffffff",
+   "w": 118.8
+  },
+  {
+   "t": "British Touring",
+   "x": 941.8,
+   "y": 380.6,
+   "size": 15.6,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 941.8,
+   "y": 399.9,
+   "size": 15.6,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "13",
+   "x": 932.3,
+   "y": 558.8,
+   "size": 162.2,
+   "fill": "#000",
+   "font": "Arial Black, Arial, sans-serif",
+   "w": 175.0
+  },
+  {
+   "t": "Angus MacKay",
+   "x": 682.6,
+   "y": 347.6,
+   "size": 18.7,
+   "fill": "#1a1a1a",
+   "w": 180.5,
+   "font": "Brush Script MT, Segoe Script, cursive",
+   "weight": "normal",
+   "italic": true
+  },
+  {
+   "t": "YOKOHAMA",
+   "x": 1555.0,
+   "y": 617.1,
+   "size": 17.3,
+   "fill": "#1a1a1a",
+   "w": 131.8,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "MacKay",
+   "x": 1619.0,
+   "y": 231.5,
+   "size": 54.4,
+   "fill": "#ffffff",
+   "w": 150.4,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Low to medium confidence. Same R&D Motorsport car as Lyall's (Super Touring Register 4694, mirrored, measured for board and stickers). MacKay's own reference is Getty LAT 2201201282 (Snetterton round 2, front 3/4 from the right): white car, ESSO board on the door, green and red stripe across the bonnet (not visible from the side), a sponsor band on the windscreen (not readable), small stickers on the wing that cannot be read. The side details are therefore taken from the later Lyall photo. Wheels as Lyall's car (bronze mesh, polished lip), not confirmed for rounds 1-2."
+}

@@ -1,0 +1,411 @@
+{
+ "model": "rover_216_r8",
+ "title": "#20 Grahame Davis, Moto-Build Rover 216 GTi, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "star",
+ "spokes": 5,
+ "spoke_w": 0.42,
+ "hub": 0.32,
+ "outer": 0.8,
+ "twist": 16,
+ "rim": "#ececee",
+ "window": "#2a2a2a",
+ "wheel_note": "White wheel with five wide spokes and five small swept windows, polished outer rim, zoomed on both wheels of Super Touring Register 4704 (on track). Counted 5 windows; at this size 4 cannot be fully ruled out.",
+ "shapes": [
+  {
+   "poly": [
+    [
+     -103.8,
+     0.0
+    ],
+    [
+     788.5,
+     0.0
+    ],
+    [
+     782.3,
+     450.0
+    ],
+    [
+     776.1,
+     600.0
+    ],
+    [
+     774.0,
+     900.0
+    ],
+    [
+     -103.8,
+     900.0
+    ]
+   ],
+   "fill": "#f2c500"
+  },
+  {
+   "poly": [
+    [
+     1700.6,
+     370.0
+    ],
+    [
+     2496.2,
+     200.0
+    ],
+    [
+     2496.2,
+     900.0
+    ],
+    [
+     1425.0,
+     900.0
+    ],
+    [
+     1435.4,
+     800.0
+    ],
+    [
+     1549.8,
+     600.0
+    ]
+   ],
+   "fill": "#2f6fc0"
+  },
+  {
+   "poly": [
+    [
+     561.8,
+     612.0
+    ],
+    [
+     1965.8,
+     612.0
+    ],
+    [
+     1965.8,
+     648.0
+    ],
+    [
+     561.8,
+     648.0
+    ]
+   ],
+   "fill": "#8c8c94"
+  },
+  {
+   "poly": [
+    [
+     561.8,
+     622.0
+    ],
+    [
+     1965.8,
+     622.0
+    ],
+    [
+     1965.8,
+     636.0
+    ],
+    [
+     561.8,
+     636.0
+    ]
+   ],
+   "fill": "#a0303c"
+  },
+  {
+   "rect": [
+    920.6,
+    448.0,
+    242.3,
+    264.0
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    920.6,
+    448.0,
+    242.3,
+    37.0
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    925.8,
+    539.0,
+    230.9,
+    171.0
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  },
+  {
+   "poly": [
+    [
+     1248.2,
+     515.0
+    ],
+    [
+     1279.4,
+     478.0
+    ],
+    [
+     1323.1,
+     470.0
+    ],
+    [
+     1347.0,
+     488.0
+    ],
+    [
+     1310.6,
+     485.0
+    ],
+    [
+     1284.6,
+     500.0
+    ],
+    [
+     1269.0,
+     520.0
+    ]
+   ],
+   "fill": "#1a1a1a"
+  },
+  {
+   "poly": [
+    [
+     1514.5,
+     654.0
+    ],
+    [
+     1710.0,
+     654.0
+    ],
+    [
+     1710.0,
+     718.0
+    ],
+    [
+     1514.5,
+     718.0
+    ]
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "poly": [
+    [
+     1558.1,
+     723.0
+    ],
+    [
+     1661.1,
+     723.0
+    ],
+    [
+     1661.1,
+     770.0
+    ],
+    [
+     1558.1,
+     770.0
+    ]
+   ],
+   "fill": "#ffffff",
+   "stroke": "#d7192b",
+   "sw": 3
+  },
+  {
+   "poly": [
+    [
+     703.3,
+     513.0
+    ],
+    [
+     740.7,
+     513.0
+    ],
+    [
+     722.0,
+     551.0
+    ]
+   ],
+   "fill": "#ffffff",
+   "stroke": "#d7192b",
+   "sw": 3
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 1041.8,
+   "y": 479.8,
+   "size": 35.1,
+   "fill": "#ffffff",
+   "w": 121.2
+  },
+  {
+   "t": "British Touring",
+   "x": 1051.4,
+   "y": 507.7,
+   "size": 18.4,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 1051.4,
+   "y": 530.4,
+   "size": 18.4,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "20",
+   "x": 1041.2,
+   "y": 686.1,
+   "size": 157.3,
+   "fill": "#000",
+   "font": "Arial Black, Arial, sans-serif",
+   "w": 184.7
+  },
+  {
+   "t": "marlin",
+   "x": 1294.0,
+   "y": 572.0,
+   "size": 40.0,
+   "fill": "#24399a",
+   "w": 220.5,
+   "font": "Arial Rounded MT Bold, Arial, sans-serif"
+  },
+  {
+   "t": "express",
+   "x": 1294.0,
+   "y": 600.0,
+   "size": 28.0,
+   "fill": "#24399a",
+   "w": 220.5,
+   "font": "Arial Rounded MT Bold, Arial, sans-serif"
+  },
+  {
+   "t": "EUROPE DIRECT",
+   "x": 1289.8,
+   "y": 668.0,
+   "size": 14.0,
+   "fill": "#333333",
+   "w": 239.2,
+   "italic": true,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Moto-Build",
+   "x": 1809.8,
+   "y": 521.0,
+   "size": 100.0,
+   "fill": "#1e2a44",
+   "w": 738.4,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "ROVER PERFORMANCE",
+   "x": 1824.4,
+   "y": 574.0,
+   "size": 52.0,
+   "fill": "#1e2a44",
+   "w": 743.6,
+   "font": "Times New Roman, serif"
+  },
+  {
+   "t": "TOTAL",
+   "x": 1612.2,
+   "y": 700.0,
+   "size": 40.0,
+   "fill": "#1f3f9a",
+   "w": 145.6,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "CHAMPION",
+   "x": 1610.1,
+   "y": 754.0,
+   "size": 18.0,
+   "fill": "#d7192b",
+   "w": 87.4
+  },
+  {
+   "t": "FELTHAM",
+   "x": 2191.5,
+   "y": 645.0,
+   "size": 30.0,
+   "fill": "#ffffff",
+   "w": 197.6,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "GLASS WORKS",
+   "x": 2191.5,
+   "y": 676.0,
+   "size": 28.0,
+   "fill": "#ffffff",
+   "w": 205.9,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "081-890 7147",
+   "x": 2191.5,
+   "y": 708.0,
+   "size": 22.0,
+   "fill": "#ffffff",
+   "w": 166.4,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Hoosier",
+   "x": 501.5,
+   "y": 547.0,
+   "size": 30.0,
+   "fill": "#1a1a1a",
+   "w": 142.5,
+   "font": "Georgia, serif"
+  },
+  {
+   "t": "Hoosier",
+   "x": 237.3,
+   "y": 690.0,
+   "size": 30.0,
+   "fill": "#ffffff",
+   "w": 147.7,
+   "font": "Georgia, serif"
+  },
+  {
+   "t": "Grahame Davis",
+   "x": 1330,
+   "y": 168,
+   "size": 26,
+   "fill": "#1a1a1a",
+   "w": 220,
+   "italic": true,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Davis",
+   "x": 1610.1,
+   "y": 326.0,
+   "size": 56.0,
+   "fill": "#ffffff",
+   "w": 164.3,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Measured on Super Touring Register 4704 (Davis #20, right side, side-on; the model was traced from the same frame, so positions carry over 1:1 after the 4% length correction). White car, blue rear quarter from a diagonal through the rear door, grey and red pinstripe along the doors, ESSO board on the front door, marlin express on the rear door, Moto-Build ROVER PERFORMANCE on the rear quarter, Total and Champion low on the rear door, Feltham Glass Works on the rear bumper, Hoosier on the wing and bumper, name on the rear door window. Front colour: on the right side the front is green; the front views (Getty LAT 2201200785 and 2201200876, Brands Hatch round 10) show the bonnet split green (right) and yellow (left), so the left-side front is drawn yellow (a judgement: the user-supplied copy of this photo, B_right_photo in the livery pack, is the same right-side frame). Grahame Davis small on the roof edge. Only right-side side views exist: whether the left rear is also blue, and the left-side sticker order, are assumed to mirror the right side."
+}

@@ -1,0 +1,374 @@
+{
+ "model": "bmw_m3_e30",
+ "title": "#11 Will Hoy, Team Securicor + Listerine BMW M3, BTCC 1991",
+ "base": "#1e8fdc",
+ "rim": "#f4f4f4",
+ "wheel": "star",
+ "shapes": [
+  {
+   "poly": [
+    [
+     0,
+     250
+    ],
+    [
+     760,
+     240
+    ],
+    [
+     800,
+     300
+    ],
+    [
+     752,
+     300
+    ],
+    [
+     752,
+     408
+    ],
+    [
+     560,
+     425
+    ],
+    [
+     300,
+     455
+    ],
+    [
+     100,
+     478
+    ],
+    [
+     0,
+     488
+    ]
+   ],
+   "fill": "#111111"
+  },
+  {
+   "poly": [
+    [
+     300,
+     322
+    ],
+    [
+     420,
+     304
+    ],
+    [
+     520,
+     296
+    ],
+    [
+     470,
+     312
+    ],
+    [
+     380,
+     326
+    ]
+   ],
+   "fill": "#ffd200"
+  },
+  {
+   "poly": [
+    [
+     420,
+     312
+    ],
+    [
+     540,
+     296
+    ],
+    [
+     660,
+     288
+    ],
+    [
+     720,
+     286
+    ],
+    [
+     690,
+     300
+    ],
+    [
+     600,
+     306
+    ],
+    [
+     500,
+     318
+    ]
+   ],
+   "fill": "#ff3c9a"
+  },
+  {
+   "poly": [
+    [
+     1990,
+     505
+    ],
+    [
+     2400,
+     482
+    ],
+    [
+     2400,
+     640
+    ],
+    [
+     2010,
+     640
+    ]
+   ],
+   "fill": "#111111"
+  },
+  {
+   "circle": [
+    2010,
+    360,
+    96
+   ],
+   "fill": "none",
+   "stroke": "#ffffff",
+   "sw": 24
+  },
+  {
+   "rect": [
+    760,
+    340,
+    234,
+    290
+   ],
+   "fill": "#ffffff",
+   "stroke": "#000",
+   "sw": 3,
+   "r": 4
+  },
+  {
+   "rect": [
+    760,
+    340,
+    234,
+    48
+   ],
+   "fill": "#d8202a"
+  },
+  {
+   "rect": [
+    776,
+    440,
+    202,
+    178
+   ],
+   "fill": "none",
+   "stroke": "#d8202a",
+   "sw": 4
+  },
+  {
+   "circle": [
+    792,
+    670,
+    16
+   ],
+   "fill": "#ffffff",
+   "stroke": "#1c5fae",
+   "sw": 5
+  },
+  {
+   "rect": [
+    835,
+    660,
+    22,
+    22
+   ],
+   "fill": "#7ec3ee"
+  },
+  {
+   "rect": [
+    857,
+    660,
+    22,
+    22
+   ],
+   "fill": "#2b3f9c"
+  },
+  {
+   "rect": [
+    879,
+    660,
+    22,
+    22
+   ],
+   "fill": "#d8202a"
+  },
+  {
+   "poly": [
+    [
+     1060,
+     658
+    ],
+    [
+     1085,
+     658
+    ],
+    [
+     1072,
+     680
+    ]
+   ],
+   "fill": "#d8202a"
+  },
+  {
+   "rect": [
+    1330,
+    654,
+    110,
+    32
+   ],
+   "fill": "#ffffff",
+   "stroke": "#d8202a",
+   "sw": 3
+  },
+  {
+   "rect": [
+    90,
+    600,
+    110,
+    48
+   ],
+   "fill": "#ffd200",
+   "stroke": "#d8202a",
+   "sw": 3
+  }
+ ],
+ "texts": [
+  {
+   "t": "LISTERINE",
+   "x": 367,
+   "y": 416,
+   "size": 104,
+   "fill": "#ffffff",
+   "w": 517,
+   "rot": -8,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "ESSO",
+   "x": 877,
+   "y": 381,
+   "size": 44,
+   "fill": "#ffffff",
+   "w": 120
+  },
+  {
+   "t": "British Touring Car Championship",
+   "x": 877,
+   "y": 424,
+   "size": 20,
+   "fill": "#000",
+   "w": 200,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "11",
+   "x": 877,
+   "y": 604,
+   "size": 190,
+   "fill": "#000",
+   "w": 170,
+   "font": "Arial Narrow, Arial, sans-serif"
+  },
+  {
+   "t": "SECURICOR",
+   "x": 1365,
+   "y": 350,
+   "size": 58,
+   "fill": "#ffffff",
+   "w": 500,
+   "rot": -8
+  },
+  {
+   "t": "OMEGA",
+   "x": 1405,
+   "y": 500,
+   "size": 140,
+   "fill": "#ffffff",
+   "w": 850,
+   "rot": -8,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "EXPRESS",
+   "x": 1400,
+   "y": 585,
+   "size": 62,
+   "fill": "#ffffff",
+   "w": 520,
+   "rot": -8,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Ω",
+   "x": 2010,
+   "y": 412,
+   "size": 150,
+   "fill": "#ffffff",
+   "font": "Times New Roman, serif"
+  },
+  {
+   "t": "STOPPERS",
+   "x": 2110,
+   "y": 590,
+   "size": 40,
+   "fill": "#ffffff",
+   "w": 150,
+   "italic": true
+  },
+  {
+   "t": "YOKOHAMA",
+   "x": 1190,
+   "y": 680,
+   "size": 34,
+   "fill": "#ffffff",
+   "w": 190
+  },
+  {
+   "t": "CHAMPION",
+   "x": 1385,
+   "y": 678,
+   "size": 22,
+   "fill": "#d8202a",
+   "w": 96
+  },
+  {
+   "t": "NEO",
+   "x": 145,
+   "y": 640,
+   "size": 40,
+   "fill": "#d8202a",
+   "w": 80
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Hoy",
+   "x": 1550,
+   "y": 172,
+   "size": 78,
+   "fill": "#ffffff",
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Base livery measured on Getty LAT 2201201240 (Silverstone 1 April 1991, near side-on) and checked on 2201200764, 2201319525 and Bellm's #12 (Sutton 2175990645): positions by door length, heights by window-to-sill height; the sponsor block rises about 8 degrees to the rear. Wheels: white five-spoke, from the Thruxton paddock photo (Getty LAT 2201200877).",
+ "spokes": 5,
+ "hub": 0.3,
+ "outer": 0.78,
+ "twist": 0,
+ "window": "#333333",
+ "wheel_note": "Rim design re-checked on Getty LAT 2201200877 (paddock): zoomed wheel, spoke count, window shape and sweep.",
+ "spoke_w": 0.36
+}

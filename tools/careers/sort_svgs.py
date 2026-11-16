@@ -14,6 +14,10 @@ and writes <out>/SOURCES.csv (file, kind, year, uploader, uploaded, wiki page)
 plus <out>/MISSING.txt with the wiki files not found yet. Run it again after
 more downloads; files already in place are kept.
 
+docs/drivers/fandom_svg_fixes.csv (file, field, value, reason) corrects SOURCES rows where
+the wiki table is wrong, checked against what the drawing shows: number, driver, team, car,
+kind ('logo' for a non-car), and placeholder 'yes' for the grey '?' cars (no livery known).
+
 Usage: python -I tools/careers/sort_svgs.py [downloads] [out]
 """
 import csv
@@ -27,6 +31,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 FACTS = ["number", "driver", "make", "team", "car", "tyres", "guest"]
 FILES = REPO / "reference" / "driver_careers" / "files.json"
+FIXES = REPO / "docs" / "drivers" / "fandom_svg_fixes.csv"   # checked against the drawing itself
 
 
 # The wiki redirects some files, so the browser saves them under the target's
@@ -88,7 +93,10 @@ def entries():
             m = re.search(r"\{\{(Gast|Junior|Test)?(?:[Ss]tarter|fahrer)\|(\d{4})\|([^|]*)\|([^|]+)\|([^|]*)\|([^|]*)\|([^|]*)\|([^|}]*)\}\}", line)
             if m:
                 guest, year, no, driver, make, team, car, tyres = m.groups()
-                out[norm(f"{driver}_{year}.svg".replace(" ", "_"))] = {"number": no, "driver": driver, "make": make, "team": team,
+                key = norm(f"{driver}_{year}.svg".replace(" ", "_"))
+                if key in out:   # a typo in the wiki table names a driver twice (2012: #9 'Timo Scheider')
+                    continue     # the first row is the real one; the drawing of the other car gets a fix
+                out[key] = {"number": no, "driver": driver, "make": make, "team": team,
                                                       "car": car, "tyres": tyres, "guest": {"Gast": "guest", "Test": "test driver", "Junior": "junior"}.get(guest or "", "")}
                 continue
             f = re.search(r"\[\[Datei:([^|\]]+\.svg)", line)
@@ -135,13 +143,18 @@ def main():
             shutil.move(str(p), dest)
             moved += 1
         fact = facts.get(norm(f["name"]), {}) if kind == "car" else {}
-        rows.append({"file": f"{sub}/{dest.name}", "kind": kind, "year": year, **{k: fact.get(k, "") for k in FACTS},
+        rows.append({"file": f"{sub}/{dest.name}", "kind": kind, "year": year, **{k: fact.get(k, "") for k in FACTS}, "placeholder": "",
                      "uploader": f.get("user", ""),
                      "uploaded": f.get("timestamp", ""), "page": f"https://dtm.fandom.com/de/wiki/Datei:{f['name']}",
                      "license": "CC BY-SA (fandom default); credit the uploader and dtm.fandom.com"})
+    fixes = list(csv.DictReader(open(FIXES, encoding="utf-8"))) if FIXES.exists() else []
+    by_file = {r["file"]: r for r in rows}
+    for fx in fixes:
+        if fx["file"] in by_file:
+            by_file[fx["file"]][fx["field"]] = fx["value"]
     out.mkdir(parents=True, exist_ok=True)
     with open(out / "SOURCES.csv", "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, ["file", "kind", "year", *FACTS, "uploader", "uploaded", "page", "license"])
+        w = csv.DictWriter(fh, ["file", "kind", "year", *FACTS, "placeholder", "uploader", "uploaded", "page", "license"])
         w.writeheader()
         w.writerows(rows)
     (out / "MISSING.txt").write_text("\n".join(missing) + ("\n" if missing else ""), encoding="utf-8")

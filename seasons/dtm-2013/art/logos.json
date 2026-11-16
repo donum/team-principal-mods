@@ -206,6 +206,168 @@
         30,
         30
       ]
+    },
+    "Mercedes-AMG Team ART": {
+      "source": "crest",
+      "text": "ART\nGRAND PRIX",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        20,
+        20,
+        24
+      ],
+      "accent": [
+        192,
+        192,
+        198
+      ],
+      "note": "plain text crest for a team that joins in a later season (no free logo); not in the pack, see team_tiles"
+    },
+    "BMW Team RMR": {
+      "source": "crest",
+      "text": "BMW TEAM\nRMR",
+      "fg": [
+        20,
+        20,
+        24
+      ],
+      "bg": [
+        245,
+        245,
+        245
+      ],
+      "accent": [
+        0,
+        90,
+        170
+      ],
+      "note": "plain text crest for a team that joins in a later season (no free logo); not in the pack, see team_tiles"
+    },
+    "Mercedes-AMG Motorsport SILBERPFEIL Energy": {
+      "source": "crest",
+      "text": "HWA\nSILBERPFEIL",
+      "fg": [
+        20,
+        20,
+        24
+      ],
+      "bg": [
+        200,
+        204,
+        210
+      ],
+      "accent": [
+        0,
+        160,
+        150
+      ],
+      "note": "plain text crest for a team that joins in a later season (no free logo); not in the pack, see team_tiles"
+    },
+    "R-Motorsport": {
+      "source": "crest",
+      "text": "R-MOTORSPORT",
+      "fg": [
+        235,
+        235,
+        235
+      ],
+      "bg": [
+        0,
+        95,
+        70
+      ],
+      "accent": [
+        200,
+        230,
+        0
+      ],
+      "note": "plain text crest for a team that joins in a later season (no free logo); not in the pack, see team_tiles"
+    },
+    "R-Motorsport 2": {
+      "source": "crest",
+      "text": "R-MOTORSPORT",
+      "fg": [
+        235,
+        235,
+        235
+      ],
+      "bg": [
+        0,
+        95,
+        70
+      ],
+      "accent": [
+        200,
+        230,
+        0
+      ],
+      "note": "plain text crest for a team that joins in a later season (no free logo); not in the pack, see team_tiles"
+    },
+    "Audi Sport Team WRT": {
+      "source": "crest",
+      "text": "WRT",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        40,
+        40,
+        44
+      ],
+      "accent": [
+        230,
+        0,
+        40
+      ],
+      "note": "plain text crest for a team that joins in a later season (no free logo); not in the pack, see team_tiles"
+    },
+    "Orlen Team ART": {
+      "source": "crest",
+      "text": "ART\nGRAND PRIX",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        220,
+        30,
+        40
+      ],
+      "accent": [
+        255,
+        255,
+        255
+      ],
+      "note": "plain text crest for a team that joins in a later season (no free logo); not in the pack, see team_tiles"
+    }
+  },
+  "engines": {
+    "HWA": {
+      "source": "commons",
+      "file": "File:HWA AG logo.svg",
+      "license": "Public domain",
+      "also_as": [
+        "HWA AFR Turbo 2.0"
+      ],
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ],
+      "team_content": 938,
+      "note": "HWA built the engine of the Aston Martin Vantage DTM (2019); R-Motorsport's tile"
     }
   }
 }

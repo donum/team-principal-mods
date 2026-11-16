@@ -27,6 +27,28 @@
     "Audi Sport Team Rosberg": {"previous_position": 4, "entrants": ["Audi Sport Team Rosberg [Team Rosberg]"], "color": [125, 12, 25], "secondary": [195, 195, 200], "tyres": "Hankook", "works": true,
                                 "history": "Keke Rosberg's team from Neustadt an der Weinstraße. First DTM season in 1995 with Opel. Raced Mercedes from 2000 to 2004 and Audi since 2006."}
   },
+  "real_history": {
+    "$comment": "Real DTM history after 2013 (docs/teams). operators maps the keys of docs/teams/dtm_game_events.csv to this pack's teams. Pay driver amounts are our estimates: no source gives a figure (docs/teams/dtm_driver_backing.csv).",
+    "events": "docs/teams/dtm_game_events.csv",
+    "operators": {
+      "HWA-1": "STIHL AMG-Mercedes",
+      "HWA-2": "Euronics AMG-Mercedes",
+      "Mücke": "stern AMG-Mercedes",
+      "MTEK": "BMW Team MTEK",
+      "Schnitzer": "BMW Team Schnitzer",
+      "RBM": "BMW Team RBM",
+      "RMG": "BMW Team RMG",
+      "Abt-1": "Audi Sport Team Abt Sportsline",
+      "Abt-2": "Audi Sport Team Abt",
+      "Phoenix": "Audi Sport Team Phoenix",
+      "Rosberg": "Audi Sport Team Rosberg"
+    },
+    "pay_drivers": {
+      "Vitaly Petrov": 1.0,
+      "Nicholas Latifi": 0.5,
+      "Sean Gelael": 0.5
+    }
+  },
   "sponsors": {
     "$comment": "Starting deals from the 2013 liveries (research/spotter_guide.csv, research/liveries.csv), primary first: the lower-numbered car's main sponsor, then the team-mate's, then partners on the team's cars. Each sponsor is on one team only, so make-wide partners (Puma, Sonax, Würth...) are spread over that make's teams. The manufacturers' own campaigns (bmw.com/m3, AMG, Audi ultra, Audi Cup) and the series partners (DEKRA, ADAC, Hankook) are left out. Names are used descriptively only, no logos. build_pack.py keeps each team's sponsor income at what its cloned vanilla team had.",
     "pool": {

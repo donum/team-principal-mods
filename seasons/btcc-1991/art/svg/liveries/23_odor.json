@@ -1,0 +1,397 @@
+{
+ "model": "nissan_primera_p10",
+ "title": "#23 Kieth O'Dor, Nissan Racing with Castrol Primera eGT, BTCC 1991",
+ "base": "#141416",
+ "wheel": "star",
+ "rim": "#eef2f6",
+ "shapes": [
+  {
+   "poly": [
+    [
+     640,
+     643
+    ],
+    [
+     1071,
+     521
+    ],
+    [
+     1096,
+     573
+    ],
+    [
+     698,
+     692
+    ],
+    [
+     640,
+     692
+    ]
+   ],
+   "fill": "#d6202a"
+  },
+  {
+   "poly": [
+    [
+     704,
+     695
+    ],
+    [
+     1096,
+     580
+    ],
+    [
+     1122,
+     625
+    ],
+    [
+     910,
+     714
+    ],
+    [
+     679,
+     714
+    ]
+   ],
+   "fill": "#2f8a3e"
+  },
+  {
+   "poly": [
+    [
+     1481,
+     374
+    ],
+    [
+     1699,
+     296
+    ],
+    [
+     1929,
+     235
+    ],
+    [
+     1997,
+     245
+    ],
+    [
+     2078,
+     276
+    ],
+    [
+     1780,
+     367
+    ],
+    [
+     1515,
+     435
+    ]
+   ],
+   "fill": "#d6202a"
+  },
+  {
+   "poly": [
+    [
+     1522,
+     438
+    ],
+    [
+     1780,
+     374
+    ],
+    [
+     2078,
+     279
+    ],
+    [
+     2309,
+     282
+    ],
+    [
+     2309,
+     306
+    ],
+    [
+     2099,
+     350
+    ],
+    [
+     1807,
+     421
+    ],
+    [
+     1529,
+     493
+    ]
+   ],
+   "fill": "#2f8a3e"
+  },
+  {
+   "path": "M646,627 L961,521 L1450,364 L1692,292 L1929,228",
+   "fill": "none",
+   "stroke": "#f4f4f4",
+   "sw": 9
+  },
+  {
+   "path": "M646,694 L1096,574",
+   "fill": "none",
+   "stroke": "#f4f4f4",
+   "sw": 7
+  },
+  {
+   "path": "M1515,438 L2078,276 L2309,278",
+   "fill": "none",
+   "stroke": "#f4f4f4",
+   "sw": 7
+  },
+  {
+   "path": "M1000,698 L1450,547 L2099,350 L2309,303",
+   "fill": "none",
+   "stroke": "#f4f4f4",
+   "sw": 9
+  },
+  {
+   "rect": [
+    56,
+    516,
+    200,
+    24
+   ],
+   "fill": "#d6202a"
+  },
+  {
+   "rect": [
+    56,
+    548,
+    200,
+    22
+   ],
+   "fill": "#2f8a3e"
+  },
+  {
+   "rect": [
+    2031,
+    537,
+    320,
+    27
+   ],
+   "fill": "#d6202a"
+  },
+  {
+   "rect": [
+    2044,
+    571,
+    300,
+    27
+   ],
+   "fill": "#2f8a3e"
+  },
+  {
+   "rect": [
+    2099,
+    330,
+    125,
+    129
+   ],
+   "fill": "#f4f4f4"
+  },
+  {
+   "circle": [
+    2161,
+    394,
+    52
+   ],
+   "fill": "#2f8a3e"
+  },
+  {
+   "rect": [
+    2104,
+    384,
+    115,
+    22
+   ],
+   "fill": "#f4f4f4"
+  },
+  {
+   "rect": [
+    132,
+    524,
+    46,
+    44
+   ],
+   "fill": "#f4f4f4"
+  },
+  {
+   "circle": [
+    155,
+    546,
+    17
+   ],
+   "fill": "#2f8a3e"
+  },
+  {
+   "rect": [
+    701,
+    309,
+    254,
+    293
+   ],
+   "fill": "#ffffff",
+   "stroke": "#000",
+   "sw": 3,
+   "r": 4
+  },
+  {
+   "rect": [
+    701,
+    309,
+    254,
+    42
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    714,
+    409,
+    231,
+    189
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  }
+ ],
+ "texts": [
+  {
+   "t": "Castrol",
+   "x": 1303,
+   "y": 548,
+   "size": 128,
+   "fill": "#f4f4f4",
+   "w": 470,
+   "rot": -17.5,
+   "italic": true,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "Castrol",
+   "x": 2161,
+   "y": 401,
+   "size": 20,
+   "fill": "#d6202a",
+   "w": 96,
+   "italic": true,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "NISSAN",
+   "x": 459,
+   "y": 404,
+   "size": 80,
+   "fill": "#f4f4f4",
+   "w": 420,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 2173,
+   "y": 494,
+   "size": 34,
+   "fill": "#f4f4f4",
+   "w": 205,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 150,
+   "y": 504,
+   "size": 15,
+   "fill": "#f4f4f4",
+   "w": 90,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "KONI",
+   "x": 1607,
+   "y": 627,
+   "size": 24,
+   "fill": "#f4f4f4",
+   "w": 80,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "JANSPEED",
+   "x": 1573,
+   "y": 688,
+   "size": 30,
+   "fill": "#f4f4f4",
+   "w": 165,
+   "font": "Arial Black, Arial, sans-serif"
+  },
+  {
+   "t": "AVTEC",
+   "x": 1438,
+   "y": 688,
+   "size": 22,
+   "fill": "#f4f4f4",
+   "w": 70,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "ESSO",
+   "x": 828.0,
+   "y": 345.12,
+   "size": 42.0,
+   "fill": "#ffffff",
+   "w": 121.92
+  },
+  {
+   "t": "British Touring",
+   "x": 836.0,
+   "y": 377.1,
+   "size": 20.88,
+   "fill": "#000",
+   "w": 152.4,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 836.0,
+   "y": 402.04,
+   "size": 20.88,
+   "fill": "#000",
+   "w": 177.79999999999998,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "23",
+   "x": 829.5,
+   "y": 571.54,
+   "size": 189.0,
+   "fill": "#000",
+   "font": "Arial Narrow, Arial, sans-serif",
+   "w": 143.22
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Odor",
+   "x": 1482,
+   "y": 146,
+   "size": 66,
+   "fill": "#f4f4f4",
+   "w": 180,
+   "font": "Arial Black, Arial, sans-serif"
+  }
+ ],
+ "note": "Black Primera with the Castrol band: red over green with white pinstripes, low at the front, broken by the slanted Castrol lettering on the doors, rising over the rear door to the boot. Measured on the Getty / LAT photo 'Snetterton 14 April 1991, Keith Odor' (2201319653, right side, near side-on), mirrored and fitted onto the model by the wheel centres; the left side (text reading forwards) checked on Super Touring Register 4722 (left side, front three-quarter) and the TV graphic drawings. 'Odor' on the rear door glass as on the car. Wheels: white 5-spoke as on the car from mid-season (Super Touring Register 5183, Silverstone; Getty / LAT Thruxton pit lane photo of #24); in April the car ran silver 8-spoke wheels. Uncertain: the bands' exact width where the number board covers them; small stickers (AVTEC, KONI, the Castrol roundel artwork) are simplified.",
+ "spokes": 5,
+ "hub": 0.26,
+ "outer": 0.84,
+ "twist": 0,
+ "window": "#2e2e2e",
+ "wheel_note": "Rim design re-checked on STR 5183: zoomed wheel, spoke count, window shape and sweep.",
+ "spoke_w": 0.3
+}

@@ -64,6 +64,28 @@ Because of ShareAlike, these images are licensed **CC BY-SA 4.0**
 credits are in each pack's `credits.txt`. The liveries show real sponsor
 trademarks, which belong to their owners.
 
+### SVG livery drawings (BTCC 1991)
+
+`seasons/btcc-1991/art/svg/*.svg` (made with `tools/svg_model.py` and
+`tools/livery_svg.py`) are flat side views on car outlines listed in
+`seasons/btcc-1991/art/svg/models/*.json` ("source" names each one):
+
+- BMW M3 E30 and Ford Sierra RS500: from drawings by Byggxx on dtm.fandom.com
+  (CC BY-SA).
+- Vauxhall Cavalier: from Oliver Pohlmann's "DTM 1993 Ian Khan" (Wikimedia
+  Commons, CC BY-SA 3.0 DE).
+- BMW 318is, Nissan Primera, Peugeot 405: traced from Wikimedia Commons photos
+  by Kakoula10 (CC BY-SA 4.0), Solomon203 (CC BY-SA 3.0) and Martin Lee
+  (CC BY-SA 2.0).
+- Toyota Carina, Ford Sierra Sapphire, Mitsubishi Lancer, Rover 216 and
+  Vauxhall Belmont: traced from period race photos (Getty/LAT, Getty/Sutton,
+  Super Touring Register, TouringCarTimes) whose owners have not yet given
+  permission. These five outlines stay out of published packs until they do,
+  or until they are redrawn from a free source.
+
+The drawings are CC BY-SA 4.0. Liveries were read from TV broadcasts and
+photos (private references, not shipped) and show real sponsor trademarks.
+
 ### Artist drawings
 
 Some team car images are an artist's own drawings, used with their

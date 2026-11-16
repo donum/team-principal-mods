@@ -1,0 +1,285 @@
+{
+ "model": "vauxhall_belmont",
+ "title": "#58 Tony Bardy, HWR Motorsport Vauxhall Belmont, BTCC 1991",
+ "base": "#ffffff",
+ "wheel": "star",
+ "spokes": 5,
+ "spoke_w": 0.32,
+ "hub": 0.3,
+ "outer": 0.8,
+ "twist": 6,
+ "rim": "#c9a64a",
+ "lip": "#e6e6e6",
+ "window": "#1a1a1a",
+ "wheel_note": "Gold 5-spoke with a deep polished lip, zoomed on Getty LAT 2201201054 (both left-side wheels, on track); the lip is wider than the tool draws it.",
+ "shapes": [
+  {
+   "rect": [
+    785.8,
+    387.0,
+    240.0,
+    283.0
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "rect": [
+    785.8,
+    387.0,
+    240.0,
+    45.0
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "rect": [
+    796.8,
+    480.0,
+    227.0,
+    188.0
+   ],
+   "fill": "none",
+   "stroke": "#d7192b",
+   "sw": 4
+  },
+  {
+   "poly": [
+    [
+     658.8,
+     487.0
+    ],
+    [
+     763.8,
+     487.0
+    ],
+    [
+     763.8,
+     535.0
+    ],
+    [
+     658.8,
+     535.0
+    ]
+   ],
+   "fill": "#ffffff",
+   "stroke": "#d7192b",
+   "sw": 4
+  },
+  {
+   "poly": [
+    [
+     1734.8,
+     359.0
+    ],
+    [
+     2137.8,
+     359.0
+    ],
+    [
+     2137.8,
+     427.0
+    ],
+    [
+     1734.8,
+     427.0
+    ]
+   ],
+   "fill": "#1f3f9a"
+  },
+  {
+   "poly": [
+    [
+     1738.8,
+     437.0
+    ],
+    [
+     2141.8,
+     437.0
+    ],
+    [
+     2141.8,
+     458.0
+    ],
+    [
+     1738.8,
+     458.0
+    ]
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "circle": [
+    1736.8,
+    374.0,
+    24.0
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "poly": [
+    [
+     1306.8,
+     453.0
+    ],
+    [
+     1430.8,
+     453.0
+    ],
+    [
+     1430.8,
+     530.0
+    ],
+    [
+     1306.8,
+     530.0
+    ]
+   ],
+   "fill": "#ffffff",
+   "stroke": "#cccccc",
+   "sw": 2
+  },
+  {
+   "poly": [
+    [
+     1317.8,
+     484.0
+    ],
+    [
+     1419.8,
+     484.0
+    ],
+    [
+     1419.8,
+     490.0
+    ],
+    [
+     1317.8,
+     490.0
+    ]
+   ],
+   "fill": "#e2b000"
+  }
+ ],
+ "texts": [
+  {
+   "t": "ESSO",
+   "x": 905.8,
+   "y": 425.7,
+   "size": 42.8,
+   "fill": "#ffffff",
+   "w": 120.0
+  },
+  {
+   "t": "British Touring",
+   "x": 915.4,
+   "y": 452.2,
+   "size": 16.3,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "anchor": "middle"
+  },
+  {
+   "t": "Car Championship",
+   "x": 915.4,
+   "y": 472.3,
+   "size": 16.3,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "58",
+   "x": 910.3,
+   "y": 641.7,
+   "size": 173.0,
+   "fill": "#000",
+   "font": "Arial Black, Arial, sans-serif",
+   "w": 181.6
+  },
+  {
+   "t": "CHAMPION",
+   "x": 710.8,
+   "y": 519.0,
+   "size": 22.0,
+   "fill": "#d7192b",
+   "w": 88.0,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "Bristol Street",
+   "x": 1935.8,
+   "y": 415.0,
+   "size": 56.0,
+   "fill": "#ffffff",
+   "w": 360.0,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "V",
+   "x": 1736.8,
+   "y": 386.0,
+   "size": 30.0,
+   "fill": "#ffffff"
+  },
+  {
+   "t": "SUNDERLAND No.1",
+   "x": 1871.8,
+   "y": 491.0,
+   "size": 30.0,
+   "fill": "#d7192b",
+   "w": 530.0,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "VAUXHALL",
+   "x": 1368.8,
+   "y": 476.0,
+   "size": 14.0,
+   "fill": "#333333",
+   "w": 90.0,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "Mobil",
+   "x": 1368.8,
+   "y": 520.0,
+   "size": 16.0,
+   "fill": "#1f3f9a",
+   "w": 50.0,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 179.6,
+   "y": 640.0,
+   "size": 30.0,
+   "fill": "#111111",
+   "w": 129.2,
+   "italic": true,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "DUNLOP",
+   "x": 2132.8,
+   "y": 600.0,
+   "size": 30.0,
+   "fill": "#111111",
+   "w": 170.0,
+   "italic": true,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "over_texts": [
+  {
+   "t": "Bardy",
+   "x": 1492.8,
+   "y": 254.0,
+   "size": 50.0,
+   "fill": "#ffffff",
+   "w": 160.0,
+   "font": "Arial, sans-serif"
+  }
+ ],
+ "note": "Same HWR Motorsport car as Wilson's (round 12 Thruxton entry, did not start), drawn with Bardy's name on the window. Livery measured on the TouringCarTimes photo and Getty LAT 2201201054 of Wilson's car (both right side, mirrored); the BBC grid drawing for round 12 (A_grid_r12_thruxton_b_10) shows a white Belmont with the board on the front door and the dark band on the rear quarter, which fits. Bardy's name lettering on the car is not seen in any reference."
+}

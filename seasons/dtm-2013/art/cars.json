@@ -2512,6 +2512,1150 @@
      "font": "bold"
     }
    ]
+  },
+  {
+   "season": 2015,
+   "number": 2,
+   "driver": "Gary Paffett",
+   "team": "Mercedes-AMG Team ART",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    30,
+    60,
+    170
+   ],
+   "layers": [
+    {
+     "poly": [
+      [
+       0,
+       300
+      ],
+      [
+       0,
+       420
+      ],
+      [
+       1100,
+       420
+      ],
+      [
+       980,
+       360
+      ]
+     ],
+     "color": [
+      245,
+      200,
+      20
+     ]
+    },
+    {
+     "poly": [
+      [
+       520,
+       210
+      ],
+      [
+       800,
+       210
+      ],
+      [
+       800,
+       282
+      ],
+      [
+       520,
+       282
+      ]
+     ],
+     "color": [
+      250,
+      250,
+      250
+     ]
+    },
+    {
+     "text": "EURONICS",
+     "at": [
+      660,
+      246
+     ],
+     "size": 80,
+     "box": [
+      250,
+      56
+     ],
+     "color": [
+      30,
+      60,
+      170
+     ],
+     "font": "black"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2015,
+   "number": 22,
+   "driver": "Lucas Auer",
+   "team": "Mercedes-AMG Team ART",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    230,
+    165,
+    200
+   ],
+   "layers": [
+    {
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       500,
+       360
+      ],
+      [
+       500,
+       420
+      ],
+      [
+       0,
+       420
+      ]
+     ],
+     "color": [
+      140,
+      140,
+      145
+     ]
+    },
+    {
+     "text": "BWT",
+     "at": [
+      650,
+      245
+     ],
+     "size": 100,
+     "box": [
+      220,
+      90
+     ],
+     "color": [
+      25,
+      70,
+      160
+     ],
+     "font": "black"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2017,
+   "number": 16,
+   "driver": "Timo Glock",
+   "team": "BMW Team RMR",
+   "model": "bmw_m3_dtm",
+   "base_color": [
+    255,
+    204,
+    0
+   ],
+   "layers": [
+    {
+     "band": [
+      392,
+      420
+     ],
+     "color": [
+      20,
+      20,
+      22
+     ]
+    },
+    {
+     "band": [
+      296,
+      302
+     ],
+     "color": [
+      20,
+      20,
+      22
+     ]
+    },
+    {
+     "text": "Deutsche Post",
+     "at": [
+      640,
+      245
+     ],
+     "size": 80,
+     "box": [
+      280,
+      52
+     ],
+     "color": [
+      20,
+      20,
+      22
+     ],
+     "font": "bold"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2017,
+   "number": 31,
+   "driver": "Tom Blomqvist",
+   "team": "BMW Team RMR",
+   "model": "bmw_m3_dtm",
+   "base_color": [
+    245,
+    245,
+    245
+   ],
+   "layers": [
+    {
+     "band": [
+      360,
+      420
+     ],
+     "color": [
+      20,
+      20,
+      22
+     ]
+    },
+    {
+     "poly": [
+      [
+       330,
+       340
+      ],
+      [
+       360,
+       340
+      ],
+      [
+       440,
+       180
+      ],
+      [
+       410,
+       180
+      ]
+     ],
+     "color": [
+      0,
+      150,
+      215
+     ]
+    },
+    {
+     "poly": [
+      [
+       366,
+       340
+      ],
+      [
+       396,
+       340
+      ],
+      [
+       476,
+       180
+      ],
+      [
+       446,
+       180
+      ]
+     ],
+     "color": [
+      30,
+      50,
+      120
+     ]
+    },
+    {
+     "poly": [
+      [
+       402,
+       340
+      ],
+      [
+       432,
+       340
+      ],
+      [
+       512,
+       180
+      ],
+      [
+       482,
+       180
+      ]
+     ],
+     "color": [
+      225,
+      30,
+      40
+     ]
+    },
+    {
+     "text": "BMW Driving Experience",
+     "at": [
+      680,
+      245
+     ],
+     "size": 80,
+     "box": [
+      260,
+      36
+     ],
+     "color": [
+      30,
+      50,
+      120
+     ],
+     "font": "bold"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2017,
+   "number": 3,
+   "driver": "Paul di Resta",
+   "team": "Mercedes-AMG Motorsport SILBERPFEIL Energy",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    245,
+    245,
+    245
+   ],
+   "layers": [
+    {
+     "band": [
+      350,
+      420
+     ],
+     "color": [
+      40,
+      40,
+      42
+     ]
+    },
+    {
+     "poly": [
+      [
+       300,
+       342
+      ],
+      [
+       1150,
+       326
+      ],
+      [
+       1150,
+       336
+      ],
+      [
+       300,
+       352
+      ]
+     ],
+     "color": [
+      240,
+      110,
+      20
+     ]
+    },
+    {
+     "text": "TV SPIELFILM",
+     "at": [
+      650,
+      245
+     ],
+     "size": 80,
+     "box": [
+      280,
+      52
+     ],
+     "color": [
+      30,
+      60,
+      150
+     ],
+     "font": "black"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2017,
+   "number": 63,
+   "driver": "Maro Engel",
+   "team": "Mercedes-AMG Motorsport SILBERPFEIL Energy",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    195,
+    197,
+    200
+   ],
+   "layers": [
+    {
+     "poly": [
+      [
+       1150,
+       0
+      ],
+      [
+       1400,
+       0
+      ],
+      [
+       1400,
+       420
+      ],
+      [
+       1200,
+       420
+      ]
+     ],
+     "color": [
+      40,
+      40,
+      42
+     ]
+    },
+    {
+     "band": [
+      350,
+      420
+     ],
+     "color": [
+      40,
+      40,
+      42
+     ]
+    },
+    {
+     "poly": [
+      [
+       300,
+       342
+      ],
+      [
+       1150,
+       326
+      ],
+      [
+       1150,
+       336
+      ],
+      [
+       300,
+       352
+      ]
+     ],
+     "color": [
+      240,
+      110,
+      20
+     ]
+    },
+    {
+     "text": "SILBERPFEIL",
+     "at": [
+      650,
+      245
+     ],
+     "size": 80,
+     "box": [
+      280,
+      56
+     ],
+     "color": [
+      20,
+      20,
+      22
+     ],
+     "font": "black"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2019,
+   "number": 3,
+   "driver": "Paul di Resta",
+   "team": "R-Motorsport",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    120,
+    124,
+    130
+   ],
+   "layers": [
+    {
+     "band": [
+      372,
+      420
+     ],
+     "color": [
+      25,
+      25,
+      28
+     ]
+    },
+    {
+     "band": [
+      364,
+      371
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ]
+    },
+    {
+     "text": "Baldessarini",
+     "at": [
+      650,
+      245
+     ],
+     "size": 80,
+     "box": [
+      270,
+      52
+     ],
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "font": "bold"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make (no Aston Martin outline yet: Mercedes C-Coupe stands in)"
+  },
+  {
+   "season": 2019,
+   "number": 76,
+   "driver": "Jake Dennis",
+   "team": "R-Motorsport",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    120,
+    124,
+    130
+   ],
+   "layers": [
+    {
+     "band": [
+      372,
+      420
+     ],
+     "color": [
+      25,
+      25,
+      28
+     ]
+    },
+    {
+     "band": [
+      364,
+      371
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ]
+    },
+    {
+     "text": "R-Motorsport",
+     "at": [
+      650,
+      245
+     ],
+     "size": 80,
+     "box": [
+      270,
+      52
+     ],
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "font": "bold"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make (no Aston Martin outline yet: Mercedes C-Coupe stands in)"
+  },
+  {
+   "season": 2019,
+   "number": 23,
+   "driver": "Daniel Juncadella",
+   "team": "R-Motorsport 2",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    32,
+    34,
+    38
+   ],
+   "layers": [
+    {
+     "band": [
+      364,
+      371
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ]
+    },
+    {
+     "band": [
+      200,
+      205
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ]
+    },
+    {
+     "text": "R-Motorsport",
+     "at": [
+      650,
+      245
+     ],
+     "size": 80,
+     "box": [
+      270,
+      52
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ],
+     "font": "bold"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make (no Aston Martin outline yet: Mercedes C-Coupe stands in)"
+  },
+  {
+   "season": 2019,
+   "number": 62,
+   "driver": "Ferdinand Habsburg",
+   "team": "R-Motorsport 2",
+   "model": "amg_c_coupe_dtm",
+   "base_color": [
+    32,
+    34,
+    38
+   ],
+   "layers": [
+    {
+     "band": [
+      364,
+      371
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ]
+    },
+    {
+     "band": [
+      200,
+      205
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ]
+    },
+    {
+     "text": "R-Motorsport",
+     "at": [
+      650,
+      245
+     ],
+     "size": 80,
+     "box": [
+      270,
+      52
+     ],
+     "color": [
+      0,
+      160,
+      225
+     ],
+     "font": "bold"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make (no Aston Martin outline yet: Mercedes C-Coupe stands in)"
+  },
+  {
+   "season": 2019,
+   "number": 21,
+   "driver": "Pietro Fittipaldi",
+   "team": "Audi Sport Team WRT",
+   "model": "audi_rs5_dtm",
+   "base_color": [
+    35,
+    35,
+    38
+   ],
+   "layers": [
+    {
+     "band": [
+      184,
+      194
+     ],
+     "color": [
+      200,
+      225,
+      30
+     ]
+    },
+    {
+     "poly": [
+      [
+       380,
+       330
+      ],
+      [
+       394,
+       330
+      ],
+      [
+       434,
+       230
+      ],
+      [
+       420,
+       230
+      ]
+     ],
+     "color": [
+      200,
+      225,
+      30
+     ]
+    },
+    {
+     "poly": [
+      [
+       408,
+       330
+      ],
+      [
+       422,
+       330
+      ],
+      [
+       462,
+       230
+      ],
+      [
+       448,
+       230
+      ]
+     ],
+     "color": [
+      200,
+      225,
+      30
+     ]
+    },
+    {
+     "poly": [
+      [
+       436,
+       330
+      ],
+      [
+       450,
+       330
+      ],
+      [
+       490,
+       230
+      ],
+      [
+       476,
+       230
+      ]
+     ],
+     "color": [
+      200,
+      225,
+      30
+     ]
+    },
+    {
+     "poly": [
+      [
+       1060,
+       330
+      ],
+      [
+       1074,
+       330
+      ],
+      [
+       1114,
+       230
+      ],
+      [
+       1100,
+       230
+      ]
+     ],
+     "color": [
+      200,
+      225,
+      30
+     ]
+    },
+    {
+     "poly": [
+      [
+       1088,
+       330
+      ],
+      [
+       1102,
+       330
+      ],
+      [
+       1142,
+       230
+      ],
+      [
+       1128,
+       230
+      ]
+     ],
+     "color": [
+      200,
+      225,
+      30
+     ]
+    },
+    {
+     "poly": [
+      [
+       1116,
+       330
+      ],
+      [
+       1130,
+       330
+      ],
+      [
+       1170,
+       230
+      ],
+      [
+       1156,
+       230
+      ]
+     ],
+     "color": [
+      200,
+      225,
+      30
+     ]
+    },
+    {
+     "text": "Claro",
+     "at": [
+      650,
+      245
+     ],
+     "size": 90,
+     "box": [
+      200,
+      70
+     ],
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "font": "black"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2019,
+   "number": 27,
+   "driver": "Jonathan Aberdein",
+   "team": "Audi Sport Team WRT",
+   "model": "audi_rs5_dtm",
+   "base_color": [
+    35,
+    35,
+    38
+   ],
+   "layers": [
+    {
+     "band": [
+      184,
+      194
+     ],
+     "color": [
+      235,
+      80,
+      40
+     ]
+    },
+    {
+     "poly": [
+      [
+       380,
+       330
+      ],
+      [
+       394,
+       330
+      ],
+      [
+       434,
+       230
+      ],
+      [
+       420,
+       230
+      ]
+     ],
+     "color": [
+      235,
+      80,
+      40
+     ]
+    },
+    {
+     "poly": [
+      [
+       408,
+       330
+      ],
+      [
+       422,
+       330
+      ],
+      [
+       462,
+       230
+      ],
+      [
+       448,
+       230
+      ]
+     ],
+     "color": [
+      235,
+      80,
+      40
+     ]
+    },
+    {
+     "poly": [
+      [
+       436,
+       330
+      ],
+      [
+       450,
+       330
+      ],
+      [
+       490,
+       230
+      ],
+      [
+       476,
+       230
+      ]
+     ],
+     "color": [
+      235,
+      80,
+      40
+     ]
+    },
+    {
+     "poly": [
+      [
+       1060,
+       330
+      ],
+      [
+       1074,
+       330
+      ],
+      [
+       1114,
+       230
+      ],
+      [
+       1100,
+       230
+      ]
+     ],
+     "color": [
+      235,
+      80,
+      40
+     ]
+    },
+    {
+     "poly": [
+      [
+       1088,
+       330
+      ],
+      [
+       1102,
+       330
+      ],
+      [
+       1142,
+       230
+      ],
+      [
+       1128,
+       230
+      ]
+     ],
+     "color": [
+      235,
+      80,
+      40
+     ]
+    },
+    {
+     "poly": [
+      [
+       1116,
+       330
+      ],
+      [
+       1130,
+       330
+      ],
+      [
+       1170,
+       230
+      ],
+      [
+       1156,
+       230
+      ]
+     ],
+     "color": [
+      235,
+      80,
+      40
+     ]
+    },
+    {
+     "text": "WRT",
+     "at": [
+      650,
+      245
+     ],
+     "size": 90,
+     "box": [
+      180,
+      70
+     ],
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "font": "black"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
+  },
+  {
+   "season": 2020,
+   "number": 8,
+   "driver": "Robert Kubica",
+   "team": "Orlen Team ART",
+   "model": "bmw_m3_dtm",
+   "base_color": [
+    245,
+    245,
+    245
+   ],
+   "layers": [
+    {
+     "poly": [
+      [
+       0,
+       150
+      ],
+      [
+       860,
+       150
+      ],
+      [
+       720,
+       420
+      ],
+      [
+       0,
+       420
+      ]
+     ],
+     "color": [
+      215,
+      25,
+      32
+     ]
+    },
+    {
+     "text": "ORLEN",
+     "at": [
+      640,
+      225
+     ],
+     "size": 100,
+     "box": [
+      200,
+      60
+     ],
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "font": "black"
+    }
+   ],
+   "draft": "later-season team: our draft from docs/teams/dtm_liveries.csv until Pappydhorn12's drawing; the model is the 2013 outline of the make"
   }
  ]
 }
