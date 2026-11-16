@@ -85,21 +85,32 @@
  ],
  "texts": [
   {
-   "t": "UNISYS",
-   "x": 440,
-   "y": 418,
-   "size": 74,
-   "fill": "#d0202a",
-   "w": 300,
-   "font": "Times New Roman, Georgia, serif"
-  },
-  {
    "t": "ESSO",
    "x": 852,
    "y": 366,
    "size": 40,
    "fill": "#ffffff",
    "w": 120
+  },
+  {
+   "t": "British Touring",
+   "x": 852,
+   "y": 398,
+   "size": 18,
+   "fill": "#000",
+   "w": 140,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 852,
+   "y": 419,
+   "size": 18,
+   "fill": "#000",
+   "w": 160,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
   },
   {
    "t": "GENESIS",
@@ -110,7 +121,7 @@
    "w": 640,
    "font": "Arial, sans-serif",
    "weight": "normal",
-   "stroke": "#d0202a",
+   "stroke": "#c0282d",
    "sw": 5
   },
   {
@@ -123,22 +134,41 @@
    "italic": true
   },
   {
-   "t": "UNISYS Distributor",
-   "x": 2045,
-   "y": 372,
-   "size": 62,
+   "t": "of the Year",
+   "x": 2110,
+   "y": 438,
+   "size": 54,
    "fill": "#d0202a",
-   "w": 560,
+   "w": 280,
    "font": "Times New Roman, Georgia, serif"
   },
   {
-   "t": "of the Year",
-   "x": 2150,
-   "y": 438,
-   "size": 56,
+   "t": "Distributor",
+   "x": 1945,
+   "y": 372,
+   "size": 58,
    "fill": "#d0202a",
-   "w": 300,
+   "w": 320,
+   "anchor": "start",
    "font": "Times New Roman, Georgia, serif"
+  },
+  {
+   "t": "Witch",
+   "x": 215,
+   "y": 452,
+   "size": 22,
+   "fill": "#111",
+   "w": 66.0,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Sign Co",
+   "x": 215,
+   "y": 475.1,
+   "size": 19.8,
+   "fill": "#111",
+   "w": 66.0,
+   "font": "Georgia, Times New Roman, serif"
   }
  ],
  "number": {
@@ -165,5 +195,43 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Llewellyn drove #66 only at round 10 (Brands Hatch, 26 August), when the car ran a one-off Unisys/Genesis scheme instead of the diagonal Auto Trader one: white, red Unisys on the front wing, Esso and number on the front door, the Genesis logo between two blue lines across the door, 'Auto Trader' on the sill, 'Unisys Distributor of the Year' on the rear quarter. Based on the nose-left Getty photo of that day (2201200946) and the Super Touring Register photo (4700, other side). No TV caption drawing of this version. Positions and sizes measured on the Getty photo against the number board, door and wheel arches; the photo is a front three-quarter view, so the rear-quarter text sizes are less sure. Wheels: gold five-spoke, from the same Getty photo (on track); no standing photo found."
+ "note": "Llewellyn drove #66 only at round 10 (Brands Hatch, 26 August), when the car ran a one-off Unisys/Genesis scheme instead of the diagonal Auto Trader one: white, red Unisys on the front wing, Esso and number on the front door, the Genesis logo between two blue lines across the door, 'Auto Trader' on the sill, 'Unisys Distributor of the Year' on the rear quarter. Based on the nose-left Getty photo of that day (2201200946) and the Super Touring Register photo (4700, other side). No TV caption drawing of this version. Positions and sizes measured on the Getty photo against the number board, door and wheel arches; the photo is a front three-quarter view, so the rear-quarter text sizes are less sure. Wheels: gold five-spoke, from the same Getty photo (on track); no standing photo found. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. QA round: 'UNISYS Distributor of the Year' moved forward and made a little smaller (it ran off the tail); GENESIS outline blue, as in Getty LAT 2201200946. Logos (2026-11-16): both UNISYS (front wing and the rear-quarter 'UNISYS Distributor of the Year') are now the real Unisys logo, the Mobil Pegasus (red) is added on the front bumper and CHAMPION on the rear bumper, and the GENESIS letters are now outlined in red as on the zoomed photo, from Getty LAT 2201200946. Witch Sign Co is added as lettering on the front wing. GENESIS and Auto Trader stay drawn (no logo files). Left out: the small red Witch Sign Co on the rear wing (unsure), the round sticker and the blue square sticker on the rear bumper (unidentified).",
+ "logos": [
+  {
+   "logo": "unisys",
+   "box": [
+    290,
+    337,
+    300,
+    89
+   ]
+  },
+  {
+   "logo": "unisys",
+   "box": [
+    1735,
+    312,
+    200,
+    59
+   ]
+  },
+  {
+   "logo": "mobil_pegasus",
+   "box": [
+    160,
+    558,
+    92,
+    60
+   ]
+  },
+  {
+   "logo": "champion",
+   "box": [
+    2060,
+    570,
+    92,
+    36
+   ]
+  }
+ ]
 }

@@ -13,6 +13,10 @@ for wedge windows, "hub", "outer", "twist" = sweep in degrees, "window", "lip"),
 "spoke"; "rim" is the rim colour. Take the rim design and colour from a photo of the car standing still
 (grid, paddock), not from action shots, where wheels blur.
 
+Real sponsor logos: "logos": [{"logo": "<file stem>", "box": [x, y, w, h], "fill": one colour or omitted for
+the logo's own colours, "rot", "flip", "align", "over": true = on top of the glass}], files in
+~/Pictures/mods/<season>/logos (sources.csv there); the SVG gets the logo inlined, so it stays self-contained.
+
 Livery layers are clipped to the body; glass, line work, lights, wheels and the outline go on top,
 then "over_glass"/"over_texts" (window banners). Liveries are read from every reference we have for
 the car: the TV graphics drawings (~/Pictures/mods/<season>/tv_artwork), the livery pack frames and
@@ -72,6 +76,60 @@ def text(t):
     ls = f' textLength="{t["w"]}" lengthAdjust="spacingAndGlyphs"' if t.get("w") else ""
     return (f'<text x="{t["x"]}" y="{t["y"]}" font-family="{fam}" font-size="{t["size"]}" font-weight="{t.get("weight", "bold")}" '
             f'font-style="{"italic" if t.get("italic") else "normal"}" fill="{t.get("fill", "#000")}" text-anchor="{t.get("anchor", "middle")}"{ls}{st}{tr}>{html.escape(t["t"])}</text>')
+LOGO_DIR = None                                 # set in main(): ~/Pictures/mods/<season>/logos
+
+
+def logo(g, n):
+    """A real sponsor logo from LOGO_DIR, fitted into "box": [x, y, w, h] (aspect kept, "align" xMid/xMin/xMax).
+    An .svg is inlined (ids prefixed), a .png embedded. "fill" recolours the whole logo in one colour (decals
+    printed in one colour), "rot" rotates it about the box centre, "opacity" fades it, "flip": true mirrors it."""
+    import re, base64
+    files = [p for p in (LOGO_DIR / f"{g['logo']}{e}" for e in (".svg", ".png")) if p.exists()]
+    if not files:
+        raise SystemExit(f"logo not found: {g['logo']} in {LOGO_DIR}")
+    p = files[0]; x, y, w, h = g["box"]; pre = f"lg{n}_"
+    par = f'{g.get("align", "xMid")}YMid meet'
+    if p.suffix == ".svg":
+        s = p.read_text(encoding="utf-8", errors="ignore")
+        s = re.sub(r"<\?xml.*?\?>|<!DOCTYPE.*?>|<!--.*?-->|<metadata.*?</metadata>|<sodipodi:[^>]*?/>", "", s, flags=re.S)
+        m = re.search(r"<svg\b([^>]*)>(.*)</svg>", s, re.S)
+        attrs, inner = m.group(1), m.group(2)
+        for _ in range(3):                        # editor metadata (inkscape:, sodipodi:, rdf: ...) would be unbound prefixes
+            inner = re.sub(r"<((?!xlink)\w+):(\w+)\b[^>]*?/>", "", inner)
+            inner = re.sub(r"<((?!xlink)\w+):(\w+)\b[^>]*>.*?</\1:\2>", "", inner, flags=re.S)
+        inner = re.sub(r'\s(?!xlink:|xml:)\w+:[\w-]+="[^"]*"', "", inner)
+        vb = re.search(r'viewBox="([^"]+)"', attrs)
+        if vb: vb = vb.group(1)
+        else:
+            num = lambda k: float(re.search(rf'\s{k}="([\d.]+)', attrs).group(1))
+            vb = f"0 0 {num('width')} {num('height')}"
+        ids = set(re.findall(r'\sid="([^"]+)"', inner))
+        for i in sorted(ids, key=len, reverse=True):
+            inner = re.sub(rf'(\sid="){re.escape(i)}"', rf'\g<1>{pre}{i}"', inner)
+            inner = re.sub(rf'(url\(#|href="#|\s(?:xlink:)?href="#){re.escape(i)}([)"])', rf'\g<1>{pre}{i}\g<2>', inner)
+        inner = re.sub(r"\.(st\d+|cls-\d+|fil\d+|str\d+)\b", rf".{pre}\1", inner)       # Illustrator / CorelDraw classes
+        inner = re.sub(r'class="([^"]+)"', lambda c: 'class="' + " ".join(pre + k for k in c.group(1).split()) + '"', inner)
+        vx, vy, vw, vh = map(float, vb.replace(",", " ").split())
+        k = min(w / vw, h / vh); fw, fh = vw * k, vh * k     # fit the viewBox into the box: the nested viewport is
+        al = g.get("align", "xMid")                           # exactly the logo, so a cropped viewBox clips cleanly
+        fx = x + {"xMin": 0, "xMid": (w - fw) / 2, "xMax": w - fw}[al]; fy = y + (h - fh) / 2
+        body = (f'<svg x="{fx:.2f}" y="{fy:.2f}" width="{fw:.2f}" height="{fh:.2f}" viewBox="{vb}" preserveAspectRatio="none" '
+                f'xmlns:xlink="http://www.w3.org/1999/xlink">{inner}</svg>')
+    else:
+        b64 = base64.b64encode(p.read_bytes()).decode()
+        body = f'<image x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="{par}" href="data:image/png;base64,{b64}"/>'
+    cx, cy = x + w / 2, y + h / 2; tr, flt, defs = [], "", ""
+    if g.get("rot"): tr.append(f"rotate({g['rot']} {cx} {cy})")
+    if g.get("flip"): tr.append(f"translate({2 * cx} 0) scale(-1 1)")
+    if g.get("fill"):
+        defs = (f'<defs><filter id="{pre}f" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">'
+                f'<feFlood flood-color="{g["fill"]}"/><feComposite in2="SourceAlpha" operator="in"/></filter></defs>')
+        flt = f' filter="url(#{pre}f)"'
+    trs = f' transform="{" ".join(tr)}"' if tr else ""
+    op = f' opacity="{g["opacity"]}"' if "opacity" in g else ""
+    return f'{defs}<g{trs}{flt}{op}>{body}</g>'
+
+
 def wheel(w, rim_col, style, liv=None):
     cx, cy = w["c"]; r, rr = w["tyre"], w["rim"]
     o = [f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#1a1a1a" stroke="#000" stroke-width="3"/>',
@@ -144,6 +202,7 @@ def build(model, liv):
          '<g clip-path="url(#body)">']
     o += [shape(s) for s in liv.get("shapes", [])]
     o += [text(t) for t in liv.get("texts", [])]
+    o += [logo(g, i) for i, g in enumerate(liv.get("logos", [])) if not g.get("over")]
     if "number" in liv:
         n = liv["number"]; x, y, w, h = n["rect"]
         o.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{n.get("r", 10)}" fill="{n.get("bg", "#fff")}" stroke="{n.get("border", "#000")}" stroke-width="3"/>')
@@ -151,11 +210,16 @@ def build(model, liv):
     o.append('</g>')
     gl = liv.get("glass", "#3a3a3a")
     o += [f'<path d="{d(g)}" fill="{gl}" stroke="#000" stroke-width="2"/>' for g in model["glass"]]
-    o.append('<g clip-path="url(#body)">' + "".join(shape(s) for s in liv.get("over_glass", [])) + "".join(text(t) for t in liv.get("over_texts", [])) + '</g>')
+    o.append('<g clip-path="url(#body)">' + "".join(shape(s) for s in liv.get("over_glass", [])) + "".join(text(t) for t in liv.get("over_texts", []))
+             + "".join(logo(g, 100 + i) for i, g in enumerate(liv.get("logos", [])) if g.get("over")) + '</g>')
     if model.get("arch"):                         # photo outlines: dark wheel arch opening behind the tyre
         o.append('<g clip-path="url(#body)">' + "".join(f'<circle cx="{w["c"][0]}" cy="{w["c"][1]}" r="{w["tyre"] * model["arch"]:.1f}" fill="#111"/>' for w in model["wheels"]) + '</g>')
     o.append('<path fill="#000" fill-rule="evenodd" d="' + " ".join(d(p) for p in model["dark"] if len(p) >= 3) + '"/>')
     o += [f'<path d="{d(l["poly"])}" fill="{l["color"]}" stroke="#000" stroke-width="2"/>' for l in model.get("lights", [])]
+    for st in model.get("strokes", []):          # hand-drawn panel lines: {"pts": [[x, y], ...], "w": width, "closed": bool}
+        pts = " L".join(f"{x:.1f},{y:.1f}" for x, y in st["pts"])
+        o.append(f'<path d="M{pts}{" Z" if st.get("closed") else ""}" fill="{st.get("fill", "none")}" stroke="#000" '
+                 f'stroke-width="{st.get("w", 4)}" stroke-linejoin="round" stroke-linecap="round"/>')
     o += [wheel(w, liv.get("rim", "#c8c8c8"), liv.get("wheel", "spoke"), liv) for w in model["wheels"]]
     o.append(f'<path d="{body}" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round"/>')
     o.append('</svg>')
@@ -226,6 +290,8 @@ def main():
                                         "(the automatic match is unreliable on blurry pictures: check the red lines)")
     a = ap.parse_args()
     root = REPO / "seasons" / a.season / "art" / "svg"
+    global LOGO_DIR
+    LOGO_DIR = pathlib.Path.home() / "Pictures" / "mods" / a.season / "logos"
     for lp in sorted((root / "liveries").glob("*.json")):
         num = lp.stem.split("_")[0].lstrip("0")
         if a.car and not any(c.lstrip("0") in (num, lp.stem.lstrip("0")) for c in a.car):

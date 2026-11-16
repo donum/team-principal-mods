@@ -167,9 +167,46 @@
      443
     ]
    ],
-   "fill": "#ffffff",
-   "stroke": "#d8202a",
-   "sw": 4
+   "fill": "#d8202a"
+  },
+  {
+   "rect": [
+    2100,
+    388,
+    180,
+    5
+   ],
+   "fill": "#2a4fc0"
+  },
+  {
+   "rect": [
+    2100,
+    428,
+    180,
+    5
+   ],
+   "fill": "#2a4fc0"
+  },
+  {
+   "poly": [
+    [
+     2190,
+     372
+    ],
+    [
+     2204,
+     390
+    ],
+    [
+     2190,
+     446
+    ],
+    [
+     2176,
+     390
+    ]
+   ],
+   "fill": "#2a4fc0"
   }
  ],
  "texts": [
@@ -182,11 +219,31 @@
    "w": 120
   },
   {
+   "t": "British Touring",
+   "x": 852,
+   "y": 398,
+   "size": 18,
+   "fill": "#000",
+   "w": 140,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 852,
+   "y": 419,
+   "size": 18,
+   "fill": "#000",
+   "w": 160,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
    "t": "Midland",
    "x": 1125,
    "y": 404,
    "size": 34,
-   "fill": "#000",
+   "fill": "#ffffff",
    "w": 200,
    "rot": -16,
    "italic": true
@@ -214,21 +271,34 @@
    "font": "Arial Black, Arial, sans-serif"
   },
   {
-   "t": "UNISYS",
+   "t": "GENESIS",
    "x": 2190,
-   "y": 345,
-   "size": 50,
-   "fill": "#1a2a6c",
-   "w": 220,
-   "font": "Times New Roman, serif"
+   "y": 422,
+   "size": 30,
+   "fill": "#ffffff",
+   "w": 170,
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "stroke": "#24408f",
+   "sw": 3
   },
   {
-   "t": "The rhythm of the city",
-   "x": 380,
-   "y": 418,
-   "size": 40,
+   "t": "The rhythm of the",
+   "x": 505,
+   "y": 403,
+   "size": 34,
    "fill": "#111",
-   "w": 400,
+   "w": 410,
+   "italic": true,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "city",
+   "x": 655,
+   "y": 441,
+   "size": 34,
+   "fill": "#111",
+   "w": 62,
    "italic": true,
    "font": "Arial, sans-serif"
   }
@@ -256,5 +326,16 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "White M3 with the diagonal Auto Trader scheme: blue lower front, red wedge under 'Trader', blue band over the rear quarter to the tail, number on the front door with the Esso board above, 'Midland' bar and red/blue bars ahead of 'Auto'. Layout from the TV caption drawings of #66/#77 and the nose-left frames (season review: Whale #66 and Baird #77); positions and sizes of Auto Trader, number and bands measured on the nose-left Getty photo of Leslie (Silverstone 14 July, 2201222185) against the wheelbase and window line. The near-side front wing text and rear-quarter decals vary between rounds; small stickers left out. Wheels: gold BBS mesh with a polished lip, from the Super Touring Register photo of Whale #66 (4701) and the season review frame, both on track; no standing photo of the car found. 'The rhythm of the city' on the front wing from the season review frame."
+ "note": "White M3 with the diagonal Auto Trader scheme: blue lower front, red wedge under 'Trader', blue band over the rear quarter to the tail, number on the front door with the Esso board above, 'Midland' bar and red/blue bars ahead of 'Auto'. Layout from the TV caption drawings of #66/#77 and the nose-left frames (season review: Whale #66 and Baird #77); positions and sizes of Auto Trader, number and bands measured on the nose-left Getty photo of Leslie (Silverstone 14 July, 2201222185) against the wheelbase and window line. The near-side front wing text and rear-quarter decals vary between rounds; small stickers left out. Wheels: gold BBS mesh with a polished lip, from the Super Touring Register photo of Whale #66 (4701) and the season review frame, both on track; no standing photo of the car found. 'The rhythm of the city' on the front wing from the season review frame. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): UNISYS is now the real Unisys logo (red; it looks dark red in the season review frame), 'Midland' is now white on a red bar, the GENESIS emblem and lettering are added under UNISYS as on Leslie's car, and 'The rhythm of the city' now runs on two lines ('city' lower, behind the arch top), all from the season review frame at 00:42:17. Auto Trader, Midland, GENESIS and the slogan stay drawn (no logo files; whose slogan it is is not known). The nose sticker and the rear bumper stickers are left out (unreadable).",
+ "logos": [
+  {
+   "logo": "unisys",
+   "box": [
+    2095,
+    296,
+    190,
+    56
+   ]
+  }
+ ]
 }

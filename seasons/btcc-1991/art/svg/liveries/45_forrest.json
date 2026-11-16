@@ -81,21 +81,79 @@
   },
   {
    "rect": [
-    362,
-    369,
-    254,
-    33
-   ],
-   "fill": "#d71920"
-  },
-  {
-   "rect": [
     796,
     358,
     244,
     34
    ],
    "fill": "#d71920"
+  },
+  {
+   "poly": [
+    [
+     985,
+     0
+    ],
+    [
+     1870,
+     0
+    ],
+    [
+     1870,
+     58
+    ],
+    [
+     1822,
+     50
+    ],
+    [
+     1781,
+     40
+    ],
+    [
+     1706,
+     30
+    ],
+    [
+     1626,
+     26
+    ],
+    [
+     1317,
+     26
+    ],
+    [
+     1185,
+     30
+    ],
+    [
+     1129,
+     34
+    ],
+    [
+     1074,
+     40
+    ],
+    [
+     1033,
+     47
+    ],
+    [
+     985,
+     58
+    ]
+   ],
+   "fill": "#1c2140"
+  },
+  {
+   "rect": [
+    2042,
+    544,
+    126,
+    30
+   ],
+   "fill": "#ffffff",
+   "r": 2
   }
  ],
  "texts": [
@@ -117,20 +175,32 @@
    "fill": "#d71920"
   },
   {
-   "t": "PIRELLI",
-   "x": 489,
-   "y": 400,
-   "size": 34,
-   "w": 228,
-   "fill": "#ffffff"
-  },
-  {
    "t": "ESSO",
    "x": 920,
    "y": 390,
    "size": 34,
    "w": 149,
    "fill": "#ffffff"
+  },
+  {
+   "t": "British Touring",
+   "x": 918,
+   "y": 416,
+   "size": 19,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "w": 150
+  },
+  {
+   "t": "Car Championship",
+   "x": 918,
+   "y": 438,
+   "size": 19,
+   "fill": "#000",
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "w": 170
   }
  ],
  "number": {
@@ -157,12 +227,51 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Layout, colours and sizes measured from the nose-left Super Touring Register photo (4703, Forrest #45), mapped to the model by the wheel centres; checked against the TV caption drawings (red wedge growing to the rear, red rear quarter) and the Brands Hatch/Silverstone Getty shots. Driver name is white lettering straight on the rear side window, as in the photo. Wheels: gold eight-spoke, from the same photo (on track); no standing photo of this car found.",
+ "note": "Layout, colours and sizes measured from the nose-left Super Touring Register photo (4703, Forrest #45), mapped to the model by the wheel centres; checked against the TV caption drawings (red wedge growing to the rear, red rear quarter) and the Brands Hatch/Silverstone Getty shots. Driver name is white lettering straight on the rear side window, as in the photo. Wheels: gold eight-spoke, from the same photo (on track); no standing photo of this car found. QA round: added the 'British Touring Car Championship' lines under the ESSO strip and the dark blue roof top (STR 4703 zoomed; roof dark on Getty LAT 2201201101, Thruxton front view). Logos (2026-11-16): PIRELLI on the front wing is now the real logo in red on the white body (it was white on a red box), and CHAMPION on the front bumper, PIRELLI (white sticker) and CHAMPION on the rear bumper are added as real logos, all from Super Touring Register 4703. DRAMBUIE and GROUP stay lettering: the Drambuie logo file is a framed badge, the car has plain red letters. SCOTLAND on the rear wing and the white sill sticker are left out (not readable).",
  "spokes": 8,
  "hub": 0.46,
  "outer": 0.84,
  "twist": 0,
  "window": "#2a2a2a",
  "wheel_note": "Rim design re-checked on STR 4703: zoomed wheel, spoke count, window shape and sweep.",
- "spoke_w": 0.32
+ "spoke_w": 0.32,
+ "logos": [
+  {
+   "logo": "pirelli",
+   "box": [
+    358,
+    356,
+    262,
+    56
+   ],
+   "fill": "#d71920"
+  },
+  {
+   "logo": "champion",
+   "box": [
+    60,
+    558,
+    120,
+    42
+   ]
+  },
+  {
+   "logo": "pirelli",
+   "box": [
+    2046,
+    546,
+    118,
+    26
+   ]
+  },
+  {
+   "logo": "champion",
+   "box": [
+    2040,
+    580,
+    130,
+    36
+   ]
+  }
+ ]
 }

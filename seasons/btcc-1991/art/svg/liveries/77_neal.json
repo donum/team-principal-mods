@@ -164,9 +164,7 @@
      443
     ]
    ],
-   "fill": "#ffffff",
-   "stroke": "#d8202a",
-   "sw": 4
+   "fill": "#d8202a"
   }
  ],
  "texts": [
@@ -179,11 +177,31 @@
    "w": 120
   },
   {
+   "t": "British Touring",
+   "x": 852,
+   "y": 398,
+   "size": 18,
+   "fill": "#000",
+   "w": 140,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 852,
+   "y": 419,
+   "size": 18,
+   "fill": "#000",
+   "w": 160,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
    "t": "Midland",
    "x": 1125,
    "y": 404,
    "size": 34,
-   "fill": "#000",
+   "fill": "#ffffff",
    "w": 200,
    "rot": -16,
    "italic": true
@@ -209,25 +227,6 @@
    "rot": -16,
    "italic": true,
    "font": "Arial Black, Arial, sans-serif"
-  },
-  {
-   "t": "UNISYS",
-   "x": 2190,
-   "y": 345,
-   "size": 50,
-   "fill": "#1a2a6c",
-   "w": 220,
-   "font": "Times New Roman, serif"
-  },
-  {
-   "t": "The rhythm of the city",
-   "x": 380,
-   "y": 418,
-   "size": 40,
-   "fill": "#111",
-   "w": 400,
-   "italic": true,
-   "font": "Arial, sans-serif"
   }
  ],
  "number": {
@@ -253,7 +252,7 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "White M3 with the diagonal Auto Trader scheme: blue lower front, red wedge under 'Trader', blue band over the rear quarter to the tail, number on the front door with the Esso board above, 'Midland' bar and red/blue bars ahead of 'Auto'. Layout from the TV caption drawings of #66/#77 and the nose-left frames (season review: Whale #66 and Baird #77); positions and sizes of Auto Trader, number and bands measured on the nose-left Getty photo of Leslie (Silverstone 14 July, 2201222185) against the wheelbase and window line. The near-side front wing text and rear-quarter decals vary between rounds; small stickers left out. Neal drove #77 only at round 11 (Donington, 15 September); no picture of the car that day was found, so it is drawn as Baird's car (the round 12 TV drawings still show this scheme). Wheels as Baird's car (gold five-spoke, STR 4702, on track); no standing photo found.",
+ "note": "White M3 with the diagonal Auto Trader scheme: blue lower front, red wedge under 'Trader', blue band over the rear quarter to the tail, number on the front door with the Esso board above, 'Midland' bar and red/blue bars ahead of 'Auto'. Layout from the TV caption drawings of #66/#77 and the nose-left frames (season review: Whale #66 and Baird #77); positions and sizes of Auto Trader, number and bands measured on the nose-left Getty photo of Leslie (Silverstone 14 July, 2201222185) against the wheelbase and window line. The near-side front wing text and rear-quarter decals vary between rounds; small stickers left out. Neal drove #77 only at round 11 (Donington, 15 September); no picture of the car that day was found, so it is drawn as Baird's car (the round 12 TV drawings still show this scheme). Wheels as Baird's car (gold five-spoke, STR 4702, on track); no standing photo found. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): 'Midland' is now white on a red bar (STR 4702). UNISYS on the rear quarter and 'The rhythm of the city' on the front wing are taken off: they were copied from Whale's #66, and the season review frames of #77 (00:42:28-00:42:31) show a plain rear quarter and only faint light lettering on the front wing. That lettering is probably ALUSET BUSINESS FORMS as on the right side (STR 4702), but it cannot be read on the left, so it is not drawn. Auto Trader and Midland stay drawn (no logo files). Neal's #77 is drawn as Baird's car, so the same applies.",
  "spokes": 5,
  "hub": 0.28,
  "outer": 0.8,

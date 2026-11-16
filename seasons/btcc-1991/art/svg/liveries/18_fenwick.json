@@ -107,6 +107,26 @@
  },
  "over_texts": [
   {
+   "t": "British Touring",
+   "x": 890,
+   "y": 397,
+   "size": 17,
+   "fill": "#000",
+   "w": 150,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 890,
+   "y": 415,
+   "size": 17,
+   "fill": "#000",
+   "w": 170,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
    "t": "Fenwick",
    "x": 1570,
    "y": 125,
@@ -116,5 +136,5 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Very dark blue (almost black) M3 with a yellow band along the lower body from bumper to bumper and a blue band under it on the sill, big white number board with the red Esso header on the front door, Shell on the rear quarter. Band heights and the number board measured on the nose-left Super Touring Register photo of Fenwick #18 (6216, Thruxton) against the wheelbase and door, and checked with the STR photo of Hall #18 (4723, other side: Shell, Dunlop, yellow and blue bands) and the Getty front view of Fenwick (Thruxton 22 September, 2201200918: yellow front bumper with a blue lip). TV caption drawings (round 12 Thruxton) are dark and blurry: black car, large white number board, yellow marks low down. Wheels: bronze/gold BBS mesh with a polished lip, from the Hall STR photo (on track); no standing photo of this car found. Fenwick's car carried a white V.J. Edwards board on the door and a white board on the rear quarter (drawn as a Shell board, as on Hall's car; the lettering on it is not legible) (STR 6216). Fenwick was entered for round 12 (Thruxton) but did not start."
+ "note": "Very dark blue (almost black) M3 with a yellow band along the lower body from bumper to bumper and a blue band under it on the sill, big white number board with the red Esso header on the front door, Shell on the rear quarter. Band heights and the number board measured on the nose-left Super Touring Register photo of Fenwick #18 (6216, Thruxton) against the wheelbase and door, and checked with the STR photo of Hall #18 (4723, other side: Shell, Dunlop, yellow and blue bands) and the Getty front view of Fenwick (Thruxton 22 September, 2201200918: yellow front bumper with a blue lip). TV caption drawings (round 12 Thruxton) are dark and blurry: black car, large white number board, yellow marks low down. Wheels: bronze/gold BBS mesh with a polished lip, from the Hall STR photo (on track); no standing photo of this car found. Fenwick's car carried a white V.J. Edwards board on the door and a white board on the rear quarter (drawn as a Shell board, as on Hall's car; the lettering on it is not legible) (STR 6216). Fenwick was entered for round 12 (Thruxton) but did not start. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): no logo placed. V.J. Edwards has no logo. The Shell roundel on the rear-quarter board is left as a drawn shape, not the real pecten, because the board lettering is not legible in STR 6216 and Shell there is a guess from Hall's car."
 }

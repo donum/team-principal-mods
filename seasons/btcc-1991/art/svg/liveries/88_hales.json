@@ -15,36 +15,36 @@
   {
    "poly": [
     [
-     73.6,
-     443.4
+     122.8,
+     450.9
     ],
     [
-     124.2,
-     398.1
-    ],
-    [
-     221.3,
-     385.6
-    ],
-    [
-     311.1,
-     388.0
-    ],
-    [
-     336.1,
-     405.8
-    ],
-    [
-     296.9,
-     413.1
-    ],
-    [
-     187.7,
-     418.5
-    ],
-    [
-     102.7,
+     167.9,
      438.1
+    ],
+    [
+     280.8,
+     426.2
+    ],
+    [
+     419.8,
+     407.2
+    ],
+    [
+     437.2,
+     429.9
+    ],
+    [
+     315.6,
+     447.7
+    ],
+    [
+     194.0,
+     460.0
+    ],
+    [
+     133.2,
+     471.9
     ]
    ],
    "fill": "#d7192b"
@@ -52,28 +52,24 @@
   {
    "poly": [
     [
-     305.5,
-     377.7
+     419.8,
+     405.2
     ],
     [
-     474.0,
-     360.0
+     576.4,
+     383.8
     ],
     [
-     518.2,
-     372.8
+     611.2,
+     401.9
     ],
     [
-     535.3,
-     399.2
+     628.6,
+     427.1
     ],
     [
-     348.4,
-     409.3
-    ],
-    [
-     336.3,
-     402.2
+     454.6,
+     430.5
     ]
    ],
    "fill": "#b9bec6"
@@ -81,28 +77,24 @@
   {
    "poly": [
     [
-     480.7,
-     354.2
+     585.1,
+     382.3
     ],
     [
-     583.9,
-     344.8
+     680.8,
+     374.2
     ],
     [
-     627.6,
-     363.9
+     718.6,
+     388.2
     ],
     [
-     654.8,
-     388.1
+     747.4,
+     417.8
     ],
     [
-     548.9,
-     397.4
-    ],
-    [
-     518.0,
-     375.5
+     639.0,
+     421.9
     ]
    ],
    "fill": "#1f4fb4"
@@ -110,20 +102,20 @@
   {
    "poly": [
     [
-     1040.2,
-     328.1
+     987.2,
+     306.0
     ],
     [
-     1283.1,
-     328.8
+     1250.0,
+     306.0
     ],
     [
-     1581.8,
-     642.7
+     1519.9,
+     651.0
     ],
     [
-     1335.0,
-     632.8
+     1284.5,
+     651.0
     ]
    ],
    "fill": "#d7192b"
@@ -131,28 +123,28 @@
   {
    "poly": [
     [
-     1296.6,
-     328.8
+     1262.2,
+     306.0
     ],
     [
-     1544.7,
-     318.2
+     1495.6,
+     306.0
     ],
     [
-     1709.2,
-     484.7
+     1779,
+     525
     ],
     [
-     1682.6,
-     545.9
+     1739,
+     605
     ],
     [
-     1667.8,
-     634.9
+     1699,
+     669
     ],
     [
-     1593.6,
-     640.8
+     1540.2,
+     651.0
     ]
    ],
    "fill": "#c3c8cf"
@@ -160,122 +152,119 @@
   {
    "poly": [
     [
-     1563.2,
-     310.4
+     1505.7,
+     306.0
     ],
     [
-     1784.0,
-     305.2
+     1790,
+     306.0
     ],
     [
-     1935.0,
-     470.8
+     1939,
+     475
     ],
     [
-     1868.9,
-     450.3
+     1859,
+     457
     ],
     [
-     1815.3,
-     444.9
+     1799,
+     455
     ],
     [
-     1751.7,
-     453.3
+     1749,
+     475
     ],
     [
-     1718.3,
-     483.5
+     1727,
+     525
     ]
    ],
    "fill": "#1f4fb4"
   },
   {
-   "poly": [
-    [
-     1080.2,
-     473.2
-    ],
-    [
-     1107.2,
-     433.0
-    ],
-    [
-     1085.7,
-     389.6
-    ],
-    [
-     1058.7,
-     429.8
-    ]
+   "rect": [
+    600,
+    515,
+    1050,
+    3
    ],
-   "fill": "#d7192b"
-  },
-  {
-   "poly": [
-    [
-     1080.2,
-     473.2
-    ],
-    [
-     1101.5,
-     516.7
-    ],
-    [
-     1149.8,
-     519.8
-    ],
-    [
-     1128.5,
-     476.3
-    ]
-   ],
-   "fill": "#d7192b"
-  },
-  {
-   "poly": [
-    [
-     1080.2,
-     473.2
-    ],
-    [
-     1031.8,
-     469.9
-    ],
-    [
-     1005.0,
-     510.2
-    ],
-    [
-     1053.3,
-     513.5
-    ]
-   ],
-   "fill": "#d7192b"
+   "fill": "#000000",
+   "opacity": 0.28
   },
   {
    "rect": [
-    745.0,
-    344.6,
-    222.2,
+    600,
+    532,
+    1050,
+    3
+   ],
+   "fill": "#000000",
+   "opacity": 0.28
+  },
+  {
+   "rect": [
+    600,
+    549,
+    1050,
+    3
+   ],
+   "fill": "#000000",
+   "opacity": 0.28
+  },
+  {
+   "rect": [
+    600,
+    566,
+    1050,
+    3
+   ],
+   "fill": "#000000",
+   "opacity": 0.28
+  },
+  {
+   "rect": [
+    600,
+    583,
+    1050,
+    3
+   ],
+   "fill": "#000000",
+   "opacity": 0.28
+  },
+  {
+   "rect": [
+    600,
+    600,
+    1050,
+    3
+   ],
+   "fill": "#000000",
+   "opacity": 0.28
+  },
+  {
+   "rect": [
+    696.0,
+    336.9,
+    240.1,
     272.9
    ],
    "fill": "#ffffff"
   },
   {
    "rect": [
-    745.0,
-    344.6,
-    222.2,
+    696.0,
+    336.9,
+    240.1,
     46.6
    ],
    "fill": "#d7192b"
   },
   {
    "rect": [
-    754.9,
-    439.7,
-    210.8,
+    706.7,
+    432.0,
+    227.8,
     172.3
    ],
    "fill": "none",
@@ -283,88 +272,25 @@
    "sw": 4
   },
   {
-   "poly": [
-    [
-     116.3,
-     614.4
-    ],
-    [
-     130.1,
-     593.7
-    ],
-    [
-     119.1,
-     571.4
-    ],
-    [
-     105.2,
-     592.1
-    ]
-   ],
-   "fill": "#d7192b"
-  },
-  {
-   "poly": [
-    [
-     116.3,
-     614.4
-    ],
-    [
-     127.2,
-     636.8
-    ],
-    [
-     152.1,
-     638.4
-    ],
-    [
-     141.1,
-     616.0
-    ]
-   ],
-   "fill": "#d7192b"
-  },
-  {
-   "poly": [
-    [
-     116.3,
-     614.4
-    ],
-    [
-     91.4,
-     612.7
-    ],
-    [
-     77.6,
-     633.5
-    ],
-    [
-     102.5,
-     635.1
-    ]
-   ],
-   "fill": "#d7192b"
-  },
-  {
    "circle": [
-    208.2,
-    638.5,
+    205,
+    625.3,
     32.3
    ],
    "fill": "#d7192b"
   },
   {
    "circle": [
-    208.2,
-    638.5,
+    205,
+    625.3,
     24.2
    ],
    "fill": "#ffffff"
   },
   {
    "circle": [
-    657.3,
-    459.4,
+    632.9,
+    433.1,
     8.1
    ],
    "fill": "#111111"
@@ -372,50 +298,17 @@
  ],
  "texts": [
   {
-   "t": "Firestone",
-   "x": 1810.8,
-   "y": 444.6,
-   "size": 82.6,
-   "fill": "#d7192b",
-   "w": 492.1,
-   "rot": -4.8,
-   "font": "Georgia, Times New Roman, serif",
-   "italic": true,
-   "stroke": "#ffffff",
-   "sw": 5
-  },
-  {
-   "t": "MITSUBISHI",
-   "x": 1078.2,
-   "y": 543.8,
-   "size": 19.8,
-   "fill": "#333333",
-   "w": 85.3,
-   "font": "Arial, sans-serif",
-   "weight": "normal"
-  },
-  {
-   "t": "MOTORS",
-   "x": 1076.5,
-   "y": 568.9,
-   "size": 19.8,
-   "fill": "#333333",
-   "w": 62.9,
-   "font": "Arial, sans-serif",
-   "weight": "normal"
-  },
-  {
    "t": "ESSO",
-   "x": 856.1,
-   "y": 384.7,
+   "x": 816.1,
+   "y": 377.0,
    "size": 44.3,
    "fill": "#ffffff",
    "w": 111.1
   },
   {
    "t": "British Touring",
-   "x": 865.0,
-   "y": 411.6,
+   "x": 825.7,
+   "y": 403.9,
    "size": 16.5,
    "fill": "#000",
    "font": "Arial, sans-serif",
@@ -424,8 +317,8 @@
   },
   {
    "t": "Car Championship",
-   "x": 865.0,
-   "y": 431.9,
+   "x": 825.7,
+   "y": 424.2,
    "size": 16.5,
    "fill": "#000",
    "font": "Arial, sans-serif",
@@ -433,8 +326,8 @@
   },
   {
    "t": "88",
-   "x": 860.3,
-   "y": 587.9,
+   "x": 820.6,
+   "y": 580.2,
    "size": 158.5,
    "fill": "#000",
    "font": "Arial Black, Arial, sans-serif",
@@ -442,49 +335,18 @@
   },
   {
    "t": "NGK",
-   "x": 207.6,
-   "y": 647.4,
+   "x": 205,
+   "y": 634.2,
    "size": 23.3,
    "fill": "#d7192b",
    "w": 35.9
   }
  ],
- "over_glass": [
-  {
-   "poly": [
-    [
-     1751.6,
-     46.7
-    ],
-    [
-     1800.6,
-     40.0
-    ],
-    [
-     1847.1,
-     71.0
-    ],
-    [
-     1832.9,
-     109.6
-    ],
-    [
-     1784.5,
-     93.8
-    ],
-    [
-     1754.4,
-     72.0
-    ]
-   ],
-   "fill": "#d7192b"
-  }
- ],
  "over_texts": [
   {
    "t": "Hales",
-   "x": 1479.9,
-   "y": 210.5,
+   "x": 1520,
+   "y": 222,
    "size": 96.9,
    "fill": "#ffffff",
    "w": 220.6,
@@ -492,8 +354,8 @@
   },
   {
    "t": "Mark",
-   "x": 1525.8,
-   "y": 141.5,
+   "x": 1560,
+   "y": 161,
    "size": 32.3,
    "fill": "#ffffff",
    "w": 44.9,
@@ -502,5 +364,35 @@
    "italic": true
   }
  ],
- "note": "Lancer GTi saloon (notchback), as raced in rounds 1-5 and shown by the BBC graphics all season. Measured on Super Touring Register 4705 (Hales #88, right side, near side-on, mirrored to our left side and levelled): stripes, ESSO board, diamonds, Firestone, name. Left side checked on Getty LAT 2201201287 and 2201201308 (Snetterton, front-left 3/4): same layout, Hales on the rear door window. Wheels: black 5-spoke, from 4705 and the Snetterton photos (on track only, no standing photo). Uncertain: the boot and tail lie outside 4705 and follow the BBC drawing; the left-side lettering is assumed to mirror the right side; Mark above Hales is small and blurred."
+ "note": "Lancer GTi saloon (notchback), as raced in rounds 1-5 and shown by the BBC graphics all season. Measured on Super Touring Register 4705 (Hales #88, right side, near side-on, mirrored to our left side and levelled): stripes, ESSO board, diamonds, Firestone, name. Left side checked on Getty LAT 2201201287 and 2201201308 (Snetterton, front-left 3/4): same layout, Hales on the rear door window. Wheels: black 5-spoke, from 4705 and the Snetterton photos (on track only, no standing photo). Uncertain: the boot and tail lie outside 4705 and follow the BBC drawing; the left-side lettering is assumed to mirror the right side; Mark above Hales is small and blurred. Firestone raised to sit just above the rear arch, centred a little ahead of the wheel and sloping about 3 degrees, as on STR 4705 (supertouringregister.com/picture/4705). Car history: Lancer GTi for rounds 1-5, Galant (E30 saloon) from mid-season (Wikipedia 1991 BTCC season table; Getty LAT 2201201207 Oulton Park 11 Aug and 2201200886 Thruxton 22 Sep show the Galant). No free side view of the race Galant found, so it is not drawn. Logos (2026-11-16): Firestone and both MITSUBISHI MOTORS lockups (front door and front bumper, now with the small MITSUBISHI MOTORS text under the diamonds) are real logos, from Getty LAT 2201201287 and STR 4705. The NGK badge stays drawn: the car has a red NGK roundel and the NGK logo file is the rectangular 'NGK SPARK PLUGS' lockup. The small blue sticker on the front spoiler is left out (unreadable). Re-fitted 2026-11-16 to the hand-built Lancer body against STR 4705 (mirrored, wheels aligned) and the Getty Snetterton left-side photos. 2026-11-16: ribbed lower door panels added as six thin translucent dark lines from behind the front arch to the rear arch, in the lower part of both doors (above the plain sill), measured on STR 4705 (https://supertouringregister.com/picture/4705/, right side, mirrored by the wheel centres); they pass behind the number board as on the photo. 2026-11-16: moved onto the new hand-traced Galant (E30) shape outline (user side photo, model_refs/galant_hand.py) by landmarks (model_refs/galant_remap.py), board, logos, name and ribs re-placed on the new doors, windows and arches.",
+ "logos": [
+  {
+   "logo": "firestone",
+   "box": [
+    1539,
+    322,
+    480,
+    80
+   ],
+   "rot": -6
+  },
+  {
+   "logo": "mitsubishi_motors",
+   "box": [
+    948,
+    376.6,
+    140,
+    177
+   ]
+  },
+  {
+   "logo": "mitsubishi_motors",
+   "box": [
+    96,
+    541.0,
+    72,
+    92
+   ]
+  }
+ ]
 }

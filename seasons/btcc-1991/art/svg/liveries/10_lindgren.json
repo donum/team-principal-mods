@@ -1,74 +1,11 @@
 {
  "model": "bmw_m3_e30",
  "title": "#10 Nettan Lindgren, BMW Dealer Team Sweden BMW M3, BTCC 1991",
- "note": "Layout from the TV graphics drawings A_grid_r01_silverstone_b_sharp_15 and A_grid_r03_donington_sharp_13 (white car, stripe band along the top of the front wing and along the rear quarter from the C-pillar to the tail, number board at the front of the front door). Colours from the right-side frames B_right_tv Season Review 00-12-30 and C_right_tv Round 2 Pt 1 00-05-45 (no left-side picture of #10): BMW M stripes, red at the nose and up the C-pillar, violet, light blue at the A-pillar and the tail; red ESSO sticker above a white number board; Castrol on the rear quarter; 'Lindgren' in white on the rear side window. The TV drawing shows the stripe colours as teal and blue, the photos as M colours. Wheels: gold mesh (BBS style) with a polished lip from the Season Review 00-12-30 frame, where the car stands in the gravel after its crash; no paddock photo found. Sizes checked against the photos relative to the door height and wheel size (the --compare overlay of the TV drawing was misaligned): stripe band about a fifth of the door height thick (photos; the TV drawing shows it thicker), number board about 13% of the wheelbase wide.",
+ "note": "Medium confidence. 2026-11-16: redrawn from the first left-side photo of #10: supertouring.co.uk 1991 entrants gallery page 2, 'lindgren_91.jpg', credited (c) www.stillphotography.co.uk (https://web.archive.org/web/2012/http://www.supertouring.co.uk/gallery/1991_entrants_2.html, image http://www.supertouring.co.uk/gallery/1991/lindgren_91.jpg, 230x160, saved in teams/_series/ask_permission/on_track), front 3/4 on track. It shows a plain white front wing (no stripe there, so the front-wing stripe from the TV drawing was removed) and one band right under the side windows, starting on the rear half of the door and running to the tail, with slanted joins: red, orange, yellow, green, dark blue; red runs up the C-pillar. Castrol is white letters on a dark green box on the rear quarter under the band. ESSO header and number board at the front of the door, SKF and other stickers on the sill, gold mesh wheels with polished lips (as before). Not drawn (unreadable): a dark word on the top of the front wing and a small red sticker above the front wheel. Earlier sources: TV graphics drawings A_grid_r01_silverstone_b_sharp_15 and A_grid_r03_donington_sharp_13; right-side frames B_right_tv Season Review 00-12-30 and C_right_tv Round 2 Pt 1 00-05-45, which had been read as BMW M colours; the left photo shows the five-colour band instead. Logos: real Castrol wordmark (white) and SKF.",
  "base": "#ffffff",
  "rim": "#c9a646",
  "wheel": "cross",
  "shapes": [
-  {
-   "poly": [
-    [
-     -60,
-     378.4736842105263
-    ],
-    [
-     250,
-     345.0263157894737
-    ],
-    [
-     220,
-     409.0263157894737
-    ],
-    [
-     -90,
-     442.4736842105263
-    ]
-   ],
-   "fill": "#e0262f"
-  },
-  {
-   "poly": [
-    [
-     250,
-     345.0263157894737
-    ],
-    [
-     520,
-     315.89473684210526
-    ],
-    [
-     490,
-     379.89473684210526
-    ],
-    [
-     220,
-     409.0263157894737
-    ]
-   ],
-   "fill": "#2a3590"
-  },
-  {
-   "poly": [
-    [
-     520,
-     315.89473684210526
-    ],
-    [
-     820,
-     283.5263157894737
-    ],
-    [
-     790,
-     347.5263157894737
-    ],
-    [
-     490,
-     379.89473684210526
-    ]
-   ],
-   "fill": "#4a9be0"
-  },
   {
    "poly": [
     [
@@ -97,44 +34,116 @@
   {
    "poly": [
     [
-     1990,
-     305
-    ],
-    [
-     2160,
-     305
-    ],
-    [
-     2140,
+     1262,
      369
     ],
     [
-     1990,
+     1312,
+     305
+    ],
+    [
+     1535,
+     305
+    ],
+    [
+     1485,
      369
     ]
    ],
-   "fill": "#2a3590"
+   "fill": "#e0262f"
   },
   {
    "poly": [
     [
-     2160,
-     305
-    ],
-    [
-     2420,
-     305
-    ],
-    [
-     2420,
+     1485,
      369
     ],
     [
-     2140,
+     1535,
+     305
+    ],
+    [
+     1730,
+     305
+    ],
+    [
+     1680,
      369
     ]
    ],
-   "fill": "#4a9be0"
+   "fill": "#ef6a1f"
+  },
+  {
+   "poly": [
+    [
+     1680,
+     369
+    ],
+    [
+     1730,
+     305
+    ],
+    [
+     1880,
+     305
+    ],
+    [
+     1830,
+     369
+    ]
+   ],
+   "fill": "#f5c518"
+  },
+  {
+   "poly": [
+    [
+     1830,
+     369
+    ],
+    [
+     1880,
+     305
+    ],
+    [
+     2146,
+     305
+    ],
+    [
+     2096,
+     369
+    ]
+   ],
+   "fill": "#1f7a3a"
+  },
+  {
+   "poly": [
+    [
+     2096,
+     369
+    ],
+    [
+     2146,
+     305
+    ],
+    [
+     2380,
+     305
+    ],
+    [
+     2330,
+     369
+    ]
+   ],
+   "fill": "#24307a"
+  },
+  {
+   "rect": [
+    2045,
+    388,
+    262,
+    70
+   ],
+   "fill": "#163a24"
   },
   {
    "rect": [
@@ -176,15 +185,6 @@
    "w": 165,
    "font": "Arial, sans-serif",
    "weight": "normal"
-  },
-  {
-   "t": "Castrol",
-   "x": 2195,
-   "y": 482,
-   "size": 96,
-   "fill": "#111111",
-   "w": 295,
-   "italic": true
   }
  ],
  "number": {
@@ -210,6 +210,27 @@
    "fill": "#ffffff",
    "w": 240,
    "font": "Arial, Helvetica, sans-serif"
+  }
+ ],
+ "logos": [
+  {
+   "logo": "castrol_wordmark",
+   "box": [
+    2055,
+    394,
+    242,
+    58
+   ],
+   "fill": "#ffffff"
+  },
+  {
+   "logo": "skf",
+   "box": [
+    1525,
+    645,
+    116,
+    29
+   ]
   }
  ]
 }

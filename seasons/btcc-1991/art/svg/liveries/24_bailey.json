@@ -187,32 +187,6 @@
   },
   {
    "rect": [
-    2099,
-    330,
-    125,
-    129
-   ],
-   "fill": "#f4f4f4"
-  },
-  {
-   "circle": [
-    2161,
-    394,
-    52
-   ],
-   "fill": "#2f8a3e"
-  },
-  {
-   "rect": [
-    2104,
-    384,
-    115,
-    22
-   ],
-   "fill": "#f4f4f4"
-  },
-  {
-   "rect": [
     132,
     524,
     46,
@@ -263,27 +237,6 @@
  ],
  "texts": [
   {
-   "t": "Castrol",
-   "x": 1303,
-   "y": 548,
-   "size": 128,
-   "fill": "#f4f4f4",
-   "w": 470,
-   "rot": -17.5,
-   "italic": true,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
-   "t": "Castrol",
-   "x": 2161,
-   "y": 401,
-   "size": 20,
-   "fill": "#d6202a",
-   "w": 96,
-   "italic": true,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
    "t": "NISSAN",
    "x": 459,
    "y": 404,
@@ -309,33 +262,6 @@
    "fill": "#f4f4f4",
    "w": 90,
    "font": "Georgia, Times New Roman, serif"
-  },
-  {
-   "t": "KONI",
-   "x": 1607,
-   "y": 627,
-   "size": 24,
-   "fill": "#f4f4f4",
-   "w": 80,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
-   "t": "JANSPEED",
-   "x": 1573,
-   "y": 688,
-   "size": 30,
-   "fill": "#f4f4f4",
-   "w": 165,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
-   "t": "AVTEC",
-   "x": 1438,
-   "y": 688,
-   "size": 22,
-   "fill": "#f4f4f4",
-   "w": 70,
-   "font": "Arial, sans-serif"
   },
   {
    "t": "ESSO",
@@ -386,12 +312,64 @@
    "font": "Arial Black, Arial, sans-serif"
   }
  ],
- "note": "Same scheme as O'Dor's #23 (team cars). Positions taken from the #23 measurement (Getty / LAT 'Snetterton 14 April 1991', mirrored right side, fitted by the wheel centres) and checked on Super Touring Register 4720 (Bailey #24, right side, mirrored) and the Thruxton TV graphic drawings: same band, number board and sticker positions, 'Bailey' on the rear door glass. Wheels: white 5-spoke, from the Getty / LAT pit-lane photo 'Thruxton 22 September 1991' (2201200794, car standing) and STR 4720. Uncertain: no near side-on photo of #24's left side; the left side is drawn as the team-mate's.",
+ "note": "Same scheme as O'Dor's #23 (team cars). Positions taken from the #23 measurement (Getty / LAT 'Snetterton 14 April 1991', mirrored right side, fitted by the wheel centres) and checked on Super Touring Register 4720 (Bailey #24, right side, mirrored) and the Thruxton TV graphic drawings: same band, number board and sticker positions, 'Bailey' on the rear door glass. Wheels: white 5-spoke, from the Getty / LAT pit-lane photo 'Thruxton 22 September 1991' (2201200794, car standing) and STR 4720. Uncertain: no near side-on photo of #24's left side; the left side is drawn as the team-mate's. Logos (2026-11-16): the door Castrol script (white), the Castrol roundel badge on the rear quarter, JANSPEED (white), CHAMPION and KONI (white) are now the real logos; KONI moved from the rear door to the rear bumper behind a new CHAMPION sticker and AVTEC taken off (it is on the right side only), from the #23 left-side photos (STR 4722, Getty LAT 2201222194), assumed for #24 because the right sides of both cars match. NISSAN and both DUNLOPs stay lettering: the NISSAN logo file is the blue box version and the Dunlop file has the flying D, which these white decals do not show. The small round sticker on the lower rear door (dark disc, white bird) is left out: its brand is not known. The square sticker on the front bumper stripe stays as drawn (content unreadable). 2026-11-16: new photo, right side only: Peter Still, stillphotography.co.uk 1991 album btcc91_14 'Julian Bailey in his Nissan Primera at Silverstone' (https://web.archive.org/web/2012/http://stillphotography.co.uk/gallery/v/Motorsport-Photography/saloon/btcc/album04/btcc91_14.jpg.html, 700x466, saved in teams/Nissan Racing with Castrol/ask_permission/on_track). It matches the drawn scheme (mirrored); no left-side photo of #24 found, so no change.",
  "spokes": 5,
  "hub": 0.26,
  "outer": 0.84,
  "twist": 0,
  "window": "#2e2e2e",
  "wheel_note": "Rim design re-checked on STR 5183 (team car): zoomed wheel, spoke count, window shape and sweep.",
- "spoke_w": 0.3
+ "spoke_w": 0.3,
+ "logos": [
+  {
+   "logo": "castrol_wordmark",
+   "box": [
+    1055,
+    437,
+    470,
+    136
+   ],
+   "fill": "#f4f4f4",
+   "rot": -17.5
+  },
+  {
+   "logo": "castrol_emblem",
+   "box": [
+    2099,
+    330,
+    125,
+    129
+   ]
+  },
+  {
+   "logo": "janspeed",
+   "box": [
+    1490,
+    652,
+    165,
+    34
+   ],
+   "fill": "#f4f4f4"
+  },
+  {
+   "logo": "champion",
+   "box": [
+    2060,
+    603,
+    115,
+    38
+   ],
+   "align": "xMax"
+  },
+  {
+   "logo": "koni",
+   "box": [
+    2182,
+    609,
+    104,
+    26
+   ],
+   "fill": "#f4f4f4"
+  }
+ ]
 }

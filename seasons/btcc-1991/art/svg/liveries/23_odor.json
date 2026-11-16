@@ -187,32 +187,6 @@
   },
   {
    "rect": [
-    2099,
-    330,
-    125,
-    129
-   ],
-   "fill": "#f4f4f4"
-  },
-  {
-   "circle": [
-    2161,
-    394,
-    52
-   ],
-   "fill": "#2f8a3e"
-  },
-  {
-   "rect": [
-    2104,
-    384,
-    115,
-    22
-   ],
-   "fill": "#f4f4f4"
-  },
-  {
-   "rect": [
     132,
     524,
     46,
@@ -263,27 +237,6 @@
  ],
  "texts": [
   {
-   "t": "Castrol",
-   "x": 1303,
-   "y": 548,
-   "size": 128,
-   "fill": "#f4f4f4",
-   "w": 470,
-   "rot": -17.5,
-   "italic": true,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
-   "t": "Castrol",
-   "x": 2161,
-   "y": 401,
-   "size": 20,
-   "fill": "#d6202a",
-   "w": 96,
-   "italic": true,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
    "t": "NISSAN",
    "x": 459,
    "y": 404,
@@ -309,33 +262,6 @@
    "fill": "#f4f4f4",
    "w": 90,
    "font": "Georgia, Times New Roman, serif"
-  },
-  {
-   "t": "KONI",
-   "x": 1607,
-   "y": 627,
-   "size": 24,
-   "fill": "#f4f4f4",
-   "w": 80,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
-   "t": "JANSPEED",
-   "x": 1573,
-   "y": 688,
-   "size": 30,
-   "fill": "#f4f4f4",
-   "w": 165,
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
-   "t": "AVTEC",
-   "x": 1438,
-   "y": 688,
-   "size": 22,
-   "fill": "#f4f4f4",
-   "w": 70,
-   "font": "Arial, sans-serif"
   },
   {
    "t": "ESSO",
@@ -386,12 +312,64 @@
    "font": "Arial Black, Arial, sans-serif"
   }
  ],
- "note": "Black Primera with the Castrol band: red over green with white pinstripes, low at the front, broken by the slanted Castrol lettering on the doors, rising over the rear door to the boot. Measured on the Getty / LAT photo 'Snetterton 14 April 1991, Keith Odor' (2201319653, right side, near side-on), mirrored and fitted onto the model by the wheel centres; the left side (text reading forwards) checked on Super Touring Register 4722 (left side, front three-quarter) and the TV graphic drawings. 'Odor' on the rear door glass as on the car. Wheels: white 5-spoke as on the car from mid-season (Super Touring Register 5183, Silverstone; Getty / LAT Thruxton pit lane photo of #24); in April the car ran silver 8-spoke wheels. Uncertain: the bands' exact width where the number board covers them; small stickers (AVTEC, KONI, the Castrol roundel artwork) are simplified.",
+ "note": "Black Primera with the Castrol band: red over green with white pinstripes, low at the front, broken by the slanted Castrol lettering on the doors, rising over the rear door to the boot. Measured on the Getty / LAT photo 'Snetterton 14 April 1991, Keith Odor' (2201319653, right side, near side-on), mirrored and fitted onto the model by the wheel centres; the left side (text reading forwards) checked on Super Touring Register 4722 (left side, front three-quarter) and the TV graphic drawings. 'Odor' on the rear door glass as on the car. Wheels: white 5-spoke as on the car from mid-season (Super Touring Register 5183, Silverstone; Getty / LAT Thruxton pit lane photo of #24); in April the car ran silver 8-spoke wheels. Uncertain: the bands' exact width where the number board covers them; small stickers (AVTEC, KONI, the Castrol roundel artwork) are simplified. Logos (2026-11-16): the door Castrol script (white), the Castrol roundel badge on the rear quarter, JANSPEED (white), CHAMPION and KONI (white) are now the real logos; KONI moved from the rear door to the rear bumper behind a new CHAMPION sticker and AVTEC taken off (it is on the right side only), from Super Touring Register 4722 and Getty LAT 2201222194 (left side of #23). NISSAN and both DUNLOPs stay lettering: the NISSAN logo file is the blue box version and the Dunlop file has the flying D, which these white decals do not show. The small round sticker on the lower rear door (dark disc, white bird) is left out: its brand is not known. The square sticker on the front bumper stripe stays as drawn (content unreadable).",
  "spokes": 5,
  "hub": 0.26,
  "outer": 0.84,
  "twist": 0,
  "window": "#2e2e2e",
  "wheel_note": "Rim design re-checked on STR 5183: zoomed wheel, spoke count, window shape and sweep.",
- "spoke_w": 0.3
+ "spoke_w": 0.3,
+ "logos": [
+  {
+   "logo": "castrol_wordmark",
+   "box": [
+    1055,
+    437,
+    470,
+    136
+   ],
+   "fill": "#f4f4f4",
+   "rot": -17.5
+  },
+  {
+   "logo": "castrol_emblem",
+   "box": [
+    2099,
+    330,
+    125,
+    129
+   ]
+  },
+  {
+   "logo": "janspeed",
+   "box": [
+    1490,
+    652,
+    165,
+    34
+   ],
+   "fill": "#f4f4f4"
+  },
+  {
+   "logo": "champion",
+   "box": [
+    2060,
+    603,
+    115,
+    38
+   ],
+   "align": "xMax"
+  },
+  {
+   "logo": "koni",
+   "box": [
+    2182,
+    609,
+    104,
+    26
+   ],
+   "fill": "#f4f4f4"
+  }
+ ]
 }

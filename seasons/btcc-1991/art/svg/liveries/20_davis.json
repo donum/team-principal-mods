@@ -15,28 +15,28 @@
   {
    "poly": [
     [
-     -103.8,
-     0.0
+     -103.6,
+     10.8
     ],
     [
-     788.5,
-     0.0
+     666.7,
+     10.8
     ],
     [
-     782.3,
-     450.0
+     660.5,
+     417.1
     ],
     [
-     776.1,
-     600.0
+     655.1,
+     584.2
     ],
     [
-     774.0,
-     900.0
+     653.4,
+     860.4
     ],
     [
-     -103.8,
-     900.0
+     -103.6,
+     860.4
     ]
    ],
    "fill": "#f2c500"
@@ -44,28 +44,28 @@
   {
    "poly": [
     [
-     1700.6,
-     370.0
+     1550,
+     200
     ],
     [
-     2496.2,
-     200.0
+     2540,
+     190
     ],
     [
-     2496.2,
-     900.0
+     2540,
+     900
     ],
     [
-     1425.0,
-     900.0
+     1330,
+     900
     ],
     [
-     1435.4,
-     800.0
+     1348,
+     762
     ],
     [
-     1549.8,
-     600.0
+     1478,
+     402
     ]
    ],
    "fill": "#2f6fc0"
@@ -73,20 +73,20 @@
   {
    "poly": [
     [
-     561.8,
-     612.0
+     477.6,
+     597.6
     ],
     [
-     1965.8,
-     612.0
+     1897.0,
+     597.6
     ],
     [
-     1965.8,
-     648.0
+     1897.0,
+     633.8
     ],
     [
-     561.8,
-     648.0
+     477.6,
+     633.8
     ]
    ],
    "fill": "#8c8c94"
@@ -94,28 +94,28 @@
   {
    "poly": [
     [
-     561.8,
-     622.0
+     477.6,
+     608.7
     ],
     [
-     1965.8,
-     622.0
+     1897.0,
+     608.7
     ],
     [
-     1965.8,
-     636.0
+     1897.0,
+     623.0
     ],
     [
-     561.8,
-     636.0
+     477.6,
+     623.0
     ]
    ],
    "fill": "#a0303c"
   },
   {
    "rect": [
-    920.6,
-    448.0,
+    799.4,
+    430.0,
     242.3,
     264.0
    ],
@@ -123,8 +123,8 @@
   },
   {
    "rect": [
-    920.6,
-    448.0,
+    799.4,
+    430.0,
     242.3,
     37.0
    ],
@@ -132,8 +132,8 @@
   },
   {
    "rect": [
-    925.8,
-    539.0,
+    804.6,
+    521.0,
     230.9,
     171.0
    ],
@@ -144,32 +144,32 @@
   {
    "poly": [
     [
-     1248.2,
-     515.0
+     1127.7,
+     497.6
     ],
     [
-     1279.4,
-     478.0
+     1158.9,
+     460.6
     ],
     [
-     1323.1,
-     470.0
+     1202.6,
+     452.6
     ],
     [
-     1347.0,
-     488.0
+     1226.5,
+     470.6
     ],
     [
-     1310.6,
-     485.0
+     1190.1,
+     467.6
     ],
     [
-     1284.6,
-     500.0
+     1164.1,
+     482.6
     ],
     [
-     1269.0,
-     520.0
+     1148.5,
+     502.6
     ]
    ],
    "fill": "#1a1a1a"
@@ -177,20 +177,20 @@
   {
    "poly": [
     [
-     1514.5,
-     654.0
+     1405.4,
+     636.0
     ],
     [
-     1710.0,
-     654.0
+     1601.0,
+     636.0
     ],
     [
-     1710.0,
-     718.0
+     1601.0,
+     700.0
     ],
     [
-     1514.5,
-     718.0
+     1405.4,
+     700.0
     ]
    ],
    "fill": "#ffffff"
@@ -198,39 +198,16 @@
   {
    "poly": [
     [
-     1558.1,
-     723.0
+     591.6,
+     488.7
     ],
     [
-     1661.1,
-     723.0
+     629.0,
+     488.7
     ],
     [
-     1661.1,
-     770.0
-    ],
-    [
-     1558.1,
-     770.0
-    ]
-   ],
-   "fill": "#ffffff",
-   "stroke": "#d7192b",
-   "sw": 3
-  },
-  {
-   "poly": [
-    [
-     703.3,
-     513.0
-    ],
-    [
-     740.7,
-     513.0
-    ],
-    [
-     722.0,
-     551.0
+     610.3,
+     526.7
     ]
    ],
    "fill": "#ffffff",
@@ -241,16 +218,16 @@
  "texts": [
   {
    "t": "ESSO",
-   "x": 1041.8,
-   "y": 479.8,
+   "x": 920.6,
+   "y": 461.8,
    "size": 35.1,
    "fill": "#ffffff",
    "w": 121.2
   },
   {
    "t": "British Touring",
-   "x": 1051.4,
-   "y": 507.7,
+   "x": 930.3,
+   "y": 489.7,
    "size": 18.4,
    "fill": "#000",
    "font": "Arial, sans-serif",
@@ -259,8 +236,8 @@
   },
   {
    "t": "Car Championship",
-   "x": 1051.4,
-   "y": 530.4,
+   "x": 930.3,
+   "y": 512.4,
    "size": 18.4,
    "fill": "#000",
    "font": "Arial, sans-serif",
@@ -268,8 +245,8 @@
   },
   {
    "t": "20",
-   "x": 1041.2,
-   "y": 686.1,
+   "x": 920.0,
+   "y": 668.1,
    "size": 157.3,
    "fill": "#000",
    "font": "Arial Black, Arial, sans-serif",
@@ -277,8 +254,8 @@
   },
   {
    "t": "marlin",
-   "x": 1294.0,
-   "y": 572.0,
+   "x": 1173.5,
+   "y": 554.6,
    "size": 40.0,
    "fill": "#24399a",
    "w": 220.5,
@@ -286,8 +263,8 @@
   },
   {
    "t": "express",
-   "x": 1294.0,
-   "y": 600.0,
+   "x": 1173.5,
+   "y": 582.6,
    "size": 28.0,
    "fill": "#24399a",
    "w": 220.5,
@@ -295,8 +272,8 @@
   },
   {
    "t": "EUROPE DIRECT",
-   "x": 1289.8,
-   "y": 668.0,
+   "x": 1169.3,
+   "y": 650.6,
    "size": 14.0,
    "fill": "#333333",
    "w": 239.2,
@@ -306,43 +283,35 @@
   },
   {
    "t": "Moto-Build",
-   "x": 1809.8,
-   "y": 521.0,
-   "size": 100.0,
+   "x": 1719.2,
+   "y": 471,
+   "size": 66,
    "fill": "#1e2a44",
    "w": 738.4,
    "font": "Arial Black, Arial, sans-serif"
   },
   {
    "t": "ROVER PERFORMANCE",
-   "x": 1824.4,
-   "y": 574.0,
-   "size": 52.0,
+   "x": 1733.8,
+   "y": 501,
+   "size": 34,
    "fill": "#1e2a44",
    "w": 743.6,
    "font": "Times New Roman, serif"
   },
   {
    "t": "TOTAL",
-   "x": 1612.2,
-   "y": 700.0,
+   "x": 1503.2,
+   "y": 682.0,
    "size": 40.0,
    "fill": "#1f3f9a",
    "w": 145.6,
    "font": "Arial Black, Arial, sans-serif"
   },
   {
-   "t": "CHAMPION",
-   "x": 1610.1,
-   "y": 754.0,
-   "size": 18.0,
-   "fill": "#d7192b",
-   "w": 87.4
-  },
-  {
    "t": "FELTHAM",
-   "x": 2191.5,
-   "y": 645.0,
+   "x": 2140,
+   "y": 622,
    "size": 30.0,
    "fill": "#ffffff",
    "w": 197.6,
@@ -350,8 +319,8 @@
   },
   {
    "t": "GLASS WORKS",
-   "x": 2191.5,
-   "y": 676.0,
+   "x": 2140,
+   "y": 652,
    "size": 28.0,
    "fill": "#ffffff",
    "w": 205.9,
@@ -359,8 +328,8 @@
   },
   {
    "t": "081-890 7147",
-   "x": 2191.5,
-   "y": 708.0,
+   "x": 2140,
+   "y": 682,
    "size": 22.0,
    "fill": "#ffffff",
    "w": 166.4,
@@ -368,44 +337,66 @@
    "weight": "normal"
   },
   {
-   "t": "Hoosier",
-   "x": 501.5,
-   "y": 547.0,
-   "size": 30.0,
-   "fill": "#1a1a1a",
-   "w": 142.5,
-   "font": "Georgia, serif"
-  },
-  {
-   "t": "Hoosier",
-   "x": 237.3,
-   "y": 690.0,
-   "size": 30.0,
-   "fill": "#ffffff",
-   "w": 147.7,
-   "font": "Georgia, serif"
-  },
-  {
    "t": "Grahame Davis",
-   "x": 1330,
-   "y": 168,
+   "x": 1209.6,
+   "y": 162.0,
    "size": 26,
    "fill": "#1a1a1a",
    "w": 220,
    "italic": true,
+   "font": "Arial, sans-serif"
+  },
+  {
+   "t": "RACING TIRE",
+   "x": 140,
+   "y": 700,
+   "size": 13,
+   "fill": "#ffffff",
+   "w": 90,
    "font": "Arial, sans-serif"
   }
  ],
  "over_texts": [
   {
    "t": "Davis",
-   "x": 1610.1,
-   "y": 326.0,
+   "x": 1500.9,
+   "y": 304.2,
    "size": 56.0,
    "fill": "#ffffff",
    "w": 164.3,
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Measured on Super Touring Register 4704 (Davis #20, right side, side-on; the model was traced from the same frame, so positions carry over 1:1 after the 4% length correction). White car, blue rear quarter from a diagonal through the rear door, grey and red pinstripe along the doors, ESSO board on the front door, marlin express on the rear door, Moto-Build ROVER PERFORMANCE on the rear quarter, Total and Champion low on the rear door, Feltham Glass Works on the rear bumper, Hoosier on the wing and bumper, name on the rear door window. Front colour: on the right side the front is green; the front views (Getty LAT 2201200785 and 2201200876, Brands Hatch round 10) show the bonnet split green (right) and yellow (left), so the left-side front is drawn yellow (a judgement: the user-supplied copy of this photo, B_right_photo in the livery pack, is the same right-side frame). Grahame Davis small on the roof edge. Only right-side side views exist: whether the left rear is also blue, and the left-side sticker order, are assumed to mirror the right side."
+ "note": "Measured on Super Touring Register 4704 (Davis #20, right side, side-on; the model was traced from the same frame, so positions carry over 1:1 after the 4% length correction). White car, blue rear quarter from a diagonal through the rear door, grey and red pinstripe along the doors, ESSO board on the front door, marlin express on the rear door, Moto-Build ROVER PERFORMANCE on the rear quarter, Total and Champion low on the rear door, Feltham Glass Works on the rear bumper, Hoosier on the wing and bumper, name on the rear door window. Front colour: on the right side the front is green; the front views (Getty LAT 2201200785 and 2201200876, Brands Hatch round 10) show the bonnet split green (right) and yellow (left), so the left-side front is drawn yellow (a judgement: the user-supplied copy of this photo, B_right_photo in the livery pack, is the same right-side frame). Grahame Davis small on the roof edge. Only right-side side views exist: whether the left rear is also blue, and the left-side sticker order, are assumed to mirror the right side. Logos (2026-11-16): real logos for CHAMPION and both Hoosier scripts (dark on the wing, white on the front bumper, with the RACING TIRE line under the bumper one added); all from the right side (STR 4704), mirrored. TOTAL stays lettering: the car has the older TOTAL word with an arrow line, not the striped Total logo. Moto-Build, marlin express, EUROPE DIRECT and Feltham Glass Works have no logo. The small Hoosier on the rear side window (medium confidence) is not added.",
+ "logos": [
+  {
+   "logo": "champion",
+   "box": [
+    1452,
+    705,
+    98,
+    47
+   ]
+  },
+  {
+   "logo": "hoosier",
+   "box": [
+    356,
+    468,
+    143,
+    41
+   ],
+   "fill": "#1a1a1a"
+  },
+  {
+   "logo": "hoosier",
+   "box": [
+    66,
+    640,
+    148,
+    40
+   ],
+   "fill": "#ffffff"
+  }
+ ]
 }

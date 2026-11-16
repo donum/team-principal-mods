@@ -1,7 +1,7 @@
 {
  "model": "bmw_m3_e30",
  "title": "#9 Armin Hahne, Team Labatt's BMW M3, BTCC 1991",
- "note": "Layout from the TV graphics drawing A_v13_18-08_cap_harvey and the left-side frame B_left_tv_BTCC 1991 Round 1 Pt 2_00-00-13 (#4), colours and lettering from the standing paddock photo 'Super Touring Register - Armin Hahne Labatt's BMW M3 #9 in the paddock 1991 (6214)' (left side, teams/Team Labatt's/ask_permission/paddock): royal blue car, white band under the windows with 'Please Don't Drink & Drive' in navy serif, red ESSO sticker above a white number board, white 'Labatt's' on the blue doors, YOKOHAMA on the sill. Wheels: gold 5-spoke with wide spokes from that same standing photo (also gold on the Brands Hatch pit photo of Harvey). Measured with a pixel grid on the near side-on left frame B_left_tv_BTCC 1991 Round 1 Pt 2_00-00-13 (x by wheel centres, y by window line to sill): band from the window line to about 30% of the door height, ESSO strip and number board about 220 wide starting at the front door shut line (as on the Hahne paddock photo), Labatt's from the board to the B-pillar and about 45% of the door height tall; checked against Getty LAT 2200274356 (left side, 3/4 front) and the TV drawing. Most Getty side-on shots (2201201091, 2200274342, 2201200825, STR 4710/4713) show the RIGHT side, where 'Please' sits at the rear. 'Please' lettering size is a compromise: the TV drawing shows it smaller than the photos. Hahne replaced Bristow in #9 at Thruxton; his name is on the window in the paddock photo.",
+ "note": "Layout from the TV graphics drawing A_v13_18-08_cap_harvey and the left-side frame B_left_tv_BTCC 1991 Round 1 Pt 2_00-00-13 (#4), colours and lettering from the standing paddock photo 'Super Touring Register - Armin Hahne Labatt's BMW M3 #9 in the paddock 1991 (6214)' (left side, teams/Team Labatt's/ask_permission/paddock): royal blue car, white band under the windows with 'Please Don't Drink & Drive' in navy serif, red ESSO sticker above a white number board, white 'Labatt's' on the blue doors, YOKOHAMA on the sill. Wheels: gold 5-spoke with wide spokes from that same standing photo (also gold on the Brands Hatch pit photo of Harvey). Measured with a pixel grid on the near side-on left frame B_left_tv_BTCC 1991 Round 1 Pt 2_00-00-13 (x by wheel centres, y by window line to sill): band from the window line to about 30% of the door height, ESSO strip and number board about 220 wide starting at the front door shut line (as on the Hahne paddock photo), Labatt's from the board to the B-pillar and about 45% of the door height tall; checked against Getty LAT 2200274356 (left side, 3/4 front) and the TV drawing. Most Getty side-on shots (2201201091, 2200274342, 2201200825, STR 4710/4713) show the RIGHT side, where 'Please' sits at the rear. 'Please' lettering size is a compromise: the TV drawing shows it smaller than the photos. Hahne replaced Bristow in #9 at Thruxton; his name is on the window in the paddock photo. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): Labatt's (white), YOKOHAMA with the pink-red Y chevron on the sill and the front spoiler, and CHAMPION behind the rear wheel are now the real logos; SPAX is white text because the logo file has a solid oval that the car does not show, and 'Please Don't Drink & Drive' and '...Better Driver' are Labatt's slogans in plain lettering; the small word on the front spoiler is unread and left out.",
  "base": "#1f42a8",
  "rim": "#c9a23c",
  "wheel": "star",
@@ -53,27 +53,6 @@
    ],
    "fill": "#d8261c",
    "r": 6
-  },
-  {
-   "poly": [
-    [
-     765,
-     632
-    ],
-    [
-     800,
-     632
-    ],
-    [
-     787,
-     664
-    ],
-    [
-     752,
-     664
-    ]
-   ],
-   "fill": "#d61f6e"
   }
  ],
  "texts": [
@@ -96,6 +75,16 @@
    "w": 150
   },
   {
+   "t": "British Touring Car Championship",
+   "x": 863,
+   "y": 406,
+   "size": 15,
+   "fill": "#000",
+   "w": 200,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
    "t": "Don't",
    "x": 990,
    "y": 392,
@@ -116,23 +105,23 @@
    "font": "Georgia, Times New Roman, serif"
   },
   {
-   "t": "Labatt's",
-   "x": 992,
-   "y": 598,
-   "size": 190,
+   "t": "SPAX",
+   "x": 1600,
+   "y": 645,
+   "size": 30,
    "fill": "#ffffff",
-   "anchor": "start",
-   "w": 585,
-   "font": "Georgia, Times New Roman, serif",
+   "w": 72,
+   "font": "Arial Black, Arial, sans-serif",
    "italic": true
   },
   {
-   "t": "YOKOHAMA",
-   "x": 935,
-   "y": 662,
-   "size": 38,
+   "t": "Better Driver",
+   "x": 120,
+   "y": 572,
+   "size": 30,
    "fill": "#ffffff",
-   "w": 250
+   "w": 160,
+   "font": "Georgia, Times New Roman, serif"
   }
  ],
  "number": {
@@ -161,10 +150,76 @@
   }
  ],
  "spokes": 5,
- "hub": 0.27,
+ "hub": 0.24,
  "outer": 0.82,
- "twist": 22,
+ "twist": 10,
  "window": "#2a2a2a",
- "wheel_note": "Rim design re-checked on STR 6214 (paddock): zoomed wheel, spoke count, window shape and sweep.",
- "spoke_w": 0.34
+ "wheel_note": "Rim design re-checked on STR 6214 (paddock): zoomed wheel, spoke count, window shape and sweep. QA round: sweep reduced (twist 22 to 10), spokes a little narrower so the windows read larger as in the photo; the paddock photo is at an angle, which makes the spokes look more curved than they are; Getty LAT 2200274356 (Brands Hatch, near side-on) shows almost straight spokes.",
+ "spoke_w": 0.3,
+ "logos": [
+  {
+   "logo": "labatts",
+   "box": [
+    992,
+    450,
+    585,
+    158
+   ],
+   "fill": "#ffffff",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama",
+   "box": [
+    762,
+    631,
+    320,
+    42.7
+   ],
+   "fill": "#ffffff",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    762,
+    631,
+    69.0,
+    42.7
+   ],
+   "fill": "#d61f6e",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama",
+   "box": [
+    60,
+    607,
+    170,
+    22.7
+   ],
+   "fill": "#ffffff",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    60,
+    607,
+    36.6,
+    22.7
+   ],
+   "fill": "#d61f6e",
+   "align": "xMin"
+  },
+  {
+   "logo": "champion",
+   "box": [
+    2235,
+    560,
+    90,
+    40
+   ]
+  }
+ ]
 }

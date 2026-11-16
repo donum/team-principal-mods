@@ -9,164 +9,164 @@
  "lip": "#d6d6d6",
  "shapes": [
   {
-   "path": "M790,396 L1020,625",
+   "path": "M787.9,396 L1019.4,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1020,396 L790,625",
+   "path": "M1019.4,396 L787.9,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M870,396 L1100,625",
+   "path": "M866,396 L1106.3,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1100,396 L870,625",
+   "path": "M1106.3,396 L866,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M950,396 L1180,625",
+   "path": "M944.2,396 L1193.2,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1180,396 L950,625",
+   "path": "M1193.2,396 L944.2,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1030,396 L1260,625",
+   "path": "M1030.2,396 L1280.1,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1260,396 L1030,625",
+   "path": "M1280.1,396 L1030.2,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1110,396 L1340,625",
+   "path": "M1117.2,396 L1367.1,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1340,396 L1110,625",
+   "path": "M1367.1,396 L1117.2,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1190,396 L1420,625",
+   "path": "M1204.1,396 L1447.6,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1420,396 L1190,625",
+   "path": "M1447.6,396 L1204.1,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1270,396 L1500,625",
+   "path": "M1291,396 L1523.3,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1500,396 L1270,625",
+   "path": "M1523.3,396 L1291,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1350,396 L1580,625",
+   "path": "M1377.9,396 L1599.1,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1580,396 L1350,625",
+   "path": "M1599.1,396 L1377.9,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1430,396 L1660,625",
+   "path": "M1457,396 L1674.8,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1660,396 L1430,625",
+   "path": "M1674.8,396 L1457,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1510,396 L1740,625",
+   "path": "M1532.8,396 L1750.6,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1740,396 L1510,625",
+   "path": "M1750.6,396 L1532.8,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1590,396 L1820,625",
+   "path": "M1608.5,396 L1823.2,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1820,396 L1590,625",
+   "path": "M1823.2,396 L1608.5,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1670,396 L1900,625",
+   "path": "M1684.3,396 L1904.7,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1900,396 L1670,625",
+   "path": "M1904.7,396 L1684.3,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1750,396 L1980,625",
+   "path": "M1760,396 L1991.1,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
-   "path": "M1980,396 L1750,625",
+   "path": "M1991.1,396 L1760,625",
    "fill": "none",
    "stroke": "#2ec43c",
    "sw": 24
   },
   {
    "rect": [
-    700,
+    699.9,
     300,
     410,
     360
@@ -175,7 +175,7 @@
   },
   {
    "rect": [
-    1100,
+    1106.3,
     150,
     1300,
     246
@@ -184,7 +184,7 @@
   },
   {
    "rect": [
-    1100,
+    1106.3,
     625,
     760,
     60
@@ -194,216 +194,216 @@
   {
    "poly": [
     [
-     1416,
+     1443.8,
      396
     ],
     [
-     2400,
+     2433,
      396
     ],
     [
-     2400,
+     2433,
      640
     ],
     [
-     1655,
+     1670.1,
      640
     ],
     [
-     1662,
+     1676.7,
      600
     ]
    ],
    "fill": "#111111"
   },
   {
-   "path": "M1105,630 C1095,360 1245,360 1235,630",
+   "path": "M1111.7,630 C1100.9,360 1263.8,360 1253,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1165,630 C1155,360 1305,360 1295,630",
+   "path": "M1176.9,630 C1166,360 1329,360 1318.2,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1225,630 C1215,360 1365,360 1355,630",
+   "path": "M1242.1,630 C1231.2,360 1394.2,360 1383.4,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1285,630 C1275,360 1425,360 1415,630",
+   "path": "M1307.3,630 C1296.4,360 1452.3,360 1442.8,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1345,630 C1335,360 1485,360 1475,630",
+   "path": "M1372.5,630 C1361.6,360 1509.1,360 1499.6,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1405,630 C1395,360 1545,360 1535,630",
+   "path": "M1433.4,630 C1423.9,360 1565.9,360 1556.4,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1465,630 C1455,360 1605,360 1595,630",
+   "path": "M1490.2,630 C1480.7,360 1622.7,360 1613.3,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1525,630 C1515,360 1665,360 1655,630",
+   "path": "M1547,630 C1537.5,360 1679.5,360 1670.1,630",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1650,215 C1720,330 1760,420 1780,492",
+   "path": "M1665.3,215 C1731.6,330 1769.5,420 1788.4,492",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1666,215 C1736,330 1776,420 1796,492",
+   "path": "M1680.5,215 C1746.8,330 1784.6,420 1802.8,492",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1682,215 C1752,330 1792,420 1812,492",
+   "path": "M1695.6,215 C1761.9,330 1799.4,420 1816.4,492",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M1698,215 C1768,330 1808,420 1828,492",
+   "path": "M1710.8,215 C1777.1,330 1813,420 1830,492",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 7
   },
   {
-   "path": "M533,646 A164,164 0 0 1 861,646",
+   "path": "M545.7,648 A157,157 0 0 1 848.3,648",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 14
   },
   {
-   "path": "M1677,643 A164,164 0 0 1 2005,643",
+   "path": "M1681.6,640 A163,163 0 0 1 2000.4,640",
    "fill": "none",
    "stroke": "#ff8c1a",
    "sw": 14
   },
   {
    "rect": [
-    280,
+    350,
     535,
-    270,
+    240,
     9
    ],
    "fill": "#ff8c1a"
   },
   {
    "rect": [
-    280,
+    350,
     556,
-    270,
+    240,
     9
    ],
    "fill": "#a6f03c"
   },
   {
    "rect": [
-    280,
+    350,
     580,
-    270,
+    240,
     13
    ],
    "fill": "#ff2a7a"
   },
   {
    "rect": [
-    280,
+    350,
     612,
-    270,
+    240,
     9
    ],
    "fill": "#2ec43c"
   },
   {
    "rect": [
-    280,
+    350,
     640,
-    270,
+    240,
     9
    ],
    "fill": "#ff8c1a"
   },
   {
    "rect": [
-    280,
+    350,
     667,
-    270,
+    240,
     9
    ],
    "fill": "#a6f03c"
   },
   {
    "rect": [
-    1950,
+    1958.7,
     384,
-    310,
+    341.3,
     8
    ],
    "fill": "#a6f03c"
   },
   {
    "rect": [
-    1900,
+    1904.7,
     414,
-    360,
+    395.3,
     8
    ],
    "fill": "#ff2a7a"
   },
   {
    "rect": [
-    1985,
+    1996.5,
     500,
-    275,
+    303.5,
     14
    ],
    "fill": "#ff8c1a"
   },
   {
    "rect": [
-    1990,
+    2001.9,
     545,
-    270,
+    298.1,
     8
    ],
    "fill": "#ff2a7a"
   },
   {
    "rect": [
-    1990,
+    2001.9,
     575,
-    270,
+    298.1,
     8
    ],
    "fill": "#ff8c1a"
   },
   {
    "rect": [
-    2000,
+    2012.7,
     603,
-    260,
+    287.3,
     8
    ],
    "fill": "#2ec43c"
@@ -411,43 +411,43 @@
   {
    "poly": [
     [
-     1692.0,
+     1705.1,
      220.0
     ],
     [
-     1698.4,
+     1711.2,
      237.2
     ],
     [
-     1716.7,
+     1728.5,
      238.0
     ],
     [
-     1702.4,
+     1714.9,
      249.4
     ],
     [
-     1707.3,
+     1719.6,
      267.0
     ],
     [
-     1692.0,
+     1705.1,
      256.9
     ],
     [
-     1676.7,
+     1690.6,
      267.0
     ],
     [
-     1681.6,
+     1695.3,
      249.4
     ],
     [
-     1667.3,
+     1681.7,
      238.0
     ],
     [
-     1685.6,
+     1699.0,
      237.2
     ]
    ],
@@ -456,43 +456,43 @@
   {
    "poly": [
     [
-     1764.0,
+     1773.3,
      294.0
     ],
     [
-     1770.9,
+     1779.8,
      312.5
     ],
     [
-     1790.6,
+     1798.2,
      313.3
     ],
     [
-     1775.2,
+     1783.9,
      325.6
     ],
     [
-     1780.5,
+     1788.9,
      344.7
     ],
     [
-     1764.0,
+     1773.3,
      333.8
     ],
     [
-     1747.5,
+     1757.7,
      344.7
     ],
     [
-     1752.8,
+     1762.7,
      325.6
     ],
     [
-     1737.4,
+     1748.1,
      313.3
     ],
     [
-     1757.1,
+     1766.7,
      312.5
     ]
    ],
@@ -501,43 +501,43 @@
   {
    "poly": [
     [
-     1842.0,
+     1842.1,
      358.0
     ],
     [
-     1848.9,
+     1849.5,
      376.5
     ],
     [
-     1868.6,
+     1870.8,
      377.3
     ],
     [
-     1853.2,
+     1854.2,
      389.6
     ],
     [
-     1858.5,
+     1859.9,
      408.7
     ],
     [
-     1842.0,
+     1842.1,
      397.8
     ],
     [
-     1825.5,
+     1827.8,
      408.7
     ],
     [
-     1830.8,
+     1832.3,
      389.6
     ],
     [
-     1815.4,
+     1819.3,
      377.3
     ],
     [
-     1835.1,
+     1836.0,
      376.5
     ]
    ],
@@ -546,43 +546,43 @@
   {
    "poly": [
     [
-     1572.0,
+     1591.5,
      402.0
     ],
     [
-     1580.9,
+     1599.9,
      425.8
     ],
     [
-     1606.2,
+     1623.9,
      426.9
     ],
     [
-     1586.4,
+     1605.1,
      442.7
     ],
     [
-     1593.2,
+     1611.6,
      467.1
     ],
     [
-     1572.0,
+     1591.5,
      453.1
     ],
     [
-     1550.8,
+     1571.4,
      467.1
     ],
     [
-     1557.6,
+     1577.8,
      442.7
     ],
     [
-     1537.8,
+     1559.1,
      426.9
     ],
     [
-     1563.1,
+     1583.1,
      425.8
     ]
    ],
@@ -591,43 +591,43 @@
   {
    "poly": [
     [
-     1920.0,
+     1926.3,
      424.0
     ],
     [
-     1926.4,
+     1933.2,
      441.2
     ],
     [
-     1944.7,
+     1953.0,
      442.0
     ],
     [
-     1930.4,
+     1937.6,
      453.4
     ],
     [
-     1935.3,
+     1942.9,
      471.0
     ],
     [
-     1920.0,
+     1926.3,
      460.9
     ],
     [
-     1904.7,
+     1909.8,
      471.0
     ],
     [
-     1909.6,
+     1915.1,
      453.4
     ],
     [
-     1895.3,
+     1899.6,
      442.0
     ],
     [
-     1913.6,
+     1919.4,
      441.2
     ]
    ],
@@ -636,43 +636,43 @@
   {
    "poly": [
     [
-     2022.0,
+     2036.5,
      430.0
     ],
     [
-     2027.9,
+     2042.9,
      445.8
     ],
     [
-     2044.8,
+     2061.1,
      446.6
     ],
     [
-     2031.6,
+     2046.9,
      457.1
     ],
     [
-     2036.1,
+     2051.7,
      473.4
     ],
     [
-     2022.0,
+     2036.5,
      464.1
     ],
     [
-     2007.9,
+     2021.3,
      473.4
     ],
     [
-     2012.4,
+     2026.1,
      457.1
     ],
     [
-     1999.2,
+     2011.9,
      446.6
     ],
     [
-     2016.1,
+     2030.1,
      445.8
     ]
    ],
@@ -681,43 +681,43 @@
   {
    "poly": [
     [
-     2088.0,
+     2107.8,
      424.0
     ],
     [
-     2092.4,
+     2112.5,
      435.9
     ],
     [
-     2105.1,
+     2126.3,
      436.4
     ],
     [
-     2095.2,
+     2115.6,
      444.3
     ],
     [
-     2098.6,
+     2119.2,
      456.6
     ],
     [
-     2088.0,
+     2107.8,
      449.6
     ],
     [
-     2077.4,
+     2096.3,
      456.6
     ],
     [
-     2080.8,
+     2100.0,
      444.3
     ],
     [
-     2070.9,
+     2089.3,
      436.4
     ],
     [
-     2083.6,
+     2103.0,
      435.9
     ]
    ],
@@ -726,43 +726,43 @@
   {
    "poly": [
     [
-     728.0,
+     727.3,
      410.0
     ],
     [
-     731.9,
+     731.1,
      420.6
     ],
     [
-     743.2,
+     742.1,
      421.1
     ],
     [
-     734.4,
+     733.5,
      428.1
     ],
     [
-     737.4,
+     736.5,
      438.9
     ],
     [
-     728.0,
+     727.3,
      432.7
     ],
     [
-     718.6,
+     718.1,
      438.9
     ],
     [
-     721.6,
+     721.0,
      428.1
     ],
     [
-     712.8,
+     712.4,
      421.1
     ],
     [
-     724.1,
+     723.5,
      420.6
     ]
    ],
@@ -770,7 +770,7 @@
   },
   {
    "circle": [
-    882,
+    877.7,
     528,
     22
    ],
@@ -778,7 +778,7 @@
   },
   {
    "circle": [
-    882,
+    877.7,
     528,
     17
    ],
@@ -786,7 +786,7 @@
   },
   {
    "rect": [
-    912,
+    907.1,
     402,
     198,
     220
@@ -798,7 +798,7 @@
   },
   {
    "rect": [
-    912,
+    907.1,
     402,
     198,
     30
@@ -807,7 +807,7 @@
   },
   {
    "rect": [
-    920,
+    914.9,
     455,
     182,
     160
@@ -815,12 +815,22 @@
    "fill": "none",
    "stroke": "#d7192b",
    "sw": 4
+  },
+  {
+   "rect": [
+    799.6,
+    450,
+    76,
+    21
+   ],
+   "fill": "#ffffff",
+   "r": 2
   }
  ],
  "texts": [
   {
    "t": "STAR",
-   "x": 642,
+   "x": 646.7,
    "y": 438,
    "size": 44,
    "fill": "#ffffff",
@@ -829,7 +839,7 @@
   },
   {
    "t": "CHIP",
-   "x": 818,
+   "x": 815.2,
    "y": 438,
    "size": 44,
    "fill": "#ffffff",
@@ -837,27 +847,8 @@
    "font": "Arial Black, Arial, sans-serif"
   },
   {
-   "t": "BILSTEIN",
-   "x": 840,
-   "y": 466,
-   "size": 16,
-   "fill": "#ffffff",
-   "w": 64,
-   "font": "Arial, sans-serif"
-  },
-  {
-   "t": "Hoosier",
-   "x": 840,
-   "y": 492,
-   "size": 18,
-   "fill": "#ffffff",
-   "w": 64,
-   "font": "Georgia, serif",
-   "italic": true
-  },
-  {
    "t": "ESSO",
-   "x": 1011.0,
+   "x": 1009.6,
    "y": 427.8,
    "size": 30.0,
    "fill": "#ffffff",
@@ -865,7 +856,7 @@
   },
   {
    "t": "British Touring",
-   "x": 1019.0,
+   "x": 1018.3,
    "y": 442.35,
    "size": 8.28,
    "fill": "#000",
@@ -875,7 +866,7 @@
   },
   {
    "t": "Car Championship",
-   "x": 1019.0,
+   "x": 1018.3,
    "y": 452.24,
    "size": 8.28,
    "fill": "#000",
@@ -885,18 +876,27 @@
   },
   {
    "t": "21",
-   "x": 1011.0,
+   "x": 1009.6,
    "y": 592.6,
    "size": 160.0,
    "fill": "#000",
    "font": "Arial Narrow, Arial, sans-serif",
    "w": 112.84
+  },
+  {
+   "t": "BILSTEIN",
+   "x": 836.7,
+   "y": 466,
+   "size": 16,
+   "fill": "#1a3a8a",
+   "w": 66,
+   "font": "Arial, sans-serif"
   }
  ],
  "over_texts": [
   {
    "t": "Brodie",
-   "x": 1524,
+   "x": 1546.0,
    "y": 288,
    "size": 50,
    "fill": "#ffffff",
@@ -904,5 +904,17 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Black car with the neon STAR CHIP scheme. No near side-on photo of the left side: positions measured on the Getty / LAT photo 'Brands Hatch 26 August 1991, Dave Brodie' (2201200916, right side, mirrored and warped onto the model by the wheel centres and window corners); the left side is confirmed by the other LAT photo of that day (2201200818, front three-quarter, nose left: same number board, STAR CHIP on the front wing, lattice on the rear door, Brodie on the rear window) and the Thruxton TV graphic drawings. Same 4-door Sapphire shell as Gravett's car. Uncertain: the lattice and orange loops are drawn as a regular pattern (the real graphic is hand-drawn and irregular); star sizes and the exact stripe order on the bumpers are approximate; small stickers (Bilstein, Hoosier, the round logo) are partly unreadable. Wheels: dark centres with a polished lip, from on-track photos only (no photo of the car standing still)."
+ "note": "Black car with the neon STAR CHIP scheme. No near side-on photo of the left side: positions measured on the Getty / LAT photo 'Brands Hatch 26 August 1991, Dave Brodie' (2201200916, right side, mirrored and warped onto the model by the wheel centres and window corners); the left side is confirmed by the other LAT photo of that day (2201200818, front three-quarter, nose left: same number board, STAR CHIP on the front wing, lattice on the rear door, Brodie on the rear window) and the Thruxton TV graphic drawings. Same 4-door Sapphire shell as Gravett's car. Uncertain: the lattice and orange loops are drawn as a regular pattern (the real graphic is hand-drawn and irregular); star sizes and the exact stripe order on the bumpers are approximate; small stickers (Bilstein, Hoosier, the round logo) are partly unreadable. Wheels: dark centres with a polished lip, from on-track photos only (no photo of the car standing still). Logos (2026-11-16): the white Hoosier script on the wing is now the real logo. BILSTEIN fixed to dark letters on a white panel (LAT 2201200818, STR 4707); it stays lettering because the saved Bilstein logo is the blue box with the yellow disc, which the car does not show. STAR CHIP has no logo. The Hoosier on the front bumper (medium confidence) is not added. 2026-11-16: moved onto the new hand-traced Sapphire outline (same 4-door shell) by landmarks.",
+ "logos": [
+  {
+   "logo": "hoosier",
+   "box": [
+    801.5,
+    476,
+    72,
+    21
+   ],
+   "fill": "#ffffff"
+  }
+ ]
 }

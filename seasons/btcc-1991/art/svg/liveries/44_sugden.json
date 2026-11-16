@@ -1,7 +1,7 @@
 {
  "model": "bmw_m3_e30",
  "title": "#44 Tim Sugden, Mobil BMW Team BMW M3, BTCC 1991",
- "note": "Base livery measured on Getty LAT 2201201184 (Palmer #22, Silverstone 1 April 1991, near side-on, left side) with a pixel grid (x by wheel positions, y by window line to sill) and checked with --compare --refwheels; also checked on Super Touring Register 4695/4696/4726, the left frames B_left_tv_BTCC 1991 Round 3 Pt 3_00-00-16 and Season Review 01-00-18, and the TV drawings A_v13_19-12_cap_palmer / A_v13_03-52_cap_soper. BMW M stripe band (red/blue) under the window line, falling slightly toward the nose: red, blue (into the front arch), red, blue down behind the front wheel; at the rear a red and a blue stripe drop to the sill ahead of the rear wheel, then red and blue pieces to the tail. BMW Finance on the front wing, ESSO-headed white number board, Mobil (red o) and a black '1' box on the doors, name in white on the rear side window. Wheels: gold 7-spoke from the standing pit photo 'Getty LAT Images - Snetterton 14 April 1991 - Tim Sugden sits in his BMW M3 in the pits with Jonathan Palmer in his BMW M3 alongside' (2201201221). Small sill stickers left out except PIRELLI. Sugden shared #44 with Soper and Danner; STR 4726 shows #44 with his name, same livery.",
+ "note": "Base livery measured on Getty LAT 2201201184 (Palmer #22, Silverstone 1 April 1991, near side-on, left side) with a pixel grid (x by wheel positions, y by window line to sill) and checked with --compare --refwheels; also checked on Super Touring Register 4695/4696/4726, the left frames B_left_tv_BTCC 1991 Round 3 Pt 3_00-00-16 and Season Review 01-00-18, and the TV drawings A_v13_19-12_cap_palmer / A_v13_03-52_cap_soper. BMW M stripe band (red/blue) under the window line, falling slightly toward the nose: red, blue (into the front arch), red, blue down behind the front wheel; at the rear a red and a blue stripe drop to the sill ahead of the rear wheel, then red and blue pieces to the tail. BMW Finance on the front wing, ESSO-headed white number board, Mobil (red o) and a black '1' box on the doors, name in white on the rear side window. Wheels: gold 7-spoke from the standing pit photo 'Getty LAT Images - Snetterton 14 April 1991 - Tim Sugden sits in his BMW M3 in the pits with Jonathan Palmer in his BMW M3 alongside' (2201201221). Small sill stickers left out except PIRELLI. Sugden shared #44 with Soper and Danner; STR 4726 shows #44 with his name, same livery. QA round: BMW Finance on the front wing is black, not blue (Sutton 2175995174, car standing, zoomed). Logos (2026-11-16): Mobil 1 is now the real Mobil 1 lockup (Mobil with the red o and the black 1 box; its proportions match LAT 2201201184), PIRELLI on the sill is the real long-P wordmark, and the missing Champion bow-tie and BILSTEIN on the sill and the red PIRELLI on the front and rear bumper corners are added (LAT 2201201184, 2201221498). BMW Finance stays lettering (no logo exists). BILSTEIN stays lettering: on the car it is dark letters on white, not the saved blue-box logo. Not added: the small boxed prodrive at the bottom of the rear side glass (medium-high confidence, and the saved prodrive logo is not proven for 1991) and the dark sill sticker after PIRELLI (not readable).",
  "base": "#ffffff",
  "rim": "#a8893a",
  "wheel": "star",
@@ -213,12 +213,13 @@
   },
   {
    "rect": [
-    1470,
-    376,
-    113,
-    138
+    820,
+    650,
+    112,
+    30
    ],
-   "fill": "#111111"
+   "fill": "#ffffff",
+   "r": 2
   }
  ],
  "texts": [
@@ -227,7 +228,7 @@
    "x": 500,
    "y": 330,
    "size": 48,
-   "fill": "#1d2a88",
+   "fill": "#111111",
    "w": 400,
    "rot": -5,
    "font": "Arial, Helvetica, sans-serif"
@@ -260,50 +261,13 @@
    "font": "Arial Narrow, Arial, sans-serif"
   },
   {
-   "t": "M",
-   "x": 1058,
-   "y": 514,
-   "size": 186,
-   "fill": "#1d2a88",
-   "anchor": "start",
-   "w": 128,
-   "font": "Arial, Helvetica, sans-serif"
-  },
-  {
-   "t": "o",
-   "x": 1193,
-   "y": 514,
-   "size": 186,
-   "fill": "#e3301f",
-   "anchor": "start",
-   "w": 76,
-   "font": "Arial, Helvetica, sans-serif"
-  },
-  {
-   "t": "bil",
-   "x": 1276,
-   "y": 514,
-   "size": 186,
-   "fill": "#1d2a88",
-   "anchor": "start",
-   "w": 157,
-   "font": "Arial, Helvetica, sans-serif"
-  },
-  {
-   "t": "1",
-   "x": 1527,
-   "y": 500,
-   "size": 140,
-   "fill": "#ffffff",
-   "font": "Arial, Helvetica, sans-serif"
-  },
-  {
-   "t": "PIRELLI",
-   "x": 1070,
-   "y": 676,
-   "size": 28,
-   "fill": "#111111",
-   "w": 170
+   "t": "BILSTEIN",
+   "x": 876,
+   "y": 674,
+   "size": 22,
+   "fill": "#1f2a5a",
+   "w": 100,
+   "font": "Arial, sans-serif"
   }
  ],
  "over_texts": [
@@ -315,6 +279,56 @@
    "fill": "#ffffff",
    "w": 258,
    "font": "Arial, Helvetica, sans-serif"
+  }
+ ],
+ "logos": [
+  {
+   "logo": "mobil1",
+   "box": [
+    1053,
+    382,
+    535,
+    126
+   ]
+  },
+  {
+   "logo": "pirelli",
+   "box": [
+    990,
+    648,
+    165,
+    34
+   ],
+   "fill": "#111111"
+  },
+  {
+   "logo": "champion",
+   "box": [
+    705,
+    648,
+    75,
+    34
+   ]
+  },
+  {
+   "logo": "pirelli",
+   "box": [
+    105,
+    542,
+    135,
+    30
+   ],
+   "fill": "#d7192b"
+  },
+  {
+   "logo": "pirelli",
+   "box": [
+    2040,
+    520,
+    100,
+    26
+   ],
+   "fill": "#d7192b"
   }
  ]
 }

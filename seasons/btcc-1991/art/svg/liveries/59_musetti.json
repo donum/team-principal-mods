@@ -5734,14 +5734,13 @@
    "fill": "#d0202a"
   },
   {
-   "circle": [
-    1860,
-    330,
-    28
+   "rect": [
+    2178,
+    543,
+    152,
+    26
    ],
-   "fill": "#f6c400",
-   "stroke": "#d0202a",
-   "sw": 5
+   "fill": "#111111"
   }
  ],
  "texts": [
@@ -5754,30 +5753,59 @@
    "w": 130
   },
   {
-   "t": "Shell",
-   "x": 1860,
-   "y": 408,
-   "size": 58,
-   "fill": "#d0202a",
-   "w": 150,
+   "t": "British Touring",
+   "x": 882,
+   "y": 424,
+   "size": 17,
+   "fill": "#000",
+   "w": 140,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 882,
+   "y": 443,
+   "size": 17,
+   "fill": "#000",
+   "w": 160,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "CORBEAU",
+   "x": 1245,
+   "y": 352,
+   "size": 24,
+   "fill": "#222",
+   "w": 180,
    "font": "Arial, sans-serif"
   },
   {
-   "t": "YOKOHAMA",
-   "x": 1290,
-   "y": 688,
-   "size": 44,
-   "fill": "#222",
-   "w": 280,
-   "font": "Arial, sans-serif"
+   "t": "Witch",
+   "x": 2222,
+   "y": 402,
+   "size": 32,
+   "fill": "#111",
+   "w": 96.0,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Sign Co",
+   "x": 2222,
+   "y": 435.6,
+   "size": 28.8,
+   "fill": "#111",
+   "w": 96.0,
+   "font": "Georgia, Times New Roman, serif"
   }
  ],
  "number": {
   "rect": [
    785,
-   418,
+   452,
    200,
-   200
+   170
   ],
   "n": "59",
   "bg": "#ffffff",
@@ -5796,5 +5824,78 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Musetti drove #59 at round 11 (Donington, 15 September), when it was white with scattered navy, red, pink and blue stars over the front wing, doors and rear quarter, Esso and 59 on the front door, Shell on the rear quarter, Yokohama on the sill. Based on the nose-left Getty photo of that day (2201200928); star areas, number board and Shell measured on it against the wheel centres. The stars are drawn as a pattern of the same density and colours, not star by star. No TV caption drawing of this version. Wheels: silver many-slot, from the same photo (on track); no standing photo found."
+ "note": "Musetti drove #59 at round 11 (Donington, 15 September), when it was white with scattered navy, red, pink and blue stars over the front wing, doors and rear quarter, Esso and 59 on the front door, Shell on the rear quarter, Yokohama on the sill. Based on the nose-left Getty photo of that day (2201200928); star areas, number board and Shell measured on it against the wheel centres. The stars are drawn as a pattern of the same density and colours, not star by star. No TV caption drawing of this version. Wheels: silver many-slot, from the same photo (on track); no standing photo found. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): the Shell pecten and Shell wordmark, the YOKOHAMA sill logo with its red Y, and the Yokohama and CHAMPION stickers on the rear bumper are now real logos (rear stickers added), from Getty LAT 2201200928. CORBEAU (top of the front door) and Witch Sign Co (rear quarter) are added as lettering: there is no 1991 Corbeau logo file and no Witch Sign Co logo, and its witch figure is left out. The small round sticker on the rear bumper (dark disc, white bird) is left out: its brand is not known.",
+ "logos": [
+  {
+   "logo": "shell_pecten",
+   "box": [
+    1824,
+    292,
+    72,
+    67
+   ]
+  },
+  {
+   "logo": "shell_wordmark",
+   "box": [
+    1780,
+    372,
+    160,
+    34
+   ]
+  },
+  {
+   "logo": "yokohama",
+   "box": [
+    1125,
+    654,
+    269.5,
+    36
+   ],
+   "fill": "#222222",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    1125,
+    654,
+    58.1,
+    36
+   ],
+   "fill": "#d7192b",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama",
+   "box": [
+    2181.0,
+    546.2,
+    146,
+    19.5
+   ],
+   "fill": "#ffffff",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    2181.0,
+    546.2,
+    31.5,
+    19.5
+   ],
+   "fill": "#d7192b",
+   "align": "xMin"
+  },
+  {
+   "logo": "champion",
+   "box": [
+    2185,
+    571,
+    130,
+    40
+   ]
+  }
+ ]
 }

@@ -145,44 +145,6 @@
    "fill": "none",
    "stroke": "#d7192b",
    "sw": 4
-  },
-  {
-   "circle": [
-    1136,
-    356,
-    77
-   ],
-   "fill": "#d7192b"
-  },
-  {
-   "circle": [
-    1136,
-    356,
-    58
-   ],
-   "fill": "#ffffff"
-  },
-  {
-   "path": "M1105,395 L1112,350 L1100,325 L1128,318 L1150,330 L1168,322 L1160,348 L1172,372 L1150,368 L1140,395 Z",
-   "fill": "#d7192b"
-  },
-  {
-   "rect": [
-    2120,
-    250,
-    72,
-    84
-   ],
-   "fill": "#111111"
-  },
-  {
-   "rect": [
-    255,
-    552,
-    30,
-    36
-   ],
-   "fill": "#111111"
   }
  ],
  "texts": [
@@ -214,15 +176,6 @@
    "font": "Arial Narrow, Arial, sans-serif"
   },
   {
-   "t": "VAUXHALL",
-   "x": 1463,
-   "y": 328,
-   "size": 80,
-   "fill": "#4c5662",
-   "w": 493,
-   "font": "Arial, sans-serif"
-  },
-  {
    "t": "Sport",
    "x": 1225,
    "y": 410,
@@ -243,23 +196,6 @@
    "font": "Arial, sans-serif"
   },
   {
-   "t": "Mobil",
-   "x": 1960,
-   "y": 332,
-   "size": 135,
-   "fill": "#1c3f94",
-   "w": 300,
-   "font": "Arial, sans-serif"
-  },
-  {
-   "t": "1",
-   "x": 2156,
-   "y": 322,
-   "size": 82,
-   "fill": "#ffffff",
-   "font": "Arial Black, Arial, sans-serif"
-  },
-  {
    "t": "Daily Express",
    "x": 250,
    "y": 385,
@@ -267,15 +203,6 @@
    "fill": "#2a3f8f",
    "w": 230,
    "font": "Georgia, Times New Roman, serif"
-  },
-  {
-   "t": "Mobil",
-   "x": 200,
-   "y": 585,
-   "size": 44,
-   "fill": "#1c3f94",
-   "w": 100,
-   "font": "Arial, sans-serif"
   },
   {
    "t": "DUNLOP",
@@ -288,11 +215,14 @@
    "font": "Georgia, Times New Roman, serif"
   },
   {
-   "t": "1",
-   "x": 270,
-   "y": 583,
-   "size": 30,
-   "fill": "#ffffff"
+   "t": "DUNLOP",
+   "x": 90,
+   "y": 586,
+   "size": 26,
+   "fill": "#111111",
+   "w": 100,
+   "italic": true,
+   "font": "Georgia, Times New Roman, serif"
   }
  ],
  "over_texts": [
@@ -306,5 +236,53 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Same Vauxhall Sport scheme as Cleland's #5 (05_cleland.json, measured on STR 4718), with 56 on the number board and Berridge on the rear door window. Checked on the Super Touring Register photos of Berridge's car: 4716 (near side-on, right side, mirrored for the number and name sizes: two narrower digits, name about 300 model px wide), 3368 (standing in the paddock, front left three-quarter: same front, Mobil 1 on the rear quarter) and 4714 (in the garage, rear: Mobil 1, Sport band, Philips Car Stereo as on #5), and the Getty photo at Silverstone (6 October, 2201200726, right side). No differences from #5 found apart from number and name. TV caption drawings: only two blurry ones (round 12 Thruxton), consistent with the scheme. Wheels: gold BBS-style cross-spoke with polished lip, from the standing photo STR 3368."
+ "note": "Same Vauxhall Sport scheme as Cleland's #5 (05_cleland.json, measured on STR 4718), with 56 on the number board and Berridge on the rear door window. Checked on the Super Touring Register photos of Berridge's car: 4716 (near side-on, right side, mirrored for the number and name sizes: two narrower digits, name about 300 model px wide), 3368 (standing in the paddock, front left three-quarter: same front, Mobil 1 on the rear quarter) and 4714 (in the garage, rear: Mobil 1, Sport band, Philips Car Stereo as on #5), and the Getty photo at Silverstone (6 October, 2201200726, right side). No differences from #5 found apart from number and name. TV caption drawings: only two blurry ones (round 12 Thruxton), consistent with the scheme. Wheels: gold BBS-style cross-spoke with polished lip, from the standing photo STR 3368. QA round: VAUXHALL lowered and a little smaller so it no longer touches the rear door window line (gap as on STR 4717 and Getty LAT 2201201013). Logos (2026-11-16): the Vauxhall griffin roundel, VAUXHALL, both Mobil 1 decals and the Daily Express crusader (added above the paper name) are now the real logos, and the black DUNLOP added ahead of the front Mobil 1; Sport (Vauxhall Sport script), Philips Car Stereo (mixed-case red lettering, not the PHILIPS logo), Daily Express (the logo file is today's all-caps masthead) and both DUNLOP decals (the file adds the flying D, not seen on the car) stay text; the rear bumper CHAMPION (medium), black oval, triangle and wing shield are left out (unidentified). Berridge's left side is not pictured; logos placed as on #5.",
+ "logos": [
+  {
+   "logo": "vauxhall_emblem",
+   "box": [
+    1059,
+    279,
+    154,
+    154
+   ]
+  },
+  {
+   "logo": "vauxhall_wordmark",
+   "box": [
+    1216.5,
+    278,
+    493,
+    59
+   ],
+   "fill": "#4c5662"
+  },
+  {
+   "logo": "mobil1",
+   "box": [
+    1810,
+    245,
+    382,
+    90
+   ]
+  },
+  {
+   "logo": "mobil1",
+   "box": [
+    148,
+    561,
+    116,
+    28
+   ]
+  },
+  {
+   "logo": "daily_express_crusader",
+   "box": [
+    420,
+    298,
+    50,
+    52
+   ]
+  }
+ ]
 }

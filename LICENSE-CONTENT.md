@@ -74,14 +74,18 @@ trademarks, which belong to their owners.
   (CC BY-SA).
 - Vauxhall Cavalier: from Oliver Pohlmann's "DTM 1993 Ian Khan" (Wikimedia
   Commons, CC BY-SA 3.0 DE).
-- BMW 318is, Nissan Primera, Peugeot 405: traced from Wikimedia Commons photos
-  by Kakoula10 (CC BY-SA 4.0), Solomon203 (CC BY-SA 3.0) and Martin Lee
-  (CC BY-SA 2.0).
-- Toyota Carina, Ford Sierra Sapphire, Mitsubishi Lancer, Rover 216 and
-  Vauxhall Belmont: traced from period race photos (Getty/LAT, Getty/Sutton,
-  Super Touring Register, TouringCarTimes) whose owners have not yet given
-  permission. These five outlines stay out of published packs until they do,
-  or until they are redrawn from a free source.
+- BMW 318is, Nissan Primera, Peugeot 405, Mitsubishi Lancer and Rover 216:
+  traced from Wikimedia Commons photos by Kakoula10 (CC BY-SA 4.0),
+  Solomon203 (CC BY-SA 3.0), 328cia (public domain), BxHxTxCx (CC BY-SA 2.0)
+  and Dr Neil Clifton (geograph.org.uk, CC BY-SA 2.0).
+- Vauxhall Belmont: middle traced from a Daewoo Cielo photo by Navigator84
+  (Wikimedia Commons, CC BY-SA 4.0), ends drawn to Kadett E dimensions with
+  a photo by TuRbO_J (CC BY 2.0) and two public-domain photos by Charles01.
+- Toyota Carina and Ford Sierra Sapphire: traced from period photos used as
+  shape references (Carina: Getty/Sutton race photo; Sapphire: a Ford Sierra
+  Sapphire Cosworth side photo of unknown licence, checked against Getty/LAT
+  race photos). No photo pixels are in the drawings; the outlines are redrawn
+  by hand. The pack ships them by the maintainer's decision (2026-11-16).
 
 The drawings are CC BY-SA 4.0. Liveries were read from TV broadcasts and
 photos (private references, not shipped) and show real sponsor trademarks.

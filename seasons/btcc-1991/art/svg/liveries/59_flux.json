@@ -389,9 +389,9 @@
   {
    "rect": [
     770,
-    338,
+    330,
     225,
-    48
+    46
    ],
    "fill": "#d0202a"
   }
@@ -400,18 +400,38 @@
   {
    "t": "ESSO",
    "x": 882,
-   "y": 376,
-   "size": 42,
+   "y": 368,
+   "size": 40,
    "fill": "#ffffff",
    "w": 130
+  },
+  {
+   "t": "British Touring",
+   "x": 882,
+   "y": 393,
+   "size": 15,
+   "fill": "#000",
+   "w": 130,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 882,
+   "y": 409,
+   "size": 15,
+   "fill": "#000",
+   "w": 150,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
   }
  ],
  "number": {
   "rect": [
    780,
-   400,
+   414,
    205,
-   200
+   186
   ],
   "n": "59",
   "bg": "#ffffff",
@@ -430,5 +450,5 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Flux's early-season look (rounds 1, 3-5): white M3 with three groups of black slashes under the side windows and three along the sill, black 59 on the front door under the Esso board. Based on the TV caption drawings (round 3 Donington, round 4 Thruxton, round 7 Silverstone; all blurry, slash positions measured on the round 3 drawing against its wheel centres) and the round 3 broadcast frame (front-right: the same slash rows, 59 without a dark board). No nose-left photo of this version. The Super Touring Register photo of Flux (4697, other side) shows a different scheme (red ABSAAR across the doors, 'Battery Chargers', Halfords on the rear quarter): probably his late-season car (round 13), not drawn. Sponsor names on this early car are not legible in any reference. Wheels: silver mesh as in the round 3 frame and STR 4697 (both on track); no standing photo found."
+ "note": "Flux's early-season look (rounds 1, 3-5): white M3 with three groups of black slashes under the side windows and three along the sill, black 59 on the front door under the Esso board. Based on the TV caption drawings (round 3 Donington, round 4 Thruxton, round 7 Silverstone; all blurry, slash positions measured on the round 3 drawing against its wheel centres) and the round 3 broadcast frame (front-right: the same slash rows, 59 without a dark board). No nose-left photo of this version. The Super Touring Register photo of Flux (4697, other side) shows a different scheme (red ABSAAR across the doors, 'Battery Chargers', Halfords on the rear quarter): probably his late-season car (round 13), not drawn. Sponsor names on this early car are not legible in any reference. Wheels: silver mesh as in the round 3 frame and STR 4697 (both on track); no standing photo found. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): no sponsor logo is readable on the left side of this early car, so none is added; the ESSO board now has 'British Touring / Car Championship' on two lines as on every 1991 board. The CRAWLEY sticker (right side only, unreadable) is left out. 2026-11-16: left-side photo found: supertouring.co.uk 1991 entrants gallery page 5, 'flux_91.jpg' (https://web.archive.org/web/2012/http://www.supertouring.co.uk/gallery/1991_entrants_5.html, 230x160, front 3/4, saved in teams/_series/ask_permission/on_track). It confirms the drawing (white car, three dark slash groups under the side windows and three along the sill, ESSO header with 59 below it at the front of the door, silver mesh wheels, plain rear quarter); at that size each slash group is one dark block, so the slash shapes and positions are not refined. A yellow 'Unleaded' sun strip on the windscreen and a small dark word on the front wing are unreadable; no livery change."
 }

@@ -8,7 +8,7 @@
  "shapes": [
   {
    "rect": [
-    813.5,
+    802.6,
     325.1,
     237.6,
     259.9
@@ -17,7 +17,7 @@
   },
   {
    "rect": [
-    813.5,
+    802.6,
     325.1,
     237.6,
     36.3
@@ -26,7 +26,7 @@
   },
   {
    "rect": [
-    822.9,
+    812.0,
     407.2,
     218.8,
     176.3
@@ -39,7 +39,7 @@
  "texts": [
   {
    "t": "ESSO",
-   "x": 932.3,
+   "x": 921.4,
    "y": 356.3,
    "size": 34.5,
    "fill": "#ffffff",
@@ -47,7 +47,7 @@
   },
   {
    "t": "British Touring",
-   "x": 941.8,
+   "x": 930.9,
    "y": 380.6,
    "size": 15.6,
    "fill": "#000",
@@ -57,7 +57,7 @@
   },
   {
    "t": "Car Championship",
-   "x": 941.8,
+   "x": 930.9,
    "y": 399.9,
    "size": 15.6,
    "fill": "#000",
@@ -66,7 +66,7 @@
   },
   {
    "t": "13",
-   "x": 932.3,
+   "x": 921.4,
    "y": 558.8,
    "size": 162.2,
    "fill": "#000",
@@ -75,7 +75,7 @@
   },
   {
    "t": "Angus MacKay",
-   "x": 682.6,
+   "x": 667.2,
    "y": 347.6,
    "size": 18.7,
    "fill": "#1a1a1a",
@@ -83,27 +83,42 @@
    "font": "Brush Script MT, Segoe Script, cursive",
    "weight": "normal",
    "italic": true
-  },
-  {
-   "t": "YOKOHAMA",
-   "x": 1555.0,
-   "y": 617.1,
-   "size": 17.3,
-   "fill": "#1a1a1a",
-   "w": 131.8,
-   "font": "Arial, sans-serif"
   }
  ],
  "over_texts": [
   {
    "t": "MacKay",
-   "x": 1619.0,
-   "y": 231.5,
+   "x": 1592,
+   "y": 235,
    "size": 54.4,
    "fill": "#ffffff",
    "w": 150.4,
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Low to medium confidence. Same R&D Motorsport car as Lyall's (Super Touring Register 4694, mirrored, measured for board and stickers). MacKay's own reference is Getty LAT 2201201282 (Snetterton round 2, front 3/4 from the right): white car, ESSO board on the door, green and red stripe across the bonnet (not visible from the side), a sponsor band on the windscreen (not readable), small stickers on the wing that cannot be read. The side details are therefore taken from the later Lyall photo. Wheels as Lyall's car (bronze mesh, polished lip), not confirmed for rounds 1-2."
+ "note": "Low to medium confidence. Same R&D Motorsport car as Lyall's (Super Touring Register 4694, mirrored, measured for board and stickers). MacKay's own reference is Getty LAT 2201201282 (Snetterton round 2, front 3/4 from the right): white car, ESSO board on the door, green and red stripe across the bonnet (not visible from the side), a sponsor band on the windscreen (not readable), small stickers on the wing that cannot be read. The side details are therefore taken from the later Lyall photo. Wheels as Lyall's car (bronze mesh, polished lip), not confirmed for rounds 1-2. Logos (2026-11-16): YOKOHAMA is now the real logo (dark word, red Y mark, as on the right side in STR 4694; the left side is not seen, so it stays mirrored). The Champion bow-tie on the rear quarter seen on the right side on 14 July (LAT 2201200989) is not added: right side only and date-dependent. 2026-11-16: searched again (Getty/LAT, Super Touring Register driver 1580 has no pictures, supertouring.co.uk 1991 gallery, Peter Still 1991 album, Autosport forum '1991 BTCC'): no photo of MacKay's car at rounds 1-2. The only new R&D #13 picture is Lyall's car, right side (supertouring.co.uk gallery page 2, 'lyall_01.jpg', saved in teams/_series/ask_permission/on_track); no change. 2026-11-17: moved onto the new hand-traced 318is outline (user side photos, model_refs/bmw318is_hand.py) by landmarks (model_refs/bmw318is_remap.py); window name re-centred on the new rear side window.",
+ "logos": [
+  {
+   "logo": "yokohama",
+   "box": [
+    1439.6,
+    604,
+    165,
+    22.0
+   ],
+   "fill": "#1a1a1a",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    1439.6,
+    604,
+    35.6,
+    22.0
+   ],
+   "fill": "#d8202a",
+   "align": "xMin"
+  }
+ ]
 }

@@ -167,9 +167,46 @@
      443
     ]
    ],
-   "fill": "#ffffff",
-   "stroke": "#d8202a",
-   "sw": 4
+   "fill": "#d8202a"
+  },
+  {
+   "rect": [
+    2100,
+    388,
+    180,
+    5
+   ],
+   "fill": "#2a4fc0"
+  },
+  {
+   "rect": [
+    2100,
+    428,
+    180,
+    5
+   ],
+   "fill": "#2a4fc0"
+  },
+  {
+   "poly": [
+    [
+     2190,
+     372
+    ],
+    [
+     2204,
+     390
+    ],
+    [
+     2190,
+     446
+    ],
+    [
+     2176,
+     390
+    ]
+   ],
+   "fill": "#2a4fc0"
   }
  ],
  "texts": [
@@ -182,11 +219,31 @@
    "w": 120
   },
   {
+   "t": "British Touring",
+   "x": 852,
+   "y": 398,
+   "size": 18,
+   "fill": "#000",
+   "w": 140,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 852,
+   "y": 419,
+   "size": 18,
+   "fill": "#000",
+   "w": 160,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
    "t": "Midland",
    "x": 1125,
    "y": 404,
    "size": 34,
-   "fill": "#000",
+   "fill": "#ffffff",
    "w": 200,
    "rot": -16,
    "italic": true
@@ -214,13 +271,34 @@
    "font": "Arial Black, Arial, sans-serif"
   },
   {
-   "t": "UNISYS",
+   "t": "GENESIS",
    "x": 2190,
-   "y": 345,
-   "size": 50,
-   "fill": "#1a2a6c",
-   "w": 220,
-   "font": "Times New Roman, serif"
+   "y": 422,
+   "size": 30,
+   "fill": "#ffffff",
+   "w": 170,
+   "font": "Arial, sans-serif",
+   "weight": "normal",
+   "stroke": "#24408f",
+   "sw": 3
+  },
+  {
+   "t": "Witch",
+   "x": 205,
+   "y": 455,
+   "size": 22,
+   "fill": "#111",
+   "w": 66.0,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Sign Co",
+   "x": 205,
+   "y": 478.1,
+   "size": 19.8,
+   "fill": "#111",
+   "w": 66.0,
+   "font": "Georgia, Times New Roman, serif"
   }
  ],
  "number": {
@@ -246,5 +324,52 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "White M3 with the diagonal Auto Trader scheme: blue lower front, red wedge under 'Trader', blue band over the rear quarter to the tail, number on the front door with the Esso board above, 'Midland' bar and red/blue bars ahead of 'Auto'. Layout from the TV caption drawings of #66/#77 and the nose-left frames (season review: Whale #66 and Baird #77); positions and sizes of Auto Trader, number and bands measured on the nose-left Getty photo of Leslie (Silverstone 14 July, 2201222185) against the wheelbase and window line. The near-side front wing text and rear-quarter decals vary between rounds; small stickers left out. Leslie drove it at round 7 (Silverstone GP): the Getty photos of that day show no 'rhythm of the city' on the wing, so it is left out. Wheels: BBS mesh as on Whale's car (the B/W Getty photo shows the mesh; colour from the colour shots of Whale); no standing photo found."
+ "note": "White M3 with the diagonal Auto Trader scheme: blue lower front, red wedge under 'Trader', blue band over the rear quarter to the tail, number on the front door with the Esso board above, 'Midland' bar and red/blue bars ahead of 'Auto'. Layout from the TV caption drawings of #66/#77 and the nose-left frames (season review: Whale #66 and Baird #77); positions and sizes of Auto Trader, number and bands measured on the nose-left Getty photo of Leslie (Silverstone 14 July, 2201222185) against the wheelbase and window line. The near-side front wing text and rear-quarter decals vary between rounds; small stickers left out. Leslie drove it at round 7 (Silverstone GP): the Getty photos of that day show no 'rhythm of the city' on the wing, so it is left out. Wheels: BBS mesh as on Whale's car (the B/W Getty photo shows the mesh; colour from the colour shots of Whale); no standing photo found. QA round: Genesis logo added under UNISYS on the rear quarter (Getty LAT 2201222185, zoomed). QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): UNISYS is now the real Unisys logo (red, as on the colour photos of the team cars; the B/W photo cannot show the colour), 'Midland' is now white on a red bar as on STR 4702, and Mobil 1 (front corner), PIRELLI (front spoiler and rear bumper) and CHAMPION (rear bumper) are added as real logos, from Getty LAT 2201222185. Witch Sign Co is added as lettering on the front wing. Auto Trader, Midland and GENESIS stay drawn: no logo files exist. Left out: the front-wing logo with three stripes and three rings and the small round sticker on the rear bumper (both unidentified).",
+ "logos": [
+  {
+   "logo": "unisys",
+   "box": [
+    2095,
+    296,
+    190,
+    56
+   ]
+  },
+  {
+   "logo": "mobil1",
+   "box": [
+    28,
+    522,
+    84,
+    36
+   ]
+  },
+  {
+   "logo": "pirelli",
+   "box": [
+    95,
+    602,
+    130,
+    28
+   ]
+  },
+  {
+   "logo": "pirelli",
+   "box": [
+    2080,
+    574,
+    160,
+    28
+   ]
+  },
+  {
+   "logo": "champion",
+   "box": [
+    2060,
+    604,
+    100,
+    34
+   ]
+  }
+ ]
 }

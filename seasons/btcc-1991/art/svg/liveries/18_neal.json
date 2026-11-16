@@ -11,9 +11,18 @@
   {
    "rect": [
     0,
-    515,
-    2400,
-    133
+    566,
+    262,
+    104
+   ],
+   "fill": "#e8b62a"
+  },
+  {
+   "rect": [
+    2005,
+    524,
+    400,
+    94
    ],
    "fill": "#e8b62a"
   },
@@ -29,48 +38,91 @@
   {
    "rect": [
     772,
-    328,
-    236,
-    50
+    368,
+    232,
+    42
    ],
    "fill": "#d71920"
-  },
-  {
-   "circle": [
-    2060,
-    375,
-    38
-   ],
-   "fill": "#f6c400",
-   "stroke": "#d71920",
-   "sw": 6
   }
  ],
  "texts": [
   {
    "t": "ESSO",
-   "x": 890,
-   "y": 368,
-   "size": 42,
+   "x": 888,
+   "y": 402,
+   "size": 38,
    "fill": "#ffffff",
-   "w": 130
+   "w": 120
   },
   {
-   "t": "Shell",
-   "x": 2060,
-   "y": 455,
-   "size": 42,
+   "t": "aluminium",
+   "x": 270,
+   "y": 410,
+   "size": 28,
    "fill": "#ffffff",
-   "w": 115,
+   "w": 220,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "VAW",
+   "x": 596,
+   "y": 451,
+   "size": 128,
+   "fill": "#5cb8e0",
+   "w": 255,
+   "italic": true
+  },
+  {
+   "t": "100+",
+   "x": 1331,
+   "y": 566,
+   "size": 175,
+   "fill": "#e2231a",
+   "w": 430,
+   "stroke": "#ffffff",
+   "sw": 8
+  },
+  {
+   "t": "WHEELS",
+   "x": 1316,
+   "y": 622,
+   "size": 46,
+   "fill": "#e2231a",
+   "w": 290
+  },
+  {
+   "t": "British Gas",
+   "x": 2050,
+   "y": 376,
+   "size": 50,
+   "fill": "#5cb8e0",
+   "w": 300,
    "font": "Arial, sans-serif"
+  },
+  {
+   "t": "RESOURCE",
+   "x": 2060,
+   "y": 430,
+   "size": 38,
+   "fill": "#e2231a",
+   "w": 330
+  },
+  {
+   "t": "H & J SPEAKE",
+   "x": 825,
+   "y": 681,
+   "size": 30,
+   "fill": "#ffffff",
+   "w": 270
   }
  ],
  "number": {
   "rect": [
    772,
-   380,
-   236,
-   268
+   410,
+   232,
+   218
   ],
   "n": "18",
   "bg": "#ffffff",
@@ -79,14 +131,58 @@
  },
  "over_texts": [
   {
+   "t": "British Touring",
+   "x": 890,
+   "y": 427,
+   "size": 15,
+   "fill": "#000",
+   "w": 140,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 890,
+   "y": 443,
+   "size": 15,
+   "fill": "#000",
+   "w": 160,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
    "t": "Neal",
-   "x": 1570,
-   "y": 125,
+   "x": 1530,
+   "y": 178,
    "size": 48,
    "fill": "#ffffff",
    "w": 136,
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Very dark blue (almost black) M3 with a yellow band along the lower body from bumper to bumper and a blue band under it on the sill, big white number board with the red Esso header on the front door, Shell on the rear quarter. Band heights and the number board measured on the nose-left Super Touring Register photo of Fenwick #18 (6216, Thruxton) against the wheelbase and door, and checked with the STR photo of Hall #18 (4723, other side: Shell, Dunlop, yellow and blue bands) and the Getty front view of Fenwick (Thruxton 22 September, 2201200918: yellow front bumper with a blue lip). TV caption drawings (round 12 Thruxton) are dark and blurry: black car, large white number board, yellow marks low down. Wheels: bronze/gold BBS mesh with a polished lip, from the Hall STR photo (on track); no standing photo of this car found. Neal drove #18 at round 7 (Silverstone GP, his BTCC debut). Only a Getty rear view of that day exists (2201221866): British Gas and Resource on the rear screen, Cosack (UK) Ltd and Taco on the boot panel, so his side lettering is unknown: the door is left plain and the Shell roundel copied from Hall's car."
+ "note": "Medium confidence. 2026-11-16: side redrawn from a left-side photo of Neal's #18 at round 7 (Silverstone GP, his BTCC debut): supertouring.co.uk 1991 entrants gallery page 3, 'neal_91.jpg', credited (c) www.mattneal.co.uk (https://web.archive.org/web/2012/http://www.supertouring.co.uk/gallery/1991_entrants_3.html, image http://www.supertouring.co.uk/gallery/1991/neal_91.jpg, 230x160, saved in teams/Pyramid Motorsport/ask_permission/on_track). Near side-on, so positions were scaled from the wheel centres. It shows: dark body down to the sill (no yellow band on the doors), yellow only on the front and rear bumpers, blue sill band with H & J SPEAKE in white; 'aluminium' (small, white) and a big light blue VAW on the front wing; ESSO board with 18 at the front of the door; a big red 100+ with a white edge and WHEELS under it on the door; YOKOHAMA in white with the red Y chevron, then British Gas (light blue) and RESOURCE (red) on the rear quarter; Neal in white on the rear side window; gold mesh wheels with polished lips. No Shell roundel on this side at round 7, so it was removed. The small white stickers behind the front wheel and above 100+ are unreadable and not drawn. Rear view (Getty LAT 2201221866): British Gas and Resource on the rear screen, Cosack (UK) Ltd and Taco on the boot. Body colour kept as the very dark blue of the Fenwick photo (Super Touring Register 6216); in the Neal photo it reads black. Logos: real Yokohama wordmark and chevron; the rest stays lettering (no VAW, 100+ Wheels, Speake or Resource logo; the saved British Gas logo has the flame roundel, which this photo does not show clearly).",
+ "logos": [
+  {
+   "logo": "yokohama",
+   "box": [
+    1520,
+    342,
+    340,
+    45
+   ],
+   "fill": "#ffffff",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    1520,
+    342,
+    73,
+    45
+   ],
+   "fill": "#e2231a",
+   "align": "xMin"
+  }
+ ]
 }

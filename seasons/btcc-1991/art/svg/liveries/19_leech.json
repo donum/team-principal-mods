@@ -3,50 +3,8 @@
  "title": "#19 Dennis Leech, Judge Developments + Partservice Ford Sierra RS500, BTCC 1991",
  "base": "#ffffff",
  "wheel": "cross",
- "rim": "#d8d8d8",
+ "rim": "#3c3c3c",
  "shapes": [
-  {
-   "poly": [
-    [
-     1032.7,
-     325.7
-    ],
-    [
-     1942.9,
-     315.1
-    ],
-    [
-     1942.9,
-     325.0
-    ],
-    [
-     1032.7,
-     335.6
-    ]
-   ],
-   "fill": "#1a1a1a"
-  },
-  {
-   "poly": [
-    [
-     998.8,
-     492.8
-    ],
-    [
-     1676.6,
-     486.0
-    ],
-    [
-     1676.6,
-     493.9
-    ],
-    [
-     998.8,
-     500.6
-    ]
-   ],
-   "fill": "#1a1a1a"
-  },
   {
    "rect": [
     761.6,
@@ -75,6 +33,15 @@
    "fill": "none",
    "stroke": "#d7192b",
    "sw": 4
+  },
+  {
+   "rect": [
+    1150,
+    408,
+    350,
+    64
+   ],
+   "fill": "#f5c400"
   }
  ],
  "texts": [
@@ -115,32 +82,64 @@
    "w": 178.2
   },
   {
-   "t": "JUDGE",
-   "x": 1279.6,
-   "y": 440.8,
-   "size": 55.1,
+   "t": "JUDGE DEVELOPMENTS",
+   "x": 2110.0,
+   "y": 405.0,
+   "size": 24,
    "fill": "#1a1a1a",
-   "w": 387.4,
+   "w": 250,
    "font": "Arial, sans-serif"
   },
   {
-   "t": "DEVELOPMENTS",
-   "x": 1633.0,
-   "y": 433.2,
-   "size": 35.5,
+   "t": "YOKOHAMA",
+   "x": 505.0,
+   "y": 352.0,
+   "size": 26,
    "fill": "#1a1a1a",
-   "w": 300.2,
-   "font": "Arial, sans-serif"
+   "w": 170
   },
   {
-   "t": "PARTSERVICE",
-   "x": 1337.7,
-   "y": 477.6,
-   "size": 23.6,
+   "t": "CHAMPION",
+   "x": 1617.0,
+   "y": 634.0,
+   "size": 19,
+   "fill": "#d7192b",
+   "w": 96
+  },
+  {
+   "t": "PART",
+   "x": 1290.0,
+   "y": 354.0,
+   "size": 54,
+   "fill": "#d7192b",
+   "w": 228,
+   "italic": true
+  },
+  {
+   "t": "SERVICE",
+   "x": 1640.0,
+   "y": 354.0,
+   "size": 54,
+   "fill": "#1a2a5a",
+   "w": 464,
+   "italic": true
+  },
+  {
+   "t": "AUTELA",
+   "x": 1325.0,
+   "y": 459.0,
+   "size": 50,
    "fill": "#1a1a1a",
-   "w": 271.1,
-   "font": "Arial, sans-serif",
-   "weight": "normal"
+   "w": 300
+  },
+  {
+   "t": "The Motor Factors EXETER 215935",
+   "x": 1470.0,
+   "y": 528.0,
+   "size": 30,
+   "fill": "#d7192b",
+   "w": 360,
+   "font": "Arial, sans-serif"
   }
  ],
  "over_texts": [
@@ -154,5 +153,6 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Low confidence. No photo of Leech's car found; drawn from the BBC grid graphics only (A_grid_r03_donington_09 and _sharp_07, A_grid_r04_thruxton_sharp_08; all blurred). They show a white Sierra RS500 with the rear wing, the ESSO number board on the front door, a dark sponsor band at mid-door height with thin dark lines above and below along the doors. The sponsor words are assumed from the entrant name (Judge Developments + Partservice) and are not readable in the graphics; colours other than white and black, the name on the window and the wheels (plain silver cross-spoke) are guesses. Positions: x by the wheel centres, y as share of beltline-to-door-bottom height."
+ "note": "Low to medium confidence. 2026-11-16: first 1991 photo found: supertouring.co.uk 1991 entrants gallery, page 3, 'leech_91.jpg' (https://web.archive.org/web/2012/http://www.supertouring.co.uk/gallery/1991_entrants_3.html, image http://www.supertouring.co.uk/gallery/1991/leech_91.jpg, 230x160, saved in teams/_series/ask_permission/on_track), left side, front 3/4, on track. It shows a white Sierra RS500 with: PARTSERVICE in one word under the side windows (PART red, SERVICE dark blue), from mid-door back over the rear wheel; a yellow AUTELA panel with dark letters at mid-door; a red lettering row lower on the door behind the number (unreadable, drawn as the 1992 car's 'The Motor Factors EXETER 215935'); ESSO board and 19 at the front of the door; a dark word on the front wing (kept as YOKOHAMA from the 1992 car); a red sticker with white letters on the front bumper (front face, not drawn); dark grey cross-spoke wheels with a light lip (the 1992 car had gold wheels). No dark beltline stripe on the photo, so it was removed. Positions read by wheel-centre fractions from a small, foreshortened photo. JUDGE DEVELOPMENTS on the rear quarter and CHAMPION on the sill stay guesses from the 1992 photo (Super Touring Register 4746, https://supertouringregister.com/picture/4746/). Earlier base layout from the BBC grid graphics (A_grid_r03_donington_09, A_grid_r04_thruxton_sharp_08). Also seen: Getty LAT 2201201286 (Oulton Park 1990, white car, front only). Logos: none placed; no logo file for Partservice, Autela or Judge Developments.",
+ "lip": "#e6e6e6"
 }

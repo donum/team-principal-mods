@@ -43,16 +43,6 @@
     9
    ],
    "fill": "#d0202a"
-  },
-  {
-   "circle": [
-    1880,
-    335,
-    30
-   ],
-   "fill": "#f6c400",
-   "stroke": "#d0202a",
-   "sw": 5
   }
  ],
  "texts": [
@@ -63,6 +53,26 @@
    "size": 42,
    "fill": "#ffffff",
    "w": 130
+  },
+  {
+   "t": "British Touring",
+   "x": 882,
+   "y": 408,
+   "size": 17,
+   "fill": "#000",
+   "w": 140,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
+  },
+  {
+   "t": "Car Championship",
+   "x": 882,
+   "y": 427,
+   "size": 17,
+   "fill": "#000",
+   "w": 160,
+   "font": "Arial, sans-serif",
+   "weight": "normal"
   },
   {
    "t": "British Gas",
@@ -109,21 +119,30 @@
    "w": 240
   },
   {
-   "t": "Shell",
-   "x": 1885,
-   "y": 412,
-   "size": 58,
-   "fill": "#d0202a",
-   "w": 150,
-   "font": "Arial, sans-serif"
+   "t": "Witch",
+   "x": 2222,
+   "y": 402,
+   "size": 30,
+   "fill": "#111",
+   "w": 90.0,
+   "font": "Georgia, Times New Roman, serif"
+  },
+  {
+   "t": "Sign Co",
+   "x": 2222,
+   "y": 433.5,
+   "size": 27.0,
+   "fill": "#111",
+   "w": 90.0,
+   "font": "Georgia, Times New Roman, serif"
   }
  ],
  "number": {
   "rect": [
    770,
-   392,
+   436,
    225,
-   220
+   176
   ],
   "n": "59",
   "bg": "#ffffff",
@@ -142,5 +161,34 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Neal drove #59 at round 9 (Oulton Park, 11 August) in the British Gas Resource scheme: white, blue 'British Gas' and red 'RESOURCE' across the doors, 'For industry and commerce' on the sill, Esso and 59 on the front door, '100+ Wheels' on the front wing, Shell on the rear quarter. Only right-side pictures exist (Super Touring Register 4698 and 4699, both 'Neal' on the window); the layout is mirrored to the left side with the text reading normally, and sizes measured on 4698 against the wheelbase and door. The Getty rear view of Neal's #18 at round 7 (2201221866) shows the same British Gas Resource sponsor. No TV caption drawing of this version. Wheels: gold mesh with a polished lip, from STR 4698/4699 (on track); no standing photo found."
+ "note": "Neal drove #59 at round 9 (Oulton Park, 11 August) in the British Gas Resource scheme: white, blue 'British Gas' and red 'RESOURCE' across the doors, 'For industry and commerce' on the sill, Esso and 59 on the front door, '100+ Wheels' on the front wing, Shell on the rear quarter. Only right-side pictures exist (Super Touring Register 4698 and 4699, both 'Neal' on the window); the layout is mirrored to the left side with the text reading normally, and sizes measured on 4698 against the wheelbase and door. The Getty rear view of Neal's #18 at round 7 (2201221866) shows the same British Gas Resource sponsor. No TV caption drawing of this version. Wheels: gold mesh with a polished lip, from STR 4698/4699 (on track); no standing photo found. QA round: the small 'British Touring Car Championship' lines added under the ESSO header, as on every 1991 board in the photos. Logos (2026-11-16): the Shell pecten and Shell wordmark are now real logos, and a CHAMPION logo is added on the sill under the number board (STR 4698, right side, mirrored). British Gas stays lettering: the logo file is the 'British Gas E&P' version, while the car has plain upright letters; the flame symbol after 'Gas' is not drawn because its exact artwork is not readable. RESOURCE, FOR INDUSTRY AND COMMERCE and 100+ WHEELS stay lettering (no logo files). Witch Sign Co is added as lettering on the rear quarter; its witch figure is left out.",
+ "logos": [
+  {
+   "logo": "shell_pecten",
+   "box": [
+    1844,
+    294,
+    72,
+    67
+   ]
+  },
+  {
+   "logo": "shell_wordmark",
+   "box": [
+    1805,
+    376,
+    160,
+    34
+   ]
+  },
+  {
+   "logo": "champion",
+   "box": [
+    820,
+    626,
+    120,
+    46
+   ]
+  }
+ ]
 }

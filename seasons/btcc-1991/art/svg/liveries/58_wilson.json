@@ -15,28 +15,28 @@
  "shapes": [
   {
    "rect": [
-    785.8,
-    387.0,
-    240.0,
-    283.0
+    892.0,
+    397.5,
+    240.8,
+    283.9
    ],
    "fill": "#ffffff"
   },
   {
    "rect": [
-    785.8,
-    387.0,
-    240.0,
-    45.0
+    892.0,
+    397.5,
+    240.8,
+    45.1
    ],
    "fill": "#d7192b"
   },
   {
    "rect": [
-    796.8,
-    480.0,
-    227.0,
-    188.0
+    903.9,
+    487.7,
+    227.7,
+    188.6
    ],
    "fill": "none",
    "stroke": "#d7192b",
@@ -45,43 +45,20 @@
   {
    "poly": [
     [
-     658.8,
-     487.0
+     1830.6,
+     361.4
     ],
     [
-     763.8,
-     487.0
+     2241.5,
+     357.6
     ],
     [
-     763.8,
-     535.0
+     2242.2,
+     423.6
     ],
     [
-     658.8,
-     535.0
-    ]
-   ],
-   "fill": "#ffffff",
-   "stroke": "#d7192b",
-   "sw": 4
-  },
-  {
-   "poly": [
-    [
-     1734.8,
-     359.0
-    ],
-    [
-     2137.8,
-     359.0
-    ],
-    [
-     2137.8,
-     427.0
-    ],
-    [
-     1734.8,
-     427.0
+     1831.2,
+     427.4
     ]
    ],
    "fill": "#1f3f9a"
@@ -89,49 +66,49 @@
   {
    "poly": [
     [
-     1738.8,
-     437.0
+     1835.2,
+     437.1
     ],
     [
-     2141.8,
-     437.0
+     2246.3,
+     433.3
     ],
     [
-     2141.8,
-     458.0
+     2246.5,
+     453.6
     ],
     [
-     1738.8,
-     458.0
+     1835.4,
+     457.5
     ]
    ],
    "fill": "#d7192b"
   },
   {
    "circle": [
-    1736.8,
-    374.0,
-    24.0
+    1832.6,
+    375.9,
+    24.1
    ],
    "fill": "#d7192b"
   },
   {
    "poly": [
     [
-     1306.8,
-     453.0
+     1410.0,
+     456.7
     ],
     [
-     1430.8,
-     453.0
+     1533.0,
+     455.4
     ],
     [
-     1430.8,
-     530.0
+     1533.8,
+     530.2
     ],
     [
-     1306.8,
-     530.0
+     1410.7,
+     531.4
     ]
    ],
    "fill": "#ffffff",
@@ -141,20 +118,20 @@
   {
    "poly": [
     [
-     1317.8,
-     484.0
+     1421.2,
+     486.6
     ],
     [
-     1419.8,
-     484.0
+     1522.4,
+     485.7
     ],
     [
-     1419.8,
-     490.0
+     1522.4,
+     491.5
     ],
     [
-     1317.8,
-     490.0
+     1421.2,
+     492.5
     ]
    ],
    "fill": "#e2b000"
@@ -163,17 +140,17 @@
  "texts": [
   {
    "t": "ESSO",
-   "x": 905.8,
-   "y": 425.7,
-   "size": 42.8,
+   "x": 1012.0,
+   "y": 434.0,
+   "size": 42.9,
    "fill": "#ffffff",
-   "w": 120.0
+   "w": 120.4
   },
   {
    "t": "British Touring",
-   "x": 915.4,
-   "y": 452.2,
-   "size": 16.3,
+   "x": 1021.9,
+   "y": 459.6,
+   "size": 16.4,
    "fill": "#000",
    "font": "Arial, sans-serif",
    "weight": "normal",
@@ -181,91 +158,64 @@
   },
   {
    "t": "Car Championship",
-   "x": 915.4,
-   "y": 472.3,
-   "size": 16.3,
+   "x": 1022.1,
+   "y": 479.1,
+   "size": 16.4,
    "fill": "#000",
    "font": "Arial, sans-serif",
    "weight": "normal"
   },
   {
    "t": "58",
-   "x": 910.3,
-   "y": 641.7,
-   "size": 173.0,
+   "x": 1018.6,
+   "y": 643.6,
+   "size": 173.5,
    "fill": "#000",
    "font": "Arial Black, Arial, sans-serif",
-   "w": 181.6
-  },
-  {
-   "t": "CHAMPION",
-   "x": 710.8,
-   "y": 519.0,
-   "size": 22.0,
-   "fill": "#d7192b",
-   "w": 88.0,
-   "font": "Arial, sans-serif"
+   "w": 182.2
   },
   {
    "t": "Bristol Street",
-   "x": 1935.8,
-   "y": 415.0,
-   "size": 56.0,
+   "x": 2039.4,
+   "y": 413.8,
+   "size": 56.2,
    "fill": "#ffffff",
-   "w": 360.0,
+   "w": 361.1,
    "font": "Georgia, Times New Roman, serif"
   },
   {
    "t": "V",
-   "x": 1736.8,
-   "y": 386.0,
-   "size": 30.0,
+   "x": 1832.7,
+   "y": 387.6,
+   "size": 30.1,
    "fill": "#ffffff"
   },
   {
    "t": "SUNDERLAND No.1",
-   "x": 1871.8,
-   "y": 491.0,
-   "size": 30.0,
+   "x": 1976.0,
+   "y": 488.2,
+   "size": 30.1,
    "fill": "#d7192b",
-   "w": 530.0,
-   "font": "Arial, sans-serif"
-  },
-  {
-   "t": "VAUXHALL",
-   "x": 1368.8,
-   "y": 476.0,
-   "size": 14.0,
-   "fill": "#333333",
-   "w": 90.0,
-   "font": "Arial, sans-serif"
-  },
-  {
-   "t": "Mobil",
-   "x": 1368.8,
-   "y": 520.0,
-   "size": 16.0,
-   "fill": "#1f3f9a",
-   "w": 50.0,
+   "w": 531.7,
    "font": "Arial, sans-serif"
   },
   {
    "t": "DUNLOP",
-   "x": 179.6,
-   "y": 640.0,
-   "size": 30.0,
+   "x": 302.0,
+   "y": 650.0,
+   "size": 30.1,
    "fill": "#111111",
-   "w": 129.2,
+   "w": 129.6,
    "italic": true,
    "font": "Arial, sans-serif"
   },
   {
    "t": "DUNLOP",
-   "x": 2132.8,
-   "y": 600.0,
-   "size": 30.0,
+   "x": 2226.0,
+   "y": 628.0,
+   "size": 30.1,
    "fill": "#111111",
-   "w": 170.0,
+   "w": 170.5,
    "italic": true,
    "font": "Arial, sans-serif"
   }
@@ -273,13 +223,51 @@
  "over_texts": [
   {
    "t": "Wilson",
-   "x": 1492.8,
-   "y": 254.0,
-   "size": 50.0,
+   "x": 1589.4,
+   "y": 253.3,
+   "size": 50.2,
    "fill": "#ffffff",
-   "w": 186.0,
+   "w": 186.6,
    "font": "Arial, sans-serif"
   }
  ],
- "note": "Measured on the TouringCarTimes side-on photo of Wilson's Belmont (right side, mirrored to our side; the model was traced from the same frame, so positions carry over 1:1): Bristol Street box with red bar and SUNDERLAND No.1 on the rear quarter, Vauxhall/Mobil sticker on the rear door, ESSO board on the front door, Champion on the front wing, name on the rear door window. Checked on Getty LAT 2201201054 (Silverstone round 13, right side): same layout, Dunlop on both bumpers, no Valvoline sticker, so the Valvoline logo on the rear door in the TouringCarTimes photo (another round) is left out. Wheels: gold 5-spoke with polished lip from Getty 2201201054 (on track; the TouringCarTimes photo shows gold dish-type wheels, so the wheels changed during the year). Only right-side photos exist: the left side is assumed to mirror it."
+ "note": "Measured on the TouringCarTimes side-on photo of Wilson's Belmont (right side, mirrored to our side): Bristol Street box with red bar and SUNDERLAND No.1 on the rear quarter across the rear door shut line, Vauxhall/Mobil sticker on the rear door just behind the B-pillar, ESSO board on the front door just behind its front shut line, Champion on the front wing, name on the rear door window. Moved onto the redrawn Belmont body (Nov 2026) by aligning the wheel centres, then the ESSO board and the Vauxhall/Mobil sticker nudged back to sit clear of the shut lines as on the photo. Checked on Getty LAT 2201201054 (Silverstone round 13, right side) and SuperTouringRegister picture 4706 (PSP Images, 1991, right side, https://supertouringregister.com/picture/4706/): same layout, gold 5-spoke wheels with polished lip, boot wing, Dunlop on both bumpers, no Valvoline sticker, so the Valvoline logo on the rear door in the TouringCarTimes photo (another round, gold dish-type wheels) is left out. Only right-side photos exist: the left side is assumed to mirror it. Logos (2026-11-16): CHAMPION on the front wing and the Vauxhall griffin, VAUXHALL and Mobil 1 on the small rear door sticker are now the real logos (Getty LAT 2201201054 and the TouringCarTimes photo, right side, mirrored). Bristol Street / SUNDERLAND No.1 stays drawn (no logo file exists), and both DUNLOPs stay lettering (the Dunlop file has the flying D, the bumper decals show only the word). The small text line on the Vauxhall sticker is unreadable and left out. 2026-11-16: first left-side view found: supertouring.co.uk 1991 entrants gallery page 5, 'belmont_91.jpg' (https://web.archive.org/web/2012/http://www.supertouring.co.uk/gallery/1991_entrants_5.html, 230x160, front 3/4, Wilson's #58, saved in teams/_series/ask_permission/on_track). It confirms the mirrored layout (ESSO header and 58 at the front of the front door, a dark blue box at the top of the rear quarter) but is too small and foreshortened to measure anything new; no livery change. Peter Still's 1991 album (stillphotography.co.uk, album04: btcc91_30 'Jeff Wilson tried the Vauxhall Belmont at Silverstone', btcc91_31/32 the round 15 crash) has only btcc91_32 archived (car upside down, saved). 2026-11-17: moved onto the new hand-traced Belmont outline (model_refs/belmont_hand.py, traced on a user-supplied near side-on race photo of Wilson's #58, right side, mirrored) by landmarks (model_refs/belmont_remap.py); ESSO board and the Vauxhall/Mobil 1 sticker set just behind their shut lines as on that photo, all other decals checked on it. That photo also shows a Valvoline sticker low on the rear door and gold dish wheels: the same date-dependent look as the TouringCarTimes photo, so both stay as decided above (no Valvoline, 5-spoke wheels). 2026-11-17 (later): the Belmont outline was redrawn (model_refs/belmont_hand2.py, on the #58 photo and a user-supplied near side-on SRi photo); decals re-checked on the #58 photo in the new frame, only the two DUNLOP bumper stickers moved (model_refs/belmont_remap2.py).",
+ "logos": [
+  {
+   "logo": "champion",
+   "box": [
+    756.6,
+    494.1,
+    112,
+    50
+   ]
+  },
+  {
+   "logo": "vauxhall_emblem",
+   "box": [
+    1417.1,
+    460.2,
+    19,
+    19
+   ]
+  },
+  {
+   "logo": "vauxhall_wordmark",
+   "box": [
+    1438.8,
+    464.1,
+    88,
+    11
+   ]
+  },
+  {
+   "logo": "mobil1",
+   "box": [
+    1431.9,
+    502.8,
+    80,
+    21
+   ]
+  }
+ ]
 }

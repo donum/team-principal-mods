@@ -140,17 +140,6 @@
   },
   {
    "rect": [
-    166,
-    556,
-    95,
-    24
-   ],
-   "fill": "#ffffff",
-   "stroke": "#111",
-   "sw": 2
-  },
-  {
-   "rect": [
     100,
     623,
     166,
@@ -215,16 +204,6 @@
    "font": "Arial, sans-serif"
   },
   {
-   "t": "Raychem",
-   "x": 1034.8,
-   "y": 545.4,
-   "size": 29.5,
-   "fill": "#d7192b",
-   "w": 134.8,
-   "anchor": "start",
-   "font": "Arial, sans-serif"
-  },
-  {
    "t": "personal",
    "x": 1242.3,
    "y": 557.9,
@@ -242,30 +221,6 @@
    "fill": "#1f3f9a",
    "w": 134.8,
    "font": "Arial, sans-serif"
-  },
-  {
-   "t": "CHAMPION",
-   "x": 213,
-   "y": 575,
-   "size": 19,
-   "fill": "#d7192b",
-   "w": 82
-  },
-  {
-   "t": "YOKOHAMA",
-   "x": 183,
-   "y": 643,
-   "size": 21,
-   "fill": "#ffffff",
-   "w": 146
-  },
-  {
-   "t": "YOKOHAMA",
-   "x": 2240,
-   "y": 561,
-   "size": 22,
-   "fill": "#ffffff",
-   "w": 104
   }
  ],
  "over_glass": [
@@ -328,5 +283,70 @@
    "font": "Arial, sans-serif"
   }
  ],
- "note": "3-door Sierra RS500 body (with the RS500 rear wing) confirmed by every BBC graphics drawing and all photos, so the 2.0 non-turbo car used the RS500 shell, not the Sapphire. Measured on Super Touring Register 4708 (right side, side-on, mirrored to our side; x scaled between the wheel centres, y as a share of the beltline-to-door-bottom height, bumper stickers by the front wheel centre); left-side order of the door stickers (Raychem, personal, Willans) and the window name from Super Touring Register 4709 (left side, 3/4 front). ESSO board on the front door, ANDY MIDDLEHURST small on the wing, Champion and Yokohama on the bumpers, demon tweeks windscreen band from the TV frames. Wheels: gold BBS cross-spoke with polished lip, from the on-track photos (no standing photo found). This is the summer livery; the round 15 TV frame shows GRAHAM GOODE RACING in black along the doors, a later change not drawn here. Uncertain: windscreen band shape (seen from the front only), sticker logos simplified."
+ "note": "3-door Sierra RS500 body (with the RS500 rear wing) confirmed by every BBC graphics drawing and all photos, so the 2.0 non-turbo car used the RS500 shell, not the Sapphire. Measured on Super Touring Register 4708 (right side, side-on, mirrored to our side; x scaled between the wheel centres, y as a share of the beltline-to-door-bottom height, bumper stickers by the front wheel centre); left-side order of the door stickers (Raychem, personal, Willans) and the window name from Super Touring Register 4709 (left side, 3/4 front). ESSO board on the front door, ANDY MIDDLEHURST small on the wing, Champion and Yokohama on the bumpers, demon tweeks windscreen band from the TV frames. Wheels: gold BBS cross-spoke with polished lip, from the on-track photos (no standing photo found). This is the summer livery; the round 15 TV frame shows GRAHAM GOODE RACING in black along the doors, a later change not drawn here. Uncertain: windscreen band shape (seen from the front only), sticker logos simplified. Logos (2026-11-16): Raychem, CHAMPION and both Yokohama stickers (black, white wordmark, red Y) are now real logos, from Super Touring Register 4709 (mi1-mi3). 'personal' stays lettering (company not known, its crown not drawn), WILLANS stays drawn (the logo file is white on blue, the car has blue letters in a white box), demon tweeks stays lettering (no logo file). The blue mark after Raychem, the red mark after 'personal' and the round sticker on the front door stay as drawn shapes (unidentified).",
+ "logos": [
+  {
+   "logo": "raychem",
+   "box": [
+    1035,
+    518,
+    136,
+    28
+   ],
+   "align": "xMin"
+  },
+  {
+   "logo": "champion",
+   "box": [
+    168,
+    546,
+    90,
+    44
+   ]
+  },
+  {
+   "logo": "yokohama",
+   "box": [
+    115.6,
+    626.0,
+    134.8,
+    18
+   ],
+   "fill": "#ffffff",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    115.6,
+    626.0,
+    29.0,
+    18
+   ],
+   "fill": "#d7192b",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama",
+   "box": [
+    2183.0,
+    545.4,
+    114,
+    15.2
+   ],
+   "fill": "#ffffff",
+   "align": "xMin"
+  },
+  {
+   "logo": "yokohama_emblem",
+   "box": [
+    2183.0,
+    545.4,
+    24.6,
+    15.2
+   ],
+   "fill": "#d7192b",
+   "align": "xMin"
+  }
+ ]
 }

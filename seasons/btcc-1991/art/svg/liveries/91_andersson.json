@@ -1,7 +1,7 @@
 {
  "model": "bmw_m3_e30",
  "title": "#91 Peggen Andersson, BMW Dealer Team Sweden BMW M3, BTCC 1991",
- "note": "Round 1 look (Silverstone, April): layout from the TV graphics drawing A_grid_r01_silverstone_b_sharp_14 and colours from 'Getty LAT Images - Silverstone 1 April 1991 - Peggen Andersson, BMW Team Sweden, BMW M3 #91, leads Nettan Lindgren (2201201044)' (front-left, teams/_series): white car, yellow and blue stripe along the front wing and from the C-pillar along the rear quarter, red ESSO sticker and BTCC sticker above a white number board with a red edge, Castrol on the rear quarter, 'Andersson' in white on the rear side window. By Brands Hatch (round 6, Getty 2201200910, right side) the stripes were a Castrol-style rainbow; not drawn. Wheels: gold mesh with a polished lip from Getty 2201201044 (on track, sharp; no standing photo of #91 found). Sizes checked against the photos relative to the door height and wheel size (the --compare overlay of the TV drawing was misaligned): stripe band about a fifth of the door height thick (photos; the TV drawing shows it thicker), number board about 13% of the wheelbase wide.",
+ "note": "Round 1 look (Silverstone, April): layout from the TV graphics drawing A_grid_r01_silverstone_b_sharp_14 and colours from 'Getty LAT Images - Silverstone 1 April 1991 - Peggen Andersson, BMW Team Sweden, BMW M3 #91, leads Nettan Lindgren (2201201044)' (front-left, teams/_series): white car, yellow and blue stripe along the front wing and from the C-pillar along the rear quarter, red ESSO sticker and BTCC sticker above a white number board with a red edge, Castrol on the rear quarter, 'Andersson' in white on the rear side window. By Brands Hatch (round 6, Getty 2201200910, right side) the stripes were a Castrol-style rainbow; not drawn. Wheels: gold mesh with a polished lip from Getty 2201201044 (on track, sharp; no standing photo of #91 found). Sizes checked against the photos relative to the door height and wheel size (the --compare overlay of the TV drawing was misaligned): stripe band about a fifth of the door height thick (photos; the TV drawing shows it thicker), number board about 13% of the wheelbase wide. Logos (2026-11-16): Castrol on the rear quarter is now the real wordmark (dark, as on Getty 2201201044); the small stickers on the wing, door and behind the front wheel are unread and left out.",
  "base": "#ffffff",
  "rim": "#c9a646",
  "wheel": "cross",
@@ -176,15 +176,6 @@
    "w": 165,
    "font": "Arial, sans-serif",
    "weight": "normal"
-  },
-  {
-   "t": "Castrol",
-   "x": 2195,
-   "y": 482,
-   "size": 96,
-   "fill": "#111111",
-   "w": 295,
-   "italic": true
   }
  ],
  "number": {
@@ -210,6 +201,18 @@
    "fill": "#ffffff",
    "w": 270,
    "font": "Arial, Helvetica, sans-serif"
+  }
+ ],
+ "logos": [
+  {
+   "logo": "castrol_wordmark",
+   "box": [
+    2047,
+    405,
+    295,
+    85
+   ],
+   "fill": "#111111"
   }
  ]
 }
