@@ -290,6 +290,10 @@ brackets).
   own logo. The game cuts the photo to fit the window, so the "DTM 2013"
   wordmark sits lower than it would on a real poster, to stay visible
   from 16:10 to 21:9 windows (E21).
+- **Pass-bys** play at the finish line only. At the Norisring, Zandvoort,
+  Brands Hatch, Hockenheim and Oschersleben the fans also hear the cars a
+  second time, on the back straight or behind the pits; in the
+  game that part of the lap is silent (E22).
 - **Norisring:** Ekström's disqualification (no winner) is history, not a rule.
 - **Pit crews** (game 0.99.6): team-mates share one crew, so a car that
   arrives while its team-mate is being serviced waits. We keep that on: later

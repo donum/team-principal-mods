@@ -11,7 +11,8 @@ venues. Part of the [feature packages](README.md).
   [E12](../DEVELOPER_WISHLIST.md#e12-a-sponsor-on-several-teams--p3),
   [E14](../DEVELOPER_WISHLIST.md#e14-pit-entry-sound--p3),
   [E15](../DEVELOPER_WISHLIST.md#e15-car-and-portrait-in-session-screens--p3),
-  [E21](../DEVELOPER_WISHLIST.md#e21-backgrounds-that-fit-any-window-and-a-pack-logo--p2).
+  [E21](../DEVELOPER_WISHLIST.md#e21-backgrounds-that-fit-any-window-and-a-pack-logo--p2),
+  [E22](../DEVELOPER_WISHLIST.md#e22-back-straight-pass-bys-second-listening-point--p3).
 - **Modes:** all three.
 - **Status:** outline.
 
@@ -52,3 +53,4 @@ venues. Part of the [feature packages](README.md).
 |---|---|---|---|---|
 | E4 | DTM 1991, 2013 | Different liveries for team-mates | `seasons/dtm-2013/research` | Checked |
 | E11 | DTM 2013 | Mix limits | `ui/audio_manager.py` | Checked |
+| E22 | DTM 2012, 2013 | Cars heard a second time near the line | `tools/second_pass_maps.py`, `ui/hotlap_audio.py` | Checked |

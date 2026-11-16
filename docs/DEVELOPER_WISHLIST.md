@@ -31,12 +31,12 @@ build them all.
 | dtm-1990 | A1, A6, B1, B2, D1, D9, E1, E2 |
 | dtm-1991 | A1–A6, B1–B4, C1–C5, D1–D4, D9, E1–E7 |
 | dtm-1992 | A1, A6, B2, B3, C1, C2, D1, D9, E1, E2 |
-| dtm-2012 | A3, A5, A6, B5, B7, B12, C4, C6, C7, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E13, E15, E18, E20, E21 |
+| dtm-2012 | A3, A5, A6, B5, B7, B12, C4, C6, C7, D1, D3, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E12, E13, E15, E18, E20, E21, E22 |
 | dtm-2003 | A5, A6, B4, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
 | dtm-2006 | A6, B1, B2, B5, B7, B10, C2, C4, D1, D3, D7, E1, E2, E8 |
-| dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8 |
-| dtm-2013 | A3, A5, A6, B5, B6, B7, B11, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20, E21 |
-| dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18, E21 |
+| dtm-2010 | A3, A5, A6, B5, B7, C2, C4, D1, D3, D7, E1, E2, E8, E22 |
+| dtm-2013 | A3, A5, A6, B5, B6, B7, B11, B12, C4, C6, C7, D1, D3, D4, D5, D6, D7, D8, E1, E2, E4, E5, E6, E8, E9, E10, E11, E12, E13, E14, E15, E17, E18, E19, E20, E21, E22 |
+| dtm-2018 | A1, A4, A6, B5, B6, B8, B9, D1, D3, E1, E2, E18, E21, E22 |
 | dtm-2020 | A1, A3, A4, B4, B5, B6, B8, B12, B13, C1, C4, D1, D3, E1, E2 |
 | f1-2012 | D8, D10, D11, D12, E1, E2 |
 
@@ -1061,6 +1061,63 @@ rules to these items:
   - Packs without these files look as today.
 - **Post:** `docs/requests/responsive-images.md` (with E5's map aspect
   ratio and safe areas), screenshots in `docs/requests/img/responsive/`.
+
+### E22. Back-straight pass-bys (second listening point) · P3
+- **Needed by:** dtm-2013, dtm-2012, dtm-2010, dtm-2018 (Brands Hatch,
+  Norisring, Hockenheim, Oschersleben, Zandvoort, Shanghai, Valencia),
+  and any pack with one of the tracks below.
+- **Why:** on many tracks the cars come past a second time, close to the
+  finish line: on the back straight (German *Gegengerade*), across a
+  harbour or behind the pits. At the Norisring the grandstand sits between
+  the start straight and the back straight, so a fan hears every car
+  twice a lap: loud and close, then further away and from the other side.
+- **Examples** (`tools/second_pass_maps.py`, layouts in
+  `docs/requests/img/second-pass/`, all on `all.png`; lap progress where
+  the cars come back within 250 m of the line, and the closest point):
+
+  | Track | Second pass | Closest |
+  |---|---|---|
+  | Zandvoort | Hugenholtz, behind the pits, 0.12 to 0.26 | 48 m |
+  | Brands Hatch Indy | Cooper Straight, 0.42 to 0.66 | 77 m |
+  | Suzuka | the Esses, 0.18 to 0.28 | 79 m |
+  | Adelaide (1989) | the last section, 0.80 to 0.89 | 93 m |
+  | Brands Hatch GP | Cooper Straight, 0.31 to 0.41 | 95 m |
+  | Norisring | back straight to the Schöller-S, 0.46 to 0.70 | 114 m |
+  | Hockenheim | the Sachs hairpin in the Motodrom, 0.79 to 0.89 | 118 m |
+  | Hungaroring | turns 2 and 3, 0.10 to 0.19 | 125 m |
+  | Sepang | back straight, 0.75 to 0.83 | 126 m |
+  | Shanghai Pudong (DTM 2010) | back straight, 0.49 to 0.67 | 126 m |
+  | Donington Park | the Melbourne loop, 0.75 to 0.90 | 128 m |
+  | Singapore | turns 1 to 3, 0.12 to 0.18 | 131 m |
+  | Abu Dhabi | three times: 0.10 to 0.16, 0.77 to 0.80, 0.84 to 0.92 | 134 m |
+  | Jarama | three times: 0.28 to 0.33, 0.37 to 0.45, 0.68 to 0.76 | 136 m |
+  | Monaco (street circuit) | across the harbour, 0.61 to 0.68 | 141 m |
+  | Oschersleben | back straight, 0.77 to 0.85 | 175 m |
+  | Bahrain | the infield straight, 0.47 to 0.53 | 195 m |
+  | Valencia Ricardo Tormo | the stadium section, 0.81 to 0.90 | 204 m |
+
+  Counter-examples (`counter.png`), where nothing comes back within
+  250 m and the finish line alone is right: Monza, Imola, Melbourne,
+  the Red Bull Ring and the Lausitzring.
+
+- **Today:** pass-bys play at one point only, the finish line
+  (`ui/hotlap_audio.py`, the "finish line audio observer"). A car on the
+  back straight is silent, so between two pass-bys the track goes quiet.
+- **Workaround:** none in data. A track bed in the ambience (E9) can hint
+  at distant cars, but not in time with the real ones.
+- **Request:**
+  - an optional list of extra listening points per track, for example
+    `"flyby_points": [{"progress": 0.58}]` in the track file: the game
+    plays a pass-by when a car crosses that progress (maybe muffled, or
+    panned to the other side);
+  - the volume set automatically from the distance between that point
+    and the start line, which the game can work out from the track's
+    `points`; an optional `"volume"` per point overrides it;
+  - an optional **far pass-by pool** (`far_passby` clips in
+    `hotlap_flybys.json`, recorded from across the track), used at those
+    points, falling back to the normal pass-by played quieter;
+  - tracks without the list sound as today.
+- **Post:** `docs/requests/second-pass-sound.md`.
 
 ---
 
