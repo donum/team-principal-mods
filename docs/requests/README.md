@@ -17,6 +17,8 @@ Status: `draft` (not posted yet), `posted` (with date and link), `answered`.
 | [Dashboard images in random order](dashboard-random-order.md) | E20 | draft |
 | [Responsive images, safe areas and a pack logo](responsive-images.md) | E21, E5 | draft |
 | [Back-straight pass-bys](second-pass-sound.md) | E22 | draft |
+| [Translation review: questions](translation-questions.md) | E13 | round 1 asked |
+| [Endurance weekend formats for every mode](endurance-formats.md) | A1, A3, A6 | draft |
 | [Ten more ideas for immersion](immersion-ideas.md) | none yet | ideas |
 
 All mock-ups in one gallery: https://claude.ai/artifact/6cjkA3ucBe1gM5gB3WPemN (private).

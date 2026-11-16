@@ -153,6 +153,14 @@ simulation.
 - **Portraits:** Joey Hand still has a helmet card, and Wickens, Scheider
   and Priaulx have tight close-ups (bigger heads). Werner's photo is black
   and white with sunglasses. Look for better free photos of these five. · P3
+- **Driver helmets per year:** collect each driver's helmet design for
+  every season (description, colours, a photo or drawing, source,
+  confidence). Start from `seasons/dtm-1991/research/helmets.csv` (12
+  drivers, 1990 to 1992) and move it to a shared `docs/drivers/helmets.csv`
+  keyed by driver and season, so every pack can use it. Helmets change
+  between years, so check each season and don't assume. Uses: helmet
+  cards in the real design instead of team colours (`tools/portrait_art.py`),
+  and telling drivers apart in TV footage. · P3
 - **Moscow length:** 2.555 vs 2.661 km still open.
 - **Workshop item:** [3834059242](https://steamcommunity.com/sharedfiles/filedetails/?id=3834059242),
   v0.3 uploaded 2026-11-16. Paste the ID under "Reconnect an existing
