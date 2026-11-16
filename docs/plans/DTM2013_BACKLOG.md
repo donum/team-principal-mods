@@ -154,6 +154,9 @@ simulation.
   and Priaulx have tight close-ups (bigger heads). Werner's photo is black
   and white with sunglasses. Look for better free photos of these five. · P3
 - **Moscow length:** 2.555 vs 2.661 km still open.
+- **Workshop item:** [3834059242](https://steamcommunity.com/sharedfiles/filedetails/?id=3834059242),
+  v0.3 uploaded 2026-11-16. Paste the ID under "Reconnect an existing
+  Workshop listing" in the game's publisher before every update.
 - ~~**Workshop description**~~ done for v0.3:
   [workshop_description.txt](../../seasons/dtm-2013/workshop_description.txt)
   (Steam BBCode, credits Pappydhorn12 and the photo, logo and map credits).

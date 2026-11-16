@@ -1,6 +1,6 @@
 # DTM 2013: Season Pack
 
-Status: **v0.3, track values fitted to the 2012 and 2013 races. Workshop text in [workshop_description.txt](workshop_description.txt).** The data was generated
+Status: **v0.3 on the Steam Workshop since 2026-11-16, item [3834059242](https://steamcommunity.com/sharedfiles/filedetails/?id=3834059242). Workshop text in [workshop_description.txt](workshop_description.txt), preview [workshop_preview.jpg](workshop_preview.jpg).** For an update, reconnect the game's publisher to that item ID. The data was generated
 with `tools/season_from_research.py` from `research/`, configured in
 `gen.json`. For the sourced facts behind it (calendar, entry list, standings,
 rules, sources and unverified points), see
