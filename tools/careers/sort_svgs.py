@@ -25,6 +25,7 @@ import unicodedata
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
+FACTS = ["number", "driver", "make", "team", "car", "tyres", "guest"]
 FILES = REPO / "reference" / "driver_careers" / "files.json"
 
 
@@ -65,6 +66,47 @@ def kind_of(name):
     return "logo", "", "logos"
 
 
+def link_text(s):
+    m = re.search(r"\[\[([^|\]]+)(?:\|([^\]]+))?\]\]", s)
+    return (m.group(2) or m.group(1)).strip() if m else re.sub(r"<[^>]+>|\{\{[^{}]*\}\}", "", s).strip()
+
+
+def entries():
+    """norm(file name) -> car facts from the "Starterfeld" table of every season page.
+
+    Two row forms: {{Starter|year|no|driver|make|team|car|tyres}} (draws "<driver> <year>.svg")
+    and hand-written rows that link the drawing with [[Datei:...svg]]."""
+    pages = json.loads((REPO / "reference" / "driver_careers" / "pages.json").read_text(encoding="utf-8"))
+    out = {}
+    for title, p in pages.items():
+        if not p["text"].lstrip().startswith("{{Saison") or not re.fullmatch(r"\d{4}", title):
+            continue
+        w = p["text"]
+        i = w.find("Starterfeld")
+        seg = w[i:w.find("\n==", i + 15)] if i >= 0 else ""
+        for line in seg.split("\n"):
+            m = re.search(r"\{\{(Gast|Junior|Test)?(?:[Ss]tarter|fahrer)\|(\d{4})\|([^|]*)\|([^|]+)\|([^|]*)\|([^|]*)\|([^|]*)\|([^|}]*)\}\}", line)
+            if m:
+                guest, year, no, driver, make, team, car, tyres = m.groups()
+                out[norm(f"{driver}_{year}.svg".replace(" ", "_"))] = {"number": no, "driver": driver, "make": make, "team": team,
+                                                      "car": car, "tyres": tyres, "guest": {"Gast": "guest", "Test": "test driver", "Junior": "junior"}.get(guest or "", "")}
+                continue
+            f = re.search(r"\[\[Datei:([^|\]]+\.svg)", line)
+            if not f or "{{Nr|" not in line:
+                continue
+            cells = [c.strip() for c in line.lstrip("|").split("||")]
+            no = re.search(r"\{\{Nr\|([^}]*)\}\}", line).group(1)
+            driver = re.sub(r"[{}]", "", cells[1]) if len(cells) > 1 else ""
+            mk = re.search(r"\{\{([A-Za-zë\- ]+?) \d{4}\|", line)
+            team_car = next((c for c in cells if "<br>" in c and "Datei:" not in c), "")
+            team, _, car = team_car.partition("<br>")
+            tyre = re.findall(r"\{\{(Dunlop|Pirelli|Michelin|Goodyear|Yokohama|Bridgestone|Hankook|Continental|Kumho)\}\}", line)
+            out[norm(f.group(1).replace(" ", "_"))] = {"number": no, "driver": driver.strip(), "make": mk.group(1) if mk else "",
+                                     "team": link_text(team).replace("&nbsp;", "").strip(), "car": link_text(car),
+                                     "tyres": tyre[-1] if tyre else "", "guest": ""}
+    return out
+
+
 def main():
     src = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / "Downloads"
     out = Path(sys.argv[2]) if len(sys.argv) > 2 else Path.home() / "Pictures" / "mods" / "dtm_fandom_svgs"
@@ -75,6 +117,7 @@ def main():
         p = found.pop(norm(saved), None)
         if p is not None:
             found[norm(wiki_name)] = p
+    facts = entries()
     rows, missing, moved = [], [], 0
     for f in files:
         kind, year, sub = kind_of(f["name"])
@@ -91,12 +134,14 @@ def main():
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.move(str(p), dest)
             moved += 1
-        rows.append({"file": f"{sub}/{dest.name}", "kind": kind, "year": year, "uploader": f.get("user", ""),
+        fact = facts.get(norm(f["name"]), {}) if kind == "car" else {}
+        rows.append({"file": f"{sub}/{dest.name}", "kind": kind, "year": year, **{k: fact.get(k, "") for k in FACTS},
+                     "uploader": f.get("user", ""),
                      "uploaded": f.get("timestamp", ""), "page": f"https://dtm.fandom.com/de/wiki/Datei:{f['name']}",
                      "license": "CC BY-SA (fandom default); credit the uploader and dtm.fandom.com"})
     out.mkdir(parents=True, exist_ok=True)
     with open(out / "SOURCES.csv", "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, ["file", "kind", "year", "uploader", "uploaded", "page", "license"])
+        w = csv.DictWriter(fh, ["file", "kind", "year", *FACTS, "uploader", "uploaded", "page", "license"])
         w.writeheader()
         w.writerows(rows)
     (out / "MISSING.txt").write_text("\n".join(missing) + ("\n" if missing else ""), encoding="utf-8")
