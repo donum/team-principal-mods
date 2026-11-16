@@ -1,0 +1,455 @@
+<title>German Text Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a timing-screen header, then a sidebar of game areas and screens beside a list of message cards. */
+:root {
+  --bg: #f3f5f4; --panel: #ffffff; --ink: #18201f; --muted: #5b6866; --line: #d9e0de;
+  --accent: #0d6e6a; --accent-ink: #ffffff; --accent-soft: #dcefed;
+  --warn: #a35a00; --warn-soft: #fbebd6; --bad: #b3261e; --bad-soft: #f9dedc; --good: #2b7a3b; --good-soft: #dcf0df;
+  --chip: #eceff0;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #101515; --panel: #182020; --ink: #e5ecea; --muted: #94a3a0; --line: #2a3534;
+  --accent: #4fb8b1; --accent-ink: #0b1414; --accent-soft: #173a38;
+  --warn: #f0a650; --warn-soft: #3a2a14; --bad: #f2867d; --bad-soft: #3d1b19; --good: #79c788; --good-soft: #17331d;
+  --chip: #222c2b; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #101515; --panel: #182020; --ink: #e5ecea; --muted: #94a3a0; --line: #2a3534;
+  --accent: #4fb8b1; --accent-ink: #0b1414; --accent-soft: #173a38;
+  --warn: #f0a650; --warn-soft: #3a2a14; --bad: #f2867d; --bad-soft: #3d1b19; --good: #79c788; --good-soft: #17331d;
+  --chip: #222c2b; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--body); }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 40px; max-width: 1400px; margin: 0 auto; }
+h1 { font: 700 2rem/1.1 var(--display); letter-spacing: .01em; margin: 0; text-wrap: balance; }
+h2 { font: 600 1.25rem/1.2 var(--display); margin: 0; letter-spacing: .02em; }
+.sub { color: var(--muted); margin: 4px 0 0; max-width: 70ch; }
+.mono { font-family: var(--mono); font-size: 12px; }
+button, select, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; min-width: 0; }
+.stat b { display: block; font: 600 1.4rem/1 var(--display); font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 12px; }
+
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+.tab { background: none; border: 0; border-bottom: 3px solid transparent; padding: 8px 12px; font: 600 1.05rem var(--display); letter-spacing: .03em; color: var(--muted); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+.layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } .side { max-height: 260px; } }
+.side { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; overflow: auto; max-height: calc(100vh - 40px); position: sticky; top: max(12px, env(safe-area-inset-top, 0px)); }
+.side h3 { font: 600 .8rem var(--body); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0; padding: 10px 12px 6px; }
+.tree button { display: flex; justify-content: space-between; gap: 8px; width: 100%; text-align: left; background: none; border: 0; padding: 4px 12px; border-radius: 0; }
+.tree button:hover { background: var(--chip); }
+.tree button.on { background: var(--accent-soft); color: var(--ink); font-weight: 600; }
+.tree .area { font-weight: 600; padding-top: 7px; padding-bottom: 7px; border-top: 1px solid var(--line); }
+.tree .scr { padding-left: 24px; font-size: 13px; }
+.tree .n { color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 400; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.filters input[type=search] { flex: 1 1 260px; min-width: 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+.filters select { padding: 7px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); max-width: 100%; }
+.crumb { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 10px; color: var(--muted); }
+.crumb button { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 1px 10px; font-size: 12px; }
+
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; display: grid; gap: 8px; margin-bottom: 10px; min-width: 0; }
+.card.ok { border-left: 4px solid var(--good); }
+.card.fix { border-left: 4px solid var(--bad); }
+.where { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: baseline; font-size: 13px; }
+.where .a { font-weight: 600; color: var(--accent); }
+.where .s { font-weight: 600; }
+.where .p { color: var(--muted); }
+.where .sep { color: var(--muted); }
+.how { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+.more { font-size: 12px; color: var(--muted); }
+.more summary { cursor: pointer; }
+.more li { margin: 2px 0; }
+.texts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+@media (max-width: 640px) { .texts { grid-template-columns: minmax(0, 1fr); } }
+.lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.en, .de { white-space: pre-wrap; overflow-wrap: anywhere; }
+.de { font-weight: 500; }
+.key { color: var(--muted); overflow-wrap: anywhere; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip { font-size: 12px; border-radius: 4px; padding: 1px 7px; background: var(--chip); }
+.chip.warn { background: var(--warn-soft); color: var(--warn); }
+.chip.bad { background: var(--bad-soft); color: var(--bad); }
+.act { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.btn { border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 4px 12px; }
+.btn.okb[aria-pressed="true"] { background: var(--good-soft); border-color: var(--good); color: var(--good); }
+.btn.fixb[aria-pressed="true"] { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.edit { display: grid; gap: 6px; }
+.edit textarea { width: 100%; min-height: 54px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); resize: vertical; }
+.saved { font-size: 12px; color: var(--muted); }
+.pager { display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+.empty { padding: 30px; text-align: center; color: var(--muted); background: var(--panel); border: 1px dashed var(--line); border-radius: 6px; }
+.note { background: var(--accent-soft); border-radius: 6px; padding: 8px 12px; font-size: 13px; margin-bottom: 12px; }
+
+table { border-collapse: collapse; width: 100%; background: var(--panel); }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); background: var(--panel); }
+td.num { font-variant-numeric: tabular-nums; text-align: right; }
+.linkish { background: none; border: 0; color: var(--accent); padding: 0; text-align: left; text-decoration: underline; text-underline-offset: 2px; }
+.out { width: 100%; min-height: 160px; font-family: var(--mono); font-size: 12px; border: 1px solid var(--line); border-radius: 6px; padding: 8px; background: var(--panel); }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>German Text Review</h1>
+    <p class="sub" id="intro"></p>
+  </header>
+  <div class="stats" id="stats"></div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-view="texts" aria-selected="true">All messages</button>
+    <button class="tab" role="tab" data-view="terms" aria-selected="false">Same term, several translations</button>
+    <button class="tab" role="tab" data-view="words" aria-selected="false">English words kept</button>
+    <button class="tab" role="tab" data-view="export" aria-selected="false">My review</button>
+  </nav>
+
+  <section id="v-texts">
+    <div class="layout">
+      <aside class="side" aria-label="Where in the game">
+        <h3>Where in the game</h3>
+        <div class="tree" id="tree"></div>
+      </aside>
+      <div style="min-width:0">
+        <div class="filters">
+          <input type="search" id="q" placeholder="Search English, German or key" aria-label="Search">
+          <select id="flag" aria-label="Check">
+            <option value="">All checks</option>
+          </select>
+          <select id="status" aria-label="Review status">
+            <option value="">Any status</option>
+            <option value="open">Not reviewed</option>
+            <option value="ok">Looks good</option>
+            <option value="fix">Needs change</option>
+          </select>
+        </div>
+        <div class="crumb" id="crumb"></div>
+        <div id="dbnote" class="note" hidden></div>
+        <div id="list"></div>
+        <div class="pager" id="pager"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-terms" hidden>
+    <p class="sub" style="margin-bottom:12px">Short English terms (up to three words) that the German file translates in more than one way. Click a German variant to see those messages and where they show.</p>
+    <div class="tbl"><table><thead><tr><th>English</th><th>German variants (messages)</th><th class="num">Total</th></tr></thead><tbody id="terms"></tbody></table></div>
+  </section>
+
+  <section id="v-words" hidden>
+    <p class="sub" style="margin-bottom:12px">Words from the English text that also appear in the German one. Many are fine in German racing talk (Qualifying, Grand Prix). Others are leftovers. Click a word to see its messages.</p>
+    <div class="tbl"><table><thead><tr><th>Word</th><th class="num">Messages</th><th>Example</th></tr></thead><tbody id="words"></tbody></table></div>
+  </section>
+
+  <section id="v-export" hidden>
+    <p class="sub" style="margin-bottom:12px">Your review is saved with this page. Messages you marked "Needs change" are listed here in the same format as de.json, ready to send to the developers.</p>
+    <div class="stats" id="rstats"></div>
+    <div class="act" style="margin-bottom:10px">
+      <button class="btn primary" id="copyjson">Copy as JSON</button>
+      <button class="btn" id="copytsv">Copy as table</button>
+      <button class="btn" id="dljson" hidden>Download JSON</button>
+      <span class="saved" id="copymsg"></span>
+    </div>
+    <textarea class="out" id="out" readonly aria-label="Suggestions"></textarea>
+  </section>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const FLAGS = {
+  missing: ["Missing in this file", "bad"],
+  english: ["Still English", "bad"],
+  placeholder: ["Placeholders differ", "bad"],
+  informal: ["Informal address (the rest is formal)", "bad"],
+  caps: ["English is all caps, German not", "warn"],
+  long: ["Much longer than English, may not fit", "warn"],
+  leftover: ["English words kept", "warn"],
+  terms: ["Term translated several ways", "warn"],
+  spacing: ["Spaces or line breaks differ", "warn"],
+};
+const HOW = { code: "found in game code", pack: "season pack text", key: "from key name", guess: "approximate, from key name" };
+const PAGE = 40;
+const P = DATA.places, R = DATA.rows;
+const rows = R.map(r => ({ key: r[0], en: r[1], de: r[2], places: r[3], flags: r[4], note: r[5],
+  hay: (r[0] + "\n" + r[1] + "\n" + r[2]).toLowerCase() }));
+const byKey = new Map(rows.map(r => [r.key, r]));
+let reviews = {};   // key -> {status, suggestion, note}
+let db = null, canWrite = true;
+const st = { area: "", screen: "", q: "", flag: "", status: "", keys: null, keysLabel: "", page: 0 };
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = n => n.toLocaleString("en-US");
+
+// --- header
+$("intro").textContent = `Every message of ${DATA.file} (${fmt(R.length)} messages) with the place in the game that shows it, found by reading the game's own code (build ${DATA.game_build}). Mark each message as good or write a better German text.`;
+function flagCount(f) { return rows.filter(r => r.flags.some(x => x.split(":")[0] === f)).length; }
+function renderStats() {
+  const done = Object.values(reviews).filter(v => v.status).length;
+  const fix = Object.values(reviews).filter(v => v.status === "fix").length;
+  const items = [
+    [fmt(R.length), "messages"],
+    [Math.round(DATA.located / R.length * 100) + "%", "placed from game code"],
+    [fmt(flagCount("english")), "still English"],
+    [fmt(flagCount("informal")), "informal address"],
+    [fmt(flagCount("terms")), "in inconsistent terms"],
+    [fmt(done), "reviewed"],
+    [fmt(fix), "need change"],
+  ];
+  $("stats").innerHTML = items.map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+}
+
+// --- flag filter options
+for (const [f, [label]] of Object.entries(FLAGS)) {
+  const n = flagCount(f);
+  if (!n) continue;
+  const o = document.createElement("option");
+  o.value = f; o.textContent = `${label} (${fmt(n)})`;
+  $("flag").appendChild(o);
+}
+
+// --- sidebar tree: area > screen, counted by each message's first (best) place
+const tree = new Map();
+for (const r of rows) {
+  const [a, s] = P[r.places[0]];
+  if (!tree.has(a)) tree.set(a, new Map());
+  const m = tree.get(a); m.set(s, (m.get(s) || 0) + 1);
+}
+const AREA_ORDER = ["Menus and setup", "Team and car", "Markets and contracts", "Money", "Race weekend", "Season and rules", "Mailbox and news", "Editors and Workshop", "Other"];
+const areaRank = a => { const base = a.replace("Oval series: ", ""); const i = AREA_ORDER.indexOf(base); return (a.startsWith("Oval") ? 100 : 0) + (i < 0 ? 50 : i); };
+let openArea = "";
+function renderTree() {
+  const areas = [...tree.keys()].sort((a, b) => areaRank(a) - areaRank(b));
+  let h = `<button class="area ${!st.area ? "on" : ""}" data-a=""><span>All areas</span><span class="n">${fmt(rows.length)}</span></button>`;
+  for (const a of areas) {
+    const m = tree.get(a); const n = [...m.values()].reduce((x, y) => x + y, 0);
+    h += `<button class="area ${st.area === a && !st.screen ? "on" : ""}" data-a="${esc(a)}"><span>${esc(a)}</span><span class="n">${fmt(n)}</span></button>`;
+    if (openArea === a) {
+      for (const [s, c] of [...m.entries()].sort((x, y) => y[1] - x[1]))
+        h += `<button class="scr ${st.screen === s && st.area === a ? "on" : ""}" data-a="${esc(a)}" data-s="${esc(s)}"><span>${esc(s)}</span><span class="n">${fmt(c)}</span></button>`;
+    }
+  }
+  $("tree").innerHTML = h;
+}
+$("tree").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  st.area = b.dataset.a; st.screen = b.dataset.s || ""; openArea = st.area; st.page = 0;
+  renderTree(); renderList();
+});
+
+// --- list
+function matches(r) {
+  if (st.keys && !st.keys.has(r.key)) return false;
+  if (st.area) {
+    const ok = r.places.some(i => P[i][0] === st.area && (!st.screen || P[i][1] === st.screen));
+    if (!ok) return false;
+  }
+  if (st.flag && !r.flags.some(x => x.split(":")[0] === st.flag)) return false;
+  if (st.status) {
+    const s = reviews[r.key]?.status || "open";
+    if (s !== st.status) return false;
+  }
+  if (st.q && !r.hay.includes(st.q)) return false;
+  return true;
+}
+function placeHtml(i) {
+  const [a, s, p, mod, how] = P[i];
+  return `<span class="a">${esc(a)}</span><span class="sep">›</span><span class="s">${esc(s)}</span>` +
+    (p ? `<span class="sep">›</span><span class="p">${esc(p)}</span>` : "") +
+    ` <span class="how" title="${esc(mod)}">${HOW[how]}</span>`;
+}
+function chipHtml(f) {
+  const [name, extra] = f.split(":");
+  const [label, tone] = FLAGS[name] || [name, ""];
+  return `<span class="chip ${tone}">${esc(label)}${extra ? ": " + esc(extra.replaceAll(",", ", ")) : ""}</span>`;
+}
+function cardHtml(r) {
+  const rv = reviews[r.key] || {};
+  const first = r.places[0], rest = r.places.slice(1);
+  const mod = P[first][3];
+  return `<article class="card ${rv.status || ""}" data-k="${esc(r.key)}">
+    <div class="where">${placeHtml(first)}</div>
+    ${rest.length ? `<details class="more"><summary>Also shown in ${rest.length} more place${rest.length > 1 ? "s" : ""}</summary><ul>${rest.map(i => `<li class="where">${placeHtml(i)}</li>`).join("")}</ul></details>` : ""}
+    <div class="texts">
+      <div><div class="lbl">English</div><div class="en">${esc(r.en)}</div></div>
+      <div><div class="lbl">German</div><div class="de">${r.de ? esc(r.de) : "<em>(missing)</em>"}</div></div>
+    </div>
+    ${r.flags.length ? `<div class="chips">${r.flags.map(chipHtml).join("")}</div>` : ""}
+    <div class="key mono">${esc(r.key)}${mod ? ` · ${esc(mod)}` : ""}</div>
+    <div class="act">
+      <button class="btn okb" data-act="ok" aria-pressed="${rv.status === "ok"}" ${canWrite ? "" : "disabled"}>Looks good</button>
+      <button class="btn fixb" data-act="fix" aria-pressed="${rv.status === "fix"}" ${canWrite ? "" : "disabled"}>Needs change</button>
+      ${rv.status ? `<button class="btn" data-act="clear" ${canWrite ? "" : "disabled"}>Clear</button>` : ""}
+      <span class="saved"></span>
+    </div>
+    ${rv.status === "fix" ? `<div class="edit">
+      <label class="lbl" for="sg-${esc(r.key)}">Better German text</label>
+      <textarea id="sg-${esc(r.key)}" data-f="suggestion" ${canWrite ? "" : "readonly"}>${esc(rv.suggestion ?? r.de)}</textarea>
+      <label class="lbl" for="nt-${esc(r.key)}">Note for the developers (optional)</label>
+      <textarea id="nt-${esc(r.key)}" data-f="note" ${canWrite ? "" : "readonly"} placeholder="For example: in a race manager, laps are Runden.">${esc(rv.note || "")}</textarea>
+    </div>` : ""}
+  </article>`;
+}
+function renderList() {
+  const list = rows.filter(matches);
+  const pages = Math.max(1, Math.ceil(list.length / PAGE));
+  st.page = Math.min(st.page, pages - 1);
+  const slice = list.slice(st.page * PAGE, st.page * PAGE + PAGE);
+  const crumbs = [];
+  if (st.keysLabel) crumbs.push(`<button data-clear="keys">${esc(st.keysLabel)} ✕</button>`);
+  if (st.area) crumbs.push(`<button data-clear="area">${esc(st.screen ? st.area + " › " + st.screen : st.area)} ✕</button>`);
+  $("crumb").innerHTML = `<span>${fmt(list.length)} message${list.length === 1 ? "" : "s"}</span>` + crumbs.join("");
+  $("list").innerHTML = slice.length ? slice.map(cardHtml).join("") :
+    `<div class="empty">No messages match. Clear a filter or search for another word.</div>`;
+  $("pager").innerHTML = pages > 1 ? `<button class="btn" data-p="-1" ${st.page ? "" : "disabled"}>Previous</button>
+    <span>Page ${st.page + 1} of ${fmt(pages)}</span>
+    <button class="btn" data-p="1" ${st.page < pages - 1 ? "" : "disabled"}>Next</button>` : "";
+}
+$("crumb").addEventListener("click", e => {
+  const b = e.target.closest("button[data-clear]"); if (!b) return;
+  if (b.dataset.clear === "keys") { st.keys = null; st.keysLabel = ""; }
+  else { st.area = ""; st.screen = ""; renderTree(); }
+  st.page = 0; renderList();
+});
+$("pager").addEventListener("click", e => {
+  const b = e.target.closest("button[data-p]"); if (!b) return;
+  st.page += Number(b.dataset.p); renderList(); $("v-texts").scrollIntoView({ block: "start" });
+});
+let qt;
+$("q").addEventListener("input", e => { clearTimeout(qt); qt = setTimeout(() => { st.q = e.target.value.trim().toLowerCase(); st.page = 0; renderList(); }, 150); });
+$("flag").addEventListener("change", e => { st.flag = e.target.value; st.page = 0; renderList(); });
+$("status").addEventListener("change", e => { st.status = e.target.value; st.page = 0; renderList(); });
+
+// --- review actions
+async function save(key, patch, card) {
+  const cur = { ...(reviews[key] || {}), ...patch, at: new Date().toISOString() };
+  const msg = card?.querySelector(".saved");
+  if (patch.status === null) { delete reviews[key]; } else { reviews[key] = cur; }
+  if (!db) { if (msg) msg.textContent = "Not saved: this view has no storage."; return; }
+  try {
+    if (patch.status === null) await db.collection("reviews").doc(key).delete();
+    else await db.collection("reviews").doc(key).set({ status: cur.status, suggestion: cur.suggestion ?? null, note: cur.note || "", at: cur.at });
+    if (msg) msg.textContent = "Saved";
+  } catch (err) {
+    if (msg) msg.textContent = err?.code === "invalid_argument" ? "You can view this review but not change it." : "Not saved. Try again.";
+    if (err?.code === "invalid_argument") { canWrite = false; renderList(); }
+  }
+}
+$("list").addEventListener("click", e => {
+  const b = e.target.closest("button[data-act]"); if (!b) return;
+  const card = b.closest(".card"); const key = card.dataset.k; const r = byKey.get(key);
+  const a = b.dataset.act;
+  const patch = a === "clear" ? { status: null } : a === "ok" ? { status: "ok" } :
+    { status: "fix", suggestion: reviews[key]?.suggestion ?? r.de };
+  save(key, patch, card).then(() => { renderStats(); });
+  const tmp = document.createElement("div"); tmp.innerHTML = cardHtml(r); card.replaceWith(tmp.firstElementChild);
+});
+const typing = new Map();
+$("list").addEventListener("input", e => {
+  const t = e.target.closest("textarea[data-f]"); if (!t) return;
+  const card = t.closest(".card"); const key = card.dataset.k;
+  reviews[key] = { ...(reviews[key] || {}), [t.dataset.f]: t.value };
+  card.querySelector(".saved").textContent = "Typing…";
+  clearTimeout(typing.get(key));
+  typing.set(key, setTimeout(() => save(key, { [t.dataset.f]: t.value }, card), 700));
+});
+
+// --- terms view
+function showKeys(keys, label) {
+  st.keys = new Set(keys); st.keysLabel = label; st.area = ""; st.screen = ""; st.page = 0;
+  setView("texts"); renderTree(); renderList();
+}
+$("terms").innerHTML = DATA.terms.map((t, ti) => `<tr><td><b>${esc(t.en)}</b></td><td>${t.variants.map((v, vi) =>
+  `<button class="linkish" data-t="${ti}" data-v="${vi}">${esc(v[0])}</button> <span class="saved">(${v[1].length})</span>`).join(" · ")}</td><td class="num">${t.n}</td></tr>`).join("");
+$("terms").addEventListener("click", e => {
+  const b = e.target.closest("button[data-t]"); if (!b) return;
+  const t = DATA.terms[b.dataset.t]; const v = t.variants[b.dataset.v];
+  showKeys(v[1], `"${t.en}" as "${v[0]}"`);
+});
+
+// --- kept English words view
+const words = new Map();
+for (const r of rows) for (const f of r.flags) if (f.startsWith("leftover:"))
+  for (const w of f.slice(9).split(",")) { const k = w.toLowerCase(); if (!words.has(k)) words.set(k, []); words.get(k).push(r.key); }
+const wordList = [...words.entries()].sort((a, b) => b[1].length - a[1].length);
+$("words").innerHTML = wordList.map(([w, ks], i) => `<tr><td><button class="linkish" data-w="${i}">${esc(w)}</button></td><td class="num">${ks.length}</td><td class="saved">${esc(byKey.get(ks[0]).de.slice(0, 110))}</td></tr>`).join("");
+$("words").addEventListener("click", e => {
+  const b = e.target.closest("button[data-w]"); if (!b) return;
+  const [w, ks] = wordList[b.dataset.w]; showKeys(ks, `English word "${w}"`);
+});
+
+// --- export view
+function fixes() { return Object.entries(reviews).filter(([k, v]) => v.status === "fix" && byKey.has(k)).sort((a, b) => a[0].localeCompare(b[0])); }
+function exportJson() { const o = {}; for (const [k, v] of fixes()) o[k] = v.suggestion ?? byKey.get(k).de; return JSON.stringify(o, null, 2); }
+function exportTsv() {
+  const clean = s => String(s ?? "").replace(/[\t\r\n]+/g, " ");
+  const lines = [["key", "where", "english", "german now", "german suggested", "note"].join("\t")];
+  for (const [k, v] of fixes()) { const r = byKey.get(k); const p = P[r.places[0]];
+    lines.push([k, [p[0], p[1], p[2]].filter(Boolean).join(" > "), r.en, r.de, v.suggestion ?? r.de, v.note || ""].map(clean).join("\t")); }
+  return lines.join("\n");
+}
+function renderExport() {
+  const all = Object.values(reviews).filter(v => v.status);
+  $("rstats").innerHTML = [[all.length, "reviewed"], [all.filter(v => v.status === "ok").length, "look good"], [fixes().length, "need change"]]
+    .map(([b, s]) => `<div class="stat"><b>${fmt(b)}</b><span>${s}</span></div>`).join("");
+  $("out").value = fixes().length ? exportJson() : "Nothing marked \"Needs change\" yet.";
+}
+async function copy(text) {
+  try { await navigator.clipboard.writeText(text); $("copymsg").textContent = "Copied"; }
+  catch { $("out").value = text; $("out").select(); $("copymsg").textContent = "Selected. Press Ctrl+C to copy."; }
+}
+$("copyjson").addEventListener("click", () => copy(exportJson()));
+$("copytsv").addEventListener("click", () => copy(exportTsv()));
+
+// --- views
+function setView(v) {
+  for (const t of document.querySelectorAll(".tab")) t.setAttribute("aria-selected", String(t.dataset.view === v));
+  for (const s of ["texts", "terms", "words", "export"]) $("v-" + s).hidden = s !== v;
+  if (v === "export") renderExport();
+}
+document.querySelector(".tabs").addEventListener("click", e => { const t = e.target.closest(".tab"); if (t) setView(t.dataset.view); });
+
+renderStats(); renderTree(); renderList();
+
+// --- storage
+(async () => {
+  const note = $("dbnote");
+  const timer = setTimeout(() => { note.hidden = false; note.textContent = "Your saved review can't be reached yet. Marks you make now may not be kept."; }, 10000);
+  db = await window.claude?.use?.("db") ?? null;
+  const user = await window.claude?.use?.("user") ?? null;
+  const dl = await window.claude?.use?.("downloads") ?? null;
+  if (dl) {
+    $("dljson").hidden = false;
+    $("dljson").addEventListener("click", async () => {
+      try { await dl.save({ filename: `${DATA.lang}-suggestions.json`, data: exportJson() }); $("copymsg").textContent = "Saved"; }
+      catch { $("copymsg").textContent = "Not downloaded."; }
+    });
+  }
+  if (!db) { clearTimeout(timer); note.hidden = false; note.textContent = "This view can't save a review. Open the page signed in to claude.ai to mark messages."; canWrite = false; renderList(); return; }
+  if (user) { const w = await user.can?.("data.write"); if (w === false) { canWrite = false; } }
+  db.collection("reviews").onSnapshot(snap => {
+    if (!snap.metadata.fromCache) { clearTimeout(timer); note.hidden = true; }
+    const next = {};
+    for (const d of snap.docs) next[d.id] = d.data();
+    // keep what is being typed right now
+    for (const [k, v] of Object.entries(reviews)) if (typing.has(k) && next[k]) next[k] = { ...next[k], ...v };
+    reviews = next;
+    renderStats();
+    if (!document.activeElement?.closest?.("textarea")) renderList();
+    if (!$("v-export").hidden) renderExport();
+  }, err => { clearTimeout(timer); note.hidden = false; note.textContent = "Your saved review can't be loaded right now. Reload the page later."; });
+})();
+</script>
