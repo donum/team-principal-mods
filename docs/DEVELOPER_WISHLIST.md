@@ -777,10 +777,19 @@ rules to these items:
   average finish) reads `driver_season_history`, which only
   `record_season_history` fills from seasons played in the save. A pack can't
   supply past seasons, so the tab stays empty until the first season ends.
-  Request: an optional `season_history` list per driver (`year`, `team`,
-  `position`, `points`, `wins`, `podiums`, `poles`, `starts`, `dnfs`), shown
-  in Records and on the driver's history page. dtm-2013 would fill it for
-  1984 to 2012 from docs/drivers.
+  The same list feeds the **Career tab of the driver history window**
+  (left- or right-click a driver): one row per season with `season`, `team`,
+  `series`, `category` (main or junior), `races`, `wins`, `podiums`,
+  `poles`, `points`, `position`. `DriverManager.load_initial` only starts an
+  empty list per driver, so it says "no history recorded yet" for every real
+  career.
+  Request: an optional `season_history` list per driver in `drivers.json`,
+  in the same row format with a calendar `year` instead of the save's
+  season number, read at career start into `driver_season_history`, so both
+  the Records tab and the Career tab show the real seasons. The same for
+  teams if the team pages get a season list. dtm-2013 would fill it for 1984
+  to 2012 from docs/drivers (position, points, races, wins, podiums, poles
+  per driver and season, and now the team from dtm_team_entries.csv).
 
 ### E8. Engine sounds per supplier beyond pass-bys · P3
 - **Needed by:** dtm-2013, dtm-2012, dtm-2003, dtm-2006, dtm-2010.
