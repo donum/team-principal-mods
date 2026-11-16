@@ -10,6 +10,8 @@ An unofficial season pack for Team Principal. Run a team in the 2013 DTM season 
 [*]Tracks traced from OpenStreetMap, with the 2013 routes such as the Nürburgring sprint course and the Lausitzring short course.
 [*]2013 rules. Knockout qualifying, DRS, no refuelling, two cars per team, points from 25 down to 1.
 [*]Hankook tyres. A standard tyre and an option tyre, and both must be used in a dry race.
+[*]Real careers for every driver up to the end of 2012, from every DTM and ITC race since 1984.
+[*]The old champions and race winners in the all-time statistics as retired drivers.
 [*]Real team principals and technical staff.
 [*]Starting sponsors from the 2013 liveries.
 [*]Five real feeder series from 2013. FIA F3 European Championship, Porsche Carrera Cup Deutschland, ATS Formel 3 Cup, ADAC Formel Masters and the ADAC Procar series.
@@ -20,12 +22,16 @@ Ratings and skills are estimates based on the 2013 results. They are not history
 
 [h2]Changes in 0.3[/h2]
 [list]
+[*]Real careers for every driver. Seasons, titles, wins, podiums, poles, starts and points up to the end of 2012, from every DTM and ITC race since 1984. They show on the Drivers tab of the statistics screen.
+[*]The old champions and race winners are in the all-time statistics as retired drivers. They can't be signed.
 [*]Retirements per track are fitted to the 2012 and 2013 races. About 14 in 100 starters retire, as in those seasons.
 [*]Overtaking per track is fitted to the same races.
 [*]Pit lane time loss per track, checked against TV timing and commentary.
 [*]Pole position starts on the side seen in the 2013 TV starts.
 [*]Rain chance per track from the climate in the race month.
 [*]Tyre wear raised at Moscow, Brands Hatch and the Norisring, so most races are won on two stops.
+[*]The DTM 2013 logo in the menu background sits lower, so it stays visible on wide screens.
+[*]Made for game version 0.99.6.
 [/list]
 
 [h2]Changes in 0.2[/h2]
@@ -38,6 +44,7 @@ Ratings and skills are estimates based on the 2013 results. They are not history
 [list]
 [*]The Q4 shootout for the top four is not in the game. Qualifying is a normal knockout.
 [*]The game can't require two pit stops. At Brands Hatch, the Norisring and Moscow some AI cars stop once or three times, most of all after a safety car.
+[*]The Records tab of the statistics screen only shows seasons played in your save. A pack can't fill it with past seasons.
 [*]Track outlines are today's layouts and may differ in detail.
 [/list]
 
