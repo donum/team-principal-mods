@@ -674,7 +674,7 @@ function viewTeam(v) {
       <div class="row"><input type="text" readonly class="out" id="inv" value="${esc(inviteUrl(st.invite.token))}" aria-label="Invite link" style="flex:1 1 300px"><button class="btn" data-act="copy-invite">Copy</button></div></div>` : ""}
     <h2>Team</h2>
     <div class="tbl"><table><thead><tr><th>Name</th><th>Role</th><th>Last seen</th><th></th></tr></thead><tbody>${users.map(u => `<tr>
-      <td>${esc(u.name)}${u.invited ? ` <span class="chip warn">invite not used yet</span>` : ""}</td>
+      <td>${esc(u.name)}${u.invited ? ` <span class="chip warn">invite not used yet</span>` : ""}${u.file_only ? ` <span class="chip">from a review file, no login</span>` : ""}</td>
       <td>${isAdmin() && u.id !== me().id ? `<div class="row"><select data-act="role" data-id="${u.id}" aria-label="Role">${["reviewer", "lead", "admin"].map(r => `<option ${u.role === r ? "selected" : ""}>${r}</option>`).join("")}</select>
         ${u.role === "lead" ? `<input type="text" data-act="langs" data-id="${u.id}" value="${esc(u.langs || "")}" placeholder="all languages" aria-label="Lead for languages" style="width:130px">` : ""}</div>` : esc(u.role) + (u.role === "lead" ? ` (${esc(u.langs || "all languages")})` : "")}</td>
       <td>${u.last_seen ? when(u.last_seen) : "never"}</td>
@@ -691,6 +691,9 @@ function viewTeam(v) {
         <form id="iform" class="row"><input type="file" id="i-file" accept=".json,application/json" required aria-label="Data file"><button class="btn primary" type="submit">Upload</button></form>
         ${S.releases.length ? `<div class="tbl" style="margin-top:8px"><table><thead><tr><th>File</th><th>Loaded</th><th class="num">Messages</th></tr></thead><tbody>${S.releases.map(r => `<tr><td>${esc(r.release_id)}${r.is_current ? ` <span class="chip good">current</span>` : ""}</td><td>${when(r.imported_at)}</td><td class="num">${fmt(r.messages || 0)}</td></tr>`).join("")}</tbody></table></div>` : ""}
       </div></div>` : ""}
+    ${isAdmin() ? `<div class="box" style="margin-top:14px"><h3>Import a review file</h3>
+      <p class="sub">A review made outside the site (format tp-review-1), for example by Claude. Its suggestions show under the reviewer's name, its terms join the Glossary as proposals. Nothing is approved: the leads decide as usual.</p>
+      <form id="rform" class="row"><input type="file" id="r-file" accept=".json,application/json" required aria-label="Review file"><button class="btn primary" type="submit">Import</button></form></div>` : ""}
     <div class="box" style="margin-top:14px;max-width:520px"><h3>Change your password</h3><form id="pform" class="form">
       <input type="password" id="p-old" placeholder="Current password" autocomplete="current-password" required aria-label="Current password">
       <input type="password" id="p-new" placeholder="New password (10 characters or more)" autocomplete="new-password" required minlength="10" aria-label="New password">
@@ -706,6 +709,15 @@ function viewTeam(v) {
     const fd = new FormData(); fd.append("file", $("#i-file").files[0]);
     try { const r = await api("import", fd, true); toast(`Loaded ${r.release} (${fmt(r.messages)} messages)`); await loadData(true); }
     catch (err) { toast(err.message, true); }
+  });
+  $("#rform")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const fd = new FormData(); fd.append("file", $("#r-file").files[0]);
+    try {
+      const r = await api("import_review", fd, true);
+      toast(`${r.reviewer}: ${fmt(r.reviews)} suggestions and ${fmt(r.terms)} terms imported${r.skipped ? `, ${fmt(r.skipped)} skipped (not in the game file)` : ""}`);
+      await refresh(true);
+    } catch (err) { toast(err.message, true); }
   });
   $("#pform").addEventListener("submit", async e => {
     e.preventDefault();

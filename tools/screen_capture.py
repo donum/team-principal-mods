@@ -726,6 +726,12 @@ def main() -> None:
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8", errors="replace")
     exe = game_dir() / "TeamPrincipal.exe"
+    ready = BUILD / args.lang / "index.json"
+    if args.skip_capture and args.push and ready.exists():
+        # Uploading an earlier capture needs no game code and no pygame: any Python will do.
+        index = load_json(ready)
+        print(f"{len(index)} screens from {ready}", flush=True)
+        return push(args.lang, index, args.push, args.user)
     ensure_python(exe)
     only = {s.strip() for s in (args.only or "").split(",") if s.strip()}
     weekend, static = not args.no_weekend and not only, not args.weekend_only

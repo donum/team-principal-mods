@@ -117,7 +117,7 @@ $ints = function (array $rows, array $cols) {
 };
 
 if ($a === 'state') {
-    $users = q('SELECT id, name, role, langs, last_seen, CASE WHEN pass_hash IS NULL THEN 1 ELSE 0 END AS invited FROM users ORDER BY name')->fetchAll();
+    $users = q('SELECT id, name, role, langs, last_seen, CASE WHEN pass_hash IS NULL AND invite_token IS NOT NULL THEN 1 ELSE 0 END AS invited, CASE WHEN pass_hash IS NULL AND invite_token IS NULL AND role = ? THEN 1 ELSE 0 END AS file_only FROM users ORDER BY name', ['reviewer'])->fetchAll();
     $reviews = q('SELECT id, msg_key, user_id, verdict, text, reason, updated FROM reviews WHERE lang = ?', [$L])->fetchAll();
     $votes = q('SELECT v.review_id, v.user_id FROM votes v JOIN reviews r ON r.id = v.review_id WHERE r.lang = ?', [$L])->fetchAll();
     $comments = q('SELECT id, msg_key, user_id, body, created FROM comments WHERE lang = ? ORDER BY id', [$L])->fetchAll();
@@ -156,7 +156,7 @@ if ($a === 'state') {
         'langs' => loaded_langs(),
         'lang_names' => LANG_NAMES,
         'release' => $rel ? $rel['release_id'] : null,
-        'users' => $ints($users, ['id', 'invited']),
+        'users' => $ints($users, ['id', 'invited', 'file_only']),
         'reviews' => $ints($reviews, ['id', 'user_id']),
         'votes' => $ints($votes, ['review_id', 'user_id']),
         'comments' => $ints($comments, ['id', 'user_id']),
@@ -525,6 +525,66 @@ switch ($a) {
         if (mb_strlen((string)($in['new'] ?? '')) < 10) fail('The new password needs at least 10 characters.');
         q('UPDATE users SET pass_hash = ? WHERE id = ?', [password_hash((string)$in['new'], PASSWORD_DEFAULT), $me['id']]);
         out(['ok' => true]);
+    }
+    case 'import_review': {
+        // A review file (format tp-review-1): one reviewer's suggestions and terms, for
+        // reviewers who work outside the site. The reviewer gets an account without a
+        // login, so the reviews show under that name and the leads decide as usual.
+        $need_admin();
+        $f = $_FILES['file'] ?? null;
+        if (!$f || $f['error'] !== UPLOAD_ERR_OK) fail('The upload failed.');
+        $data = json_decode((string)file_get_contents($f['tmp_name']), true);
+        if (!is_array($data) || ($data['format'] ?? '') !== 'tp-review-1') fail('This is not a review file.');
+        $lang = (string)($data['lang'] ?? '');
+        $who = mb_substr(trim((string)($data['reviewer'] ?? '')), 0, 40);
+        if (!valid_lang($lang) || $who === '') fail('The review file names no language or reviewer.');
+        $texts = current_texts($lang);
+        if (!$texts) fail("Load the game file for $lang first.");
+        $u = q('SELECT id, pass_hash FROM users WHERE name = ?', [$who])->fetch();
+        if ($u && $u['pass_hash'] !== null) fail("$who is a member with a login. Rename the reviewer in the file.");
+        if (!$u) {
+            q('INSERT INTO users (name, role, langs, created) VALUES (?, ?, ?, ?)', [$who, 'reviewer', '', now()]);
+            $uid = (int)db()->lastInsertId();
+        } else {
+            $uid = (int)$u['id'];
+        }
+        $pdo = db();
+        $pdo->beginTransaction();
+        $n = ['reviews' => 0, 'skipped' => 0, 'terms' => 0];
+        foreach ($data['reviews'] ?? [] as $r) {
+            $key = (string)($r['key'] ?? '');
+            $text = trim((string)($r['text'] ?? ''));
+            $verdict = ($r['verdict'] ?? 'fix') === 'ok' ? 'ok' : 'fix';
+            if (!isset($texts[$key]) || ($verdict === 'fix' && ($text === '' || placeholders($text) !== placeholders($texts[$key][0])))) { $n['skipped']++; continue; }
+            [$en, $tr] = $texts[$key];
+            q('DELETE FROM reviews WHERE lang = ? AND msg_key = ? AND user_id = ?', [$lang, $key, $uid]);
+            q('INSERT INTO reviews (lang, msg_key, user_id, verdict, text, reason, base_de, base_en, updated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                [$lang, $key, $uid, $verdict, $verdict === 'fix' ? $text : null, mb_substr((string)($r['reason'] ?? ''), 0, 2000), $tr, $en, now()]);
+            $n['reviews']++;
+        }
+        foreach ($data['terms'] ?? [] as $t) {
+            $en = trim((string)($t['en_term'] ?? ''));
+            if ($en === '') continue;
+            $concept = null;
+            foreach (q('SELECT * FROM terms')->fetchAll() as $c)
+                if (mb_strtolower(trim($c['en_term'])) === mb_strtolower($en)) { $concept = $c; break; }
+            if ($concept) {
+                $cid = (int)$concept['id'];
+                if ((string)$concept['note'] === '' && !empty($t['meaning'])) q('UPDATE terms SET note = ? WHERE id = ?', [(string)$t['meaning'], $cid]);
+            } else {
+                q('INSERT INTO terms (en_term, note, user_id, updated) VALUES (?, ?, ?, ?)', [$en, (string)($t['meaning'] ?? ''), $uid, now()]);
+                $cid = (int)db()->lastInsertId();
+            }
+            $term = !empty($t['keep_english']) ? '' : trim((string)($t['term'] ?? ''));
+            if ($term === '' && empty($t['keep_english'])) continue;
+            if (q('SELECT 1 FROM term_langs WHERE term_id = ? AND lang = ?', [$cid, $lang])->fetch()) continue;   // the team's own entry wins
+            $status = ($t['status'] ?? '') === 'agreed' ? 'agreed' : 'proposed';     // the admin imports, so an agreed term stays agreed
+            q('INSERT INTO term_langs (term_id, lang, term, status, note, user_id, updated) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                [$cid, $lang, $term, $status, (string)($t['note'] ?? ''), $uid, now()]);
+            $n['terms']++;
+        }
+        $pdo->commit();
+        out(['ok' => true, 'reviewer' => $who] + $n);
     }
     case 'import': {
         $need_admin();
