@@ -93,7 +93,8 @@ const STATUS = {
   "none": "Not reviewed by anyone",
   "needs-decision": "Suggestions waiting for a decision",
   "discuss": "Marked for discussion",
-  "approved": "Approved, not sent yet",
+  "approved": "Approved, not in a package yet",
+  "packaged": "In a package, not sent yet",
   "sent": "Sent to the developers",
   "rejected": "Rejected suggestions",
   "glossary": "Breaks an agreed glossary term",
@@ -111,6 +112,8 @@ const PAGE = 30;
 const dirty = new Set();   // cards with unsaved typing
 
 const me = () => S.me;
+const batchOf = id => S.batches.find(b => b.id === id);
+const batchSent = id => !!batchOf(id)?.sent_at;
 const isLead = () => !!S.me.lead;
 const langName = l => (S?.lang_names || {})[l] || (l === "en" ? "English" : l);
 const isAdmin = () => S.me.role === "admin";
@@ -144,7 +147,7 @@ function glossaryHits(r) {
 
 function msgState(r) {
   const d = IDX.decisions.get(r.key);
-  if (d) return d.batch_id ? "sent" : d.status;
+  if (d) return d.batch_id ? (batchSent(d.batch_id) ? "sent" : "packaged") : d.status;
   const revs = IDX.reviews.get(r.key) || [];
   if (revs.some(v => v.verdict === "fix")) return "needs-decision";
   return revs.length ? "reviewed" : "none";
@@ -199,10 +202,10 @@ function when(iso) { if (!iso) return ""; const d = new Date(iso); return isNaN(
 function decisionHtml(r) {
   const d = IDX.decisions.get(r.key);
   if (!d) return "";
-  const b = d.batch_id ? S.batches.find(x => x.id === d.batch_id) : null;
+  const b = d.batch_id ? batchOf(d.batch_id) : null;
   const label = { approved: "Approved", rejected: "Rejected", discuss: "To discuss" }[d.status];
   return `<div class="row">
-    <span class="badge ${d.status}">${label}</span>${b ? `<span class="badge sent">Sent in ${esc(b.name)}</span>` : ""}
+    <span class="badge ${d.status}">${label}</span>${b ? (b.sent_at ? `<span class="badge sent">Sent in ${esc(b.name)}</span>` : `<span class="badge discuss">In package ${esc(b.name)}, not sent yet</span>`) : ""}
     <span class="msg">by ${esc(uname(d.decided_by))}, ${when(d.updated)}</span></div>
     ${d.status === "approved" ? `<div><div class="lbl">Approved text</div><div class="de sg">${esc(d.text)}</div></div>` : ""}
     ${d.note ? `<div class="msg">Lead note: ${esc(d.note)}</div>` : ""}`;
@@ -262,7 +265,7 @@ function leadHtml(r) {
       <button class="btn primary" data-act="decide" data-s="approved">Approve this text</button>
       <button class="btn" data-act="decide" data-s="rejected">Reject suggestions</button>
       <button class="btn" data-act="decide" data-s="discuss">Mark for discussion</button>
-      ${d && !d.batch_id ? `<button class="btn" data-act="undecide">Undo decision</button>` : ""}
+      ${d && !(d.batch_id && batchSent(d.batch_id)) ? `<button class="btn" data-act="undecide">Undo decision</button>` : ""}
       <span class="msg err" data-msg></span>
     </div></details>`;
 }
@@ -311,7 +314,7 @@ function rerenderCard(key) {
 
 // --- page frame -------------------------------------------------------------------------
 
-const TABS = [["messages", "Messages"], ["glossary", "Glossary"], ["areas", "Areas"], ["batches", "Batches"], ["followup", "Follow-up"], ["team", "Team"]];
+const TABS = [["messages", "Messages"], ["glossary", "Glossary"], ["areas", "Areas"], ["batches", "To the developers"], ["followup", "Follow-up"], ["team", "Team"]];
 
 function frame() {
   $("#app").innerHTML = `
@@ -338,7 +341,8 @@ function renderHowto() {
     <li>For each message, press <b>Looks good</b> or <b>Suggest a change</b> and say why. Press <b>Agree</b> on someone else's suggestion if you like it.</li>
     <li>Keep the game's placeholders, like <span class="mono">{driver}</span> or <span class="mono">{value}</span>, exactly as they are. The page refuses a text where they differ.</li>
     <li><b>Screenshots</b> show how a text looks in the game. Take one (Windows: Win+Shift+S), press <b>Add screenshot</b> on a message, paste it with Ctrl+V and draw a box around the text. Then mark the other texts of that screen on the same picture.</li>
-    <li>The leads approve, reject or mark a message for discussion. Approved changes go to the developers in batches.</li>
+    <li>The <b>leads</b> decide: approve a text, reject the suggestions, or mark the message for discussion.</li>
+    <li>In <b>To the developers</b>, a lead puts the approved changes into a <b>package</b>, downloads its two files and sends them to the developers (Discord or mail). Nothing changes in the game or in anyone's files until the developers take it.</li>
     </ol><button class="btn small" data-act="howto-hide">Hide</button></div>`;
 }
 
@@ -346,18 +350,20 @@ function renderStats() {
   const reviewed = ROWS.filter(r => IDX.reviews.has(r.key)).length;
   const mine = S.reviews.filter(v => v.user_id === me().id).length;
   const waiting = ROWS.filter(r => msgState(r) === "needs-decision").length;
+  const discuss = S.decisions.filter(d => d.status === "discuss").length;
   const approved = S.decisions.filter(d => d.status === "approved" && !d.batch_id).length;
-  const sent = S.decisions.filter(d => d.batch_id).length;
-  const items = [
-    [fmt(reviewed), "messages reviewed", ""],
-    [fmt(mine), "reviewed by you", ""],
-    [fmt(waiting), "suggestions waiting for a lead", "needs-decision"],
-    [fmt(approved), "approved, not sent", "approved"],
-    [fmt(sent), "sent to the developers", "sent"],
+  const packaged = S.decisions.filter(d => d.batch_id && !batchSent(d.batch_id)).length;
+  const sent = S.decisions.filter(d => d.batch_id && batchSent(d.batch_id)).length;
+  const steps = [
+    ["1", "Review", "Everyone", `${fmt(reviewed)} of ${fmt(ROWS.length)} messages reviewed, ${fmt(mine)} by you`, "mine-open", "Show messages you haven't reviewed"],
+    ["2", "Decide", "Leads", `${fmt(waiting)} with suggestions waiting${discuss ? `, ${fmt(discuss)} to discuss` : ""}`, "needs-decision", "Show the suggestions waiting for a lead"],
+    ["3", "Package", "Leads", `${fmt(approved)} approved, not in a package`, "approved", "Show the approved changes"],
+    ["4", "Send", "Leads", `${fmt(packaged)} in packages not sent yet`, "@batches", "Open To the developers"],
+    ["5", "Check", "After a game update", `${fmt(sent)} sent: did the developers take them?`, "@followup", "Open Follow-up"],
   ];
-  $("#stats").innerHTML = items.map(([b, s, f]) => f ? `<button class="stat" data-act="stat" data-f="${f}"><b>${b}</b><span>${s}</span></button>`
-    : `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
-  const n = { batches: approved ? fmt(approved) : "" };
+  $("#stats").innerHTML = `<ol class="flow">${steps.map(([n, t, who, txt, f, title]) =>
+    `<li><button class="step" data-act="stat" data-f="${f}" title="${esc(title)}"><span class="sn">${n}</span><span class="st"><b>${t}</b> <span class="swho">${who}</span><span class="sx">${txt}</span></span></button></li>`).join("")}</ol>`;
+  const n = { batches: approved + packaged ? fmt(approved + packaged) : "" };
   for (const el of document.querySelectorAll("[data-n]")) el.textContent = n[el.dataset.n] || "";
 }
 
@@ -533,26 +539,44 @@ function viewAreas(v) {
     <div class="tbl"><table><thead><tr><th>Name</th><th class="num">Reviews</th><th>Claimed</th></tr></thead><tbody>${people}</tbody></table></div>`;
 }
 
-// --- Batches view ---------------------------------------------------------------------------------
+// --- To the developers (packages) -----------------------------------------------------------------
 
 function viewBatches(v) {
   const waiting = S.decisions.filter(d => d.status === "approved" && !d.batch_id);
+  const open = S.batches.filter(b => !b.sent_at), sent = S.batches.filter(b => b.sent_at);
+  const files = b => `<a href="api.php?a=batch_export&amp;id=${b.id}&amp;fmt=json&amp;l=${esc(S.lang)}">JSON file</a> · <a href="api.php?a=batch_export&amp;id=${b.id}&amp;fmt=tsv&amp;l=${esc(S.lang)}">Table</a>`;
+  const row = b => `<tr>
+      <td><button class="linkish" data-act="batch-show" data-id="${b.id}">${esc(b.name)}</button><div class="msg">made ${when(b.created)} by ${esc(uname(b.created_by))}</div></td>
+      <td class="num">${fmt(b.item_count)}</td>
+      <td>${files(b)}</td>
+      <td>${b.sent_at ? `Sent ${when(b.sent_at)} by ${esc(uname(b.sent_by))}${b.sent_note ? `<div class="msg">${esc(b.sent_note)}</div>` : ""}` : `<span class="chip warn">not sent yet</span>`}</td>
+      <td>${isLead() ? `<div class="act">${b.sent_at
+        ? `<button class="btn small" data-act="batch-unsend" data-id="${b.id}">Mark as not sent</button>`
+        : `<input type="text" class="sentnote" data-id="${b.id}" placeholder="Where sent, e.g. Discord #translations" maxlength="500" aria-label="Where it was sent" style="width:210px">
+           <button class="btn small primary" data-act="batch-send" data-id="${b.id}">Mark as sent</button>
+           <button class="btn small" data-act="batch-delete" data-id="${b.id}">Delete package</button>`}</div>` : ""}</td></tr>`;
+  const table = list => `<div class="tbl"><table><thead><tr><th>Package</th><th class="num">Changes</th><th>Files</th><th>Status</th><th></th></tr></thead><tbody>${list.map(row).join("")}</tbody></table></div>`;
   v.innerHTML = `
-    <div class="box"><h2>Next batch</h2>
-      <p class="sub">${fmt(waiting.length)} approved change${waiting.length === 1 ? "" : "s"} waiting to be sent.
-      A batch freezes them. Download its JSON (same format as de.json) and its table (English, old German, new German, reason) and send both to the developers.</p>
-      ${waiting.length ? `<p><button class="linkish" data-act="batch-preview">Show the waiting changes</button></p>` : ""}
-      ${isLead() ? `<form id="bform" class="row"><input type="text" id="b-name" placeholder="Name, for example Race weekend 1" maxlength="80" aria-label="Batch name">
-        <button class="btn primary" type="submit" ${waiting.length ? "" : "disabled"}>Create batch</button></form>` : `<p class="msg">A lead creates the batches.</p>`}
+    <div class="box"><h2>How changes reach the developers</h2>
+      <ol class="explain">
+        <li><b>Package.</b> A package is a list of approved changes that go to the developers together, for example one area or one week. Making one sends nothing yet.</li>
+        <li><b>Send.</b> Download the package's two files: the <b>JSON file</b> (same format as ${esc(S.lang)}.json, the developers can merge it) and the <b>Table</b> (English, old text, new text, reason). Send both to the developers yourself, then press <b>Mark as sent</b>.</li>
+        <li><b>Check.</b> When a game update arrives, the admin loads the new game file. <b>Follow-up</b> then shows which sent changes the developers took.</li>
+      </ol>
+      <p class="msg">Until a package is marked as sent, a lead can delete it: its changes go back to "approved" and can go into another package. A change that is decided again leaves its unsent package by itself.</p>
     </div>
-    <h2>Sent batches</h2>
-    ${S.batches.length ? `<div class="tbl"><table><thead><tr><th>Batch</th><th>Created</th><th class="num">Changes</th><th>Download</th></tr></thead><tbody>${S.batches.map(b => `<tr>
-      <td><button class="linkish" data-act="batch-show" data-id="${b.id}">${esc(b.name)}</button></td><td>${when(b.created)} by ${esc(uname(b.created_by))}</td><td class="num">${fmt(b.item_count)}</td>
-      <td><a href="api.php?a=batch_export&amp;id=${b.id}&amp;fmt=json">JSON</a> · <a href="api.php?a=batch_export&amp;id=${b.id}&amp;fmt=tsv">Table</a></td></tr>`).join("")}</tbody></table></div>`
-      : `<div class="empty">No batches yet.</div>`}`;
+    <div class="box"><h2>1. Approved, waiting for a package: ${fmt(waiting.length)}</h2>
+      ${waiting.length ? `<p><button class="linkish" data-act="batch-preview">Show these changes</button></p>` : `<p class="msg">Nothing waiting. Leads approve changes on the messages.</p>`}
+      ${isLead() ? `<form id="bform" class="row"><input type="text" id="b-name" placeholder="Package name, for example Race weekend" maxlength="80" aria-label="Package name">
+        <button class="btn primary" type="submit" ${waiting.length ? "" : "disabled"}>Put ${fmt(waiting.length)} change${waiting.length === 1 ? "" : "s"} into a package</button></form>` : `<p class="msg">A lead makes the packages.</p>`}
+    </div>
+    <h2>2. Packages to send: ${fmt(open.length)}</h2>
+    ${open.length ? table(open) : `<div class="empty">No package waiting to be sent.</div>`}
+    <h2 style="margin-top:18px">3. Sent: ${fmt(sent.length)}</h2>
+    ${sent.length ? table(sent) : `<div class="empty">Nothing sent yet.</div>`}`;
   $("#bform")?.addEventListener("submit", async e => {
     e.preventDefault();
-    try { const r = await api("batch_create", { name: $("#b-name").value }); toast(`Batch created with ${r.count} changes`); await refresh(true); }
+    try { const r = await api("batch_create", { name: $("#b-name").value }); toast(`Package made with ${r.count} change${r.count === 1 ? "" : "s"}. Download its files and send them.`); await refresh(true); }
     catch (err) { toast(err.message, true); }
   });
 }
@@ -572,7 +596,7 @@ async function viewFollowup(v) {
   if (st.view !== "followup") return;   // the user moved on while it loaded
   const by = {}; for (const k of Object.keys(FU)) by[k] = data.items.filter(i => i.state === k);
   const sel = st.fuState || Object.keys(FU).find(k => by[k].length) || "taken";
-  v.innerHTML = `<p class="sub">Every change sent to the developers, compared with the game file loaded now (${esc(data.release || "none")}).
+  v.innerHTML = `<p class="sub">Every change in a package marked as sent, compared with the game file loaded now (${esc(data.release || "none")}).
     After a game update, the admin builds a new data file with tools/locale_review.py and uploads it in the Team tab. This page then shows what the developers took.</p>
     <div class="stats">${Object.entries(FU).map(([k, [l, , tone]]) => `<button class="stat" data-act="fu" data-s="${k}" ${k === sel ? 'style="border-color:var(--accent)"' : ""}><b>${fmt(by[k].length)}</b><span class="chip ${tone}">${l}</span></button>`).join("")}</div>
     <p class="sub">${FU[sel][1]}</p>
@@ -654,7 +678,9 @@ document.addEventListener("click", async e => {
     case "shot-view": return openShots(key, Number(t.dataset.id));
     case "howto-hide": store.set("howtoHidden", true); renderHowto(); return;
     case "howto-show": store.set("howtoHidden", false); renderHowto(); return;
-    case "stat": st.status = t.dataset.f; st.keys = null; st.keysLabel = ""; st.page = 0; setView("messages"); return;
+    case "stat":
+      if (t.dataset.f.startsWith("@")) return setView(t.dataset.f.slice(1));
+      st.status = t.dataset.f; st.keys = null; st.keysLabel = ""; st.area = ""; st.screen = ""; st.page = 0; setView("messages"); return;
     case "ok": st.editing = null; dirty.delete(key); return run(() => api("review", { key, verdict: "ok" }), "Saved");
     case "edit": st.editing = key; rerenderCard(key); document.getElementById("sg-" + key)?.focus(); return;
     case "cancel": st.editing = null; dirty.delete(key); rerenderCard(key); return;
@@ -678,7 +704,7 @@ document.addEventListener("click", async e => {
       return run(async () => {
         const res = await api("decide", { key, status, text, note: cardVal(card, "leadnote"), review_id: used });
         st.leadText.delete(key); st.leadNote.delete(key); st.leadOpen.delete(key); dirty.delete(key);
-        if (res.was_sent) toast("Decided again. It goes out with the next batch.");
+        if (res.was_sent) toast("This change was sent already. The new decision goes out with the next package.");
       }, { approved: "Approved", rejected: "Rejected", discuss: "Marked for discussion" }[status]);
     }
     case "undecide": return run(() => api("undecide", { key }), "Decision removed");
@@ -699,9 +725,15 @@ document.addEventListener("click", async e => {
     case "term-add": { const tm = D.terms[t.dataset.t]; st.glPrefill = { en: tm.en, de: tm.variants[0][0] }; st.glEdit = null; renderView(); window.scrollTo(0, 0); return; }
     case "word-show": { const [w, ks] = st.wordList[t.dataset.i]; return showKeys(ks, `English word "${w}"`); }
     case "word-add": { const [w] = st.wordList[t.dataset.i]; st.glPrefill = { en: w, de: "" }; st.glEdit = null; renderView(); window.scrollTo(0, 0); return; }
-    case "batch-preview": return showKeys(S.decisions.filter(d => d.status === "approved" && !d.batch_id).map(d => d.msg_key), "Approved, not sent");
+    case "batch-preview": return showKeys(S.decisions.filter(d => d.status === "approved" && !d.batch_id).map(d => d.msg_key), "Approved, not in a package");
+    case "batch-send": { const id = Number(t.dataset.id), note = document.querySelector(`.sentnote[data-id="${id}"]`)?.value || "";
+      try { await api("batch_sent", { id, sent: 1, note }); toast("Marked as sent"); await refresh(true); } catch (err) { toast(err.message, true); } return; }
+    case "batch-unsend": try { await api("batch_sent", { id: Number(t.dataset.id), sent: 0 }); toast("Marked as not sent"); await refresh(true); } catch (err) { toast(err.message, true); } return;
+    case "batch-delete":
+      if (t.dataset.confirm !== "1") { t.dataset.confirm = "1"; t.textContent = "Really delete? Its changes stay approved"; return; }
+      try { await api("batch_delete", { id: Number(t.dataset.id) }); toast("Package deleted. Its changes are approved again."); await refresh(true); } catch (err) { toast(err.message, true); } return;
     case "batch-show": { const id = Number(t.dataset.id); const b = S.batches.find(x => x.id === id);
-      return showKeys(S.decisions.filter(d => d.batch_id === id).map(d => d.msg_key), `Sent in ${b.name}`); }
+      return showKeys(S.decisions.filter(d => d.batch_id === id).map(d => d.msg_key), `Package ${b.name}`); }
     case "fu": st.fuState = t.dataset.s; renderView(); return;
     case "fu-open": return showKeys([t.dataset.k], "Follow-up");
     case "fu-search": st.keys = null; st.keysLabel = ""; st.q = t.dataset.q.toLowerCase(); setView("messages"); return;

@@ -122,7 +122,7 @@ if ($a === 'state') {
     $votes = q('SELECT v.review_id, v.user_id FROM votes v JOIN reviews r ON r.id = v.review_id WHERE r.lang = ?', [$L])->fetchAll();
     $comments = q('SELECT id, msg_key, user_id, body, created FROM comments WHERE lang = ? ORDER BY id', [$L])->fetchAll();
     $decisions = q('SELECT msg_key, status, text, review_id, note, base_de, base_en, decided_by, updated, batch_id FROM decisions WHERE lang = ?', [$L])->fetchAll();
-    $batches = q('SELECT id, name, created, created_by, item_count FROM batches WHERE lang = ? ORDER BY id DESC', [$L])->fetchAll();
+    $batches = q('SELECT id, name, created, created_by, item_count, sent_at, sent_by, sent_note FROM batches WHERE lang = ? ORDER BY id DESC', [$L])->fetchAll();
     $claims = q('SELECT area, user_id, claimed_at FROM claims WHERE lang = ?', [$L])->fetchAll();
     $glossary = q('SELECT id, en_term, de_term, note, status, user_id, updated FROM glossary WHERE lang = ? ORDER BY en_term', [$L])->fetchAll();
     // Screenshots of every language: a screen looks the same in all of them, so another
@@ -144,7 +144,7 @@ if ($a === 'state') {
         'votes' => $ints($votes, ['review_id', 'user_id']),
         'comments' => $ints($comments, ['id', 'user_id']),
         'decisions' => $ints($decisions, ['review_id', 'decided_by', 'batch_id']),
-        'batches' => $ints($batches, ['id', 'created_by', 'item_count']),
+        'batches' => $ints($batches, ['id', 'created_by', 'item_count', 'sent_by']),
         'claims' => $ints($claims, ['user_id']),
         'glossary' => $ints($glossary, ['id', 'user_id']),
         'shots' => $ints($shots, ['id', 'width', 'height', 'user_id']),
@@ -183,7 +183,8 @@ if (!$post && $a === 'followup') {
     // What became of every sent change, judged against the language's current game file.
     $texts = current_texts($L);
     $rows = q('SELECT bi.batch_id, bi.msg_key, bi.text, bi.base_de, bi.base_en, b.name
-               FROM batch_items bi JOIN batches b ON b.id = bi.batch_id WHERE b.lang = ? ORDER BY bi.batch_id', [$L])->fetchAll();
+               FROM batch_items bi JOIN batches b ON b.id = bi.batch_id
+               WHERE b.lang = ? AND b.sent_at IS NOT NULL ORDER BY bi.batch_id', [$L])->fetchAll();
     $latest = [];
     foreach ($rows as $r) $latest[$r['msg_key']] = $r;   // later batches win
     $res = [];
@@ -211,6 +212,19 @@ $msg = function (string $key) use ($L): array {
 };
 $need_lead = function () use ($lead) { if (!$lead) fail('Only a lead of this language can do this.', 403); };
 $need_admin = function () use ($me) { if (!is_admin($me)) fail('Only the admin can do this.', 403); };
+/** Take a message out of its package if that package is not sent yet. False if it was sent. */
+$unpack = function (string $key) use ($L): bool {
+    $d = q('SELECT batch_id FROM decisions WHERE lang = ? AND msg_key = ?', [$L, $key])->fetch();
+    if (!$d || !$d['batch_id']) return true;
+    $b = q('SELECT sent_at FROM batches WHERE id = ?', [$d['batch_id']])->fetch();
+    if ($b && $b['sent_at']) return false;
+    q('DELETE FROM batch_items WHERE batch_id = ? AND msg_key = ?', [$d['batch_id'], $key]);
+    $n = (int)q('SELECT COUNT(*) FROM batch_items WHERE batch_id = ?', [$d['batch_id']])->fetchColumn();
+    if ($n) q('UPDATE batches SET item_count = ? WHERE id = ?', [$n, $d['batch_id']]);
+    else q('DELETE FROM batches WHERE id = ?', [$d['batch_id']]);
+    q('UPDATE decisions SET batch_id = NULL WHERE lang = ? AND msg_key = ?', [$L, $key]);
+    return true;
+};
 $rect = function () use ($in): array {
     $v = [];
     foreach (['x', 'y', 'w', 'h'] as $c) $v[$c] = max(0.0, min(1.0, (float)($in[$c] ?? 0)));
@@ -302,29 +316,55 @@ switch ($a) {
         $key = $s('key', 255); [$en, $de] = $msg($key);
         $status = $in['status'] ?? '';
         if (!in_array($status, ['approved', 'rejected', 'discuss'], true)) fail('Unknown decision.');
-        $old = q('SELECT batch_id FROM decisions WHERE lang = ? AND msg_key = ?', [$L, $key])->fetch();
         $text = $status === 'approved' ? $s('text') : null;
         if ($status === 'approved') {
             if ($text === '' || $text === $de) fail('An approved change needs a text that differs from the current one.');
             if (placeholders($text) !== placeholders($en)) fail('The placeholders must match the English text.');
         }
+        // A change in a package that is not sent yet leaves that package; a sent one stays
+        // in its package, and the new decision goes out with the next one.
+        $was_sent = !$unpack($key);
         q('DELETE FROM decisions WHERE lang = ? AND msg_key = ?', [$L, $key]);
         q('INSERT INTO decisions (lang, msg_key, status, text, review_id, note, base_de, base_en, decided_by, updated, batch_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)',
             [$L, $key, $status, $text, (int)($in['review_id'] ?? 0) ?: null, $s('note', 2000), $de, $en, $me['id'], now()]);
-        out(['ok' => true, 'was_sent' => (bool)($old['batch_id'] ?? null)]);
+        out(['ok' => true, 'was_sent' => $was_sent]);
     }
     case 'undecide': {
         $need_lead();
-        q('DELETE FROM decisions WHERE lang = ? AND msg_key = ? AND batch_id IS NULL', [$L, $s('key', 255)]);
+        $key = $s('key', 255);
+        if (!$unpack($key)) fail('This change was sent to the developers already. Decide again instead.');
+        q('DELETE FROM decisions WHERE lang = ? AND msg_key = ?', [$L, $key]);
+        out(['ok' => true]);
+    }
+    case 'batch_delete': {
+        // Only a package that was not sent: its changes go back to "approved".
+        $need_lead();
+        $b = q('SELECT sent_at FROM batches WHERE id = ? AND lang = ?', [(int)($in['id'] ?? 0), $L])->fetch();
+        if (!$b) fail('That package is gone.');
+        if ($b['sent_at']) fail('This package was sent. Mark it as not sent first if that was a mistake.');
+        $pdo = db();
+        $pdo->beginTransaction();
+        q('UPDATE decisions SET batch_id = NULL WHERE batch_id = ?', [(int)$in['id']]);
+        q('DELETE FROM batch_items WHERE batch_id = ?', [(int)$in['id']]);
+        q('DELETE FROM batches WHERE id = ?', [(int)$in['id']]);
+        $pdo->commit();
+        out(['ok' => true]);
+    }
+    case 'batch_sent': {
+        $need_lead();
+        $id = (int)($in['id'] ?? 0);
+        if (!q('SELECT 1 FROM batches WHERE id = ? AND lang = ?', [$id, $L])->fetch()) fail('That package is gone.');
+        if (!empty($in['sent'])) q('UPDATE batches SET sent_at = ?, sent_by = ?, sent_note = ? WHERE id = ?', [now(), $me['id'], $s('note', 500), $id]);
+        else q('UPDATE batches SET sent_at = NULL, sent_by = NULL, sent_note = NULL WHERE id = ?', [$id]);
         out(['ok' => true]);
     }
     case 'batch_create': {
         $need_lead();
-        $name = $s('name', 80) ?: ('Batch ' . gmdate('Y-m-d'));
+        $name = $s('name', 80) ?: ('Package ' . gmdate('Y-m-d'));
         $pdo = db();
         $pdo->beginTransaction();
         $items = q("SELECT msg_key, text, base_de, base_en FROM decisions WHERE lang = ? AND status = 'approved' AND batch_id IS NULL", [$L])->fetchAll();
-        if (!$items) { $pdo->rollBack(); fail('No approved changes are waiting.'); }
+        if (!$items) { $pdo->rollBack(); fail('No approved changes are waiting for a package.'); }
         q('INSERT INTO batches (lang, name, created, created_by, item_count) VALUES (?, ?, ?, ?, ?)', [$L, $name, now(), $me['id'], count($items)]);
         $bid = (int)$pdo->lastInsertId();
         foreach ($items as $i) {

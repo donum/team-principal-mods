@@ -83,6 +83,17 @@ function migrate(PDO $pdo): void {
         "login_attempts (ip $key NOT NULL, at INT NOT NULL)",
     ];
     foreach ($tables as $t) $pdo->exec("CREATE TABLE IF NOT EXISTS $t$end");
+    // Columns added after the first version: a package is sent when a lead says so.
+    add_column($pdo, 'batches', 'sent_at', $key);
+    add_column($pdo, 'batches', 'sent_by', 'INT');
+    add_column($pdo, 'batches', 'sent_note', $txt);
+}
+
+function add_column(PDO $pdo, string $table, string $col, string $type): void {
+    $cols = is_sqlite()
+        ? array_column($pdo->query("PRAGMA table_info($table)")->fetchAll(), 'name')
+        : $pdo->query("SHOW COLUMNS FROM $table")->fetchAll(PDO::FETCH_COLUMN);
+    if (!in_array($col, $cols, true)) $pdo->exec("ALTER TABLE $table ADD COLUMN $col $type");
 }
 
 function q(string $sql, array $args = []): PDOStatement {
