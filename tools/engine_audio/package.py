@@ -42,7 +42,7 @@ import overlay
 import pits
 import start_synth
 import starts
-from common import (BASE_ID, KEY_PREFIX, MAKES, OVERLAY_ID, PACK_DIR, REPO, SET_LIBRARY_DIR, SLOTS, connect, decode,
+from common import (AUDIO, BASE_ID, KEY_PREFIX, MAKES, OVERLAY_ID, PACK_DIR, REPO, SET_LIBRARY_DIR, SLOTS, connect, decode,
                     dump_json, game_path, load_json, slug, source_root, write_wav)
 
 sys.path.insert(0, str(REPO / "tools"))
@@ -66,6 +66,13 @@ PASSBY_PICKS = {
                      1538.2, "Pascal Wehrlein, Misano 2018 race 2"),
     },
 }
+
+
+# Pass-bys per make (wishlist E11): the next game version takes a list in
+# passby_audio and picks one per car. The first is the old single key, so
+# packs for 0.99.6 keep playing it (overlay.py, "passby_pools"). A set can
+# change the size with "passby_pool" in its "audio" section.
+PASSBY_POOL = 4
 
 
 # ------------------------------------------------------------------ helpers
@@ -223,34 +230,44 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
 
     # pass-bys, one per make, tagged on the supplier
     lvl = stock_level(base_audio, "session/hotlap_flybys.json", "engine_passby")
-    by_make = {}          # make -> clip key; overlay.py tags each season's suppliers by name
+    by_make = {}          # make -> [clip keys]; overlay.py tags each season's suppliers by name
     picks = PASSBY_PICKS.get(OVERLAY_ID, {})
+    pool = int(AUDIO.get("passby_pool", PASSBY_POOL))
     for make in (MAKES if "passby" in SLOTS else ()):
         rows = candidates(db, ("full_throttle", "steady_high"), min_q, make=make)
         if make in picks:
-            vid, rel, at, who = picks[make]
+            mine = picks[make] if isinstance(picks[make], list) else [picks[make]]
             rows = [{"audio_path": str(source_root() / rel), "start_s": at, "end_s": at + 4.4,
                      "video_id": vid, "manufacturer": make, "driver": who, "track": "picked by ear",
-                     "quality": 1.0}]
-        for r in rows:
-            if r["end_s"] - r["start_s"] < 2.0:
-                continue
-            src = decode(Path(r["audio_path"]), max(0, r["start_s"] - 0.5), 4.9, SR, 2).mean(axis=1)
-            try:
-                rl = peak_normalise(synth_passby(src))
-            except ValueError:
-                continue
-            key = f"{KEY_PREFIX}_{slug(make).lower()}"
-            gain, cross = gain_for(rl, lvl), loudest_80ms(rl)
-            save(f"assets/audio/session/{key}.wav", rl)
-            save(f"assets/audio/session/{key}_lr.wav", rl[:, ::-1].copy())
-            clips.setdefault(flyby, []).extend([
-                {"key": key, "file": f"{key}.wav", "crossing_s": cross, "gain": gain, "source": ref(r)},
-                {"key": f"{key}_lr", "file": f"{key}_lr.wav", "direction": "lr",
-                 "crossing_s": cross, "gain": gain, "source": ref(r)}])
-            by_make[make] = key
-            report.append(f"pass-by {make}: synthesised from {ref(r)}, q={r['quality']:.2f}")
-            break
+                     "quality": 1.0} for vid, rel, at, who in mine]
+        keys, drivers, videos = [], set(), set()
+        # best first; one clip per onboard, and a new driver while there is one
+        for strict in (True, False):
+            for r in rows:
+                if len(keys) >= pool:
+                    break
+                if r["end_s"] - r["start_s"] < 2.0 or r["video_id"] in videos                         or (strict and r["driver"] in drivers):
+                    continue
+                src = decode(Path(r["audio_path"]), max(0, r["start_s"] - 0.5), 4.9, SR, 2).mean(axis=1)
+                try:
+                    rl = peak_normalise(synth_passby(src))
+                except ValueError:
+                    continue
+                # the first keeps the old key, so a pack without pools plays it
+                key = f"{KEY_PREFIX}_{slug(make).lower()}" + (f"_{len(keys) + 1:02d}" if keys else "")
+                gain, cross = gain_for(rl, lvl), loudest_80ms(rl)
+                save(f"assets/audio/session/{key}.wav", rl)
+                save(f"assets/audio/session/{key}_lr.wav", rl[:, ::-1].copy())
+                clips.setdefault(flyby, []).extend([
+                    {"key": key, "file": f"{key}.wav", "crossing_s": cross, "gain": gain, "source": ref(r)},
+                    {"key": f"{key}_lr", "file": f"{key}_lr.wav", "direction": "lr",
+                     "crossing_s": cross, "gain": gain, "source": ref(r)}])
+                keys.append(key)
+                drivers.add(r["driver"])
+                videos.add(r["video_id"])
+                report.append(f"pass-by {make} {len(keys)}: synthesised from {ref(r)}, q={r['quality']:.2f}")
+        if keys:
+            by_make[make] = keys
         else:
             report.append(f"pass-by {make}: no clean onboard full-throttle yet (stock tag kept)")
 
@@ -416,8 +433,41 @@ def build(min_q: float, n_grid: int, n_pit: int, n_tv: int,
         sets.setdefault(layers, {}).update({f"{layer}.file": Path(rel).name, f"{layer}.gain": gain})
         report.append(f"{name}: real trackside recording ({len(new_audio) / SR:.0f} s loop), gain {gain}")
 
+    # ambience per track (track_ambience.py; wishlist E9, next game version):
+    # tracks.<id>.<layer> in session_layers.json, level-matched to the stock
+    # layer like the pack-wide ones. overlay.py applies them only when the
+    # game has the feature ("track_ambience" in local.json game_audio_features).
+    track_files, track_set = [], {}
+    tracks_dir = SET_LIBRARY_DIR / "ambience" / "tracks"
+    made = load_json(tracks_dir / "tracks.json", {}) or {}
+    stock_cache = {}
+    for venue, got in made.get("made", {}).items():
+        for layer, stock_file in (("cars", "cars_on_track.ogg"), ("crowd", "crowd.ogg"), ("pa", "pa.ogg")):
+            if layer not in got or (layer in ("cars", "crowd") and layer not in SLOTS):
+                continue
+            name = f"{slug(venue).lower()}_{'cars_on_track' if layer == 'cars' else layer}.ogg"
+            src_file = tracks_dir / name
+            if not src_file.exists():
+                continue
+            rel = f"assets/audio/ambience/{KEY_PREFIX}_{name}"
+            new_audio = decode(src_file, 0, None, SR, 2)
+            if stock_file not in stock_cache:
+                stock_cache[stock_file] = rms_db(decode(base_audio / "ambience" / stock_file, 0, None, SR, 2))
+            stock_gain = stock_layers.get(layer, {}).get("gain", 1.0)
+            gain = round(float(np.clip(stock_gain * 10 ** ((stock_cache[stock_file] - rms_db(new_audio)) / 20),
+                                       0.005, 1.0)), 6)
+            (out / "files" / rel).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src_file, out / "files" / rel)
+            track_files.append(rel)
+            for tid in made["venues"].get(venue, []):
+                track_set.setdefault(layers, {}).update({f"tracks.{tid}.{layer}.file": Path(rel).name,
+                                                         f"tracks.{tid}.{layer}.gain": gain})
+            report.append(f"track {venue} {layer}: {len(new_audio) / SR:.0f} s, gain {gain} "
+                          f"(next game version: {', '.join(made['venues'].get(venue, []))})")
+
     if files:
         dump_json(out / "overlay.json", {"pack": pack, "files": files, "clips": clips, "set": sets,
+                                         "track_set": track_set, "track_files": track_files,
                                          "passby_by_make": by_make})
         (out / "report.txt").write_text("\n".join(report) + "\n", encoding="utf-8")
     print("\n".join(report))

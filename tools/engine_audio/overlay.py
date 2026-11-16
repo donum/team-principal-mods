@@ -4,7 +4,9 @@ package.py writes private/engine_audio/pack/<overlay id>/ with:
     files/...        audio files, at their path inside the pack
     overlay.json     {"files": [...], "clips": {manifest: [clip, ...]},
                       "set": {json file: {"dotted.key": value}},
-                      "passby_by_make": {make: clip key}}
+                      "passby_by_make": {make: clip key or [keys]},
+                      "track_set": {json file: {"dotted.key": value}},
+                      "track_files": [files only the track_set uses]}
 
 A pack plays a stack of sound sets (layers.audio_sets): its era base's,
 and on top, its season's own set if it has one ("audio": {"overlay": ...}
@@ -12,6 +14,15 @@ in season.json). The stack is combined into one overlay, the upper set
 winning per file, clip key and value, so a season set that makes only a
 few slots keeps the base's other sounds. "passby_by_make" tags each engine
 supplier whose name starts with the make, so it fits any season of the base.
+
+Two parts wait for the next game version (announced 2026-11-16, see
+docs/CAPABILITIES.md 3b) and are only applied when local.json
+"game_audio_features" lists them:
+  "passby_pools"    passby_audio gets the make's list of keys (the game
+                    picks one per car); otherwise the first key only;
+  "track_ambience"  "track_set" values: the tracks.<id> blocks of
+                    session_layers.json (crowd, pa, cars per venue). They
+                    create the block; without the feature they are left out.
 
 apply() copies the files, upserts manifest clips by key, sets the values and
 keeps a backup of every JSON file it touched, so remove() restores the pack
@@ -32,6 +43,9 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "tools"))
 import layers  # noqa: E402
+_LOCAL = REPO / "local.json"
+GAME_FEATURES = set((json.loads(_LOCAL.read_text(encoding="utf-8")) if _LOCAL.exists() else {})
+                    .get("game_audio_features", []))
 PACK_ROOT = Path(os.environ.get("ENGINE_AUDIO_DATA", REPO / "private" / "engine_audio")) / "pack"
 STATE_DIR = "assets/audio/_private_overlay"      # inside the installed pack
 MARKER = "assets/audio/PRIVATE_AUDIO_DO_NOT_UPLOAD.txt"
@@ -51,11 +65,13 @@ def _write(path: Path, data) -> None:
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def _set(data: dict, dotted: str, value) -> None:
+def _set(data: dict, dotted: str, value, create: bool = False) -> None:
     """Set a dotted key; a path the pack doesn't have is skipped, so one
-    overlay fits every season of a base."""
+    overlay fits every season of a base (created instead with create)."""
     keys = dotted.split(".")
     for k in keys[:-1]:
+        if create and k not in data:
+            data[k] = {}
         if not isinstance(data.get(k), dict):
             return
         data = data[k]
@@ -75,7 +91,7 @@ def combine(overlay_ids: list[str]) -> tuple[dict, dict[str, Path], list[str]] |
     """One overlay from a stack of sound sets, bottom first (layers.audio_sets):
     a later set wins per file, clip key, set value and make. Sets not built
     yet are skipped. Returns (overlay, {file: source folder}, ids used)."""
-    ov = {"files": [], "clips": {}, "set": {}, "passby_by_make": {}}
+    ov = {"files": [], "clips": {}, "set": {}, "track_set": {}, "track_files": [], "passby_by_make": {}}
     origin, used = {}, []
     for oid in overlay_ids:
         src = overlay_for(oid)
@@ -83,16 +99,18 @@ def combine(overlay_ids: list[str]) -> tuple[dict, dict[str, Path], list[str]] |
             continue
         one = _read(src / "overlay.json")
         used.append(oid)
-        for rel in one["files"]:
-            if rel not in origin:
-                ov["files"].append(rel)
-            origin[rel] = src
+        for part in ("files", "track_files"):
+            for rel in one.get(part, []):
+                if rel not in origin:
+                    ov[part].append(rel)
+                origin[rel] = src
         for rel, clips in one.get("clips", {}).items():
             by_key = {c["key"]: c for c in ov["clips"].get(rel, [])}
             by_key.update({c["key"]: c for c in clips})
             ov["clips"][rel] = list(by_key.values())
-        for rel, values in one.get("set", {}).items():
-            ov["set"].setdefault(rel, {}).update(values)
+        for part in ("set", "track_set"):
+            for rel, values in one.get(part, {}).items():
+                ov[part].setdefault(rel, {}).update(values)
         ov["passby_by_make"].update(one.get("passby_by_make", {}))
     return (ov, origin, used) if used else None
 
@@ -116,16 +134,20 @@ def apply(target: Path, overlay_ids: str | list[str], pack: str | None = None) -
     if ov.get("passby_by_make") and (target / "engines.json").exists():
         for name in _read(target / "engines.json").get("suppliers", {}):
             key = next((k for make, k in ov["passby_by_make"].items() if _slug(name).startswith(_slug(make))), None)
+            if isinstance(key, list):
+                key = key if "passby_pools" in GAME_FEATURES else key[0]
             if key:
                 sets.setdefault("engines.json", {})[f"suppliers.{name}.passby_audio"] = key
-    touched = set(ov.get("clips", {})) | set(sets)
+    track_sets = ov.get("track_set", {}) if "track_ambience" in GAME_FEATURES else {}
+    touched = set(ov.get("clips", {})) | set(sets) | set(track_sets)
     for rel in sorted(touched):
         live = target / rel
         if live.exists():
             dst = backup / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(live, dst)
-    for rel in ov["files"]:
+    files = ov["files"] + (ov["track_files"] if track_sets else [])
+    for rel in files:
         dst = target / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(origin[rel] / "files" / rel, dst)
@@ -144,10 +166,18 @@ def apply(target: Path, overlay_ids: str | list[str], pack: str | None = None) -
         data = _read(path)
         for dotted, value in values.items():
             _set(data, dotted, value)
+        for dotted, value in track_sets.get(rel, {}).items():
+            _set(data, dotted, value, create=True)
         _write(path, data)
-    _write(state / "applied.json", {"files": ov["files"], "touched": sorted(touched)})
+    for rel in set(track_sets) - set(sets):
+        path = target / rel
+        data = _read(path)
+        for dotted, value in track_sets[rel].items():
+            _set(data, dotted, value, create=True)
+        _write(path, data)
+    _write(state / "applied.json", {"files": files, "touched": sorted(touched)})
     (target / MARKER).write_text(MARKER_TEXT.format(pack=pack or target.name), encoding="utf-8")
-    return f"private audio overlay {' + '.join(used)} applied: {len(ov['files'])} files, {len(touched)} JSON files patched"
+    return f"private audio overlay {' + '.join(used)} applied: {len(files)} files, {len(touched)} JSON files patched"
 
 
 def bake(target: Path, overlay_ids: str | list[str]) -> str:

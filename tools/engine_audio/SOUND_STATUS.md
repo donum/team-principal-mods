@@ -67,6 +67,46 @@ All of this is one set per pack, never per track (wishlist E9).
 The mod browser (`tools/mod_browser.py`, rebuilt on every install) shows
 the same picture live, with every clip playable.
 
+## Ready for the next game version (2026-11-16)
+
+The developer announced per-track ambience (wishlist E9) and pass-by
+pools (E11). Both are built and in the overlay, but stay out of the pack
+until `local.json` `"game_audio_features"` lists them (README, "Next game
+version").
+
+**Pass-by pools:** 4 per make, each from another driver's onboard, all
+simulated at 220 km/h like the single ones. The first is today's clip.
+
+| Make | 1 (today's) | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Audi | Rockenfeller, Hockenheim | Ekström, Brands Hatch | Green, Hockenheim | Mortara, Lausitzring |
+| BMW | Spengler, Nürburgring | Farfus, Hockenheim | Tomczyk, Spielberg | Glock, Lausitzring |
+| Mercedes | Juncadella, Norisring | Vietoris, Hockenheim | Wickens, Moscow | Paffett, Zandvoort |
+
+Not checked by ear yet.
+
+**Per track** (`track_ambience.py`; candidates to pick by ear in
+`pilot/track_ambience/<venue>/`, listed in `candidates.md`):
+
+| Venue | Track bed | Crowd | PA | Candidates |
+|---|---|---|---|---|
+| Hockenheim | own, 240 s (auto, 2013 sound check and opener) | pack-wide | pack-wide | 8 bed, 6 crowd, 4 PA (2012 grid read-out) |
+| Brands Hatch | pack-wide | pack-wide | pack-wide | 1 bed, 6 crowd (pit-stop practice: crew talk), 1 PA (2010, English, 6 s) |
+| Spielberg | pack-wide | pack-wide | pack-wide | 3 crowd (one 2011) |
+| Lausitzring | pack-wide | pack-wide | pack-wide | 6 crowd, 1 PA (2012, welcome to the grandstand) |
+| Norisring | own, 109 s (auto, 2013 roll-out) | pack-wide | pack-wide | 6 bed, 6 crowd, 2 PA (2013 8 s; 2018 belongs to the 2018 set) |
+| Moscow | pack-wide | pack-wide | pack-wide | 5 crowd |
+| Nürburgring | own, 205 s (auto, BigB.TV 2013) | pack-wide | pack-wide | 8 bed, 6 crowd |
+| Oschersleben | pack-wide | pack-wide | pack-wide | 1 crowd, 1 PA (2012 grid, 18 s) |
+| Zandvoort | pack-wide | pack-wide | pack-wide | 2 bed |
+
+Crowds and PAs are only built from picks (`TRACK_PICKS`): the finder
+can't tell a grandstand from crew talk in a pit lane. Venues without a
+pick keep the pack-wide sound. Missing so far: a real bed for Brands
+Hatch, Spielberg, Lausitzring, Moscow, Oschersleben and Zandvoort (only
+pit-lane videos or too few shots), and any PA for Spielberg, Moscow,
+Nürburgring and Zandvoort.
+
 # DTM 2018 sound status
 
 2018 has its own sound set `dtm-2018` (`seasons/dtm-2018/season.json`

@@ -155,9 +155,14 @@ def overlay_slots(overlay_id: str, recs: dict) -> dict | None:
 
     out = {"passby": {}, "tv": [], "grid_idle": [], "grid_launch": [], "pit_exit": [],
            "pit_wheelguns": [], "pit_fireup": [], "cars": [], "crowd": []}
-    for make, key in ov.get("passby_by_make", {}).items():
-        if key in flyby:
-            out["passby"][make] = {"key": key, **src(flyby[key], f"Pass-by {make}")}
+    for make, keys in ov.get("passby_by_make", {}).items():
+        # a list since the pass-by pools (wishlist E11): the first is the
+        # one 0.99.6 plays, the rest wait for the next game version
+        keys = [k for k in (keys if isinstance(keys, list) else [keys]) if k in flyby]
+        if keys:
+            out["passby"][make] = {"key": keys[0], **src(flyby[keys[0]], f"Pass-by {make}"),
+                                   "pool": [{"key": k, **src(flyby[k], f"Pass-by {make} (pool, next version)")}
+                                            for k in keys[1:]]}
     for key, c in flyby.items():
         if re.search(r"_tv_\d+$", key):
             out["tv"].append({"key": key, **src(c, "TV pass-by (not heard)")})

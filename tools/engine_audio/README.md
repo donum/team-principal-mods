@@ -79,6 +79,7 @@ python tools/engine_audio/package.py --install
 | `starts.py` | fan recordings of race starts (hand-listed) | real grid idle loops and launches (used by `package.py`; its previews `library/starts/start_NN_*.wav` are rewritten by `package.py --install`) |
 | `start_preview.py` | the installed pack | each start mixed with the game's own timing and levels (`library/starts/ingame_start_NN.wav`) |
 | `ambience.py` | spectator montages | 393 s `cars_on_track` loop of real trackside shots, cut at camera cuts |
+| `track_ambience.py` | spectator videos per venue, announcer index | `--candidates`: per-venue listening sets in `pilot/track_ambience/<venue>/` (track bed shots, crowd stretches, PA) with `candidates.md`; without: the `TRACK_PICKS` (and automatic beds where a venue has 120 s of clean shots) in `library/ambience/tracks/`. For the next game version's `tracks.<id>` block (wishlist E9) |
 | `start_synth.py` | clean onboard windows | simulated 22-car grid idle and launch (only with `package.py --synth-starts`) |
 | `announcer.py` | fan recordings (all years) and archive features named in `EXTRA` | `pilot/track_announcer/`: every speech stretch with its text (faster-whisper `small`), language, voice level against the 2 s around and bass share, in `index.csv`; `kind` and `note` from the hand labels in `announcer_labels.csv` (pa, feature, video, fan, crew, unsure). A reference for building track announcers per track; the mod browser lists it on every season's page |
 | `package.py` | segments, base pack audio levels | `pack/dtm-era4/` (files + `overlay.json`); `--install` applies it to every installed season of the base |
@@ -86,6 +87,21 @@ python tools/engine_audio/package.py --install
 
 `build_pack.py --install` re-applies the overlay after reinstalling the pack.
 `--no-private-audio` installs without it.
+
+## Next game version (announced 2026-11-16)
+
+Two sound features are built already but only go into a pack when
+`local.json` lists them in `"game_audio_features"` (`overlay.py`):
+
+- `"passby_pools"`: `package.py` makes `PASSBY_POOL` (4) pass-bys per make,
+  each from another driver's onboard (`dtm13_audi`, `dtm13_audi_02`...).
+  With the feature, `passby_audio` gets the whole list; without it, the
+  first key, as before.
+- `"track_ambience"`: the per-venue layers of `track_ambience.py` go into
+  `tracks.<id>` in `session_layers.json` (crowd, pa and cars). Without the
+  feature their files are not copied either.
+
+Turn them on once the modding guide of the new version confirms the keys.
 
 ## Era
 
