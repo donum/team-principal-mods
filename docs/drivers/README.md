@@ -82,8 +82,11 @@ All 1,162 SVGs of the fandom wiki are saved outside the repo in
 views in `<year>/` (one per driver and season, e.g.
 `2013/Mike_Rockenfeller_2013.svg`), 63 make, tyre and team logos in `logos/`,
 46 track maps in `tracks/` and 44 autographs in `autographs/`.
-`SOURCES.csv` has the wiki page of each file. All were drawn and uploaded by
-the wiki's admin, Byggxx.
+`SOURCES.csv` has the wiki page of each file and, for 993 cars, the number,
+driver, make, team, car and tyres from the season's entry list. All were
+drawn and uploaded by the wiki's admin, Byggxx. The image gallery
+(`C:/Users/dan/Pictures/mods/gallery/`) shows them in its Drawings tab;
+rebuild it with `python -I drawings_build.py` there.
 
 - **Coverage:** strong for 1984 to 1989, 1995, 2000 to 2015 and 2020 to
   2023 (2013: all 22 cars). Thin for 1990 to 1994 (2 to 7 cars a year), and
