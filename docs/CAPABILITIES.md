@@ -125,6 +125,17 @@ it hasn't been seen in a game yet.
 | Season windows, team announcements, revivals, guaranteed events, supplier join/leave, factory programme ending, rebrand nationality | `events.json`, `team_buyouts.json` | Not used: they only matter for careers past the pack's season | ✅ documented |
 | Safety progression, staff role unlock years, staff with negative ages | `config.json`, `staff.json` | Not needed for 2012 to 2018 | ✅ documented |
 
+## 3b. Announced for the next version
+
+Confirmed by the developer on Discord (16 Nov 2026), not in 0.99.6 yet.
+Check each against the next modding guide before our build writes it.
+
+| Feature | Key (as given) | What we use it for | Wishlist |
+|---|---|---|---|
+| Ambience per track | `tracks.<track id>.crowd` / `.pa` = `{"file": ..., "gain": ...}`, optional, falls back to the pack-wide set | Crowd bed per venue from the broadcasts, local track announcer (Norisring 2018 PA) | E9 |
+| Pass-by pools | `engines.json` `passby_audio` as a list of keys | Several recordings per make, so two Audis no longer fuse into one | E11 |
+| Dashboard images in random order | not given yet | Every dashboard picture gets seen | E20 |
+
 ## 4. Gaps: not natively supported
 
 | DTM reality | Problem | Proposed approximation |

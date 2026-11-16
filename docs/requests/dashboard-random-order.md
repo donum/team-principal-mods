@@ -1,6 +1,6 @@
 # Dashboard images in random order
 
-- **Status:** draft, not posted
+- **Status:** answered 16 Nov 2026: "Added", expected in the next version. Key name not given yet.
 - **Wishlist:** E20
 - **Attach:** nothing needed
 - **Length:** about 700 characters (Discord limit 2,000)

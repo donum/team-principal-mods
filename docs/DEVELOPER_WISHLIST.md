@@ -804,6 +804,10 @@ rules to these items:
   sounds like a BMW.
 
 ### E9. Ambience and start sounds per track · P3
+- **Answered:** implemented by the developer on 16 Nov 2026, expected in
+  the next version. A `tracks.<track id>` block with `crowd` and `pa`,
+  each `{"file": ..., "gain": ...}`, falling back to the pack-wide set.
+  Grid and pit banks per track were not mentioned: still open.
 - **Needed by:** dtm-2013, dtm-2012, dtm-2018.
 - **2018:** ready to use once per-track sets exist: the Lausitzring 2018
   downshifts and starts (`JDtk4MRd1d0`, the user's favourite 2018
@@ -840,6 +844,9 @@ rules to these items:
   lights out.
 
 ### E11. A full field crossing the line · P3
+- **Answered (in part):** `passby_audio` takes a list of keys, implemented
+  on 16 Nov 2026, expected in the next version. The mix settings
+  (foreground count, background weight, headroom cap) are still open.
 - **Needed by:** dtm-2013.
 - **2013:** 22 cars, and on the first laps the field crosses the line
   nose to tail: a wall of sound, cars clearly one after another.
@@ -1019,6 +1026,8 @@ rules to these items:
   track photo to everyone else.
 
 ### E20. Dashboard images in random order · P3
+- **Answered:** added by the developer on 16 Nov 2026, expected in the
+  next version. Key name not given yet: check the next modding guide.
 - **Needed by:** dtm-2013, dtm-2012 (every pack with several dashboard
   images).
 - **Why:** a pack or team set has several dashboard pictures, but the
