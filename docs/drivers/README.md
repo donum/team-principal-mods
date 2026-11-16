@@ -77,10 +77,22 @@ game adds each new race to the same counters.
 
 ## Car drawings
 
-The fandom wiki has 1,162 SVGs: 1,033 car side views (one per driver and
-season, e.g. `Mike_Rockenfeller_2013.svg`), plus track maps, logos and
-autographs. Their list with URLs and uploaders is in
-`reference/driver_careers/files.json`. They are not downloaded: a scripted
-download failed (2026-11-16) and the SVGs were set aside. They are fan
-drawings (CC BY-SA, the fandom default): credit the wiki and the uploader
-before using one in a pack.
+All 1,162 SVGs of the fandom wiki are saved outside the repo in
+`C:/Users/dan/Pictures/mods/dtm_fandom_svgs/` (2026-11-16): 1,009 car side
+views in `<year>/` (one per driver and season, e.g.
+`2013/Mike_Rockenfeller_2013.svg`), 63 make, tyre and team logos in `logos/`,
+46 track maps in `tracks/` and 44 autographs in `autographs/`.
+`SOURCES.csv` has the wiki page of each file. All were drawn and uploaded by
+the wiki's admin, Byggxx.
+
+- **Coverage:** strong for 1984 to 1989, 1995, 2000 to 2015 and 2020 to
+  2023 (2013: all 22 cars). Thin for 1990 to 1994 (2 to 7 cars a year), and
+  none for 2005, 2016 to 2018 and 2024 onwards.
+- **Getting them again:** the image server (static.wikia.nocookie.net)
+  answers scripts with a Cloudflare check, so they are saved by hand in a
+  browser from `reference/driver_careers/svg_urls.txt` (all 1,162 URLs).
+  `python -I tools/careers/sort_svgs.py` then files them from Downloads and
+  writes `SOURCES.csv` and `MISSING.txt`. It knows the six files the wiki
+  redirects to another name (Susie Stoddart → Wolff 2011 and others).
+- **Use:** fan drawings under CC BY-SA (the fandom default). Credit Byggxx
+  and dtm.fandom.com before using one in a pack.
