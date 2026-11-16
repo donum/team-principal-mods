@@ -519,6 +519,35 @@ switch ($a) {
         q('DELETE FROM claims WHERE user_id = ?', [$uid]);
         out(['ok' => true]);
     }
+    case 'user_purge': {
+        // Undo a review file: removes a reviewer without a login together with the
+        // suggestions, comments and term entries that came from the file. Decisions a
+        // lead already made stay, with their text.
+        $need_admin();
+        $uid = (int)($in['id'] ?? 0);
+        $u = q('SELECT * FROM users WHERE id = ?', [$uid])->fetch();
+        if (!$u || $u['pass_hash'] !== null || $u['invite_token'] !== null || $u['role'] !== 'reviewer')
+            fail('Only a reviewer from a review file can be removed with their suggestions.');
+        $pdo = db();
+        $pdo->beginTransaction();
+        $n = ['reviews' => 0, 'terms' => 0];
+        $ids = array_map('intval', q('SELECT id FROM reviews WHERE user_id = ?', [$uid])->fetchAll(PDO::FETCH_COLUMN));
+        foreach ($ids as $rid) {
+            q('DELETE FROM votes WHERE review_id = ?', [$rid]);
+            q('UPDATE decisions SET review_id = NULL WHERE review_id = ?', [$rid]);
+        }
+        $n['reviews'] = q('DELETE FROM reviews WHERE user_id = ?', [$uid])->rowCount();
+        q('DELETE FROM votes WHERE user_id = ?', [$uid]);
+        q('DELETE FROM comments WHERE user_id = ?', [$uid]);
+        $n['terms'] = q('DELETE FROM term_langs WHERE user_id = ?', [$uid])->rowCount();
+        // Concepts the file created go too, unless another language has an entry now.
+        q('DELETE FROM terms WHERE user_id = ? AND id NOT IN (SELECT term_id FROM term_langs)', [$uid]);
+        q('UPDATE terms SET user_id = NULL WHERE user_id = ?', [$uid]);
+        q('DELETE FROM claims WHERE user_id = ?', [$uid]);
+        q('DELETE FROM users WHERE id = ?', [$uid]);
+        $pdo->commit();
+        out(['ok' => true] + $n);
+    }
     case 'password': {
         $u = q('SELECT pass_hash FROM users WHERE id = ?', [$me['id']])->fetch();
         if (!password_verify((string)($in['old'] ?? ''), $u['pass_hash'])) fail('The current password is wrong.');

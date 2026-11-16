@@ -678,7 +678,7 @@ function viewTeam(v) {
       <td>${isAdmin() && u.id !== me().id ? `<div class="row"><select data-act="role" data-id="${u.id}" aria-label="Role">${["reviewer", "lead", "admin"].map(r => `<option ${u.role === r ? "selected" : ""}>${r}</option>`).join("")}</select>
         ${u.role === "lead" ? `<input type="text" data-act="langs" data-id="${u.id}" value="${esc(u.langs || "")}" placeholder="all languages" aria-label="Lead for languages" style="width:130px">` : ""}</div>` : esc(u.role) + (u.role === "lead" ? ` (${esc(u.langs || "all languages")})` : "")}</td>
       <td>${u.last_seen ? when(u.last_seen) : "never"}</td>
-      <td>${isAdmin() && u.id !== me().id ? `<div class="act"><button class="btn small" data-act="reinvite" data-id="${u.id}" data-name="${esc(u.name)}">New invite link</button><button class="btn small" data-act="remove" data-id="${u.id}" data-name="${esc(u.name)}">Remove</button></div>` : ""}</td></tr>`).join("")}</tbody></table></div>
+      <td>${isAdmin() && u.id !== me().id ? `<div class="act">${u.file_only ? `<button class="btn small" data-act="purge" data-id="${u.id}" data-name="${esc(u.name)}">Remove with suggestions</button>` : `<button class="btn small" data-act="reinvite" data-id="${u.id}" data-name="${esc(u.name)}">New invite link</button><button class="btn small" data-act="remove" data-id="${u.id}" data-name="${esc(u.name)}">Remove</button>`}</div>` : ""}</td></tr>`).join("")}</tbody></table></div>
     <p class="msg" style="margin-top:6px">Reviewers review and discuss, in every language. Leads also decide, agree glossary terms and create batches, for the languages listed (empty means all). The admin also invites people and loads game files.</p>
     ${isAdmin() ? `<div class="grid2" style="margin-top:14px">
       <div class="box"><h3>Invite someone</h3><form id="uform" class="row">
@@ -814,6 +814,9 @@ document.addEventListener("click", async e => {
     case "remove":
       if (t.dataset.confirm !== "1") { t.dataset.confirm = "1"; t.textContent = `Really remove ${t.dataset.name}?`; return; }
       try { await api("user_remove", { id: Number(t.dataset.id) }); toast("Removed. Their reviews stay."); await refresh(true); } catch (err) { toast(err.message, true); } return;
+    case "purge":
+      if (t.dataset.confirm !== "1") { t.dataset.confirm = "1"; t.textContent = `Really delete all of ${t.dataset.name}'s suggestions and terms?`; return; }
+      try { const res = await api("user_purge", { id: Number(t.dataset.id) }); toast(`Removed ${t.dataset.name}: ${res.reviews} suggestions, ${res.terms} terms. Decisions already made stay.`); await refresh(true); } catch (err) { toast(err.message, true); } return;
   }
 });
 
