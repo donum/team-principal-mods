@@ -33,7 +33,7 @@ function shotsHtml(r) {
   const tiles = links.slice(0, 3).map(l => {
     const sh = IDX.shots.get(l.shot_id);
     return `<button class="ztile" data-act="shot-view" data-id="${sh.id}" title="Open the whole screenshot">${zoomHtml(l)}
-      <span class="msg">${esc(langName(sh.lang))} screenshot${sh.lang !== S.lang ? " (other language)" : ""}</span></button>`;
+      <span class="msg">${sh.screen ? `<b>${esc(sh.screen)}</b> · ` : ""}${esc(langName(sh.lang))} screenshot${sh.lang !== S.lang ? " (other language)" : ""}${(sh.caption || "").startsWith("auto:") ? ", taken automatically" : ""}</span></button>`;
   }).join("");
   return `<div class="shots">${tiles}
     <div class="act"><button class="btn small" data-act="shot-add">${links.length ? "Add another screenshot" : "Add screenshot"}</button>
