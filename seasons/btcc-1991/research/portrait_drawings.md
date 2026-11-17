@@ -1,5 +1,13 @@
 # BTCC 1991 portrait drawings
 
+**Status 2026-11-17:** all 38 drivers have a painted portrait made with
+ChatGPT (OpenAI), two rounds (56 images overnight, 20 redone in the
+morning; the newest per driver is used). Originals in
+`~/Pictures/mods/btcc-1991/portraits/drawn/`, pinned as `"source":
+"drawing"` in `art/portraits.json`. Sean Walker, Andrew Mackenzie and
+Grahame Davis have one too but are not in the pack. A hand drawing by a
+friend can still replace any of them the same way (below).
+
 The pack's portraits come from two places:
 
 1. **Commons photos** (`tools/portrait_art.py`), but only where a free photo

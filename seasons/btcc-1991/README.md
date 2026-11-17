@@ -86,9 +86,11 @@ Championship" or "BTCC"), as the DTM packs do for unverified years
   one points scale for all races (wishlist A1).
 - One minimum weight of 950 kg; the BMW M3 and Ford Sierra carry their
   1050 kg as car mass.
-- No team logos yet. Portraits: only Christian Danner has a free photo close
-  to 1991 (Commons, 1995); everyone else has a helmet card until the drawn
-  portraits arrive ([research/portrait_drawings.md](research/portrait_drawings.md)).
+- No team logos yet.
+- Portraits are painted illustrations in 1991 style, made with ChatGPT
+  (OpenAI). They are not photos and the likeness is approximate. Free
+  photos from 1991 barely exist; see
+  [research/portrait_drawings.md](research/portrait_drawings.md).
 - Sounds are the game's own.
 - A team that changed make (Rouse, RML, Prodrive, WSR, Schnitzer's return)
   is a new team in the game (wishlist C12). The game keeps 10 teams, so

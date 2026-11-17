@@ -739,18 +739,27 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
             fh.write("\n\n".join(credits) + "\n")
     portraits = layers.merged_json(season_dir, "art/portraits.json")
     if portraits and (out / "credits.txt").exists():
-        lines = ["", "Driver portraits (assets/portraits), free-licence photos from Wikimedia Commons:"]
-        for name, c in sorted(portraits.items()):
-            if c.get("source") == "photo":
-                lines.append(f"  {name}: {c['author'] or 'unknown author'}, {c['license']} - {c['page']}")
-        drawn = sorted((n, c) for n, c in portraits.items() if c.get("source") == "drawing")
-        if drawn:
-            lines.append("Drawn portraits:")
-            lines += [f"  {n}: drawn by {c.get('author') or 'unknown'}" + (f", {c['license']}" if c.get("license") else "")
-                      for n, c in drawn]
-        lines.append("  Photos are cropped to the head and shoulders; a few close-ups have")
-        lines.append("  their edges extended with a blurred copy of the photo.")
-        lines.append("  Drivers without a free photo have a drawn helmet card.")
+        kinds = [c.get("source") for c in portraits.values()]
+        lines = [""]
+        if "photo" in kinds:
+            lines.append("Driver portraits (assets/portraits), free-licence photos from Wikimedia Commons:")
+            for name, c in sorted(portraits.items()):
+                if c.get("source") == "photo":
+                    lines.append(f"  {name}: {c['author'] or 'unknown author'}, {c['license']} - {c['page']}")
+            lines.append("  Photos are cropped to the head and shoulders; a few close-ups have")
+            lines.append("  their edges extended with a blurred copy of the photo.")
+        # Drawn portraits, one block per author: names, licence and a note.
+        groups = {}
+        for n, c in sorted(portraits.items()):
+            if c.get("source") == "drawing":
+                groups.setdefault((c.get("author") or "unknown", c.get("license", ""), c.get("reference", "")), []).append(n)
+        for (author, lic, ref), names in groups.items():
+            lines.append(f"Driver portraits (assets/portraits) by {author}" + (f", {lic}" if lic else "") + ":")
+            lines.append("  " + ", ".join(names))
+            if ref:
+                lines.append(f"  Each is a {ref}.")
+        if "helmet" in kinds:
+            lines.append("  Drivers without a portrait have a drawn helmet card.")
         with open(out / "credits.txt", "a", encoding="utf-8", newline="\n") as fh:
             fh.write("\n".join(lines) + "\n")
     # Sound sets cleared for release ("audio": {"in_pack": true}, in the era

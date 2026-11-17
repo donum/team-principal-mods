@@ -287,7 +287,8 @@ def main():
         print(f"{name:28s} {done['source']:6s} {done.get('year') or '':>5} {done.get('license', '')}")
     credits_path.write_text(json.dumps(credits, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     photos = sum(1 for v in credits.values() if v["source"] == "photo")
-    print(f"\n{photos} photos, {len(credits) - photos} helmet cards -> {credits_path.relative_to(REPO)}")
+    drawn = sum(1 for v in credits.values() if v["source"] == "drawing")
+    print(f"\n{photos} photos, {drawn} drawings, {len(credits) - photos - drawn} helmet cards -> {credits_path.relative_to(REPO)}")
 
 
 if __name__ == "__main__":
