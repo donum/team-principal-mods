@@ -25,6 +25,11 @@ fills both series in one run.
   for BMW Dealer Team Sweden, Techspeed, BRR and R&D Motorsport. The two Vic
   Lee teams share their made-up staff (one workshop). János Ódor's birth
   year is our estimate.
+- **Joining teams 1992 to 2000 (2026-11-17):** 25 team principal rows (16
+  verified, 9 assumed), one per team in its debut season (`btcc-1992` to
+  `btcc-1999`), named as in `docs/teams/btcc_game_events.csv`. These seasons
+  have no team list in `teams_by_season.json`, so `fictional_staff.py`
+  skips them. Nothing found for TOM's GB (1993) and BMW (1995).
 - **Open:** the Autosport scans on 1990sbtcc.com (`/as9101/` to `/as9112/`)
   are images and were not read; they likely name more engineers and team
   managers.

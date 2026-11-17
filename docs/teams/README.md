@@ -81,11 +81,19 @@ The same files for the BTCC, with the prefix `btcc_`:
 | `btcc_sponsors.csv` | 1991 only. Extra columns `source_industry`, `country` (from the sources) and `game_industry`, `game_nationality` (the game's lists) |
 | `btcc_driver_backing.csv` | Same columns as the DTM file |
 
-Status (2026-11-16):
+Status (2026-11-17):
 
 - Joins and leaves of every 1991 team and every works team to 2000.
-- No `principal` column yet, so the joining teams get made-up principals. A team
-  that changed make is a leave plus a join under a new key (wishlist C12).
+- `btcc_game_events.csv` has the `principal` columns (2026-11-17). 25 of the
+  27 joining teams name a real principal, each with a sourced row in
+  `docs/staff/btcc_staff.csv` (season `btcc-<debut year>`). No principal was
+  found for TOM's GB (Toyota 1993) and BMW (1995). In the btcc-1991 pack 17
+  are real. The other 10 get a made-up name by design: Andy Rouse, David
+  Richards and Dave Cook already lead 1991 teams, and Ray Mallock, David
+  Whitehead and Dick Bennetts lead an earlier joining team. Birth years are
+  missing for Linford, Dowson, Dane, Neal, Harrison, Whitehead, Bennetts and
+  Jon Brookes.
+- A team that changed make is a leave plus a join under a new key (wishlist C12).
   Two names were changed by us so they stay unique: BMW Team Motorsport
   (1995) and Honda Team WSR (1999).
 - Colours of the joining teams are mostly from memory, five are
