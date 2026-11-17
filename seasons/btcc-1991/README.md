@@ -109,9 +109,10 @@ Championship" or "BTCC"), as the DTM packs do for unverified years
   its red wordmark (no free file of the 1995 H badge), Alfa Romeo is a plain
   text crest (no free file of the 1982 badge), Michelin's wordmark may
   differ a little from the 1991 one.
-- Portraits are painted illustrations in 1991 style, made with ChatGPT
-  (OpenAI). They are not photos and the likeness is approximate. Free
-  photos from 1991 barely exist; see
+- Portraits: 26 drivers have an AI-generated image (ChatGPT, OpenAI) based
+  on 1991 TV stills and photos. They are not real photos and the likeness
+  is approximate. The 12 drivers with no 1991 reference have a helmet card;
+  see
   [research/portrait_drawings.md](research/portrait_drawings.md).
 - Sounds are the game's own.
 - A team that changed make (Rouse, RML, Prodrive, WSR, Schnitzer's return)

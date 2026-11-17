@@ -807,7 +807,7 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
             lines.append(f"Driver portraits (assets/portraits) by {author}" + (f", {lic}" if lic else "") + ":")
             lines.append("  " + ", ".join(names))
             if ref:
-                lines.append(f"  Each is a {ref}.")
+                lines.append(f"  Each is {ref}.")
         if "helmet" in kinds:
             lines.append("  Drivers without a portrait have a drawn helmet card.")
         with open(out / "credits.txt", "a", encoding="utf-8", newline="\n") as fh:

@@ -1,12 +1,13 @@
 # BTCC 1991 portrait drawings
 
-**Status 2026-11-17:** all 38 drivers have a painted portrait made with
-ChatGPT (OpenAI), two rounds (56 images overnight, 20 redone in the
-morning; the newest per driver is used). Originals in
-`~/Pictures/mods/btcc-1991/portraits/drawn/`, pinned as `"source":
-"drawing"` in `art/portraits.json`. Sean Walker, Andrew Mackenzie and
-Grahame Davis have one too but are not in the pack. A hand drawing by a
-friend can still replace any of them the same way (below).
+**Status 2026-11-17:** 26 drivers have an AI-generated portrait made with
+ChatGPT (OpenAI) from the round of 11:30, only for the drivers with a 1991
+TV still or web photo as reference. The 12 without a reference (Berridge,
+Fenwick, Godfrey Hall, Leech, Baird, Llewellyn, Hales, Lyall, MacKay,
+Jeff Wilson, Bardy, Forrest) are pinned to helmet cards. Originals in
+`~/Pictures/mods/btcc-1991/portraits/drawn/`; the earlier painted round is
+kept in `drawn/round1_paintings/` and is not used.
+A hand drawing by a friend can still replace any of them (below).
 
 The pack's portraits come from two places:
 
