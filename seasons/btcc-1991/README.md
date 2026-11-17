@@ -51,6 +51,11 @@ The pack folder is `btcc1991`.
   Bristow, Matt Neal, Ian Forrest (amounts are our estimates). No 1992 seat
   was announced before the 1991 finale, so there are no future contracts.
   Debut liveries of the later teams: [research/later_team_liveries.md](research/later_team_liveries.md).
+- **Logos:** `art/logos.json`, built by `tools/logo_art.py`. Maker and tyre
+  logos from Wikimedia Commons, in the version each make used when it
+  raced in the BTCC (1991, or its first year for the later makes). Every
+  team, also the later ones, shows its make's emblem as its list icon
+  (`"team_tiles": "maker"`, as in dtm-2013).
 
 ## Series logo
 
@@ -86,7 +91,12 @@ Championship" or "BTCC"), as the DTM packs do for unverified years
   one points scale for all races (wishlist A1).
 - One minimum weight of 950 kg; the BMW M3 and Ford Sierra carry their
   1050 kg as car mass.
-- No team logos yet.
+- No team logos of their own: every team shows its make's emblem (wishlist
+  E18). Logos we could not confirm for the period: Renault uses the
+  1972-1992 diamond (it raced from 1993 with the 1992 one), Honda shows only
+  its red wordmark (no free file of the 1995 H badge), Alfa Romeo is a plain
+  text crest (no free file of the 1982 badge), Michelin's wordmark may
+  differ a little from the 1991 one.
 - Portraits are painted illustrations in 1991 style, made with ChatGPT
   (OpenAI). They are not photos and the likeness is approximate. Free
   photos from 1991 barely exist; see

@@ -5,6 +5,7 @@ Created by Daniel Raude - Team Principal Mods
 Content licensed CC BY-NC-SA 4.0. Tooling MIT.
 
 Car images: Team Principal Mods (own work), same licence as the pack.
+Cover photo: Silverstone 1991, Sutton Images / Motorsport Images, via Alamy (3ABP9N9). Bought licence, not covered by the pack licence.
 
 Season research sources: en Wikipedia ("1991 British Touring Car Championship").
 See seasons/btcc-1991/research/season.md in the project repository for details.
@@ -15,3 +16,19 @@ Track maps and track geometry:
   Brands Hatch Indy is today's layout. Silverstone GP 1991, Snetterton
   1990 and Oulton Park 1975 are traced from old maps and imagery, on top of
   OpenStreetMap; the other circuits follow today's OpenStreetMap lines.
+
+Maker and tyre logos (assets/engines, assets/tyre, and the team list
+icons in assets/logos), from Wikimedia Commons, in the version each make
+used when it raced in the BTCC (see art/logos.json for periods and doubts):
+  Public domain: BMW (1963-1997 roundel), Ford (flat oval, 1976-2003),
+  Toyota (1989 emblem and wordmark), Nissan (1983-2002), Mitsubishi
+  Motors (three diamonds), Mazda (1992), Renault (1972-1992 diamond),
+  Volvo (wordmark), Honda (red wordmark), Audi (1995 rings), Yokohama,
+  Dunlop, Pirelli, Firestone, Bridgestone, Michelin.
+  Vauxhall griffin ("Vauxhall 1990s.svg") by TheCrimsonBoat, CC BY-SA 4.0 -
+  https://commons.wikimedia.org/wiki/File:Vauxhall_1990s.svg
+  Peugeot lion ("Peugeot logo 1991-1998.png") by Flexingflex1224, CC0 -
+  https://commons.wikimedia.org/wiki/File:Peugeot_logo_1991-1998.png
+  Alfa Romeo: a plain text crest made for this pack.
+  Some logos are recoloured or cropped to the emblem for the game's dark
+  screens. All trademarks belong to their owners.

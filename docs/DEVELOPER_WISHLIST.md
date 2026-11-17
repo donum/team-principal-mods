@@ -1018,7 +1018,7 @@ rules to these items:
   Request text in `docs/requests/weekend-images.md`.
 
 ### E18. Separate team logo and team icon · P3
-- **Needed by:** dtm-2012, dtm-2013 (maker emblems as team icons,
+- **Needed by:** dtm-2012, dtm-2013, btcc-1991 (maker emblems as team icons,
   `"team_tiles": "maker"` in `art/logos.json`), dtm-2018 (planned the same
   way), and every historic season.
 - **Why:** older teams, and teams in other series, have classic logos:

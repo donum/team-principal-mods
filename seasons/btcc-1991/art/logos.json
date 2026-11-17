@@ -1,0 +1,414 @@
+{
+  "$comment": "BTCC 1991 maker and tyre logos for tools/logo_art.py (assets/engines, assets/tyre, and the team list icons in assets/logos). commons = logo file on Wikimedia Commons (licence, author and period recorded); crest = plain text crest where no free period logo exists. Each logo is the version in use when the make or tyre maker raced in the BTCC (1991, or the year a later make joins through real_history). period = the years the design was in use, from the Commons file page and Logopedia. \"team_tiles\": \"maker\": as in dtm-2013, every team (also the later teams from docs/teams/btcc_game_events.csv) shows its make's emblem as its list icon. The teams' own logos are not in the game (wishlist E18). Sizes as bases/dtm-era4: team_content 938, outline 20 px at 50%. Doubts are in each \"note\" and in seasons/btcc-1991/README.md.",
+  "team_tiles": "maker",
+  "engines": {
+    "BMW": {
+      "source": "commons",
+      "file": "File:BMW 1963-1997 Logo.svg",
+      "license": "Public domain",
+      "period": "1963-1997",
+      "note": "the flat roundel with the older letters, as on the 1991 M3s (the chrome-edged roundel came in 1997)",
+      "also_as": [
+        "BMW S14 2.0 16V"
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    },
+    "Ford": {
+      "source": "commons",
+      "file": "File:Ford logo flat.svg",
+      "license": "Public domain",
+      "period": "1976-2003",
+      "note": "the flat blue oval with white script, as on the 1991 Sierras (the shaded Centennial oval came in 2003)",
+      "also_as": [
+        "Ford Cosworth 2.0"
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    },
+    "Vauxhall": {
+      "source": "commons",
+      "file": "File:Vauxhall 1990s.svg",
+      "license": "CC BY-SA 4.0",
+      "author": "TheCrimsonBoat",
+      "period": "1989-2003",
+      "note": "the griffin in the red disc, as on the 1991 Cavalier doors; the VAUXHALL word below it is cut off",
+      "also_as": [
+        "Vauxhall 2.0 16V"
+      ],
+      "crop": [
+        0,
+        0,
+        1,
+        0.62
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    },
+    "Toyota": {
+      "source": "commons",
+      "file": "File:Toyota carlogo.svg",
+      "license": "Public domain",
+      "period": "1989-present (three-ellipse emblem from 1989, red wordmark from 1977)",
+      "note": "emblem stacked over the red TOYOTA word; the emblem was new in 1989 and on the 1991 Carinas",
+      "also_as": [
+        "Toyota 2.0 16V"
+      ],
+      "stack": true,
+      "stack_ratio": 1.6,
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    },
+    "Nissan": {
+      "source": "commons",
+      "file": "File:Nissan logo (1983–2002).svg",
+      "license": "Public domain",
+      "period": "1983-2002",
+      "note": "the blue box wordmark with the small roundel; the 1991 Primeras carried NISSAN in this lettering",
+      "also_as": [
+        "Nissan 2.0 16V"
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "content": 1000,
+      "team_content": 1000
+    },
+    "Mitsubishi": {
+      "source": "commons",
+      "file": "File:Mitsubishi Motors SVG logo.svg",
+      "license": "Public domain",
+      "period": "three diamonds since 1914; this Mitsubishi Motors lockup 1982-2017",
+      "note": "the three red diamonds; the MITSUBISHI MOTORS words below are cut off",
+      "also_as": [
+        "Mitsubishi 2.0 16V"
+      ],
+      "crop": [
+        0,
+        0,
+        1,
+        0.7
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    },
+    "Peugeot": {
+      "source": "commons",
+      "file": "File:Peugeot logo 1991-1998.png",
+      "license": "CC0",
+      "author": "Flexingflex1224",
+      "period": "1991-1998",
+      "note": "the white lion in the blue box, as used when Peugeot joined in 1992; the PEUGEOT word below is cut off",
+      "also_as": [
+        "Peugeot 2.0 16V"
+      ],
+      "crop": [
+        0,
+        0,
+        1,
+        0.76
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    },
+    "Mazda": {
+      "source": "commons",
+      "file": "File:Mazda logo 1992.svg",
+      "license": "Public domain",
+      "period": "1992-1997",
+      "note": "the rounded emblem and mazda wordmark of 1992, when Mazda joined (the diamond emblem of 1991 was dropped in 1992)",
+      "also_as": [
+        "Mazda 2.0 V6"
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    },
+    "Renault": {
+      "source": "commons",
+      "file": "File:Renault logo 1972-1992.svg",
+      "license": "Public domain",
+      "period": "1972-1992",
+      "note": "UNSURE: the Vasarely line diamond, in use until 1992. Renault joined in 1993, by then with the new solid diamond (File:Renault 1992-2004 logo.png, CC0), which Commons would not serve here (rate limit). Swap it in when it downloads. Black lines are light grey here for the dark screens.",
+      "also_as": [
+        "Renault 2.0 16V"
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938,
+      "recolor": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            235,
+            235,
+            235
+          ],
+          90
+        ]
+      ]
+    },
+    "Volvo": {
+      "source": "commons",
+      "file": "File:Volvo logo.svg",
+      "license": "Public domain",
+      "period": "spread VOLVO wordmark, in use from the 1950s to 2020",
+      "note": "the blue VOLVO word; the 850s of 1994 carried the iron mark grille badge, which has no free period file",
+      "also_as": [
+        "Volvo 2.0 5-cylinder"
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "content": 1000,
+      "team_content": 1000,
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    },
+    "Alfa Romeo": {
+      "source": "crest",
+      "text": "ALFA ROMEO",
+      "fg": [
+        255,
+        255,
+        255
+      ],
+      "bg": [
+        150,
+        20,
+        30
+      ],
+      "accent": [
+        0,
+        110,
+        60
+      ],
+      "note": "No free file of the 1982-2015 badge exists (Commons only has a photo of a badge, CC BY-SA). Plain text crest in the badge colours.",
+      "also_as": [
+        "Alfa Romeo 2.0 TS"
+      ],
+      "team_content": 938
+    },
+    "Honda": {
+      "source": "commons",
+      "file": "File:Honda logo.svg",
+      "license": "Public domain",
+      "period": "red HONDA wordmark, in use since the 1970s",
+      "note": "UNSURE: the red HONDA word only, cut from the motorcycle wing logo. The car H badge of 1995 has no free period file (Commons has only the 2000 and later versions).",
+      "also_as": [
+        "Honda 2.0 VTEC"
+      ],
+      "crop": [
+        0,
+        0.84,
+        1,
+        1
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "content": 1000,
+      "team_content": 1000
+    },
+    "Audi": {
+      "source": "commons",
+      "file": "File:Audi Logo 1995.svg",
+      "license": "Public domain",
+      "period": "1995-2009",
+      "note": "the chrome rings of the 1995 logo, as on the 1996 A4s; the Audi word is cut off (same as bases/dtm-era4)",
+      "also_as": [
+        "Audi 2.0 5V"
+      ],
+      "crop": [
+        0,
+        0,
+        1,
+        0.6
+      ],
+      "outline": {
+        "width": 20,
+        "opacity": 0.5
+      },
+      "team_content": 938
+    }
+  },
+  "tyres": {
+    "Yokohama": {
+      "source": "commons",
+      "file": "File:Yokohama (Unternehmen) logo.svg",
+      "license": "Public domain",
+      "period": "1982-present (Y chevron and wordmark)",
+      "note": "red Y chevron stacked over the word; the black word is white here for the dark screens",
+      "recolor": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          90
+        ]
+      ],
+      "stack": true,
+      "stack_ratio": 2.4,
+      "content": 1000,
+      "stack_color": [
+        222,
+        32,
+        39
+      ]
+    },
+    "Dunlop": {
+      "source": "commons",
+      "file": "File:Dunlop brand logo.svg",
+      "license": "Public domain",
+      "period": "1959-present (flying D and italic DUNLOP)",
+      "note": "flying D stacked over the word; black is white here. The 1991 Vauxhall and Nissan cars showed the word alone.",
+      "recolor": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          90
+        ]
+      ],
+      "stack": true,
+      "stack_ratio": 2.6,
+      "content": 1000
+    },
+    "Pirelli": {
+      "source": "commons",
+      "file": "File:Pirelli - logo black (Italy, 1970).svg",
+      "license": "Public domain",
+      "period": "long-P wordmark, 1970s to present",
+      "note": "black letters made Pirelli yellow for the dark screens, as on the period trackside boards",
+      "recolor": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            210,
+            0
+          ],
+          90
+        ]
+      ],
+      "content": 1000
+    },
+    "Firestone": {
+      "source": "commons",
+      "file": "File:Firestone.svg",
+      "license": "Public domain",
+      "period": "script in use for most of the 20th century",
+      "note": "red Firestone script, as on the 1991 Mitsubishi bonnet",
+      "content": 1000
+    },
+    "Bridgestone": {
+      "source": "commons",
+      "file": "File:Bridgestone logo.svg",
+      "license": "Public domain",
+      "period": "1984-2011 (B mark wordmark)",
+      "note": "black letters made white for the dark screens; the red B tip stays",
+      "recolor": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          90
+        ],
+        [
+          [
+            35,
+            24,
+            21
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          60
+        ]
+      ],
+      "content": 1000
+    },
+    "Michelin": {
+      "source": "commons",
+      "file": "File:Michelin Wordmark.svg",
+      "license": "Public domain",
+      "period": "UNSURE: italic blue MICHELIN wordmark; this file is dated 2012 and the 1991 lettering may differ a little",
+      "note": "blue wordmark",
+      "content": 1000,
+      "plate": [
+        255,
+        255,
+        255
+      ],
+      "border": [
+        30,
+        30,
+        30
+      ]
+    }
+  }
+}
