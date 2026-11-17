@@ -392,6 +392,69 @@ def generate_staff(out, base_dir, spec, teams):
         generate_team_principals(out, spec, teams, ref, year, used)
 
 
+def principal_record(name, born, nat, team, level, year, backgrounds, pools):
+    """One teamprincipals.json entry. Ratings scale with the team's level;
+    the background is fixed per name."""
+    import hashlib
+
+    first, _, last = name.partition(" ")
+    seed = int(hashlib.sha1(name.encode("utf-8")).hexdigest(), 16)
+    rate = lambda k: max(5, min(18, level + (seed >> (4 * k)) % 5 - 2))
+    return {
+        "first_name": first,
+        "last_name": last,
+        "nationality": nat if nat in pools else (team["nationality"] if team["nationality"] in pools else "german"),
+        "age": person_age(name, "team_principal", year, born),
+        "background": backgrounds[seed % len(backgrounds)],
+        "team": team["name"],
+        "stats": {"reputation": rate(1), "finance": rate(2), "leadership": rate(3), "organization": rate(4)},
+    }
+
+
+# Level (1-20, as in the staff spec) of a team that joins later, by its
+# entry_performance_tag in the events CSV.
+JOIN_LEVEL = {"front_runner": 15, "upper_midfield": 12, "midfield": 10, "lower_midfield": 7, "backmarker": 5}
+
+
+def add_joining_principals(out, manifest, joins):
+    """Give every team that joins later its principal, like the vanilla packs
+    do for their inactive teams. The name comes from the events CSV
+    `principal` column (a real person from docs/staff); when it is empty or
+    the person already works for a team on the grid, a made-up name."""
+    path = out / "teamprincipals.json"
+    if not joins or not path.exists():
+        return
+    data = load_json(path)
+    backgrounds = [b for b in data.get("backgrounds", {}) if b != "newcomer"] or ["newcomer"]
+    pools = load_json(out / "driver_names.json")["names_by_nationality"]
+    year = int(manifest["constants"]["SEASON_START_YEAR"])
+    series = manifest.get("staff", {}).get("reference", "dtm-").split("-")[0] or "dtm"
+    teams = {t["name"]: t for t in load_json(out / "teams.json")}
+    used = {f"{p['first_name']} {p['last_name']}" for p in data.get("principals", [])}
+    staff = out / "staff.json"
+    if staff.exists():
+        used |= {s["name"] for s in load_json(staff)}
+    for r in joins:
+        team = teams[r["name"]]
+        name, born, nat = r.get("principal") or None, None, r.get("principal_nationality") or None
+        if name and name not in used:
+            born = int(r["principal_born"]) if r.get("principal_born") else None
+        else:
+            name, born = period_name(team["nationality"], year, "team_principal", used, "tp", team["name"], series=series)
+            nat = None
+        if born is None:
+            # Unknown birth year: keep the person in the usual principal age
+            # range in the year the team debuts, not only in the pack's year.
+            debut, (lo, hi) = int(r["year"]), ROLE_AGE["team_principal"]
+            if not lo <= debut - (1930 + name_seed(name, "born") % 56) <= hi:
+                born = debut - (lo + name_seed(name, "join-age") % (hi - lo + 1))
+        used.add(name)
+        data["principals"].append(principal_record(name, born, nat, team, JOIN_LEVEL.get(r["performance"], 10),
+                                                   year, backgrounds, pools))
+        print(f"real history: {team['name']} principal {name}")
+    dump_json(path, data)
+
+
 def generate_team_principals(out, spec, teams, ref, year, used_staff_names):
     """Replace the base pack's fictional principals with one per DTM team.
 
@@ -400,7 +463,6 @@ def generate_team_principals(out, spec, teams, ref, year, used_staff_names):
     falls back to a made-up name from the team's other roles' pool. Ratings
     scale with the team's level; the background is fixed per name.
     """
-    import hashlib
     import random
 
     path = out / "teamprincipals.json"
@@ -422,19 +484,7 @@ def generate_team_principals(out, spec, teams, ref, year, used_staff_names):
             name, born = period_name(team["nationality"], year, "team_principal", used,
                                      "tp", team["name"], series=spec["reference"].split("-")[0])
         used.add(name)
-        first, _, last = name.partition(" ")
-        seed = int(hashlib.sha1(name.encode("utf-8")).hexdigest(), 16)
-        age = person_age(name, "team_principal", year, born)
-        rate = lambda k: max(5, min(18, level + (seed >> (4 * k)) % 5 - 2))
-        principals.append({
-            "first_name": first,
-            "last_name": last,
-            "nationality": nat if nat in pools else (team["nationality"] if team["nationality"] in pools else "german"),
-            "age": age,
-            "background": backgrounds[seed % len(backgrounds)],
-            "team": team["name"],
-            "stats": {"reputation": rate(1), "finance": rate(2), "leadership": rate(3), "organization": rate(4)},
-        })
+        principals.append(principal_record(name, born, nat, team, level, year, backgrounds, pools))
     series = "BTCC" if spec["reference"].startswith("btcc-") else "DTM"
     data["description"] = (f"{series} team principals from docs/staff/{series.lower()}_staff.csv (real people, "
                            "verified or assumed); made-up names where no principal is known.")
@@ -673,7 +723,7 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
         generate_staff(out, base_dir, manifest["staff"], load_json(out / "teams.json"))
     # Future teams and exits come after staff: they hire on the market when they debut.
     import real_history
-    real_history.apply(out, manifest)
+    add_joining_principals(out, manifest, real_history.apply(out, manifest))
 
     for layer in chain:
         patch = layer / "patches" / "regulations.json"

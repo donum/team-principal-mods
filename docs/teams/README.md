@@ -11,7 +11,7 @@ Uses in the game:
 |---|---|
 | `dtm_team_changes.csv` | `events.json` (`team_join`, `team_leave` with `team`, `first_season`, `chance`), `teams.json` (`first_active_season`, `engine_units_per_season`), `team_buyouts.json` (operator change, rename) |
 | `dtm_sponsors.csv` | `starting_sponsors.json`, renames in later years. Rows with `in_team_name=yes` are title sponsors in real life, but we don't set `"type": "title"`: the game would put the name in front of a team name that already holds it (wishlist C11). |
-| `dtm_game_events.csv` | The build step `tools/real_history.py`: joins, leaves and engine makers per real year, with names, colours and history text for teams that join. A pack maps the keys to its own teams in `gen.json` `real_history.operators`. |
+| `dtm_game_events.csv` | The build step `tools/real_history.py`: joins, leaves and engine makers per real year, with names, colours, history text and team principal for teams that join. A pack maps the keys to its own teams in `gen.json` `real_history.operators`. |
 | `dtm_liveries.csv` | Car images of teams that join later: colours, sponsors and layout per car in its first season, with photo links. Drafts in `seasons/dtm-2013/art/cars.json` (cars with a `season`), brief for the artist in `seasons/dtm-2013/research/later_team_liveries.md`. |
 | `dtm_driver_backing.csv` | `drivers.json` `pay_driver_amount_m` (part A), `future_contract` (part B, only for deals announced before the pack's season starts) |
 
@@ -23,6 +23,14 @@ Uses in the game:
   `operator_change`, `make_join`, `make_leave`, `car_count`.
 - `dtm_sponsors.csv`: one row per car (or per team when `driver` is blank).
   `in_team_name=yes` means the sponsor was in the official entrant name.
+- `dtm_game_events.csv`: for a `team_join`, `history` is the in-game team
+  text, written as of the debut year. `principal` is a real person from
+  `docs/staff` (the debut season's row), with `principal_nationality` and,
+  when known, `principal_born`. `tools/build_pack.py` adds that principal
+  to `teamprincipals.json` for the inactive team, as the vanilla packs do.
+  When the column is empty, or the person already leads a team on the
+  pack's grid, the build uses a made-up name. A principal with no known
+  birth year is kept inside the usual age range in the debut year.
 - `dtm_driver_backing.csv`: `part` A = drivers who brought money or were
   funded juniors, B = when next-season deals were announced. `amount_m` is
   blank unless a source gives a figure.
@@ -43,6 +51,11 @@ Uses in the game:
 ## Status (2026-11-16)
 
 - Covered: 2013 to 2020 (end of Class 1). Older eras are still to do.
+- Joining teams (2015 to 2020) have a history text and a real principal,
+  except BMW Team RMR: Stefan Reinhold and Bart Mampaey shared it and
+  already lead RMG and RBM, so it gets a made-up name. Andreas Bänziger,
+  R-Motorsport's co-owner, stands in for R-Motorsport 2 (no separate
+  principal found). No birth years yet except Frédéric Vasseur (1968).
 - Not in `dtm_game_events.csv` yet: team renames (`team_buyouts.json`
   `identity_rebrand`), the 2014 7th Mercedes car, WRT's 3rd car in 2020,
   and Audi and BMW leaving after 2020 (the DTM moved to GT3; the grid
@@ -70,7 +83,8 @@ The same files for the BTCC, with the prefix `btcc_`:
 
 Status (2026-11-16):
 
-- Joins and leaves of every 1991 team and every works team to 2000. A team
+- Joins and leaves of every 1991 team and every works team to 2000.
+- No `principal` column yet, so the joining teams get made-up principals. A team
   that changed make is a leave plus a join under a new key (wishlist C12).
   Two names were changed by us so they stay unique: BMW Team Motorsport
   (1995) and Honda Team WSR (1999).

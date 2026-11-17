@@ -1,0 +1,77 @@
+{
+  "note": "Track art and game lines share one frame, the race-tracks plan frame: tools/art_track.py writes tracks/<id>.json from these. 2026-11-17: the C1 empty-venue race-day images (race-track-themes batch 2026-11-13-btcc-c1, ChatGPT Images, no logos), final.png of each revision. speed_scale keeps the reference lap of the track file shipped before (tools/art_track.py --calibrate); the season's track_overrides speed_mult stays on top.",
+  "tracks": {
+    "silverstone_nat": {
+      "race_tracks": {
+        "track": "silverstone",
+        "layout": "national@1991"
+      },
+      "spec": "seasons/btcc-1991/track_specs/silverstone_nat.json",
+      "art": "race-track-themes/art/silverstone/national@1991/1991/btcc/round-01/styles/illustrated-realism/variants/raceday/revisions/r0001/final.png",
+      "speed_scale": 1.0038
+    },
+    "snetterton": {
+      "race_tracks": {
+        "track": "snetterton",
+        "layout": "main@1990"
+      },
+      "spec": "seasons/btcc-1991/track_specs/snetterton.json",
+      "art": "race-track-themes/art/snetterton/main@1990/1991/btcc/round-02/styles/illustrated-realism/variants/raceday/revisions/r0001/final.png",
+      "speed_scale": 1.0013
+    },
+    "donington": {
+      "race_tracks": {
+        "track": "donington-park",
+        "layout": "gp@1986"
+      },
+      "spec": "seasons/btcc-1991/track_specs/donington.json",
+      "art": "race-track-themes/art/donington-park/gp@1986/1991/btcc/round-03/styles/illustrated-realism/variants/raceday/revisions/r0001/final.png",
+      "speed_scale": 0.9983
+    },
+    "thruxton": {
+      "race_tracks": {
+        "track": "thruxton",
+        "layout": "main@1968"
+      },
+      "spec": "seasons/btcc-1991/track_specs/thruxton.json",
+      "art": "race-track-themes/art/thruxton/main@1968/1991/btcc/round-04/styles/illustrated-realism/variants/raceday/revisions/r0001/final.png",
+      "speed_scale": 0.9988
+    },
+    "brandshatch": {
+      "race_tracks": {
+        "track": "brands-hatch",
+        "layout": "indy@1976"
+      },
+      "spec": "seasons/btcc-1991/track_specs/brandshatch.json",
+      "art": "race-track-themes/art/brands-hatch/indy@1976/1991/btcc/round-06/styles/illustrated-realism/variants/raceday/revisions/r0001/final.png",
+      "speed_scale": 0.9356
+    },
+    "silverstone": {
+      "race_tracks": {
+        "track": "silverstone",
+        "layout": "gp@1991"
+      },
+      "spec": "seasons/btcc-1991/track_specs/silverstone.json",
+      "art": "race-track-themes/art/silverstone/gp@1991/1991/btcc/round-07/styles/illustrated-realism/variants/raceday/revisions/r0002/final.png",
+      "speed_scale": 1.0076
+    },
+    "donington_nat": {
+      "race_tracks": {
+        "track": "donington-park",
+        "layout": "national@1986"
+      },
+      "spec": "seasons/btcc-1991/track_specs/donington_nat.json",
+      "art": "race-track-themes/art/donington-park/national@1986/1991/btcc/round-08/styles/illustrated-realism/variants/raceday/revisions/r0001/final.png",
+      "speed_scale": 0.9981
+    },
+    "oulton": {
+      "race_tracks": {
+        "track": "oulton-park",
+        "layout": "international@1975"
+      },
+      "spec": "seasons/btcc-1991/track_specs/oulton.json",
+      "art": "race-track-themes/art/oulton-park/international@1975/1991/btcc/round-09/styles/illustrated-realism/variants/raceday/revisions/r0001/final.png",
+      "speed_scale": 1.0075
+    }
+  }
+}

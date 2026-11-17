@@ -32,11 +32,23 @@ The pack folder is `btcc1991`.
   Soper and Harvey set by hand (`drivers` in `gen.json`).
 - **Calendar:** 13 meetings. Donington National (round 8) and Brands Hatch
   Indy (round 10) had two races, so each of those takes two game weeks.
-- **Tracks:** Brands Hatch Indy is our traced track from the DTM era 4 base
-  (`shared_tracks`). The other six circuits are traced in `track_specs/` from
-  the 1991 layouts of the race-tracks repo (`tools/race_tracks.py`,
-  `tools/osm_track.py`): Silverstone National and GP 1991, Snetterton 1990,
-  Donington Park GP and National, Oulton Park International 1975, Thruxton.
+- **Tracks:** all seven circuits use the 1991 layouts of the race-tracks
+  repo (`track_specs/`): Silverstone National and GP 1991, Snetterton 1990,
+  Donington Park GP and National, Oulton Park International 1975, Thruxton
+  and Brands Hatch Indy 1976. Brands Hatch is now the season's own track; it
+  was borrowed from the DTM era 4 base (`shared_tracks`, which the season's
+  own file now overrides) and drops that track's DRS zone.
+- **Track maps:** the images in `assets/tracks/` are race-day illustrations
+  of the empty 1991 venues from the race-track-themes project (batch
+  `2026-11-13-btcc-c1`, ChatGPT Images, no logos), each painted from the
+  race-tracks plan and checked against its racing line. `final.png` of
+  revision r0001, Silverstone GP r0002 (the Abbey grandstand left out).
+  `track_art.json` lists them; `python tools/art_track.py seasons/btcc-1991`
+  writes `tracks/<id>.json` from the race-tracks centreline in the same
+  frame, so the cars run on the drawn track. Each `speed_scale` keeps the
+  reference lap of the earlier file (`--calibrate`), so the 1991 lap time
+  tuning (`speed_mult`) still holds. Check: `python tools/map_check.py
+  dist/btcc1991 --season seasons/btcc-1991`.
 - **Staff and team principals:** real people from
   `docs/staff/btcc_staff.csv` (25 rows, `"staff_reference": "btcc-1991"`),
   made-up period names from `btcc_staff_fictional.csv` for every other

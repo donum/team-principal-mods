@@ -249,6 +249,11 @@ brackets).
   Mücke and ART leave after 2016, Mercedes after 2018. The game keeps at
   least 10 teams (C10), so Audi Sport Team Abt stays from 2017 and one
   R-Motorsport team stays in 2020. Audi and BMW don't leave after 2020.
+  Each joining team has its own history text and its real team principal
+  (Vasseur at ART, Fritz at HWA, Kamelger and Bänziger at R-Motorsport,
+  Vosse at WRT, Philippe at Orlen Team ART), signed to the team before it
+  debuts. RMR's two real bosses already run RMG and RBM, so it has a
+  made-up principal. Staff are hired on the market at debut.
 - **Title sponsors** stay in the Mercedes team names, even when the deal
   ends (C11).
 - **Feeder series** race once per weekend (C7). F3 and Formel Masters ran

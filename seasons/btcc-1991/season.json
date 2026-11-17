@@ -219,5 +219,31 @@
         "Drambuie"
       ]
     }
+  },
+  "audio": {
+    "$comment": "BTCC 1991's own sound set: a new car generation (2.0 litre supertourers), so it starts afresh (inherit false). No onboard library: tools/engine_audio/archive_candidates.py cuts listening candidates from every 1991 source in the archive (TV, season reviews, fan clips of the same cars at later historic events; user 2026-11-17: all sources are ok). Not built yet: candidates in private/engine_audio/pilot/btcc-1991 wait to be picked by ear.",
+    "overlay": "btcc-1991",
+    "inherit": false,
+    "key_prefix": "btcc91",
+    "recording_years": [1991],
+    "in_pack": false,
+    "candidate_dirs": ["pilot/btcc-1991"],
+    "sources": [
+      {"glob": "BTCC/1991/BTCC 1991 - Will Butler/*", "kind": "tv", "skip": "Top Gear",
+       "note": "BBC race coverage"},
+      {"glob": "BTCC/1991/BTCC 1991/*", "kind": "tv", "skip": "Top Gear",
+       "notes": {"1990": "1990 race: Sierra RS500 turbos in the field"}, "note": "BBC race coverage"},
+      {"glob": "BTCC/1991/1991 BTCC - Race Archive/*", "kind": "tv", "note": "BBC race coverage"},
+      {"glob": "BTCC/1991/Singles/*", "kind": "review", "skip": "Top Gear",
+       "notes": {"Silverstone - ESSO|Snetterton - ESSO|Round 2|Round 8|Middlehurst": "race coverage"}},
+      {"glob": "BTCC/spectator_recordings/*", "kind": "fan",
+       "notes": {"E30 M3": "BMW M3 E30, Labatt's car", "Carina": "Toyota Carina E (1993 on), 3S-GE",
+                 "Vectra": "Vauxhall Vectra (1995 on) and Cavalier", "Cavalier": "Vauxhall Cavalier",
+                 "from1991": "Vauxhall 1991 film"}},
+      {"glob": "BTCC/Misc/Singles/*", "kind": "fan",
+       "notes": {"E30": "BMW M3 E30, ex Soper", "1990s": "1990s supertourers, mixed makes", "Vauxhall 20": "Vauxhall feature"}},
+      {"glob": "BTCC/Misc/BTCC Season Reviews (Phil Kinch)/*", "kind": "review",
+       "note": "Sierra RS500 turbo (Australian Group A), not a 1991 BTCC car"}
+    ]
   }
 }

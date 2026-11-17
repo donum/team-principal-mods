@@ -1,0 +1,367 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1950" height="1973" viewBox="0 0 1950 1973">
+<rect width="1950" height="1973" fill="#ffffff"/>
+<text x="28" y="58" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" fill="#151a22" text-anchor="start" >Qualifying as stages</text>
+<text x="28" y="92" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="#5b6474" text-anchor="start" >One data structure for every qualifying format in real racing. A suggestion for the Team Principal developers.</text>
+<text x="28" y="116" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="#5b6474" text-anchor="start" >Today the game has two fixed formats: session_60 and knockout. This model keeps both as presets and adds the other 11.</text>
+<text x="28" y="175" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#2453c4" text-anchor="start" letter-spacing="1">01</text>
+<text x="62" y="175" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#151a22" text-anchor="start" >The pipeline</text>
+<text x="220.42880000000002" y="175" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#5b6474" text-anchor="start" >Qualifying is a list of stages. A grid builder turns their results into one grid per race.</text>
+<rect x="28.0" y="197" width="253.33333333333334" height="92" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="42.0" y="225" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="700" fill="#151a22" text-anchor="start" >Stages</text>
+<text x="42.0" y="247" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >what runs, in order</text>
+<text x="42.0" y="271" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="600" fill="#2453c4" text-anchor="start" >Q1 → Q2 → Q3</text>
+<line x1="285.33333333333337" y1="243.0" x2="305.33333333333337" y2="243.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M304.33333333333337,238.5 L311.33333333333337,243.0 L304.33333333333337,247.5 Z" fill="#5b6474"/>
+<rect x="315.33333333333337" y="197" width="253.33333333333334" height="92" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="329.33333333333337" y="225" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="700" fill="#151a22" text-anchor="start" >Entrants</text>
+<text x="329.33333333333337" y="247" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >who takes part in each stage</text>
+<text x="329.33333333333337" y="271" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="600" fill="#2453c4" text-anchor="start" >Q2: top 16 of Q1</text>
+<line x1="572.6666666666667" y1="243.0" x2="592.6666666666667" y2="243.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M591.6666666666667,238.5 L598.6666666666667,243.0 L591.6666666666667,247.5 Z" fill="#5b6474"/>
+<rect x="602.6666666666667" y="197" width="253.33333333333334" height="92" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="616.6666666666667" y="225" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="700" fill="#151a22" text-anchor="start" >Limits</text>
+<text x="616.6666666666667" y="247" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >how long, how many laps</text>
+<text x="616.6666666666667" y="271" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="600" fill="#2453c4" text-anchor="start" >15 min, 12 laps max</text>
+<line x1="860.0000000000001" y1="243.0" x2="880.0000000000001" y2="243.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M879.0000000000001,238.5 L886.0000000000001,243.0 L879.0000000000001,247.5 Z" fill="#5b6474"/>
+<rect x="890.0000000000001" y="197" width="253.33333333333334" height="92" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="904.0000000000001" y="225" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="700" fill="#151a22" text-anchor="start" >Result rule</text>
+<text x="904.0000000000001" y="247" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >how the stage is ranked</text>
+<text x="904.0000000000001" y="271" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="600" fill="#2453c4" text-anchor="start" >best lap, average, sum</text>
+<line x1="1147.3333333333335" y1="243.0" x2="1167.3333333333335" y2="243.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M1166.3333333333335,238.5 L1173.3333333333335,243.0 L1166.3333333333335,247.5 Z" fill="#5b6474"/>
+<rect x="1177.3333333333335" y="197" width="253.33333333333334" height="92" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="1191.3333333333335" y="225" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="700" fill="#151a22" text-anchor="start" >Grid builder</text>
+<text x="1191.3333333333335" y="247" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >stage results to grid places</text>
+<text x="1191.3333333333335" y="271" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="600" fill="#2453c4" text-anchor="start" >stack, slices, from_race</text>
+<line x1="1434.6666666666667" y1="243.0" x2="1454.6666666666667" y2="243.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M1453.6666666666667,238.5 L1460.6666666666667,243.0 L1453.6666666666667,247.5 Z" fill="#5b6474"/>
+<rect x="1464.666666666667" y="197" width="253.33333333333334" height="92" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="1478.666666666667" y="225" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="700" fill="#151a22" text-anchor="start" >Grid changes</text>
+<text x="1478.666666666667" y="247" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >after the grid is built</text>
+<text x="1478.666666666667" y="271" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="600" fill="#2453c4" text-anchor="start" >reverse top 10, interleave</text>
+<line x1="1722.0000000000002" y1="243.0" x2="1742.0000000000002" y2="243.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M1741.0000000000002,238.5 L1748.0000000000002,243.0 L1741.0000000000002,247.5 Z" fill="#5b6474"/>
+<rect x="1752.0000000000002" y="197" width="170" height="92" rx="8" fill="#151a22"/>
+<text x="1766.0000000000002" y="225" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="start" >Grid per race</text>
+<text x="1766.0000000000002" y="247" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#c9d1de" text-anchor="start" >race 1, race 2, race 3</text>
+<text x="1766.0000000000002" y="271" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="600" fill="#9fb6ff" text-anchor="start" >R3: from R2</text>
+<text x="28" y="359" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#2453c4" text-anchor="start" letter-spacing="1">02</text>
+<text x="62" y="359" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#151a22" text-anchor="start" >The data structure</text>
+<text x="290.6432" y="359" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#5b6474" text-anchor="start" >Field names are a suggestion.</text>
+<text x="1040" y="359" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#2453c4" text-anchor="start" letter-spacing="1">03</text>
+<text x="1074" y="359" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#151a22" text-anchor="start" >How the game runs it</text>
+<rect x="28" y="381" width="972" height="470" rx="8" fill="#10151d"/>
+<text x="48" y="411" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="700" fill="#9fb6ff" text-anchor="start" xml:space="preserve">qualifying</text>
+<text x="48" y="433" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="700" fill="#9fb6ff" text-anchor="start" xml:space="preserve">├─ preset</text>
+<text x="278" y="433" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#9fe0b4" text-anchor="start" xml:space="preserve">"knockout" | "session_60" | …   then override fields</text>
+<text x="48" y="455" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="700" fill="#9fb6ff" text-anchor="start" xml:space="preserve">├─ stages[]</text>
+<text x="48" y="477" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   ├─ id</text>
+<text x="278" y="477" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#9fe0b4" text-anchor="start" xml:space="preserve">"Q1"</text>
+<text x="48" y="499" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   ├─ kind</text>
+<text x="278" y="499" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">session | solo_run | race | duel | formula</text>
+<text x="48" y="521" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   ├─ entrants</text>
+<text x="278" y="521" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">all | {from, top} | {from, after} | [list]</text>
+<text x="48" y="543" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   ├─ groups</text>
+<text x="278" y="543" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#9fe0b4" text-anchor="start" xml:space="preserve">{count, split: standings_odd_even | lottery | class}</text>
+<text x="48" y="565" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   ├─ drivers</text>
+<text x="278" y="565" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#9fe0b4" text-anchor="start" xml:space="preserve">{count, grade: "bronze", result: average | sum}</text>
+<text x="48" y="587" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   ├─ limits</text>
+<text x="278" y="587" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">minutes, max_laps, laps, km, tyre_sets, fuel, cut_every</text>
+<text x="48" y="609" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   ├─ order</text>
+<text x="278" y="609" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">free | reverse | draw | standings      (solo runs)</text>
+<text x="48" y="631" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   └─ result</text>
+<text x="278" y="631" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">best_lap | average | sum | finish | best_of[]</text>
+<text x="48" y="653" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="700" fill="#9fb6ff" text-anchor="start" xml:space="preserve">├─ races[]</text>
+<text x="278" y="653" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">one grid per race of the weekend</text>
+<text x="48" y="675" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│   └─ grid</text>
+<text x="48" y="697" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│       ├─ stack</text>
+<text x="278" y="697" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">true: last stage fills the front</text>
+<text x="48" y="719" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│       ├─ slices[]</text>
+<text x="278" y="719" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#9fe0b4" text-anchor="start" xml:space="preserve">{places: "13-", from: "QR"}</text>
+<text x="48" y="741" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│       ├─ from_race</text>
+<text x="278" y="741" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#9fe0b4" text-anchor="start" xml:space="preserve">"R1"</text>
+<text x="48" y="763" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│       └─ changes</text>
+<text x="278" y="763" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">reverse {top, pick: fixed | draw}, interleave,</text>
+<text x="48" y="785" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#e8ecf2" text-anchor="start" xml:space="preserve">│</text>
+<text x="278" y="785" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">                      retired_to_back, penalties</text>
+<text x="48" y="807" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="700" fill="#9fb6ff" text-anchor="start" xml:space="preserve">├─ fallback</text>
+<text x="278" y="807" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">stage to use when a stage can't run (rain, time)</text>
+<text x="48" y="829" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="700" fill="#9fb6ff" text-anchor="start" xml:space="preserve">└─ rounds{}</text>
+<text x="278" y="829" font-family="Consolas, 'Cascadia Mono', monospace" font-size="14" font-weight="400" fill="#c9d1de" text-anchor="start" xml:space="preserve">per-round overrides: "zolder": {SP.entrants.top: 20}</text>
+<circle cx="1054" cy="397" r="13" fill="#2453c4"/>
+<text x="1054" y="402" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" >1</text>
+<text x="1078" y="394" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Load</text>
+<text x="1078" y="413" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Take the preset, apply the season's fields, then the round's overrides.</text>
+<circle cx="1054" cy="441" r="13" fill="#2453c4"/>
+<text x="1054" y="446" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" >2</text>
+<text x="1078" y="438" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Run each stage in order</text>
+<text x="1078" y="457" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Pick the entrants from earlier results, split groups, run it as its kind.</text>
+<circle cx="1054" cy="485" r="13" fill="#2453c4"/>
+<text x="1054" y="490" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" >3</text>
+<text x="1078" y="482" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Rank it</text>
+<text x="1078" y="501" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Apply the result rule. Store the full stage result.</text>
+<circle cx="1054" cy="529" r="13" fill="#2453c4"/>
+<text x="1054" y="534" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" >4</text>
+<text x="1078" y="526" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Build every race grid</text>
+<text x="1078" y="545" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >stack, slices or from_race. Races 2 and 3 wait for the race before.</text>
+<circle cx="1054" cy="573" r="13" fill="#2453c4"/>
+<text x="1054" y="578" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" >5</text>
+<text x="1078" y="570" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Apply changes</text>
+<text x="1078" y="589" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Reverse (drawn or fixed), interleave groups, penalties, retirements to the back.</text>
+<circle cx="1054" cy="617" r="13" fill="#2453c4"/>
+<text x="1054" y="622" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" >6</text>
+<text x="1078" y="614" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Publish</text>
+<text x="1078" y="633" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Stage results feed qualifying points (B8), news and stats like "pole in Q4".</text>
+<text x="1040" y="663" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#151a22" text-anchor="start" >Stage kinds, and what the AI should do</text>
+<rect x="1040" y="679" width="66.2" height="22" rx="11" fill="#e6ecfb" stroke="#2453c4"/>
+<text x="1073.1" y="694" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="700" fill="#1b3f99" text-anchor="middle" >session</text>
+<text x="1140" y="694" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#151a22" text-anchor="start" >Open track. Traffic, tyre and run plans, a banker lap, a late push.</text>
+<rect x="1040" y="709" width="72.80000000000001" height="22" rx="11" fill="#fbe5e3" stroke="#d23b3b"/>
+<text x="1076.4" y="724" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="700" fill="#9e2420" text-anchor="middle" >solo_run</text>
+<text x="1140" y="724" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#151a22" text-anchor="start" >Alone on track. One push lap or N laps, no traffic, in a set order.</text>
+<rect x="1040" y="739" width="46.400000000000006" height="22" rx="11" fill="#f7e3ef" stroke="#b03a83"/>
+<text x="1063.2" y="754" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="700" fill="#862a62" text-anchor="middle" >race</text>
+<text x="1140" y="754" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#151a22" text-anchor="start" >A real race by laps or km. Finishing order is the result.</text>
+<rect x="1040" y="769" width="46.400000000000006" height="22" rx="11" fill="#e6e9ee" stroke="#4b5566"/>
+<text x="1063.2" y="784" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="700" fill="#2f3744" text-anchor="middle" >duel</text>
+<text x="1140" y="784" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#151a22" text-anchor="start" >Two cars at a time in a bracket. Faster lap goes through.</text>
+<rect x="1040" y="799" width="66.2" height="22" rx="11" fill="#eef0f3" stroke="#8a94a3"/>
+<text x="1073.1" y="814" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="700" fill="#4d5664" text-anchor="middle" >formula</text>
+<text x="1140" y="814" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#151a22" text-anchor="start" >No driving. Places from points, results or engine size.</text>
+<text x="28" y="921" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#2453c4" text-anchor="start" letter-spacing="1">04</text>
+<text x="62" y="921" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#151a22" text-anchor="start" >Every format as stages</text>
+<text x="337.4528" y="921" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#5b6474" text-anchor="start" >Each lane is one real season. Coloured chips are stages, dark chips build the grid.</text>
+<rect x="18" y="945" width="1914" height="52" rx="6" fill="#f4f6f9"/>
+<rect x="28" y="963.0" width="16" height="16" rx="3" fill="#1d8a4f"/>
+<text x="54" y="969.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >One timed session</text>
+<text x="54" y="986.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >BTCC 2010</text>
+<rect x="358" y="951.0" width="100.32000000000001" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="968.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q · session</text>
+<text x="370" y="984.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >30 min · all</text>
+<line x1="462.32" y1="971.0" x2="486.32" y2="971.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M485.32,966.5 L492.32,971.0 L485.32,975.5 Z" fill="#151a22"/>
+<rect x="498.32" y="957.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="526.5074999999999" y="976.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="28" y="1015.0" width="16" height="16" rx="3" fill="#74c28f"/>
+<text x="54" y="1021.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >F1 knockout</text>
+<text x="54" y="1038.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >F1 2026</text>
+<rect x="358" y="1003.0" width="106.5" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1020.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q1 · session</text>
+<text x="370" y="1036.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >18 min · all</text>
+<line x1="468.5" y1="1023.0" x2="488.5" y2="1023.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M487.5,1018.5 L494.5,1023.0 L487.5,1027.5 Z" fill="#5b6474"/>
+<rect x="494.5" y="1003.0" width="157.56" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="506.5" y="1020.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q2 · session</text>
+<text x="506.5" y="1036.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >15 min · top 16 of Q1</text>
+<line x1="656.06" y1="1023.0" x2="676.06" y2="1023.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M675.06,1018.5 L682.06,1023.0 L675.06,1027.5 Z" fill="#5b6474"/>
+<rect x="682.06" y="1003.0" width="157.56" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="694.06" y="1020.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q3 · session</text>
+<text x="694.06" y="1036.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >13 min · top 10 of Q2</text>
+<line x1="843.6199999999999" y1="1023.0" x2="867.6199999999999" y2="1023.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M866.6199999999999,1018.5 L873.6199999999999,1023.0 L866.6199999999999,1027.5 Z" fill="#151a22"/>
+<rect x="879.6199999999999" y="1009.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="907.8074999999999" y="1028.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="18" y="1049" width="1914" height="52" rx="6" fill="#f4f6f9"/>
+<rect x="28" y="1067.0" width="16" height="16" rx="3" fill="#2453c4"/>
+<text x="54" y="1073.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Knockout with other cuts</text>
+<text x="54" y="1090.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >MotoGP 2023</text>
+<rect x="358" y="1055.0" width="113.04" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1072.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >P · session</text>
+<text x="370" y="1088.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >practice · all</text>
+<line x1="475.04" y1="1075.0" x2="495.04" y2="1075.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M494.04,1070.5 L501.04,1075.0 L494.04,1079.5 Z" fill="#5b6474"/>
+<rect x="501.04" y="1055.0" width="163.92000000000002" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="513.04" y="1072.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q1 · session</text>
+<text x="513.04" y="1088.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >15 min · after 10 of P</text>
+<line x1="668.96" y1="1075.0" x2="688.96" y2="1075.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M687.96,1070.5 L694.96,1075.0 L687.96,1079.5 Z" fill="#5b6474"/>
+<rect x="694.96" y="1055.0" width="240.24" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="706.96" y="1072.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q2 · session</text>
+<text x="706.96" y="1088.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >15 min · top 10 of P + top 2 of Q1</text>
+<line x1="939.2" y1="1075.0" x2="963.2" y2="1075.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M962.2,1070.5 L969.2,1075.0 L962.2,1079.5 Z" fill="#151a22"/>
+<rect x="975.2" y="1061.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="1003.3875" y="1080.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="28" y="1119.0" width="16" height="16" rx="3" fill="#7d9be3"/>
+<text x="54" y="1125.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Several sessions, best lap</text>
+<text x="54" y="1142.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >F1 1994</text>
+<rect x="358" y="1107.0" width="157.56" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1124.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Fri · session</text>
+<text x="370" y="1140.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >60 min, 12 laps · all</text>
+<line x1="519.56" y1="1127.0" x2="539.56" y2="1127.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M538.56,1122.5 L545.56,1127.0 L538.56,1131.5 Z" fill="#5b6474"/>
+<rect x="545.56" y="1107.0" width="157.56" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="557.56" y="1124.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Sat · session</text>
+<text x="557.56" y="1140.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >60 min, 12 laps · all</text>
+<line x1="707.1199999999999" y1="1127.0" x2="731.1199999999999" y2="1127.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M730.1199999999999,1122.5 L737.1199999999999,1127.0 L730.1199999999999,1131.5 Z" fill="#151a22"/>
+<rect x="743.1199999999999" y="1113.0" width="132.0" height="28" rx="6" fill="#151a22"/>
+<text x="809.1199999999999" y="1132.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >best_of Fri, Sat</text>
+<rect x="18" y="1153" width="1914" height="52" rx="6" fill="#f4f6f9"/>
+<rect x="28" y="1171.0" width="16" height="16" rx="3" fill="#7a4fc4"/>
+<text x="54" y="1177.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >One qualifying per race</text>
+<text x="54" y="1194.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >DTM 2023</text>
+<rect x="358" y="1159.0" width="106.5" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1176.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q1 · session</text>
+<text x="370" y="1192.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >20 min · all</text>
+<line x1="468.5" y1="1179.0" x2="488.5" y2="1179.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M487.5,1174.5 L494.5,1179.0 L487.5,1183.5 Z" fill="#5b6474"/>
+<rect x="494.5" y="1159.0" width="106.5" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="506.5" y="1176.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q2 · session</text>
+<text x="506.5" y="1192.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >20 min · all</text>
+<line x1="605.0" y1="1179.0" x2="629.0" y2="1179.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M628.0,1174.5 L635.0,1179.0 L628.0,1183.5 Z" fill="#151a22"/>
+<rect x="641.0" y="1165.0" width="70.125" height="28" rx="6" fill="#151a22"/>
+<text x="676.0625" y="1184.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >R1 ← Q1</text>
+<rect x="719.125" y="1165.0" width="70.125" height="28" rx="6" fill="#151a22"/>
+<text x="754.1875" y="1184.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >R2 ← Q2</text>
+<rect x="28" y="1223.0" width="16" height="16" rx="3" fill="#d23b3b"/>
+<text x="54" y="1229.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Single-lap shootout</text>
+<text x="54" y="1246.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >DTM 2003</text>
+<rect x="358" y="1211.0" width="151.2" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1228.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q · session</text>
+<text x="370" y="1244.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >20 min, 9 laps · all</text>
+<line x1="513.2" y1="1231.0" x2="533.2" y2="1231.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M532.2,1226.5 L539.2,1231.0 L532.2,1235.5 Z" fill="#5b6474"/>
+<rect x="539.2" y="1211.0" width="240.24" height="40" rx="7" fill="#fbe5e3" stroke="#d23b3b" stroke-width="1.3"/>
+<text x="551.2" y="1228.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#9e2420" text-anchor="start" >SP · solo_run</text>
+<text x="551.2" y="1244.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >1 lap, reverse order · top 10 of Q</text>
+<line x1="783.44" y1="1231.0" x2="807.44" y2="1231.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M806.44,1226.5 L813.44,1231.0 L806.44,1235.5 Z" fill="#151a22"/>
+<rect x="819.44" y="1217.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="847.6275" y="1236.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="18" y="1257" width="1914" height="52" rx="6" fill="#f4f6f9"/>
+<rect x="28" y="1275.0" width="16" height="16" rx="3" fill="#ef8a6a"/>
+<text x="54" y="1281.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Oval runs, one car at a time</text>
+<text x="54" y="1298.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >IndyCar 2010</text>
+<rect x="358" y="1263.0" width="240.24" height="40" rx="7" fill="#fbe5e3" stroke="#d23b3b" stroke-width="1.3"/>
+<text x="370" y="1280.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#9e2420" text-anchor="start" >Q · solo_run</text>
+<text x="370" y="1296.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >2 laps, average · all, drawn order</text>
+<line x1="602.24" y1="1283.0" x2="626.24" y2="1283.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M625.24,1278.5 L632.24,1283.0 L625.24,1287.5 Z" fill="#151a22"/>
+<rect x="638.24" y="1269.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="666.4275" y="1288.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="28" y="1327.0" width="16" height="16" rx="3" fill="#d08300"/>
+<text x="54" y="1333.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Groups, then a final</text>
+<text x="54" y="1350.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >IndyCar road</text>
+<rect x="358" y="1315.0" width="163.92000000000002" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1332.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q1 · session</text>
+<text x="370" y="1348.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >10 min, 2 groups · all</text>
+<line x1="525.9200000000001" y1="1335.0" x2="545.9200000000001" y2="1335.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M544.9200000000001,1330.5 L551.9200000000001,1335.0 L544.9200000000001,1339.5 Z" fill="#5b6474"/>
+<rect x="551.9200000000001" y="1315.0" width="176.64000000000001" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="563.9200000000001" y="1332.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q2 · session</text>
+<text x="563.9200000000001" y="1348.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >10 min · top 6 per group</text>
+<line x1="732.5600000000001" y1="1335.0" x2="752.5600000000001" y2="1335.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M751.5600000000001,1330.5 L758.5600000000001,1335.0 L751.5600000000001,1339.5 Z" fill="#5b6474"/>
+<rect x="758.5600000000001" y="1315.0" width="151.2" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="770.5600000000001" y="1332.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q3 · session</text>
+<text x="770.5600000000001" y="1348.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >10 min · top 6 of Q2</text>
+<line x1="913.76" y1="1335.0" x2="937.76" y2="1335.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M936.76,1330.5 L943.76,1335.0 L936.76,1339.5 Z" fill="#151a22"/>
+<rect x="949.76" y="1321.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="977.9475" y="1340.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="1014.135" y="1321.0" width="111.37500000000001" height="28" rx="6" fill="#151a22"/>
+<text x="1069.8225" y="1340.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >interleave Q1</text>
+<rect x="18" y="1361" width="1914" height="52" rx="6" fill="#f4f6f9"/>
+<rect x="28" y="1379.0" width="16" height="16" rx="3" fill="#b03a83"/>
+<text x="54" y="1385.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Qualification race</text>
+<text x="54" y="1402.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >DTM 1990</text>
+<rect x="358" y="1367.0" width="100.32000000000001" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1384.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q · session</text>
+<text x="370" y="1400.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >60 min · all</text>
+<line x1="462.32" y1="1387.0" x2="482.32" y2="1387.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M481.32,1382.5 L488.32,1387.0 L481.32,1391.5 Z" fill="#5b6474"/>
+<rect x="488.32" y="1367.0" width="157.56" height="40" rx="7" fill="#f7e3ef" stroke="#b03a83" stroke-width="1.3"/>
+<text x="500.32" y="1384.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#862a62" text-anchor="start" >QR · race</text>
+<text x="500.32" y="1400.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >50 km · after 12 of Q</text>
+<line x1="649.88" y1="1387.0" x2="673.88" y2="1387.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M672.88,1382.5 L679.88,1387.0 L672.88,1391.5 Z" fill="#151a22"/>
+<rect x="685.88" y="1373.0" width="77.0" height="28" rx="6" fill="#151a22"/>
+<text x="724.38" y="1392.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >1-12 ← Q</text>
+<rect x="770.88" y="1373.0" width="77.0" height="28" rx="6" fill="#151a22"/>
+<text x="809.38" y="1392.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >13- ← QR</text>
+<rect x="28" y="1431.0" width="16" height="16" rx="3" fill="#1f8f8a"/>
+<text x="54" y="1437.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Grid from an earlier race</text>
+<text x="54" y="1454.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >BTCC 2018</text>
+<rect x="358" y="1419.0" width="100.32000000000001" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1436.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q · session</text>
+<text x="370" y="1452.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >30 min · all</text>
+<line x1="462.32" y1="1439.0" x2="486.32" y2="1439.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M485.32,1434.5 L492.32,1439.0 L485.32,1443.5 Z" fill="#151a22"/>
+<rect x="498.32" y="1425.0" width="63.25" height="28" rx="6" fill="#151a22"/>
+<text x="529.9449999999999" y="1444.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >R1 ← Q</text>
+<rect x="569.5699999999999" y="1425.0" width="70.125" height="28" rx="6" fill="#151a22"/>
+<text x="604.6324999999999" y="1444.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >R2 ← R1</text>
+<rect x="647.6949999999999" y="1425.0" width="228.25000000000003" height="28" rx="6" fill="#151a22"/>
+<text x="761.8199999999999" y="1444.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >R3 ← R2, reverse 6 to 12 drawn</text>
+<rect x="18" y="1465" width="1914" height="52" rx="6" fill="#f4f6f9"/>
+<rect x="28" y="1483.0" width="16" height="16" rx="3" fill="#8a6d1f"/>
+<text x="54" y="1489.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Times of several drivers</text>
+<text x="54" y="1506.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >Endurance 2015</text>
+<rect x="358" y="1471.0" width="195.72" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1488.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >Q · session</text>
+<text x="370" y="1504.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >20 min · 2 drivers, average</text>
+<line x1="557.72" y1="1491.0" x2="581.72" y2="1491.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M580.72,1486.5 L587.72,1491.0 L580.72,1495.5 Z" fill="#151a22"/>
+<rect x="593.72" y="1477.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="621.9075" y="1496.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="28" y="1535.0" width="16" height="16" rx="3" fill="#4b5566"/>
+<text x="54" y="1541.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Head-to-head duels</text>
+<text x="54" y="1558.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >Formula E 2022</text>
+<rect x="358" y="1523.0" width="163.92000000000002" height="40" rx="7" fill="#e6ecfb" stroke="#2453c4" stroke-width="1.3"/>
+<text x="370" y="1540.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#1b3f99" text-anchor="start" >G · session</text>
+<text x="370" y="1556.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >12 min, 2 groups · all</text>
+<line x1="525.9200000000001" y1="1543.0" x2="545.9200000000001" y2="1543.0" stroke="#5b6474" stroke-width="1.6"/>
+<path d="M544.9200000000001,1538.5 L551.9200000000001,1543.0 L544.9200000000001,1547.5 Z" fill="#5b6474"/>
+<rect x="551.9200000000001" y="1523.0" width="227.52" height="40" rx="7" fill="#e6e9ee" stroke="#4b5566" stroke-width="1.3"/>
+<text x="563.9200000000001" y="1540.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#2f3744" text-anchor="start" >D · duel</text>
+<text x="563.9200000000001" y="1556.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >1 lap, bracket · top 4 per group</text>
+<line x1="783.44" y1="1543.0" x2="807.44" y2="1543.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M806.44,1538.5 L813.44,1543.0 L806.44,1547.5 Z" fill="#151a22"/>
+<rect x="819.44" y="1529.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="847.6275" y="1548.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<rect x="883.815" y="1529.0" width="104.5" height="28" rx="6" fill="#151a22"/>
+<text x="936.065" y="1548.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >interleave G</text>
+<rect x="996.315" y="1529.0" width="90.75" height="28" rx="6" fill="#151a22"/>
+<text x="1041.69" y="1548.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >fallback G</text>
+<rect x="18" y="1569" width="1914" height="52" rx="6" fill="#f4f6f9"/>
+<rect x="28" y="1587.0" width="16" height="16" rx="3" fill="#9aa5b4"/>
+<text x="54" y="1593.0" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#151a22" text-anchor="start" >Grid by points or a formula</text>
+<text x="54" y="1610.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >NASCAR 2021</text>
+<rect x="358" y="1575.0" width="291.12" height="40" rx="7" fill="#eef0f3" stroke="#8a94a3" stroke-width="1.3"/>
+<text x="370" y="1592.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="700" fill="#4d5664" text-anchor="start" >F · formula</text>
+<text x="370" y="1608.0" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#151a22" text-anchor="start" >finish 50, owner pts 35, fast lap 15 · all</text>
+<line x1="653.12" y1="1595.0" x2="677.12" y2="1595.0" stroke="#151a22" stroke-width="1.6"/>
+<path d="M676.12,1590.5 L683.12,1595.0 L676.12,1599.5 Z" fill="#151a22"/>
+<rect x="689.12" y="1581.0" width="56.375" height="28" rx="6" fill="#151a22"/>
+<text x="717.3075" y="1600.0" font-family="Consolas, 'Cascadia Mono', monospace" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" >stack</text>
+<text x="28" y="1691" font-family="Consolas, 'Cascadia Mono', monospace" font-size="13" font-weight="700" fill="#2453c4" text-anchor="start" letter-spacing="1">05</text>
+<text x="62" y="1691" font-family="Bahnschrift, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#151a22" text-anchor="start" >Notes for building it</text>
+<rect x="28.0" y="1713" width="615.3333333333334" height="94" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="44.0" y="1741" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#151a22" text-anchor="start" >Old packs keep working</text>
+<text x="44.0" y="1763" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Ship session_60 and knockout as presets in the new structure. {"preset": "knockout"}</text>
+<text x="44.0" y="1782" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >means exactly what it means today.</text>
+<rect x="667.3333333333334" y="1713" width="615.3333333333334" height="94" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="683.3333333333334" y="1741" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#151a22" text-anchor="start" >Presets plus overrides</text>
+<text x="683.3333333333334" y="1763" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >{"preset": "knockout", "stages": {"Q1": {"minutes": 18}}}. A season sets its format</text>
+<text x="683.3333333333334" y="1782" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >once, a round can change one field.</text>
+<rect x="1306.6666666666667" y="1713" width="615.3333333333334" height="94" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="1322.6666666666667" y="1741" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#151a22" text-anchor="start" >Grids belong to races</text>
+<text x="1322.6666666666667" y="1763" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Not to the weekend. That covers heats, sprints, three-race meetings and grids from the</text>
+<text x="1322.6666666666667" y="1782" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >race before (wishlist A1).</text>
+<rect x="28.0" y="1823" width="615.3333333333334" height="94" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="44.0" y="1851" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#151a22" text-anchor="start" >Keep stage results</text>
+<text x="44.0" y="1873" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >Store every stage result. Qualifying points (B8), news items and stats can read them</text>
+<text x="44.0" y="1892" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >later.</text>
+<rect x="667.3333333333334" y="1823" width="615.3333333333334" height="94" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="683.3333333333334" y="1851" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#151a22" text-anchor="start" >Rain and time</text>
+<text x="683.3333333333334" y="1873" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >A fallback names the stage whose result sets the grid when a later stage can't run.</text>
+<rect x="1306.6666666666667" y="1823" width="615.3333333333334" height="94" rx="8" fill="#f4f6f9" stroke="#d8dde6"/>
+<text x="1322.6666666666667" y="1851" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#151a22" text-anchor="start" >Wishlist items covered</text>
+<text x="1322.6666666666667" y="1873" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >A2 qualification race, A5 single-lap shootout, A6 qualifying as stages, grid part of</text>
+<text x="1322.6666666666667" y="1892" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6474" text-anchor="start" >A1, the driver part of C8.</text>
+<text x="28" y="1955" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6474" text-anchor="start" >Team Principal modding · formats and seasons from the rules coverage db (docs/history) · see qualifying_formats.png for which seasons use which format</text>
+</svg>

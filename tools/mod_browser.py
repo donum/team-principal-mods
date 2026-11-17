@@ -697,6 +697,12 @@ def music_candidates(media, pack: Path | None) -> dict | None:
 
 def build_candidates(media, pack: Path | None = None, season: Path | None = None):
     groups, seen = [], set()
+    # a new car generation lists only its own candidate folders (audio
+    # "candidate_dirs", e.g. BTCC 1991): nothing of the DTM library fits it
+    sets = layers.audio_sets(season) if season else []
+    own_dirs = (sets[-1].get("candidate_dirs") or []) if sets else []
+    if own_dirs:
+        return own_candidates(media, own_dirs), None
     music = music_candidates(media, pack)
     if music:
         groups.append(music)
@@ -731,7 +737,7 @@ def build_candidates(media, pack: Path | None = None, season: Path | None = None
     def out_of_era(name: str) -> bool:
         if videos is None:
             return False
-        years = [int(y) for y in re.findall(r"(?<!\d)(20[0-2]\d)(?!\d)", name)]   # e.g. hockenheim2017_start
+        years = [int(y) for y in re.findall(r"(?<!\d)((?:19[5-9]|20[0-2])\d)(?!\d)", name)]   # e.g. hockenheim2017_start
         return (any(y not in allowed for y in years)
                 or any(video_out(i, t, ty) for i, (t, ty) in videos.items() if i in name))
 
@@ -831,6 +837,41 @@ def build_candidates(media, pack: Path | None = None, season: Path | None = None
                            "folder": f"private/engine_audio/pilot/{rel}", "note": note, "items": items})
     lib = AUDIO_DATA / "library" / "index.html"
     return groups, (lib.as_uri() if lib.exists() else None)
+
+
+def own_candidates(media, dirs: list[str]) -> list[dict]:
+    """A sound set's own candidate folders (archive_candidates.py): one group
+    per subfolder, best first, with the note and frame of candidates.json."""
+    groups = []
+    titles = {"passby": "Pass-bys", "passby_tv": "Pass-bys from TV, commentary removed",
+              "start": "Starts", "start_tv": "Starts from TV, commentary removed", "bed": "Track bed",
+              "fireup": "Fire-ups", "quiet": "Quiet stretches (crowd, paddock, PA)"}
+    notes = {"passby": "Single cars passing, no speech within 3 s. The frame shows the car at the peak.",
+             "start": "The level steps up for good after engine noise: a getaway, or a camera cut. Speech is allowed here; its share is in the note.",
+             "bed": "Speech-free stretches of cars coming and going, for the cars-on-track loop.",
+             "fireup": "A sudden jump out of quiet: an engine starting, or a cut. Listen first.",
+             "quiet": "Speech-free stretches well under the video's level.",
+             "passby_tv": "The loudest single-car peaks of the race coverage, cut whatever the commentary and run through Mel-RoFormer. Listen for watery gaps where the voice was.",
+             "start_tv": "Where the commentators say lights, green, away and so on, 30 s from 8 s before, commentary removed. Starts are where they talk loudest."}
+    for rel in dirs:
+        root = AUDIO_DATA / rel
+        for kind in ("passby", "passby_tv", "start", "start_tv", "bed", "fireup", "quiet"):
+            d = root / kind
+            meta = load_json(d / "candidates.json", []) or []
+            items = []
+            for c in meta:
+                p = d / c["file"]
+                if not p.exists():
+                    continue
+                frame = root / c["frame"] if c.get("frame") else None
+                items.append({"name": p.stem.replace("_", " "), "file": p.name,
+                              "audio": media.audio(p, f"candidates/{rel}/{kind}/{p.name}"), "seconds": duration(p),
+                              "image": media.image(frame, f"candidates/{rel}/{frame.name}") if frame else None,
+                              "in_use": False, "note": c.get("note", "")})
+            if items:
+                groups.append({"title": titles[kind], "folder": f"private/engine_audio/{rel}/{kind}",
+                               "note": notes[kind], "items": items})
+    return groups
 
 
 # --------------------------------------------------------------------- main

@@ -20,9 +20,15 @@ See seasons/btcc-1991/research/season.md in the project repository for details.
 Track maps and track geometry:
   Map data (c) OpenStreetMap contributors, available under the
   Open Database License (ODbL) 1.0 - https://www.openstreetmap.org/copyright
-  Brands Hatch Indy is today's layout. Silverstone GP 1991, Snetterton
-  1990 and Oulton Park 1975 are traced from old maps and imagery, on top of
-  OpenStreetMap; the other circuits follow today's OpenStreetMap lines.
+  Silverstone GP 1991, Snetterton 1990 and Oulton Park 1975 are traced
+  from old maps and imagery, on top of OpenStreetMap; the other circuits
+  follow today's OpenStreetMap lines.
+
+Track maps (assets/tracks):
+  Race-day illustrations of the 1991 venues, made in the race-track-themes
+  project. The scenery is AI-rendered (ChatGPT Images) from our own
+  circuit plans, which are drawn from OpenStreetMap data (see the map
+  data credit above). No real logos.
 
 Maker and tyre logos (assets/engines, assets/tyre, and the team list
 icons in assets/logos), from Wikimedia Commons, in the version each make
