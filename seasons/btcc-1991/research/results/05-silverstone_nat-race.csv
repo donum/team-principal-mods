@@ -11,7 +11,7 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 10,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,10,12:23.48,+22.95,1:10.340,classified,grid 8; tyres Y; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain
 11,22,Jonathan Palmer,Prodrive/Mobil BMW Team,BMW M3,10,12:30.33,+29.80,1:08.550,classified,grid 5; tyres P; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain
 12,44,Tim Sugden,Prodrive/Mobil BMW Team,BMW M3,10,12:33.80,+33.27,1:08.750,classified,grid 1; tyres P; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain
-13,23,Kieth O'Dor,Castrol Racing with Janspeed,Nissan Primera ZX,10,12:39.27,+38.74,1:09.130,classified,grid 16; tyres D; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain
+13,23,Keith Odor,Castrol Racing with Janspeed,Nissan Primera ZX,10,12:39.27,+38.74,1:09.130,classified,grid 16; tyres D; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain
 14,77,Nick Baird,Techspeed/Midland Auto Trader,BMW M3,10,13:01.69,+61.16,1:09.980,classified,grid 18; tyres P; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain
 15,45,Ian Forrest,Forrest/Drambuie + Lazerprinz,BMW M3,10,13:17.27,+76.74,1:10.400,classified,grid 17; tyres P; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain
 16,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,9,,+1 lap,1:08.780,classified,grid 11; tyres Y; source AS round 5; TCN race.php?id=771; no points (void): stopped after 10 laps for rain

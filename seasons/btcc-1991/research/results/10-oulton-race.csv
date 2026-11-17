@@ -8,7 +8,7 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 7,4,Tim Harvey,VLM/Team Labatt's,BMW M3,20,35:01.53,+11.20,1:44.000,classified,grid 8; tyres Y; source AS round 9; TCN race.php?id=780
 8,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,20,35:13.13,+22.80,1:44.330,classified,grid 13; tyres Y; source AS round 9; TCN race.php?id=780
 9,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,20,35:16.98,+26.65,1:44.250,classified,grid 9; tyres Y; source AS round 9; TCN race.php?id=780
-10,23,Kieth O'Dor,Janspeed/Nissan Racing with Castrol,Nissan Primera eZX,20,35:23.78,+33.45,1:44.920,classified,grid 11; tyres D; source AS round 9; TCN race.php?id=780
+10,23,Keith Odor,Janspeed/Nissan Racing with Castrol,Nissan Primera eZX,20,35:23.78,+33.45,1:44.920,classified,grid 11; tyres D; source AS round 9; TCN race.php?id=780
 11,66,Nick Whale,Techspeed/Midland Auto Trader,BMW M3,20,35:38.78,+48.45,1:45.430,classified,grid 14; tyres P; source AS round 9; TCN race.php?id=780
 12,45,Ian Forrest,Forrest/Drambuie + Laserprinz,BMW M3,19,,+1 lap,1:46.950,classified,grid 15; tyres P; source AS round 9; TCN race.php?id=780
 13,58,Jeff Wilson,HWR Motorsport/Bristol Street Motors,Vauxhall Belmont,19,,+1 lap,1:50.740,classified,grid 18; tyres A; source AS round 9; TCN race.php?id=780

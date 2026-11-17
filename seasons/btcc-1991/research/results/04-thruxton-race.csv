@@ -9,7 +9,7 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 8,3,Andy Rouse,Kaliber ICS Team Toyota,Toyota Carina,20,27:58.70,+14.56,1:23.120,classified,grid 8; tyres Y; source AS round 4; TCN race.php?id=768
 9,77,Nick Baird,Techspeed/Midland Auto Trader,BMW M3,20,28:25.58,+41.44,1:24.120,classified,grid 10; tyres P; source AS round 4; TCN race.php?id=768
 10,59,Ian Flux,BRR/Bankhall,BMW M3,20,28:26.51,+42.37,1:23.670,classified,grid 16; tyres Y; source AS round 4; TCN race.php?id=768
-11,23,Kieth O'Dor,Castrol Racing with Janspeed,Nissan Primera ZX,20,28:31.95,+47.81,1:24.360,classified,grid 14; tyres D; source AS round 4; TCN race.php?id=768
+11,23,Keith Odor,Castrol Racing with Janspeed,Nissan Primera ZX,20,28:31.95,+47.81,1:24.360,classified,grid 14; tyres D; source AS round 4; TCN race.php?id=768
 12,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,20,28:40.32,+56.18,1:24.270,classified,grid 13; tyres Y; source AS round 4; TCN race.php?id=768
 13,66,Nick Whale,Techspeed/Midland Auto Trader + Mobil,BMW M3,20,28:42.66,+58.52,1:24.980,classified,grid 21; tyres P; source AS round 4; TCN race.php?id=768
 14,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,20,28:59.42,+75.28,1:25.410,classified,grid 17; tyres Y; source AS round 4; TCN race.php?id=768

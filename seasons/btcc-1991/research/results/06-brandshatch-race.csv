@@ -13,6 +13,6 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 12,5,John Cleland,Vauxhall Dealersport,Vauxhall Cavalier GSi,36,30:29.02,+29.69,50.200,classified,grid 11; tyres D; source AS round 6; TCN race.php?id=774
 13,10,Nettan Lindgren,BMW Dealer Team Sweden,BMW M3,36,30:38.40,+39.07,50.180,classified,grid 15; tyres Y; source AS round 6; TCN race.php?id=774
 14,45,Ian Forrest,Forrest/Drambuie + Lazerprinz,BMW M3,35,,+1 lap,50.710,classified,grid 17; tyres P; source AS round 6; TCN race.php?id=774
-15,23,Kieth O'Dor,Nissan Racing with Castrol,Nissan Primera eZX,34,,+2 laps,50.730,classified,grid 18; tyres D; source AS round 6; TCN race.php?id=774
+15,23,Keith Odor,Nissan Racing with Castrol,Nissan Primera eZX,34,,+2 laps,50.730,classified,grid 18; tyres D; source AS round 6; TCN race.php?id=774
 ,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,20,,,50.140,retired,grid 12; tyres Y; source AS round 6; TCN race.php?id=774; misfire
 ,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,4,,,49.510,retired,grid 6; tyres Y; source AS round 6; TCN race.php?id=774; accident

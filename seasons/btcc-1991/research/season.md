@@ -270,10 +270,10 @@ Times are video times [Review h:mm:ss].
 - Nick Baird did not start at Snetterton (not in AS or TCN; en.wiki: Ret).
 - At Snetterton Gary Ayles was the driver disqualified (missing wiper arm);
   the chequered flag was waved early [AS].
-- Spellings: Kieth O'Dor (the period spelling, AS and 1990sbtcc.com; en.wiki
-  is right), Alastair Fenwick and Alastair Lyall, Andrew Mackenzie.
+- Spellings: Keith Odor (as on en.wiki; period tables in AS and
+  1990sbtcc.com print Kieth O'Dor), Alastair Fenwick and Alastair Lyall, Andrew Mackenzie.
 - Brands Hatch Indy was about 1.936 km in 1991, not 1.929 km.
-- Birth dates from racingsportscars.com (driver pages); O'Dor's from
+- Birth dates from racingsportscars.com (driver pages); Odor's from
   en.wiki only.
 
 ## Per-race results

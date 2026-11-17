@@ -18,7 +18,7 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 ,22,Jonathan Palmer,Prodrive/The Mobil BMW Team,BMW M3,2,,,1:20.170,retired,grid 5; tyres P; source AS round 2; TCN race.php?id=762; accident
 ,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,0,,,1:17.670,retired,grid 11; tyres Y; source AS round 2; TCN race.php?id=762; clutch
 ,44,Tim Sugden,Prodrive/The Mobil BMW Team,BMW M3,0,,,,retired,grid 7; tyres P; source AS round 2; TCN race.php?id=762; driveshaft
-,23,Kieth O'Dor,Castrol Racing with Janspeed,Nissan Primera ZX,0,,,,retired,grid 21; tyres D; source AS round 2; TCN race.php?id=762; clutch
+,23,Keith Odor,Castrol Racing with Janspeed,Nissan Primera ZX,0,,,,retired,grid 21; tyres D; source AS round 2; TCN race.php?id=762; clutch
 ,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,18,,,1:17.870,dsq,grid 12; tyres Y; source AS round 2; TCN race.php?id=762; finished on the road +19.73s; excluded: windscreen wiper arm missing
 ,20,Grahame Davis,Moto-Build,Rover 216 GTi,0,,,,dns,source AS round 2; TCN race.php?id=762
 ,7,Sean Walker,Sean Walker,Ford Sierra RS500 Cosworth,0,,,,dns,source AS round 2; TCN race.php?id=762

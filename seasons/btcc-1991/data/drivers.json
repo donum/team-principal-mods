@@ -38,8 +38,8 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 36,
-      "talent": 90,
+      "age": 38,
+      "talent": 88,
       "traits": [],
       "personalities": [
         "loyal"
@@ -461,7 +461,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 34,
       "talent": 71,
       "traits": [],
       "personalities": [
@@ -569,13 +569,13 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 39,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "reserve_number": 18
     },
@@ -595,18 +595,18 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 41,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "reserve_number": 18
     },
     {
-      "name": "Kieth O'Dor",
+      "name": "Keith Odor",
       "cornering": 12,
       "braking": 12,
       "consistency": 11,
@@ -678,7 +678,7 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
+      "age": 33,
       "talent": 62,
       "traits": [],
       "personalities": [
@@ -705,7 +705,7 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
+      "age": 33,
       "talent": 65,
       "traits": [],
       "personalities": [
@@ -733,13 +733,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 63,
+      "age": 47,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "Judge Developments + Partservice",
       "number": 19
@@ -791,8 +791,8 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 62,
+      "age": 36,
+      "talent": 60,
       "traits": [],
       "personalities": [
         "loyal"
@@ -818,8 +818,8 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 37,
+      "talent": 57,
       "traits": [],
       "personalities": [
         "loyal"
@@ -902,13 +902,13 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 48,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "reserve_number": 59
     },
@@ -957,13 +957,13 @@
         "start_week": 1,
         "role": "reserve"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 44,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "reserve_number": 13
     },
@@ -985,13 +985,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 42,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "HWR Motorsport",
       "number": 58
@@ -1040,13 +1040,13 @@
         "status": "equal",
         "priority": "equal"
       },
-      "age": 30,
-      "talent": 60,
+      "age": 41,
+      "talent": 55,
       "traits": [],
       "personalities": [
         "loyal"
       ],
-      "career_stage": "racer",
+      "career_stage": "reliable_veteran",
       "nationality": "british",
       "team": "Drambuie + Lazerprinz",
       "number": 45

@@ -42,7 +42,7 @@
 
 ## Janspeed (Nissan Racing with Castrol)
 - Janspeed Engineering Ltd, Salisbury, founded October 1962 by Hungarian emigre János Ódor. https://en.wikipedia.org/wiki/Janspeed
-- Missed start of 1991; one car for Keith O'Dor, chassis 2 for Julian Bailey in the last three meetings; David Brown gearbox. https://supertouringregister.com/register/vehicle/183/
+- Missed start of 1991; one car for Keith Odor, chassis 2 for Julian Bailey in the last three meetings; David Brown gearbox. https://supertouringregister.com/register/vehicle/183/
 
 ## Techspeed (Midland Auto Trader)
 - Tech-Speed founded 1984; built and prepared BMW M3s for teams in the early 1990s; current principal Marvin Humphries (not 1991). https://en.wikipedia.org/wiki/Tech-Speed_Motorsport

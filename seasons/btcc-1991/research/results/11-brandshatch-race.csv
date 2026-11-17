@@ -15,7 +15,7 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 14,12,Ray Bellm,VLM/Team Securicor,BMW M3,34,,+2 laps,49.200,classified,grid 3; tyres Y; source AS round 10; TCN race.php?id=781
 ,9,Laurence Bristow,VLM/Team Labatt's,BMW M3,26,,,49.680,retired,grid 12; tyres Y; source AS round 10; TCN race.php?id=781; accident
 ,21,Dave Brodie,BBR/Starchips,Ford Sapphire,24,,,51.350,retired,grid 16; tyres H; source AS round 10; TCN race.php?id=781; engine
-,23,Kieth O'Dor,Janspeed/Nissan Racing with Castrol,Nissan Primera ZX,9,,,49.870,retired,grid 13; tyres D; source AS round 10; TCN race.php?id=781; overheating
+,23,Keith Odor,Janspeed/Nissan Racing with Castrol,Nissan Primera ZX,9,,,49.870,retired,grid 13; tyres D; source AS round 10; TCN race.php?id=781; overheating
 ,4,Tim Harvey,VLM/Team Labatt's,BMW M3,8,,,49.380,retired,grid 5; tyres Y; source AS round 10; TCN race.php?id=781; accident
 ,20,Grahame Davis,Moto-Build,Rover 216 GTi,3,,,57.620,retired,grid 20; tyres H; source AS round 10; TCN race.php?id=781; engine
 ,17,Andrew Mackenzie,Andrew Mackenzie Racing,Peugeot 405 Mi16,0,,,,dns,grid 19; source AS round 10; TCN race.php?id=781

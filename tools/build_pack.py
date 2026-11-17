@@ -743,6 +743,11 @@ def build(season_dir, game, install, private_audio=True, private_art=True):
         for name, c in sorted(portraits.items()):
             if c.get("source") == "photo":
                 lines.append(f"  {name}: {c['author'] or 'unknown author'}, {c['license']} - {c['page']}")
+        drawn = sorted((n, c) for n, c in portraits.items() if c.get("source") == "drawing")
+        if drawn:
+            lines.append("Drawn portraits:")
+            lines += [f"  {n}: drawn by {c.get('author') or 'unknown'}" + (f", {c['license']}" if c.get("license") else "")
+                      for n, c in drawn]
         lines.append("  Photos are cropped to the head and shoulders; a few close-ups have")
         lines.append("  their edges extended with a blurred copy of the photo.")
         lines.append("  Drivers without a free photo have a drawn helmet card.")

@@ -16,7 +16,7 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 15,77,Nick Baird,Techspeed/Midland Auto Trader,BMW M3,20,36:26.75,+71.38,1:46.170,classified,grid 19; tyres P; source AS round 3; TCN race.php?id=765
 16,88,Mark Hales,Maguire/Mitsubishi Motors+Firestone,Mitsubishi Lancer GTi,20,36:32.30,+76.93,1:47.670,classified,grid 17; tyres A; source AS round 3; TCN race.php?id=765
 ,59,Ian Flux,BRR/Crawley,BMW M3,8,,,1:45.910,retired,grid 8; tyres Y; source AS round 3; TCN race.php?id=765; gear linkage
-,23,Kieth O'Dor,Castrol Racing with Janspeed,Nissan Primera ZX,6,,,1:49.510,retired,grid 20; tyres D; source AS round 3; TCN race.php?id=765; engine
+,23,Keith Odor,Castrol Racing with Janspeed,Nissan Primera ZX,6,,,1:49.510,retired,grid 20; tyres D; source AS round 3; TCN race.php?id=765; engine
 ,22,Jonathan Palmer,Prodrive/The Mobil BMW Team,BMW M3,5,,,1:45.490,retired,grid 2; tyres P; source AS round 3; TCN race.php?id=765; engine
 ,11,Will Hoy,VLM/Team Securicor+Listerine,BMW M3,2,,,2:01.510,retired,grid 20; tyres Y; source AS round 3; TCN race.php?id=765; fire
 ,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,0,,,1:46.340,retired,grid 15; tyres Y; source AS round 3; TCN race.php?id=765; driveshaft

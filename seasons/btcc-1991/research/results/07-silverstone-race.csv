@@ -16,7 +16,7 @@ pos,number,driver,entrant,car,laps,time,gap,fastest_lap,status,notes
 15,45,Ian Forrest,Forrest/Drambuie + Lazerprinz,BMW M3,15,32:23.39,+70.44,2:07.690,classified,grid 19; tyres P; source AS round 7; TCN race.php?id=775
 16,99,Andy Middlehurst,Graham Goode Racing,Ford Sierra,15,32:28.95,+76.00,2:06.130,classified,grid 16; tyres Y; source AS round 7; TCN race.php?id=775
 17,17,Andrew Mackenzie,Andrew Mackenzie Racing,Peugeot 405 Mi16,13,,+2 laps,2:09.430,classified,grid 21; tyres D; source AS round 7; TCN race.php?id=775
-,23,Kieth O'Dor,Janspeed/Nissan Racing with Castrol,Nissan Primera eZX,12,,,2:07.690,retired,grid 17; tyres D; source AS round 7; TCN race.php?id=775; engine
+,23,Keith Odor,Janspeed/Nissan Racing with Castrol,Nissan Primera eZX,12,,,2:07.690,retired,grid 17; tyres D; source AS round 7; TCN race.php?id=775; engine
 ,33,Gary Ayles,Kaliber ICS Team Toyota,Toyota Carina,9,,,2:05.640,retired,grid 9; tyres Y; source AS round 7; TCN race.php?id=775; overheating
 ,1,Robb Gravett,Shell Team Trakstar Ford,Ford Sapphire,9,,,2:05.900,retired,grid 10; tyres Y; source AS round 7; TCN race.php?id=775; engine
 ,13,Alastair Lyall,R+D Motorsport,BMW 318iS,0,,,,retired,grid 15; tyres Y; source AS round 7; TCN race.php?id=775; gear lever

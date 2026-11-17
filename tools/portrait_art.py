@@ -13,7 +13,9 @@ Drivers without a usable photo get a drawn helmet card in team colours.
 
 A hand-picked photo is pinned in art/portraits.json with "pinned": true and
 its "file"; the tool then uses that file and nothing else. A pinned
-{"source": "helmet"} keeps the helmet card. "max_pad" (default 0.45) lets a
+{"source": "helmet"} keeps the helmet card. A pinned {"source": "drawing",
+"image": "~/Pictures/...", "author": "..."} uses a drawn portrait from that
+local file (cropped to the portrait format, centred a little high). "max_pad" (default 0.45) lets a
 close-up be blur-extended further past its edge instead of failing,
 "min_zoom" (default MIN_ZOOM) lets it zoom in further instead, and "zoom"
 evens out a head the detector boxed too wide or too tight (>1 = bigger). An optional
@@ -228,6 +230,17 @@ def main():
         meta_path = CACHE / (fname + ".json")
         pin = credits.get(name, {}) if credits.get(name, {}).get("pinned") else None
         if name in credits and not args.refresh and not args.only and (out_dir / fname).exists():
+            continue
+        if pin and pin.get("source") == "drawing":
+            # A drawn portrait (a friend's or our own work), kept outside git.
+            src = Path(pin["image"]).expanduser()
+            if not src.exists():
+                print(f"{name:28s} drawing not found: {src}")
+                continue
+            img = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
+            ImageOps.fit(img, SIZE, Image.LANCZOS, centering=(0.5, 0.4)).save(out_dir / fname, optimize=True)
+            credits[name] = {k: pin[k] for k in ("source", "image", "author", "license", "year", "reference", "pinned") if k in pin}
+            print(f"{name:28s} drawing {pin.get('author', '')}")
             continue
         try:
             if pin and pin.get("source") == "helmet":
