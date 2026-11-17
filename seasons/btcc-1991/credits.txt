@@ -7,6 +7,13 @@ Content licensed CC BY-NC-SA 4.0. Tooling MIT.
 Car images: Team Principal Mods (own work), same licence as the pack.
 Cover photo: Silverstone 1991, Sutton Images / Motorsport Images, via Alamy (3ABP9N9). Bought licence, not covered by the pack licence.
 
+Main menu background (assets/title_bg.png):
+  The same Silverstone 1991 photo (Sutton Images / Motorsport Images,
+  Alamy 3ABP9N9, bought licence, not covered by the pack licence).
+  Moved right in a 16:9 frame; the extra pit building, crowd and wall on
+  the left are AI-rendered (ChatGPT Images). The cars are the original
+  photo. BTCC 1991 lettering made for this pack (Arvo, SIL OFL 1.1).
+
 Season research sources: en Wikipedia ("1991 British Touring Car Championship").
 See seasons/btcc-1991/research/season.md in the project repository for details.
 
